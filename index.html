@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QA Evidence</title>
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --muted:#666; --line:#e3e3e3; --card:#f7f7f7; --link:#0b5fff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#111; --fg:#eaeaea; --muted:#999; --line:#2a2a2a; --card:#1a1a1a; --link:#6ea2ff; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 system-ui, sans-serif; }
+  main { padding:24px 16px; max-width:1200px; margin:0 auto; }
+  a { color:var(--link); }
+  h1 { margin:0 0 4px; font-size:22px; }
+  .muted { color:var(--muted); }
+  nav { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 24px; }
+  nav a { padding:4px 10px; border:1px solid var(--line); border-radius:999px; text-decoration:none; }
+  nav a.active { background:var(--fg); color:var(--bg); }
+  section { margin-bottom:40px; }
+  h2 { font-size:18px; border-bottom:1px solid var(--line); padding-bottom:6px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap:16px; }
+  figure { margin:0; background:var(--card); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+  figure video, figure img { display:block; width:100%; background:#000; }
+  figcaption { padding:8px 10px; font-size:13px; word-break:break-all; }
+</style>
+</head>
+<body>
+<main>
+  <h1>QA Evidence</h1>
+  <div class="muted">Screenshots and videos from QA validation of <a href="https://github.com/kodustech/kodus-ai">kodus-ai</a> issues.</div>
+  <nav id="nav"></nav>
+  <div id="content" class="muted">Loading…</div>
+</main>
+<script>
+const REPO = 'kodustech/qa-evidence';
+const VIDEO = /\.(webm|mp4|mov)$/i;
+const IMAGE = /\.(png|jpe?g|gif|webp|svg)$/i;
+
+function el(tag, attrs = {}, children = []) {
+  const node = document.createElement(tag);
+  Object.entries(attrs).forEach(([k, v]) => node.setAttribute(k, v));
+  children.forEach((c) => node.append(c));
+  return node;
+}
+
+function media(path) {
+  const name = path.split('/').pop();
+  const raw = 'https://github.com/' + REPO + '/blob/main/' + path;
+  const body = VIDEO.test(name)
+    ? el('video', { src: path, controls: '', preload: 'metadata' })
+    : el('a', { href: path, target: '_blank' }, [el('img', { src: path, loading: 'lazy', alt: name })]);
+  return el('figure', {}, [body, el('figcaption', {}, [el('a', { href: raw }, [name])])]);
+}
+
+async function load() {
+  const res = await fetch('https://api.github.com/repos/' + REPO + '/git/trees/main?recursive=1');
+  if (!res.ok) throw new Error('GitHub API ' + res.status);
+  const { tree } = await res.json();
+  const issues = {};
+  tree
+    .filter((t) => t.type === 'blob' && /^issues\/[^/]+\//.test(t.path) && (VIDEO.test(t.path) || IMAGE.test(t.path)))
+    .forEach((t) => {
+      const id = t.path.split('/')[1];
+      (issues[id] ||= []).push(t.path);
+    });
+  return Object.keys(issues)
+    .sort((a, b) => Number(b) - Number(a) || b.localeCompare(a))
+    .map((id) => ({ id, files: issues[id].sort() }));
+}
+
+function render(issues) {
+  const current = decodeURIComponent(location.hash.slice(1));
+  const nav = document.getElementById('nav');
+  const content = document.getElementById('content');
+  nav.replaceChildren(
+    el('a', { href: '#', class: current ? '' : 'active' }, ['All']),
+    ...issues.map((i) => el('a', { href: '#' + i.id, class: current === i.id ? 'active' : '' }, ['#' + i.id]))
+  );
+  const shown = current ? issues.filter((i) => i.id === current) : issues;
+  content.className = '';
+  content.replaceChildren(
+    ...shown.map((i) =>
+      el('section', { id: 'issue-' + i.id }, [
+        el('h2', {}, [el('a', { href: 'https://github.com/kodustech/kodus-ai/issues/' + i.id }, ['Issue #' + i.id])]),
+        el('div', { class: 'grid' }, i.files.map(media)),
+      ])
+    )
+  );
+  if (!shown.length) content.replaceChildren(el('p', { class: 'muted' }, ['No evidence for #' + current + '.']));
+}
+
+load()
+  .then((issues) => {
+    render(issues);
+    addEventListener('hashchange', () => render(issues));
+  })
+  .catch((err) => {
+    document.getElementById('content').textContent = 'Could not load the file list: ' + err.message;
+  });
+</script>
+</body>
+</html>
