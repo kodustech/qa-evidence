@@ -39,3 +39,17 @@ Logs seen: `Forcing full re-review for PR#N: heavy review asked after a balanced
 | 24 | CLI, same branch | no flag | same | — | codeReview | 2 |
 
 The directory, the file (main commits 38d61c0 add, 5763f44 remove) and the toggle were removed afterwards; the stored config is identical to the backup taken before.
+
+## Retest of the CLI fix #2397 (qa on fd2694220, rolled out 18:06 UTC)
+
+`kodus review --branch main`, poison_store branch with the same fixture. Finder runs = `code-review-generalist` spans of the CLI run.
+
+| # | Setting | Flag | Finder runs | Route |
+|---|---|---|---|---|
+| 25 | repository = Heavy | none | 11 | codeReviewHeavy |
+| 26 | repository = Heavy | `--balanced` | 2 | codeReview |
+| 27 | directory `/billing` = Heavy | none | 11 | codeReviewHeavy |
+| 28 | `kodus-config.yml` on main `reviewMode: heavy`, file override on | none | 11 | codeReviewHeavy |
+| 29 | global = Heavy | none | 11 | codeReviewHeavy |
+
+Each setting was removed before the next; main commits 71dbccd (add) and 0fbe0ac (remove) for the file. The stored config is identical to the backup afterwards.
