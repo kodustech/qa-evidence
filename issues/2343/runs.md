@@ -28,3 +28,14 @@ Finder runs = `code-review-generalist` spans in `observability_telemetry` (gener
 | 20 | CLI, repo with unreachable remote | `--heavy` | trial | — | codeReviewHeavy | 10 | Kimi K2.5 | 5m26, `Running self-contained agent review (no sandbox available)` |
 
 Logs seen: `Forcing full re-review for PR#N: heavy review asked after a balanced one` (and the reverse), `Heavy mode asked on a plan that is not Teams/Enterprise — the review runs Balanced`, `Refused a save asking for heavy review mode — plan is not Teams/Enterprise`.
+
+## Directory and kodus-config.yml (added 2026-11-05 ~16:40 UTC)
+
+| # | Where | Trigger | Setting | `heavy` on PR | Route | Finder runs |
+|---|---|---|---|---|---|---|
+| 21 | GitHub poison_store#398 | PR open | directory `/billing` Review mode = Heavy (repo and global Balanced) | true | codeReviewHeavy | 11 |
+| 22 | CLI, same branch | no flag | same | — | codeReview | 2 |
+| 23 | GitHub poison_store#399 | PR open | `kodus-config.yml` on main with `reviewMode: heavy`, file override on at repo | true | codeReviewHeavy | 11 |
+| 24 | CLI, same branch | no flag | same | — | codeReview | 2 |
+
+The directory, the file (main commits 38d61c0 add, 5763f44 remove) and the toggle were removed afterwards; the stored config is identical to the backup taken before.
