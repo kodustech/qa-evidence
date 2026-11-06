@@ -22,5 +22,5 @@ Leak check on the text between the `kody-pr-summary` markers: first line, and `W
 | S2 | Preview | same | 1 (529) | 2230, `## Enhanced LLM Response…` | none (`<think>` only as diff content) |
 | S3 | Preview | same | 1 (672) | 2900, `## Bug Fixes` | none (same) |
 
-Calls whose output was almost all reasoning (P0 1st, P1 1st, P6, P7, P9 1st) were followed by another call and never published.
+First calls whose output was almost all reasoning tokens (P1, P6, P7, P9) were followed by another call; none of their text was published.
 Cleanup: BYOK restored byte-identical, PR 407 closed, branches `qa-2407-base`/`qa-2407-r1` deleted.
