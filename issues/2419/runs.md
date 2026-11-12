@@ -11,7 +11,7 @@ Prerequisite: #2536 / PR #2537 (raw-diff owner fix, merged 2026-11-12). Before i
 
 `run-analyzers.stage.ts` is identical between the PR head and the tested commit.
 
-Preview (runo, same commit) also ran the stage without the crash but posted no deterministic comment; VM logs were not reachable, and the local run of the same code and PR did post it, so the gap is that environment, not the PR.
+Preview (runo self-hosted, same commit) is not evidence either way: without `BETA_FEATURES` the deterministic-evidence gate is closed there since #2475 (#2425), so `RunAnalyzersStage` returned at the gate (0.01 s) and never ran the recovery or the scan.
 
 Local run: docker dev stack on the worktree, review triggered by posting the `pull_request` event straight to the local webhooks service (no GitHub webhook, so QA did not review it in parallel).
 Cleanup: QA `poison_store` code-review config restored and checked identical to its backup; preview and local webhooks removed from `poison_store` (only QA's remains); PRs 418/420 closed, branches kept.
