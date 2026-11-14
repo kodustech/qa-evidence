@@ -1,27 +1,32 @@
-# #2534 — QA runs (QA `homolog`, includes #2535; 2026-11-12/13)
+# #2534 — conditional approval: push during review, base change, history backoff, one reason comment (QA)
 
-## 1. Hold reason when a commit lands during the review
+- Env: qa.kodus.io (contains #2535 + #2558), orgs on `beta`, DeepSeek V4.1 Flash @ Fireworks. 2026-11-14 16:30–18:20 UTC.
+- Named-policy path: one enabled policy with no conditions + Risk on, per repo. Legacy path: `poison_store` with no named policies saved, `pullRequestApprovalActive: true`, `approvalAuthors: [sartorijrbot]`.
 
-`kodustech/poison_store`, label-based conditional approval switched on for the run (`pullRequestApprovalActive: true`, `approvalLabels: ["qa-2534-approve"]`; org on the beta track). Config restored afterwards: original row reactivated, identical to its backup.
+## Push during review (second commit pushed while the first was in InitialComment/AgentReview)
+| Provider / path | PR | First-commit execution | `approvalDecision.reason` | Reason comments |
+|---|---|---|---|---|
+| GitHub, named | [#452](https://github.com/kodustech/poison_store/pull/452) | `1159dc6` | A newer commit arrived while Kody reviewed this one; Kody decides on the next reviewed commit. | 1 |
+| GitLab, named | [!61](https://gitlab.com/sartorijr/kodex/-/merge_requests/61) | `27b4eef` | same | 1 |
+| Bitbucket, named | [#46](https://bitbucket.org/kodustech/artemis/pull-requests/46) | `f03b2f6` | same (second commit then reviewed: `Risk was identified in this PR.`, the same comment updated) | 1 |
+| Azure Repos, named | [197](https://dev.azure.com/kodus/Kodus%20QA/_git/athena/pullrequest/197) | `87d1153` | same | 1 |
+| GitHub, legacy | [#487](https://github.com/kodustech/poison_store/pull/487) | — | same | — |
 
-- PR 422 opened 03:14:46 UTC (`32ac1183`); second commit `275e31db` pushed at 03:15:11 while Kody reviewed the first.
-- `automation_execution` b4b69b42 (`success`, reviewed `32ac1183`): `approvalDecision = { kind: "hold", reason: "A newer commit arrived while Kody reviewed this one; Kody decides on the next reviewed commit." }`.
-- Reason comment on the PR (03:16:56): **Automatic approval held** — same text.
+## Target branch changed during review (GitHub)
+- [#460](https://github.com/kodustech/poison_store/pull/460): PR retargeted to another base while under review → `The target branch changed during the review, so this review cannot approve the PR.`
+- [#459](https://github.com/kodustech/poison_store/pull/459): a commit pushed straight to `main` during review did not trigger it (`reviewedBaseSha` stayed the PR's base SHA; GitHub's PR `base.sha` does not move with the branch), decision went on to the approval attempt.
 
-## 3. One reason comment per PR
+## Holds that must stay as they were
+- Review with suggestions: `The review is not clean or did not complete.` (e.g. athena 194, poison_store #448).
+- Partial runs (diff over the risk limit: kodex !56, athena 193, poison_store #449): never approved by the cron, one reason comment each.
 
-Approval cron runs at 03:16, 03:20, 03:24, 03:28 UTC: PR 422 still has exactly one `kodus-conditional-approval` comment (created 03:16:56, never re-posted). No `bounded timeout` log in the window.
+## History listing backoff (existing QA data)
+`codeAreaHistorySync` for six repositories of another QA org: `listingFailures: 3`, `retryAfter` doubling 2 h → 4 h → 8 h across the 00:00/02:00/06:00 runs of 2026-11-12, one `Could not refresh code-area history batch` per repository only on the first failing run. Recovery (`Code-area history listing recovered`) not observed: those repositories stay unlistable.
 
-## 2. Area-map backoff on repositories that cannot be listed
+## One reason comment, bounded writes
+- Every PR above carries exactly one `<!-- kodus-conditional-approval -->` comment.
+- One exception logged: `Could not post conditional approval reason` — `conditional approval comment lookup bounded timeout after 10000ms` (cron, Bitbucket artemis #42, 18:08 UTC). The comment already carried that reason (last updated 16:04) and stayed single; `approvalReasonDeliveryFailure` remained set on the PR.
 
-`codeAreaHistorySync` on QA: one org whose GitHub App cannot list 6 repositories.
-
-| Run (UTC) | `Could not refresh code-area history batch` logs | `listingFailures` / `retryAfter` |
-|---|---|---|
-| every 2h on 2026-11-11 → 2026-11-12 00:00 | 6 per run | — |
-| 2026-11-12 02:00, 06:00 (after #2535) | 0 | 2 → 3; `retryAfter` 06:00 + 8h − 10 min = 13:50 (2h → 4h → 8h) |
-| after 13:50 | 0 | unchanged (not retried) |
-
-The org has not been picked by the cron since then; the cron only takes orgs that pass the conditional-approval access check (beta + Teams/Enterprise license). Why this org fails it now was not verified, so retry after the deadline and the "listing recovered" log were not observed.
-
-Not observed in QA: base-moved / unreadable-labels / unreadable-PR hold texts, and the per-installation write queue (covered by the PR's specs).
+## Observations
+- On GitHub, GitLab and Azure the second commit was never reviewed: its webhook arrived while the first review ran and was dropped (`Code review already being processed for PR#452, skipping`). The hold says "Kody decides on the next reviewed commit", but no review of that commit follows until another push (1h30 later, still one execution on #452, !61, 197).
+- Not reproducible here: label/current-PR read failures, first-activation burst, the GitHub per-installation write queue.
