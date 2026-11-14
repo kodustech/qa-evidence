@@ -1,14 +1,16 @@
-# #2536 — QA runs (QA `homolog`, 2026-11-11 / 2026-11-12)
+# #2536 — GitHub raw PR diff for withheld file patches (QA)
 
-Fixture: `kodustech/poison_store` PRs 416-420, each with one large file whose `patch` GitHub's `pulls/files` withholds; secrets scan on for the repo.
-Source: `observability_logs_ts` on QA, messages matching `raw pull request diff | Recovered N of | read only property 'patch'`.
+- Env: qa.kodus.io (contains #2537), org poison, `kodustech/poison_store` (PAT integration), Deterministic checks → secrets on for the run. 2026-11-14 14:50–14:58 UTC. #2445 (fix for #2419) is not merged.
 
-| When (UTC) | QA code | PR | Log |
-|---|---|---|---|
-| 2026-11-11 18:42 | before #2537 | 416 | `Failed to read the raw pull request diff` → `Recovered 0 of 1 missing file patch(es)` |
-| 2026-11-11 18:48 | before #2537 | 417 | same |
-| 2026-11-11 19:19 | before #2537 | 418 | same |
-| 2026-11-12 11:43 | `main` f74afbb (#2537) | 420 | no raw-diff failure; stage reaches `file.patch = patch` (only runs when a patch was recovered, `run-analyzers.stage.ts:280-283`) and hits #2419's `Cannot assign to read only property 'patch'` |
+| PR | Fixture | `pulls/files` | Raw diff (`Accept: application/vnd.github.diff`) | Review |
+|---|---|---|---|---|
+| [#432](https://github.com/kodustech/poison_store/pull/432) | 1 file, 3,502 added lines, `api_key` at line 1751 | no `patch` key | 200, 3,508 lines | `error`: `Cannot assign to read only property 'patch'` in RunAnalyzersStage |
+| [#433](https://github.com/kodustech/poison_store/pull/433) | 1 file, 22,002 added lines | no `patch` key | 200, 22,008 lines (no 406) | same error |
+| [#434](https://github.com/kodustech/poison_store/pull/434) | 1 file, 22 lines | `patch` present | — | `success`; RunAnalyzersStage completed in 1.3 s; secret flagged at line 11 |
 
-Same PR 420 on a local stack with #2445 on top: `Recovered 1 of 1 missing file patch(es)` (`src/inventory-data.js`) and a Deterministic comment posted — see [#2419 runs](https://kodustech.github.io/qa-evidence/issues/2419/runs.md).
-Not run: GitHub App installations (same mapper).
+Logs (`observability_logs_ts`, org poison):
+- Today, #432/#433: no `Failed to read the raw pull request diff`, no `Recovered 0 of 1`. The stage fails at `run-analyzers.stage.ts:283` (`file.patch = patch`), which runs only when `getFilePatches` returned the file's hunk, i.e. the raw diff was read and the patch recovered. The `Recovered 1 of 1` line comes after that assignment, so it is not reached; the crash is #2419 (fix in #2445, open).
+- Before the fix on QA (2026-11-11 18:42, 18:48, 19:19 UTC): `Failed to read the raw pull request diff` (GithubService) followed by `Recovered 0 of 1 missing file patch(es)`.
+- #434 (patch present): no recovery call, no recovery log.
+
+Not reproduced: a raw diff refused as too large (406) — GitHub served the 22k-line diff. A published secrets finding on a recovered file depends on #2445.
