@@ -1,15 +1,10 @@
-# #2425 — QA runs (runo self-hosted preview, 2026-11-11/12)
+# #2425 — beta features on self-hosted without BETA_FEATURES (QA, cloud regression only)
 
-Environment: runo preview, `self-hosted` shape, of the mirror branch `qa/pr-2445` (PR #2531). No `BETA_FEATURES` in the preview env (only the approval-risk smoke sets it, in its own process).
-Org config on `kodustech/poison_store`: `deterministicEvidence.tools.secrets: true` (repository level). Deterministic evidence is `stage: beta`.
+- Env: qa.kodus.io, deploy `2eca9610` (contains #2475 and #2563), 2026-11-14.
+- Cloud is never gated by `BETA_FEATURES`; on the same deploy, today:
+  - 29 custom-agent stages ran `success` on QA reviews after 14:30 UTC (e.g. `qa-conventions` posting on poison_store #425, `qa-2384-rules` posting on #461, `risk-auditor` on #482);
+  - **Try it** executed an unsaved agent (run `936382b3…`, #2547);
+  - Review scope shows the deterministic checks section and the secrets check ran (#2536, PR #434);
+  - `customAgents configured but BETA_FEATURES is off…` logged 0 times.
 
-| Run | Preview code | `RunAnalyzersStage` | Deterministic findings in the generalist prompt (Langfuse, `environment=preview`) |
-|---|---|---|---|
-| PR 419, 2026-11-11 19:26 UTC | `e67866fc` (before #2475) | `success`, 0.96 s (analyzers ran) | yes: `<DeterministicFindings>` in trace `07218bd546c4d1503dc3f0f82f0770a8` |
-| PR 418, 2026-11-12 01:32 UTC | `9818e9f68` (`main` merged in, includes #2475 `ac5098b7`) | `success`, 0.01 s (gate closed, stage returned at `run-analyzers.stage.ts:52`) | none |
-| PR 420, 2026-11-12 11:38 UTC | same | `success` | none |
-
-PR 418/420 carry a planted key that the same code finds when the feature is on (cloud stack, see [#2419 runs](https://kodustech.github.io/qa-evidence/issues/2419/runs.md)), so "no findings" here is the gate, not an empty scan.
-Cloud: QA (`homolog`, cloud) still ran the analyzers for the same org on 2026-11-12 11:43 UTC, so the cloud path is unchanged.
-
-Not run: the web resolver (`apps/web/src/core/feature-gate/resolver.ts`) on a self-hosted UI, and a self-hosted run with `BETA_FEATURES=true`.
+Not covered: the self-hosted cases (custom agents skipped on review, Try it 403, `@kody -v` refusal, web resolver hiding GHES PAT and deterministic evidence, `BETA_FEATURES=true` turning them back on). They need a self-hosted runo preview of current `main`; opening a QA preview branch was not possible from this session.
