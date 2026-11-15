@@ -1,0 +1,41 @@
+{
+ "sync": {
+  "complete": true,
+  "cursorEnd": "2026-11-14T02:00:12.566Z",
+  "discoveredMergedPrs": 1,
+  "updatedAt": {
+   "$date": "2026-11-15T02:00:46.778Z"
+  },
+  "windowEnd": "2026-11-15T02:00:13.188Z"
+ },
+ "refreshedAt": "2026-11-15T02:00:46.620Z",
+ "coverage": {
+  "discoveredMergedPrs": 1,
+  "scannedPrs": 1,
+  "prsWithCompleteFiles": 1,
+  "prsWithIssueSupport": 1,
+  "scanComplete": true
+ },
+ "structureCoverage": {
+  "eligibleFiles": 1,
+  "analyzedFiles": 1,
+  "sampled": false
+ },
+ "hits": [
+  [
+   "types/a.d.mts",
+   true
+  ],
+  [
+   "types/b.d.cts",
+   true
+  ],
+  [
+   "src/types-index.ts",
+   true
+  ]
+ ],
+ "logs": []
+}
+
+[exited with code 0]
