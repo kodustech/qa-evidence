@@ -1,0 +1,47 @@
+{
+ "77176909": {
+  "sync": {
+   "complete": true,
+   "cursorEnd": "2026-11-13T22:01:02.004Z",
+   "discoveredMergedPrs": 4,
+   "updatedAt": {
+    "$date": "2026-11-15T00:00:23.214Z"
+   },
+   "windowEnd": "2026-11-15T00:00:14.287Z"
+  },
+  "map": {
+   "repositoryId": "77176909",
+   "organizationId": "c9d6ce93-81b4-44c0-aeb3-ecbbd857a53f",
+   "__v": 0,
+   "createdAt": {
+    "$date": "2026-10-28T18:00:18.257Z"
+   },
+   "updatedAt": {
+    "$date": "2026-11-15T00:00:23.206Z"
+   }
+  }
+ },
+ "930932849": {
+  "sync": {
+   "complete": true,
+   "cursorEnd": "2026-11-13T02:00:12.446Z",
+   "discoveredMergedPrs": 0,
+   "updatedAt": {
+    "$date": "2026-11-14T02:00:14.533Z"
+   },
+   "windowEnd": "2026-11-14T02:00:12.566Z"
+  },
+  "map": {
+   "organizationId": "bd1ccc3d-d16c-404d-a3de-1a2c49b5caf0",
+   "repositoryId": "930932849",
+   "__v": 0,
+   "createdAt": {
+    "$date": "2026-10-27T18:00:12.623Z"
+   },
+   "updatedAt": {
+    "$date": "2026-11-14T02:00:14.526Z"
+   }
+  }
+ },
+ "logs": []
+}
