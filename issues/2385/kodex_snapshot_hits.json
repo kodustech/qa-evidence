@@ -1,0 +1,46 @@
+{
+ "keys": [
+  "version",
+  "source",
+  "windowStart",
+  "windowEnd",
+  "refreshedAt",
+  "coverage",
+  "files",
+  "directories",
+  "directDirectories",
+  "structureCoverage"
+ ],
+ "len": 5475,
+ "hits": [
+  [
+   "types-index",
+   1820,
+   "com/sartorijr/kodex/-/merge_requests/37\",\"mergedAt\":\"2026-10-28T14:26:19.156Z\",\"bugFixEvidence\":\"linked-bug-issue\",\"bugIssueUrls\":[\"https://gitlab.com/sartorijr/kodex/-/work_items/1\"]}]},{\"path\":\"src/types-index.ts\",\"changedPrs\":1,\"linkedBugFixPrs\":0,\"titleBugFixPrs\":0,\"recentEvidence\":[{\"prNumber\":60,\"prUrl\":\"https://gitlab.com/sartorijr/kodex/-/merge_requests/60\",\"mergedAt\":\"2026-11-14T16:28:19."
+  ],
+  [
+   "a.d.mts",
+   2067,
+   "\":0,\"titleBugFixPrs\":0,\"recentEvidence\":[{\"prNumber\":60,\"prUrl\":\"https://gitlab.com/sartorijr/kodex/-/merge_requests/60\",\"mergedAt\":\"2026-11-14T16:28:19.543Z\"}],\"linkedBugEvidence\":[]},{\"path\":\"types/a.d.mts\",\"changedPrs\":1,\"linkedBugFixPrs\":0,\"titleBugFixPrs\":0,\"recentEvidence\":[{\"prNumber\":60,\"prUrl\":\"https://gitlab.com/sartorijr/kodex/-/merge_requests/60\",\"mergedAt\":\"2026-11-14T16:28:19.543Z\"}]"
+  ],
+  [
+   "b.d.cts",
+   2307,
+   "\":0,\"titleBugFixPrs\":0,\"recentEvidence\":[{\"prNumber\":60,\"prUrl\":\"https://gitlab.com/sartorijr/kodex/-/merge_requests/60\",\"mergedAt\":\"2026-11-14T16:28:19.543Z\"}],\"linkedBugEvidence\":[]},{\"path\":\"types/b.d.cts\",\"changedPrs\":1,\"linkedBugFixPrs\":0,\"titleBugFixPrs\":0,\"recentEvidence\":[{\"prNumber\":60,\"prUrl\":\"https://gitlab.com/sartorijr/kodex/-/merge_requests/60\",\"mergedAt\":\"2026-11-14T16:28:19.543Z\"}]"
+  ],
+  [
+   "types/",
+   2061,
+   "FixPrs\":0,\"titleBugFixPrs\":0,\"recentEvidence\":[{\"prNumber\":60,\"prUrl\":\"https://gitlab.com/sartorijr/kodex/-/merge_requests/60\",\"mergedAt\":\"2026-11-14T16:28:19.543Z\"}],\"linkedBugEvidence\":[]},{\"path\":\"types/a.d.mts\",\"changedPrs\":1,\"linkedBugFixPrs\":0,\"titleBugFixPrs\":0,\"recentEvidence\":[{\"prNumber\":60,\"prUrl\":\"https://gitlab.com/sartorijr/kodex/-/merge_requests/60\",\"mergedAt\":\"2026-11-14T16:28:19.5"
+  ]
+ ],
+ "hist": [
+  "codeAreaHistoryPrs",
+  "codeAreaHistorySync",
+  "codeAreaRiskMaps"
+ ],
+ "sanity": 0,
+ "sanity2": []
+}
+
+[exited with code 0]
