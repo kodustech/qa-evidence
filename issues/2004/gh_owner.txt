@@ -1,0 +1,18 @@
+authDetails now [['sartorijr', 'user']]
+PR 2 https://github.com/kodus-qa/school/pull/2 22:05:12
+exec: ['error', 'Code review failed: Could not create initial review status for PR#2']
+issue comments []
+review comments 0 []
+log 22:05:15 Failed to save pull request data for PR#2 Not Found - https://docs.github.com/rest/pulls/pulls#list-commits-on-a-pull-request
+log 22:05:16 Error adding reaction to PR#2 Not Found - https://docs.github.com/rest/reactions/reactions#create-reaction-for-an-issue
+log 22:05:18 Error creating the comment: Not Found - https://docs.github.com/rest/issues/comments#create-an-issue-comment
+log 22:05:18 Failed to create initial comment for PR#2 
+log 22:05:18 Stage 'InitialCommentStage' failed: Could not create initial review status for PR#2 Could not create initial review status for PR#2
+log 22:05:18 Pipeline 'CodeReviewPipeline:13fb6bee-f631-4586-9114-fb58a64412c8' continuing despite error in stage 'InitialCommentStag 
+log 22:05:55 PR #2 not found, skipping comment resolution. 
+log 22:05:56 Failed to create line comments for PR#2 
+log 22:05:56 Error when trying to create line comments for PR#2 Not Found - https://docs.github.com/rest/pulls/pulls#list-commits-on-a-pull-request
+log 22:05:56 No valid suggestions to aggregate for PR#2 
+log 22:05:56 Error removing reactions from PR#2 Not Found - https://docs.github.com/rest/reactions/reactions#list-reactions-for-an-issue
+log 22:05:56 Error adding reaction to PR#2 Not Found - https://docs.github.com/rest/reactions/reactions#create-reaction-for-an-issue
+log 22:05:56 Review failed for PR#2 - adding error reaction 
