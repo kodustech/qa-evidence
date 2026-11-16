@@ -1,0 +1,19 @@
+selection {'mode': 'all', 'includeForksAndMirrors': False, 'sync': {'done': 0, 'added': 0, 'total': 0, 'status': 'done', 'skipped': {'archived': 1, 'forksAndMirrors': 1}, 'trigger': 'cron', 'visible': 5, 'startedAt': '2026-11-16T17:40:01.798Z', 'finishedAt': '2026-11-16T17:40:02.007Z', 'lastSuccessAt': '2026-11-16T17:40:02.007Z', 'pendingAstBuilds': 0, 'pendingBackfills': 0}}
+REPOSITORIES ['school', 'gym', 'qa2004-new-github']
+hooks {'gym': [712725228], 'school': [712718602], 'qa2004-archived': [], 'qa2004-fork': [], 'qa2004-new-github': [712727562]}
+rows [['school', 'failed', '17:04:28', '679bca4b-1482-4ae4-afe6-3d45d992d345'], ['gym', 'ready', '17:23:58', '679bca4b-1482-4ae4-afe6-3d45d992d345'], ['qa2004-new-github', 'ready', '17:30:01', '679bca4b-1482-4ae4-afe6-3d45d992d345']]
+cr_config repos [['["school", "gym", "qa2004-new-github"]']]
+execs [['1460314338', '1', 'skipped', '17:25:54', "Automated Review is disabled — Enable 'Automated Code Review' in General Settings"], ['1460314643', '1', 'success', '17:26:08', ''], ['1460337248', '1', 'success', '17:33:58', ''], ['1460314338', '1', 'success', '17:34:32']]
+gym#1 ([('sartorijr', '@kody start-review'), ('sartorijr', '## Code Review Completed! 🔥\n\nThe code review was successfully completed based on your current configurations.\n\n\n\n<detail')], [('sartorijr', 'gym/stats.py', '![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Bug](https://img.shields.')])
+school#1 ([('sartorijr', '## Code Review Completed! 🔥\n\nThe code review was successfully completed based on your current configurations.\n\n\n\n<detail')], [('sartorijr', 'src/qa2004.ts', '![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Bug](https://img.shields.'), ('sartorijr', 'src/qa2004.ts', '![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Bug](https://img.shields.')])
+qa2004-new-github#1 ([('sartorijr', '## Code Review Completed! 🔥\n\nThe code review was successfully completed based on your current configurations.\n\n\n\n<detail')], [('sartorijr', 'src/qa2004.ts', '![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Bug](https://img.shields.')])
+log {'timestamp': {'$date': '2026-11-16T17:23:57.750Z'}, 'message': 'Repository selection mode changed', 'metadata': {}}
+log {'timestamp': {'$date': '2026-11-16T17:23:59.020Z'}, 'message': 'GitHub webhook setup finished', 'metadata': {}}
+log {'timestamp': {'$date': '2026-11-16T17:23:59.045Z'}, 'message': 'Recorded webhook setup outcome', 'metadata': {}}
+log {'timestamp': {'$date': '2026-11-16T17:23:59.092Z'}, 'message': 'Repository sync finished for team', 'metadata': {}}
+log {'timestamp': {'$date': '2026-11-16T17:24:44.342Z'}, 'message': 'Rejected a repository removal while the team reviews all repositories', 'metadata': {}}
+log {'timestamp': {'$date': '2026-11-16T17:30:01.898Z'}, 'message': 'GitHub webhook setup finished', 'metadata': {}}
+log {'timestamp': {'$date': '2026-11-16T17:30:01.923Z'}, 'message': 'Recorded webhook setup outcome', 'metadata': {}}
+log {'timestamp': {'$date': '2026-11-16T17:30:01.978Z'}, 'message': 'Repository sync finished for team', 'metadata': {}}
+log {'timestamp': {'$date': '2026-11-16T17:40:02.045Z'}, 'message': 'Repository sync finished for team', 'metadata': {}}
+gym automatedReviewActive [['false']]
