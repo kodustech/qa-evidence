@@ -1,0 +1,19 @@
+off 200
+case8 preview forks {"data":{"visible":12,"eligible":11,"alreadySelected":10,"toAdd":1,"skipped":{"archived":1,"forksAndMirrors":0}},"statusCode":200,"type":"Object"}
+on+forks 200
+selection {'mode': 'all', 'includeForksAndMirrors': True, 'sync': {'done': 1, 'added': 1, 'total': 1, 'status': 'done', 'skipped': {'archived': 1, 'forksAndMirrors': 0}, 'trigger': 'enable', 'visible': 12, 'startedAt': '2026-11-16T18:47:09.964Z', 'finishedAt': '2026-11-16T18:47:10.745Z', 'lastSuccessAt': '2026-11-16T18:47:10.745Z', 'pendingAstBuilds': 0, 'pendingBackfills': 0}}
+Traceback (most recent call last):
+  File "<stdin>", line 12, in <module>
+  File "/private/tmp/claude-501/-Users-juniorsartori-Projects-Kody-kodus-ai/57c3ac3f-dbc4-41fb-a7b6-02179ab4b0b5/scratchpad/intest/qadb.py", line 39, in pg
+    if r.returncode: raise RuntimeError(r.stderr[-400:])
+RuntimeError: psql: error: connection to server at "kodus-db-qa-v2.czeeljaarrcg.us-east-1.rds.amazonaws.com" (10.100.134.15), port 5432 failed: timeout expired
+
+Traceback (most recent call last):
+  File "<stdin>", line 4, in <module>
+  File "/private/tmp/claude-501/-Users-juniorsartori-Projects-Kody-kodus-ai/57c3ac3f-dbc4-41fb-a7b6-02179ab4b0b5/scratchpad/intest/qadb.py", line 39, in pg
+    if r.returncode: raise RuntimeError(r.stderr[-400:])
+RuntimeError: psql: error: connection to server at "kodus-db-qa-v2.czeeljaarrcg.us-east-1.rds.amazonaws.com" (10.100.134.15), port 5432 failed: timeout expired
+
+hooks fork/archived [(93633071, 'https://qa.api.kodus.io/gitlab/webhook')] []
+case9 off 200 18:48:06
+create qa2004-after-off 89023519 18:48:12
