@@ -39,5 +39,25 @@ Integration is a token scoped to the new test org `kodus-qa`: the credential see
 | 11 | Idempotent cron | 17:40 cron `added 0`; same hook ids, one per repo |
 | 4 | GitHub App events | not applicable (token integration) |
 
+## GitLab token (new QA-only account, Kodus team `gitlabqa@kodus.io`, 2026-11-16)
+The credential sees only the test group `sartorijr14-group`: `sartorijr14-project` (selected), `gym`, `qa2004-archived` (archived), `qa2004-fork` (fork). BYOK DeepSeek V4.1 Flash @ Fireworks.
+
+| # | Case | Result |
+|---|---|---|
+| 1 | Count before turning it on | preview `visible 4, eligible 2, alreadySelected 1, toAdd 1, skipped {archived 1, forksAndMirrors 1}` |
+| 2 | Turn on (API) + first sync | `mode=all` 18:20:13 → `done, added 1/1, trigger enable`; `gym` got a QA webhook; archived and fork untouched |
+| 3 | Repos created after | `qa2004-new-gitlab` + 7 more created 18:20–18:21 → 18:30 cron `added 8/8`, a webhook on each, `repositories` rows on the team's REPOSITORIES config |
+| 5 | MR opened before the sync | `qa2004-new-gitlab` !1 opened 18:20:52: no execution until the sync; after a push at 18:36 it was reviewed (suggestions posted; the initial status comment hit a GitLab 429 on the new account) |
+| 6 | Exclusion survives sync | `gym` automated review off: push on !1 skipped `Automated Review is disabled`; still `false` after the 18:30 and 18:40 crons; `@kody start-review` reviewed it |
+| 7 | Removal refused in `all` | 400 with the expected message; log `Rejected a repository removal…` |
+| 8 | Include forks | preview with forks `toAdd 1, forksAndMirrors 0`; `qa2004-fork` added with webhook; archived still out |
+| 9 | Turn off | `mode=manual` 18:48:06; `qa2004-after-off` created 18:48:12 not added; no sync for the team after the switch |
+| 10 | Manual add | `append` of `qa2004-after-off`: webhook on it only, the other 11 hook ids unchanged; its MR reviewed |
+| 11 | Idempotent cron | 18:40 cron `added 0`; same hook ids |
+| 13 | AST cap per team | 18:30 sync: 5 `[AST-GRAPH] Enqueued full build`, `pendingAstBuilds 3`; 18:40 sync drained them (`pendingAstBuilds 0`) |
+| 12, 14 | Permission failure / seat gate | not run (needs a second GitLab owner account; org is on trial) |
+
+Setup note: the account was created through the API, so the trial only started after `POST /code-management/finish-onboarding`; reviews before that were skipped `No Active Subscription`.
+
 ## Not covered
-GitHub App events, GitLab (the only GitLab test credential sees third-party groups), forks/mirrors included, seat gate on automated-off repos (orgs are trial), 429/403 handling, Bitbucket Data Center and Forgejo.
+GitHub App events, forks/mirrors included, seat gate on automated-off repos (orgs are trial), 429/403 handling, Bitbucket Data Center and Forgejo.
