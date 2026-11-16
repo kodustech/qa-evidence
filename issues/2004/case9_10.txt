@@ -1,0 +1,8 @@
+selection {'mode': 'manual', 'includeForksAndMirrors': False, 'sync': {'done': 1, 'added': 1, 'total': 1, 'status': 'done', 'skipped': {'archived': 1, 'forksAndMirrors': 0}, 'trigger': 'enable', 'visible': 5, 'startedAt': '2026-11-16T17:43:29.112Z', 'finishedAt': '2026-11-16T17:43:29.678Z', 'lastSuccessAt': '2026-11-16T17:43:29.678Z', 'pendingAstBuilds': 0, 'pendingBackfills': 0}}
+REPOSITORIES ['school', 'gym', 'qa2004-new-github', 'qa2004-fork']
+sync logs after off []
+append 201 {"data":{"status":true},"statusCode":201,"type":"Object"}
+REPOSITORIES ['school', 'gym', 'qa2004-new-github', 'qa2004-fork', 'qa2004-after-off']
+hooks before {'gym': [712725228], 'school': [712718602], 'qa2004-archived': [], 'qa2004-fork': [712732423], 'qa2004-new-github': [712727562], 'qa2004-after-off': []}
+hooks after {'gym': [712736625], 'school': [712736617], 'qa2004-archived': [], 'qa2004-fork': [712736640], 'qa2004-new-github': [712736632], 'qa2004-after-off': [712736655]}
+PR (1, 'https://github.com/kodus-qa/qa2004-after-off/pull/1') 17:53:37
