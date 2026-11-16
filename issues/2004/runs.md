@@ -21,5 +21,23 @@ Restored after the run: mode manual, `repository_selection` / `repository_sync_s
 ## Azure Repos (2026-11-13)
 Preview 5 visible / 4 to add; `mode=all` → added 4/4 with QA subscriptions on all 5 repos; new repo `qa-2004-new` added by the next cron with subscriptions, its PR reviewed; repo with automated review off kept off after the sync and its PR skipped. Restored the same way.
 
+
+## GitHub token (team `githubqa@kodus.io`, org `kodus-qa`, 2026-11-16)
+Integration is a token scoped to the new test org `kodus-qa`: the credential sees only `school` (selected), `gym`, `qa2004-archived` (archived), `qa2004-fork` (fork). BYOK DeepSeek V4.1 Flash @ Fireworks.
+
+| # | Case | Result |
+|---|---|---|
+| UI | Switch in Settings > Git | **Fail.** Clicking the switch crashes the page ("Something went wrong!", `TypeError: Cannot read properties of undefined (reading 'archived')`) right after `GET …/repository-selection/preview` returns 200. Same crash on the Bitbucket team. Screens: ui-git-shot-1.png, ui-git-enable-2-modal.png |
+| 1 | Count before turning it on | preview `visible 4, eligible 2, alreadySelected 1, toAdd 1, skipped {archived 1, forksAndMirrors 1}` |
+| 2 | Turn on (API) + first sync | `mode=all` 17:23:57 → sync `done, added 1/1, trigger enable` in 1 s; `gym` added with a QA webhook; archived and fork untouched |
+| 3 | Repo created after | `qa2004-new-github` created 17:24:37 → added by the 17:30 cron (`trigger cron, added 1`), webhook, `repositories` row on the REPOSITORIES config `679bca4b…`; PR #1 reviewed |
+| 6 | Exclusion survives sync | `gym` automated review off: PR #1 skipped `Automated Review is disabled`; still `false` after the 17:40 cron; `@kody start-review` reviewed it |
+| 7 | Removal refused in `all` | `POST /code-management/repositories {type: replace}` without `gym` → 400 with the expected message; log `Rejected a repository removal…` |
+| 8 | Include forks | off → preview with forks `toAdd 1, forksAndMirrors 0` → on with forks: `qa2004-fork` added with webhook; archived still out |
+| 9 | Turn off | `mode=manual` 17:43:55; `qa2004-after-off` created 17:44 not added by the 17:50 cron; no sync log for the team after the switch |
+| 10 | Manual team | `qa2004-after-off` added via `POST /code-management/repositories {type: append}`: webhook created, PR #1 reviewed. **Fail:** every other repository's webhook was deleted and recreated (ids 712725228→712736625 etc.). A `replace` save of the same list keeps every id; an `append` of an already-selected repo recreates all hooks except its own (case10_replace_vs_append.txt) |
+| 11 | Idempotent cron | 17:40 cron `added 0`; same hook ids, one per repo |
+| 4 | GitHub App events | not applicable (token integration) |
+
 ## Not covered
-GitHub (token and App events), GitLab, forks/mirrors included, seat gate on automated-off repos (orgs are trial), 429/403 handling, Bitbucket Data Center and Forgejo.
+GitHub App events, GitLab (the only GitLab test credential sees third-party groups), forks/mirrors included, seat gate on automated-off repos (orgs are trial), 429/403 handling, Bitbucket Data Center and Forgejo.
