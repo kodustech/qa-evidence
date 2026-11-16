@@ -1,0 +1,12 @@
+REPOSITORIES ['school', 'gym', 'qa2004-new-github', 'qa2004-after-off']
+t0 {'gym': [712829764], 'school': [712737425], 'qa2004-archived': [], 'qa2004-fork': [], 'qa2004-new-github': [712829774], 'qa2004-after-off': [712829777]}
+append existing 201
+after append existing {'gym': [712829764], 'school': [712737425], 'qa2004-archived': [], 'qa2004-fork': [], 'qa2004-new-github': [712829774], 'qa2004-after-off': [712829777]} UNCHANGED
+off 200
+replace without gym 201
+after replace w/o gym {'gym': [], 'school': [712737425], 'qa2004-archived': [], 'qa2004-fork': [], 'qa2004-new-github': [712829774], 'qa2004-after-off': [712829777]}
+gym hook removed True | others unchanged True
+append gym 201
+after append gym {'gym': [712830185], 'school': [712737425], 'qa2004-archived': [], 'qa2004-fork': [], 'qa2004-new-github': [712829774], 'qa2004-after-off': [712829777]}
+gym hook created True | others unchanged True
+REPOSITORIES ['school', 'qa2004-new-github', 'qa2004-after-off', 'gym']
