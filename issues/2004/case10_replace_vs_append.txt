@@ -1,0 +1,6 @@
+hooks t0 {'gym': [712736625], 'school': [712736617], 'qa2004-archived': [], 'qa2004-fork': [712736640], 'qa2004-new-github': [712736632], 'qa2004-after-off': [712736655]}
+replace same list 201 {"data":{"status":true},"statusCode":201,"type":"Object"}
+hooks after replace {'gym': [712736625], 'school': [712736617], 'qa2004-archived': [], 'qa2004-fork': [712736640], 'qa2004-new-github': [712736632], 'qa2004-after-off': [712736655]} unchanged
+append existing repo 201 {"data":{"status":true},"statusCode":201,"type":"Object"}
+hooks after append {'gym': [712737434], 'school': [712737425], 'qa2004-archived': [], 'qa2004-fork': [712737452], 'qa2004-new-github': [712737443], 'qa2004-after-off': [712736655]} CHANGED
+REPOSITORIES ['school', 'gym', 'qa2004-new-github', 'qa2004-fork', 'qa2004-after-off']
