@@ -1,0 +1,9 @@
+hooks before {'qa2004-fork': [], 'qa2004-archived': [], 'gym': [], 'sartorijr14-project': [(93631715, 'https://qa.api.kodus.io/gitlab/webhook')]}
+case1 preview 200 {"data":{"visible":4,"eligible":2,"alreadySelected":1,"toAdd":1,"skipped":{"archived":1,"forksAndMirrors":1}},"statusCode":200,"type":"Object"}
+control MR (1, 'https://gitlab.com/sartorijr14-group/sartorijr14-project/-/merge_requests/1')
+t_enable 18:20:12
+case2 PUT 200 {"data":{"mode":"all","includeForksAndMirrors":false,"updatedAt":"2026-11-16T18:20:13.449Z","updatedBy":"d48dabab-5a95-46d6-b5f8-5675fab84473"},"statusCode":200,"type":"Object"}
+selection {"mode": "all", "includeForksAndMirrors": false, "sync": {"done": 1, "added": 1, "total": 1, "status": "done", "skipped": {"archived": 1, "forksAndMirrors": 1}, "trigger": "enable", "visible": 4, "startedAt": "2026-11-16T18:20:13.952Z", "finishedAt": "2026-11-16T18:20:14.790Z", "lastSuccessAt": "2026-11-16T18:20:14.790Z", "pendingAstBuilds": 0, "pendingBackfills": 0}}
+REPOSITORIES ['sartorijr14-group/sartorijr14-project', 'sartorijr14-group/gym']
+hooks after {'qa2004-fork': [], 'qa2004-archived': [], 'gym': [(93631727, 'https://qa.api.kodus.io/gitlab/webhook')], 'sartorijr14-project': [(93631715, 'https://qa.api.kodus.io/gitlab/webhook')]}
+rows [['sartorijr14-group/sartorijr14-project', 'ready', '2163a767-97ad-4393-a525-bab7b7066396'], ['sartorijr14-group/gym', 'building', '2163a767-97ad-4393-a525-bab7b7066396']]
