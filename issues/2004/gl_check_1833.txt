@@ -1,0 +1,24 @@
+selection {'mode': 'all', 'includeForksAndMirrors': False, 'sync': {'done': 8, 'added': 8, 'total': 8, 'status': 'done', 'skipped': {'archived': 1, 'forksAndMirrors': 1}, 'trigger': 'cron', 'visible': 12, 'startedAt': '2026-11-16T18:30:01.633Z', 'finishedAt': '2026-11-16T18:30:12.107Z', 'lastSuccessAt': '2026-11-16T18:30:12.107Z', 'pendingAstBuilds': 3, 'pendingBackfills': 0}}
+REPOSITORIES ['sartorijr14-project', 'gym', 'qa2004-ast-7', 'qa2004-ast-6', 'qa2004-ast-5', 'qa2004-ast-4', 'qa2004-ast-3', 'qa2004-ast-2', 'qa2004-ast-1', 'qa2004-new-gitlab']
+hooks {'qa2004-ast-7': [93631961], 'qa2004-ast-6': [93631962], 'qa2004-ast-5': [93631963], 'qa2004-ast-4': [93631965], 'qa2004-ast-3': [93631966], 'qa2004-ast-2': [93631968], 'qa2004-ast-1': [93631970], 'qa2004-new-gitlab': [93631973], 'qa2004-fork': [], 'qa2004-archived': [], 'gym': [93631727], 'sartorijr14-project': [93631715]}
+rows [['sartorijr14-project', 'ready', '18:19:39'], ['gym', 'ready', '18:20:14'], ['qa2004-ast-7', 'failed', '18:30:01'], ['qa2004-ast-6', 'failed', '18:30:01'], ['qa2004-ast-5', 'failed', '18:30:01'], ['qa2004-ast-4', 'failed', '18:30:01'], ['qa2004-ast-3', 'failed', '18:30:01'], ['qa2004-ast-2', 'pending', '18:30:01'], ['qa2004-ast-1', 'pending', '18:30:01'], ['qa2004-new-gitlab', 'pending', '18:30:01']]
+gym automatedReviewActive [['false']]
+execs [['77176886', '1', 'skipped', '18:20:14', 'No Active Subscription — Check subscription settings'], ['89022181', '1', 'skipped', '18:21:51', 'Prerequisites validation failed.']]
+sartorijr14-project#1 [('sartorijr14', '## Your trial has ended! 😢\n\nTo keep getting reviews, activate your plan [here](https://app.kodus.io/')]
+gym#1 []
+qa2004-new-gitlab#1 []
+log 18:19:39 [AST-GRAPH] Enqueued full build for sartorijr14-group/sartorijr14-project
+log 18:20:13 Repository selection mode changed
+log 18:20:14 GitLab webhook setup finished
+log 18:20:14 Recorded webhook setup outcome
+log 18:20:14 [AST-GRAPH] Enqueued full build for sartorijr14-group/gym
+log 18:20:14 Repository sync finished for team
+log 18:21:52 Rejected a repository removal while the team reviews all repositories
+log 18:30:11 GitLab webhook setup finished
+log 18:30:11 Recorded webhook setup outcome
+log 18:30:11 [AST-GRAPH] Enqueued full build for sartorijr14-group/qa2004-ast-7
+log 18:30:12 [AST-GRAPH] Enqueued full build for sartorijr14-group/qa2004-ast-6
+log 18:30:12 [AST-GRAPH] Enqueued full build for sartorijr14-group/qa2004-ast-5
+log 18:30:12 [AST-GRAPH] Enqueued full build for sartorijr14-group/qa2004-ast-4
+log 18:30:12 [AST-GRAPH] Enqueued full build for sartorijr14-group/qa2004-ast-3
+log 18:30:12 Repository sync finished for team
