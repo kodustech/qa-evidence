@@ -1,0 +1,106 @@
+### merge b28cc52f1
+  console.log
+    {
+     "changed": [
+      "data/qa2206_seed.sql",
+      "src/qa2206_label.ts"
+     ],
+     "ignoredWithDiff": [],
+     "tails": {
+      "data/qa2206_seed.sql": "... (diff truncated: first 50000 of 50012 lines shown; the rest of this file's changes are not in this diff)",
+      "src/qa2206_label.ts": "     4 "
+     },
+     "lines": {
+      "data/qa2206_seed.sql": 50002,
+      "src/qa2206_label.ts": 6
+     },
+     "reviewWarnings": [
+      {
+       "kind": "DIFF_TRUNCATED",
+       "reason": "patch_line_limit",
+       "contextWindowTokens": 0,
+       "modelName": "",
+       "detail": "1 file diff(s) cut at 50000 lines, the rest was not reviewed: data/qa2206_seed.sql"
+      }
+     ]
+    }
+
+
+  console.log
+    {
+     "changed": [
+      "src/qa2206_label.ts"
+     ],
+     "ignoredWithDiff": [
+      "data/qa2206_seed.sql"
+     ],
+     "tails": {
+      "src/qa2206_label.ts": "     4 ",
+      "data/qa2206_seed.sql": "... (diff truncated: first 50000 of 50012 lines shown; the rest of this file's changes are not in this diff)"
+     },
+     "lines": {
+      "src/qa2206_label.ts": 6,
+      "data/qa2206_seed.sql": 50002
+     },
+     "reviewWarnings": [
+      {
+       "kind": "DIFF_TRUNCATED",
+       "reason": "patch_line_limit",
+       "contextWindowTokens": 0,
+       "modelName": "",
+       "detail": "1 file diff(s) cut at 50000 lines, the rest was not reviewed: data/qa2206_seed.sql"
+      }
+     ]
+    }
+
+
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        0.446 s, estimated 1 s
+Ran all test suites matching libs/code-review/pipeline/stages/qa2206.harness.spec.ts.
+### first parent f419e6780
+  console.log
+    {
+     "changed": [
+      "data/qa2206_seed.sql",
+      "src/qa2206_label.ts"
+     ],
+     "ignoredWithDiff": [],
+     "tails": {
+      "data/qa2206_seed.sql": " 49999 +INSERT INTO qa_rows (id, label) VALUES (49999, 'row 49999');",
+      "src/qa2206_label.ts": "     4 "
+     },
+     "lines": {
+      "data/qa2206_seed.sql": 50001,
+      "src/qa2206_label.ts": 6
+     },
+     "reviewWarnings": null
+    }
+
+
+  console.log
+    {
+     "changed": [
+      "src/qa2206_label.ts"
+     ],
+     "ignoredWithDiff": [
+      "data/qa2206_seed.sql"
+     ],
+     "tails": {
+      "src/qa2206_label.ts": "     4 ",
+      "data/qa2206_seed.sql": " 49999 +INSERT INTO qa_rows (id, label) VALUES (49999, 'row 49999');"
+     },
+     "lines": {
+      "src/qa2206_label.ts": 6,
+      "data/qa2206_seed.sql": 50001
+     },
+     "reviewWarnings": null
+    }
+
+
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        0.433 s, estimated 1 s
+Ran all test suites matching libs/code-review/pipeline/stages/qa2206.harness.spec.ts.
