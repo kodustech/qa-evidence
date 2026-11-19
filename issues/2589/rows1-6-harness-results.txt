@@ -1,0 +1,54 @@
+# #2589 rows 1-6 local harness: real code, only external deps stubbed (TypeORM repo, AMQP channel/publish, analysis service, repo lookup)
+# files: qa2589/rows1-6.harness.spec.ts, qa2589/row4.harness.spec.ts (API_NODE_ENV=test npx jest <file>)
+
+=== commit c96dd79fc (merge of #2590)
+RESULT row1 | GET /team use case | []
+RESULT row1 | GET /cli-reviews/:id use case timeline | []
+RESULT row2 | unhandled rejections | []
+RESULT row2 | ack/nack calls on the original delivery | []
+RESULT row3 | AuthService log entries for the duplicate insert | [{"level":"warn","message":"Refresh token already stored by a concurrent refresh of the same token","hasError":false}]
+RESULT row5 | merge path: calls | [["createNewIssues","s1"]]
+RESULT row5 | merge path: warn/error logs | []
+RESULT row5 | resolve path: issuesService calls with an id | []
+RESULT row5 | resolve path: warn/error logs | ["Ignoring an issue id the model returned that was not in its prompt"]
+RESULT row6 | statements only (the prod case) | {"unmet":[],"slices":[],"grepCalls":0}
+RESULT row6 | adds a nameable function | {"unmet":[],"slices":["symbol-references"],"grepCalls":1}
+RESULT row6 | adds a definition the extractor cannot name (async fn) | {"unmet":["r1"],"slices":[],"grepCalls":0}
+Tests:       6 passed, 6 total
+RESULT row4 | metadata.parameters as logged | "[2 values]"
+RESULT row4 | secret present in logged metadata | false
+RESULT row4 | secret present in serialized error (detail/parameters/driverError) | false
+RESULT row4 | constraint kept in serialized error | true
+RESULT row4 | column name kept in serialized error | true
+Tests:       1 passed, 1 total
+
+=== commit d5526275e (first parent, before #2590)
+RESULT row1 | GET /team use case THREW | "Cannot read properties of null (reading 'map')"
+RESULT row1 | GET /cli-reviews/:id use case THREW | "Cannot read properties of null (reading 'map')"
+RESULT row2 | unhandled rejections | []
+RESULT row2 | ack/nack calls on the original delivery | []
+RESULT row3 | AuthService log entries for the duplicate insert | [{"level":"error","message":"Failed to persist refresh token after login — token issued but not stored; subsequent refresh will fail","hasError":true}]
+RESULT row5 | merge path: calls | [["createNewIssues","s1"]]
+RESULT row5 | merge path: warn/error logs | []
+RESULT row5 | resolve path: issuesService calls with an id | []
+RESULT row5 | resolve path: warn/error logs | []
+RESULT row6 | statements only (the prod case) | {"unmet":["r1"],"slices":[],"grepCalls":0}
+RESULT row6 | adds a nameable function | {"unmet":[],"slices":["symbol-references"],"grepCalls":1}
+RESULT row6 | adds a definition the extractor cannot name (async fn) | {"unmet":["r1"],"slices":[],"grepCalls":0}
+● #2589 rows 1-6 harness › row 2: real golevelup consumer + RabbitMQErrorHandler, republish fails with Channel closed
+CRITICAL: Message m-1 may be lost - republish failed: Channel closed
+Tests:       1 failed, 5 passed, 6 total
+RESULT row4 | metadata.parameters as logged | "CONTAINS SECRET"
+RESULT row4 | secret present in logged metadata | true
+RESULT row4 | secret present in serialized error (detail/parameters/driverError) | true
+RESULT row4 | constraint kept in serialized error | true
+RESULT row4 | column name kept in serialized error | true
+Tests:       1 passed, 1 total
+
+=== commit c5eb9f613 (where #2589 read the causes), row 5 only
+RESULT row5 | merge path THREW | "Cast to ObjectId failed for value \"6a96d2e89ea5d12c2154548\""
+RESULT row5 | merge path: warn/error logs | []
+RESULT row5 | resolve path: issuesService calls with an id | [["updateStatus","6a96d2e89ea5d12c2154548"]]
+RESULT row5 | resolve path: warn/error logs | []
+
+Note row 2 at d5526275e: Jest intercepts the unhandled rejection before the test's own listener, so the listener reads [] and Jest fails the test with the rejection itself (CRITICAL: Message m-1 may be lost - republish failed: Channel closed), the same text as production's GlobalExceptionHandler records. At c96dd79fc the test passes: no rejection, delivery left unacked.
