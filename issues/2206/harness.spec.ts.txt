@@ -3,7 +3,7 @@ import { Test } from '@nestjs/testing';
 import { FetchChangedFilesStage } from './fetch-changed-files.stage';
 import { PULL_REQUEST_MANAGER_SERVICE_TOKEN } from '@libs/code-review/domain/contracts/PullRequestManagerService.contract';
 
-const DIFF = '/private/tmp/claude-501/-Users-juniorsartori-Projects-Kody-kodus-ai/57c3ac3f-dbc4-41fb-a7b6-02179ab4b0b5/scratchpad/q/pr5.diff';
+const DIFF = '<scratch>';
 
 function filesFromDiff(diff: string) {
     return diff.split(/^diff --git /m).filter(Boolean).map((sec) => {
