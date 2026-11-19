@@ -1,0 +1,21 @@
+# #2452 billing-failure simulation (local, billing URL -> HTTP stub)
+
+Real `LicenseService` (axios, `GLOBAL_KODUS_SERVICE_BILLING` pointed at a local stub), real `PermissionValidationService` and real `ValidatePrerequisitesStage`, run through `stage.execute()` with cloud mode on and onboarding finished (so the missing-trial heal is reachable). Only the git provider, DB-backed parameter services and notifications are fakes; the PR comment body is captured from `createIssueComment`. `POST /trial` on the stub answers 500.
+
+- **after**: merge `fcb864391` (PR #2522)
+- **before**: its first parent `8ddd18755`
+
+| Billing answer | Before: PR comment | Before: billing calls | After: PR comment | After: skip reason | After: billing calls |
+|---|---|---|---|---|---|
+| validate-org-license 500 | ## Your trial has ended! 😢 | GET /api/billing/validate-org-license<br>POST /api/billing/trial<br>POST /api/billing/trial<br>POST /api/billing/trial | ## Subscription check unavailable ⏳ | Subscription Check Unavailable — The license service is temporarily unreachable — re-run the review in a few minutes | GET /api/billing/validate-org-license |
+| validate-org-license 503 | ## Your trial has ended! 😢 | GET /api/billing/validate-org-license<br>POST /api/billing/trial<br>POST /api/billing/trial<br>POST /api/billing/trial | ## Subscription check unavailable ⏳ | Subscription Check Unavailable — The license service is temporarily unreachable — re-run the review in a few minutes | GET /api/billing/validate-org-license |
+| validate-org-license 429 | ## Your trial has ended! 😢 | GET /api/billing/validate-org-license<br>POST /api/billing/trial<br>POST /api/billing/trial<br>POST /api/billing/trial | ## Subscription check unavailable ⏳ | Subscription Check Unavailable — The license service is temporarily unreachable — re-run the review in a few minutes | GET /api/billing/validate-org-license |
+| validate-org-license 408 | ## Your trial has ended! 😢 | GET /api/billing/validate-org-license<br>POST /api/billing/trial<br>POST /api/billing/trial<br>POST /api/billing/trial | ## Subscription check unavailable ⏳ | Subscription Check Unavailable — The license service is temporarily unreachable — re-run the review in a few minutes | GET /api/billing/validate-org-license |
+| validate-org-license socket hang up | ## Your trial has ended! 😢 | GET /api/billing/validate-org-license<br>POST /api/billing/trial<br>POST /api/billing/trial<br>POST /api/billing/trial | ## Subscription check unavailable ⏳ | Subscription Check Unavailable — The license service is temporarily unreachable — re-run the review in a few minutes | GET /api/billing/validate-org-license |
+| billing unreachable (ECONNREFUSED) | ## Your trial has ended! 😢 | (connection refused) | ## Subscription check unavailable ⏳ | Subscription Check Unavailable — The license service is temporarily unreachable — re-run the review in a few minutes | (connection refused) |
+| validate-org-license 404, POST /trial 500 | ## Your trial has ended! 😢 | GET /api/billing/validate-org-license<br>POST /api/billing/trial<br>POST /api/billing/trial<br>POST /api/billing/trial | ## Your trial has ended! 😢 | No Active Subscription — Check subscription settings | GET /api/billing/validate-org-license<br>POST /api/billing/trial<br>POST /api/billing/trial<br>POST /api/billing/trial |
+| validate-org-license 401 | ## Your trial has ended! 😢 | GET /api/billing/validate-org-license<br>POST /api/billing/trial<br>POST /api/billing/trial<br>POST /api/billing/trial | ## Your trial has ended! 😢 | No Active Subscription — Check subscription settings | GET /api/billing/validate-org-license<br>POST /api/billing/trial<br>POST /api/billing/trial<br>POST /api/billing/trial |
+| 200 {valid:false, subscriptionStatus:trial} (expired) | ## Your trial has ended! 😢 | GET /api/billing/validate-org-license | ## Your trial has ended! 😢 | No Active Subscription — Check subscription settings | GET /api/billing/validate-org-license |
+| 200 {valid:true, subscriptionStatus:trial} (active) | (none, review proceeds) | GET /api/billing/validate-org-license | (none, review proceeds) | started | GET /api/billing/validate-org-license |
+
+Harness source: [billing-stub.spec.ts](billing-stub.spec.ts). Run: `API_NODE_ENV=test npx jest --config jest.config.ts --runInBand qa-2452/billing-stub.spec.ts` in a worktree at each commit.
