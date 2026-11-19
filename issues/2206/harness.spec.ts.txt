@@ -1,0 +1,51 @@
+import * as fs from 'fs';
+import { Test } from '@nestjs/testing';
+import { FetchChangedFilesStage } from './fetch-changed-files.stage';
+import { PULL_REQUEST_MANAGER_SERVICE_TOKEN } from '@libs/code-review/domain/contracts/PullRequestManagerService.contract';
+
+const DIFF = '/private/tmp/claude-501/-Users-juniorsartori-Projects-Kody-kodus-ai/57c3ac3f-dbc4-41fb-a7b6-02179ab4b0b5/scratchpad/q/pr5.diff';
+
+function filesFromDiff(diff: string) {
+    return diff.split(/^diff --git /m).filter(Boolean).map((sec) => {
+        const filename = sec.match(/^a\/(\S+) b\//)[1];
+        const patch = sec.slice(sec.indexOf('@@'));
+        return { filename, status: 'added', patch };
+    });
+}
+
+async function run(config: any) {
+    const files = filesFromDiff(fs.readFileSync(DIFF, 'utf8'));
+    const svc = {
+        getChangedFilesMetadata: jest.fn().mockResolvedValue(files),
+        enrichFilesWithContent: jest.fn(async (_o: any, _r: any, _p: any, list: any[]) => list),
+    };
+    const m = await Test.createTestingModule({
+        providers: [FetchChangedFilesStage, { provide: PULL_REQUEST_MANAGER_SERVICE_TOKEN, useValue: svc }],
+    }).compile();
+    const stage = m.get(FetchChangedFilesStage);
+    const ctx: any = {
+        pullRequest: { number: 5 }, repository: { id: '2913729', name: 'sartorijr/gym' },
+        organizationAndTeamData: {}, codeReviewConfig: config, pipelineMetadata: {},
+    };
+    const out: any = await stage.execute(ctx);
+    const all = [...(out.changedFiles ?? []), ...(out.ignoredFileChanges ?? [])];
+    const report = {
+        changed: (out.changedFiles ?? []).map((f: any) => f.filename),
+        ignoredWithDiff: (out.ignoredFileChanges ?? []).filter((f: any) => f.patchWithLinesStr).map((f: any) => f.filename),
+        tails: Object.fromEntries(all.filter((f: any) => f.patchWithLinesStr).map((f: any) => [f.filename, f.patchWithLinesStr.split('\n').slice(-1)[0]])),
+        lines: Object.fromEntries(all.filter((f: any) => f.patchWithLinesStr).map((f: any) => [f.filename, f.patchWithLinesStr.split('\n').length])),
+        reviewWarnings: out.reviewWarnings ?? null,
+    };
+    console.log(JSON.stringify(report, null, 1));
+    return report;
+}
+
+describe('qa-2206 harness on the real Codeberg PR #5 diff', () => {
+    it('default config', async () => { await run({ ignorePaths: [] }); });
+    it('seed ignored, named by a custom agent', async () => {
+        await run({
+            ignorePaths: ['data/**'],
+            customAgents: [{ id: 'a1', name: 'Seeds', enabled: true, instructions: 'Check the seed.', scope: { include: ['data/qa2206_seed.sql'] } }],
+        });
+    });
+});
