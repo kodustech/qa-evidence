@@ -1,0 +1,24 @@
+{
+ "pre-fix 2026-11-01..2026-11-18T19:00Z": {
+  "records": 63,
+  "byMessage": {
+   "RabbitMQErrorHandler warn Message processing failed, retrying (1/5)": 21,
+   "RabbitMQErrorHandler warn Message processing failed, retrying (2/5)": 9,
+   "RabbitMQErrorHandler warn Message processing failed, retrying (3/5)": 9,
+   "RabbitMQErrorHandler warn Message processing failed, retrying (4/5)": 8,
+   "RabbitMQErrorHandler warn Message processing failed, retrying (5/5)": 8,
+   "RabbitMQErrorHandler error Max retries exceeded, sending to DLQ": 8
+  }
+ },
+ "post-fix 2026-11-18T21:00Z..now": {
+  "records": 6,
+  "byMessage": {
+   "RabbitMQErrorHandler warn Message processing failed, retrying (1/5)": 1,
+   "RabbitMQErrorHandler warn Message processing failed, retrying (2/5)": 1,
+   "RabbitMQErrorHandler warn Message processing failed, retrying (3/5)": 1,
+   "RabbitMQErrorHandler warn Message processing failed, retrying (4/5)": 1,
+   "RabbitMQErrorHandler warn Message processing failed, retrying (5/5)": 1,
+   "RabbitMQErrorHandler error Max retries exceeded, sending to DLQ": 1
+  }
+ }
+}
