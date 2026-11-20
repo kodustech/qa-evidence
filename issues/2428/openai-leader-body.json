@@ -1,0 +1,28 @@
+{
+ "input": [
+  {
+   "role": "developer",
+   "content": "You check a set of team rules against the diff of a SINGLE file. Report EVERY added line that violates ANY of the listed... [1914 chars]"
+  },
+  {
+   "role": "user",
+   "content": [
+    {
+     "type": "input_text",
+     "text": "<Rules>\n[1] No any in TypeScript\n  description: Do not use the any type in TypeScript code. Use unknown or a precise typ... [320 chars]",
+     "prompt_cache_breakpoint": {
+      "mode": "explicit"
+     }
+    },
+    {
+     "type": "input_text",
+     "text": "<File path=\"src/f1.ts\">\nEach diff line is prefixed with its file line number; '+' marks a line ADDED by this PR.\n```diff... [1606 chars]"
+    }
+   ]
+  }
+ ],
+ "prompt_cache_options": {
+  "mode": "explicit"
+ },
+ "store": false
+}
