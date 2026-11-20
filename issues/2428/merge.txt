@@ -1,0 +1,239 @@
+=== anthropic / kody  err=None  cacheLog=["[kody-rules-shard] prompt cache: 11 file shard(s) in 3 head group(s), 2 shared; 7 of 8 sibling(s) ran after their group's first shard"]
+  src/f1.ts          0-  401  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.anthropic.com/v1/messages
+  docs/a.md          0-  402  markers=['.messages[0].content[0].cache_control']  user=[['text(278)', '<Rules>', True], ['text(1585)', '<File p', False]]  /api.anthropic.com/v1/messages
+  tools/run.py       0-  402  markers=[]  user=[['text(1874)', '<Rules>', False]]  /api.anthropic.com/v1/messages
+  src/f2.ts          0-  403  markers=[]  user=[['text(1926)', '<Rules>', False]]  /api.anthropic.com/v1/messages
+  src/f3.ts        441-  844  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.anthropic.com/v1/messages
+  src/f4.ts        441-  844  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.anthropic.com/v1/messages
+  src/f5.ts        441-  844  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.anthropic.com/v1/messages
+  src/f6.ts        441-  844  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.anthropic.com/v1/messages
+  src/f7.ts        850- 1251  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.anthropic.com/v1/messages
+  src/f8.ts        850- 1251  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.anthropic.com/v1/messages
+  docs/b.md        850- 1251  markers=['.messages[0].content[0].cache_control']  user=[['text(278)', '<Rules>', True], ['text(1585)', '<File p', False]]  /api.anthropic.com/v1/messages
+  src/f5.ts       4553- 4954  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.anthropic.com/v1/messages
+=== anthropic / compiler  err=None  cacheLog=None
+  None               0-  402  markers=['.system[0].cache_control']  user=[['text(161)', '<Rule> ', False]]  /api.anthropic.com/v1/messages
+=== anthropic / plain  err=None  cacheLog=None
+  None               0-  401  markers=[]  user=[['text(32)', 'Summari', False]]  /api.anthropic.com/v1/messages
+=== anthropic_compatible / kody  err=None  cacheLog=["[kody-rules-shard] prompt cache: 11 file shard(s) in 3 head group(s), 2 shared; 7 of 8 sibling(s) ran after their group's first shard"]
+  src/f1.ts          0-  403  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /qa-fake-gateway.example/anthropic/v1/messages
+  docs/a.md          1-  403  markers=['.messages[0].content[0].cache_control']  user=[['text(278)', '<Rules>', True], ['text(1585)', '<File p', False]]  /qa-fake-gateway.example/anthropic/v1/messages
+  tools/run.py       1-  403  markers=[]  user=[['text(1874)', '<Rules>', False]]  /qa-fake-gateway.example/anthropic/v1/messages
+  src/f2.ts          1-  403  markers=[]  user=[['text(1926)', '<Rules>', False]]  /qa-fake-gateway.example/anthropic/v1/messages
+  src/f3.ts        409-  810  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /qa-fake-gateway.example/anthropic/v1/messages
+  src/f6.ts        409-  810  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /qa-fake-gateway.example/anthropic/v1/messages
+  src/f4.ts        409-  810  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /qa-fake-gateway.example/anthropic/v1/messages
+  src/f5.ts        409-  810  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /qa-fake-gateway.example/anthropic/v1/messages
+  src/f7.ts        814- 1216  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /qa-fake-gateway.example/anthropic/v1/messages
+  src/f8.ts        814- 1216  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /qa-fake-gateway.example/anthropic/v1/messages
+  docs/b.md        814- 1216  markers=['.messages[0].content[0].cache_control']  user=[['text(278)', '<Rules>', True], ['text(1585)', '<File p', False]]  /qa-fake-gateway.example/anthropic/v1/messages
+  src/f5.ts       4464- 4866  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /qa-fake-gateway.example/anthropic/v1/messages
+=== anthropic_compatible / compiler  err=None  cacheLog=None
+  None               0-  402  markers=['.system[0].cache_control']  user=[['text(161)', '<Rule> ', False]]  /qa-fake-gateway.example/anthropic/v1/messages
+=== anthropic_compatible / plain  err=None  cacheLog=None
+  None               0-  402  markers=[]  user=[['text(32)', 'Summari', False]]  /qa-fake-gateway.example/anthropic/v1/messages
+=== azure_gpt61 / kody  err=None  cacheLog=["[kody-rules-shard] prompt cache: 11 file shard(s) in 3 head group(s), 2 shared; 7 of 8 sibling(s) ran after their group's first shard"]
+  src/f1.ts          0-  400  markers=[]  user=[['text(1926)', '<Rules>', False]]  /qa-fake.openai.azure.com/openai/v1/responses
+  docs/a.md          0-  402  markers=[]  user=[['text(1863)', '<Rules>', False]]  /qa-fake.openai.azure.com/openai/v1/responses
+  tools/run.py       0-  402  markers=[]  user=[['text(1874)', '<Rules>', False]]  /qa-fake.openai.azure.com/openai/v1/responses
+  src/f2.ts          0-  402  markers=[]  user=[['text(1926)', '<Rules>', False]]  /qa-fake.openai.azure.com/openai/v1/responses
+  src/f3.ts        402-  803  markers=[]  user=[['text(1926)', '<Rules>', False]]  /qa-fake.openai.azure.com/openai/v1/responses
+  src/f4.ts        405-  805  markers=[]  user=[['text(1926)', '<Rules>', False]]  /qa-fake.openai.azure.com/openai/v1/responses
+  src/f5.ts        406-  806  markers=[]  user=[['text(1926)', '<Rules>', False]]  /qa-fake.openai.azure.com/openai/v1/responses
+  src/f6.ts        406-  806  markers=[]  user=[['text(1926)', '<Rules>', False]]  /qa-fake.openai.azure.com/openai/v1/responses
+  src/f7.ts        805- 1207  markers=[]  user=[['text(1926)', '<Rules>', False]]  /qa-fake.openai.azure.com/openai/v1/responses
+  src/f8.ts        806- 1207  markers=[]  user=[['text(1926)', '<Rules>', False]]  /qa-fake.openai.azure.com/openai/v1/responses
+  docs/b.md        807- 1207  markers=[]  user=[['text(1863)', '<Rules>', False]]  /qa-fake.openai.azure.com/openai/v1/responses
+  src/f5.ts       4668- 5070  markers=[]  user=[['text(1926)', '<Rules>', False]]  /qa-fake.openai.azure.com/openai/v1/responses
+=== azure_gpt61 / compiler  err=None  cacheLog=None
+  None               0-  402  markers=[]  user=[['text(161)', '<Rule> ', False]]  /qa-fake.openai.azure.com/openai/v1/responses
+=== azure_gpt61 / plain  err=None  cacheLog=None
+  None               0-  402  markers=[]  user=[['text(32)', 'Summari', False]]  /qa-fake.openai.azure.com/openai/v1/responses
+=== azure_module / kody  err=None  cacheLog=["[kody-rules-shard] prompt cache: 11 file shard(s) in 3 head group(s), 2 shared; 7 of 8 sibling(s) ran after their group's first shard"]
+  src/f1.ts          0-  401  markers=[]  user=[['text(1926)', '<Rules>', False]]  openai.azure.com/openai/deployments/gpt-6-1-deploy/responses
+  docs/a.md          0-  402  markers=[]  user=[['text(1863)', '<Rules>', False]]  openai.azure.com/openai/deployments/gpt-6-1-deploy/responses
+  tools/run.py       0-  402  markers=[]  user=[['text(1874)', '<Rules>', False]]  openai.azure.com/openai/deployments/gpt-6-1-deploy/responses
+  src/f2.ts          0-  402  markers=[]  user=[['text(1926)', '<Rules>', False]]  openai.azure.com/openai/deployments/gpt-6-1-deploy/responses
+  src/f3.ts        415-  818  markers=[]  user=[['text(1926)', '<Rules>', False]]  openai.azure.com/openai/deployments/gpt-6-1-deploy/responses
+  src/f4.ts        416-  818  markers=[]  user=[['text(1926)', '<Rules>', False]]  openai.azure.com/openai/deployments/gpt-6-1-deploy/responses
+  src/f5.ts        416-  818  markers=[]  user=[['text(1926)', '<Rules>', False]]  openai.azure.com/openai/deployments/gpt-6-1-deploy/responses
+  src/f6.ts        416-  818  markers=[]  user=[['text(1926)', '<Rules>', False]]  openai.azure.com/openai/deployments/gpt-6-1-deploy/responses
+  src/f7.ts        822- 1224  markers=[]  user=[['text(1926)', '<Rules>', False]]  openai.azure.com/openai/deployments/gpt-6-1-deploy/responses
+  src/f8.ts        822- 1224  markers=[]  user=[['text(1926)', '<Rules>', False]]  openai.azure.com/openai/deployments/gpt-6-1-deploy/responses
+  docs/b.md        822- 1224  markers=[]  user=[['text(1863)', '<Rules>', False]]  openai.azure.com/openai/deployments/gpt-6-1-deploy/responses
+  src/f5.ts       4772- 5172  markers=[]  user=[['text(1926)', '<Rules>', False]]  openai.azure.com/openai/deployments/gpt-6-1-deploy/responses
+=== azure_module / compiler  err=None  cacheLog=None
+  None               0-  402  markers=[]  user=[['text(161)', '<Rule> ', False]]  openai.azure.com/openai/deployments/gpt-6-1-deploy/responses
+=== azure_module / plain  err=None  cacheLog=None
+  None               0-  402  markers=[]  user=[['text(32)', 'Summari', False]]  openai.azure.com/openai/deployments/gpt-6-1-deploy/responses
+=== bedrock_claude / kody  err=None  cacheLog=["[kody-rules-shard] prompt cache: 11 file shard(s) in 3 head group(s), 2 shared; 5 of 8 sibling(s) ran after their group's first shard"]
+  tools/run.py       0-  403  markers=[]  user=[['text(1874)', '<Rules>', False]]  .amazonaws.com/model/us.anthropic.claude-sonnet-5-5/converse
+  src/f2.ts          0-  403  markers=[]  user=[['text(1926)', '<Rules>', False]]  .amazonaws.com/model/us.anthropic.claude-sonnet-5-5/converse
+  src/f1.ts          1-  403  markers=['.messages[0].content[1].cachePoint']  user=[['text(320)', '<Rules>', False], ['CACHEPOINT', '', True], ['text(1606)', '<File p', False]]  .amazonaws.com/model/us.anthropic.claude-sonnet-5-5/converse
+  docs/a.md          1-  403  markers=['.messages[0].content[1].cachePoint']  user=[['text(278)', '<Rules>', False], ['CACHEPOINT', '', True], ['text(1585)', '<File p', False]]  .amazonaws.com/model/us.anthropic.claude-sonnet-5-5/converse
+  src/f3.ts        416-  819  markers=[]  user=[['text(1926)', '<Rules>', False]]  .amazonaws.com/model/us.anthropic.claude-sonnet-5-5/converse
+  src/f4.ts        416-  819  markers=[]  user=[['text(1926)', '<Rules>', False]]  .amazonaws.com/model/us.anthropic.claude-sonnet-5-5/converse
+  src/f5.ts        416-  819  markers=['.messages[0].content[1].cachePoint']  user=[['text(320)', '<Rules>', False], ['CACHEPOINT', '', True], ['text(1606)', '<File p', False]]  .amazonaws.com/model/us.anthropic.claude-sonnet-5-5/converse
+  src/f6.ts        416-  819  markers=['.messages[0].content[1].cachePoint']  user=[['text(320)', '<Rules>', False], ['CACHEPOINT', '', True], ['text(1606)', '<File p', False]]  .amazonaws.com/model/us.anthropic.claude-sonnet-5-5/converse
+  src/f7.ts        824- 1225  markers=['.messages[0].content[1].cachePoint']  user=[['text(320)', '<Rules>', False], ['CACHEPOINT', '', True], ['text(1606)', '<File p', False]]  .amazonaws.com/model/us.anthropic.claude-sonnet-5-5/converse
+  src/f8.ts        824- 1225  markers=['.messages[0].content[1].cachePoint']  user=[['text(320)', '<Rules>', False], ['CACHEPOINT', '', True], ['text(1606)', '<File p', False]]  .amazonaws.com/model/us.anthropic.claude-sonnet-5-5/converse
+  docs/b.md        824- 1225  markers=['.messages[0].content[1].cachePoint']  user=[['text(278)', '<Rules>', False], ['CACHEPOINT', '', True], ['text(1585)', '<File p', False]]  .amazonaws.com/model/us.anthropic.claude-sonnet-5-5/converse
+  src/f5.ts       4731- 5133  markers=['.messages[0].content[1].cachePoint']  user=[['text(320)', '<Rules>', False], ['CACHEPOINT', '', True], ['text(1606)', '<File p', False]]  .amazonaws.com/model/us.anthropic.claude-sonnet-5-5/converse
+=== bedrock_claude / compiler  err=None  cacheLog=None
+  None               0-  402  markers=['.system[1].cachePoint']  user=[['text(161)', '<Rule> ', False]]  .amazonaws.com/model/us.anthropic.claude-sonnet-5-5/converse
+=== bedrock_claude / plain  err=None  cacheLog=None
+  None               0-  402  markers=[]  user=[['text(32)', 'Summari', False]]  .amazonaws.com/model/us.anthropic.claude-sonnet-5-5/converse
+=== bedrock_nova / kody  err=None  cacheLog=["[kody-rules-shard] prompt cache: 11 file shard(s) in 3 head group(s), 2 shared; 7 of 8 sibling(s) ran after their group's first shard"]
+  src/f1.ts          0-  401  markers=[]  user=[['text(1926)', '<Rules>', False]]  ast-1.amazonaws.com/model/us.amazon.nova-pro-v1%3A0/converse
+  docs/a.md          0-  401  markers=[]  user=[['text(1863)', '<Rules>', False]]  ast-1.amazonaws.com/model/us.amazon.nova-pro-v1%3A0/converse
+  src/f2.ts          0-  401  markers=[]  user=[['text(1926)', '<Rules>', False]]  ast-1.amazonaws.com/model/us.amazon.nova-pro-v1%3A0/converse
+  tools/run.py       0-  401  markers=[]  user=[['text(1874)', '<Rules>', False]]  ast-1.amazonaws.com/model/us.amazon.nova-pro-v1%3A0/converse
+  src/f3.ts        405-  806  markers=[]  user=[['text(1926)', '<Rules>', False]]  ast-1.amazonaws.com/model/us.amazon.nova-pro-v1%3A0/converse
+  src/f4.ts        405-  807  markers=[]  user=[['text(1926)', '<Rules>', False]]  ast-1.amazonaws.com/model/us.amazon.nova-pro-v1%3A0/converse
+  src/f5.ts        405-  807  markers=[]  user=[['text(1926)', '<Rules>', False]]  ast-1.amazonaws.com/model/us.amazon.nova-pro-v1%3A0/converse
+  src/f6.ts        405-  807  markers=[]  user=[['text(1926)', '<Rules>', False]]  ast-1.amazonaws.com/model/us.amazon.nova-pro-v1%3A0/converse
+  src/f7.ts        810- 1213  markers=[]  user=[['text(1926)', '<Rules>', False]]  ast-1.amazonaws.com/model/us.amazon.nova-pro-v1%3A0/converse
+  src/f8.ts        810- 1213  markers=[]  user=[['text(1926)', '<Rules>', False]]  ast-1.amazonaws.com/model/us.amazon.nova-pro-v1%3A0/converse
+  docs/b.md        810- 1213  markers=[]  user=[['text(1863)', '<Rules>', False]]  ast-1.amazonaws.com/model/us.amazon.nova-pro-v1%3A0/converse
+  src/f5.ts       3607- 4007  markers=[]  user=[['text(1926)', '<Rules>', False]]  ast-1.amazonaws.com/model/us.amazon.nova-pro-v1%3A0/converse
+=== bedrock_nova / compiler  err=None  cacheLog=None
+  None               0-  401  markers=[]  user=[['text(161)', '<Rule> ', False]]  ast-1.amazonaws.com/model/us.amazon.nova-pro-v1%3A0/converse
+=== bedrock_nova / plain  err=None  cacheLog=None
+  None               0-  400  markers=[]  user=[['text(32)', 'Summari', False]]  ast-1.amazonaws.com/model/us.amazon.nova-pro-v1%3A0/converse
+=== gemini / kody  err=None  cacheLog=["[kody-rules-shard] prompt cache: 11 file shard(s) in 3 head group(s), 2 shared; 7 of 8 sibling(s) ran after their group's first shard"]
+  src/f1.ts          0-  402  markers=[]  user=[['text(1926)', '<Rules>', False]]  ge.googleapis.com/v1beta/models/gemini-3-pro:generateContent
+  docs/a.md          0-  403  markers=[]  user=[['text(1863)', '<Rules>', False]]  ge.googleapis.com/v1beta/models/gemini-3-pro:generateContent
+  tools/run.py       0-  403  markers=[]  user=[['text(1874)', '<Rules>', False]]  ge.googleapis.com/v1beta/models/gemini-3-pro:generateContent
+  src/f2.ts          0-  403  markers=[]  user=[['text(1926)', '<Rules>', False]]  ge.googleapis.com/v1beta/models/gemini-3-pro:generateContent
+  src/f3.ts        411-  812  markers=[]  user=[['text(1926)', '<Rules>', False]]  ge.googleapis.com/v1beta/models/gemini-3-pro:generateContent
+  src/f4.ts        411-  813  markers=[]  user=[['text(1926)', '<Rules>', False]]  ge.googleapis.com/v1beta/models/gemini-3-pro:generateContent
+  src/f5.ts        411-  813  markers=[]  user=[['text(1926)', '<Rules>', False]]  ge.googleapis.com/v1beta/models/gemini-3-pro:generateContent
+  src/f6.ts        411-  813  markers=[]  user=[['text(1926)', '<Rules>', False]]  ge.googleapis.com/v1beta/models/gemini-3-pro:generateContent
+  src/f7.ts        817- 1219  markers=[]  user=[['text(1926)', '<Rules>', False]]  ge.googleapis.com/v1beta/models/gemini-3-pro:generateContent
+  src/f8.ts        817- 1219  markers=[]  user=[['text(1926)', '<Rules>', False]]  ge.googleapis.com/v1beta/models/gemini-3-pro:generateContent
+  docs/b.md        817- 1219  markers=[]  user=[['text(1863)', '<Rules>', False]]  ge.googleapis.com/v1beta/models/gemini-3-pro:generateContent
+  src/f5.ts       3511- 3911  markers=[]  user=[['text(1926)', '<Rules>', False]]  ge.googleapis.com/v1beta/models/gemini-3-pro:generateContent
+=== gemini / compiler  err=None  cacheLog=None
+  None               0-  402  markers=[]  user=[['text(161)', '<Rule> ', False]]  ge.googleapis.com/v1beta/models/gemini-3-pro:generateContent
+=== gemini / plain  err=None  cacheLog=None
+  None               0-  402  markers=[]  user=[['text(32)', 'Summari', False]]  ge.googleapis.com/v1beta/models/gemini-3-pro:generateContent
+=== kodus_deepseek / kody  err=None  cacheLog=["[kody-rules-shard] prompt cache: 11 file shard(s) in 3 head group(s), 2 shared; 7 of 8 sibling(s) ran after their group's first shard"]
+  src/f1.ts          0-  402  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  docs/a.md          0-  402  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  tools/run.py       0-  402  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  src/f2.ts          0-  402  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  src/f3.ts        405-  807  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  src/f6.ts        405-  807  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  src/f4.ts        406-  807  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  src/f5.ts        406-  807  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  src/f7.ts        810- 1211  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  src/f8.ts        810- 1211  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  docs/b.md        810- 1212  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  src/f5.ts       3904- 4305  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+=== kodus_deepseek / compiler  err=None  cacheLog=None
+  None               0-  402  markers=[]  user=[['str', '<Rule> Title', False]]  /api.fireworks.ai/inference/v1/chat/completions
+=== kodus_deepseek / plain  err=None  cacheLog=None
+  None               0-  403  markers=[]  user=[['str', 'Summarize th', False]]  /api.fireworks.ai/inference/v1/chat/completions
+=== open_router_claude / kody  err=None  cacheLog=["[kody-rules-shard] prompt cache: 11 file shard(s) in 3 head group(s), 2 shared; 7 of 8 sibling(s) ran after their group's first shard"]
+  src/f1.ts          0-  403  markers=[]  user=[['str', '<Rules> [1] ', False]]  /openrouter.ai/api/v1/chat/completions
+  docs/a.md          1-  403  markers=[]  user=[['str', '<Rules> [1] ', False]]  /openrouter.ai/api/v1/chat/completions
+  tools/run.py       1-  403  markers=[]  user=[['str', '<Rules> [1] ', False]]  /openrouter.ai/api/v1/chat/completions
+  src/f2.ts          1-  403  markers=[]  user=[['str', '<Rules> [1] ', False]]  /openrouter.ai/api/v1/chat/completions
+  src/f3.ts        406-  809  markers=[]  user=[['str', '<Rules> [1] ', False]]  /openrouter.ai/api/v1/chat/completions
+  src/f6.ts        407-  809  markers=[]  user=[['str', '<Rules> [1] ', False]]  /openrouter.ai/api/v1/chat/completions
+  src/f4.ts        407-  809  markers=[]  user=[['str', '<Rules> [1] ', False]]  /openrouter.ai/api/v1/chat/completions
+  src/f5.ts        407-  809  markers=[]  user=[['str', '<Rules> [1] ', False]]  /openrouter.ai/api/v1/chat/completions
+  src/f7.ts        812- 1214  markers=[]  user=[['str', '<Rules> [1] ', False]]  /openrouter.ai/api/v1/chat/completions
+  src/f8.ts        812- 1214  markers=[]  user=[['str', '<Rules> [1] ', False]]  /openrouter.ai/api/v1/chat/completions
+  docs/b.md        812- 1214  markers=[]  user=[['str', '<Rules> [1] ', False]]  /openrouter.ai/api/v1/chat/completions
+  src/f5.ts       3748- 4150  markers=[]  user=[['str', '<Rules> [1] ', False]]  /openrouter.ai/api/v1/chat/completions
+=== open_router_claude / compiler  err=None  cacheLog=None
+  None               0-  403  markers=[]  user=[['str', '<Rule> Title', False]]  /openrouter.ai/api/v1/chat/completions
+=== open_router_claude / plain  err=None  cacheLog=None
+  None               0-  402  markers=[]  user=[['str', 'Summarize th', False]]  /openrouter.ai/api/v1/chat/completions
+=== openai_compatible_deepseek / kody  err=None  cacheLog=["[kody-rules-shard] prompt cache: 11 file shard(s) in 3 head group(s), 2 shared; 7 of 8 sibling(s) ran after their group's first shard"]
+  src/f1.ts          0-  403  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  docs/a.md          1-  403  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  tools/run.py       1-  403  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  src/f2.ts          1-  403  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  src/f3.ts        407-  809  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  src/f4.ts        407-  809  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  src/f5.ts        407-  809  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  src/f6.ts        407-  809  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  src/f7.ts        813- 1215  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  src/f8.ts        813- 1215  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  docs/b.md        813- 1215  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+  src/f5.ts       3777- 4179  markers=[]  user=[['str', '<Rules> [1] ', False]]  /api.fireworks.ai/inference/v1/chat/completions
+=== openai_compatible_deepseek / compiler  err=None  cacheLog=None
+  None               0-  402  markers=[]  user=[['str', '<Rule> Title', False]]  /api.fireworks.ai/inference/v1/chat/completions
+=== openai_compatible_deepseek / plain  err=None  cacheLog=None
+  None               0-  400  markers=[]  user=[['str', 'Summarize th', False]]  /api.fireworks.ai/inference/v1/chat/completions
+=== openai_gpt55 / kody  err=None  cacheLog=["[kody-rules-shard] prompt cache: 11 file shard(s) in 3 head group(s), 2 shared; 7 of 8 sibling(s) ran after their group's first shard"]
+  src/f1.ts          0-  402  markers=[]  user=[['text(1926)', '<Rules>', False]]  /api.openai.com/v1/responses
+  docs/a.md          0-  402  markers=[]  user=[['text(1863)', '<Rules>', False]]  /api.openai.com/v1/responses
+  tools/run.py       0-  402  markers=[]  user=[['text(1874)', '<Rules>', False]]  /api.openai.com/v1/responses
+  src/f2.ts          0-  402  markers=[]  user=[['text(1926)', '<Rules>', False]]  /api.openai.com/v1/responses
+  src/f3.ts        406-  807  markers=[]  user=[['text(1926)', '<Rules>', False]]  /api.openai.com/v1/responses
+  src/f5.ts        407-  807  markers=[]  user=[['text(1926)', '<Rules>', False]]  /api.openai.com/v1/responses
+  src/f6.ts        407-  807  markers=[]  user=[['text(1926)', '<Rules>', False]]  /api.openai.com/v1/responses
+  src/f4.ts        407-  807  markers=[]  user=[['text(1926)', '<Rules>', False]]  /api.openai.com/v1/responses
+  src/f7.ts        811- 1213  markers=[]  user=[['text(1926)', '<Rules>', False]]  /api.openai.com/v1/responses
+  src/f8.ts        811- 1213  markers=[]  user=[['text(1926)', '<Rules>', False]]  /api.openai.com/v1/responses
+  docs/b.md        811- 1213  markers=[]  user=[['text(1863)', '<Rules>', False]]  /api.openai.com/v1/responses
+  src/f5.ts       4356- 4758  markers=[]  user=[['text(1926)', '<Rules>', False]]  /api.openai.com/v1/responses
+=== openai_gpt55 / compiler  err=None  cacheLog=None
+  None               0-  402  markers=[]  user=[['text(161)', '<Rule> ', False]]  /api.openai.com/v1/responses
+=== openai_gpt55 / plain  err=None  cacheLog=None
+  None               0-  402  markers=[]  user=[['text(32)', 'Summari', False]]  /api.openai.com/v1/responses
+=== openai_gpt56 / kody  err=None  cacheLog=["[kody-rules-shard] prompt cache: 11 file shard(s) in 3 head group(s), 2 shared; 7 of 8 sibling(s) ran after their group's first shard"]
+  src/f1.ts          0-  402  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.openai.com/v1/responses
+  docs/a.md          0-  402  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(278)', '<Rules>', True], ['text(1585)', '<File p', False]]  /api.openai.com/v1/responses
+  tools/run.py       0-  402  markers=[]  user=[['text(1874)', '<Rules>', False]]  /api.openai.com/v1/responses
+  src/f2.ts          0-  402  markers=[]  user=[['text(1926)', '<Rules>', False]]  /api.openai.com/v1/responses
+  src/f3.ts        415-  818  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.openai.com/v1/responses
+  src/f4.ts        416-  818  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.openai.com/v1/responses
+  src/f5.ts        416-  818  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.openai.com/v1/responses
+  src/f6.ts        416-  818  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.openai.com/v1/responses
+  src/f7.ts        822- 1224  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.openai.com/v1/responses
+  src/f8.ts        822- 1224  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.openai.com/v1/responses
+  docs/b.md        822- 1224  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(278)', '<Rules>', True], ['text(1585)', '<File p', False]]  /api.openai.com/v1/responses
+  src/f5.ts       3395- 3795  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.openai.com/v1/responses
+=== openai_gpt56 / compiler  err=None  cacheLog=None
+  None               0-  401  markers=['.input[0].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(161)', '<Rule> ', False]]  /api.openai.com/v1/responses
+=== openai_gpt56 / plain  err=None  cacheLog=None
+  None               0-  403  markers=[]  user=[['text(32)', 'Summari', False]]  /api.openai.com/v1/responses
+=== openai_gpt61 / kody  err=None  cacheLog=["[kody-rules-shard] prompt cache: 11 file shard(s) in 3 head group(s), 2 shared; 7 of 8 sibling(s) ran after their group's first shard"]
+  src/f1.ts          0-  403  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.openai.com/v1/responses
+  docs/a.md          1-  403  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(278)', '<Rules>', True], ['text(1585)', '<File p', False]]  /api.openai.com/v1/responses
+  tools/run.py       1-  403  markers=[]  user=[['text(1874)', '<Rules>', False]]  /api.openai.com/v1/responses
+  src/f2.ts          1-  403  markers=[]  user=[['text(1926)', '<Rules>', False]]  /api.openai.com/v1/responses
+  src/f3.ts        407-  810  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.openai.com/v1/responses
+  src/f4.ts        408-  810  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.openai.com/v1/responses
+  src/f5.ts        408-  810  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.openai.com/v1/responses
+  src/f6.ts        408-  810  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.openai.com/v1/responses
+  src/f7.ts        814- 1216  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.openai.com/v1/responses
+  src/f8.ts        814- 1216  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.openai.com/v1/responses
+  docs/b.md        814- 1216  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(278)', '<Rules>', True], ['text(1585)', '<File p', False]]  /api.openai.com/v1/responses
+  src/f5.ts       4363- 4765  markers=['.input[1].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  /api.openai.com/v1/responses
+=== openai_gpt61 / compiler  err=None  cacheLog=None
+  None               0-  402  markers=['.input[0].content[0].prompt_cache_breakpoint', '.prompt_cache_options']  user=[['text(161)', '<Rule> ', False]]  /api.openai.com/v1/responses
+=== openai_gpt61 / plain  err=None  cacheLog=None
+  None               0-  402  markers=[]  user=[['text(32)', 'Summari', False]]  /api.openai.com/v1/responses
+=== vertex_claude / kody  err=None  cacheLog=["[kody-rules-shard] prompt cache: 11 file shard(s) in 3 head group(s), 2 shared; 7 of 8 sibling(s) ran after their group's first shard"]
+  src/f1.ts          0-  402  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  st5/publishers/anthropic/models/claude-sonnet-5-5:rawPredict
+  docs/a.md          0-  402  markers=['.messages[0].content[0].cache_control']  user=[['text(278)', '<Rules>', True], ['text(1585)', '<File p', False]]  st5/publishers/anthropic/models/claude-sonnet-5-5:rawPredict
+  tools/run.py       0-  403  markers=[]  user=[['text(1874)', '<Rules>', False]]  st5/publishers/anthropic/models/claude-sonnet-5-5:rawPredict
+  src/f2.ts          0-  403  markers=[]  user=[['text(1926)', '<Rules>', False]]  st5/publishers/anthropic/models/claude-sonnet-5-5:rawPredict
+  src/f3.ts        411-  812  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  st5/publishers/anthropic/models/claude-sonnet-5-5:rawPredict
+  src/f4.ts        411-  812  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  st5/publishers/anthropic/models/claude-sonnet-5-5:rawPredict
+  src/f5.ts        411-  813  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  st5/publishers/anthropic/models/claude-sonnet-5-5:rawPredict
+  src/f6.ts        411-  813  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  st5/publishers/anthropic/models/claude-sonnet-5-5:rawPredict
+  src/f7.ts        816- 1219  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  st5/publishers/anthropic/models/claude-sonnet-5-5:rawPredict
+  src/f8.ts        816- 1219  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  st5/publishers/anthropic/models/claude-sonnet-5-5:rawPredict
+  docs/b.md        816- 1219  markers=['.messages[0].content[0].cache_control']  user=[['text(278)', '<Rules>', True], ['text(1585)', '<File p', False]]  st5/publishers/anthropic/models/claude-sonnet-5-5:rawPredict
+  src/f5.ts       3284- 3687  markers=['.messages[0].content[0].cache_control']  user=[['text(320)', '<Rules>', True], ['text(1606)', '<File p', False]]  st5/publishers/anthropic/models/claude-sonnet-5-5:rawPredict
+=== vertex_claude / compiler  err=None  cacheLog=None
+  None               0-  401  markers=['.system[0].cache_control']  user=[['text(161)', '<Rule> ', False]]  st5/publishers/anthropic/models/claude-sonnet-5-5:rawPredict
+=== vertex_claude / plain  err=None  cacheLog=None
+  None               0-  402  markers=[]  user=[['text(32)', 'Summari', False]]  st5/publishers/anthropic/models/claude-sonnet-5-5:rawPredict
+blocked: []
