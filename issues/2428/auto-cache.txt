@@ -1,0 +1,37 @@
+Slot reasoningConfigOverride = {"anthropic":{"cacheControl":{"type":"ephemeral"}}} (automatic, request-level cache)
+== 0305249ba
+=== anthropic / kody  err=None  cacheLog=["[kody-rules-shard] prompt cache: 11 file shard(s) in 3 head group(s), 2 shared; 7 of 8 sibling(s) ran after their group's first shard"]
+  src/f1.ts          0-  404  markers=['.messages[0].content[0].cache_control']    /api.anthropic.com/v1/messages
+  docs/a.md          0-  408  markers=['.messages[0].content[0].cache_control']    /api.anthropic.com/v1/messages
+  tools/run.py       0-  409  markers=['.cache_control']    /api.anthropic.com/v1/messages
+  src/f2.ts          0-  409  markers=['.cache_control']    /api.anthropic.com/v1/messages
+  src/f3.ts        472-  874  markers=['.messages[0].content[0].cache_control']    /api.anthropic.com/v1/messages
+  src/f4.ts        472-  875  markers=['.messages[0].content[0].cache_control']    /api.anthropic.com/v1/messages
+  src/f5.ts        472-  875  markers=['.messages[0].content[0].cache_control']    /api.anthropic.com/v1/messages
+  src/f6.ts        472-  876  markers=['.messages[0].content[0].cache_control']    /api.anthropic.com/v1/messages
+  src/f7.ts        896- 1299  markers=['.messages[0].content[0].cache_control']    /api.anthropic.com/v1/messages
+  src/f8.ts        896- 1299  markers=['.messages[0].content[0].cache_control']    /api.anthropic.com/v1/messages
+  docs/b.md        896- 1300  markers=['.messages[0].content[0].cache_control']    /api.anthropic.com/v1/messages
+  src/f5.ts       3445- 3846  markers=['.messages[0].content[0].cache_control']    /api.anthropic.com/v1/messages
+=== anthropic / compiler  err=None  cacheLog=None
+  None               0-  402  markers=['.system[0].cache_control']    /api.anthropic.com/v1/messages
+=== anthropic / plain  err=None  cacheLog=None
+  None               0-  402  markers=['.cache_control']    /api.anthropic.com/v1/messages
+== e34e644d7
+=== anthropic / kody  err=None  cacheLog=[]
+  src/f1.ts          0-  403  markers=['.cache_control']    /api.anthropic.com/v1/messages
+  src/f2.ts          0-  405  markers=['.cache_control']    /api.anthropic.com/v1/messages
+  src/f3.ts          0-  406  markers=['.cache_control']    /api.anthropic.com/v1/messages
+  src/f4.ts          0-  406  markers=['.cache_control']    /api.anthropic.com/v1/messages
+  src/f5.ts        487-  888  markers=['.cache_control']    /api.anthropic.com/v1/messages
+  src/f6.ts        487-  888  markers=['.cache_control']    /api.anthropic.com/v1/messages
+  src/f7.ts        487-  888  markers=['.cache_control']    /api.anthropic.com/v1/messages
+  src/f8.ts        487-  888  markers=['.cache_control']    /api.anthropic.com/v1/messages
+  docs/a.md        905- 1306  markers=['.cache_control']    /api.anthropic.com/v1/messages
+  docs/b.md        905- 1307  markers=['.cache_control']    /api.anthropic.com/v1/messages
+  tools/run.py     906- 1307  markers=['.cache_control']    /api.anthropic.com/v1/messages
+  src/f5.ts       4869- 5270  markers=['.cache_control']    /api.anthropic.com/v1/messages
+=== anthropic / compiler  err=None  cacheLog=None
+  None               0-  401  markers=['.cache_control']    /api.anthropic.com/v1/messages
+=== anthropic / plain  err=None  cacheLog=None
+  None               0-  400  markers=['.cache_control']    /api.anthropic.com/v1/messages
