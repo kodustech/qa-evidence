@@ -301,6 +301,9 @@ const slotFor = (name: string) => {
         ...s,
         apiKey: encrypt(s.key ?? 'qa-fake-key'),
         fallback: undefined,
+        ...(process.env.QA_OVERRIDE
+            ? { reasoningConfigOverride: process.env.QA_OVERRIDE }
+            : {}),
     };
 };
 
