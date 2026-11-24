@@ -1,0 +1,342 @@
+[
+ {
+  "label": "m2",
+  "job": "caef0da6-b5f5-4196-9009-acac815b3f88",
+  "type": "AST_GRAPH_BUILD",
+  "status": "COMPLETED",
+  "org": "1376936a-961c-4267-862b-cbc19d309ce4",
+  "repo": "a847a63e-9e59-414c-a568-0c8b65cd6e90",
+  "prKey": "1376936a-961c-4267-862b-cbc19d309ce4:a847a63e-9e59-414c-a568-0c8b65cd6e90:graph:caef0da6-b5f5-4196-9009-acac815b3f88",
+  "sandboxId": "i1aui4c93mt8s2w7oobfs",
+  "t_release": "2026-11-24T21:41:06.061Z",
+  "t_kill_log": "2026-11-24T21:41:06.188Z",
+  "kill_idleMs": null,
+  "t_provider_kill": "2026-11-24T21:41:06.136642693Z",
+  "kill_reason": "request",
+  "paused": false,
+  "d_release_killlog": 0.127,
+  "d_release_provider": 0.076,
+  "scheduled_idle_kill": 0,
+  "other": [],
+  "lease_doc_after": 0,
+  "getInfo": "SandboxNotFoundError: Sandbox i1aui4c93mt8s2w7oobfs not found",
+  "stage": "graph-build",
+  "deployment": "homolog",
+  "events": [
+   [
+    "created",
+    "2026-11-24T21:40:56.016053677Z"
+   ],
+   [
+    "killed",
+    "2026-11-24T21:41:06.136642693Z"
+   ]
+  ]
+ },
+ {
+  "label": "m2",
+  "job": "639b9376-f3ed-410e-9b03-5f69f2357125",
+  "type": "AST_GRAPH_BUILD",
+  "status": "COMPLETED",
+  "org": "1376936a-961c-4267-862b-cbc19d309ce4",
+  "repo": "79eb3cad-c42f-41d4-b367-23ff7b71fc04",
+  "prKey": "1376936a-961c-4267-862b-cbc19d309ce4:79eb3cad-c42f-41d4-b367-23ff7b71fc04:graph:639b9376-f3ed-410e-9b03-5f69f2357125",
+  "sandboxId": "i1rpql0j5ta4ez3hw4jq9",
+  "t_release": "2026-11-24T21:41:06.104Z",
+  "t_kill_log": "2026-11-24T21:41:06.399Z",
+  "kill_idleMs": null,
+  "t_provider_kill": "2026-11-24T21:41:06.3415745Z",
+  "kill_reason": "request",
+  "paused": false,
+  "d_release_killlog": 0.295,
+  "d_release_provider": 0.238,
+  "scheduled_idle_kill": 0,
+  "other": [],
+  "lease_doc_after": 0,
+  "getInfo": "SandboxNotFoundError: Sandbox i1rpql0j5ta4ez3hw4jq9 not found",
+  "stage": "graph-build",
+  "deployment": "homolog",
+  "events": [
+   [
+    "created",
+    "2026-11-24T21:40:56.215238352Z"
+   ],
+   [
+    "killed",
+    "2026-11-24T21:41:06.3415745Z"
+   ]
+  ]
+ },
+ {
+  "label": "m2",
+  "job": "7d44ee4c-ea82-4d5f-9480-7aabbc766c66",
+  "type": "AST_GRAPH_BUILD",
+  "status": "COMPLETED",
+  "org": "4c73f172-aa70-4ad5-87a3-819a915c23e2",
+  "repo": "b8e6e249-2988-45d5-aa73-71716bd9b0ab",
+  "prKey": "4c73f172-aa70-4ad5-87a3-819a915c23e2:b8e6e249-2988-45d5-aa73-71716bd9b0ab:graph:7d44ee4c-ea82-4d5f-9480-7aabbc766c66",
+  "sandboxId": "i850yuc8yt4i14pnwho9o",
+  "t_release": "2026-11-24T21:42:07.511Z",
+  "t_kill_log": "2026-11-24T21:42:07.623Z",
+  "kill_idleMs": null,
+  "t_provider_kill": "2026-11-24T21:42:07.57122335Z",
+  "kill_reason": "request",
+  "paused": false,
+  "d_release_killlog": 0.112,
+  "d_release_provider": 0.06,
+  "scheduled_idle_kill": 0,
+  "other": [],
+  "lease_doc_after": 0,
+  "getInfo": "SandboxNotFoundError: Sandbox i850yuc8yt4i14pnwho9o not found",
+  "stage": "graph-build",
+  "deployment": "homolog",
+  "events": [
+   [
+    "created",
+    "2026-11-24T21:41:36.799212731Z"
+   ],
+   [
+    "killed",
+    "2026-11-24T21:42:07.57122335Z"
+   ]
+  ]
+ },
+ {
+  "label": "m2",
+  "job": "f67c0daa-20a2-4b3a-a9ae-c53876783043",
+  "type": "AST_GRAPH_BUILD",
+  "status": "COMPLETED",
+  "org": "4c73f172-aa70-4ad5-87a3-819a915c23e2",
+  "repo": "7a96b2b3-1255-44f5-a0e7-2525e6cf9fa6",
+  "prKey": "4c73f172-aa70-4ad5-87a3-819a915c23e2:7a96b2b3-1255-44f5-a0e7-2525e6cf9fa6:graph:f67c0daa-20a2-4b3a-a9ae-c53876783043",
+  "sandboxId": "inftht98hisqklme11m0m",
+  "t_release": "2026-11-24T21:41:46.846Z",
+  "t_kill_log": "2026-11-24T21:41:46.971Z",
+  "kill_idleMs": null,
+  "t_provider_kill": "2026-11-24T21:41:46.914540689Z",
+  "kill_reason": "request",
+  "paused": false,
+  "d_release_killlog": 0.125,
+  "d_release_provider": 0.069,
+  "scheduled_idle_kill": 0,
+  "other": [],
+  "lease_doc_after": 0,
+  "getInfo": "SandboxNotFoundError: Sandbox inftht98hisqklme11m0m not found",
+  "stage": "graph-build",
+  "deployment": "homolog",
+  "events": [
+   [
+    "created",
+    "2026-11-24T21:41:36.648414664Z"
+   ],
+   [
+    "killed",
+    "2026-11-24T21:41:46.914540689Z"
+   ]
+  ]
+ },
+ {
+  "label": "m2",
+  "job": "f4184fd0-c7c8-42f2-98e1-af9f623df24a",
+  "type": "AST_GRAPH_BUILD",
+  "status": "COMPLETED",
+  "org": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+  "repo": "522d4f46-7315-47c7-80ca-15c5c1333fa1",
+  "prKey": "2b4fdd21-4a09-4464-80bd-f4417ec8843a:522d4f46-7315-47c7-80ca-15c5c1333fa1:graph:f4184fd0-c7c8-42f2-98e1-af9f623df24a",
+  "sandboxId": "iku4t3d982z6yhx8wun9f",
+  "t_release": "2026-11-24T21:42:03.808Z",
+  "t_kill_log": "2026-11-24T21:42:03.927Z",
+  "kill_idleMs": null,
+  "t_provider_kill": "2026-11-24T21:42:03.877429417Z",
+  "kill_reason": "request",
+  "paused": false,
+  "d_release_killlog": 0.119,
+  "d_release_provider": 0.069,
+  "scheduled_idle_kill": 0,
+  "other": [],
+  "lease_doc_after": 0,
+  "getInfo": "SandboxNotFoundError: Sandbox iku4t3d982z6yhx8wun9f not found",
+  "stage": "graph-build",
+  "deployment": "homolog",
+  "events": [
+   [
+    "created",
+    "2026-11-24T21:41:38.266450543Z"
+   ],
+   [
+    "killed",
+    "2026-11-24T21:42:03.877429417Z"
+   ]
+  ]
+ },
+ {
+  "label": "m2",
+  "job": "c8d27943-3eef-47e5-9e0b-a35327f8364f",
+  "type": "AST_GRAPH_BUILD",
+  "status": "COMPLETED",
+  "org": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+  "repo": "55a5bccb-aa17-47c0-99ad-da88750b98a3",
+  "prKey": "2b4fdd21-4a09-4464-80bd-f4417ec8843a:55a5bccb-aa17-47c0-99ad-da88750b98a3:graph:c8d27943-3eef-47e5-9e0b-a35327f8364f",
+  "sandboxId": "iz8x3qicoknoycm2q8bmn",
+  "t_release": "2026-11-24T21:41:47.837Z",
+  "t_kill_log": "2026-11-24T21:41:48.113Z",
+  "kill_idleMs": null,
+  "t_provider_kill": "2026-11-24T21:41:48.054400145Z",
+  "kill_reason": "request",
+  "paused": false,
+  "d_release_killlog": 0.276,
+  "d_release_provider": 0.217,
+  "scheduled_idle_kill": 0,
+  "other": [],
+  "lease_doc_after": 0,
+  "getInfo": "SandboxNotFoundError: Sandbox iz8x3qicoknoycm2q8bmn not found",
+  "stage": "graph-build",
+  "deployment": "homolog",
+  "events": [
+   [
+    "created",
+    "2026-11-24T21:41:37.880422692Z"
+   ],
+   [
+    "killed",
+    "2026-11-24T21:41:48.054400145Z"
+   ]
+  ]
+ },
+ {
+  "label": "m2",
+  "job": "94bc398a-45bd-497c-a90d-11a0491d99b3",
+  "type": "AST_GRAPH_BUILD",
+  "status": "COMPLETED",
+  "org": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+  "repo": "149cbc06-617c-4e49-a760-f1ef98014571",
+  "prKey": "a570f880-a17c-46d5-8ffd-7955455f20aa:149cbc06-617c-4e49-a760-f1ef98014571:graph:94bc398a-45bd-497c-a90d-11a0491d99b3",
+  "sandboxId": "im6hh7y1u8ecwlkezec0k",
+  "t_release": "2026-11-24T21:42:27.732Z",
+  "t_kill_log": "2026-11-24T21:42:27.863Z",
+  "kill_idleMs": null,
+  "t_provider_kill": "2026-11-24T21:42:27.802252594Z",
+  "kill_reason": "request",
+  "paused": false,
+  "d_release_killlog": 0.131,
+  "d_release_provider": 0.07,
+  "scheduled_idle_kill": 0,
+  "other": [],
+  "lease_doc_after": 0,
+  "getInfo": "SandboxNotFoundError: Sandbox im6hh7y1u8ecwlkezec0k not found",
+  "stage": "graph-build",
+  "deployment": "homolog",
+  "events": [
+   [
+    "created",
+    "2026-11-24T21:41:39.101735102Z"
+   ],
+   [
+    "killed",
+    "2026-11-24T21:42:27.802252594Z"
+   ]
+  ]
+ },
+ {
+  "label": "m2",
+  "job": "ee00272a-80e9-4f57-a8dd-89a131023347",
+  "type": "AST_GRAPH_BUILD",
+  "status": "COMPLETED",
+  "org": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+  "repo": "ee76a9bf-1ab9-4407-b868-f742e27e8936",
+  "prKey": "a570f880-a17c-46d5-8ffd-7955455f20aa:ee76a9bf-1ab9-4407-b868-f742e27e8936:graph:ee00272a-80e9-4f57-a8dd-89a131023347",
+  "sandboxId": "id87mupb7orj2kekwcx67",
+  "t_release": "2026-11-24T21:41:58.750Z",
+  "t_kill_log": "2026-11-24T21:41:58.876Z",
+  "kill_idleMs": null,
+  "t_provider_kill": "2026-11-24T21:41:58.821197589Z",
+  "kill_reason": "request",
+  "paused": false,
+  "d_release_killlog": 0.126,
+  "d_release_provider": 0.071,
+  "scheduled_idle_kill": 0,
+  "other": [],
+  "lease_doc_after": 0,
+  "getInfo": "SandboxNotFoundError: Sandbox id87mupb7orj2kekwcx67 not found",
+  "stage": "graph-build",
+  "deployment": "homolog",
+  "events": [
+   [
+    "created",
+    "2026-11-24T21:41:48.842734035Z"
+   ],
+   [
+    "killed",
+    "2026-11-24T21:41:58.821197589Z"
+   ]
+  ]
+ },
+ {
+  "label": "m2",
+  "job": "d5d4d2af-f544-4367-aa23-3a99691034a5",
+  "type": "AST_GRAPH_BUILD",
+  "status": "COMPLETED",
+  "org": "d1be5448-1918-44e7-8a52-363ad1ec07ed",
+  "repo": "cda0f034-676a-42e3-9196-b4bfda2d8497",
+  "prKey": "d1be5448-1918-44e7-8a52-363ad1ec07ed:cda0f034-676a-42e3-9196-b4bfda2d8497:graph:d5d4d2af-f544-4367-aa23-3a99691034a5",
+  "sandboxId": "ik54pddkesbm90qbsyirj",
+  "t_release": "2026-11-24T21:42:11.943Z",
+  "t_kill_log": "2026-11-24T21:42:12.252Z",
+  "kill_idleMs": null,
+  "t_provider_kill": "2026-11-24T21:42:12.199060542Z",
+  "kill_reason": "request",
+  "paused": false,
+  "d_release_killlog": 0.309,
+  "d_release_provider": 0.256,
+  "scheduled_idle_kill": 0,
+  "other": [],
+  "lease_doc_after": 0,
+  "getInfo": "SandboxNotFoundError: Sandbox ik54pddkesbm90qbsyirj not found",
+  "stage": "graph-build",
+  "deployment": "homolog",
+  "events": [
+   [
+    "created",
+    "2026-11-24T21:41:59.363980627Z"
+   ],
+   [
+    "killed",
+    "2026-11-24T21:42:12.199060542Z"
+   ]
+  ]
+ },
+ {
+  "label": "m2",
+  "job": "7086519f-47ed-4684-9d91-7e13982da91e",
+  "type": "AST_GRAPH_BUILD",
+  "status": "COMPLETED",
+  "org": "d1be5448-1918-44e7-8a52-363ad1ec07ed",
+  "repo": "f896b309-fd50-4a2c-aea8-c5f436f8f3ee",
+  "prKey": "d1be5448-1918-44e7-8a52-363ad1ec07ed:f896b309-fd50-4a2c-aea8-c5f436f8f3ee:graph:7086519f-47ed-4684-9d91-7e13982da91e",
+  "sandboxId": "iu928soqp6kkoqzdws47h",
+  "t_release": "2026-11-24T21:42:05.976Z",
+  "t_kill_log": "2026-11-24T21:42:06.080Z",
+  "kill_idleMs": null,
+  "t_provider_kill": "2026-11-24T21:42:06.029145118Z",
+  "kill_reason": "request",
+  "paused": false,
+  "d_release_killlog": 0.104,
+  "d_release_provider": 0.053,
+  "scheduled_idle_kill": 0,
+  "other": [],
+  "lease_doc_after": 0,
+  "getInfo": "SandboxNotFoundError: Sandbox iu928soqp6kkoqzdws47h not found",
+  "stage": "graph-build",
+  "deployment": "homolog",
+  "events": [
+   [
+    "created",
+    "2026-11-24T21:41:48.628752915Z"
+   ],
+   [
+    "killed",
+    "2026-11-24T21:42:06.029145118Z"
+   ]
+  ]
+ }
+]
