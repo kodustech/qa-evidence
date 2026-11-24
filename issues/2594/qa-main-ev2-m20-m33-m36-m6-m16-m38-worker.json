@@ -1,0 +1,973 @@
+{
+ "M20_post": {
+  "runs": [
+   {
+    "run": 1,
+    "input": {
+     "postFault": "throw"
+    },
+    "rc": 0,
+    "accepted": 0,
+    "errors": [
+     "Error posting the no-license notice"
+    ],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToPR)",
+     "reaction(addReactionToPR)",
+     "lookup(False)",
+     "notice-post-attempt(issue)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   {
+    "run": 2,
+    "input": {
+     "postFault": "null"
+    },
+    "rc": 0,
+    "accepted": 0,
+    "errors": [],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToPR)",
+     "reaction(addReactionToPR)",
+     "lookup(False)",
+     "notice-post-attempt(issue)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   {
+    "run": 3,
+    "input": {},
+    "rc": 0,
+    "accepted": 1,
+    "errors": [],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToPR)",
+     "reaction(addReactionToPR)",
+     "lookup(False)",
+     "notice-post-attempt(issue)",
+     "notice-accepted(issue)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   {
+    "run": 4,
+    "input": {},
+    "rc": 0,
+    "accepted": 0,
+    "errors": [],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToPR)",
+     "reaction(addReactionToPR)",
+     "lookup(True)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   }
+  ],
+  "rows": [
+   [
+    "c9f89001",
+    "skipped",
+    "04:31:39.815",
+    "04:31:39.840",
+    "-",
+    "User Not Licensed \u2014 Assign seat to user"
+   ],
+   [
+    "53cc1bcf",
+    "skipped",
+    "04:31:43.195",
+    "04:31:43.216",
+    "-",
+    "User Not Licensed \u2014 Assign seat to user"
+   ],
+   [
+    "63bd28ee",
+    "skipped",
+    "04:31:46.592",
+    "04:31:46.611",
+    "2026-11-24T04:31:46.608Z",
+    "User Not Licensed \u2014 Assign seat to user"
+   ],
+   [
+    "fd95548e",
+    "skipped",
+    "04:31:49.989",
+    "04:31:50.013",
+    "-",
+    "User Not Licensed \u2014 Assign seat to user"
+   ]
+  ]
+ },
+ "M20_reaction": [
+  {
+   "platform": "GITLAB",
+   "input": {
+    "origin": "System"
+   },
+   "faulted": {
+    "rc": 0,
+    "accepted": 1,
+    "errors": [
+     "Error adding status reaction",
+     "Error adding no license reaction"
+    ],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToPR)",
+     "reaction(addReactionToPR)",
+     "lookup(False)",
+     "notice-post-attempt(issue)",
+     "notice-accepted(issue)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   "next": {
+    "rc": 0,
+    "accepted": 0,
+    "errors": [],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToPR)",
+     "reaction(addReactionToPR)",
+     "lookup(True)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   "rows": [
+    [
+     "0a0bfae7",
+     "skipped",
+     "04:31:53.573",
+     "04:31:53.606",
+     "2026-11-24T04:31:53.603Z",
+     "User Not Licensed \u2014 Assign seat to user"
+    ],
+    [
+     "9fd4ecd7",
+     "skipped",
+     "04:31:57.009",
+     "04:31:57.034",
+     "-",
+     "User Not Licensed \u2014 Assign seat to user"
+    ]
+   ]
+  },
+  {
+   "platform": "GITLAB",
+   "input": {
+    "origin": "command",
+    "triggerCommentId": "555"
+   },
+   "faulted": {
+    "rc": 0,
+    "accepted": 1,
+    "errors": [
+     "Error adding status reaction",
+     "Error adding no license reaction"
+    ],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToComment)",
+     "reaction(addReactionToComment)",
+     "lookup(False)",
+     "notice-post-attempt(issue)",
+     "notice-accepted(issue)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   "next": {
+    "rc": 0,
+    "accepted": 0,
+    "errors": [],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToComment)",
+     "reaction(addReactionToComment)",
+     "lookup(True)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   "rows": [
+    [
+     "2531dcf1",
+     "skipped",
+     "04:32:00.563",
+     "04:32:00.593",
+     "2026-11-24T04:32:00.590Z",
+     "User Not Licensed \u2014 Assign seat to user"
+    ],
+    [
+     "0a919df8",
+     "skipped",
+     "04:32:04.003",
+     "04:32:04.023",
+     "-",
+     "User Not Licensed \u2014 Assign seat to user"
+    ]
+   ]
+  },
+  {
+   "platform": "FORGEJO",
+   "input": {
+    "origin": "System"
+   },
+   "faulted": {
+    "rc": 0,
+    "accepted": 1,
+    "errors": [
+     "Error adding status reaction",
+     "Error adding no license reaction"
+    ],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToPR)",
+     "reaction(addReactionToPR)",
+     "lookup(False)",
+     "notice-post-attempt(issue)",
+     "notice-accepted(issue)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   "next": {
+    "rc": 0,
+    "accepted": 0,
+    "errors": [],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToPR)",
+     "reaction(addReactionToPR)",
+     "lookup(True)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   "rows": [
+    [
+     "f6b44910",
+     "skipped",
+     "04:32:07.568",
+     "04:32:07.591",
+     "2026-11-24T04:32:07.588Z",
+     "User Not Licensed \u2014 Assign seat to user"
+    ],
+    [
+     "7592fbbd",
+     "skipped",
+     "04:32:10.971",
+     "04:32:11.007",
+     "-",
+     "User Not Licensed \u2014 Assign seat to user"
+    ]
+   ]
+  },
+  {
+   "platform": "FORGEJO",
+   "input": {
+    "origin": "command",
+    "triggerCommentId": "555"
+   },
+   "faulted": {
+    "rc": 0,
+    "accepted": 1,
+    "errors": [
+     "Error adding status reaction",
+     "Error adding no license reaction"
+    ],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToComment)",
+     "reaction(addReactionToComment)",
+     "lookup(False)",
+     "notice-post-attempt(issue)",
+     "notice-accepted(issue)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   "next": {
+    "rc": 0,
+    "accepted": 0,
+    "errors": [],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToComment)",
+     "reaction(addReactionToComment)",
+     "lookup(True)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   "rows": [
+    [
+     "07fc4351",
+     "skipped",
+     "04:32:14.759",
+     "04:32:14.788",
+     "2026-11-24T04:32:14.785Z",
+     "User Not Licensed \u2014 Assign seat to user"
+    ],
+    [
+     "3f4ce547",
+     "skipped",
+     "04:32:18.187",
+     "04:32:18.208",
+     "-",
+     "User Not Licensed \u2014 Assign seat to user"
+    ]
+   ]
+  }
+ ],
+ "M20_lookup": {
+  "faulted": {
+   "rc": 0,
+   "accepted": 1,
+   "errors": [],
+   "warns": [
+    "User not licensed but company has licenses",
+    "Could not check for an earlier no-license notice, posting it"
+   ],
+   "events": [
+    "run-start",
+    "reaction(addReactionToPR)",
+    "reaction(addReactionToPR)",
+    "driver-fault",
+    "notice-post-attempt(issue)",
+    "notice-accepted(issue)",
+    "rate-limit-check",
+    "notification-emit",
+    "final-update-start",
+    "run-end"
+   ]
+  },
+  "driver": [
+   {
+    "ev": "driver-fault",
+    "sql": "SELECT 1 AS \"row_exists\" FROM (SELECT 1 AS dummy_column) \"dummy_table\" WHERE EXISTS (SELECT 1 FROM \"automation_execution\" \"automation_execution\" WHERE \"automati"
+   }
+  ],
+  "next": {
+   "rc": 0,
+   "accepted": 0,
+   "errors": [],
+   "warns": [
+    "User not licensed but company has licenses"
+   ],
+   "events": [
+    "run-start",
+    "reaction(addReactionToPR)",
+    "reaction(addReactionToPR)",
+    "lookup(True)",
+    "rate-limit-check",
+    "notification-emit",
+    "final-update-start",
+    "run-end"
+   ]
+  },
+  "rows": [
+   [
+    "d40d8334",
+    "skipped",
+    "04:33:39.861",
+    "04:33:39.902",
+    "2026-11-24T04:33:39.895Z",
+    "User Not Licensed \u2014 Assign seat to user"
+   ],
+   [
+    "bc0a77fc",
+    "skipped",
+    "04:33:43.255",
+    "04:33:43.280",
+    "-",
+    "User Not Licensed \u2014 Assign seat to user"
+   ]
+  ],
+  "M36_projection": [
+   {
+    "level": "warn",
+    "msg": "Could not check for an earlier no-license notice, posting it",
+    "context": "ValidatePrerequisitesStage",
+    "organizationId": "0e17f725-f594-48a0-89c8-e6583bc47a28",
+    "teamId": "994d5392-fcab-4349-beb0-5391e40845da",
+    "repositoryId": "repo-1",
+    "prNumber": 230,
+    "error": "{'type': 'Object', 'message': 'canceling statement due to statement timeout', 'stack': 'QueryFailedError: canceling statement due to statement timeout\\n    at P",
+    "sensitive": []
+   }
+  ]
+ },
+ "M33_notification": [
+  {
+   "case": "resolve",
+   "first": {
+    "rc": 0,
+    "accepted": 1,
+    "errors": [
+     "Failed to emit review.skipped_no_license notification"
+    ],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToPR)",
+     "reaction(addReactionToPR)",
+     "lookup(False)",
+     "notice-post-attempt(issue)",
+     "notice-accepted(issue)",
+     "resolver-fault",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   "next": {
+    "rc": 0,
+    "accepted": 0,
+    "errors": [],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToPR)",
+     "reaction(addReactionToPR)",
+     "lookup(True)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   "rows": [
+    [
+     "d205898c",
+     "skipped",
+     "04:32:29.136",
+     "04:32:29.162",
+     "2026-11-24T04:32:29.153Z",
+     "User Not Licensed \u2014 Assign seat to user"
+    ],
+    [
+     "0c2d9719",
+     "skipped",
+     "04:32:32.530",
+     "04:32:32.551",
+     "-",
+     "User Not Licensed \u2014 Assign seat to user"
+    ]
+   ]
+  },
+  {
+   "case": "emit",
+   "first": {
+    "rc": 0,
+    "accepted": 1,
+    "errors": [
+     "Failed to emit review.skipped_no_license notification"
+    ],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToPR)",
+     "reaction(addReactionToPR)",
+     "lookup(False)",
+     "notice-post-attempt(issue)",
+     "notice-accepted(issue)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   "next": {
+    "rc": 0,
+    "accepted": 0,
+    "errors": [],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToPR)",
+     "reaction(addReactionToPR)",
+     "lookup(True)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   "rows": [
+    [
+     "aad87e92",
+     "skipped",
+     "04:32:36.175",
+     "04:32:36.203",
+     "2026-11-24T04:32:36.192Z",
+     "User Not Licensed \u2014 Assign seat to user"
+    ],
+    [
+     "618a75fc",
+     "skipped",
+     "04:32:39.565",
+     "04:32:39.582",
+     "-",
+     "User Not Licensed \u2014 Assign seat to user"
+    ]
+   ]
+  },
+  {
+   "case": "ratelimited",
+   "first": {
+    "rc": 0,
+    "accepted": 1,
+    "errors": [],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToPR)",
+     "reaction(addReactionToPR)",
+     "lookup(False)",
+     "notice-post-attempt(issue)",
+     "notice-accepted(issue)",
+     "rate-limit-check",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   "next": {
+    "rc": 0,
+    "accepted": 0,
+    "errors": [],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToPR)",
+     "reaction(addReactionToPR)",
+     "lookup(True)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   "rows": [
+    [
+     "df16ce02",
+     "skipped",
+     "04:32:43.147",
+     "04:32:43.161",
+     "2026-11-24T04:32:43.158Z",
+     "User Not Licensed \u2014 Assign seat to user"
+    ],
+    [
+     "0aea3cc5",
+     "skipped",
+     "04:32:46.515",
+     "04:32:46.538",
+     "-",
+     "User Not Licensed \u2014 Assign seat to user"
+    ]
+   ]
+  }
+ ],
+ "M6_reopen": {
+  "opened": {
+   "rc": 0,
+   "accepted": 1,
+   "errors": [],
+   "warns": [
+    "User not licensed but company has licenses"
+   ],
+   "events": [
+    "run-start",
+    "reaction(addReactionToPR)",
+    "reaction(addReactionToPR)",
+    "lookup(False)",
+    "notice-post-attempt(issue)",
+    "notice-accepted(issue)",
+    "rate-limit-check",
+    "notification-emit",
+    "final-update-start",
+    "run-end"
+   ]
+  },
+  "reopened": {
+   "rc": 0,
+   "accepted": 0,
+   "errors": [],
+   "warns": [
+    "User not licensed but company has licenses"
+   ],
+   "events": [
+    "run-start",
+    "reaction(addReactionToPR)",
+    "reaction(addReactionToPR)",
+    "lookup(True)",
+    "rate-limit-check",
+    "notification-emit",
+    "final-update-start",
+    "run-end"
+   ]
+  },
+  "after": {
+   "rc": 0,
+   "accepted": 0,
+   "errors": [],
+   "warns": [
+    "User not licensed but company has licenses"
+   ],
+   "events": [
+    "run-start",
+    "reaction(addReactionToPR)",
+    "reaction(addReactionToPR)",
+    "lookup(True)",
+    "rate-limit-check",
+    "notification-emit",
+    "final-update-start",
+    "run-end"
+   ]
+  },
+  "rows": [
+   [
+    "fd0b5a7d",
+    "skipped",
+    "04:32:50.014",
+    "04:32:50.035",
+    "2026-11-24T04:32:50.032Z",
+    "User Not Licensed \u2014 Assign seat to user"
+   ],
+   [
+    "65a40b81",
+    "skipped",
+    "04:32:53.360",
+    "04:32:53.385",
+    "-",
+    "User Not Licensed \u2014 Assign seat to user"
+   ],
+   [
+    "bfd109cf",
+    "skipped",
+    "04:32:56.737",
+    "04:32:56.757",
+    "-",
+    "User Not Licensed \u2014 Assign seat to user"
+   ]
+  ]
+ },
+ "M16_first_command": [
+  {
+   "platform": "GITHUB",
+   "first": {
+    "rc": 0,
+    "accepted": 1,
+    "errors": [],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToComment)",
+     "reaction(addReactionToComment)",
+     "lookup(False)",
+     "notice-post-attempt(issue)",
+     "notice-accepted(issue)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   "second": {
+    "rc": 0,
+    "accepted": 0,
+    "errors": [],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToComment)",
+     "reaction(addReactionToComment)",
+     "lookup(True)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   "reactions": [
+    {
+     "ev": "reaction",
+     "name": "addReactionToComment",
+     "reaction": "rocket",
+     "commentId": 321
+    },
+    {
+     "ev": "reaction",
+     "name": "addReactionToComment",
+     "reaction": "-1",
+     "commentId": 321
+    }
+   ],
+   "rows": [
+    [
+     "8e7490b0",
+     "skipped",
+     "04:33:00.207",
+     "04:33:00.227",
+     "2026-11-24T04:33:00.225Z",
+     "User Not Licensed \u2014 Assign seat to user"
+    ],
+    [
+     "3f29cbdb",
+     "skipped",
+     "04:33:03.565",
+     "04:33:03.586",
+     "-",
+     "User Not Licensed \u2014 Assign seat to user"
+    ]
+   ]
+  },
+  {
+   "platform": "FORGEJO",
+   "first": {
+    "rc": 0,
+    "accepted": 1,
+    "errors": [],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToComment)",
+     "reaction(addReactionToComment)",
+     "lookup(False)",
+     "notice-post-attempt(issue)",
+     "notice-accepted(issue)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   "second": {
+    "rc": 0,
+    "accepted": 0,
+    "errors": [],
+    "warns": [
+     "User not licensed but company has licenses"
+    ],
+    "events": [
+     "run-start",
+     "reaction(addReactionToComment)",
+     "reaction(addReactionToComment)",
+     "lookup(True)",
+     "rate-limit-check",
+     "notification-emit",
+     "final-update-start",
+     "run-end"
+    ]
+   },
+   "reactions": [
+    {
+     "ev": "reaction",
+     "name": "addReactionToComment",
+     "reaction": "rocket",
+     "commentId": 321
+    },
+    {
+     "ev": "reaction",
+     "name": "addReactionToComment",
+     "reaction": "-1",
+     "commentId": 321
+    }
+   ],
+   "rows": [
+    [
+     "5b9f14f0",
+     "skipped",
+     "04:33:07.111",
+     "04:33:07.130",
+     "2026-11-24T04:33:07.127Z",
+     "User Not Licensed \u2014 Assign seat to user"
+    ],
+    [
+     "03b35f01",
+     "skipped",
+     "04:33:10.458",
+     "04:33:10.477",
+     "-",
+     "User Not Licensed \u2014 Assign seat to user"
+    ]
+   ]
+  }
+ ],
+ "M38_long": {
+  "rc": 0,
+  "accepted": 1,
+  "errors": [],
+  "warns": [
+   "User not licensed but company has licenses"
+  ],
+  "events": [
+   "run-start",
+   "reaction(addReactionToPR)",
+   "reaction(addReactionToPR)",
+   "lookup(False)",
+   "notice-post-attempt(issue)",
+   "notice-accepted(issue)",
+   "rate-limit-check",
+   "notification-emit",
+   "final-update-start",
+   "run-end"
+  ],
+  "rows": [
+   [
+    "e1500918",
+    "skipped",
+    "04:33:14.008",
+    "04:33:14.028",
+    "2026-11-24T04:33:14.025Z",
+    "User Not Licensed \u2014 Assign seat to user"
+   ]
+  ]
+ },
+ "M38_missing_pr": {
+  "rc": 0,
+  "accepted": 0,
+  "errors": [
+   "Cannot generate lock key due to missing identifiers in payload"
+  ],
+  "warns": [],
+  "events": [
+   "run-start",
+   "run-end"
+  ],
+  "out": [
+   "Error: Missing required identifiers for code review"
+  ]
+ },
+ "M36_file_scan": {
+  "m20post-1": [],
+  "m20lookup-1": [],
+  "m18-run1": []
+ },
+ "M36_projection": [
+  {
+   "run": "m20post-1",
+   "level": "error",
+   "msg": "Error posting the no-license notice",
+   "context": "ValidatePrerequisitesStage",
+   "organizationId": "5f8c3403-3a88-4746-839a-d2b941a55bbe",
+   "teamId": "52693f55-bb61-437a-84e6-f81725d41e08",
+   "repositoryId": "repo-1",
+   "prNumber": 201,
+   "hasError": true,
+   "sensitive_markers_in_line": []
+  },
+  {
+   "run": "m18-run1",
+   "level": "error",
+   "msg": "Error to create response to comment",
+   "context": "BitbucketCloudService",
+   "organizationId": null,
+   "teamId": null,
+   "repositoryId": "repo-1",
+   "prNumber": 18,
+   "hasError": true,
+   "sensitive_markers_in_line": []
+  },
+  {
+   "run": "m20lookup-1",
+   "level": "warn",
+   "msg": "Could not check for an earlier no-license notice, posting it",
+   "context": "ValidatePrerequisitesStage",
+   "organizationId": "0e17f725-f594-48a0-89c8-e6583bc47a28",
+   "teamId": "994d5392-fcab-4349-beb0-5391e40845da",
+   "repositoryId": "repo-1",
+   "prNumber": 230,
+   "error": "{'type': 'Object', 'message': 'canceling statement due to statement timeout', 'stack': 'QueryFailedError: canceling statement due to statement timeout\\n    at P",
+   "sensitive": []
+  }
+ ]
+}
