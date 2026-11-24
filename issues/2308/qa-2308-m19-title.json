@@ -1,0 +1,530 @@
+{
+ "org": "jr-claude-github",
+ "from": "2026-11-24T19:36:31Z",
+ "to": "2026-11-24T19:38:19Z",
+ "rules": [
+  {
+   "uuid": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2",
+   "title": "qa2308 grades require enrollment",
+   "status": "active",
+   "severity": "high",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "091bc1387e1cc4ac8d90930e021a54d644b991219439e5149646984891dac612",
+    "attemptedAt": "2026-11-24T19:04:15.987Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical"
+   },
+   "cn": {
+    "need": "full-file",
+    "source": "author",
+    "sourceHash": "bogus-qa2308",
+    "inferredAt": "2026-11-24T19:10:37.034Z"
+   },
+   "detector": null,
+   "fileScope": [
+    ".ts",
+    ".js"
+   ],
+   "caCurrent": true,
+   "cnCurrent": true,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "In qa2308/, a service that records a grade must chec that the student is enrolled in the course first. Reect the grade otherwise."
+  },
+  {
+   "uuid": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "title": "qa2308 no console.log",
+   "status": "active",
+   "severity": "high",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "c1a9c405186cb2c070a29c6c52f2d270363e962288dc9646d746283063c0cc3b",
+    "attemptedAt": "2026-11-24T19:19:03.485Z",
+    "outcome": "compiled",
+    "declineReason": null
+   },
+   "cn": {
+    "need": "diff-only",
+    "source": "compiler",
+    "sourceHash": "2e53a6765badc5614a76b5d153c553a1a6c516bdbb49b037d056ef776b0214dc",
+    "inferredAt": "2026-11-24T19:12:12.510Z"
+   },
+   "detector": "console\\.log\\s*\\(",
+   "fileScope": [
+    ".ts",
+    ".tsx",
+    ".mts",
+    ".cts"
+   ],
+   "caCurrent": true,
+   "cnCurrent": true,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "Do not call console.log in TypeScript files under qa2308/; use the injected logger."
+  },
+  {
+   "uuid": "8719ceb8-c644-483b-8177-54c868953e54",
+   "title": "qa2308 cli grades rounding (proposed)",
+   "status": "active",
+   "severity": "medium",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "c3caffa265729d8ac89c8db2afc0b9c00bf287c96e8a6e03f8b22f60b6df80c1",
+    "attemptedAt": "2026-11-24T19:31:36.979Z",
+    "outcome": "compiled",
+    "declineReason": null
+   },
+   "cn": {
+    "need": "diff-only",
+    "source": "compiler",
+    "sourceHash": "9fd9989baa18a0da60c34bd9ebad134563b48e655ffb2f18fc9b119648c5a8b3",
+    "inferredAt": "2026-11-24T19:31:36.963Z"
+   },
+   "detector": "(?:this\\.)?grades?(?:\\[\\w+\\])?\\.value\\s*=\\s*(?:Math\\.(?:round|floor|ceil|trunc)|Number)\\s*\\(",
+   "fileScope": [
+    ".js",
+    ".ts",
+    ".jsx",
+    ".tsx",
+    ".mjs",
+    ".cjs"
+   ],
+   "caCurrent": true,
+   "cnCurrent": true,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "In qa2308/, grade averages must be rounded only when the report card is rendered; the stored grade keeps full precision."
+  },
+  {
+   "uuid": "e0419abd-2264-42ab-b1ee-d22b4e734244",
+   "title": "qa-2308 no eval in attendance import",
+   "status": "active",
+   "severity": "high",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "86077ada747040679d3d1d63f546e3ca1502ddced64a842d05ffedd160f9b459",
+    "attemptedAt": "2026-11-24T19:28:20.284Z",
+    "outcome": "compiled",
+    "declineReason": null
+   },
+   "cn": {
+    "need": "diff-only",
+    "source": "compiler",
+    "sourceHash": "9ba311834a1af36b4f66a502c54d2126560915cee8cda183380403cffeaeb1c6",
+    "inferredAt": "2026-11-24T19:28:20.263Z"
+   },
+   "detector": "\\beval\\s*\\(",
+   "fileScope": [
+    ".ts",
+    ".tsx",
+    ".js",
+    ".jsx",
+    ".mjs",
+    ".cjs"
+   ],
+   "caCurrent": true,
+   "cnCurrent": true,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "In attendance JSON import code, never execute the payload with eval; parse it with JSON.parse. Reject the payload when parsing fails.\n\n### B"
+  },
+  {
+   "uuid": "b47dfb9a-cfdf-4131-b64e-a5c6978a8a59",
+   "title": "qa2308 grades require enrollment (proposed)",
+   "status": "rejected",
+   "severity": "high",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "091bc1387e1cc4ac8d90930e021a54d644b991219439e5149646984891dac612",
+    "attemptedAt": "2026-11-24T19:04:15.987Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical"
+   },
+   "cn": {
+    "need": "full-file",
+    "source": "author",
+    "sourceHash": "bogus-qa2308",
+    "inferredAt": "2026-11-24T19:10:37.034Z"
+   },
+   "detector": null,
+   "fileScope": [
+    ".ts",
+    ".js"
+   ],
+   "caCurrent": true,
+   "cnCurrent": true,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "In qa2308/, a service that records a grade must chec that the student is enrolled in the course first. Reect the grade otherwise."
+  },
+  {
+   "uuid": "283d82a6-bbf2-4409-9805-9106f80c41be",
+   "title": "qa2308 grades require enrollment (proposed)",
+   "status": "active",
+   "severity": "high",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "091bc1387e1cc4ac8d90930e021a54d644b991219439e5149646984891dac612",
+    "attemptedAt": "2026-11-24T19:20:43.822Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical"
+   },
+   "cn": {
+    "need": "full-file",
+    "source": "author",
+    "sourceHash": "bogus-qa2308",
+    "inferredAt": "2026-11-24T19:10:37.034Z"
+   },
+   "detector": null,
+   "fileScope": [
+    ".ts",
+    ".js"
+   ],
+   "caCurrent": true,
+   "cnCurrent": true,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "In qa2308/, a service that records a grade must chec that the student is enrolled in the course first. Reect the grade otherwise."
+  },
+  {
+   "uuid": "1eb95c7d-af59-4b39-a22a-b183252a7d1b",
+   "title": "qa2308 pending new attendance campus",
+   "status": "active",
+   "severity": "medium",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "59d0fb41720f0ef2fc8cfca4208c8031e15abed54175f4a14e364f88b47c6b7f",
+    "attemptedAt": "2026-11-24T19:21:49.051Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical"
+   },
+   "cn": {
+    "need": "full-file",
+    "source": "compiler",
+    "sourceHash": "75b1f3edc8e7edb2b2177a8e4ec837c4de45816ee3aadfb9235372d587d750a2",
+    "inferredAt": "2026-11-24T19:21:49.042Z"
+   },
+   "detector": null,
+   "fileScope": [
+    ".js",
+    ".jsx",
+    ".mjs",
+    ".cjs",
+    ".ts",
+    ".tsx",
+    ".mts",
+    ".cts"
+   ],
+   "caCurrent": true,
+   "cnCurrent": true,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "In qa2308/, an attendance record must keep the campus id the caller sent."
+  },
+  {
+   "uuid": "04949b9d-c352-4cf4-8cf3-933d7c185959",
+   "title": "qa2308 cli grades rounding (proposed)",
+   "status": "applied",
+   "severity": "medium",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "cd1c9bec3c0db796ca15f832a351c9cd62d2aa7e00ff17e05516c415133ec48c",
+    "attemptedAt": "2026-11-24T19:19:08.485Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical"
+   },
+   "cn": {
+    "need": null,
+    "source": null,
+    "sourceHash": null,
+    "inferredAt": null
+   },
+   "detector": null,
+   "fileScope": [
+    ".js",
+    ".jsx",
+    ".ts",
+    ".tsx",
+    ".mjs",
+    ".cjs"
+   ],
+   "caCurrent": false,
+   "cnCurrent": false,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "In qa2308/, grade averages must be rounded only when the report card is rendered; the stored grade keeps full precision."
+  },
+  {
+   "uuid": "f976b2f2-9c71-4df1-b06d-b5f6134d33f6",
+   "title": "qa2308 lib Use Promise.allSettled for batch operations",
+   "status": "active",
+   "severity": "low",
+   "path": "qa2308/lib2/**",
+   "ca": {
+    "sourceHash": "4b5a89cc413df6ad7b17eb81b5fa38b953c3308f7ecdaa63006c28dc4c57bbbc",
+    "attemptedAt": "2026-11-24T19:25:01.812Z",
+    "outcome": "compiled",
+    "declineReason": null
+   },
+   "cn": {
+    "need": "diff-only",
+    "source": "compiler",
+    "sourceHash": "783c26df9c39e93bef861d3e1207efe4d2e1e8bd6cb63c49736d414ad77145f0",
+    "inferredAt": "2026-11-24T19:25:01.792Z"
+   },
+   "detector": "\\bPromise\\.all(?!Settled)\\s*\\(",
+   "fileScope": [
+    ".js",
+    ".jsx",
+    ".mjs",
+    ".cjs",
+    ".ts",
+    ".tsx",
+    ".mts",
+    ".cts",
+    ".vue",
+    ".svelte"
+   ],
+   "caCurrent": true,
+   "cnCurrent": true,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "For many independent tasks, prefer Promise.allSettled and handle per-item results."
+  },
+  {
+   "uuid": "f2f16786-5e48-4d3a-89ac-c187817c0b27",
+   "title": "qa-2308 A reject invalid student id (t)",
+   "status": "active",
+   "severity": "medium",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "75254f2ed7d454917849e040b263c0317d422b6a9eb17f92b115eebfb91e0fb8",
+    "attemptedAt": "2026-11-24T19:33:10.184Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical"
+   },
+   "cn": {
+    "need": "full-file",
+    "source": "compiler",
+    "sourceHash": "426ed84e04988d7f2484ccd40923a8af1a68ac63216599fba600d5df34883ee8",
+    "inferredAt": "2026-11-24T19:33:10.172Z"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "cnCurrent": true,
+   "examplesKeyOrder": [],
+   "rule": "In attendance import handlers, return an explicit rejected result for an invalid student identifier; do not silently accept it."
+  },
+  {
+   "uuid": "53d46a57-d189-4113-bd9a-7fe533d4a6cc",
+   "title": "qa-2308 B preserve campus id (t)",
+   "status": "active",
+   "severity": "medium",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "ade84a121f8796b052d04b93922920de77bff0d336305148123888db2b2985d8",
+    "attemptedAt": "2026-11-24T19:33:10.226Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical"
+   },
+   "cn": {
+    "need": "full-file",
+    "source": "compiler",
+    "sourceHash": "e8dcc6bd0754740dfbfe8b5d53871a60f570ceeb098837a5921641746bf78a62",
+    "inferredAt": "2026-11-24T19:33:10.211Z"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "cnCurrent": true,
+   "examplesKeyOrder": [],
+   "rule": "When recording attendance, preserve the caller's stated campus identifier in the result."
+  },
+  {
+   "uuid": "d37a3c43-568c-4480-9693-896e8d6a1f15",
+   "title": "qa-2308 M no eval in attendance JSON (t)",
+   "status": "active",
+   "severity": "medium",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "361f573445be32f7b4fdebb03fbb86eb0082939edb7d4c1394133d96c04abc09",
+    "attemptedAt": "2026-11-24T19:37:05.107Z",
+    "outcome": "compiled",
+    "declineReason": null
+   },
+   "cn": {
+    "need": "diff-only",
+    "source": "compiler",
+    "sourceHash": "6523abb8dad016edeed0aaa80214c4f6bc6d7d08c6b5b8e3650cca2c0e90d589",
+    "inferredAt": "2026-11-24T19:37:05.087Z"
+   },
+   "detector": "(?<![\\w$.])eval\\s*\\(",
+   "fileScope": [
+    ".js",
+    ".jsx",
+    ".mjs",
+    ".cjs",
+    ".ts",
+    ".tsx",
+    ".mts",
+    ".cts",
+    ".vue",
+    ".svelte"
+   ],
+   "caCurrent": true,
+   "cnCurrent": true,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "In attendance JSON import code, never execute the payload with eval; parse it with JSON.parse."
+  }
+ ],
+ "compilerObs": [
+  {
+   "t": "2026-11-24T19:37:01.716Z",
+   "end": "2026-11-24T19:37:05.084Z",
+   "trace": "d4250a78e61b8e54690f4ab63ae0916b",
+   "level": "DEFAULT",
+   "status": ""
+  }
+ ],
+ "compilerLogs": [
+  {
+   "t": "2026-11-24T19:37:05.107Z",
+   "level": "info",
+   "message": "Compiled T0 detector for rule d37a3c43-568c-4480-9693-896e8d6a1f15",
+   "ruleUuid": "d37a3c43-568c-4480-9693-896e8d6a1f15"
+  }
+ ],
+ "saveLogs": [
+  {
+   "t": "2026-11-24T19:37:01.183Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "f2f16786-5e48-4d3a-89ac-c187817c0b27",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T19:37:01.234Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "f2f16786-5e48-4d3a-89ac-c187817c0b27",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T19:37:01.441Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "53d46a57-d189-4113-bd9a-7fe533d4a6cc",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T19:37:01.501Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "53d46a57-d189-4113-bd9a-7fe533d4a6cc",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T19:37:01.711Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "d37a3c43-568c-4480-9693-896e8d6a1f15",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T19:37:01.757Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "d37a3c43-568c-4480-9693-896e8d6a1f15",
+   "org": "unknown"
+  }
+ ]
+}
