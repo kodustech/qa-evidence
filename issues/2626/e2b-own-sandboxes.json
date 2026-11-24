@@ -1,0 +1,667 @@
+{
+ "note": "E2B lifecycle events (GET /events/sandboxes/{id}) read only for sandbox ids created by this QA run; read at 2026-11-24T23:32:06.698Z",
+ "sandboxes": [
+  {
+   "sandboxId": "i1rpql0j5ta4ez3hw4jq9",
+   "stage": "graph-build",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:40:56.215238352Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T21:41:06.3415745Z",
+     "kill_reason": "request",
+     "execution_ms": 10127
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox i1rpql0j5ta4ez3hw4jq9 not found"
+  },
+  {
+   "sandboxId": "i1aui4c93mt8s2w7oobfs",
+   "stage": "graph-build",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:40:56.016053677Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T21:41:06.136642693Z",
+     "kill_reason": "request",
+     "execution_ms": 10121
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox i1aui4c93mt8s2w7oobfs not found"
+  },
+  {
+   "sandboxId": "ik54pddkesbm90qbsyirj",
+   "stage": "graph-build",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:41:59.363980627Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T21:42:12.199060542Z",
+     "kill_reason": "request",
+     "execution_ms": 12836
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox ik54pddkesbm90qbsyirj not found"
+  },
+  {
+   "sandboxId": "iu928soqp6kkoqzdws47h",
+   "stage": "graph-build",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:41:48.628752915Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T21:42:06.029145118Z",
+     "kill_reason": "request",
+     "execution_ms": 17401
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox iu928soqp6kkoqzdws47h not found"
+  },
+  {
+   "sandboxId": "id87mupb7orj2kekwcx67",
+   "stage": "graph-build",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:41:48.842734035Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T21:41:58.821197589Z",
+     "kill_reason": "request",
+     "execution_ms": 9979
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox id87mupb7orj2kekwcx67 not found"
+  },
+  {
+   "sandboxId": "im6hh7y1u8ecwlkezec0k",
+   "stage": "graph-build",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:41:39.101735102Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T21:42:27.802252594Z",
+     "kill_reason": "request",
+     "execution_ms": 48702
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox im6hh7y1u8ecwlkezec0k not found"
+  },
+  {
+   "sandboxId": "iz8x3qicoknoycm2q8bmn",
+   "stage": "graph-build",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:41:37.880422692Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T21:41:48.054400145Z",
+     "kill_reason": "request",
+     "execution_ms": 10174
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox iz8x3qicoknoycm2q8bmn not found"
+  },
+  {
+   "sandboxId": "iku4t3d982z6yhx8wun9f",
+   "stage": "graph-build",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:41:38.266450543Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T21:42:03.877429417Z",
+     "kill_reason": "request",
+     "execution_ms": 25612
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox iku4t3d982z6yhx8wun9f not found"
+  },
+  {
+   "sandboxId": "i850yuc8yt4i14pnwho9o",
+   "stage": "graph-build",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:41:36.799212731Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T21:42:07.57122335Z",
+     "kill_reason": "request",
+     "execution_ms": 30773
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox i850yuc8yt4i14pnwho9o not found"
+  },
+  {
+   "sandboxId": "inftht98hisqklme11m0m",
+   "stage": "graph-build",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:41:36.648414664Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T21:41:46.914540689Z",
+     "kill_reason": "request",
+     "execution_ms": 10267
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox inftht98hisqklme11m0m not found"
+  },
+  {
+   "sandboxId": "imwhbnpimp8iy3zqae5yk",
+   "stage": "graph-incremental",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:53:54.130248139Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T21:54:06.916884198Z",
+     "kill_reason": "request",
+     "execution_ms": 12787
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox imwhbnpimp8iy3zqae5yk not found"
+  },
+  {
+   "sandboxId": "ikshk74azy4jh2fyj1gvk",
+   "stage": "graph-incremental",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:54:05.354626062Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T21:54:25.287486916Z",
+     "kill_reason": "request",
+     "execution_ms": 19933
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox ikshk74azy4jh2fyj1gvk not found"
+  },
+  {
+   "sandboxId": "ifpooyo10nso8gapq313b",
+   "stage": "graph-incremental",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:54:22.898505214Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T21:54:32.508086524Z",
+     "kill_reason": "request",
+     "execution_ms": 9610
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox ifpooyo10nso8gapq313b not found"
+  },
+  {
+   "sandboxId": "i3yotu4aa6gezb89u2gsj",
+   "stage": "graph-incremental",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:54:24.016674984Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T21:54:40.742123472Z",
+     "kill_reason": "request",
+     "execution_ms": 16726
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox i3yotu4aa6gezb89u2gsj not found"
+  },
+  {
+   "sandboxId": "i3r2cqr63htb67sxe6pul",
+   "stage": "review",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:46:35.676339294Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "updated",
+     "ts": "2026-11-24T21:49:24.289834265Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "paused",
+     "ts": "2026-11-24T21:49:56.414717137Z",
+     "kill_reason": null,
+     "execution_ms": 200739
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox i3r2cqr63htb67sxe6pul not found"
+  },
+  {
+   "sandboxId": "ipp3pxb9orm6bl2zvdaxu",
+   "stage": "review",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:46:41.905707894Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "updated",
+     "ts": "2026-11-24T21:49:40.117353587Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "paused",
+     "ts": "2026-11-24T21:50:11.729941509Z",
+     "kill_reason": null,
+     "execution_ms": 209825
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox ipp3pxb9orm6bl2zvdaxu not found"
+  },
+  {
+   "sandboxId": "ia9ebpx7osmgi6mxsc0p3",
+   "stage": "review",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:47:41.580362743Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "updated",
+     "ts": "2026-11-24T21:51:01.594496884Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "paused",
+     "ts": "2026-11-24T21:51:33.213178224Z",
+     "kill_reason": null,
+     "execution_ms": 231633
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox ia9ebpx7osmgi6mxsc0p3 not found"
+  },
+  {
+   "sandboxId": "ipbcmzbu0b1viy7ewysrx",
+   "stage": "review",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:46:58.86835705Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "updated",
+     "ts": "2026-11-24T21:51:03.452469594Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "paused",
+     "ts": "2026-11-24T21:51:35.059358449Z",
+     "kill_reason": null,
+     "execution_ms": 276191
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox ipbcmzbu0b1viy7ewysrx not found"
+  },
+  {
+   "sandboxId": "iz25oqvumlfdqubv4luyc",
+   "stage": "review",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T21:47:30.974706466Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "updated",
+     "ts": "2026-11-24T21:52:02.947484298Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "paused",
+     "ts": "2026-11-24T21:52:34.57707418Z",
+     "kill_reason": null,
+     "execution_ms": 303603
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox iz25oqvumlfdqubv4luyc not found"
+  },
+  {
+   "sandboxId": "iftfrc9m3r5hwb3dmj76v",
+   "stage": "graph-build",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T22:00:40.666805966Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T22:00:55.877461763Z",
+     "kill_reason": "request",
+     "execution_ms": 15211
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox iftfrc9m3r5hwb3dmj76v not found"
+  },
+  {
+   "sandboxId": "iy5ykgki8cw2xynez7maw",
+   "stage": "graph-build",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T22:00:40.518706752Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T22:00:50.898860609Z",
+     "kill_reason": "request",
+     "execution_ms": 10381
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox iy5ykgki8cw2xynez7maw not found"
+  },
+  {
+   "sandboxId": "ij21dmvary4asyyziq0p6",
+   "stage": "review",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T22:00:39.210889262Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "updated",
+     "ts": "2026-11-24T22:03:30.207808671Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "paused",
+     "ts": "2026-11-24T22:04:01.846274144Z",
+     "kill_reason": null,
+     "execution_ms": 202636
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox ij21dmvary4asyyziq0p6 not found"
+  },
+  {
+   "sandboxId": "i8363qiauspamie5mfitt",
+   "stage": "conversation",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T22:06:57.887792545Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "updated",
+     "ts": "2026-11-24T22:07:10.132524646Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "paused",
+     "ts": "2026-11-24T22:12:10.297097418Z",
+     "kill_reason": null,
+     "execution_ms": 312410
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox i8363qiauspamie5mfitt not found"
+  },
+  {
+   "sandboxId": "ijxtz9wufwhvem26wq90e",
+   "stage": "graph-incremental",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T23:19:34.644337319Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T23:20:07.566079493Z",
+     "kill_reason": "request",
+     "execution_ms": 32922
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox ijxtz9wufwhvem26wq90e not found"
+  },
+  {
+   "sandboxId": "i6ko3hm4glos3b6wzpzd5",
+   "stage": "graph-incremental",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T23:19:43.126776448Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T23:19:53.962476627Z",
+     "kill_reason": "request",
+     "execution_ms": 10840
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox i6ko3hm4glos3b6wzpzd5 not found"
+  },
+  {
+   "sandboxId": "i4bns263cug2yulbjze4b",
+   "stage": "graph-build",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T23:29:56.615299982Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T23:30:19.681060965Z",
+     "kill_reason": "request",
+     "execution_ms": 23066
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox i4bns263cug2yulbjze4b not found"
+  },
+  {
+   "sandboxId": "ibpfx1tx5a2l1fp1e76xp",
+   "stage": "graph-build",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T23:29:56.724281958Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T23:30:06.595559107Z",
+     "kill_reason": "request",
+     "execution_ms": 9872
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox ibpfx1tx5a2l1fp1e76xp not found"
+  },
+  {
+   "sandboxId": "ilg9ll1768qol142qyvyp",
+   "stage": "graph-build",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T23:30:03.479186012Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T23:30:12.679106983Z",
+     "kill_reason": "request",
+     "execution_ms": 9200
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox ilg9ll1768qol142qyvyp not found"
+  },
+  {
+   "sandboxId": "iu2z3iszkvcaped0rarth",
+   "stage": "graph-build",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T23:30:04.366840823Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T23:30:17.166057318Z",
+     "kill_reason": "request",
+     "execution_ms": 12800
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox iu2z3iszkvcaped0rarth not found"
+  },
+  {
+   "sandboxId": "ihy29dqx1bjf2xifs4c0e",
+   "stage": "graph-build",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T23:30:07.708720948Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T23:30:23.972929751Z",
+     "kill_reason": "request",
+     "execution_ms": 16265
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox ihy29dqx1bjf2xifs4c0e not found"
+  },
+  {
+   "sandboxId": "i3pb6d1xu4zf9av5j3nyn",
+   "stage": "graph-build",
+   "deployment": "homolog",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-24T23:30:07.495336212Z",
+     "kill_reason": null,
+     "execution_ms": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-24T23:30:29.946216222Z",
+     "kill_reason": "request",
+     "execution_ms": 22451
+    }
+   ],
+   "getInfo_now": "SandboxNotFoundError: Sandbox i3pb6d1xu4zf9av5j3nyn not found"
+  }
+ ]
+}
