@@ -1,0 +1,3 @@
+FAIL test/unit/qa2628/h-lease.spec.ts (21.006 s)
+  ● H lease harness @ctrl › M8 join at +3s after a review release; read past the old deadline; request order of setTimeout vs connect
+Tests:       1 failed, 12 skipped, 1 passed, 14 total
