@@ -1,0 +1,193 @@
+{
+ "missing_both": {
+  "calls": [
+   1,
+   0
+  ],
+  "after": {
+   "uuid": "m37-missing_both",
+   "title": "qa2308 missing_both",
+   "status": "active",
+   "rule": "Attendance import must reject an invalid student id.",
+   "compileAttempt": {
+    "sourceHash": "d578e80104e2dbfea41ca29068d5e784711e459197388c60a3d2835df649eddc",
+    "attemptedAt": "2026-11-24T19:07:02.881Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "4c512c219cf6601cad495ef2c268093aea64c2e319c4e593739a383c3f879c07",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T19:07:02.876Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "ctxHash": "4c512c219cf6601cad495ef2c268093aea64c2e319c4e593739a383c3f879c07"
+  }
+ },
+ "compiled_detector_no_attempt": {
+  "calls": [
+   1,
+   0
+  ],
+  "after": {
+   "uuid": "m37-compiled_detector_no_attempt",
+   "title": "qa2308 compiled_detector_no_attempt",
+   "status": "active",
+   "rule": "Attendance import must reject an invalid student id.",
+   "compileAttempt": {
+    "sourceHash": "d578e80104e2dbfea41ca29068d5e784711e459197388c60a3d2835df649eddc",
+    "attemptedAt": "2026-11-24T19:07:02.980Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "4c512c219cf6601cad495ef2c268093aea64c2e319c4e593739a383c3f879c07",
+    "source": "compiler"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "ctxHash": "4c512c219cf6601cad495ef2c268093aea64c2e319c4e593739a383c3f879c07"
+  }
+ },
+ "declined_attempt_no_outcome": {
+  "calls": [
+   0,
+   0
+  ],
+  "after": {
+   "uuid": "m37-declined_attempt_no_outcome",
+   "title": "qa2308 declined_attempt_no_outcome",
+   "status": "active",
+   "rule": "Attendance import must reject an invalid student id.",
+   "compileAttempt": {
+    "sourceHash": "d578e80104e2dbfea41ca29068d5e784711e459197388c60a3d2835df649eddc"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "4c512c219cf6601cad495ef2c268093aea64c2e319c4e593739a383c3f879c07",
+    "source": "compiler"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "ctxHash": "4c512c219cf6601cad495ef2c268093aea64c2e319c4e593739a383c3f879c07"
+  }
+ },
+ "null_context": {
+  "calls": [
+   1,
+   0
+  ],
+  "after": {
+   "uuid": "m37-null_context",
+   "title": "qa2308 null_context",
+   "status": "active",
+   "rule": "Attendance import must reject an invalid student id.",
+   "compileAttempt": {
+    "sourceHash": "d578e80104e2dbfea41ca29068d5e784711e459197388c60a3d2835df649eddc",
+    "attemptedAt": "2026-11-24T19:07:03.169Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "4c512c219cf6601cad495ef2c268093aea64c2e319c4e593739a383c3f879c07",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T19:07:03.162Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "ctxHash": "4c512c219cf6601cad495ef2c268093aea64c2e319c4e593739a383c3f879c07"
+  }
+ },
+ "author_without_hash": {
+  "calls": [
+   0,
+   0
+  ],
+  "after": {
+   "uuid": "m37-author_without_hash",
+   "title": "qa2308 author_without_hash",
+   "status": "active",
+   "rule": "Attendance import must reject an invalid student id.",
+   "compileAttempt": {
+    "sourceHash": "d578e80104e2dbfea41ca29068d5e784711e459197388c60a3d2835df649eddc",
+    "attemptedAt": "2025-01-01T00:00:00.000Z",
+    "outcome": "declined",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "full-file",
+    "source": "author"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "ctxHash": "4c512c219cf6601cad495ef2c268093aea64c2e319c4e593739a383c3f879c07"
+  }
+ },
+ "newRuleLiterals": {
+  "calls": 2,
+  "rules": [
+   {
+    "uuid": "e4d9ff2d-4fa5-4fa9-bc24-5aef59485fde",
+    "title": "qa2308 first",
+    "status": "active",
+    "rule": "Attendance import must reject an invalid student id.",
+    "compileAttempt": {
+     "sourceHash": "d578e80104e2dbfea41ca29068d5e784711e459197388c60a3d2835df649eddc",
+     "attemptedAt": "2026-11-24T19:07:03.344Z",
+     "outcome": "declined",
+     "declineReason": "not-mechanical",
+     "model": "byok"
+    },
+    "contextNeed": {
+     "need": "diff-only",
+     "sourceHash": "4c512c219cf6601cad495ef2c268093aea64c2e319c4e593739a383c3f879c07",
+     "source": "compiler",
+     "inferredAt": "2026-11-24T19:07:03.340Z",
+     "model": "byok"
+    },
+    "detector": null,
+    "fileScope": null,
+    "caCurrent": true,
+    "ctxHash": "4c512c219cf6601cad495ef2c268093aea64c2e319c4e593739a383c3f879c07"
+   },
+   {
+    "uuid": "db168573-2efb-4edf-b5ed-4416a84e8279",
+    "title": "qa2308 second",
+    "status": "active",
+    "rule": "Attendance import must reject an invalid student id. Second.",
+    "compileAttempt": {
+     "sourceHash": "9cb9d8e2b474c4749e779d5f983ec879a083ebc4cbaeb9d4955c73d47bf67080",
+     "attemptedAt": "2026-11-24T19:07:03.347Z",
+     "outcome": "declined",
+     "declineReason": "not-mechanical",
+     "model": "byok"
+    },
+    "contextNeed": {
+     "need": "diff-only",
+     "sourceHash": "2bc1d001146f5f6568fe04e09548539f12268a5f988ba3d8967e723c1db1cb9f",
+     "source": "compiler",
+     "inferredAt": "2026-11-24T19:07:03.344Z",
+     "model": "byok"
+    },
+    "detector": null,
+    "fileScope": null,
+    "caCurrent": true,
+    "ctxHash": "2bc1d001146f5f6568fe04e09548539f12268a5f988ba3d8967e723c1db1cb9f"
+   }
+  ]
+ }
+}
