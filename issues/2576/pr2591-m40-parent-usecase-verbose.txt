@@ -1,0 +1,97 @@
+npm warn Unknown project config "node-linker". This will stop working in the next major version of npm.
+FAIL libs/platform/application/use-cases/codeManagement/chatWithKodyFromGit.implicit-replies-setting.spec.ts
+  ● ChatWithKodyFromGitUseCase — conversation.implicitReplies (#2576) › stays quiet without running the classifier when the repository turned it off
+
+    expect(jest.fn()).not.toHaveBeenCalled()
+
+    Expected number of calls: 0
+    Received number of calls: 1
+
+    1: {"byokConfig": undefined, "organizationAndTeamData": {"organizationId": "11111111-1111-4111-8111-111111111111", "teamId": "22222222-2222-4222-8222-222222222222"}, "platformType": "GITHUB", "prNumber": 812, "thread": [{"author": "kodus-ai[bot]", "body": "This query can return duplicate rows. <!-- kody-codereview -->", "id": 555, "isBot": true, "isKody": true}, {"author": "dev-one", "body": "Fixed in abc123.", "id": 900, "isBot": false, "isKody": false}]}
+
+      141 |         await useCase.execute(params(agentReply));
+      142 |
+    > 143 |         expect(classify).not.toHaveBeenCalled();
+          |                              ^
+      144 |         expect(conversationAgentUseCase.execute).not.toHaveBeenCalled();
+      145 |         expect(
+      146 |             codeManagementService.createResponseToComment,
+
+      at Object.toHaveBeenCalled (libs/platform/application/use-cases/codeManagement/chatWithKodyFromGit.implicit-replies-setting.spec.ts:143:30)
+
+  ● ChatWithKodyFromGitUseCase — conversation.implicitReplies (#2576) › reads the setting for the PR's repository, with the id as a string
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    Expected: ObjectContaining {"organizationId": "11111111-1111-4111-8111-111111111111", "teamId": "22222222-2222-4222-8222-222222222222"}, ObjectContaining {"repositoryId": "123"}
+
+    Number of calls: 0
+
+      218 |         // and the lookup compares with `===`, so this is the value that has to
+      219 |         // arrive.
+    > 220 |         expect(codeBaseConfigService.getSimpleConfig).toHaveBeenCalledWith(
+          |                                                       ^
+      221 |             expect.objectContaining({ organizationId: ORG, teamId: TEAM }),
+      222 |             expect.objectContaining({ repositoryId: '123' }),
+      223 |         );
+
+      at Object.toHaveBeenCalledWith (libs/platform/application/use-cases/codeManagement/chatWithKodyFromGit.implicit-replies-setting.spec.ts:220:55)
+
+  ● ChatWithKodyFromGitUseCase — conversation.implicitReplies (#2576) › lets the repository kodus-config.yml turn replies off
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    Expected: ObjectContaining {"overrideConfig": true, "repository": Anything, "tolerateReviewSettingsErrors": true}
+
+    Number of calls: 0
+
+      244 |         await useCase.execute(params(agentReply));
+      245 |
+    > 246 |         expect(codeBaseConfigService.getKodusConfigFile).toHaveBeenCalledWith(
+          |                                                          ^
+      247 |             expect.objectContaining({
+      248 |                 repository: expect.anything(),
+      249 |                 overrideConfig: true,
+
+      at Object.toHaveBeenCalledWith (libs/platform/application/use-cases/codeManagement/chatWithKodyFromGit.implicit-replies-setting.spec.ts:246:58)
+
+  ● ChatWithKodyFromGitUseCase — conversation.implicitReplies (#2576) › keeps the stored decision when the repository file cannot be read
+
+    expect(jest.fn()).toHaveBeenCalled()
+
+    Expected number of calls: >= 1
+    Received number of calls:    0
+
+      295 |
+      296 |         // The old code never read the file: this call is what the case pins.
+    > 297 |         expect(codeBaseConfigService.getKodusConfigFile).toHaveBeenCalled();
+          |                                                          ^
+      298 |         expect(classify).not.toHaveBeenCalled();
+      299 |     });
+      300 |
+
+      at Object.toHaveBeenCalled (libs/platform/application/use-cases/codeManagement/chatWithKodyFromGit.implicit-replies-setting.spec.ts:297:58)
+
+  ● ChatWithKodyFromGitUseCase — conversation.implicitReplies (#2576) › asks the loader not to apply the file when the repository never opted in
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    Expected: ObjectContaining {"overrideConfig": false}
+
+    Number of calls: 0
+
+      314 |         await useCase.execute(params(agentReply));
+      315 |
+    > 316 |         expect(codeBaseConfigService.getKodusConfigFile).toHaveBeenCalledWith(
+          |                                                          ^
+      317 |             expect.objectContaining({ overrideConfig: false }),
+      318 |         );
+      319 |         expect(classify).not.toHaveBeenCalled();
+
+      at Object.toHaveBeenCalledWith (libs/platform/application/use-cases/codeManagement/chatWithKodyFromGit.implicit-replies-setting.spec.ts:316:58)
+
+Test Suites: 1 failed, 1 total
+Tests:       5 failed, 6 passed, 11 total
+Snapshots:   0 total
+Time:        1.076 s, estimated 2 s
+Ran all test suites matching libs/platform/application/use-cases/codeManagement/chatWithKodyFromGit.implicit-replies-setting.spec.ts.
