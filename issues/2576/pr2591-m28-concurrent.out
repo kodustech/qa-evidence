@@ -1,0 +1,11 @@
+QAEVT {"t":"2026-11-24T20:54:47.726Z","pid":18213,"role":"concurrent","event":"db-ready"}
+QAEVT {"t":"2026-11-24T20:54:47.733Z","pid":18213,"role":"concurrent","event":"execute-start"}
+QAEVT {"t":"2026-11-24T20:54:47.734Z","pid":18213,"role":"concurrent","event":"log","level":"log","message":"Receiving pull request review webhook for conversation"}
+QAEVT {"t":"2026-11-24T20:54:47.746Z","pid":18213,"role":"concurrent","event":"log","level":"log","message":"Comment already claimed by another delivery; skipping","key":"GITHUB:123:812::900:2026-11-24T10:01:00Z"}
+QAEVT {"t":"2026-11-24T20:54:47.747Z","pid":18213,"role":"concurrent","event":"execute-end"}
+QAEVT {"t":"2026-11-24T20:54:47.747Z","pid":18213,"role":"concurrent","event":"rows","rows":[{"messageId":"GITHUB:123:812::900:2026-11-24T10:01:00Z","status":"PROCESSING","lockedBy":"<host>:9a006889-2efb-4890-814c-f65805577a14","lockedAt":"2026-11-24T23:54:46.326Z","attempts":1,"processedAt":null}]}
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        1.022 s, estimated 2 s
+Ran all test suites matching libs/platform/application/use-cases/codeManagement/qa2576-worker.spec.ts.
