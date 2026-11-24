@@ -1,0 +1,531 @@
+{
+ "seed": {
+  "A": {
+   "rule": "mport must reject an invalid student id.",
+   "attemptHash": "d578e80104e2",
+   "attemptedAt": "2026-11-24T19:16:36.944Z",
+   "outcome": "declined",
+   "detector": null,
+   "caCurrent": true,
+   "cnCurrent": true,
+   "gateWouldSkip": true
+  },
+  "M": {
+   "rule": "n qa2308 files; use the injected logger.",
+   "attemptHash": "de72513e7b48",
+   "attemptedAt": "2026-11-24T19:16:38.107Z",
+   "outcome": "compiled",
+   "detector": "console\\.log\\s*\\(",
+   "caCurrent": true,
+   "cnCurrent": true,
+   "gateWouldSkip": true
+  },
+  "tenSettled": true
+ },
+ "M26a_429": {
+  "after429": {
+   "rule": " reject an invalid student id. Edit one.",
+   "attemptHash": "d578e80104e2",
+   "attemptedAt": "2026-11-24T19:16:36.944Z",
+   "outcome": "declined",
+   "detector": null,
+   "caCurrent": false,
+   "cnCurrent": false,
+   "gateWouldSkip": false
+  },
+  "calls": [
+   1,
+   1,
+   1
+  ],
+  "afterRetry": {
+   "rule": " reject an invalid student id. Edit one.",
+   "attemptHash": "e0eff9a01605",
+   "attemptedAt": "2026-11-24T19:16:56.367Z",
+   "outcome": "declined",
+   "detector": null,
+   "caCurrent": true,
+   "cnCurrent": true,
+   "gateWouldSkip": true
+  },
+  "afterThird": {
+   "rule": " reject an invalid student id. Edit one.",
+   "attemptHash": "e0eff9a01605",
+   "attemptedAt": "2026-11-24T19:16:57.821Z",
+   "outcome": "declined",
+   "detector": null,
+   "caCurrent": true,
+   "cnCurrent": true,
+   "gateWouldSkip": true
+  },
+  "rc": [
+   0,
+   0,
+   0
+  ]
+ },
+ "M26a_timeout": {
+  "afterTimeout": {
+   "rule": " reject an invalid student id. Edit two.",
+   "attemptHash": "e0eff9a01605",
+   "attemptedAt": "2026-11-24T19:16:57.821Z",
+   "outcome": "declined",
+   "detector": null,
+   "caCurrent": false,
+   "cnCurrent": false,
+   "gateWouldSkip": false
+  },
+  "calls": [
+   1,
+   1,
+   1
+  ],
+  "afterRetry": {
+   "rule": " reject an invalid student id. Edit two.",
+   "attemptHash": "64a90e63ca55",
+   "attemptedAt": "2026-11-24T19:17:03.848Z",
+   "outcome": "declined",
+   "detector": null,
+   "caCurrent": true,
+   "cnCurrent": true,
+   "gateWouldSkip": true
+  },
+  "afterThird": {
+   "rule": " reject an invalid student id. Edit two.",
+   "attemptHash": "64a90e63ca55",
+   "attemptedAt": "2026-11-24T19:17:05.363Z",
+   "outcome": "declined",
+   "detector": null,
+   "caCurrent": true,
+   "cnCurrent": true,
+   "gateWouldSkip": true
+  }
+ },
+ "M26b_kill_before_response": {
+  "pid": 76570,
+  "killedAt": 1795547826.909469,
+  "exit": -9,
+  "afterKill": {
+   "rule": "eject an invalid student id. Edit three.",
+   "attemptHash": "64a90e63ca55",
+   "attemptedAt": "2026-11-24T19:17:05.363Z",
+   "outcome": "declined",
+   "detector": null,
+   "caCurrent": false,
+   "cnCurrent": false,
+   "gateWouldSkip": false
+  },
+  "calls": [
+   1,
+   1,
+   1
+  ],
+  "afterRetry": {
+   "rule": "eject an invalid student id. Edit three.",
+   "attemptHash": "db4b9844ec04",
+   "attemptedAt": "2026-11-24T19:17:08.252Z",
+   "outcome": "declined",
+   "detector": null,
+   "caCurrent": true,
+   "cnCurrent": true,
+   "gateWouldSkip": true
+  },
+  "afterThird": {
+   "rule": "eject an invalid student id. Edit three.",
+   "attemptHash": "db4b9844ec04",
+   "attemptedAt": "2026-11-24T19:17:10.517Z",
+   "outcome": "declined",
+   "detector": null,
+   "caCurrent": true,
+   "cnCurrent": true,
+   "gateWouldSkip": true
+  }
+ },
+ "M26c_kill_after_detector": {
+  "pid": 76804,
+  "exit": -9,
+  "afterKill": {
+   "rule": " files; use the injected logger. Edited.",
+   "attemptHash": "de72513e7b48",
+   "attemptedAt": "2026-11-24T19:16:38.107Z",
+   "outcome": "compiled",
+   "detector": "console\\.log\\s*\\(",
+   "caCurrent": false,
+   "cnCurrent": true,
+   "gateWouldSkip": false
+  },
+  "calls": [
+   1,
+   1,
+   1
+  ],
+  "afterRetry": {
+   "rule": " files; use the injected logger. Edited.",
+   "attemptHash": "d93657d8ea07",
+   "attemptedAt": "2026-11-24T19:17:13.447Z",
+   "outcome": "compiled",
+   "detector": "console\\.log\\s*\\(",
+   "caCurrent": true,
+   "cnCurrent": true,
+   "gateWouldSkip": true
+  },
+  "afterThird": {
+   "rule": " files; use the injected logger. Edited.",
+   "attemptHash": "d93657d8ea07",
+   "attemptedAt": "2026-11-24T19:17:14.996Z",
+   "outcome": "compiled",
+   "detector": "console\\.log\\s*\\(",
+   "caCurrent": true,
+   "cnCurrent": true,
+   "gateWouldSkip": true
+  }
+ },
+ "M28a_burst_one_rule": {
+  "before": {
+   "rule": "eject an invalid student id. Edit three.",
+   "attemptHash": "db4b9844ec04",
+   "attemptedAt": "2026-11-24T19:17:10.517Z",
+   "outcome": "declined",
+   "detector": null,
+   "caCurrent": true,
+   "cnCurrent": true,
+   "gateWouldSkip": true
+  },
+  "after": {
+   "rule": "eject an invalid student id. Edit three.",
+   "attemptHash": "db4b9844ec04",
+   "attemptedAt": "2026-11-24T19:17:21.042Z",
+   "outcome": "declined",
+   "detector": null,
+   "caCurrent": true,
+   "cnCurrent": true,
+   "gateWouldSkip": true
+  },
+  "calls": 8,
+  "windows": [
+   [
+    {
+     "t": "2026-11-24T19:17:20.998Z",
+     "pid": 76997,
+     "tag": "m28a0",
+     "ev": "save.start"
+    },
+    {
+     "t": "2026-11-24T19:17:21.017Z",
+     "pid": 76997,
+     "tag": "m28a0",
+     "ev": "save.returned"
+    }
+   ],
+   [
+    {
+     "t": "2026-11-24T19:17:20.812Z",
+     "pid": 76998,
+     "tag": "m28a1",
+     "ev": "save.start"
+    },
+    {
+     "t": "2026-11-24T19:17:20.842Z",
+     "pid": 76998,
+     "tag": "m28a1",
+     "ev": "save.returned"
+    }
+   ],
+   [
+    {
+     "t": "2026-11-24T19:17:20.840Z",
+     "pid": 76999,
+     "tag": "m28a2",
+     "ev": "save.start"
+    },
+    {
+     "t": "2026-11-24T19:17:20.990Z",
+     "pid": 76999,
+     "tag": "m28a2",
+     "ev": "save.returned"
+    }
+   ],
+   [
+    {
+     "t": "2026-11-24T19:17:20.855Z",
+     "pid": 77000,
+     "tag": "m28a3",
+     "ev": "save.start"
+    },
+    {
+     "t": "2026-11-24T19:17:20.877Z",
+     "pid": 77000,
+     "tag": "m28a3",
+     "ev": "save.returned"
+    }
+   ],
+   [
+    {
+     "t": "2026-11-24T19:17:20.994Z",
+     "pid": 77001,
+     "tag": "m28a4",
+     "ev": "save.start"
+    },
+    {
+     "t": "2026-11-24T19:17:21.015Z",
+     "pid": 77001,
+     "tag": "m28a4",
+     "ev": "save.returned"
+    }
+   ],
+   [
+    {
+     "t": "2026-11-24T19:17:20.842Z",
+     "pid": 77002,
+     "tag": "m28a5",
+     "ev": "save.start"
+    },
+    {
+     "t": "2026-11-24T19:17:20.880Z",
+     "pid": 77002,
+     "tag": "m28a5",
+     "ev": "save.returned"
+    }
+   ],
+   [
+    {
+     "t": "2026-11-24T19:17:20.818Z",
+     "pid": 77003,
+     "tag": "m28a6",
+     "ev": "save.start"
+    },
+    {
+     "t": "2026-11-24T19:17:20.839Z",
+     "pid": 77003,
+     "tag": "m28a6",
+     "ev": "save.returned"
+    }
+   ],
+   [
+    {
+     "t": "2026-11-24T19:17:20.990Z",
+     "pid": 77004,
+     "tag": "m28a7",
+     "ev": "save.start"
+    },
+    {
+     "t": "2026-11-24T19:17:21.006Z",
+     "pid": 77004,
+     "tag": "m28a7",
+     "ev": "save.returned"
+    }
+   ]
+  ]
+ },
+ "M28b_ten_rules": {
+  "calls": 10,
+  "allStillSettled": true,
+  "attemptsUnchanged": false,
+  "docCount": {
+   "rules": 12,
+   "uuids": 12
+  },
+  "read": [
+   {
+    "t": "2026-11-24T19:17:29.208Z",
+    "pid": 78187,
+    "tag": "m28read",
+    "ev": "read.start"
+   },
+   {
+    "t": "2026-11-24T19:17:29.249Z",
+    "pid": 78187,
+    "tag": "m28read",
+    "ev": "read.end",
+    "rules": 12,
+    "eligible": []
+   }
+  ],
+  "windows": {
+   "m28b0": [
+    "2026-11-24T19:17:29.184Z",
+    "2026-11-24T19:17:29.391Z"
+   ],
+   "m28b1": [
+    "2026-11-24T19:17:29.404Z",
+    "2026-11-24T19:17:29.442Z"
+   ],
+   "m28b2": [
+    "2026-11-24T19:17:29.725Z",
+    "2026-11-24T19:17:29.760Z"
+   ],
+   "m28b3": [
+    "2026-11-24T19:17:29.509Z",
+    "2026-11-24T19:17:29.536Z"
+   ],
+   "m28b4": [
+    "2026-11-24T19:17:29.071Z",
+    "2026-11-24T19:17:29.391Z"
+   ],
+   "m28b5": [
+    "2026-11-24T19:17:29.599Z",
+    "2026-11-24T19:17:29.660Z"
+   ],
+   "m28b6": [
+    "2026-11-24T19:17:29.105Z",
+    "2026-11-24T19:17:29.346Z"
+   ],
+   "m28b7": [
+    "2026-11-24T19:17:29.377Z",
+    "2026-11-24T19:17:29.495Z"
+   ],
+   "m28b8": [
+    "2026-11-24T19:17:28.976Z",
+    "2026-11-24T19:17:29.333Z"
+   ],
+   "m28b9": [
+    "2026-11-24T19:17:29.682Z",
+    "2026-11-24T19:17:29.734Z"
+   ]
+  }
+ },
+ "M29a_B_then_C": {
+  "afterC": {
+   "rule": ".log in qa2308 files; use the logger. C.",
+   "attemptHash": "a400363cc91b",
+   "attemptedAt": "2026-11-24T19:17:35.824Z",
+   "outcome": "compiled",
+   "detector": "console\\.log\\s*\\(",
+   "caCurrent": true,
+   "cnCurrent": true,
+   "gateWouldSkip": true
+  },
+  "afterBReleasedLast": {
+   "rule": ".log in qa2308 files; use the logger. C.",
+   "attemptHash": "bf4ba9eceb61",
+   "attemptedAt": "2026-11-24T19:17:36.367Z",
+   "outcome": "compiled",
+   "detector": "console\\.log\\s*\\(",
+   "caCurrent": false,
+   "cnCurrent": false,
+   "gateWouldSkip": false
+  },
+  "calls": {
+   "B": 1,
+   "C": 1,
+   "heal": 1,
+   "after": 1
+  },
+  "afterHeal": {
+   "rule": ".log in qa2308 files; use the logger. C.",
+   "attemptHash": "a400363cc91b",
+   "attemptedAt": "2026-11-24T19:17:37.843Z",
+   "outcome": "compiled",
+   "detector": "console\\.log\\s*\\(",
+   "caCurrent": true,
+   "cnCurrent": true,
+   "gateWouldSkip": true
+  },
+  "afterNext": {
+   "rule": ".log in qa2308 files; use the logger. C.",
+   "attemptHash": "a400363cc91b",
+   "attemptedAt": "2026-11-24T19:17:39.327Z",
+   "outcome": "compiled",
+   "detector": "console\\.log\\s*\\(",
+   "caCurrent": true,
+   "cnCurrent": true,
+   "gateWouldSkip": true
+  },
+  "timeline": [
+   {
+    "t": "2026-11-24T19:17:34.796Z",
+    "pid": 78917,
+    "tag": "m29B",
+    "ev": "save.start"
+   },
+   {
+    "t": "2026-11-24T19:17:34.809Z",
+    "pid": 78917,
+    "tag": "m29B",
+    "ev": "llm.request",
+    "n": 1
+   },
+   {
+    "t": "2026-11-24T19:17:34.811Z",
+    "pid": 78917,
+    "tag": "m29B",
+    "ev": "save.returned"
+   },
+   {
+    "t": "2026-11-24T19:17:35.793Z",
+    "pid": 78975,
+    "tag": "m29C",
+    "ev": "save.start"
+   },
+   {
+    "t": "2026-11-24T19:17:35.808Z",
+    "pid": 78975,
+    "tag": "m29C",
+    "ev": "llm.request",
+    "n": 1
+   },
+   {
+    "t": "2026-11-24T19:17:35.810Z",
+    "pid": 78975,
+    "tag": "m29C",
+    "ev": "save.returned"
+   },
+   {
+    "t": "2026-11-24T19:17:35.816Z",
+    "pid": 78975,
+    "tag": "m29C",
+    "ev": "llm.response",
+    "status": "ok"
+   },
+   {
+    "t": "2026-11-24T19:17:35.823Z",
+    "pid": 78975,
+    "tag": "m29C",
+    "ev": "db.detectorWritten",
+    "pattern": "console\\.log\\s*\\("
+   },
+   {
+    "t": "2026-11-24T19:17:35.826Z",
+    "pid": 78975,
+    "tag": "m29C",
+    "ev": "db.attemptWritten",
+    "hash": "a400363cc91b"
+   },
+   {
+    "t": "2026-11-24T19:17:35.857Z",
+    "pid": 78975,
+    "tag": "m29C",
+    "ev": "settled",
+    "llmCalls": 1
+   },
+   {
+    "t": "2026-11-24T19:17:36.358Z",
+    "pid": 78917,
+    "tag": "m29B",
+    "ev": "llm.response",
+    "status": "ok"
+   },
+   {
+    "t": "2026-11-24T19:17:36.365Z",
+    "pid": 78917,
+    "tag": "m29B",
+    "ev": "db.detectorWritten",
+    "pattern": "console\\.log\\s*\\("
+   },
+   {
+    "t": "2026-11-24T19:17:36.368Z",
+    "pid": 78917,
+    "tag": "m29B",
+    "ev": "db.attemptWritten",
+    "hash": "bf4ba9eceb61"
+   },
+   {
+    "t": "2026-11-24T19:17:36.400Z",
+    "pid": 78917,
+    "tag": "m29B",
+    "ev": "settled",
+    "llmCalls": 1
+   }
+  ]
+ }
+}
