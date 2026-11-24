@@ -1,0 +1,53 @@
+FAIL test/unit/code-review/pipeline/stages/create-sandbox.stage.spec.ts
+  ● CreateSandboxStage › sandbox creation › releases the lease once when cleanup runs twice
+    Expected number of calls: 1
+    Received number of calls: 2
+  ● CreateSandboxStage › sandbox creation › releases the lease once when two cleanups overlap
+    Expected number of calls: 1
+    Received number of calls: 2
+  ● CreateSandboxStage › sandbox creation › an overlapping cleanup sees the in-flight release fail
+    Received promise resolved instead of rejected
+  ● CreateSandboxStage › sandbox creation › does not retry a failed release at the next cleanup
+    Received promise resolved instead of rejected
+FAIL libs/code-review/infrastructure/observers/code-review-pipeline.observer.spec.ts
+  ● CodeReviewPipelineObserver › records the sandbox's use on the AgentReviewStage log
+    Expected: "stage-log-uuid", ObjectContaining {"metadata": ObjectContaining {"sandboxUsage": {"acquiredAt": 2026-11-21T10:00:00.000Z, "consumer": "review", "firstUsedAt": 2026-11-21T10:00:20.000Z, "lastUsedAt": 2026-11-21T10:03:00.000Z, "releasedAt": 2026-11-21T10:03:05.000Z, "stopAt": 2026-11-21T10:03:35.000Z}}}
+    Received: "stage-log-uuid", {"finishedAt": 2026-11-24T22:13:39.320Z, "message": "", "status": "success"}
+FAIL test/unit/code-review/pipeline/stages/agent-review.stage.spec.ts
+  ● AgentReviewStage › sandbox release › releases the sandbox once the orchestrator returns
+    - Expected  - 1
+    + Received  + 0
+  ● AgentReviewStage › sandbox release › releases the sandbox when the orchestrator fails
+    Expected number of calls: 1
+    Received number of calls: 0
+  ● AgentReviewStage › sandbox release › does not wait for the release to finish the stage
+    Expected number of calls: 1
+    Received number of calls: 0
+  ● AgentReviewStage › sandbox release › keeps the review when the release fails
+    Expected number of calls: 1
+    Received number of calls: 0
+FAIL libs/sandbox/infrastructure/services/sandbox-lease-manager.spec.ts (5.751 s)
+  ● SandboxLeaseManager › sandbox usage › stamps the last command and records the release and the provider stop
+    Expected: {"acquiredAt": Any<Date>, "consumer": "review"}
+    Received: undefined
+  ● SandboxLeaseManager › sandbox usage › stamps the release when it starts, before the Mongo writes
+    Expected constructor: Date
+    Received value has no prototype
+    Received value: undefined
+  ● SandboxLeaseManager › sandbox usage › stops stamping after the release, and logs a use after it once
+    Expected number of calls: 1
+    Received number of calls: 0
+  ● SandboxLeaseManager › sandbox usage › a command still running at the release does not stamp after it
+    Expected constructor: Date
+    Received value has no prototype
+    Received value: undefined
+  ● SandboxLeaseManager › sandbox usage › stamps a command that fails too
+    Expected constructor: Date
+    Received value has no prototype
+    Received value: undefined
+  ● SandboxLeaseManager › sandbox usage › does not wait for E2B's idle timeout to release
+  ● SandboxLeaseManager › sandbox usage › records no stop when another holder keeps the sandbox
+    Expected constructor: Date
+    Received value has no prototype
+    Received value: undefined
+Tests:       16 failed, 144 passed, 160 total
