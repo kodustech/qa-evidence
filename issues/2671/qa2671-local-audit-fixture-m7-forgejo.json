@@ -1,0 +1,45 @@
+{
+ "files": [
+  {
+   "filename": "qa2671/attendance.ts",
+   "previous_filename": null,
+   "status": "changed",
+   "additions": 12,
+   "deletions": 0,
+   "changes": 12
+  },
+  {
+   "filename": "qa2671/index.ts",
+   "previous_filename": null,
+   "status": "changed",
+   "additions": 2,
+   "deletions": 2,
+   "changes": 4
+  },
+  {
+   "filename": "qa2671/instrumentation-client.ts",
+   "previous_filename": "qa2671/instrumentation.ts",
+   "status": "renamed",
+   "additions": 0,
+   "deletions": 0,
+   "changes": 0
+  },
+  {
+   "filename": "qa2671/renamed-and-edited.ts",
+   "previous_filename": "qa2671/edited.ts",
+   "status": "renamed",
+   "additions": 4,
+   "deletions": 1,
+   "changes": 5
+  },
+  {
+   "filename": "qa2671/safe-control.ts",
+   "previous_filename": null,
+   "status": "changed",
+   "additions": 1,
+   "deletions": 1,
+   "changes": 2
+  }
+ ],
+ "diff": "diff --git a/qa2671/attendance.ts b/qa2671/attendance.ts\nindex 47080ac..de5776a 100644\n--- a/qa2671/attendance.ts\n+++ b/qa2671/attendance.ts\n@@ -9,3 +9,15 @@ export function attendanceRate(records: AttendanceRecord[]): number {\n   const present = records.filter((r) => r.present).length;\n   return present / records.length;\n }\n+\n+export function absenteeShare(records: AttendanceRecord[], expected: number): number {\n+  const absent = records.filter((r) => !r.present).length;\n+  // students that never checked in count as absent too\n+  const missing = expected - records.length;\n+  return (absent + missing) / expected;\n+}\n+\n+export function lastAbsentee(records: AttendanceRecord[]): string {\n+  const absentees = records.filter((r) => !r.present);\n+  return absentees[absentees.length].studentId;\n+}\ndiff --git a/qa2671/index.ts b/qa2671/index.ts\nindex 404faca..77600a7 100644\n--- a/qa2671/index.ts\n+++ b/qa2671/index.ts\n@@ -1,5 +1,5 @@\n export * from './types';\n-export * from './instrumentation';\n-export * from './edited';\n+export * from './instrumentation-client';\n+export * from './renamed-and-edited';\n export * from './attendance';\n export * from './safe-control';\ndiff --git a/qa2671/instrumentation.ts b/qa2671/instrumentation-client.ts\nsimilarity index 100%\nrename from qa2671/instrumentation.ts\nrename to qa2671/instrumentation-client.ts\ndiff --git a/qa2671/edited.ts b/qa2671/renamed-and-edited.ts\nsimilarity index 71%\nrename from qa2671/edited.ts\nrename to qa2671/renamed-and-edited.ts\nindex 8a8a494..ab257b4 100644\n--- a/qa2671/edited.ts\n+++ b/qa2671/renamed-and-edited.ts\n@@ -7,7 +7,10 @@ export function averageGrade(grades: number[]): number {\n }\n \n export function describeStudent(student: Student): string {\n-  return `${student.name} (${student.id})`;\n+  const label = `${student.name} (${student.id})`;\n+  console.info('describing student', label);\n+  console.info('student auth', student.sessionToken);\n+  return label;\n }\n \n export function passingGrades(grades: number[]): number[] {\ndiff --git a/qa2671/safe-control.ts b/qa2671/safe-control.ts\nindex 3dff7f2..41ac0ff 100644\n--- a/qa2671/safe-control.ts\n+++ b/qa2671/safe-control.ts\n@@ -1,4 +1,4 @@\n // Formatting helpers for the class roster.\n export function rosterTitle(className: string): string {\n-  return `Roster - ${className}`;\n+  return `Roster - ${className.trim()}`;\n }\n"
+}
