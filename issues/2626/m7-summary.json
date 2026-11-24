@@ -1,0 +1,86 @@
+{
+ "source": "QA observability_logs_ts, component SandboxLeaseManager, lines naming a :graph: prKey; aggregate only (no ids)",
+ "post_deploy_2026-11-24T00:39Z_to_23:30Z": {
+  "graph_releases_count0": 42,
+  "immediate_kill_pairs": 42,
+  "release_to_kill_log_s": {
+   "p50": 0.124,
+   "p95": 0.295,
+   "max": 0.309,
+   "all": [
+    0.1,
+    0.102,
+    0.104,
+    0.104,
+    0.107,
+    0.108,
+    0.109,
+    0.111,
+    0.112,
+    0.116,
+    0.118,
+    0.119,
+    0.119,
+    0.119,
+    0.119,
+    0.12,
+    0.121,
+    0.122,
+    0.122,
+    0.124,
+    0.124,
+    0.125,
+    0.125,
+    0.125,
+    0.126,
+    0.127,
+    0.127,
+    0.127,
+    0.128,
+    0.13,
+    0.131,
+    0.132,
+    0.139,
+    0.14,
+    0.207,
+    0.276,
+    0.284,
+    0.285,
+    0.291,
+    0.295,
+    0.302,
+    0.309
+   ]
+  },
+  "graph_releases_followed_by_scheduled_idle_kill": 0,
+  "scheduled_windows_s": [],
+  "lost_cleanup_claim": 0,
+  "immediate_kill_failed": 0,
+  "slot_waits_graph": 0
+ },
+ "pre_deploy_2026-11-22T00:00Z_to_2026-11-24T00:39Z": {
+  "graph_releases_count0": 8,
+  "immediate_kill_pairs": 3,
+  "release_to_kill_log_s": {
+   "p50": 0.129,
+   "p95": 0.144,
+   "max": 0.144,
+   "all": [
+    0.125,
+    0.129,
+    0.144
+   ]
+  },
+  "graph_releases_followed_by_scheduled_idle_kill": 5,
+  "scheduled_windows_s": [
+   300.001,
+   300.0,
+   300.0,
+   300.0,
+   300.0
+  ],
+  "lost_cleanup_claim": 0,
+  "immediate_kill_failed": 0,
+  "slot_waits_graph": 0
+ }
+}
