@@ -1,0 +1,16 @@
+{
+ "team": {
+  "status": 200,
+  "snippet": "gic: true\nconversation:\n  implicitReplies: true\nbusinessLogic:\n  taskSource: auto\n  taskSourceTool: ''\n  criteriaLocation: auto\n  criteriaHeading: ''\n  criteriaField: ''\n  teamGuidance: ''\n  commentWhenMet: true\n  recheckOn: request\n  requireTask: false\ndeterministicEvidence:\n  ciChecks: false\n  tools:\n    secrets: false\n    dependencies: false\nrepoInstructionsEnabled: false\nsuggestionControl:\n  applyFilter",
+  "len": 34574
+ },
+ "repo_athena": {
+  "status": 200,
+  "snippet": null,
+  "len": 0
+ },
+ "repo_athena_with_false_delta": {
+  "status": 200,
+  "body": "conversation:\n  implicitReplies: false\n"
+ }
+}
