@@ -1,0 +1,16 @@
+QAEVT {"t":"2026-11-24T21:22:54.494Z","pid":36899,"role":"race1a","event":"db-ready"}
+QAEVT {"t":"2026-11-24T21:22:54.499Z","pid":36899,"role":"race1a","event":"barrier-wait","ms":7124}
+QAEVT {"t":"2026-11-24T21:23:01.626Z","pid":36899,"role":"race1a","event":"execute-start"}
+QAEVT {"t":"2026-11-24T21:23:01.631Z","pid":36899,"role":"race1a","event":"log","level":"log","message":"Receiving pull request review webhook for conversation"}
+QAEVT {"t":"2026-11-24T21:23:01.666Z","pid":36899,"role":"race1a","event":"log","level":"log","message":"PR description extracted"}
+QAEVT {"t":"2026-11-24T21:23:01.666Z","pid":36899,"role":"race1a","event":"log","level":"log","message":"Extracted PR information"}
+QAEVT {"t":"2026-11-24T21:23:01.676Z","pid":36899,"role":"race1a","event":"file-read-start"}
+QAEVT {"t":"2026-11-24T21:23:01.676Z","pid":36899,"role":"race1a","event":"file-read-end"}
+QAEVT {"t":"2026-11-24T21:23:01.676Z","pid":36899,"role":"race1a","event":"log","level":"log","message":"Unmentioned reply left unanswered: disabled","reason":"disabled"}
+QAEVT {"t":"2026-11-24T21:23:01.685Z","pid":36899,"role":"race1a","event":"execute-end"}
+QAEVT {"t":"2026-11-24T21:23:01.686Z","pid":36899,"role":"race1a","event":"rows","rows":[{"messageId":"GITHUB:123:812::900:2026-11-24T10:01:00Z","status":"PROCESSED","lockedBy":null,"lockedAt":null,"attempts":1,"processedAt":"2026-11-24T21:23:01.677Z"}]}
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        8.802 s
+Ran all test suites matching libs/platform/application/use-cases/codeManagement/qa2576-worker.spec.ts.
