@@ -1,0 +1,73 @@
+12:54:25.013 info AzureReposPullRequestHandler | Successfully processed Azure Repos event 'git.pullrequest.created' for PR ID: 210
+12:54:25.023 info CentralizedConfigSyncListener | Centralized config not enabled or validation failed, skipping sync
+12:54:25.072 info CentralizedConfigSyncListener | Centralized config not enabled or validation failed, skipping sync
+12:54:25.072 info CentralizedConfigSyncListener | Centralized config not enabled or validation failed, skipping sync
+12:54:25.074 info CentralizedConfigSyncListener | Centralized config not enabled or validation failed, skipping sync
+12:54:25.075 info CentralizedConfigSyncListener | Centralized config not enabled or validation failed, skipping sync
+12:54:25.076 info CentralizedConfigSyncListener | Centralized config not enabled or validation failed, skipping sync
+12:54:25.472 info RunCodeReviewAutomationUseCase | RunCodeReviewAutomationUseCase PR#210
+12:54:25.506 info PipelineExecutor | Starting pipeline: CodeReviewPipeline (ID: e8efc055-1de9-4de1-b53e-83286830127b)
+12:54:25.568 info PipelineExecutor | Stage 'ValidatePrerequisitesStage' completed in 61ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:54:25.583 info ValidateNewCommitsStage | No last analyzed commit found, analyzing all commits
+12:54:26.318 info ValidateNewCommitsStage | Processing 2 new commits for PR#210 (2 total)
+12:54:26.328 info PipelineExecutor | Stage 'ValidateNewCommitsStage' completed in 760ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:54:27.502 info PipelineExecutor | Stage 'ResolveConfigStage' completed in 1172ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:54:27.518 info ValidateConfigStage | Branch Review Validation
+12:54:27.526 info PipelineExecutor | Stage 'ValidateConfigStage' completed in 23ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:54:27.546 info PipelineExecutor | Stage 'AssessPrRiskStage' completed in 20ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:54:27.547 info PipelineExecutor | Stage 'ResolveRiskRoutingStage' completed in 0ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:54:27.563 info FetchChangedFilesStage | Found 5 files to analyze for PR#210 (5 total, 0 ignored)
+12:54:27.944 info PipelineExecutor | Stage 'FetchChangedFilesStage' completed in 395ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:54:27.989 info PipelineExecutor | Stage 'LoadExternalContextStage' completed in 44ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:54:28.011 info PipelineExecutor | Stage 'LoadCiEvidenceStage' completed in 21ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:54:28.268 info AzureReposService | Created issue comment for PR#210
+12:54:28.277 info PipelineExecutor | Stage 'InitialCommentStage' completed in 265ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:54:28.359 info BusinessValidationService | Business validation skipped (no_tracker)
+12:54:28.370 info BusinessLogicValidationStage | [BUSINESS-LOGIC] Skipped (no_tracker): no tracker.
+12:54:28.379 info PipelineExecutor | Stage 'BusinessLogicValidationStage' completed in 101ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:54:32.701 info PipelineExecutor | Stage 'CreateSandboxStage' completed in 4322ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:54:32.753 info PipelineExecutor | Stage 'RunAnalyzersStage' completed in 51ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:54:39.771 info GeneralistAgentProvider | [AGENT] Generalist finder settings for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash: family=deepseek, maxSteps=20, synthesisRescue=true
+12:54:39.771 info CodeReviewAgent | [AGENT] kodus-generalist-review-agent context window: 1048576 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash
+12:54:49.951 info KodyRulesShardedAgent | [kody-rules-shard] prompt cache: 5 file shard(s) in 1 head group(s), 1 shared; 1 of 4 sibling(s) ran after their group's first shard
+12:54:49.952 info KodyRulesShardedAgent | [AGENT] kodus-rules-review-agent (sharded) done for PR#210: 2 suggestions (2 confirmed across 5 shards; 0 detector candidate(s) offered; lookup 0 grep / 5 read / 0 exists) in 10186ms
+12:56:11.467 info VerifierAgent | verifier verdict recovered from text (keep=true)
+12:56:13.015 info VerifierAgent | verifier verdict recovered from text (keep=true)
+12:56:16.134 info VerifierAgent | verifier verdict recovered from text (keep=true)
+12:56:16.135 info review-funnel | review recall funnel (verify gate)
+12:56:16.137 info ReviewOrchestratorService | [AGENT] generalist returned 4 suggestions in 96370ms
+12:56:16.137 info ReviewOrchestratorService | [AGENT] kody-rules returned 2 suggestions in 10186ms
+12:56:34.239 info AgentReviewStage | [AGENT] Reclassified severity for 3 suggestions (0 left unclassified, default kept)
+12:56:37.674 info AgentReviewStage | [ENRICH] PR#210: enriched 2, failed 0, skipped 1
+12:56:37.674 info AgentReviewStage | [AGENT] Titled 3 suggestions (from summary 3, from body 0, over the ceiling 0, empty 0)
+12:56:38.904 info AgentReviewStage | [AGENT] Formatted 3/3 suggestion contents
+12:56:38.904 info AgentReviewStage | [AGENT] Shaped 3 suggestion bodies (fences removed 0, title repeat dropped 0, capped 0, titles rewritten 0, titles cut 0)
+12:56:38.905 info AgentReviewStage | [AGENT] Rendered merged finding locations
+12:56:38.915 info PipelineExecutor | Stage 'AgentReviewStage' completed in 126161ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:56:38.928 info CreatePrLevelCommentsStage | No PR-level suggestions to process for PR#210
+12:56:38.936 info PipelineExecutor | Stage 'CreatePrLevelCommentsStage' completed in 20ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:56:38.948 info ValidateSuggestionsStage | Skipping validation stage for non-GitHub platform
+12:56:38.956 info PipelineExecutor | Stage 'ValidateSuggestionsStage' completed in 19ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:56:38.972 info CreateFileCommentsStage | Starting file comments creation for PR#210
+12:56:39.560 info CommentManagerService | Create Line Comments PR#210
+12:56:40.582 info CreateFileCommentsStage | Successfully processed file comments for PR#210
+12:56:40.591 info PipelineExecutor | Stage 'CreateFileCommentsStage' completed in 1634ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:56:40.603 info AggregateResultsStage | Aggregated 3 valid suggestions, 0 discarded suggestions
+12:56:40.604 warn AggregateResultsStage | No valid suggestions to aggregate for PR#210
+12:56:40.612 info PipelineExecutor | Stage 'AggregateResultsStage' completed in 20ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:56:40.624 info UpdateCommentsAndGenerateSummaryStage | Generating summary for PR#210
+12:56:40.785 info CommentManagerService | GenerateSummaryPR: Start PR#210. After get PR data
+12:56:46.512 info CommentManagerService | GenerateSummaryPR: End PR#210. After concatenate
+12:56:46.924 info PipelineExecutor | Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 6312ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:56:46.945 info PipelineExecutor | Stage 'DecidePrApprovalStage' completed in 19ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:56:46.957 info RequestChangesOrApproveStage | Finished processing PR#210
+12:56:46.965 info PipelineExecutor | Stage 'RequestChangesOrApproveStage' completed in 20ms: e8efc055-1de9-4de1-b53e-83286830127b
+12:56:46.966 info PipelineExecutor | Finished pipeline: CodeReviewPipeline (ID: e8efc055-1de9-4de1-b53e-83286830127b)
+12:56:47.035 info AutomationCodeReviewService | Successfully handled pull request for PR#210
+12:56:55.878 info AzureReposPullRequestHandler | Successfully processed Azure Repos event 'git.pullrequest.updated' for PR ID: 210
+12:56:55.883 info CentralizedConfigSyncListener | Centralized config not enabled or validation failed, skipping sync
+12:56:55.934 info CentralizedConfigSyncListener | Centralized config not enabled or validation failed, skipping sync
+12:56:55.935 info CentralizedConfigSyncListener | Centralized config not enabled or validation failed, skipping sync
+12:56:55.936 info CentralizedConfigSyncListener | Centralized config not enabled or validation failed, skipping sync
+12:56:55.936 info CentralizedConfigSyncListener | Centralized config not enabled or validation failed, skipping sync
+12:56:55.937 info CentralizedConfigSyncListener | Centralized config not enabled or validation failed, skipping sync
