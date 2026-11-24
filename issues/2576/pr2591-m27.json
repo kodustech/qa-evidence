@@ -1,3 +1,18 @@
 {
- "chat": []
+ "chat": [],
+ "github_delivery": [
+  {
+   "delivery_id": 3855916511929565184,
+   "guid": "21e54026-e843-11f1-98b2-9675acd250c6",
+   "event": "pull_request_review_comment",
+   "action": "edited",
+   "delivered_at": "2026-11-24T20:10:46.748Z",
+   "status_code": 200,
+   "response_status": null,
+   "comment_id": 4685192810,
+   "in_reply_to_id": 4685171814,
+   "body_starts_with_mention": false,
+   "updated_at": "2026-11-24T20:10:45Z"
+  }
+ ]
 }
