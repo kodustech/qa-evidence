@@ -1,0 +1,74 @@
+[
+ {
+  "tag": "desktop",
+  "before": "true",
+  "afterReload": "false",
+  "restored": "true",
+  "net": [
+   {
+    "err": 404,
+    "u": "/api/proxy/api/parameters/find-by-key?key=language_config&teamId=<id>"
+   },
+   {
+    "err": 404,
+    "u": "/api/proxy/api/parameters/find-by-key?key=centralized_config&teamId=<id>"
+   },
+   {
+    "t": "2026-11-24T20:21:11.892Z",
+    "u": "/api/proxy/api/parameters/create-or-update-code-review",
+    "body": "{\"configValue\":{\"runOnDraft\":false},\"organizationAndTeamData\":{\"teamId\":\"0461d23a-e6ef-47a5-b804-33d815c5729d\"},\"repositoryId\":\"1468015189\"}"
+   },
+   {
+    "t": "2026-11-24T20:21:12.100Z",
+    "status": 201
+   },
+   {
+    "err": 404,
+    "u": "/api/proxy/api/parameters/find-by-key?key=centralized_config&teamId=<id>"
+   },
+   {
+    "t": "2026-11-24T20:21:25.861Z",
+    "u": "/api/proxy/api/parameters/create-or-update-code-review",
+    "body": "{\"configValue\":{\"runOnDraft\":true},\"organizationAndTeamData\":{\"teamId\":\"0461d23a-e6ef-47a5-b804-33d815c5729d\"},\"repositoryId\":\"1468015189\"}"
+   },
+   {
+    "t": "2026-11-24T20:21:26.081Z",
+    "status": 201
+   }
+  ]
+ },
+ {
+  "tag": "m390",
+  "before": "true",
+  "afterReload": "false",
+  "restored": "true",
+  "net": [
+   {
+    "err": 404,
+    "u": "/api/proxy/api/parameters/find-by-key?key=centralized_config&teamId=<id>"
+   },
+   {
+    "t": "2026-11-24T20:21:40.562Z",
+    "u": "/api/proxy/api/parameters/create-or-update-code-review",
+    "body": "{\"configValue\":{\"runOnDraft\":false},\"organizationAndTeamData\":{\"teamId\":\"0461d23a-e6ef-47a5-b804-33d815c5729d\"},\"repositoryId\":\"1468015189\"}"
+   },
+   {
+    "t": "2026-11-24T20:21:40.758Z",
+    "status": 201
+   },
+   {
+    "err": 404,
+    "u": "/api/proxy/api/parameters/find-by-key?key=centralized_config&teamId=<id>"
+   },
+   {
+    "t": "2026-11-24T20:21:54.450Z",
+    "u": "/api/proxy/api/parameters/create-or-update-code-review",
+    "body": "{\"configValue\":{\"runOnDraft\":true},\"organizationAndTeamData\":{\"teamId\":\"0461d23a-e6ef-47a5-b804-33d815c5729d\"},\"repositoryId\":\"1468015189\"}"
+   },
+   {
+    "t": "2026-11-24T20:21:54.639Z",
+    "status": 201
+   }
+  ]
+ }
+]
