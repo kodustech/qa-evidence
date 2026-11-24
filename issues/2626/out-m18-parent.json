@@ -1,0 +1,72 @@
+{
+ "rev": "parent",
+ "scenario": "m18",
+ "results": {
+  "no key": {
+   "afterRelease": {
+    "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-790504796028",
+    "leaseCount": 0,
+    "sandboxId": "fake-77435-1-jlg2j",
+    "state": "READY",
+    "killAt": "2026-11-24T22:24:03.464Z",
+    "cleanupAttempts": 0,
+    "killRetryCount": 0,
+    "expiresAt": "2026-11-25T00:24:03.326Z"
+   },
+   "afterCron": null,
+   "kills": 0,
+   "sandboxState": "running",
+   "cronLog": [
+    "[SANDBOX-IDLE-KILL] Killed idle sandbox"
+   ]
+  }
+ },
+ "leaseLogs": [
+  "2026-11-24T22:24:03.326Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-790504796028\" consumer=\"graph-build\"",
+  "2026-11-24T22:24:03.438Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-790504796028\" consumer=\"graph-build\"",
+  "2026-11-24T22:24:03.445Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-790504796028\" consumer=\"graph-build\" leaseId=\"7db47b3f",
+  "2026-11-24T22:24:03.464Z info SandboxLeaseManager: released leaseId=\"7db47b3f-eb40-4753-a503-171fa28d08e2\" prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-790504796028",
+  "2026-11-24T22:24:03.471Z info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T22:24:03.464Z for sandboxId=\"fake-77435-1-jlg2j\"",
+  "2026-11-24T22:24:03.496Z info [SANDBOX-IDLE-KILL] Killed idle sandbox"
+ ],
+ "transcript": [
+  {
+   "t": "2026-11-24T22:24:03.438Z",
+   "pid": 77435,
+   "rev": "parent",
+   "kind": "provider.create.start",
+   "id": "fake-77435-1-jlg2j"
+  },
+  {
+   "t": "2026-11-24T22:24:03.438Z",
+   "pid": 77435,
+   "rev": "parent",
+   "kind": "provider.create.done",
+   "id": "fake-77435-1-jlg2j"
+  },
+  {
+   "t": "2026-11-24T22:24:03.498Z",
+   "pid": 77435,
+   "rev": "parent",
+   "kind": "RESULT no key",
+   "v": {
+    "afterRelease": {
+     "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-790504796028",
+     "leaseCount": 0,
+     "sandboxId": "fake-77435-1-jlg2j",
+     "state": "READY",
+     "killAt": "2026-11-24T22:24:03.464Z",
+     "cleanupAttempts": 0,
+     "killRetryCount": 0,
+     "expiresAt": "2026-11-25T00:24:03.326Z"
+    },
+    "afterCron": null,
+    "kills": 0,
+    "sandboxState": "running",
+    "cronLog": [
+     "[SANDBOX-IDLE-KILL] Killed idle sandbox"
+    ]
+   }
+  }
+ ]
+}
