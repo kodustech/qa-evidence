@@ -1,0 +1,163 @@
+import { buildStack, dtoOf, newDto, proj, writeOut, ruleCompileHash, ruleContextNeedHash, VERSION } from './stack';
+import { createHash } from 'crypto';
+jest.setTimeout(120000);
+const ORG = 'org-qa2308-a';
+const MECH_EX = [{ snippet: 'console.log(student.id);', isCorrect: false }, { snippet: 'this.logger.info(student.id);', isCorrect: true }];
+const SEM_EX = [{ snippet: 'await grades.save(g);', isCorrect: false }, { snippet: 'await assertEnrolled(s); await grades.save(g);', isCorrect: true }];
+const calls = (s: any) => s.ledger.llm.length;
+
+describe(`qa2308 H (${VERSION})`, () => {
+    it('M2: ten settled rules, three batches of full saves + central title-only writes', async () => {
+        const s = await buildStack('qa2308_m2');
+        const ids: string[] = [];
+        for (let i = 0; i < 10; i++) { const r: any = await s.save(ORG, newDto(`qa2308 m2 rule ${i}`, `Grades service ${i} must check enrollment before saving a grade.`, SEM_EX)); ids.push(r.uuid); }
+        await s.settle();
+        const initial = calls(s);
+        const before = await Promise.all(ids.map((u) => s.getRule(ORG, u)));
+        const batches: any[] = [];
+        for (let b = 0; b < 3; b++) {
+            const c0 = calls(s);
+            for (const u of ids) { const r = await s.getRule(ORG, u); const { compileAttempt, contextNeed, detector, fileScope, ...plain } = r; await s.save(ORG, dtoOf(plain)); }
+            await s.settle();
+            batches.push({ batch: b + 1, saves: 10, compilerCalls: calls(s) - c0 });
+        }
+        const c0 = calls(s);
+        for (const u of ids) { const r = await s.getRule(ORG, u); await s.save(ORG, dtoOf(r, { title: r.title + ' (central)', compileAttempt: undefined, contextNeed: undefined, detector: undefined }), s.kody); }
+        await s.settle();
+        batches.push({ batch: 'central title-only (kody actor)', saves: 10, compilerCalls: calls(s) - c0 });
+        const after = await Promise.all(ids.map((u) => s.getRule(ORG, u)));
+        const stable = before.every((b: any, i) => after[i].compileAttempt?.attemptedAt?.toISOString?.() === b.compileAttempt?.attemptedAt?.toISOString?.() && after[i].compileAttempt?.sourceHash === b.compileAttempt?.sourceHash && after[i].compileAttempt?.outcome === 'declined');
+        const titlesPersisted = after.every((r: any) => r.title.endsWith('(central)'));
+        writeOut('M2', { initialCompilerCalls: initial, batches, attemptStable: stable, titlesPersisted, sample: [proj(before[0]), proj(after[0])], compilePayloadSample: s.ledger.compileCalls.slice(10, 12) });
+        await s.close();
+        expect(initial).toBe(10);
+        expect(titlesPersisted).toBe(true);
+        if (VERSION === 'merge') { expect(batches.map((b) => b.compilerCalls)).toEqual([0, 0, 0, 0]); expect(stable).toBe(true); }
+    });
+
+    it('M6: AND gate cases a-f + author context with bogus hash', async () => {
+        const s = await buildStack('qa2308_m6');
+        const text = 'Grades service must check enrollment before saving a grade.';
+        const mtext = 'Do not call console.log in qa2308 files; use the injected logger.';
+        const now = new Date('2026-01-01T00:00:00Z');
+        const cur = (t: string, ex: any) => ({ sourceHash: ruleCompileHash({ rule: t, examples: ex }), attemptedAt: now, outcome: 'declined', declineReason: 'not-mechanical', model: 'byok' });
+        const ctx = (t: string, v = 2) => ({ need: 'diff-only', sourceHash: createHash('sha256').update(`v${v} ${t}`).digest('hex'), source: 'compiler', inferredAt: now, model: 'byok' });
+        const cases: any = {
+            a_currentAttempt_missingContext: { rule: text, examples: SEM_EX, compileAttempt: cur(text, SEM_EX) },
+            b_currentAttempt_v1Context: { rule: text, examples: SEM_EX, compileAttempt: cur(text, SEM_EX), contextNeed: ctx(text, 1) },
+            c_currentContext_noAttempt: { rule: text, examples: SEM_EX, contextNeed: ctx(text) },
+            d_staleAttempt_currentContext: { rule: text, examples: SEM_EX, compileAttempt: { ...cur('old text', SEM_EX) }, contextNeed: ctx(text) },
+            e_bothCurrent_declined: { rule: text, examples: SEM_EX, compileAttempt: cur(text, SEM_EX), contextNeed: ctx(text) },
+            f_bothCurrent_compiled: { rule: mtext, examples: MECH_EX, compileAttempt: { ...cur(mtext, MECH_EX), outcome: 'compiled', declineReason: undefined }, contextNeed: ctx(mtext), detector: { type: 'regex', pattern: 'console\\.log\\s*\\(' } },
+            g_author_bogusHash_currentAttempt: { rule: text, examples: SEM_EX, compileAttempt: cur(text, SEM_EX), contextNeed: { need: 'full-file', sourceHash: 'bogus', source: 'author' } },
+        };
+        await s.model.create({ organizationId: ORG, rules: Object.entries(cases).map(([k, v]: any, i) => ({ uuid: `m6-${k}`, title: `qa2308 ${k}`, path: 'qa2308/**', severity: 'medium', status: 'active', type: 'standard', origin: 'manual', repositoryId: 'global', ...v })) } as any);
+        const res: any = {};
+        for (const k of Object.keys(cases)) {
+            const r0 = await s.getRule(ORG, `m6-${k}`);
+            const { compileAttempt, contextNeed, detector, fileScope, ...plain } = r0;
+            const c0 = calls(s); await s.save(ORG, dtoOf(plain)); await s.settle(); const first = calls(s) - c0;
+            const r1 = await s.getRule(ORG, `m6-${k}`);
+            const { compileAttempt: a2, contextNeed: n2, detector: d2, fileScope: f2, ...plain2 } = r1;
+            const c1 = calls(s); await s.save(ORG, dtoOf(plain2)); await s.settle(); const second = calls(s) - c1;
+            const r2 = await s.getRule(ORG, `m6-${k}`);
+            res[k] = { firstSaveCalls: first, secondSaveCalls: second, before: proj(r0), after: proj(r2), ctxCurrentAfter: r2.contextNeed?.source === 'author' || r2.contextNeed?.sourceHash === ruleContextNeedHash(r2) };
+        }
+        writeOut('M6', res);
+        await s.close();
+        if (VERSION === 'merge') {
+            for (const k of ['a_currentAttempt_missingContext', 'b_currentAttempt_v1Context', 'c_currentContext_noAttempt', 'd_staleAttempt_currentContext']) { expect(res[k].firstSaveCalls).toBe(1); expect(res[k].secondSaveCalls).toBe(0); expect(res[k].after.caCurrent).toBe(true); expect(res[k].ctxCurrentAfter).toBe(true); }
+            for (const k of ['e_bothCurrent_declined', 'f_bothCurrent_compiled', 'g_author_bogusHash_currentAttempt']) { expect(res[k].firstSaveCalls).toBe(0); expect(res[k].secondSaveCalls).toBe(0); }
+            expect(res.f_bothCurrent_compiled.after.detector).toEqual({ pattern: 'console\\.log\\s*\\(' });
+            expect(res.g_author_bogusHash_currentAttempt.after.contextNeed).toMatchObject({ need: 'full-file', source: 'author', sourceHash: 'bogus' });
+        }
+    });
+
+    it('M7: author contextNeed survives unchanged save, text edit and conversion', async () => {
+        const s = await buildStack('qa2308_m7');
+        const r: any = await s.save(ORG, newDto('qa2308 m7 author', 'Grades service must check enrollment before saving a grade.', SEM_EX)); await s.settle();
+        await s.service.updateRuleContextNeed(ORG, r.uuid, { need: 'full-file', source: 'author', inferredAt: new Date(), model: 'author' } as any);
+        const steps: any[] = [];
+        let c0 = calls(s); let cur = await s.getRule(ORG, r.uuid); { const { compileAttempt, contextNeed, detector, fileScope, ...p } = cur; await s.save(ORG, dtoOf(p)); } await s.settle();
+        steps.push({ step: 'unchanged save', calls: calls(s) - c0, contextNeed: (await s.getRule(ORG, r.uuid)).contextNeed });
+        c0 = calls(s); cur = await s.getRule(ORG, r.uuid); { const { compileAttempt, contextNeed, detector, fileScope, ...p } = cur; await s.save(ORG, dtoOf(p, { rule: p.rule + ' Reject otherwise.' })); } await s.settle();
+        steps.push({ step: 'text edit (compiler scripted diff-only)', calls: calls(s) - c0, contextNeed: (await s.getRule(ORG, r.uuid)).contextNeed, compileAttempt: (await s.getRule(ORG, r.uuid)).compileAttempt });
+        // pending UPDATE carrying the author context + a settled attempt; convert to new
+        const t = await s.getRule(ORG, r.uuid);
+        await s.model.updateOne({ organizationId: ORG }, { $push: { rules: { ...t, _id: undefined, uuid: 'm7-pending', title: 'qa2308 m7 pending', status: 'pending', requestType: 'update', targetRuleUuid: r.uuid } } });
+        c0 = calls(s); const created: any = await s.convertUC(ORG).execute({ ruleIds: ['m7-pending'] } as any); await s.settle();
+        const nr = await s.getRule(ORG, created[0].uuid);
+        steps.push({ step: 'convert pending → new', calls: calls(s) - c0, newUuid: nr.uuid, contextNeed: nr.contextNeed, compileAttempt: nr.compileAttempt, pendingStatus: (await s.getRule(ORG, 'm7-pending')).status });
+        writeOut('M7', { steps });
+        await s.close();
+        expect(steps[0].calls).toBe(VERSION === 'merge' ? 0 : 1);
+        for (const st of steps) expect(st.contextNeed).toMatchObject({ need: 'full-file', source: 'author' });
+        if (VERSION === 'merge') { expect(steps[1].calls).toBe(1); expect(steps[2].calls).toBe(1); }
+    });
+
+    it('M8/M10: convert pending updates (mechanical, batch with memory, empty list)', async () => {
+        const s = await buildStack('qa2308_m10');
+        const m: any = await s.save(ORG, newDto('qa2308 mech', 'Do not call console.log in qa2308 files; use the injected logger.', MECH_EX)); await s.settle();
+        const others: string[] = []; for (let i = 0; i < 4; i++) { const o: any = await s.save(ORG, newDto(`qa2308 other ${i}`, `Other semantic rule ${i}.`, SEM_EX)); others.push(o.uuid); } await s.settle();
+        const memText = 'Memory: the attendance module uses campus ids as strings.';
+        const mem: any = await s.save(ORG, newDto('qa2308 memory', memText, undefined, { type: 'memory' })); await s.settle();
+        const M = await s.getRule(ORG, m.uuid); const ME = await s.getRule(ORG, mem.uuid);
+        await s.model.updateOne({ organizationId: ORG }, { $push: { rules: { $each: [
+            { ...M, _id: undefined, uuid: 'pend-mech', title: 'qa2308 mech v2', status: 'pending', requestType: 'update', targetRuleUuid: m.uuid, contextNeed: { need: 'sibling-file', source: 'author' } },
+            { ...ME, _id: undefined, uuid: 'pend-mem', title: 'qa2308 memory v2', status: 'pending', requestType: 'update', targetRuleUuid: mem.uuid, contextNeed: { need: 'cited-file', source: 'author' } },
+        ] } } });
+        const targetBefore = proj(await s.getRule(ORG, m.uuid));
+        const c0 = calls(s); const created: any = await s.convertUC(ORG).execute({ ruleIds: ['pend-mech', 'pend-mem'] } as any); await s.settle();
+        const out: any = { calls: calls(s) - c0, created: [] as any[], compilePayloads: s.ledger.compileCalls.slice(-2) };
+        for (const c of created) out.created.push({ ...proj(await s.getRule(ORG, c.uuid)), type: (await s.getRule(ORG, c.uuid)).type, requestType: (await s.getRule(ORG, c.uuid)).requestType ?? null, targetRuleUuid: (await s.getRule(ORG, c.uuid)).targetRuleUuid ?? null });
+        out.pendingStatus = { mech: (await s.getRule(ORG, 'pend-mech')).status, mem: (await s.getRule(ORG, 'pend-mem')).status };
+        out.targetUnchanged = JSON.stringify(proj(await s.getRule(ORG, m.uuid))) === JSON.stringify(targetBefore);
+        // next unchanged save of the converted mechanical rule
+        const nm = await s.getRule(ORG, created[0].uuid); const { compileAttempt, contextNeed, detector, fileScope, ...p } = nm;
+        const c1 = calls(s); await s.save(ORG, dtoOf(p)); await s.settle(); out.nextUnchangedSaveCalls = calls(s) - c1;
+        const c2 = calls(s); const count0 = (await s.getRules(ORG)).length; const empty: any = await s.convertUC(ORG).execute({ ruleIds: [] } as any); await s.settle();
+        out.emptyList = { result: empty, calls: calls(s) - c2, rulesAdded: (await s.getRules(ORG)).length - count0 };
+        writeOut('M10', out);
+        await s.close();
+        if (VERSION === 'merge') {
+            expect(out.calls).toBe(2);
+            expect(out.created[0].detector).toEqual({ pattern: 'console\\.log\\s*\\(' });
+            expect(out.created[0].contextNeed).toMatchObject({ need: 'sibling-file', source: 'author' });
+            expect(out.created[1].contextNeed).toMatchObject({ need: 'cited-file', source: 'author' });
+            expect(out.nextUnchangedSaveCalls).toBe(0);
+        } else {
+            expect(out.created[0].detector).toBeNull();
+        }
+        expect(out.pendingStatus).toEqual({ mech: 'rejected', mem: 'rejected' });
+        expect(out.emptyList.calls).toBe(0); expect(out.emptyList.rulesAdded).toBe(0);
+    });
+
+    it('M11: centralized on — human edit routed to centralized PR, no compile; sync actor writes directly', async () => {
+        const s = await buildStack('qa2308_m11');
+        const a: any = await s.save(ORG, newDto('qa2308 central A', 'Attendance import must reject an invalid student id.', SEM_EX, { repositoryId: 'repo-1' })); await s.settle();
+        s.centralizedState.enabled = true;
+        const A0 = await s.getRule(ORG, a.uuid);
+        const { compileAttempt, contextNeed, detector, fileScope, ...p } = A0;
+        const c0 = calls(s); const res: any = await s.save(ORG, dtoOf(p, { rule: p.rule + ' Explain the rejection.' })); await s.settle();
+        const A1 = await s.getRule(ORG, a.uuid);
+        const out: any = { humanEdit: { result: res, calls: calls(s) - c0, ruleTextUnchangedInDb: A1.rule === A0.rule, centralizedStatus: A1.centralizedConfig, mutationsRecorded: s.centralizedState.mutations.length } };
+        // sync actor applies the merged config: title-only (unchanged text) and the text change
+        const c1 = calls(s); await s.save(ORG, dtoOf(p, { title: p.title + ' (synced)' }), s.kody); await s.settle(); out.syncTitleOnly = { calls: calls(s) - c1 };
+        const c2 = calls(s); await s.save(ORG, dtoOf(p, { rule: p.rule + ' Explain the rejection.' }), s.kody); await s.settle(); out.syncTextChange = { calls: calls(s) - c2, rule: proj(await s.getRule(ORG, a.uuid)) };
+        // convert with centralized on
+        const M = await s.getRule(ORG, a.uuid);
+        await s.model.updateOne({ organizationId: ORG }, { $push: { rules: { ...M, _id: undefined, uuid: 'pend-c', title: 'qa2308 central M', status: 'pending', requestType: 'update', targetRuleUuid: a.uuid } } });
+        const c3 = calls(s); const conv: any = await s.convertUC(ORG).execute({ ruleIds: ['pend-c'] } as any); await s.settle();
+        out.convertCentralOn = { result: conv, calls: calls(s) - c3, pendingStatus: (await s.getRule(ORG, 'pend-c')).status, rulesWithTitle: (await s.getRules(ORG)).filter((r: any) => r.title === 'qa2308 central M').map((r: any) => ({ uuid: r.uuid, status: r.status, centralizedConfig: r.centralizedConfig, compileAttempt: r.compileAttempt ?? null })), lastMutationHasCompileAttempt: JSON.stringify(s.centralizedState.mutations.slice(-1)).includes('compileAttempt') };
+        // after the config PR merges, the sync actor creates it without compile records
+        const c4 = calls(s); const synced: any = await s.save(ORG, newDto('qa2308 central M (synced)', M.rule, M.examples, { repositoryId: 'repo-1' }), s.kody); await s.settle();
+        out.syncCreatesConverted = { calls: calls(s) - c4, rule: proj(await s.getRule(ORG, synced.uuid)) };
+        s.centralizedState.enabled = false;
+        const c5 = calls(s); const A2 = await s.getRule(ORG, a.uuid); { const { compileAttempt: x, contextNeed: y, detector: z, fileScope: w, ...q } = A2; await s.save(ORG, dtoOf(q, { rule: q.rule + ' Off.' })); } await s.settle(); out.centralOffHumanEdit = { calls: calls(s) - c5, written: (await s.getRule(ORG, a.uuid)).rule.endsWith('Off.') };
+        writeOut('M11', out);
+        await s.close();
+        expect(out.humanEdit.calls).toBe(0); expect(out.humanEdit.ruleTextUnchangedInDb).toBe(true);
+        expect(out.syncTextChange.calls).toBe(1); expect(out.syncCreatesConverted.calls).toBe(1); expect(out.centralOffHumanEdit.calls).toBe(1);
+        if (VERSION === 'merge') expect(out.syncTitleOnly.calls).toBe(0);
+    });
+});
