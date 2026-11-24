@@ -1,0 +1,81 @@
+{
+ "rev": "merge",
+ "sameSandbox": true,
+ "afterBothAcquire": {
+  "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:4b966532-f98b-429d-92f8-b1e07ef1e722",
+  "leaseCount": 2,
+  "sandboxId": "fake-69700-1-3rcls",
+  "state": "READY",
+  "cleanupAttempts": 0,
+  "killRetryCount": 0,
+  "expiresAt": "2026-11-25T00:09:31.594Z"
+ },
+ "afterArelease": {
+  "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:4b966532-f98b-429d-92f8-b1e07ef1e722",
+  "leaseCount": 1,
+  "sandboxId": "fake-69700-1-3rcls",
+  "state": "READY",
+  "cleanupAttempts": 0,
+  "killRetryCount": 0,
+  "expiresAt": "2026-11-25T00:09:31.594Z"
+ },
+ "Buse": {
+  "t": "2026-11-24T22:09:31.653Z",
+  "pid": 69701,
+  "rev": "merge",
+  "kind": "used",
+  "id": "564b0767",
+  "actor": "B",
+  "ok": true,
+  "sandboxId": "fake-69700-1-3rcls",
+  "out": "ok",
+  "_src": "\u00a7",
+  "_actor": "B"
+ },
+ "afterDuplicateArelease": {
+  "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:4b966532-f98b-429d-92f8-b1e07ef1e722",
+  "leaseCount": 1,
+  "sandboxId": "fake-69700-1-3rcls",
+  "state": "READY",
+  "cleanupAttempts": 0,
+  "killRetryCount": 0,
+  "expiresAt": "2026-11-25T00:09:31.594Z"
+ },
+ "afterBrelease": null,
+ "kills": [
+  "2026-11-24T22:09:31.664Z pid=69701 B \u00a7 e2b.kill.call {\"id\": \"fake-69700-1-3rcls\", \"hasKey\": true, \"behavior\": \"ok\"}",
+  "2026-11-24T22:09:31.665Z pid=69701 B \u00a7 e2b.kill.ok {\"id\": \"fake-69700-1-3rcls\", \"was\": \"running\"}"
+ ],
+ "timeline": [
+  "2026-11-24T22:09:30.458Z pid=69700 A \u00a7 ready {\"actor\": \"A\"}",
+  "2026-11-24T22:09:31.036Z pid=69701 B \u00a7 ready {\"actor\": \"B\"}",
+  "2026-11-24T22:09:31.584Z pid=69702 O \u00a7 ready {\"actor\": \"O\"}",
+  "2026-11-24T22:09:31.594Z pid=69700 A info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:4b966532-f98b-429d-92f8-b1e07ef1e722\" consumer=\"graph-",
+  "2026-11-24T22:09:31.610Z pid=69700 A info SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:4b966532-f98b-429d-92f8-b1e07e",
+  "2026-11-24T22:09:31.610Z pid=69700 A \u00a7 provider.create.start {\"id\": \"fake-69700-1-3rcls\"}",
+  "2026-11-24T22:09:31.610Z pid=69700 A \u00a7 provider.create.done {\"id\": \"fake-69700-1-3rcls\"}",
+  "2026-11-24T22:09:31.618Z pid=69700 A info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:4b966532-f98b-429d-92f8-b1e07ef1e722\" consumer=\"",
+  "2026-11-24T22:09:31.618Z pid=69700 A \u00a7 acquired {\"id\": \"9cd06b1c\", \"actor\": \"A\", \"leaseId\": \"d747bd71-076a-48ec-8e93-bd13b2fc0658\", \"sandboxId\": \"fake-69700-1-3rcls\", \"waitedMs\": 34}",
+  "2026-11-24T22:09:31.629Z pid=69701 B info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:4b966532-f98b-429d-92f8-b1e07ef1e722\" consumer=\"graph-",
+  "2026-11-24T22:09:31.638Z pid=69701 B info SandboxLeaseManager: connecting to existing sandbox sandboxId=\"fake-69700-1-3rcls\" prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:",
+  "2026-11-24T22:09:31.638Z pid=69701 B \u00a7 e2b.connect {\"id\": \"fake-69700-1-3rcls\", \"state\": \"running\"}",
+  "2026-11-24T22:09:31.640Z pid=69701 B info SandboxLeaseManager: skipping destructive git sync for sandboxId=\"fake-69700-1-3rcls\" prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:gra",
+  "2026-11-24T22:09:31.641Z pid=69701 B info SandboxLeaseManager: connected to existing sandbox prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:4b966532-f98b-429d-92f8-b1e07ef1",
+  "2026-11-24T22:09:31.641Z pid=69701 B \u00a7 acquired {\"id\": \"23592696\", \"actor\": \"B\", \"leaseId\": \"e51e91db-32f4-4497-ac90-6dc612e6b610\", \"sandboxId\": \"fake-69700-1-3rcls\", \"waitedMs\": 22}",
+  "2026-11-24T22:09:31.645Z pid=69702 O \u00a7 doc {\"id\": \"e281d04b\", \"doc\": {\"_id\": \"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:4b966532-f98b-429d-92f8-b1e07ef1e722\", \"leaseCount\": 2, \"sandboxId\": \"fake-69700-1-3rcls\", \"state\": \"READY\", \"cleanupAttempts\": 0, \"killRetryCount\": 0, \"expiresAt\": \"2026-11-25T00:09:31",
+  "2026-11-24T22:09:31.650Z pid=69700 A info SandboxLeaseManager: released leaseId=\"d747bd71-076a-48ec-8e93-bd13b2fc0658\" prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:4b9665",
+  "2026-11-24T22:09:31.650Z pid=69700 A \u00a7 released {\"id\": \"aaa3b2bf\", \"actor\": \"A\"}",
+  "2026-11-24T22:09:31.652Z pid=69702 O \u00a7 doc {\"id\": \"ab097712\", \"doc\": {\"_id\": \"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:4b966532-f98b-429d-92f8-b1e07ef1e722\", \"leaseCount\": 1, \"sandboxId\": \"fake-69700-1-3rcls\", \"state\": \"READY\", \"cleanupAttempts\": 0, \"killRetryCount\": 0, \"expiresAt\": \"2026-11-25T00:09:31",
+  "2026-11-24T22:09:31.653Z pid=69701 B \u00a7 e2b.run {\"id\": \"fake-69700-1-3rcls\", \"state\": \"running\", \"cmd\": \"cat README.md\"}",
+  "2026-11-24T22:09:31.653Z pid=69701 B \u00a7 used {\"id\": \"564b0767\", \"actor\": \"B\", \"ok\": true, \"sandboxId\": \"fake-69700-1-3rcls\", \"out\": \"ok\"}",
+  "2026-11-24T22:09:31.653Z pid=69700 A warn SandboxLeaseManager: release called with unknown leaseId=\"d747bd71-076a-48ec-8e93-bd13b2fc0658\"",
+  "2026-11-24T22:09:31.653Z pid=69700 A \u00a7 released {\"id\": \"a9f50a2e\", \"actor\": \"A\"}",
+  "2026-11-24T22:09:31.655Z pid=69702 O \u00a7 doc {\"id\": \"dfc19a12\", \"doc\": {\"_id\": \"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:4b966532-f98b-429d-92f8-b1e07ef1e722\", \"leaseCount\": 1, \"sandboxId\": \"fake-69700-1-3rcls\", \"state\": \"READY\", \"cleanupAttempts\": 0, \"killRetryCount\": 0, \"expiresAt\": \"2026-11-25T00:09:31",
+  "2026-11-24T22:09:31.659Z pid=69701 B info SandboxLeaseManager: released leaseId=\"e51e91db-32f4-4497-ac90-6dc612e6b610\" prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:4b9665",
+  "2026-11-24T22:09:31.664Z pid=69701 B \u00a7 e2b.kill.call {\"id\": \"fake-69700-1-3rcls\", \"hasKey\": true, \"behavior\": \"ok\"}",
+  "2026-11-24T22:09:31.665Z pid=69701 B \u00a7 e2b.kill.ok {\"id\": \"fake-69700-1-3rcls\", \"was\": \"running\"}",
+  "2026-11-24T22:09:31.667Z pid=69701 B info SandboxLeaseManager: killed single-use sandbox immediately sandboxId=\"fake-69700-1-3rcls\" prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333",
+  "2026-11-24T22:09:31.667Z pid=69701 B \u00a7 released {\"id\": \"4c984a7e\", \"actor\": \"B\"}",
+  "2026-11-24T22:09:31.668Z pid=69702 O \u00a7 doc {\"id\": \"70e511bd\", \"doc\": null}"
+ ]
+}
