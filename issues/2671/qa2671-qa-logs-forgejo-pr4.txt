@@ -1,0 +1,60 @@
+12:54:22.351 info ForgejoPullRequestHandler | Code review job enqueued for asynchronous processing
+12:54:22.474 info RunCodeReviewAutomationUseCase | RunCodeReviewAutomationUseCase PR#4
+12:54:22.657 info PipelineExecutor | Starting pipeline: CodeReviewPipeline (ID: ff693baf-9eeb-41b6-adb1-91eb78dc58dd)
+12:54:22.904 info PipelineExecutor | Stage 'ValidatePrerequisitesStage' completed in 62ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:54:22.916 info ValidateNewCommitsStage | No last analyzed commit found, analyzing all commits
+12:54:23.136 info ValidateNewCommitsStage | Processing 1 new commits for PR#4 (1 total)
+12:54:23.143 info PipelineExecutor | Stage 'ValidateNewCommitsStage' completed in 238ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:54:23.679 info PipelineExecutor | Stage 'ResolveConfigStage' completed in 536ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:54:23.695 info ValidateConfigStage | Branch Review Validation
+12:54:23.701 info PipelineExecutor | Stage 'ValidateConfigStage' completed in 21ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:54:23.718 info PipelineExecutor | Stage 'AssessPrRiskStage' completed in 15ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:54:23.719 info PipelineExecutor | Stage 'ResolveRiskRoutingStage' completed in 0ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:54:23.730 info FetchChangedFilesStage | Found 5 files to analyze for PR#4 (5 total, 0 ignored)
+12:54:24.244 info PipelineExecutor | Stage 'FetchChangedFilesStage' completed in 524ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:54:24.281 info PipelineExecutor | Stage 'LoadExternalContextStage' completed in 36ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:54:24.295 info PipelineExecutor | Stage 'LoadCiEvidenceStage' completed in 13ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:54:24.646 info PipelineExecutor | Stage 'InitialCommentStage' completed in 350ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:54:24.695 info BusinessValidationService | Business validation skipped (no_tracker)
+12:54:24.704 info BusinessLogicValidationStage | [BUSINESS-LOGIC] Skipped (no_tracker): no tracker.
+12:54:24.713 info PipelineExecutor | Stage 'BusinessLogicValidationStage' completed in 66ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:54:29.865 info PipelineExecutor | Stage 'CreateSandboxStage' completed in 5151ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:54:29.909 info PipelineExecutor | Stage 'RunAnalyzersStage' completed in 43ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:55:12.913 info GeneralistAgentProvider | [AGENT] Generalist finder settings for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash: family=deepseek, maxSteps=20, synthesisRescue=true
+12:55:12.914 info CodeReviewAgent | [AGENT] kodus-generalist-review-agent context window: 1048576 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash
+12:55:49.582 info KodyRulesShardedAgent | [kody-rules-shard] prompt cache: 5 file shard(s) in 1 head group(s), 1 shared; 0 of 4 sibling(s) ran after their group's first shard
+12:55:49.583 info KodyRulesShardedAgent | [AGENT] kodus-rules-review-agent (sharded) done for PR#4: 2 suggestions (2 confirmed across 5 shards; 0 detector candidate(s) offered; lookup 0 grep / 5 read / 0 exists) in 36674ms
+12:57:13.643 info VerifierAgent | verifier verdict recovered from text (keep=true)
+12:57:20.381 info VerifierAgent | verifier verdict recovered from text (keep=true)
+12:57:20.382 info review-funnel | review recall funnel (verify gate)
+12:57:20.384 info ReviewOrchestratorService | [AGENT] generalist returned 3 suggestions in 127475ms
+12:57:20.385 info ReviewOrchestratorService | [AGENT] kody-rules returned 2 suggestions in 36674ms
+12:58:13.109 info AgentReviewStage | [AGENT] Reclassified severity for 4 suggestions (0 left unclassified, default kept)
+12:58:16.233 info AgentReviewStage | [ENRICH] PR#4: enriched 3, failed 0, skipped 1
+12:58:16.235 info AgentReviewStage | [AGENT] Titled 4 suggestions (from summary 4, from body 0, over the ceiling 0, empty 0)
+12:58:17.960 info AgentReviewStage | [AGENT] Formatted 4/4 suggestion contents
+12:58:17.961 info AgentReviewStage | [AGENT] Shaped 4 suggestion bodies (fences removed 0, title repeat dropped 0, capped 0, titles rewritten 0, titles cut 0)
+12:58:17.961 info AgentReviewStage | [AGENT] Downgraded 3 suggestion(s) with unusable improvedCode to plain comments
+12:58:17.962 info AgentReviewStage | [AGENT] Rendered merged finding locations
+12:58:17.970 info PipelineExecutor | Stage 'AgentReviewStage' completed in 228060ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:58:17.979 info CreatePrLevelCommentsStage | No PR-level suggestions to process for PR#4
+12:58:17.985 info PipelineExecutor | Stage 'CreatePrLevelCommentsStage' completed in 15ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:58:17.995 info ValidateSuggestionsStage | Skipping validation stage for non-GitHub platform
+12:58:18.001 info PipelineExecutor | Stage 'ValidateSuggestionsStage' completed in 14ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:58:18.021 info CreateFileCommentsStage | Starting file comments creation for PR#4
+12:58:18.572 info CommentManagerService | Create Line Comments PR#4
+12:58:21.175 info CreateFileCommentsStage | Successfully processed file comments for PR#4
+12:58:21.181 info PipelineExecutor | Stage 'CreateFileCommentsStage' completed in 3180ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:58:21.189 info AggregateResultsStage | Aggregated 4 valid suggestions, 0 discarded suggestions
+12:58:21.190 warn AggregateResultsStage | No valid suggestions to aggregate for PR#4
+12:58:21.195 info PipelineExecutor | Stage 'AggregateResultsStage' completed in 13ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:58:21.203 info UpdateCommentsAndGenerateSummaryStage | Generating summary for PR#4
+12:58:21.431 info CommentManagerService | GenerateSummaryPR: Start PR#4. After get PR data
+12:58:26.786 info CommentManagerService | GenerateSummaryPR: End PR#4. After concatenate
+12:58:27.821 info PipelineExecutor | Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 6625ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:58:27.837 info PipelineExecutor | Stage 'DecidePrApprovalStage' completed in 15ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:58:27.845 info RequestChangesOrApproveStage | Finished processing PR#4
+12:58:27.852 info PipelineExecutor | Stage 'RequestChangesOrApproveStage' completed in 14ms: ff693baf-9eeb-41b6-adb1-91eb78dc58dd
+12:58:27.852 info PipelineExecutor | Finished pipeline: CodeReviewPipeline (ID: ff693baf-9eeb-41b6-adb1-91eb78dc58dd)
+12:58:28.837 info AutomationCodeReviewService | Successfully handled pull request for PR#4
+12:58:32.324 info SuggestionService | Implementation check for PR#4: 4 decided, 0 raised, 0 unmeasured
