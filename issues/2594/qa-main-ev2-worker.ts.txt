@@ -1,0 +1,244 @@
+/**
+ * QA #2594 local worker (scratch, never committed). One process = one worker.
+ * Real: AutomationCodeReviewService.run (lock, IN_PROGRESS gate, heartbeat,
+ * completion), CodeReviewHandlerService, PipelineExecutor,
+ * ValidatePrerequisitesStage, AutomationExecutionService/Repository,
+ * DistributedLockService, CodeManagementService, BitbucketService +
+ * BitbucketCloudService, StaleReviewWatchdogCronProvider, real logger.
+ * Stubbed: billing/permission + auto-assign (USER_NOT_LICENSED), integration
+ * lookups, notification, the HTTP transport (global fetch for Bitbucket; an
+ * in-process fake platform service for GitHub/GitLab/Forgejo).
+ * Config via env QA_JOB (JSON). Ledger lines appended to QA_LEDGER.
+ */
+import 'reflect-metadata';
+import * as fs from 'node:fs';
+import { DataSource } from 'typeorm';
+import { EventEmitter2 } from '@nestjs/event-emitter';
+import { Test } from '@nestjs/testing';
+
+import { ENTITIES } from '@libs/core/infrastructure/database/typeorm/entities';
+import { PlatformType } from '@libs/core/domain/enums';
+import { encrypt } from '@libs/common/utils/crypto';
+import { AutomationExecutionRepository } from '@libs/automation/infrastructure/adapters/repositories/automationExecution.repository';
+import { AutomationExecutionModel } from '@libs/automation/infrastructure/adapters/repositories/schemas/automationExecution.model';
+import { AutomationExecutionService } from '@libs/automation/infrastructure/adapters/services/automationExecution.service';
+import { AutomationCodeReviewService } from '@libs/automation/infrastructure/adapters/services/processAutomation/strategies/automationCodeReview';
+import { DistributedLockService } from '@libs/core/workflow/infrastructure/distributed-lock.service';
+import { CodeReviewHandlerService } from '@libs/code-review/infrastructure/adapters/services/codeReviewHandlerService.service';
+import { PipelineExecutor } from '@libs/core/infrastructure/pipeline/services/pipeline-executor.service';
+import { CodeManagementService } from '@libs/platform/infrastructure/adapters/services/codeManagement.service';
+import { BitbucketService } from '@libs/platform/infrastructure/adapters/services/bitbucket.service';
+import { BitbucketCloudService } from '@libs/platform/infrastructure/adapters/services/bitbucket/bitbucket-cloud.service';
+import { ValidatePrerequisitesStage } from '@libs/code-review/pipeline/stages/validate-prerequisites.stage';
+import { PARAMETERS_SERVICE_TOKEN } from '@libs/organization/domain/parameters/contracts/parameters.service.contract';
+import { ORGANIZATION_PARAMETERS_SERVICE_TOKEN } from '@libs/organization/domain/organizationParameters/contracts/organizationParameters.service.contract';
+import { PULL_REQUESTS_SERVICE_TOKEN } from '@libs/platformData/domain/pullRequests/contracts/pullRequests.service.contracts';
+import { AutoAssignLicenseUseCase } from '@libs/ee/license/use-cases/auto-assign-license.use-case';
+import { LICENSE_SERVICE_TOKEN } from '@libs/ee/license/interfaces/license.interface';
+import { PermissionValidationService, ValidationErrorType } from '@libs/ee/shared/services/permissionValidation.service';
+import { NotificationService } from '@libs/notifications/application/notification.service';
+import { NotificationRateLimiter } from '@libs/notifications/application/notification-rate-limiter.service';
+import { PrAuthorRecipientResolver } from '@libs/notifications/application/pr-author-recipient.resolver';
+import { USER_SERVICE_TOKEN } from '@libs/identity/domain/user/contracts/user.service.contract';
+import { CODE_BASE_CONFIG_SERVICE_TOKEN } from '@libs/code-review/domain/contracts/CodeBaseConfigService.contract';
+import { PULL_REQUEST_MANAGER_SERVICE_TOKEN } from '@libs/code-review/domain/contracts/PullRequestManagerService.contract';
+import { AUTOMATION_EXECUTION_SERVICE_TOKEN } from '@libs/automation/domain/automationExecution/contracts/automation-execution.service';
+import { StaleReviewWatchdogCronProvider } from '../apps/api/src/cron/staleReviewWatchdog.cron';
+
+const job = JSON.parse(process.env.QA_JOB || '{}');
+const LEDGER = process.env.QA_LEDGER!;
+const ledger = (e: any) => fs.appendFileSync(LEDGER, JSON.stringify({ t: new Date().toISOString(), pid: process.pid, w: job.name, ...e }) + '\n');
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+const waitFile = async (f: string) => { while (!fs.existsSync(f)) await sleep(100); };
+const hang = () => new Promise(() => { /* until killed */ });
+
+async function main() {
+    if (job.lookupFault) {
+        // driver boundary: the pg client rejects only the marker SELECT, once
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        const pg = require('pg');
+        const q = pg.Client.prototype.query;
+        let fired = false;
+        pg.Client.prototype.query = function (cfg: any, ...rest: any[]) {
+            const text = typeof cfg === 'string' ? cfg : cfg?.text;
+            if (!fired && typeof text === 'string' && /SELECT/i.test(text) && text.includes('"dataExecution"->>')) {
+                fired = true;
+                ledger({ ev: 'driver-fault', sql: text.replace(/\s+/g, ' ').slice(0, 160) });
+                return Promise.reject(Object.assign(new Error('canceling statement due to statement timeout'), { code: '57014' }));
+            }
+            return q.call(this, cfg, ...rest);
+        };
+    }
+    const ds = new DataSource({ type: 'postgres', host: 'localhost', port: 55494, username: 'kodusdev', password: 'kodusdev', database: 'kodus_db', synchronize: false, entities: ENTITIES, extra: { max: 10 } });
+    await ds.initialize();
+
+    const repo = new AutomationExecutionRepository(ds.getRepository(AutomationExecutionModel));
+    // DB-boundary faults on the real repository
+    const origUpdate = repo.update.bind(repo);
+    (repo as any).update = async (filter: any, data: any) => {
+        if (data?.status && data.status !== 'in_progress') {
+            ledger({ ev: 'final-update-start', status: data.status, flag: data?.dataExecution?.licenseNoticePostedAt ?? null });
+            if (job.killAt === 'before-final-update') { ledger({ ev: 'reached', at: 'before-final-update' }); await hang(); }
+            if (job.failFinalUpdate) { ledger({ ev: 'final-update-fault' }); throw Object.assign(new Error('simulated: terminating connection due to administrator command'), { code: '57P01' }); }
+        }
+        return origUpdate(filter, data);
+    };
+    const origExists = repo.hasPullRequestExecutionWithDataKey.bind(repo);
+    (repo as any).hasPullRequestExecutionWithDataKey = async (p: any) => {
+        if (job.barrierBeforeLookup) { fs.writeFileSync(`${job.dir}/${job.name}.at-lookup`, '1'); await waitFile(job.barrierBeforeLookup); }
+        const r = await origExists(p);
+        ledger({ ev: 'lookup', result: r });
+        return r;
+    };
+    const origFind = repo.find.bind(repo);
+    (repo as any).find = async (...args: any[]) => {
+        const r = await origFind(...args);
+        if (job.barrierAfterActiveCheck && args[0]?.status === 'in_progress') {
+            ledger({ ev: 'active-check', found: r?.length ?? 0 });
+            fs.writeFileSync(`${job.dir}/${job.name}.at-barrier`, '1');
+            await waitFile(job.barrierAfterActiveCheck);
+        }
+        return r;
+    };
+
+    const stageLogs: any[] = [];
+    const codeReviewExec = {
+        create: async (x: any) => {
+            if (job.failStageLogOn && x?.stageName === job.failStageLogOn) { ledger({ ev: 'stagelog-fault', stage: x.stageName }); throw new Error('simulated stage-log insert failure'); }
+            const s = { uuid: `${stageLogs.length + 1}`, ...x }; stageLogs.push(s); return s;
+        },
+        update: async () => ({}), updateById: async () => ({}), find: async () => [],
+    };
+    const execService = new AutomationExecutionService(repo as any, codeReviewExec as any, new EventEmitter2());
+    const lockService = new DistributedLockService(ds);
+    if (job.lockDown) (lockService as any).acquire = async () => { throw new Error('simulated lock service outage'); };
+
+    if (job.mode === 'watchdog') {
+        const wd = new StaleReviewWatchdogCronProvider(execService as any, { getAdapter: () => null, get: () => null } as any, lockService);
+        await wd.handleCron();
+        ledger({ ev: 'watchdog-done' });
+        await ds.destroy();
+        return;
+    }
+
+    // ---------- fake provider transport ----------
+    const platform: PlatformType = job.platform;
+    const isNotice = (b: any) => typeof b === 'string' && b.includes('Kodus license not found');
+    const accept = async (kind: string, p: any) => {
+        if (isNotice(p.body)) {
+            ledger({ ev: 'notice-post-attempt', kind, inReplyToId: p.inReplyToId ?? null });
+            if (job.killAt === 'before-accept') { ledger({ ev: 'reached', at: 'before-accept' }); await hang(); }
+            if (job.holdNoticeFile) { ledger({ ev: 'notice-held' }); fs.writeFileSync(`${job.dir}/${job.name}.holding`, '1'); await waitFile(job.holdNoticeFile); }
+            if (job.postFault === 'throw') throw new Error('simulated provider 500');
+            if (job.postFault === 'null') return null;
+            ledger({ ev: 'notice-accepted', kind, inReplyToId: p.inReplyToId ?? null });
+            return { id: Date.now() };
+        }
+        return { id: 1 };
+    };
+    const fakeProvider: any = new Proxy({}, {
+        get: (_t, name: string) => {
+            if (name === 'then') return undefined;
+            if (name === 'createIssueComment') return (p: any) => accept('issue', p);
+            if (name === 'createResponseToComment') return (p: any) => accept('reply', p);
+            if (name === 'addReactionToPR' || name === 'addReactionToComment')
+                return async (p: any) => {
+                    ledger({ ev: 'reaction', name, reaction: p.reaction, commentId: p.commentId ?? null });
+                    if (job.reactionFault) throw new Error('simulated reaction 403');
+                    return true;
+                };
+            return async () => null;
+        },
+    });
+
+    const integrationService: any = {
+        findOne: async () => ({ uuid: 'int-1', platform, status: true }),
+        getPlatformAuthDetails: async () => ({ authMode: 'token', username: 'qa-user', appPassword: encrypt('not-a-real-secret') }),
+    };
+    const integrationConfigService: any = { findOne: async () => ({ configValue: [{ id: job.repoId, name: 'r', workspaceId: 'ws-1' }] }) };
+    let bitbucket: any = null;
+    if (platform === PlatformType.BITBUCKET) {
+        const cloud = new BitbucketCloudService(integrationService, integrationConfigService, {} as any, { get: () => undefined } as any);
+        bitbucket = new BitbucketService(cloud, {} as any, integrationService, integrationConfigService, null as any);
+        // external HTTP boundary: Bitbucket Cloud API
+        (globalThis as any).fetch = async (url: string, opts: any) => {
+            const body = opts?.body ? JSON.parse(opts.body) : null;
+            const raw = body?.content?.raw;
+            const isComment = /\/pullrequests\/\d+\/comments$/.test(String(url)) && opts?.method === 'POST';
+            ledger({ ev: 'http', method: opts?.method, url: String(url).replace(/\{[^}]*\}/g, '{…}'), notice: isNotice(raw), parent: body?.parent?.id ?? null });
+            if (isComment && isNotice(raw)) {
+                if (job.httpFault === 'reply-404' && body?.parent) return new Response(JSON.stringify({ type: 'error', error: { message: 'parent comment not found' } }), { status: 404, headers: { 'content-type': 'application/json' } });
+                if (job.httpFault === 'reply-throw' && body?.parent) throw new TypeError('fetch failed');
+                ledger({ ev: 'notice-accepted', kind: body?.parent ? 'reply' : 'issue', inReplyToId: body?.parent?.id ?? null });
+            }
+            return new Response(JSON.stringify({ id: 4242, content: { raw: raw ?? '' } }), { status: 201, headers: { 'content-type': 'application/json' } });
+        };
+    }
+    const factory: any = { getCodeManagementService: (t: string) => (t === PlatformType.BITBUCKET ? bitbucket : fakeProvider) };
+    const codeManagement = new CodeManagementService(integrationService, factory);
+
+    // ---------- stage with stubbed billing ----------
+    const notifyCalls: any[] = [];
+    const module = await Test.createTestingModule({
+        providers: [
+            ValidatePrerequisitesStage,
+            { provide: AUTOMATION_EXECUTION_SERVICE_TOKEN, useValue: execService },
+            { provide: CODE_BASE_CONFIG_SERVICE_TOKEN, useValue: { getConfig: async () => ({ automatedReviewActive: true }) } },
+            { provide: PULL_REQUEST_MANAGER_SERVICE_TOKEN, useValue: { getChangedFilesMetadata: async () => [{ filename: 'a.ts' }] } },
+            { provide: PermissionValidationService, useValue: { validateExecutionPermissions: async () => ({ allowed: false, errorType: ValidationErrorType.USER_NOT_LICENSED }), getBYOKConfig: async () => null, resolveTaskSlot: async () => null, consumeTrialReviewCreditOnSuccess: async () => undefined } },
+            { provide: AutoAssignLicenseUseCase, useValue: { execute: async () => ({ shouldProceed: false, reason: 'AUTO_ASSIGN_DISABLED' }) } },
+            { provide: ORGANIZATION_PARAMETERS_SERVICE_TOKEN, useValue: { findByKey: async () => undefined } },
+            { provide: PARAMETERS_SERVICE_TOKEN, useValue: { findByKey: async () => undefined } },
+            { provide: PULL_REQUESTS_SERVICE_TOKEN, useValue: { find: async () => [], countByAuthor: async () => 2 } },
+            { provide: 'CodeManagementServiceInstance', useValue: codeManagement },
+            { provide: CodeManagementService, useValue: codeManagement },
+            {
+                provide: NotificationService,
+                useValue: { emit: async (e: any) => { notifyCalls.push(e?.type ?? 'emit'); ledger({ ev: 'notification-emit' }); if (job.notifyFault === 'emit') throw new Error('simulated notification emit failure'); } },
+            },
+            { provide: NotificationRateLimiter, useValue: { shouldEmit: async () => { ledger({ ev: 'rate-limit-check', allowed: !job.rateLimited }); return !job.rateLimited; } } },
+            { provide: PrAuthorRecipientResolver, useValue: { resolve: async () => { if (job.notifyFault === 'resolve') { ledger({ ev: 'resolver-fault' }); throw new Error('simulated recipient resolver failure'); } return { kind: 'user', userId: 'u-1' } as any; } } },
+            { provide: USER_SERVICE_TOKEN, useValue: { find: async () => [] } },
+            { provide: LICENSE_SERVICE_TOKEN, useValue: { startTrial: async () => false, getAllUsersWithLicense: async () => [] } },
+        ],
+    }).compile();
+    const stage = module.get(ValidatePrerequisitesStage);
+
+    const pipelineFactory: any = { getPipeline: () => ({ pipelineName: 'CodeReviewPipeline', execute: (ctx: any) => new PipelineExecutor().execute(ctx, [stage], 'CodeReviewPipeline') }) };
+    const handler = new CodeReviewHandlerService(
+        pipelineFactory, codeManagement,
+        { findByKey: async () => ({ configValue: 'x' }), createOrUpdateConfig: async () => undefined } as any,
+        { firstReviewCompleted: async () => undefined } as any,
+        { findOne: async () => ({ uuid: job.org, name: 'qa-org' }) } as any,
+        { find: async () => [] } as any,
+        { consumeTrialReviewCreditOnSuccess: async () => undefined } as any,
+    );
+    const svc = new AutomationCodeReviewService(
+        {} as any, {} as any, execService as any,
+        { findOne: async () => ({ uuid: job.org, name: 'qa-org', status: true }) } as any,
+        handler, lockService, { execute: async () => undefined } as any,
+    );
+
+    ledger({ ev: 'run-start' });
+    let out: any;
+    try {
+        out = await svc.run({
+            organizationAndTeamData: { organizationId: job.org, teamId: job.team },
+            repository: { id: job.repoId, name: job.repoName ?? 'r', fullName: job.repoName ?? 'r' },
+            branch: 'b',
+            pullRequest: { number: job.pr, title: job.title ?? 't', state: 'open', locked: false, user: { id: 'author-1' } },
+            platformType: platform,
+            teamAutomationId: job.ta,
+            origin: job.origin ?? 'System',
+            action: job.action ?? 'synchronize',
+            triggerCommentId: job.triggerCommentId,
+            userGitId: 'author-1',
+        });
+    } catch (e: any) {
+        out = `threw: ${e?.name}: ${e?.message}`;
+    }
+    ledger({ ev: 'run-end', out, notifyCalls: notifyCalls.length });
+    await ds.destroy();
+}
+
+main().then(() => setTimeout(() => process.exit(0), 1500)).catch((e) => { ledger({ ev: 'crash', err: String(e?.stack ?? e).slice(0, 600) }); process.exit(2); });
