@@ -1,0 +1,569 @@
+{
+ "rev": "parent",
+ "scenario": "m28",
+ "results": {
+  "missing job (full)": {
+   "thrown": "Job adb2fa32-c7b4-4a84-ae58-fcd18dc81d8e not found",
+   "releases": [],
+   "kills": 0,
+   "lease": null
+  },
+  "missing job (incr)": {
+   "thrown": "Job 9fa2bcd6-3b8c-4dde-a00f-1c88fcd8be50 not found",
+   "releases": [],
+   "kills": 0,
+   "lease": null
+  },
+  "pre-acquire: clone params null (full)": {
+   "thrown": null,
+   "releases": [],
+   "kills": 0,
+   "lease": null
+  },
+  "pre-acquire: clone params null (incr)": {
+   "thrown": null,
+   "releases": [],
+   "kills": 0,
+   "lease": null
+  },
+  "acquire rejects (full)": {
+   "thrown": null,
+   "releases": [],
+   "kills": 0,
+   "lease": null
+  },
+  "acquire rejects (incr)": {
+   "thrown": null,
+   "releases": [],
+   "kills": 0,
+   "lease": null
+  },
+  "incr empty changedFiles": {
+   "thrown": "Invalid payload: missing required fields (repositoryId, changedFiles)",
+   "releases": [],
+   "kills": 0,
+   "lease": null
+  },
+  "large slow graph": {
+   "persisted": 6000,
+   "unicodeRows": 6000,
+   "readyAt": "2026-11-24T23:20:32.302Z",
+   "releaseAt": "2026-11-24T23:20:32.303Z",
+   "releaseAfterReady": true,
+   "completedAt": "2026-11-24T23:20:32.302Z"
+  },
+  "enqueue 0 files": {
+   "result": {
+    "enqueued": false,
+    "reason": "no changed files"
+   },
+   "workflowType": null,
+   "payloadFiles": null,
+   "unicodeKept": false
+  },
+  "enqueue 500 files": {
+   "result": {
+    "enqueued": true,
+    "jobType": "incremental",
+    "jobId": "job-500",
+    "filesCount": 500
+   },
+   "workflowType": "AST_GRAPH_INCREMENTAL",
+   "payloadFiles": 500,
+   "unicodeKept": true
+  },
+  "enqueue 501 files": {
+   "result": {
+    "enqueued": true,
+    "jobType": "full-rebuild",
+    "jobId": "job-501",
+    "filesCount": 501
+   },
+   "workflowType": "AST_GRAPH_BUILD",
+   "payloadFiles": null,
+   "unicodeKept": false
+  }
+ },
+ "leaseLogs": [
+  "2026-11-24T23:20:29.854Z info [AST-GRAPH-JOB] Starting build for org/athena",
+  "2026-11-24T23:20:29.858Z error [AST-GRAPH-JOB] Build FAILED for org/athena after 9ms — Failed to resolve clone params for org/athena (platform=github) — provider returned null | err=Failed to resolve clone params for org/athena (platform=github) — provider returned null",
+  "2026-11-24T23:20:29.860Z info [AST-GRAPH-INCR] Starting incremental update for org/athena",
+  "2026-11-24T23:20:29.861Z error [AST-GRAPH-INCR] Incremental update FAILED for org/athena after 0ms — Failed to resolve clone params for org/athena (platform=github) — provider returned null | err=Failed to resolve clone params for org/athena (platform=github) — provider returned null",
+  "2026-11-24T23:20:29.862Z info [AST-GRAPH-JOB] Starting build for org/athena",
+  "2026-11-24T23:20:29.863Z info [AST-GRAPH-JOB] Auth resolved for org/athena (0ms)",
+  "2026-11-24T23:20:29.863Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:ddc471af-91f4-4c02-b05f-e734a002a899:graph:a4dcae5e-eea5-4ef4-a499-73f67d7d7088\" consumer=\"graph-build\"",
+  "2026-11-24T23:20:29.869Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:ddc471af-91f4-4c02-b05f-e734a002a899:graph:a4dcae5e-eea5-4ef4-a499-73f67d7d7088\" consumer=\"graph-build\"",
+  "2026-11-24T23:20:29.885Z error [AST-GRAPH-JOB] Build FAILED for org/athena after 22ms — repository not found (bad credentials) | err=repository not found (bad credentials)",
+  "2026-11-24T23:20:29.886Z info [AST-GRAPH-INCR] Starting incremental update for org/athena",
+  "2026-11-24T23:20:29.886Z info [AST-GRAPH-INCR] Auth resolved for org/athena (0ms)",
+  "2026-11-24T23:20:29.887Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:8d120019-e035-4333-ba10-8e882e7963f7:graph:4be0eaaa-bafd-4eb5-b34d-2097921d53b3\" consumer=\"graph-incremental\"",
+  "2026-11-24T23:20:29.910Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:8d120019-e035-4333-ba10-8e882e7963f7:graph:4be0eaaa-bafd-4eb5-b34d-2097921d53b3\" consumer=\"graph-increm",
+  "2026-11-24T23:20:29.915Z error [AST-GRAPH-INCR] Incremental update FAILED for org/athena after 28ms — repository not found (bad credentials) | err=repository not found (bad credentials)",
+  "2026-11-24T23:20:29.916Z info [AST-GRAPH-INCR] Starting incremental update for org/athena",
+  "2026-11-24T23:20:29.920Z info [AST-GRAPH-JOB] Starting build for org/athena",
+  "2026-11-24T23:20:29.920Z info [AST-GRAPH-JOB] Auth resolved for org/athena (0ms)",
+  "2026-11-24T23:20:29.920Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:4661f4a3-4ca8-423b-92e0-22f037a54f21:graph:17f614a2-8e92-40df-b596-e900ff4a7106\" consumer=\"graph-build\"",
+  "2026-11-24T23:20:29.937Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:4661f4a3-4ca8-423b-92e0-22f037a54f21:graph:17f614a2-8e92-40df-b596-e900ff4a7106\" consumer=\"graph-build\"",
+  "2026-11-24T23:20:29.943Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:4661f4a3-4ca8-423b-92e0-22f037a54f21:graph:17f614a2-8e92-40df-b596-e900ff4a7106\" consumer=\"graph-build\" leaseId=\"89a412d7",
+  "2026-11-24T23:20:29.944Z info [AST-GRAPH-JOB] Sandbox ready for org/athena (23ms)",
+  "2026-11-24T23:20:29.944Z info [AST-GRAPH-JOB] HEAD sha resolved: f00dface for org/athena",
+  "2026-11-24T23:20:29.944Z info [AST-GRAPH] Starting full build for repo 4661f4a3-4ca8-423b-92e0-22f037a54f21",
+  "2026-11-24T23:20:29.944Z info [AST-GRAPH] kodus-graph installed (0ms)",
+  "2026-11-24T23:20:31.947Z info [AST-GRAPH] Parse completed (2002ms)",
+  "2026-11-24T23:20:31.993Z info [AST-GRAPH] Graph read from sandbox (46ms): 6000 nodes, 5999 edges",
+  "2026-11-24T23:20:32.302Z info [AST-GRAPH] DB persist completed (309ms)",
+  "2026-11-24T23:20:32.302Z info [AST-GRAPH] Full build COMPLETE for repo 4661f4a3-4ca8-423b-92e0-22f037a54f21 in 2358ms — 6000 nodes, 5999 edges",
+  "2026-11-24T23:20:32.303Z info [AST-GRAPH-JOB] Build COMPLETED for org/athena in 2383ms",
+  "2026-11-24T23:20:32.311Z info SandboxLeaseManager: released leaseId=\"89a412d7-213f-42db-901d-f5f2110f9608\" prKey=\"11111111-1111-4111-8111-111111111111:4661f4a3-4ca8-423b-92e0-22f037a54f21:graph:17f614a2-8e92-40df-b596-e900ff4a7106",
+  "2026-11-24T23:20:32.315Z info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T23:25:32.311Z for sandboxId=\"fake-84424-3-38dfg\"",
+  "2026-11-24T23:20:32.316Z info [AST-GRAPH-JOB] Sandbox cleaned up for org/athena",
+  "2026-11-24T23:20:32.333Z info [AST-GRAPH] Enqueued incremental update for org/athena after PR#1 merge: 500 files",
+  "2026-11-24T23:20:32.333Z info [AST-GRAPH] Enqueued full rebuild for org/athena after PR#1 merge: 501 files"
+ ],
+ "transcript": [
+  {
+   "t": "2026-11-24T23:20:29.845Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "RESULT missing job (full)",
+   "v": {
+    "thrown": "Job adb2fa32-c7b4-4a84-ae58-fcd18dc81d8e not found",
+    "releases": [],
+    "kills": 0,
+    "lease": null
+   }
+  },
+  {
+   "t": "2026-11-24T23:20:29.846Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "RESULT missing job (incr)",
+   "v": {
+    "thrown": "Job 9fa2bcd6-3b8c-4dde-a00f-1c88fcd8be50 not found",
+    "releases": [],
+    "kills": 0,
+    "lease": null
+   }
+  },
+  {
+   "t": "2026-11-24T23:20:29.855Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "404a38bc-c510-4375-8c16-5f1d3f804ab9",
+   "status": "PROCESSING",
+   "stage": "VALIDATING"
+  },
+  {
+   "t": "2026-11-24T23:20:29.855Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "404a38bc-c510-4375-8c16-5f1d3f804ab9",
+   "status": "PROCESSING",
+   "stage": "RESOLVING_AUTH"
+  },
+  {
+   "t": "2026-11-24T23:20:29.858Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "404a38bc-c510-4375-8c16-5f1d3f804ab9",
+   "status": "FAILED",
+   "stage": "FAILED"
+  },
+  {
+   "t": "2026-11-24T23:20:29.858Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "failed"
+  },
+  {
+   "t": "2026-11-24T23:20:29.860Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "RESULT pre-acquire: clone params null (full)",
+   "v": {
+    "thrown": null,
+    "releases": [],
+    "kills": 0,
+    "lease": null
+   }
+  },
+  {
+   "t": "2026-11-24T23:20:29.860Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "704295d3-ab3d-4f00-8259-dc18cd3a3112",
+   "status": "PROCESSING",
+   "stage": "VALIDATING"
+  },
+  {
+   "t": "2026-11-24T23:20:29.860Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "704295d3-ab3d-4f00-8259-dc18cd3a3112",
+   "status": "PROCESSING",
+   "stage": "RESOLVING_AUTH"
+  },
+  {
+   "t": "2026-11-24T23:20:29.861Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "704295d3-ab3d-4f00-8259-dc18cd3a3112",
+   "status": "FAILED",
+   "stage": "FAILED"
+  },
+  {
+   "t": "2026-11-24T23:20:29.861Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "ready"
+  },
+  {
+   "t": "2026-11-24T23:20:29.862Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "RESULT pre-acquire: clone params null (incr)",
+   "v": {
+    "thrown": null,
+    "releases": [],
+    "kills": 0,
+    "lease": null
+   }
+  },
+  {
+   "t": "2026-11-24T23:20:29.862Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "a4dcae5e-eea5-4ef4-a499-73f67d7d7088",
+   "status": "PROCESSING",
+   "stage": "VALIDATING"
+  },
+  {
+   "t": "2026-11-24T23:20:29.862Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "a4dcae5e-eea5-4ef4-a499-73f67d7d7088",
+   "status": "PROCESSING",
+   "stage": "RESOLVING_AUTH"
+  },
+  {
+   "t": "2026-11-24T23:20:29.863Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "a4dcae5e-eea5-4ef4-a499-73f67d7d7088",
+   "status": "PROCESSING",
+   "stage": "CLONING"
+  },
+  {
+   "t": "2026-11-24T23:20:29.869Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "provider.create.start",
+   "id": "fake-84424-1-bz765"
+  },
+  {
+   "t": "2026-11-24T23:20:29.869Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "provider.create.fail",
+   "id": "fake-84424-1-bz765"
+  },
+  {
+   "t": "2026-11-24T23:20:29.885Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "a4dcae5e-eea5-4ef4-a499-73f67d7d7088",
+   "status": "FAILED",
+   "stage": "FAILED"
+  },
+  {
+   "t": "2026-11-24T23:20:29.885Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "failed"
+  },
+  {
+   "t": "2026-11-24T23:20:29.886Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "RESULT acquire rejects (full)",
+   "v": {
+    "thrown": null,
+    "releases": [],
+    "kills": 0,
+    "lease": null
+   }
+  },
+  {
+   "t": "2026-11-24T23:20:29.886Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "4be0eaaa-bafd-4eb5-b34d-2097921d53b3",
+   "status": "PROCESSING",
+   "stage": "VALIDATING"
+  },
+  {
+   "t": "2026-11-24T23:20:29.886Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "4be0eaaa-bafd-4eb5-b34d-2097921d53b3",
+   "status": "PROCESSING",
+   "stage": "RESOLVING_AUTH"
+  },
+  {
+   "t": "2026-11-24T23:20:29.886Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "4be0eaaa-bafd-4eb5-b34d-2097921d53b3",
+   "status": "PROCESSING",
+   "stage": "CLONING"
+  },
+  {
+   "t": "2026-11-24T23:20:29.910Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "provider.create.start",
+   "id": "fake-84424-2-cg3qb"
+  },
+  {
+   "t": "2026-11-24T23:20:29.910Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "provider.create.fail",
+   "id": "fake-84424-2-cg3qb"
+  },
+  {
+   "t": "2026-11-24T23:20:29.915Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "4be0eaaa-bafd-4eb5-b34d-2097921d53b3",
+   "status": "FAILED",
+   "stage": "FAILED"
+  },
+  {
+   "t": "2026-11-24T23:20:29.915Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "ready"
+  },
+  {
+   "t": "2026-11-24T23:20:29.916Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "RESULT acquire rejects (incr)",
+   "v": {
+    "thrown": null,
+    "releases": [],
+    "kills": 0,
+    "lease": null
+   }
+  },
+  {
+   "t": "2026-11-24T23:20:29.916Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "a92766ac-8a12-42d2-abd0-5c344d7bc9d1",
+   "status": "PROCESSING",
+   "stage": "VALIDATING"
+  },
+  {
+   "t": "2026-11-24T23:20:29.917Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "RESULT incr empty changedFiles",
+   "v": {
+    "thrown": "Invalid payload: missing required fields (repositoryId, changedFiles)",
+    "releases": [],
+    "kills": 0,
+    "lease": null
+   }
+  },
+  {
+   "t": "2026-11-24T23:20:29.920Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "17f614a2-8e92-40df-b596-e900ff4a7106",
+   "status": "PROCESSING",
+   "stage": "VALIDATING"
+  },
+  {
+   "t": "2026-11-24T23:20:29.920Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "17f614a2-8e92-40df-b596-e900ff4a7106",
+   "status": "PROCESSING",
+   "stage": "RESOLVING_AUTH"
+  },
+  {
+   "t": "2026-11-24T23:20:29.920Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "17f614a2-8e92-40df-b596-e900ff4a7106",
+   "status": "PROCESSING",
+   "stage": "CLONING"
+  },
+  {
+   "t": "2026-11-24T23:20:29.937Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "provider.create.start",
+   "id": "fake-84424-3-38dfg"
+  },
+  {
+   "t": "2026-11-24T23:20:29.938Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "provider.create.done",
+   "id": "fake-84424-3-38dfg"
+  },
+  {
+   "t": "2026-11-24T23:20:29.944Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "17f614a2-8e92-40df-b596-e900ff4a7106",
+   "status": "PROCESSING",
+   "stage": "PARSING"
+  },
+  {
+   "t": "2026-11-24T23:20:29.944Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "building"
+  },
+  {
+   "t": "2026-11-24T23:20:29.944Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "cli.parse.start",
+   "id": "fake-84424-3-38dfg",
+   "cmd": "export PATH=\"$HOME/.bun/bin:$PATH\" 2>/dev/null || true && cd /home/user/repo && mkdir -p '.kodus-graph' && kodus-graph p"
+  },
+  {
+   "t": "2026-11-24T23:20:31.946Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "cli.parse.done",
+   "id": "fake-84424-3-38dfg"
+  },
+  {
+   "t": "2026-11-24T23:20:32.302Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "ready",
+   "sha": "f00dfacef00dfacef00dfacef00dfacef00dface",
+   "nodeCount": 6000,
+   "edgeCount": 5999
+  },
+  {
+   "t": "2026-11-24T23:20:32.302Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "17f614a2-8e92-40df-b596-e900ff4a7106",
+   "status": "COMPLETED"
+  },
+  {
+   "t": "2026-11-24T23:20:32.303Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "mgr.release",
+   "id": "89a412d7-213f-42db-901d-f5f2110f9608",
+   "opts": null
+  },
+  {
+   "t": "2026-11-24T23:20:32.315Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "e2b.setTimeout",
+   "id": "fake-84424-3-38dfg",
+   "ms": 300000
+  },
+  {
+   "t": "2026-11-24T23:20:32.319Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "RESULT large slow graph",
+   "v": {
+    "persisted": 6000,
+    "unicodeRows": 6000,
+    "readyAt": "2026-11-24T23:20:32.302Z",
+    "releaseAt": "2026-11-24T23:20:32.303Z",
+    "releaseAfterReady": true,
+    "completedAt": "2026-11-24T23:20:32.302Z"
+   }
+  },
+  {
+   "t": "2026-11-24T23:20:32.332Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "RESULT enqueue 0 files",
+   "v": {
+    "result": {
+     "enqueued": false,
+     "reason": "no changed files"
+    },
+    "workflowType": null,
+    "payloadFiles": null,
+    "unicodeKept": false
+   }
+  },
+  {
+   "t": "2026-11-24T23:20:32.333Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "RESULT enqueue 500 files",
+   "v": {
+    "result": {
+     "enqueued": true,
+     "jobType": "incremental",
+     "jobId": "job-500",
+     "filesCount": 500
+    },
+    "workflowType": "AST_GRAPH_INCREMENTAL",
+    "payloadFiles": 500,
+    "unicodeKept": true
+   }
+  },
+  {
+   "t": "2026-11-24T23:20:32.333Z",
+   "pid": 84424,
+   "rev": "parent",
+   "kind": "RESULT enqueue 501 files",
+   "v": {
+    "result": {
+     "enqueued": true,
+     "jobType": "full-rebuild",
+     "jobId": "job-501",
+     "filesCount": 501
+    },
+    "workflowType": "AST_GRAPH_BUILD",
+    "payloadFiles": null,
+    "unicodeKept": false
+   }
+  }
+ ]
+}
