@@ -1,0 +1,182 @@
+{
+ "org": "jr-claude-azure",
+ "from": "2026-11-24T19:41:40Z",
+ "to": "2026-11-24T20:00:11Z",
+ "rules": [
+  {
+   "uuid": "c20aa277-d9a7-4068-af3d-b79e5c1b0326",
+   "title": "qa-2308 A reject invalid student id (t)",
+   "status": "active",
+   "severity": "medium",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "75254f2ed7d454917849e040b263c0317d422b6a9eb17f92b115eebfb91e0fb8",
+    "attemptedAt": "2026-11-24T19:43:19.444Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical"
+   },
+   "cn": {
+    "need": "full-file",
+    "source": "compiler",
+    "sourceHash": "426ed84e04988d7f2484ccd40923a8af1a68ac63216599fba600d5df34883ee8",
+    "inferredAt": "2026-11-24T19:43:19.432Z"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "cnCurrent": true,
+   "examplesKeyOrder": [],
+   "rule": "In attendance import handlers, return an explicit rejected result for an invalid student identifier; do not silently accept it."
+  },
+  {
+   "uuid": "a23f15ec-ca85-4550-a3c7-7c7ade4acf3f",
+   "title": "qa-2308 M no eval in attendance JSON (t)",
+   "status": "active",
+   "severity": "medium",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "51106dc13a891bf6a10eaa05c340e58e26b3dcb2bd019dac2beee5599e37224a",
+    "attemptedAt": "2026-11-24T19:45:54.468Z",
+    "outcome": "compiled",
+    "declineReason": null
+   },
+   "cn": {
+    "need": null,
+    "source": null,
+    "sourceHash": null,
+    "inferredAt": null
+   },
+   "detector": "(?<![\\w.$])eval\\s*\\(",
+   "fileScope": [
+    ".ts",
+    ".tsx",
+    ".js",
+    ".jsx",
+    ".mjs",
+    ".cjs"
+   ],
+   "caCurrent": true,
+   "cnCurrent": false,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "In attendance JSON import code, never execute the payload with eval; parse it with JSON.parse.\n\n### Bad example\n```ts\nconst attendance = eva"
+  }
+ ],
+ "compilerObs": [
+  {
+   "t": "2026-11-24T19:43:16.950Z",
+   "end": "2026-11-24T19:43:19.430Z",
+   "trace": "bcd41a3c6d8b4adf653641687792c2fe",
+   "level": "DEFAULT",
+   "status": ""
+  },
+  {
+   "t": "2026-11-24T19:43:18.012Z",
+   "end": "2026-11-24T19:43:22.190Z",
+   "trace": "ff697d3775aaa337ad73e64f9c5c2089",
+   "level": "DEFAULT",
+   "status": ""
+  },
+  {
+   "t": "2026-11-24T19:45:49.676Z",
+   "end": "2026-11-24T19:45:54.451Z",
+   "trace": "e4ea010b76e764bf7f3fb7da8d228909",
+   "level": "DEFAULT",
+   "status": ""
+  }
+ ],
+ "compilerLogs": [
+  {
+   "t": "2026-11-24T19:43:19.444Z",
+   "level": "info",
+   "message": "Rule c20aa277-d9a7-4068-af3d-b79e5c1b0326 stays semantic (not-mechanical)",
+   "ruleUuid": "c20aa277-d9a7-4068-af3d-b79e5c1b0326"
+  },
+  {
+   "t": "2026-11-24T19:43:22.207Z",
+   "level": "info",
+   "message": "Compiled T0 detector for rule a23f15ec-ca85-4550-a3c7-7c7ade4acf3f",
+   "ruleUuid": "a23f15ec-ca85-4550-a3c7-7c7ade4acf3f"
+  },
+  {
+   "t": "2026-11-24T19:45:54.468Z",
+   "level": "info",
+   "message": "Compiled T0 detector for rule a23f15ec-ca85-4550-a3c7-7c7ade4acf3f",
+   "ruleUuid": "a23f15ec-ca85-4550-a3c7-7c7ade4acf3f"
+  }
+ ],
+ "saveLogs": [
+  {
+   "t": "2026-11-24T19:43:16.945Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "c20aa277-d9a7-4068-af3d-b79e5c1b0326",
+   "org": "a570f880-a17c-46d5-8ffd-7955455f20aa"
+  },
+  {
+   "t": "2026-11-24T19:43:17.597Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "c20aa277-d9a7-4068-af3d-b79e5c1b0326",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T19:43:18.005Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "a23f15ec-ca85-4550-a3c7-7c7ade4acf3f",
+   "org": "a570f880-a17c-46d5-8ffd-7955455f20aa"
+  },
+  {
+   "t": "2026-11-24T19:43:18.698Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "a23f15ec-ca85-4550-a3c7-7c7ade4acf3f",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T19:45:49.274Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "c20aa277-d9a7-4068-af3d-b79e5c1b0326",
+   "org": "a570f880-a17c-46d5-8ffd-7955455f20aa"
+  },
+  {
+   "t": "2026-11-24T19:45:49.314Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "c20aa277-d9a7-4068-af3d-b79e5c1b0326",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T19:45:49.672Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "a23f15ec-ca85-4550-a3c7-7c7ade4acf3f",
+   "org": "a570f880-a17c-46d5-8ffd-7955455f20aa"
+  },
+  {
+   "t": "2026-11-24T19:45:49.705Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "a23f15ec-ca85-4550-a3c7-7c7ade4acf3f",
+   "org": "unknown"
+  }
+ ]
+}
