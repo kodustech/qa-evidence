@@ -1,0 +1,68 @@
+12:54:11.971 info SavePullRequestUseCase | GitLab webhook actor replaced by resolved MR author
+12:54:13.531 info RunCodeReviewAutomationUseCase | GitLab webhook actor replaced by resolved MR author
+12:54:13.710 info RunCodeReviewAutomationUseCase | RunCodeReviewAutomationUseCase PR#12
+12:54:14.995 info PipelineExecutor | Starting pipeline: CodeReviewPipeline (ID: f42d07f4-ed8f-4d16-98f6-7dc49ec51101)
+12:54:15.090 info PipelineExecutor | Stage 'ValidatePrerequisitesStage' completed in 95ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:54:15.103 info ValidateNewCommitsStage | No last analyzed commit found, analyzing all commits
+12:54:22.983 info ValidateNewCommitsStage | Processing 1 new commits for PR#12 (1 total)
+12:54:22.991 info PipelineExecutor | Stage 'ValidateNewCommitsStage' completed in 7900ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:54:23.784 info PipelineExecutor | Stage 'ResolveConfigStage' completed in 792ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:54:23.801 info ValidateConfigStage | Branch Review Validation
+12:54:23.807 info PipelineExecutor | Stage 'ValidateConfigStage' completed in 23ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:54:23.821 info PipelineExecutor | Stage 'AssessPrRiskStage' completed in 14ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:54:23.822 info PipelineExecutor | Stage 'ResolveRiskRoutingStage' completed in 0ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:54:23.832 info FetchChangedFilesStage | Found 5 files to analyze for PR#12 (5 total, 0 ignored)
+12:54:24.190 info PipelineExecutor | Stage 'FetchChangedFilesStage' completed in 368ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:54:24.220 info PipelineExecutor | Stage 'LoadExternalContextStage' completed in 28ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:54:24.241 info PipelineExecutor | Stage 'LoadCiEvidenceStage' completed in 20ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:54:24.518 info PipelineExecutor | Stage 'InitialCommentStage' completed in 277ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:54:24.631 info BusinessValidationService | Business validation skipped (no_tracker)
+12:54:24.644 info BusinessLogicValidationStage | [BUSINESS-LOGIC] Skipped (no_tracker): no tracker.
+12:54:24.651 info PipelineExecutor | Stage 'BusinessLogicValidationStage' completed in 132ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:54:30.661 info PipelineExecutor | Stage 'CreateSandboxStage' completed in 6009ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:54:30.701 info PipelineExecutor | Stage 'RunAnalyzersStage' completed in 39ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:54:49.046 info GeneralistAgentProvider | [AGENT] Generalist finder settings for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash: family=deepseek, maxSteps=20, synthesisRescue=true
+12:54:49.047 info CodeReviewAgent | [AGENT] kodus-generalist-review-agent context window: 1048576 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash
+12:55:04.309 info KodyRulesShardedAgent | [kody-rules-shard] prompt cache: 5 file shard(s) in 1 head group(s), 1 shared; 1 of 4 sibling(s) ran after their group's first shard
+12:55:04.311 info KodyRulesShardedAgent | [AGENT] kodus-rules-review-agent (sharded) done for PR#12: 2 suggestions (2 confirmed across 5 shards; 0 detector candidate(s) offered; lookup 0 grep / 5 read / 0 exists) in 15268ms
+12:57:17.626 info finder | [DONE-TOOL] prose recovery returned 0 finding(s)
+12:57:22.125 info VerifierAgent | verifier verdict recovered from text (keep=true)
+12:57:24.663 info VerifierAgent | verifier verdict recovered from text (keep=true)
+12:57:26.783 info review-funnel | review recall funnel (verify gate)
+12:57:26.785 info ReviewOrchestratorService | [AGENT] kody-rules returned 2 suggestions in 15268ms
+12:57:26.785 info ReviewOrchestratorService | [AGENT] generalist returned 3 suggestions in 157743ms
+12:58:03.817 info AgentReviewStage | [AGENT] Reclassified severity for 4 suggestions (0 left unclassified, default kept)
+12:58:07.340 info AgentReviewStage | [ENRICH] PR#12: enriched 3, failed 0, skipped 1
+12:58:07.342 info AgentReviewStage | [AGENT] Titled 4 suggestions (from summary 4, from body 0, over the ceiling 0, empty 0)
+12:58:08.843 info AgentReviewStage | [AGENT] Formatted 4/4 suggestion contents
+12:58:08.844 info AgentReviewStage | [AGENT] Shaped 4 suggestion bodies (fences removed 0, title repeat dropped 1, capped 0, titles rewritten 0, titles cut 0)
+12:58:08.845 info AgentReviewStage | [AGENT] Downgraded 1 suggestion(s) with unusable improvedCode to plain comments
+12:58:08.847 info AgentReviewStage | [AGENT] Rendered merged finding locations
+12:58:08.856 info PipelineExecutor | Stage 'AgentReviewStage' completed in 218154ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:58:08.866 info CreatePrLevelCommentsStage | Starting PR-level comments creation for PR#12
+12:58:08.867 info CommentManagerService | Creating PR-level comments for PR#12
+12:58:09.235 info CreatePrLevelCommentsStage | Successfully created 1 PR-level comments for PR#12
+12:58:09.251 info CreatePrLevelCommentsStage | Saved 1 PR level suggestions to database
+12:58:09.258 info PipelineExecutor | Stage 'CreatePrLevelCommentsStage' completed in 401ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:58:09.267 info ValidateSuggestionsStage | Skipping validation stage for non-GitHub platform
+12:58:09.273 info PipelineExecutor | Stage 'ValidateSuggestionsStage' completed in 15ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:58:09.285 info CreateFileCommentsStage | Starting file comments creation for PR#12
+12:58:09.703 info CommentManagerService | Create Line Comments PR#12
+12:58:10.485 info GitlabService | Created line comment for PR#12
+12:58:11.461 info GitlabService | Created line comment for PR#12
+12:58:12.385 info GitlabService | Created line comment for PR#12
+12:58:12.626 info CreateFileCommentsStage | Successfully processed file comments for PR#12
+12:58:12.633 info PipelineExecutor | Stage 'CreateFileCommentsStage' completed in 3358ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:58:12.643 info AggregateResultsStage | Aggregated 3 valid suggestions, 0 discarded suggestions
+12:58:12.643 warn AggregateResultsStage | No valid suggestions to aggregate for PR#12
+12:58:12.649 info PipelineExecutor | Stage 'AggregateResultsStage' completed in 16ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:58:12.658 info UpdateCommentsAndGenerateSummaryStage | Generating summary for PR#12
+12:58:12.881 info CommentManagerService | GenerateSummaryPR: Start PR#12. After get PR data
+12:58:18.263 info CommentManagerService | GenerateSummaryPR: End PR#12. After concatenate
+12:58:19.922 info PipelineExecutor | Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 7271ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:58:19.941 info PipelineExecutor | Stage 'DecidePrApprovalStage' completed in 18ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:58:19.949 info RequestChangesOrApproveStage | Finished processing PR#12
+12:58:19.955 info PipelineExecutor | Stage 'RequestChangesOrApproveStage' completed in 13ms: f42d07f4-ed8f-4d16-98f6-7dc49ec51101
+12:58:19.956 info PipelineExecutor | Finished pipeline: CodeReviewPipeline (ID: f42d07f4-ed8f-4d16-98f6-7dc49ec51101)
+12:58:20.118 info SavePullRequestUseCase | GitLab webhook actor replaced by resolved MR author
+12:58:20.684 info AutomationCodeReviewService | Successfully handled pull request for PR#12
