@@ -1,0 +1,62 @@
+import sys, json, time, os
+sys.path.insert(0, os.path.dirname(__file__))
+from wpdrv import *
+if os.path.exists(EVENTS): os.remove(EVENTS)
+mongo("db.dropDatabase(); print(JSON.stringify({ok:1}))")
+R = {}
+SEM_EX = [{'snippet': 'await grades.save(g);', 'isCorrect': False}, {'snippet': 'await assertEnrolled(s); await grades.save(g);', 'isCorrect': True}]
+MECH_EX = [{'snippet': 'console.log(student.id);', 'isCorrect': False}, {'snippet': 'this.logger.info(student.id);', 'isCorrect': True}]
+def dto(title, rule, ex): return {'title': title, 'rule': rule, 'path': 'qa2308/**', 'severity': 'medium', 'examples': ex, 'origin': 'manual', 'status': 'active', 'type': 'standard', 'scope': 'file', 'repositoryId': 'global'}
+def create(tag, d):
+    p = spawn(tag, 'create', dto=d); rc, out = finish(p); u = [x for x in events(tag) if x['ev'] == 'created'][0]['uuid']; return u
+def llm_calls(tag): return len([x for x in ctl.log if x['tag'] == tag and x['kind'] == 'llm'])
+def save(tag, uuid, over=None, wait=True):
+    p = spawn(tag, 'save', uuid=uuid, over=over or {})
+    if wait: rc, out = finish(p); return rc
+    return p
+# ---- seed
+A = create('seedA', dto('qa2308 wp A', 'Attendance import must reject an invalid student id.', SEM_EX))
+M = create('seedM', dto('qa2308 wp M', 'Do not call console.log in qa2308 files; use the injected logger.', MECH_EX))
+TEN = [create(f'seed{i}', dto(f'qa2308 wp ten {i}', f'Settled semantic rule {i} keeps campus id.', SEM_EX)) for i in range(10)]
+R['seed'] = {'A': state(A), 'M': state(M), 'tenSettled': all(state(u)['gateWouldSkip'] for u in TEN)}
+# ---- M26a: compile rejected (429), retry, third save
+ctl.set('m26a1', 'llm', '429'); rc1 = save('m26a1', A, {'rule': 'Attendance import must reject an invalid student id. Edit one.'})
+s1 = state(A)
+rc2 = save('m26a2', A); s2 = state(A)
+rc3 = save('m26a3', A); s3 = state(A)
+ctl.set('m26t1', 'llm', 'timeout'); save('m26t1', A, {'rule': 'Attendance import must reject an invalid student id. Edit two.'}); st1 = state(A)
+save('m26t2', A); st2 = state(A); save('m26t3', A); st3 = state(A)
+R['M26a_429'] = {'after429': s1, 'calls': [llm_calls('m26a1'), llm_calls('m26a2'), llm_calls('m26a3')], 'afterRetry': s2, 'afterThird': s3, 'rc': [rc1, rc2, rc3]}
+R['M26a_timeout'] = {'afterTimeout': st1, 'calls': [llm_calls('m26t1'), llm_calls('m26t2'), llm_calls('m26t3')], 'afterRetry': st2, 'afterThird': st3}
+# ---- M26b: SIGKILL between DB save and compiler response
+ctl.set('m26b1', 'llm', 'hold')
+p = save('m26b1', A, {'rule': 'Attendance import must reject an invalid student id. Edit three.'}, wait=False)
+wait_ev('m26b1', 'llm.request'); sv = wait_ev('m26b1', 'save.returned'); tk = time.time(); rc = kill(p)
+k1 = state(A)
+save('m26b2', A); k2 = state(A); save('m26b3', A); k3 = state(A)
+R['M26b_kill_before_response'] = {'pid': sv['pid'], 'killedAt': tk, 'exit': rc, 'afterKill': k1, 'calls': [llm_calls('m26b1'), llm_calls('m26b2'), llm_calls('m26b3')], 'afterRetry': k2, 'afterThird': k3}
+# ---- M26c: SIGKILL between updateRuleDetector and saveCompileAttempt (mechanical rule edited)
+ctl.set('m26c1', 'hook:afterDetector', 'hold')
+p = save('m26c1', M, {'rule': 'Do not call console.log in qa2308 files; use the injected logger. Edited.'}, wait=False)
+dw = wait_ev('m26c1', 'db.detectorWritten'); rc = kill(p); c1 = state(M)
+save('m26c2', M); c2 = state(M); save('m26c3', M); c3 = state(M)
+R['M26c_kill_after_detector'] = {'pid': dw['pid'], 'exit': rc, 'afterKill': c1, 'calls': [llm_calls('m26c1'), llm_calls('m26c2'), llm_calls('m26c3')], 'afterRetry': c2, 'afterThird': c3}
+# ---- M28a: 8 concurrent unchanged saves of A
+before = state(A); ps = [save(f'm28a{i}', A, wait=False) for i in range(8)]; [finish(p) for p in ps]
+R['M28a_burst_one_rule'] = {'before': before, 'after': state(A), 'calls': sum(llm_calls(f'm28a{i}') for i in range(8)), 'windows': [[x for x in events(f'm28a{i}') if x['ev'] in ('save.start', 'save.returned')] for i in range(8)]}
+# ---- M28b: ten settled rules saved concurrently + a concurrent backfill eligibility read
+before10 = {u: state(u) for u in TEN}
+ps = [save(f'm28b{i}', u, wait=False) for i, u in enumerate(TEN)] + [spawn('m28read', 'backfill-read')]; [finish(p) for p in ps]
+after10 = {u: state(u) for u in TEN}
+cnt = mongo("const d=db.kodyRules.findOne({organizationId:'org-qa2308-wp'});print(JSON.stringify({rules:d.rules.length,uuids:[...new Set(d.rules.map(r=>r.uuid))].length}))")
+R['M28b_ten_rules'] = {'calls': sum(llm_calls(f'm28b{i}') for i in range(10)), 'allStillSettled': all(after10[u]['gateWouldSkip'] for u in TEN), 'attemptsUnchanged': all(before10[u]['attemptedAt'] == after10[u]['attemptedAt'] for u in TEN), 'docCount': cnt, 'read': [x for x in events('m28read') if x['ev'].startswith('read')], 'windows': {f'm28b{i}': [x['t'] for x in events(f'm28b{i}') if x['ev'] in ('save.start', 'save.returned')] for i in range(10)}}
+# ---- M29a: edit to B then C within 1 s, both compiles overlap (B held, C answered first, then B released)
+ctl.set('m29B', 'llm', 'hold')
+pB = save('m29B', M, {'rule': 'Do not call console.log in qa2308 files; use the logger. B.'}, wait=False); wait_ev('m29B', 'llm.request')
+pC = save('m29C', M, {'rule': 'Do not call console.log in qa2308 files; use the logger. C.'}, wait=False); finish(pC)
+mid = state(M); ctl.release('m29B', 'llm'); finish(pB); fin = state(M)
+save('m29heal', M); heal = state(M); save('m29after', M); after = state(M)
+R['M29a_B_then_C'] = {'afterC': mid, 'afterBReleasedLast': fin, 'calls': {'B': llm_calls('m29B'), 'C': llm_calls('m29C'), 'heal': llm_calls('m29heal'), 'after': llm_calls('m29after')}, 'afterHeal': heal, 'afterNext': after, 'timeline': [x for x in events() if x['tag'] in ('m29B', 'm29C')]}
+json.dump(R, open(f'{OUT}/merge-WP.json' if os.environ.get('QA2308_VERSION', 'merge') == 'merge' else f'{OUT}/parent-WP.json', 'w'), indent=1, default=str)
+json.dump(ctl.log, open(f'{OUT}/wp-ctl-log-{os.environ.get("QA2308_VERSION","merge")}.json', 'w'), indent=0)
+print(json.dumps({k: (v.get('calls') if isinstance(v, dict) else v) for k, v in R.items()}, default=str))
