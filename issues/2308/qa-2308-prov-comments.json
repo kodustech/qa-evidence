@@ -1,0 +1,148 @@
+{
+ "gitlab": [
+  {
+   "user": "sartorijr",
+   "path": "qa2308/attendance-import.ts",
+   "line": 37,
+   "body": "  \n\n\n**Non-string studentId throws TypeError during attendance import**\n\nA truthy non-string `studentId` such as `123` slips past the `!entry.studentId` check and makes `123.trim()` throw, aborting the whole import. Check `typeof entry.studentId === 'string'` before calling `.trim()`.\n\n<details>\n<summary>Prompt for LLM</summary>\n\n````text\nFile qa2308/attendance-import.ts, line 37:\n\nNon-string stud"
+  },
+  {
+   "user": "sartorijr",
+   "path": "qa2308/attendance-import.ts",
+   "line": 25,
+   "body": "  \n\n\n**importSheet silently accepts entries with an invalid student id**\n\nEntries with a missing or blank `studentId` land in `accepted` and `rejected` always returns empty, so bad rows import unnoticed. Mirror `importSheetChecked`: collect them in a `rejected` array with reason 'invalid student id' and return it.\n\nKody rule violation: [qa\\-2308 A reject invalid student id \\(t\\)](https://qa.web.ko"
+  },
+  {
+   "user": "sartorijr",
+   "path": "qa2308/attendance-import.ts",
+   "line": 21,
+   "body": "  \n\n\n**Attendance payload executed with eval instead of JSON.parse**\n\n`eval` executes arbitrary code from an untrusted teacher upload. Use `JSON.parse(payload)` so only data is read, matching the checked importer below.\n\nKody rule violation: [qa\\-2308 M no eval in attendance JSON \\(t\\)](https://qa.web.kodus.io/settings/code-review/89319162/kody-rules/6ba488a2-39ad-4704-9677-bd0037fff138?teamId=7d0"
+  },
+  {
+   "user": "sartorijr",
+   "path": null,
+   "line": null,
+   "body": "## Code Review Completed! \ud83d\udd25\n\nThe code review was successfully completed based on your current configurations.\n\n\n\n<details>\n<summary>Kody Guide: Usage and Configuration</summary>\n\n<details>\n<summary>Interacting with Kody</summary>\n\n- **Request a Review:** Ask Kody to review your PR manually by adding a comment with the `@kody start-review` command at the root of your PR.\n\n- **Validate Business Logi"
+  },
+  {
+   "user": "sartorijr",
+   "path": null,
+   "line": null,
+   "body": "@kody start-review"
+  }
+ ],
+ "bitbucket": [
+  {
+   "user": "Junior Sartori",
+   "path": null,
+   "line": null,
+   "body": "@kody start-review"
+  },
+  {
+   "user": "Junior Sartori",
+   "path": null,
+   "line": null,
+   "body": "## Code Review Completed! \ud83d\udd25\n\nThe code review was successfully completed based on your current configurations.\n\n\n\n\nKody Guide: Usage and Configuration\n\n\nInteracting with Kody\n\n- **Request a Review:** Ask Kody to review your PR manually by adding a comment with the `@kody start-review` command at the root of your PR.\n\n- **Validate Business Logic:** Ask Kody to validate your code against business rul"
+  },
+  {
+   "user": "Junior Sartori",
+   "path": "qa2308/attendance-import.ts",
+   "line": 25,
+   "body": "`kody|code-review` `bug` `severity-level|high`\n\n**Accepted attendance rows omit required campusId**\n\nThe cast hides that every accepted row has `campusId === undefined`, since the parameter is never applied. Add the campus to each entry so it matches `importSheetChecked`.\n\nWas this suggestion helpful? Reply with \ud83d\udc4d or \ud83d\udc4e to help Kody learn from this interaction.\n\n```\n\ud83d\udc4d\n```\n\n```\n\ud83d\udc4e\n```"
+  },
+  {
+   "user": "Junior Sartori",
+   "path": "qa2308/attendance-import.ts",
+   "line": 25,
+   "body": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nFile qa2308/attendance-import.ts, line 25:\n\nAccepted attendance rows omit required campusId\n\nThe accepted entry is built as `{ studentId, present }` and cast with `as AttendanceEntry`, so the required `campusId` field is silently omitted and every accepted row has `campusId === undefined`; the `campusId` parameter is never"
+  },
+  {
+   "user": "Junior Sartori",
+   "path": "qa2308/attendance-import.ts",
+   "line": 21,
+   "body": "`kody|code-review` `kody_rules` `severity-level|medium`\n\n**Attendance payload executed with eval instead of JSON.parse**\n\n`eval` runs arbitrary code from the uploaded sheet, a serious injection risk. Use `JSON.parse` so the payload is treated as data, as `importSheetChecked` does.\n\nKody rule violation: [qa\\-2308 M no eval in attendance JSON \\(t\\)](https://qa.web.kodus.io/settings/code-review/3ac23"
+  },
+  {
+   "user": "Junior Sartori",
+   "path": "qa2308/attendance-import.ts",
+   "line": 21,
+   "body": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nFile qa2308/attendance-import.ts, line 21:\n\nAttendance payload executed with eval instead of JSON.parse\n\nThe attendance payload is executed with eval, which runs arbitrary code from the uploaded sheet. Replace eval with JSON.parse so the payload is parsed as data, matching the safe implementation in importSheetChecked.\n\nKo"
+  },
+  {
+   "user": "Junior Sartori",
+   "path": "qa2308/attendance-import.ts",
+   "line": 24,
+   "body": "`kody|code-review` `kody_rules` `severity-level|medium`\n\n**importSheet silently accepts entries with invalid student ids**\n\nBecause `rejected` is always empty, rows with a blank `studentId` are imported silently. Validate `studentId` in the loop and push an explicit rejection like `importSheetChecked`.\n\nKody rule violation: [qa\\-2308 A reject invalid student id \\(t\\)](https://qa.web.kodus.io/setti"
+  },
+  {
+   "user": "Junior Sartori",
+   "path": "qa2308/attendance-import.ts",
+   "line": 24,
+   "body": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nFile qa2308/attendance-import.ts, lines 24-27:\n\nimportSheet silently accepts entries with invalid student ids\n\nimportSheet pushes every entry into accepted and always returns an empty rejected list, so entries with a blank or missing studentId are silently accepted. Validate studentId in the loop and push an explicit rejec"
+  }
+ ],
+ "azure": [
+  {
+   "user": "Junior Sartori",
+   "path": null,
+   "line": null,
+   "body": "@kody start-review"
+  },
+  {
+   "user": "Junior Sartori",
+   "path": null,
+   "line": null,
+   "body": "## Code Review Completed! \ud83d\udd25\n\nThe code review was successfully completed based on your current configurations.\n\n\n\n<details>\n<summary>Kody Guide: Usage and Configuration</summary>\n\n<details>\n<summary>Interacting with Kody</summary>\n\n- **Request a Review:** Ask Kody to review your PR manually by adding a comment with the `@kody start-review` command at the root of your PR.\n\n- **Validate Business Logi"
+  },
+  {
+   "user": "Junior Sartori",
+   "path": "/qa2308/attendance-import.ts",
+   "line": 23,
+   "body": "  \n\n\n**importSheet silently accepts entries with an invalid student id**\n\nEntries with a missing or blank studentId are silently accepted, violating the explicit rejected result rule [1]. Add a studentId check in the loop and return invalid entries in `rejected` with a reason, like `importSheetChecked`.\n\nKody rule violation: [qa\\-2308 A reject invalid student id \\(t\\)](https://qa.web.kodus.io/sett"
+  },
+  {
+   "user": "Junior Sartori",
+   "path": "/qa2308/attendance-import.ts",
+   "line": 21,
+   "body": "  \n\n\n**Attendance payload is parsed with eval instead of JSON.parse**\n\nExecuting uploaded sheet content lets arbitrary code run, which rule [2] forbids in attendance JSON import. Replace `eval` with `JSON.parse` so the payload is handled as data, matching `importSheetChecked`.\n\nKody rule violation: [qa\\-2308 M no eval in attendance JSON \\(t\\)](https://qa.web.kodus.io/settings/code-review/72cb04d0-"
+  }
+ ],
+ "forgejo": [
+  {
+   "user": "sartorijr",
+   "path": null,
+   "line": null,
+   "body": "@kody start-review"
+  },
+  {
+   "user": "sartorijr",
+   "path": null,
+   "line": null,
+   "body": "## Code Review Completed! \ud83d\udd25\n\nThe code review was successfully completed based on your current configurations.\n\n\n\n<details>\n<summary>Kody Guide: Usage and Configuration</summary>\n\n<details>\n<summary>Interacting with Kody</summary>\n\n- **Request a Review:** Ask Kody to review your PR manually by adding a comment with the `@kody start-review` command at the root of your PR.\n\n- **Validate Business Logi"
+  },
+  {
+   "user": "sartorijr",
+   "path": "qa2308/attendance-import.ts",
+   "line": 27,
+   "body": "  \n\n\n**importSheet drops campusId from accepted entries and result**\n\nThe cast hides the missing required `campusId`, so every imported record is stored without campus attribution. Spread `campusId` into each entry and include it in the returned result, as `importSheetChecked` does.\n<details>\n<summary>Prompt for LLM</summary>\n\n````text\nFile qa2308/attendance-import.ts, lines 25-27:\n\nimportSheet dr"
+  },
+  {
+   "user": "sartorijr",
+   "path": "qa2308/attendance-import.ts",
+   "line": 21,
+   "body": "  \n\n\n**Attendance payload is executed with eval instead of JSON.parse**\n\n`eval` executes any JavaScript embedded in the uploaded sheet. Parse the payload as data with `JSON.parse`, matching the checked reference implementation.\n\nKody rule violation: [qa\\-2308 M no eval in attendance JSON \\(t\\)](https://qa.web.kodus.io/settings/code-review/2929808/kody-rules/7553a366-aa6b-4b32-90e3-2c6ae9d38feb?tea"
+  },
+  {
+   "user": "sartorijr",
+   "path": "qa2308/attendance-import.ts",
+   "line": 27,
+   "body": "  \n\n\n**Import silently accepts entries with an invalid student id**\n\nAn invalid or empty `studentId` is accepted and `rejected` is always empty, so bad records pass unnoticed. Validate each `studentId` and push a rejection with a reason, as `importSheetChecked` does.\n\nKody rule violation: [qa\\-2308 A reject invalid student id \\(t\\)](https://qa.web.kodus.io/settings/code-review/2929808/kody-rules/2"
+  },
+  {
+   "user": "sartorijr",
+   "path": "qa2308/attendance-import.ts",
+   "line": 37,
+   "body": "  \n\n\n**Non-string studentId throws TypeError in importSheetChecked**\n\nThe `as AttendanceEntry[]` cast is erased at runtime, so an entry like `{studentId: 12345, present: true}` passes the truthiness check and then throws `TypeError`, aborting the whole import run. Guard with a `typeof entry.studentId === 'string'` check before calling `.trim()`.\n<details>\n<summary>Prompt for LLM</summary>\n\n````tex"
+  }
+ ]
+}
