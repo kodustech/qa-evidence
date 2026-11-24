@@ -1,0 +1,23 @@
+FAIL test/unit/qa2628/h-stage.spec.ts
+  ● AgentReviewStage › QA2628 H stage @ctrl › M5 deferred last reader: no release before the orchestrator settles; release precedes post-processing (dedup)
+    Expected number of calls: 1
+    Received number of calls: 0
+  ● AgentReviewStage › QA2628 H stage @ctrl › M6 balanced: release waits for the whole orchestrator call
+    Expected number of calls: 1
+    Received number of calls: 0
+  ● AgentReviewStage › QA2628 H stage @ctrl › M6 deep: release waits for the whole orchestrator call
+    Expected number of calls: 1
+    Received number of calls: 0
+  ● AgentReviewStage › QA2628 H stage @ctrl › M6 custom-only: release waits for the whole orchestrator call
+    Expected number of calls: 1
+    Received number of calls: 0
+  ● AgentReviewStage › QA2628 H stage @ctrl › M28 orchestrator failure modes: release once after settlement; error kept
+    Expected: 1
+    Received: 0
+  ● AgentReviewStage › QA2628 H stage @ctrl › M29 paths that never reach the orchestrator
+    Expected: 1
+    Received: 0
+  ● AgentReviewStage › QA2628 H stage @ctrl › M31 parent abort during the orchestrator: one release, not a successful empty review
+    Expected number of calls: 1
+    Received number of calls: 0
+Tests:       7 failed, 1 passed, 8 total
