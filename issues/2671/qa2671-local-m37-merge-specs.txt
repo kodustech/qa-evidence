@@ -1,0 +1,64 @@
+npm warn Unknown project config "node-linker". This will stop working in the next major version of npm.
+  console.log
+    Error handling the return object from OpenAI SyntaxError: Unterminated string in JSON at position 28 (line 1 column 29)
+        at JSON.parse (<anonymous>)
+        at parse (<scratch>/2671/merge/libs/common/utils/transforms/json.ts:139:29)
+        at tryParseJSONObjectWithFallback (<scratch>/2671/merge/libs/common/utils/transforms/json.ts:57:33)
+        at LLMResponseProcessor.processResponse (<scratch>/2671/merge/libs/ai-engine/infrastructure/adapters/services/llmResponseProcessor.transform.ts:32:52)
+        at Object.processResponse (<scratch>/2671/merge/libs/code-review/infrastructure/adapters/services/commentManager.service.spec.ts:1717:23)
+        at Promise.finally.completed (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:1834:28)
+        at new Promise (<anonymous>)
+        at callAsyncCircusFn (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:1774:10)
+        at _callCircusTest (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:1167:40)
+        at _runTestInContext (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:1103:3)
+        at runTestWithContext (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:996:5)
+        at _runTestsForDescribeBlockOnce (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:1008:11)
+        at _runTestsForDescribeBlock (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:824:5)
+        at _runTestsForDescribeBlockOnce (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:1003:11)
+        at _runTestsForDescribeBlock (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:824:5)
+        at run (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:789:3)
+        at runAndTransformResultsToJestFormat (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:2300:21)
+        at jestAdapter (<scratch>/2671/merge/node_modules/jest-circus/build/runner.js:111:19)
+        at runTestInternal (<scratch>/2671/merge/node_modules/jest-runner/build/testWorker.js:247:16)
+        at runTest (<scratch>/2671/merge/node_modules/jest-runner/build/testWorker.js:315:7)
+        at Object.worker (<scratch>/2671/merge/node_modules/jest-runner/build/testWorker.js:479:12)
+
+      at log (libs/common/utils/transforms/json.ts:141:25)
+
+  console.log
+    Error handling the return object from OpenAI SyntaxError: Unexpected token 'h', "this is not"... is not valid JSON
+        at JSON.parse (<anonymous>)
+        at parse (<scratch>/2671/merge/libs/common/utils/transforms/json.ts:139:29)
+        at tryParseJSONObjectWithFallback (<scratch>/2671/merge/libs/common/utils/transforms/json.ts:57:33)
+        at LLMResponseProcessor.processResponse (<scratch>/2671/merge/libs/ai-engine/infrastructure/adapters/services/llmResponseProcessor.transform.ts:32:52)
+        at Object.processResponse (<scratch>/2671/merge/libs/code-review/infrastructure/adapters/services/commentManager.service.spec.ts:1723:23)
+        at Promise.finally.completed (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:1834:28)
+        at new Promise (<anonymous>)
+        at callAsyncCircusFn (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:1774:10)
+        at _callCircusTest (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:1167:40)
+        at _runTestInContext (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:1103:3)
+        at runTestWithContext (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:996:5)
+        at _runTestsForDescribeBlockOnce (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:1008:11)
+        at _runTestsForDescribeBlock (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:824:5)
+        at _runTestsForDescribeBlockOnce (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:1003:11)
+        at _runTestsForDescribeBlock (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:824:5)
+        at run (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:789:3)
+        at runAndTransformResultsToJestFormat (<scratch>/2671/merge/node_modules/jest-circus/build/jestAdapterInit.js:2300:21)
+        at jestAdapter (<scratch>/2671/merge/node_modules/jest-circus/build/runner.js:111:19)
+        at runTestInternal (<scratch>/2671/merge/node_modules/jest-runner/build/testWorker.js:247:16)
+        at runTest (<scratch>/2671/merge/node_modules/jest-runner/build/testWorker.js:315:7)
+        at Object.worker (<scratch>/2671/merge/node_modules/jest-runner/build/testWorker.js:479:12)
+
+      at log (libs/common/utils/transforms/json.ts:141:25)
+
+(node:26815) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:26813) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:26814) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Test Suites: 10 passed, 10 total
+Tests:       156 passed, 156 total
+Snapshots:   0 total
+Time:        1.843 s, estimated 3 s
+Ran all test suites matching libs/code-review/pipeline/stages/agent-review.stage.file-anchor.spec.ts|libs/common/utils/comment-builder.utils.spec.ts|libs/code-review/pipeline/stages/create-file-comments.stage.spec.ts|libs/code-review/pipeline/stages/create-pr-level-comments.stage.spec.ts|libs/code-review/pipeline/stages/agent-review.stage.dedup-anchor.spec.ts|libs/code-review/pipeline/stages/agent-review.delivery-chain.spec.ts|libs/platform/infrastructure/adapters/services/github/github.service.createReviewComment.spec.ts|libs/code-review/infrastructure/adapters/services/commentManager.
