@@ -1,0 +1,2 @@
+{"rev":"ctrl","test":"M15","event":"delayed","steps":["delete-start","publish-comments(diff only)","observer-settled","gate-open"],"dirExists":true,"doc":{"leaseCount":0,"cleanupStatus":"in_progress"},"cleaned":0}
+{"rev":"ctrl","test":"M15","event":"failing","decCalls":1,"doc":{"leaseCount":0,"cleanupStatus":"failed"},"warns":["SandboxLeaseManager: local cleanup failed, retry marker set sandboxId=\"$TMPDIR/kodus-sandbox-qa2628-RdqVAk\"","SandboxLeaseManager: release called with unknown leaseId=\"fa77083c-856f-4bfe-9d97-7411b96306f8\""],"dirExists":true}
