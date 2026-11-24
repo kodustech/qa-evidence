@@ -1,0 +1,217 @@
+{
+ "summary": {
+  "trials": 10,
+  "createLostCtx": 6,
+  "editLostCtx": 7,
+  "unchangedSavesThatCompiled": 10,
+  "unchangedSaves": 20
+ },
+ "runs": [
+  {
+   "trial": 0,
+   "createCtxCurrent": true,
+   "createFileScope": [
+    ".ts",
+    ".js"
+   ],
+   "editCalls": 1,
+   "afterEditCtxCurrent": false,
+   "afterEditCtx": {
+    "need": "full-file",
+    "inferredAt": "2026-11-24T19:04:27.738Z"
+   },
+   "unchangedSaveCalls": [
+    1,
+    0
+   ],
+   "finalCtxCurrent": true,
+   "finalFileScope": [
+    ".ts",
+    ".js"
+   ]
+  },
+  {
+   "trial": 1,
+   "createCtxCurrent": false,
+   "createFileScope": [
+    ".ts",
+    ".js"
+   ],
+   "editCalls": 1,
+   "afterEditCtxCurrent": true,
+   "afterEditCtx": {
+    "need": "full-file",
+    "inferredAt": "2026-11-24T19:04:27.957Z"
+   },
+   "unchangedSaveCalls": [
+    0,
+    0
+   ],
+   "finalCtxCurrent": true,
+   "finalFileScope": [
+    ".ts",
+    ".js"
+   ]
+  },
+  {
+   "trial": 2,
+   "createCtxCurrent": false,
+   "createFileScope": [
+    ".ts",
+    ".js"
+   ],
+   "editCalls": 1,
+   "afterEditCtxCurrent": false,
+   "afterEditCtx": null,
+   "unchangedSaveCalls": [
+    1,
+    0
+   ],
+   "finalCtxCurrent": true,
+   "finalFileScope": [
+    ".ts",
+    ".js"
+   ]
+  },
+  {
+   "trial": 3,
+   "createCtxCurrent": false,
+   "createFileScope": [
+    ".ts",
+    ".js"
+   ],
+   "editCalls": 1,
+   "afterEditCtxCurrent": false,
+   "afterEditCtx": null,
+   "unchangedSaveCalls": [
+    1,
+    0
+   ],
+   "finalCtxCurrent": true,
+   "finalFileScope": [
+    ".ts",
+    ".js"
+   ]
+  },
+  {
+   "trial": 4,
+   "createCtxCurrent": false,
+   "createFileScope": [
+    ".ts",
+    ".js"
+   ],
+   "editCalls": 1,
+   "afterEditCtxCurrent": true,
+   "afterEditCtx": {
+    "need": "full-file",
+    "inferredAt": "2026-11-24T19:04:28.469Z"
+   },
+   "unchangedSaveCalls": [
+    0,
+    0
+   ],
+   "finalCtxCurrent": true,
+   "finalFileScope": [
+    ".ts",
+    ".js"
+   ]
+  },
+  {
+   "trial": 5,
+   "createCtxCurrent": true,
+   "createFileScope": null,
+   "editCalls": 1,
+   "afterEditCtxCurrent": true,
+   "afterEditCtx": {
+    "need": "full-file",
+    "inferredAt": "2026-11-24T19:04:28.624Z"
+   },
+   "unchangedSaveCalls": [
+    0,
+    0
+   ],
+   "finalCtxCurrent": true,
+   "finalFileScope": null
+  },
+  {
+   "trial": 6,
+   "createCtxCurrent": false,
+   "createFileScope": [
+    ".ts",
+    ".js"
+   ],
+   "editCalls": 1,
+   "afterEditCtxCurrent": false,
+   "afterEditCtx": null,
+   "unchangedSaveCalls": [
+    1,
+    1
+   ],
+   "finalCtxCurrent": true,
+   "finalFileScope": [
+    ".ts",
+    ".js"
+   ]
+  },
+  {
+   "trial": 7,
+   "createCtxCurrent": true,
+   "createFileScope": null,
+   "editCalls": 1,
+   "afterEditCtxCurrent": false,
+   "afterEditCtx": {
+    "need": "full-file",
+    "inferredAt": "2026-11-24T19:04:28.946Z"
+   },
+   "unchangedSaveCalls": [
+    1,
+    1
+   ],
+   "finalCtxCurrent": false,
+   "finalFileScope": [
+    ".ts",
+    ".js"
+   ]
+  },
+  {
+   "trial": 8,
+   "createCtxCurrent": false,
+   "createFileScope": [
+    ".ts",
+    ".js"
+   ],
+   "editCalls": 1,
+   "afterEditCtxCurrent": false,
+   "afterEditCtx": null,
+   "unchangedSaveCalls": [
+    1,
+    0
+   ],
+   "finalCtxCurrent": true,
+   "finalFileScope": [
+    ".ts",
+    ".js"
+   ]
+  },
+  {
+   "trial": 9,
+   "createCtxCurrent": true,
+   "createFileScope": null,
+   "editCalls": 1,
+   "afterEditCtxCurrent": false,
+   "afterEditCtx": {
+    "need": "full-file",
+    "inferredAt": "2026-11-24T19:04:29.366Z"
+   },
+   "unchangedSaveCalls": [
+    1,
+    1
+   ],
+   "finalCtxCurrent": true,
+   "finalFileScope": [
+    ".ts",
+    ".js"
+   ]
+  }
+ ]
+}
