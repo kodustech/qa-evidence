@@ -1,0 +1,22 @@
+{
+ "merge": "5 suites / 90 tests passed (CI=true, SKIP_INTEGRATION=false, real Postgres 16 + pgvector)",
+ "parent_sources_with_merge_specs": {
+  "suites_failed": 4,
+  "tests_failed": 13,
+  "failed": [
+   "reacts and posts the notice on the first skip, recording when",
+   "posts the notice on the first skip only, keeping the reaction on later runs",
+   "posts only the notice on AZURE_REPOS, without the old reaction comment",
+   "posts only the notice on BITBUCKET, without the old reaction comment",
+   "answers a Bitbucket command in its thread",
+   "does not record the notice when the provider did not post it",
+   "still posts the notice when the earlier-notice lookup fails",
+   "finds the key on an earlier execution of the same PR",
+   "ignores the key set for another automation or another repository",
+   "treats a null value as not set",
+   "is false for a PR with no executions",
+   "records the no-license notice on a skipped run, so the next push stays quiet (#2594)",
+   "looks for the key on any execution of that PR"
+  ]
+ }
+}
