@@ -1,0 +1,168 @@
+{
+ "calls": 2,
+ "created": [
+  {
+   "uuid": "c7d3ab15-7913-44ac-b6e0-4c95d4b2dfa5",
+   "title": "qa2308 mech v2",
+   "status": "active",
+   "rule": "Do not call console.log in qa2308 files; use the injected logger.",
+   "compileAttempt": {
+    "sourceHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+    "attemptedAt": "2026-11-24T19:03:21.227Z",
+    "outcome": "compiled",
+    "declineReason": null,
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "sibling-file",
+    "source": "author"
+   },
+   "detector": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "fileScope": {
+    "extensions": [
+     ".ts"
+    ],
+    "sourceHash": "2891225986316062501fdb428399eaa9f4281aa50fee894677c8a7ba3a3d2ddd",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T19:03:21.039Z",
+    "model": "byok"
+   },
+   "caCurrent": true,
+   "ctxHash": "0316441b34c9460b92a66d152111f729b00c241e120ecbfdda51a91846112c87",
+   "type": "standard",
+   "requestType": null,
+   "targetRuleUuid": null
+  },
+  {
+   "uuid": "7f3fe3ea-23a2-49f8-b356-1a7fc0e7e7a8",
+   "title": "qa2308 memory v2",
+   "status": "active",
+   "rule": "Memory: the attendance module uses campus ids as strings.",
+   "compileAttempt": {
+    "sourceHash": "95eb9d74c0a8ac0c6805e540e5138aa709680911aea8bee97d06a8764a39f0aa",
+    "attemptedAt": "2026-11-24T19:03:21.235Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "cited-file",
+    "source": "author"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "ctxHash": "49a3a6923bab18ab9cfb87ebc61b5185f61dfff11c79285031678a9280d1095f",
+   "type": "memory",
+   "requestType": null,
+   "targetRuleUuid": null
+  }
+ ],
+ "compilePayloads": [
+  {
+   "t": "2026-11-24T19:03:21.223Z",
+   "uuid": "c7d3ab15-7913-44ac-b6e0-4c95d4b2dfa5",
+   "payloadKeys": [
+    "uuid",
+    "type",
+    "title",
+    "rule",
+    "path",
+    "severity",
+    "status",
+    "lockedByPlan",
+    "repositoryId",
+    "examples",
+    "origin",
+    "scope",
+    "inheritance",
+    "createdAt",
+    "updatedAt",
+    "contextNeed",
+    "contextReferenceId",
+    "fileScope",
+    "detector",
+    "compileAttempt",
+    "_id",
+    "requestType",
+    "targetRuleUuid",
+    "referenceProcessingStatus",
+    "externalReferences",
+    "syncErrors",
+    "resolvedAt",
+    "resolvedBy",
+    "centralizedConfig"
+   ],
+   "compileAttempt": null,
+   "contextNeed": {
+    "need": "sibling-file",
+    "source": "author"
+   },
+   "hasExamples": true,
+   "gateHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "ctxHash": "0316441b34c9460b92a66d152111f729b00c241e120ecbfdda51a91846112c87"
+  },
+  {
+   "t": "2026-11-24T19:03:21.234Z",
+   "uuid": "7f3fe3ea-23a2-49f8-b356-1a7fc0e7e7a8",
+   "payloadKeys": [
+    "uuid",
+    "type",
+    "title",
+    "rule",
+    "path",
+    "sourcePath",
+    "centralizedConfig",
+    "sourceAnchor",
+    "severity",
+    "status",
+    "lockedByPlan",
+    "repositoryId",
+    "sourceRepositoryId",
+    "lastContentHash",
+    "directoryId",
+    "examples",
+    "contextNeed",
+    "fileScope",
+    "compileAttempt",
+    "origin",
+    "scope",
+    "inheritance",
+    "requestType",
+    "targetRuleUuid",
+    "resolvedAt",
+    "resolvedBy",
+    "pinnedSync",
+    "createdAt",
+    "updatedAt",
+    "contextReferenceId",
+    "_id",
+    "referenceProcessingStatus",
+    "externalReferences",
+    "syncErrors",
+    "detector"
+   ],
+   "compileAttempt": null,
+   "contextNeed": {
+    "need": "cited-file",
+    "source": "author"
+   },
+   "hasExamples": true,
+   "gateHash": "95eb9d74c0a8ac0c6805e540e5138aa709680911aea8bee97d06a8764a39f0aa",
+   "ctxHash": "49a3a6923bab18ab9cfb87ebc61b5185f61dfff11c79285031678a9280d1095f"
+  }
+ ],
+ "pendingStatus": {
+  "mech": "rejected",
+  "mem": "rejected"
+ },
+ "targetUnchanged": true,
+ "nextUnchangedSaveCalls": 0,
+ "emptyList": {
+  "result": [],
+  "calls": 0,
+  "rulesAdded": 0
+ }
+}
