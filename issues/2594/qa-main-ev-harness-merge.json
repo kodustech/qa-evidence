@@ -1,0 +1,176 @@
+[
+ {
+  "case": "M20a-429",
+  "run1Flag": null,
+  "run1Errors": [
+   "Error posting the no-license notice"
+  ],
+  "run2Flag": true,
+  "run3Flag": false,
+  "accepted": 1,
+  "rowFlags": [
+   false,
+   true,
+   false
+  ]
+ },
+ {
+  "case": "M20a-timeout",
+  "run1Flag": null,
+  "run1Errors": [
+   "Error posting the no-license notice",
+   "Error posting the no-license notice"
+  ],
+  "run2Flag": true,
+  "run3Flag": false,
+  "accepted": 1,
+  "rowFlags": [
+   false,
+   true,
+   false
+  ]
+ },
+ {
+  "case": "M20a-null",
+  "run1Flag": null,
+  "run1Errors": [
+   "Error posting the no-license notice",
+   "Error posting the no-license notice"
+  ],
+  "run2Flag": true,
+  "run3Flag": false,
+  "accepted": 1,
+  "rowFlags": [
+   false,
+   true,
+   false
+  ]
+ },
+ {
+  "case": "M20a-undefined",
+  "run1Flag": null,
+  "run1Errors": [
+   "Error posting the no-license notice",
+   "Error posting the no-license notice"
+  ],
+  "run2Flag": true,
+  "run3Flag": false,
+  "accepted": 1,
+  "rowFlags": [
+   false,
+   true,
+   false
+  ]
+ },
+ {
+  "case": "M20b",
+  "flag": true,
+  "accepted": 1,
+  "errors": [
+   "Error adding no license reaction"
+  ]
+ },
+ {
+  "case": "M20c",
+  "flag": true,
+  "accepted": 2,
+  "warns": [
+   "User not licensed but company has licenses",
+   "User not licensed but company has licenses",
+   "Could not check for an earlier no-license notice, posting it",
+   "User not licensed but company has licenses"
+  ]
+ },
+ {
+  "case": "M21",
+  "accepted": 2,
+  "runs": [
+   true,
+   true,
+   false
+  ],
+  "rows": [
+   {
+    "status": "in_progress",
+    "f": null
+   },
+   {
+    "status": "skipped",
+    "f": "2026-11-24T03:54:22.784Z"
+   },
+   {
+    "status": "skipped",
+    "f": null
+   }
+  ]
+ },
+ {
+  "case": "M24-concurrent",
+  "accepted": 2,
+  "flags": [
+   true,
+   true
+  ]
+ },
+ {
+  "case": "M24-after",
+  "accepted": 2,
+  "flag": false
+ },
+ {
+  "case": "M27-sql-null",
+  "lookupBefore": false,
+  "flag": true,
+  "accepted": 1
+ },
+ {
+  "case": "M27-empty",
+  "lookupBefore": false,
+  "flag": true,
+  "accepted": 1
+ },
+ {
+  "case": "M27-key-null",
+  "lookupBefore": false,
+  "flag": true,
+  "accepted": 1
+ },
+ {
+  "case": "M27-other-keys",
+  "lookupBefore": false,
+  "flag": true,
+  "accepted": 1
+ },
+ {
+  "case": "M38",
+  "perRepo": [
+   1,
+   1,
+   1
+  ],
+  "replies": [
+   {
+    "name": "numeric",
+    "kind": "reply",
+    "inReplyToId": 77,
+    "type": "number"
+   },
+   {
+    "name": "numeric-string",
+    "kind": "reply",
+    "inReplyToId": 77,
+    "type": "number"
+   },
+   {
+    "name": "non-numeric-string",
+    "kind": "reply",
+    "inReplyToId": "abc{x}",
+    "type": "string"
+   },
+   {
+    "name": "no-trigger",
+    "kind": "issue"
+   }
+  ]
+ }
+]
