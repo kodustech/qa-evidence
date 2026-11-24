@@ -1,3 +1,87 @@
+HEAD 612691314b134e26fe88f4bf403db91974ae861f with the two use-case sources replaced by 8e36600318f5d0bcb877205907e7231797e8101e (specs from the merge)
+ M libs/kodyRules/application/use-cases/convert-pending-updates-to-new.use-case.ts
+ M libs/kodyRules/application/use-cases/create-or-update.use-case.ts
+FAIL libs/kodyRules/application/use-cases/create-or-update.use-case.spec.ts
   ● CreateOrUpdateKodyRulesUseCase — detector compile on save › passes the stored compileAttempt and contextNeed to compileAndSave so unchanged rules are skipped
+
+    expect(received).toMatchObject(expected)
+
+    - Expected  - 9
+    + Received  + 0
+
+      Object {
+    -   "compileAttempt": Object {
+    -     "attemptedAt": 2026-01-01T00:00:00.000Z,
+    -     "declineReason": "not mechanical",
+    -     "sourceHash": "hash-1",
+    -   },
+    -   "contextNeed": Object {
+    -     "need": "none",
+    -     "promptVersion": 1,
+    -   },
+        "uuid": "rule-1",
+      }
+
+      258 |
+      259 |         expect(compileAndSave).toHaveBeenCalledTimes(1);
+    > 260 |         expect(compileAndSave.mock.calls[0][2]).toMatchObject({
+          |                                                 ^
+      261 |             uuid: 'rule-1',
+      262 |             compileAttempt,
+      263 |             contextNeed,
+
+
+FAIL test/unit/kodyRules/use-cases/convert-pending-updates-to-new.use-case.spec.ts
   ● ConvertPendingUpdatesToNewUseCase › authorizes by deduplicated repository ids and converts rules to active memories
+
+    expect(jest.fn()).toHaveBeenNthCalledWith(n, ...expected)
+
+    n: 1
+    Expected: ObjectContaining {"compileAttempt": undefined, "contextNeed": {"source": "author"}, "requestType": undefined, "resolvedAt": undefined, "resolvedBy": undefined, "status": "active", "targetRuleUuid": undefined, "uuid": undefined}, "org-1", {"userEmail": "dev@kodus.io", "userId": "user-1"}, true, undefined
+    Received
+    ->     1
+              {"centralizedConfig": undefined, "compileAttempt": {"hash": "stale-hash"}, "contextNeed": {"source": "author"}, "origin": "generated", "repositoryId": "repo-1", "requestType": undefined, "resolvedAt": undefined, "resolvedBy": undefined, "rule": "Rule 1", "status": "active", "targetRuleUuid": undefined, "title": "Pending 1", "type": "memory", "uuid": undefined},
+              "org-1",
+              {"userEmail": "dev@kodus.io", "userId": "user-1"},
+              true,
+              undefined,
+           2: {"centralizedConfig": undefined, "origin": "generated", "repositoryId": "repo-1", "requestType": undefined, "resolvedAt": undefined, "resolvedBy": undefined, "rule": "Rule 2", "status": "active", "targetRuleUuid": undefined, "title": "Pending 2", "type": "memory", "uuid": undefined}, "org-1", {"userEmail": "dev@kodus.io", "userId": "user-1"}, true, undefined
+
+    Number of calls: 2
+
+      151 |         );
+      152 |
+    > 153 |         expect(createOrUpdateUseCaseMock.execute).toHaveBeenNthCalledWith(
+          |                                                   ^
+      154 |             1,
+      155 |             expect.objectContaining({
+      156 |                 uuid: undefined,
+
+
+Test Suites: 2 failed, 2 total
 Tests:       2 failed, 18 passed, 20 total
+Snapshots:   0 total
+Time:        0.733 s, estimated 1 s
+Ran all test suites matching libs/kodyRules/application/use-cases/create-or-update.use-case.spec.ts|test/unit/kodyRules/use-cases/convert-pending-updates-to-new.use-case.spec.ts.
+SUITE libs/kodyRules/application/use-cases/create-or-update.use-case.spec.ts failed
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › returns null when a non-ignored content key differs
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › ignores uuid/teamId/createdAt/updatedAt when diffing content
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › does not treat the inheritance key itself as a content change
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › treats undefined and null content values as equal (?? null normalization)
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › returns null when inheritable flips true -> false even with a list toggle
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › treats missing inheritable as true (?? true default)
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › defaults absent inheritance on both sides to inheritable=true/empty lists
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › computes the exact symmetric diff of exclude, preserving order (a-only then b-only)
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › combines exclude and include diffs and dedups shared ids (first-wins)
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › orders exclude diffs before include diffs
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › returns null when inheritance lists are identical (empty diff)
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › returns null when a content change coexists with a list toggle (content wins)
+   passed - CreateOrUpdateKodyRulesUseCase — isInternalSyncActor › is true only for userId "kody" and email "kody@kodus.io"
+   passed - CreateOrUpdateKodyRulesUseCase — isInternalSyncActor › is false when userId differs (kody-system is not the sync actor)
+   passed - CreateOrUpdateKodyRulesUseCase — isInternalSyncActor › is false when the email differs
+   failed - CreateOrUpdateKodyRulesUseCase — detector compile on save › passes the stored compileAttempt and contextNeed to compileAndSave so unchanged rules are skipped
+SUITE test/unit/kodyRules/use-cases/convert-pending-updates-to-new.use-case.spec.ts failed
+   passed - ConvertPendingUpdatesToNewUseCase › throws when organization id is missing
+   passed - ConvertPendingUpdatesToNewUseCase › throws when any requested rule is not found
+   failed - ConvertPendingUpdatesToNewUseCase › authorizes by deduplicated repository ids and converts rules to active memories
+   passed - ConvertPendingUpdatesToNewUseCase › uses active status and returns centralized PR metadata when centralized config is enabled
