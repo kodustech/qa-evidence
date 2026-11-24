@@ -1,0 +1,165 @@
+{
+ "initialCompilerCalls": 10,
+ "batches": [
+  {
+   "batch": 1,
+   "saves": 10,
+   "compilerCalls": 7
+  },
+  {
+   "batch": 2,
+   "saves": 10,
+   "compilerCalls": 4
+  },
+  {
+   "batch": 3,
+   "saves": 10,
+   "compilerCalls": 2
+  },
+  {
+   "batch": "central title-only (kody actor)",
+   "saves": 10,
+   "compilerCalls": 2
+  }
+ ],
+ "attemptStable": false,
+ "titlesPersisted": true,
+ "sample": [
+  {
+   "uuid": "3940c2ac-b73e-4839-b3d3-61c36b6c820f",
+   "title": "qa2308 m2 rule 0",
+   "status": "active",
+   "rule": "Grades service 0 must check enrollment before saving a grade.",
+   "compileAttempt": {
+    "sourceHash": "122d39ac203fe327accd53c3a3f99687aeee4e4f2b210ff0b8c871647ec7a3e5",
+    "attemptedAt": "2026-11-24T20:54:54.986Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "cbcb180adc8184bc574bb61363785ff2cd63fa581ae8505580bb3c6f8ae10be3",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T20:54:54.970Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": {
+    "extensions": [
+     ".ts",
+     ".js"
+    ],
+    "sourceHash": "c4ceff431c3a693629ce0d33c68005a3cf03322369a487eca8e39ef30826e4a5",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T20:54:54.970Z",
+    "model": "byok"
+   },
+   "caCurrent": true,
+   "ctxHash": "cbcb180adc8184bc574bb61363785ff2cd63fa581ae8505580bb3c6f8ae10be3"
+  },
+  {
+   "uuid": "3940c2ac-b73e-4839-b3d3-61c36b6c820f",
+   "title": "qa2308 m2 rule 0 (central)",
+   "status": "active",
+   "rule": "Grades service 0 must check enrollment before saving a grade.",
+   "compileAttempt": {
+    "sourceHash": "122d39ac203fe327accd53c3a3f99687aeee4e4f2b210ff0b8c871647ec7a3e5",
+    "attemptedAt": "2026-11-24T20:54:54.986Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "cbcb180adc8184bc574bb61363785ff2cd63fa581ae8505580bb3c6f8ae10be3",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T20:54:54.970Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": {
+    "extensions": [
+     ".ts",
+     ".js"
+    ],
+    "sourceHash": "c4ceff431c3a693629ce0d33c68005a3cf03322369a487eca8e39ef30826e4a5",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T20:54:54.970Z",
+    "model": "byok"
+   },
+   "caCurrent": true,
+   "ctxHash": "cbcb180adc8184bc574bb61363785ff2cd63fa581ae8505580bb3c6f8ae10be3"
+  }
+ ],
+ "compilePayloadSample": [
+  {
+   "t": "2026-11-24T20:54:55.056Z",
+   "uuid": "3940c2ac-b73e-4839-b3d3-61c36b6c820f",
+   "payloadKeys": [
+    "uuid",
+    "title",
+    "rule",
+    "path",
+    "severity",
+    "examples",
+    "origin",
+    "status",
+    "type",
+    "scope",
+    "repositoryId",
+    "detector",
+    "compileAttempt",
+    "contextNeed"
+   ],
+   "compileAttempt": {
+    "sourceHash": "122d39ac203fe327accd53c3a3f99687aeee4e4f2b210ff0b8c871647ec7a3e5",
+    "attemptedAt": "2026-11-24T20:54:54.986Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "cbcb180adc8184bc574bb61363785ff2cd63fa581ae8505580bb3c6f8ae10be3",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T20:54:54.970Z",
+    "model": "byok"
+   },
+   "hasExamples": true,
+   "gateHash": "122d39ac203fe327accd53c3a3f99687aeee4e4f2b210ff0b8c871647ec7a3e5",
+   "ctxHash": "cbcb180adc8184bc574bb61363785ff2cd63fa581ae8505580bb3c6f8ae10be3"
+  },
+  {
+   "t": "2026-11-24T20:54:55.059Z",
+   "uuid": "12332d48-4e56-45fe-bd3d-5c908f2b8489",
+   "payloadKeys": [
+    "uuid",
+    "title",
+    "rule",
+    "path",
+    "severity",
+    "examples",
+    "origin",
+    "status",
+    "type",
+    "scope",
+    "repositoryId",
+    "detector",
+    "compileAttempt",
+    "contextNeed"
+   ],
+   "compileAttempt": {
+    "sourceHash": "b728359827f4f66fffa126579c8bf91f26a53cd296a80631c9561905b6c22b8d",
+    "attemptedAt": "2026-11-24T20:54:54.987Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": null,
+   "hasExamples": true,
+   "gateHash": "b728359827f4f66fffa126579c8bf91f26a53cd296a80631c9561905b6c22b8d",
+   "ctxHash": "673fe30b01678d6939d18778587f45e6af90d33380f7aa696ddac62daab33a66"
+  }
+ ]
+}
