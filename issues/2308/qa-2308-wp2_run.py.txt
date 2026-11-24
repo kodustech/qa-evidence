@@ -1,0 +1,76 @@
+# Audit rerun: API process (HTTP + ValidationPipe + real use case) and worker process (real BackfillRuleDetectorsUseCase).
+import sys, json, time, os, socket, urllib.request, threading
+sys.path.insert(0, os.path.dirname(__file__))
+from wpdrv import *
+EVENTS2 = EVENTS
+if os.path.exists(EVENTS): os.remove(EVENTS)
+mongo("db.dropDatabase(); print(JSON.stringify({ok:1}))")
+def free_port():
+    s = socket.socket(); s.bind(('127.0.0.1', 0)); p = s.getsockname()[1]; s.close(); return p
+def start_api(tag):
+    port = free_port(); p = spawn(tag, 'api-server', port=str(port)); wait_ev(tag, 'api.listening', 240); return p, port
+def post(port, body):
+    req = urllib.request.Request(f'http://127.0.0.1:{port}/save', data=json.dumps(body).encode(), headers={'content-type': 'application/json'}, method='POST')
+    try:
+        with urllib.request.urlopen(req, timeout=120) as r: return r.status, json.loads(r.read())
+    except urllib.error.HTTPError as e: return e.code, json.loads(e.read() or b'{}')
+def stop_api(p, port):
+    try: urllib.request.urlopen(urllib.request.Request(f'http://127.0.0.1:{port}/shutdown', data=b'{}', method='POST'), timeout=60).read()
+    except Exception: pass
+    finish(p)
+def llm(tag): return len([x for x in ctl.log if x['tag'] == tag and x['kind'] == 'llm'])
+def backfill(tag):
+    p = spawn(tag, 'backfill'); finish(p); return [x for x in events(tag) if x['ev'].startswith('backfill')]
+SEM_EX = [{'snippet': 'await grades.save(g);', 'isCorrect': False}, {'snippet': 'await assertEnrolled(s); await grades.save(g);', 'isCorrect': True}]
+MECH_EX = [{'snippet': 'console.log(student.id);', 'isCorrect': False}, {'snippet': 'this.logger.info(student.id);', 'isCorrect': True}]
+def dto(title, rule, ex, **kw): d = {'title': title, 'rule': rule, 'path': 'qa2308/**', 'severity': 'medium', 'examples': ex, 'origin': 'manual', 'status': 'active', 'type': 'standard', 'scope': 'file', 'repositoryId': 'global'}; d.update(kw); return d
+R = {}
+api, port = start_api('api1')
+TEN = [post(port, dto(f'qa2308 wp2 ten {i}', f'Settled semantic rule {i} keeps campus id.', SEM_EX))[1]['uuid'] for i in range(10)]
+A = post(port, dto('qa2308 wp2 A', 'Attendance import must reject an invalid student id.', SEM_EX))[1]['uuid']
+M = post(port, dto('qa2308 wp2 M', 'Do not call console.log in qa2308 files; use the injected logger.', MECH_EX))[1]['uuid']
+time.sleep(4)
+R['seedLostContext'] = sum(1 for u in TEN + [A, M] if not state(u)['cnCurrent'])
+R['settleBackfill'] = backfill('settle1')
+R['afterSettleAllCurrent'] = all(state(u)['gateWouldSkip'] for u in TEN + [A, M])
+# ---- M28: 10 concurrent severity-only saves with distinct values on 10 rules, concurrent real backfill worker
+sev = ['low', 'medium', 'high', 'critical']
+def rule_full(u):
+    r = rule(u); d = dto(r['title'], r['rule'], r['examples']); d['uuid'] = u; return d
+bodies = [dict(rule_full(u), severity=sev[i % 4]) for i, u in enumerate(TEN)]
+before = {u: state(u)['attemptedAt'] for u in TEN}
+c0 = len([x for x in ctl.log if x['kind'] == 'llm'])
+bf = spawn('m28bf', 'backfill', loops='400'); wait_ev('m28bf', 'backfill.start', 240)
+res = [None] * 10
+ths = [threading.Thread(target=lambda i=i: res.__setitem__(i, post(port, bodies[i]))) for i in range(10)]
+[t.start() for t in ths]; [t.join() for t in ths]; finish(bf); time.sleep(2)
+after = {u: rule(u) for u in TEN}
+R['M28'] = {'httpStatuses': [r[0] for r in res], 'windows': [(r[1].get('start'), r[1].get('end')) for r in res], 'backfillRuns': len([x for x in events('m28bf') if x['ev'] == 'backfill.end']), 'backfillWindow': [[x for x in events('m28bf')][0]['t'], [x for x in events('m28bf')][-1]['t']], 'backfillCallsTotal': max([x.get('llmCalls', 0) for x in events('m28bf') if x['ev'] == 'backfill.end'] or [0]), 'backfillProcessedMax': max([x.get('processed', 0) for x in events('m28bf') if x['ev'] == 'backfill.end'] or [0]),
+            'severitiesPersisted': all(mongo(f"const d=db.kodyRules.findOne({{organizationId:'org-qa2308-wp'}});print(JSON.stringify(d.rules.find(r=>r.uuid=='{u}')))") ['severity'] == bodies[i]['severity'] for i, u in enumerate(TEN)),
+            'attemptsUnchanged': all(state(u)['attemptedAt'] == before[u] for u in TEN), 'llmCallsDuring': len([x for x in ctl.log if x['kind'] == 'llm']) - c0,
+            'docRules': mongo("const d=db.kodyRules.findOne({organizationId:'org-qa2308-wp'});print(JSON.stringify({n:d.rules.length,u:[...new Set(d.rules.map(r=>r.uuid))].length}))")}
+# ---- M26: SIGKILL the API process while its compile is held; restart; resave twice
+ctl.set('api1', 'llm', 'hold')
+t = threading.Thread(target=lambda: R.__setitem__('m26post', post(port, dict(rule_full(A), rule='Attendance import must reject an invalid student id. Edited (kill).')))); t.start(); t.join(30)
+wait_ev('api1', 'llm.request'); R['M26_killExit'] = kill(api); k1 = state(A)
+api, port = start_api('api2')
+post(port, rule_full(A)); time.sleep(4); k2 = state(A); post(port, rule_full(A)); time.sleep(4); k3 = state(A)
+R['M26'] = {'afterKill': k1, 'afterRetry': k2, 'afterThird': k3, 'calls': {'killed': llm('api1') and 1, 'api2Total': llm('api2')}}
+# ---- M29: B held, C answered, B released last; distinct patterns
+ctl.set('api2', 'llm', 'hold'); hold_tag = 'api2'
+tb = threading.Thread(target=lambda: R.__setitem__('m29B', post(port, dict(rule_full(M), rule='Do not call console.log in qa2308 files; use the injected logger. Variant B.')))); tb.start()
+wait_ev('api2', 'llm.request', 60) if False else time.sleep(2)
+ctl.set('api2', 'llm', 'ok')
+# C needs its own answer while B is held: B is waiting on the hold event; C's request gets policy ok
+R['m29C'] = post(port, dict(rule_full(M), rule='Do not call console.log in qa2308 files; use the injected logger. Variant C.')); time.sleep(3)
+mid = rule(M)
+ctl.release('api2', 'llm'); tb.join(60); time.sleep(3)
+fin = rule(M)
+R['M29'] = {'afterC': {'text': mid['rule'][-12:], 'detector': (mid.get('detector') or {}).get('pattern')}, 'afterBReleased': {'text': fin['rule'][-12:], 'detector': (fin.get('detector') or {}).get('pattern'), 'gate': state(M)}}
+c0 = llm('api2'); post(port, rule_full(M)); time.sleep(4); heal = rule(M); c1 = llm('api2'); post(port, rule_full(M)); time.sleep(4)
+R['M29']['heal'] = {'calls': c1 - c0, 'detector': (heal.get('detector') or {}).get('pattern'), 'gate': state(M)}; R['M29']['nextCalls'] = llm('api2') - c1
+stop_api(api, port)
+R['ctlLog'] = ctl.log[-40:]
+v = os.environ.get('QA2308_VERSION', 'merge')
+json.dump(R, open(f'{OUT}/{v}-WP2.json', 'w'), indent=1, default=str)
+print(json.dumps({k: R[k] for k in ('seedLostContext', 'afterSettleAllCurrent', 'M28', 'M26', 'M29')}, default=str)[:4000])
