@@ -1,0 +1,51 @@
+{
+ "seq": [
+  {
+   "step": "edit, contextNeed write fails",
+   "calls": 1,
+   "caCurrent": true,
+   "ctxCurrent": false
+  },
+  {
+   "step": "unchanged save (repair)",
+   "calls": 1,
+   "caCurrent": true,
+   "ctxCurrent": false
+  },
+  {
+   "step": "unchanged save (settled)",
+   "calls": 1,
+   "caCurrent": true,
+   "ctxCurrent": false
+  },
+  {
+   "step": "edit, compileAttempt write fails",
+   "calls": 1,
+   "caCurrent": false,
+   "ctxCurrent": false
+  },
+  {
+   "step": "unchanged save (repair)",
+   "calls": 1,
+   "caCurrent": true,
+   "ctxCurrent": false
+  },
+  {
+   "step": "unchanged save (settled)",
+   "calls": 1,
+   "caCurrent": true,
+   "ctxCurrent": false
+  }
+ ],
+ "injected": [
+  {
+   "failOn": "contextNeed",
+   "keys": "[\"rules.$.uuid\",\"rules.$.type\",\"rules.$.title\",\"rules.$.rule\",\"rules.$.path\",\"rules.$.severity\",\"rules.$.status\",\"rules.$.lockedByPlan\",\"rules.$.repositoryId\",\"rules.$.examples\",\"rules.$.origin\",\"rule"
+  },
+  {
+   "failOn": "compileAttempt",
+   "keys": "[\"rules.$.compileAttempt\",\"rules.$.updatedAt\"]"
+  }
+ ],
+ "warns": []
+}
