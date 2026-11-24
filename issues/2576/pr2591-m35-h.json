@@ -1,0 +1,42 @@
+{
+ "after_sync_root_false_repo_true": {
+  "global": {
+   "implicitReplies": false
+  },
+  "r1": {
+   "implicitReplies": true
+  },
+  "gate_r1": {
+   "implicitReplies": true
+  },
+  "gate_r2": {
+   "implicitReplies": false
+  }
+ },
+ "after_repo_key_removed": {
+  "global": {
+   "implicitReplies": false
+  },
+  "gate_r1": {
+   "implicitReplies": false
+  },
+  "gate_r2": {
+   "implicitReplies": false
+  }
+ },
+ "after_sync_string_false_r2": {
+  "global": {
+   "implicitReplies": false
+  },
+  "r2": {
+   "implicitReplies": "false"
+  },
+  "gate_r1": {
+   "implicitReplies": false
+  },
+  "gate_r2": {
+   "implicitReplies": "false"
+  }
+ },
+ "saves": 4
+}
