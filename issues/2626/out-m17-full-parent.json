@@ -1,0 +1,68 @@
+{
+ "rev": "parent",
+ "type": "full",
+ "doc_while_parsing": {
+  "_id": "11111111-1111-4111-8111-111111111111:839c33ca-5378-4331-83f6-d974e7826341:graph:1f5a9c91-e9e5-4199-aed4-561e0473e40d",
+  "leaseCount": 1,
+  "sandboxId": "fake-73537-1-wpokl",
+  "state": "READY",
+  "cleanupAttempts": 0,
+  "killRetryCount": 0,
+  "expiresAt": "2026-11-25T00:15:30.748Z"
+ },
+ "sigkill_at": "2026-11-24T22:15:30.784Z",
+ "doc_after_idle_cron": {
+  "_id": "11111111-1111-4111-8111-111111111111:839c33ca-5378-4331-83f6-d974e7826341:graph:1f5a9c91-e9e5-4199-aed4-561e0473e40d",
+  "leaseCount": 1,
+  "sandboxId": "fake-73537-1-wpokl",
+  "state": "READY",
+  "cleanupAttempts": 0,
+  "killRetryCount": 0,
+  "expiresAt": "2026-11-25T00:15:30.748Z"
+ },
+ "doc_after_reap_before_expiry": {
+  "_id": "11111111-1111-4111-8111-111111111111:839c33ca-5378-4331-83f6-d974e7826341:graph:1f5a9c91-e9e5-4199-aed4-561e0473e40d",
+  "leaseCount": 1,
+  "sandboxId": "fake-73537-1-wpokl",
+  "state": "READY",
+  "cleanupAttempts": 0,
+  "killRetryCount": 0,
+  "expiresAt": "2026-11-25T00:15:30.748Z"
+ },
+ "doc_after_reap_after_expiry": null,
+ "provider": {
+  "fake-73537-1-wpokl": "killed"
+ },
+ "timeline": [
+  "2026-11-24T22:15:29.442Z pid=73537 A \u00a7 ready {\"actor\": \"A\"}",
+  "2026-11-24T22:15:30.080Z pid=73542 C \u00a7 ready {\"actor\": \"C\"}",
+  "2026-11-24T22:15:30.724Z pid=73543 O \u00a7 ready {\"actor\": \"O\"}",
+  "2026-11-24T22:15:30.747Z pid=73537 A info [AST-GRAPH-JOB] Starting build for org/athena",
+  "2026-11-24T22:15:30.747Z pid=73537 A \u00a7 job.update {\"id\": \"1f5a9c91-e9e5-4199-aed4-561e0473e40d\", \"status\": \"PROCESSING\", \"stage\": \"VALIDATING\"}",
+  "2026-11-24T22:15:30.747Z pid=73537 A \u00a7 job.update {\"id\": \"1f5a9c91-e9e5-4199-aed4-561e0473e40d\", \"status\": \"PROCESSING\", \"stage\": \"RESOLVING_AUTH\"}",
+  "2026-11-24T22:15:30.747Z pid=73537 A info [AST-GRAPH-JOB] Auth resolved for org/athena (0ms)",
+  "2026-11-24T22:15:30.747Z pid=73537 A \u00a7 job.update {\"id\": \"1f5a9c91-e9e5-4199-aed4-561e0473e40d\", \"status\": \"PROCESSING\", \"stage\": \"CLONING\"}",
+  "2026-11-24T22:15:30.748Z pid=73537 A info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:839c33ca-5378-4331-83f6-d974e7826341:graph:1f5a9c91-e9e5-4199-aed4-561e0473e40d\" consumer=\"graph-",
+  "2026-11-24T22:15:30.759Z pid=73537 A info SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:839c33ca-5378-4331-83f6-d974e7826341:graph:1f5a9c91-e9e5-4199-aed4-561e04",
+  "2026-11-24T22:15:30.759Z pid=73537 A \u00a7 provider.create.start {\"id\": \"fake-73537-1-wpokl\"}",
+  "2026-11-24T22:15:30.759Z pid=73537 A \u00a7 provider.create.done {\"id\": \"fake-73537-1-wpokl\"}",
+  "2026-11-24T22:15:30.768Z pid=73537 A info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:839c33ca-5378-4331-83f6-d974e7826341:graph:1f5a9c91-e9e5-4199-aed4-561e0473e40d\" consumer=\"",
+  "2026-11-24T22:15:30.768Z pid=73537 A info [AST-GRAPH-JOB] Sandbox ready for org/athena (21ms)",
+  "2026-11-24T22:15:30.769Z pid=73537 A info [AST-GRAPH-JOB] HEAD sha resolved: f00dface for org/athena",
+  "2026-11-24T22:15:30.769Z pid=73537 A \u00a7 job.update {\"id\": \"1f5a9c91-e9e5-4199-aed4-561e0473e40d\", \"status\": \"PROCESSING\", \"stage\": \"PARSING\"}",
+  "2026-11-24T22:15:30.769Z pid=73537 A info [AST-GRAPH] Starting full build for repo 839c33ca-5378-4331-83f6-d974e7826341",
+  "2026-11-24T22:15:30.769Z pid=73537 A \u00a7 repo.status {\"status\": \"building\"}",
+  "2026-11-24T22:15:30.770Z pid=73537 A info [AST-GRAPH] kodus-graph installed (0ms)",
+  "2026-11-24T22:15:30.770Z pid=73537 A \u00a7 cli.parse.start {\"id\": \"fake-73537-1-wpokl\", \"cmd\": \"export PATH=\\\"$HOME/.bun/bin:$PATH\\\" 2>/dev/null || true && cd /home/user/repo && mkdir -p '.kodus-graph' && kodus-graph p\"}",
+  "2026-11-24T22:15:30.773Z pid=73543 O \u00a7 doc {\"id\": \"b3739f19\", \"doc\": {\"_id\": \"11111111-1111-4111-8111-111111111111:839c33ca-5378-4331-83f6-d974e7826341:graph:1f5a9c91-e9e5-4199-aed4-561e0473e40d\", \"leaseCount\": 1, \"sandboxId\": \"fake-73537-1-wpokl\", \"state\": \"READY\", \"cleanupAttempts\": 0, \"killRetryCount\": 0, \"expiresAt\": \"2026-11-25T00:15:30",
+  "2026-11-24T22:15:30.798Z pid=73542 C \u00a7 cron.done {\"id\": \"39096eaf\", \"actor\": \"C\"}",
+  "2026-11-24T22:15:30.800Z pid=73543 O \u00a7 doc {\"id\": \"0fce28e1\", \"doc\": {\"_id\": \"11111111-1111-4111-8111-111111111111:839c33ca-5378-4331-83f6-d974e7826341:graph:1f5a9c91-e9e5-4199-aed4-561e0473e40d\", \"leaseCount\": 1, \"sandboxId\": \"fake-73537-1-wpokl\", \"state\": \"READY\", \"cleanupAttempts\": 0, \"killRetryCount\": 0, \"expiresAt\": \"2026-11-25T00:15:30",
+  "2026-11-24T22:15:30.801Z pid=73542 C \u00a7 reap.done {\"id\": \"7c9afb8b\", \"actor\": \"C\"}",
+  "2026-11-24T22:15:30.803Z pid=73543 O \u00a7 doc {\"id\": \"a7798e3e\", \"doc\": {\"_id\": \"11111111-1111-4111-8111-111111111111:839c33ca-5378-4331-83f6-d974e7826341:graph:1f5a9c91-e9e5-4199-aed4-561e0473e40d\", \"leaseCount\": 1, \"sandboxId\": \"fake-73537-1-wpokl\", \"state\": \"READY\", \"cleanupAttempts\": 0, \"killRetryCount\": 0, \"expiresAt\": \"2026-11-25T00:15:30",
+  "2026-11-24T22:15:30.807Z pid=73542 C \u00a7 e2b.kill.call {\"id\": \"fake-73537-1-wpokl\", \"hasKey\": true, \"behavior\": \"ok\"}",
+  "2026-11-24T22:15:30.808Z pid=73542 C \u00a7 e2b.kill.ok {\"id\": \"fake-73537-1-wpokl\", \"was\": \"running\"}",
+  "2026-11-24T22:15:30.813Z pid=73542 C info [SANDBOX-REAPER] Reaped expired lease",
+  "2026-11-24T22:15:30.814Z pid=73542 C \u00a7 reap.done {\"id\": \"d69cd923\", \"actor\": \"C\"}",
+  "2026-11-24T22:15:30.815Z pid=73543 O \u00a7 doc {\"id\": \"83fbac44\", \"doc\": null}"
+ ]
+}
