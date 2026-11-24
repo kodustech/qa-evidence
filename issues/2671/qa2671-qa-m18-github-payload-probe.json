@@ -1,0 +1,28 @@
+{
+ "merge(normalized 13-22)": {
+  "status": 201,
+  "start_line": 13,
+  "line": 22,
+  "resp": {
+   "id": 4684679567,
+   "start_line": 13,
+   "line": 22
+  }
+ },
+ "parent(reversed 22-13)": {
+  "status": 422,
+  "start_line": 22,
+  "line": 13,
+  "resp": [
+   "Validation Failed",
+   [
+    {
+     "resource": "PullRequestReviewComment",
+     "code": "custom",
+     "field": "pull_request_review_thread.start_position",
+     "message": "could not be resolved"
+    }
+   ]
+  ]
+ }
+}
