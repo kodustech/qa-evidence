@@ -1,0 +1,152 @@
+{
+ "M18": {
+  "runs": [
+   {
+    "run": 1,
+    "input": {
+     "origin": "command",
+     "triggerCommentId": "908776137",
+     "httpFault": "reply-404"
+    },
+    "rc": 0,
+    "errors": [
+     "Error to create response to comment"
+    ],
+    "accepted_total": 0
+   },
+   {
+    "run": 2,
+    "input": {
+     "origin": "command",
+     "triggerCommentId": "908776138",
+     "httpFault": "reply-throw"
+    },
+    "rc": 0,
+    "errors": [
+     "Error to create response to comment"
+    ],
+    "accepted_total": 0
+   },
+   {
+    "run": 3,
+    "input": {
+     "origin": "System"
+    },
+    "rc": 0,
+    "errors": [],
+    "accepted_total": 1
+   },
+   {
+    "run": 4,
+    "input": {
+     "origin": "System"
+    },
+    "rc": 0,
+    "errors": [],
+    "accepted_total": 1
+   }
+  ],
+  "rows": [
+   [
+    "9a634dd6",
+    "skipped",
+    "04:31:01.821",
+    "04:31:01.866",
+    "-",
+    "User Not Licensed \u2014 Assign seat to user"
+   ],
+   [
+    "790366b6",
+    "skipped",
+    "04:31:05.295",
+    "04:31:05.345",
+    "-",
+    "User Not Licensed \u2014 Assign seat to user"
+   ],
+   [
+    "88fd14ea",
+    "skipped",
+    "04:31:08.760",
+    "04:31:08.791",
+    "2026-11-24T04:31:08.788Z",
+    "User Not Licensed \u2014 Assign seat to user"
+   ],
+   [
+    "738ecdd9",
+    "skipped",
+    "04:31:12.194",
+    "04:31:12.215",
+    "-",
+    "User Not Licensed \u2014 Assign seat to user"
+   ]
+  ],
+  "http": [
+   {
+    "t": "2026-11-24T04:31:01.837Z",
+    "pid": 41816,
+    "w": "m18-1",
+    "ev": "lookup",
+    "result": false
+   },
+   {
+    "t": "2026-11-24T04:31:01.848Z",
+    "pid": 41816,
+    "w": "m18-1",
+    "ev": "http",
+    "method": "POST",
+    "url": "https://api.bitbucket.org/2.0/repositories/%7Bws-1%7D/%7Brepo-1%7D/pullrequests/18/comments",
+    "notice": true,
+    "parent": 908776137
+   },
+   {
+    "t": "2026-11-24T04:31:05.313Z",
+    "pid": 41830,
+    "w": "m18-2",
+    "ev": "lookup",
+    "result": false
+   },
+   {
+    "t": "2026-11-24T04:31:05.323Z",
+    "pid": 41830,
+    "w": "m18-2",
+    "ev": "http",
+    "method": "POST",
+    "url": "https://api.bitbucket.org/2.0/repositories/%7Bws-1%7D/%7Brepo-1%7D/pullrequests/18/comments",
+    "notice": true,
+    "parent": 908776138
+   },
+   {
+    "t": "2026-11-24T04:31:08.777Z",
+    "pid": 41844,
+    "w": "m18-3",
+    "ev": "lookup",
+    "result": false
+   },
+   {
+    "t": "2026-11-24T04:31:08.787Z",
+    "pid": 41844,
+    "w": "m18-3",
+    "ev": "http",
+    "method": "POST",
+    "url": "https://api.bitbucket.org/2.0/repositories/%7Bws-1%7D/%7Brepo-1%7D/pullrequests/18/comments",
+    "notice": true,
+    "parent": null
+   },
+   {
+    "t": "2026-11-24T04:31:08.787Z",
+    "pid": 41844,
+    "w": "m18-3",
+    "ev": "notice-accepted",
+    "kind": "issue",
+    "inReplyToId": null
+   },
+   {
+    "t": "2026-11-24T04:31:12.212Z",
+    "pid": 41851,
+    "w": "m18-4",
+    "ev": "lookup",
+    "result": true
+   }
+  ]
+ }
+}
