@@ -1,1 +1,29 @@
+HEAD 612691314b134e26fe88f4bf403db91974ae861f
+sources: merge
+Test Suites: 2 passed, 2 total
 Tests:       20 passed, 20 total
+Snapshots:   0 total
+Time:        1.165 s
+Ran all test suites matching libs/kodyRules/application/use-cases/create-or-update.use-case.spec.ts|test/unit/kodyRules/use-cases/convert-pending-updates-to-new.use-case.spec.ts.
+SUITE test/unit/kodyRules/use-cases/convert-pending-updates-to-new.use-case.spec.ts passed
+   passed - ConvertPendingUpdatesToNewUseCase › throws when organization id is missing
+   passed - ConvertPendingUpdatesToNewUseCase › throws when any requested rule is not found
+   passed - ConvertPendingUpdatesToNewUseCase › authorizes by deduplicated repository ids and converts rules to active memories
+   passed - ConvertPendingUpdatesToNewUseCase › uses active status and returns centralized PR metadata when centralized config is enabled
+SUITE libs/kodyRules/application/use-cases/create-or-update.use-case.spec.ts passed
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › returns null when a non-ignored content key differs
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › ignores uuid/teamId/createdAt/updatedAt when diffing content
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › does not treat the inheritance key itself as a content change
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › treats undefined and null content values as equal (?? null normalization)
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › returns null when inheritable flips true -> false even with a list toggle
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › treats missing inheritable as true (?? true default)
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › defaults absent inheritance on both sides to inheritable=true/empty lists
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › computes the exact symmetric diff of exclude, preserving order (a-only then b-only)
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › combines exclude and include diffs and dedups shared ids (first-wins)
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › orders exclude diffs before include diffs
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › returns null when inheritance lists are identical (empty diff)
+   passed - CreateOrUpdateKodyRulesUseCase — getInheritanceOnlyToggledIds › returns null when a content change coexists with a list toggle (content wins)
+   passed - CreateOrUpdateKodyRulesUseCase — isInternalSyncActor › is true only for userId "kody" and email "kody@kodus.io"
+   passed - CreateOrUpdateKodyRulesUseCase — isInternalSyncActor › is false when userId differs (kody-system is not the sync actor)
+   passed - CreateOrUpdateKodyRulesUseCase — isInternalSyncActor › is false when the email differs
+   passed - CreateOrUpdateKodyRulesUseCase — detector compile on save › passes the stored compileAttempt and contextNeed to compileAndSave so unchanged rules are skipped
