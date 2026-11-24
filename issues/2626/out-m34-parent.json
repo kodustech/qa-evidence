@@ -1,0 +1,53 @@
+{
+ "rev": "parent",
+ "scenario": "m34",
+ "results": {
+  "claim with count 0": {
+   "writes": [
+    {
+     "method": "findOneAndUpdate",
+     "query": "{\"_id\":\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-285796616906\",\"sandboxId\":\"sbx-6906\",\"cleanupSta",
+     "update": "{\"$inc\":{\"cleanupAttempts\":1},\"$set\":{\"cleanupStatus\":\"in_progress\",\"cleanupRetryAt\":null,\"cleanupStartedAt\":\"2026-11-24T23:24:37.876Z\"}}"
+    }
+   ],
+   "killAtIsDate": false,
+   "status": "in_progress"
+  },
+  "count 1 refused -> drain -> claim": {
+   "refused": null,
+   "untouched": true,
+   "wonStatus": "in_progress"
+  }
+ },
+ "leaseLogs": [],
+ "transcript": [
+  {
+   "t": "2026-11-24T23:24:37.890Z",
+   "pid": 85942,
+   "rev": "parent",
+   "kind": "RESULT claim with count 0",
+   "v": {
+    "writes": [
+     {
+      "method": "findOneAndUpdate",
+      "query": "{\"_id\":\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-285796616906\",\"sandboxId\":\"sbx-6906\",\"cleanupSta",
+      "update": "{\"$inc\":{\"cleanupAttempts\":1},\"$set\":{\"cleanupStatus\":\"in_progress\",\"cleanupRetryAt\":null,\"cleanupStartedAt\":\"2026-11-24T23:24:37.876Z\"}}"
+     }
+    ],
+    "killAtIsDate": false,
+    "status": "in_progress"
+   }
+  },
+  {
+   "t": "2026-11-24T23:24:37.911Z",
+   "pid": 85942,
+   "rev": "parent",
+   "kind": "RESULT count 1 refused -> drain -> claim",
+   "v": {
+    "refused": null,
+    "untouched": true,
+    "wonStatus": "in_progress"
+   }
+  }
+ ]
+}
