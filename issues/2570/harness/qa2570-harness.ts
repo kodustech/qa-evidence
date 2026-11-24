@@ -7,6 +7,8 @@
  */
 import 'reflect-metadata';
 import * as http from 'http';
+import * as https from 'https';
+import * as fs from 'fs';
 import { randomUUID } from 'crypto';
 import nock from 'nock';
 import { DataSource } from 'typeorm';
@@ -60,16 +62,20 @@ let expectedAuth: string | undefined;
 const page = (mode: string, n = 2, extra: any = {}) => ({ size: n, limit: 1000, isLastPage: true, start: 0,
     values: Array.from({ length: n }, (_, i) => ({ id: 9000 + i, slug: `${mode}-repo${i}`, name: `${mode}-repo${i}`, public: false,
         project: { key: 'QA2570', id: 77, name: 'QA 2570' }, links: { clone: [{ name: 'http', href: `https://example.invalid/scm/qa2570/${mode}-repo${i}.git` }] } })), ...extra });
-const server = http.createServer((req, res) => {
+const STRICT_PREFIXES = new Set(['/ctx/bitbucket/ok']);
+const handler = (req: any, res: any) => {
     const u = new URL(req.url!, 'http://x');
     const idx = u.pathname.indexOf('/rest/api/1.0');
     const prefix = idx >= 0 ? u.pathname.slice(0, idx) : u.pathname;
     const api = idx >= 0 ? u.pathname.slice(idx + '/rest/api/1.0'.length) : '';
     const mode = prefix.split('/').filter(Boolean).pop() || '';
     const auth = String(req.headers.authorization || '');
-    reqLog.push({ t: new Date().toISOString(), pid: process.pid, prefix, mode, method: req.method, path: api + u.search,
+    const prefixOk = prefix === `/${mode}` || STRICT_PREFIXES.has(prefix);
+    reqLog.push({ t: new Date().toISOString(), pid: process.pid, prefix, mode, method: req.method, path: api + u.search, fullPath: u.pathname + u.search, prefixOk,
         scheme: auth.split(' ')[0] || null, authMatches: expectedAuth === undefined ? null : auth === expectedAuth });
     const json = (s: number, b: any) => { res.writeHead(s, { 'content-type': 'application/json' }); res.end(typeof b === 'string' ? b : JSON.stringify(b)); };
+    if (!prefixOk || idx < 0) return json(404, { errors: [{ message: 'no such context path' }] });
+    if (mode !== 'public' && mode !== 'bearer' && expectedAuth !== undefined && auth !== expectedAuth) return json(401, { errors: [{ message: 'Authentication failed. Please check your credentials and try again.' }] });
     if (api.startsWith('/projects')) return mode === 'legacy' ? json(200, { values: [] }) : json(403, { errors: [{ message: 'no project permission' }] });
     if (!api.startsWith('/repos')) return json(404, { errors: [{ message: 'not found' }] });
     const start = Number(u.searchParams.get('start') || 0);
@@ -91,12 +97,16 @@ const server = http.createServer((req, res) => {
         case 'reset': res.writeHead(200, { 'content-type': 'application/json' }); res.write('{"values":[{"id":1,'); return setTimeout(() => req.socket.destroy(), 50);
         case 'slow': return setTimeout(() => json(200, page(mode)), Number(process.env.SLOW_MS || 1500));
         case 'bearer': return auth === expectedAuth ? json(200, page(mode)) : json(401, { errors: [{ message: 'bad token' }] });
+        case 'public': return json(200, page('public', 1)); // anonymous access: header ignored
         case 'page2':
             if (start === 0) return json(200, { ...page('p1', 2), isLastPage: false, nextPageStart: 1000 });
             return json(200, { ...page('p2', 2), start });
         default: return json(200, page(mode || 'root'));
     }
-});
+};
+const server = http.createServer(handler);
+const tlsServer = https.createServer({ key: fs.readFileSync(process.env.QA2570_TLS_KEY!), cert: fs.readFileSync(process.env.QA2570_TLS_CERT!) }, handler);
+let TLS_BASE = '';
 
 // ---------- cloud (nock) ----------
 const cloudLog: any[] = [];
@@ -130,7 +140,9 @@ async function boot() {
     nock.enableNetConnect((h) => /^(127\.0\.0\.1|localhost)(:\d+)?$/.test(h) || h.includes('.invalid'));
     await new Promise<void>((r) => server.listen(Number(process.env.DC_PORT || 0), '127.0.0.1', () => r()));
     BASE = `http://127.0.0.1:${(server.address() as any).port}`;
-    ds = new DataSource({ type: 'postgres', host: '127.0.0.1', port: 55432, username: 'postgres', password: 'qa2570', database: 'kodus',
+    await new Promise<void>((r) => tlsServer.listen(0, '127.0.0.1', () => r()));
+    TLS_BASE = `https://127.0.0.1:${(tlsServer.address() as any).port}`;
+    ds = new DataSource({ type: 'postgres', host: '127.0.0.1', port: 55432, username: 'postgres', password: process.env.QA2570_PG_PASSWORD, database: 'kodus',
         entities: ENTITIES as any, synchronize: false, logging: false, extra: { max: 4 } });
     await ds.initialize();
     const integrationConfigService = new IntegrationConfigService(new IntegrationConfigRepository(ds.getRepository(IntegrationConfigModel)) as any);
@@ -510,7 +522,8 @@ const cases: Record<string, () => Promise<any>> = {
         const seen: string[] = [];
         const out: any[] = [];
         for (const host of ['http://bitbucket.corp.internal:7990', 'http://10.20.30.40/bitbucket', 'https://192.168.10.5:8443']) {
-            const s = nock(host).get(/.*/).reply(function (uri) { seen.push(`${host}${uri} auth=${String(this.req.headers.authorization || '').split(' ')[0]}`); return [200, page('int', 1)]; });
+            const origin = new URL(host).origin;
+            const s = nock(origin).get(/.*/).reply(function (uri) { seen.push(`${origin}${uri} auth=${String(this.req.headers.authorization || '').split(' ')[0]}`); return uri.startsWith(new URL(host).pathname.replace(/\/$/, '') + '/rest/api/1.0/repos') ? [200, page('int', 1)] : [404, {}]; });
             const t = await tenant('m28');
             const r = await attempt(host, t, () => uc(t, dcBasic(host)));
             out.push({ host, ok: r.ok, httpStatus: r.httpStatus, storedHost: r.rows[0]?.host });
@@ -540,6 +553,73 @@ const cases: Record<string, () => Promise<any>> = {
         const r = await attempt('cloud token, repo listing 500', t, () => uc(t, { authMode: 'token', token: 'qa2570-CLOUD-MARKER', email: 'x@example.invalid', username: 'u' }), 'qa2570-CLOUD-MARKER');
         const meta = logs.slice(l0).map((x) => x._raw).join('\n');
         return { ok: r.ok, result: (r as any).result, httpStatus: r.httpStatus, logs: r.logs.map((x: any) => x.message), tokenInProcessorMetadata: meta.includes('qa2570-CLOUD-MARKER') };
+    },
+    async m29() {
+        cloudNock('deny');
+        const out: any[] = [];
+        const seen: string[] = [];
+        for (const [k, reply] of [['IMDS text 200', [200, 'ami-id\ninstance-id\n', { 'content-type': 'text/plain' }]], ['404', [404, 'Not Found']], ['302 to metadata path', [302, '', { location: 'http://169.254.169.254/latest/meta-data/' }]]] as any) {
+            nock.cleanAll(); cloudNock('deny');
+            nock('http://169.254.169.254').get(/.*/).times(3).reply(function (uri) { seen.push(`${k}: GET http://169.254.169.254${uri} auth=${String(this.req.headers.authorization || '').split(' ')[0]}`); return uri.includes('/rest/api/1.0/') ? reply : [200, 'iam/\nhostname\n', { 'content-type': 'text/plain' }]; });
+            const t = await tenant('m29');
+            const r = await attempt(k, t, () => uc(t, dcBasic('http://169.254.169.254')));
+            out.push({ label: k, ok: r.ok, httpStatus: r.httpStatus, response: (r as any).response, rows: r.rows.length, logs: r.logs.map((x: any) => `${x.service}: ${x.message} | ${x.errMsg}`), bodyReflected: JSON.stringify((r as any).response ?? '').includes('ami-id') || JSON.stringify((r as any).response ?? '').includes('iam/') });
+        }
+        return { out, intercepted: seen };
+    },
+    async cred() {
+        cloudNock('deny');
+        const out: any[] = [];
+        expectedAuth = `Basic ${B64}`;
+        { const t = await tenant('cred'); const r = await attempt('wrong password against an auth-checking DC', t, () => uc(t, dcBasic(H('ok'), { token: 'wrong-password' }))); out.push({ label: r.label, ok: r.ok, httpStatus: r.httpStatus, rows: r.rows.length, dc: r.dcRequests.map((x: any) => `${x.fullPath} ${x.scheme} match=${x.authMatches}`) }); }
+        { const t = await tenant('cred'); const r = await attempt('right password', t, () => uc(t, dcBasic(H('ok')))); out.push({ label: r.label, ok: r.ok, rows: r.rows.length, dc: r.dcRequests.map((x: any) => `${x.fullPath} ${x.scheme} match=${x.authMatches}`) }); }
+        { const t = await tenant('cred'); const r = await attempt('public-access DC (200 + repos, header ignored), wrong password', t, () => uc(t, dcBasic(H('public'), { token: 'wrong-password' })));
+          const m = mark(); const repos = await call(() => svc.facade.getRepositories({ organizationAndTeamData: t }));
+          out.push({ label: r.label, ok: r.ok, result: (r as any).result, rows: r.rows.length, dc: r.dcRequests.map((x: any) => `${x.fullPath} ${x.scheme} match=${x.authMatches}`), listingAfter: repos.ok ? repos.result.map((x: any) => x.name) : repos.message }); }
+        { const t = await tenant('cred'); const r = await attempt('self-signed TLS host', t, () => uc(t, dcBasic(`${TLS_BASE}/ok`)));
+          out.push({ label: r.label, ok: r.ok, httpStatus: r.httpStatus, response: (r as any).response, rows: r.rows.length, dcReached: r.dcRequests.length, logs: r.logs.map((x: any) => `${x.message} | ${x.errMsg}`) }); }
+        return out;
+    },
+    async m24b() {
+        const CodeBaseConfigService = require('@libs/ee/codeBase/codeBaseConfig.service').default;
+        const { createLogger: cl } = require('@libs/core/log/logger');
+        const guarded: any = Object.create(CodeBaseConfigService.prototype);
+        guarded.codeManagementService = svc.cms; guarded.logger = cl('CodeBaseConfigService');
+        const probe = async (t: any, repo: any) => { try { await guarded.getConfig(t, repo); return 'guard passed (getConfig ran)'; } catch (e: any) {
+            const code = e?.getResponse?.()?.error ?? e?.response?.error ?? e?.errorType ?? e?.code;
+            return e?.constructor?.name === 'ConfigurationMissingException' ? `ConfigurationMissingException ${JSON.stringify(e.getResponse?.() ?? e.message)}` : `guard passed, later error: ${e?.constructor?.name}: ${String(e?.message).slice(0, 80)}`; } };
+        const out: any = {};
+        expectedAuth = `Basic ${B64}`; cloudNock('deny');
+        const t = await tenant('m24b');
+        out.dcSetup = (await attempt('DC setup', t, () => uc(t, dcBasic(H('ok'))))).ok;
+        const sel = await call(() => svc.facade.createOrUpdateIntegrationConfig({ organizationAndTeamData: t, configKey: 'repositories', configValue: [{ id: '9000', name: 'ok-repo0', organizationName: 'QA2570', project: { id: '77', name: 'QA 2570' } }] }));
+        out.dcSelectViaService = sel.ok ? 'ok' : sel.message;
+        out.dcConfigRows = await ds.query(`select "configKey", jsonb_array_length("configValue") n from integration_configs where team_id=$1`, [t.teamId]);
+        if (!out.dcConfigRows.some((r: any) => r.configKey === 'repositories')) {
+            const [row] = await rows(t);
+            await ds.query(`insert into integration_configs(uuid,"configKey","configValue",integration_id,team_id) values ($1,'repositories',$2,$3,$4)`, [randomUUID(), JSON.stringify([{ id: '9000', name: 'ok-repo0' }]), row.int_uuid, t.teamId]);
+            out.dcConfigInsertedDirectly = true;
+        }
+        out.dcVerify = (await call(() => svc.cms.verifyConnection({ organizationAndTeamData: t }))).result;
+        out.dcGetConfig = await probe(t, { id: '9000', name: 'ok-repo0' });
+        // Cloud control, same selection shape
+        cloudNock('ok');
+        const c = await tenant('m24c');
+        out.cloudSetup = (await attempt('Cloud setup', c, () => uc(c, { authMode: 'token', token: 'qa2570-cloud-pat', email: 'x@example.invalid' }), 'qa2570-cloud-pat')).ok;
+        const [crow] = await rows(c);
+        await ds.query(`insert into integration_configs(uuid,"configKey","configValue",integration_id,team_id) values ($1,'repositories',$2,$3,$4)`, [randomUUID(), JSON.stringify([{ id: '{r1}', name: 'cloud-repo' }]), crow.int_uuid, c.teamId]);
+        out.cloudVerify = (await call(() => svc.cms.verifyConnection({ organizationAndTeamData: c }))).result;
+        out.cloudGetConfig = await probe(c, { id: '{r1}', name: 'cloud-repo' });
+        // A DC pair seeded directly (the only way a DC pair existed before the PR), same selection
+        expectedAuth = `Basic ${B64}`;
+        const d = await tenant('m24d');
+        await svc.dc.addAccessToken(d, { username: USER, appPassword: require('@libs/common/utils/crypto').encrypt(PW), authMode: 'basic', host: H('ok') });
+        const [drow] = await rows(d);
+        await ds.query(`insert into integration_configs(uuid,"configKey","configValue",integration_id,team_id) values ($1,'repositories',$2,$3,$4)`, [randomUUID(), JSON.stringify([{ id: '9000', name: 'ok-repo0' }]), drow.int_uuid, d.teamId]);
+        out.seededDcVerify = (await call(() => svc.cms.verifyConnection({ organizationAndTeamData: d }))).result;
+        out.seededDcGetConfig = await probe(d, { id: '9000', name: 'ok-repo0' });
+        for (const k of Object.keys(out)) if (out[k]?.config?.host) out[k].config.host = '<dc>';
+        return out;
     },
     async m31() {
         cloudNock('deny');
@@ -571,9 +651,9 @@ async function main() {
     await boot();
     let result: any;
     try { result = await cases[name](); } catch (e: any) { result = { harnessError: String(e?.stack || e).slice(0, 1500) }; }
-    const scrub = (s: string) => s.split(BASE).join('<dc>');
+    const scrub = (s: string) => s.split(BASE).join('<dc>').split(TLS_BASE).join('<dc-tls>');
     origOut('@@RESULT ' + scrub(JSON.stringify({ tree: TREE, case: name, result })) + '\n');
     if (process.env.DUMP_STDOUT) require('fs').writeFileSync(process.env.DUMP_STDOUT, stdoutChunks.join(''));
-    await ds.destroy(); server.close(); process.exit(0);
+    await ds.destroy(); server.close(); tlsServer.close(); process.exit(0);
 }
 main();
