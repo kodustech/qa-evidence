@@ -1,0 +1,58 @@
+{
+ "rev": "merge",
+ "sigkill_at": "2026-11-24T22:13:02.639Z",
+ "doc_after_sigkill": {
+  "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:da732845-218b-419f-b471-f279dff21da4",
+  "leaseCount": 0,
+  "sandboxId": "fake-71634-1-526ka",
+  "state": "READY",
+  "cleanupAttempts": 0,
+  "killRetryCount": 0,
+  "expiresAt": "2026-11-25T00:13:02.548Z"
+ },
+ "doc_after_cron": {
+  "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:da732845-218b-419f-b471-f279dff21da4",
+  "leaseCount": 0,
+  "sandboxId": "fake-71634-1-526ka",
+  "state": "READY",
+  "cleanupAttempts": 0,
+  "killRetryCount": 0,
+  "expiresAt": "2026-11-25T00:13:02.548Z"
+ },
+ "doc_after_reap_before_expiry": {
+  "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:da732845-218b-419f-b471-f279dff21da4",
+  "leaseCount": 0,
+  "sandboxId": "fake-71634-1-526ka",
+  "state": "READY",
+  "cleanupAttempts": 0,
+  "killRetryCount": 0,
+  "expiresAt": "2026-11-25T00:13:02.548Z"
+ },
+ "doc_after_reap_after_expiry": null,
+ "provider": {
+  "fake-71634-1-526ka": "killed"
+ },
+ "timeline": [
+  "2026-11-24T22:13:01.301Z pid=71634 A \u00a7 ready {\"actor\": \"A\"}",
+  "2026-11-24T22:13:01.898Z pid=71657 C \u00a7 ready {\"actor\": \"C\"}",
+  "2026-11-24T22:13:02.533Z pid=71709 O \u00a7 ready {\"actor\": \"O\"}",
+  "2026-11-24T22:13:02.548Z pid=71634 A info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:da732845-218b-419f-b471-f279dff21da4\" consumer=\"graph-",
+  "2026-11-24T22:13:02.568Z pid=71634 A info SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:da732845-218b-419f-b471-f279df",
+  "2026-11-24T22:13:02.568Z pid=71634 A \u00a7 provider.create.start {\"id\": \"fake-71634-1-526ka\"}",
+  "2026-11-24T22:13:02.568Z pid=71634 A \u00a7 provider.create.done {\"id\": \"fake-71634-1-526ka\"}",
+  "2026-11-24T22:13:02.576Z pid=71634 A info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:da732845-218b-419f-b471-f279dff21da4\" consumer=\"",
+  "2026-11-24T22:13:02.576Z pid=71634 A \u00a7 acquired {\"id\": \"88f7e4a9\", \"actor\": \"A\", \"leaseId\": \"33c3eca9-79c8-48df-b853-d18ab470e33a\", \"sandboxId\": \"fake-71634-1-526ka\", \"waitedMs\": 41}",
+  "2026-11-24T22:13:02.580Z pid=71634 A \u00a7 barrier.reached {\"actor\": \"A\", \"point\": \"after-decrement\"}",
+  "2026-11-24T22:13:02.642Z pid=71709 O \u00a7 doc {\"id\": \"e3ebfe9e\", \"doc\": {\"_id\": \"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:da732845-218b-419f-b471-f279dff21da4\", \"leaseCount\": 0, \"sandboxId\": \"fake-71634-1-526ka\", \"state\": \"READY\", \"cleanupAttempts\": 0, \"killRetryCount\": 0, \"expiresAt\": \"2026-11-25T00:13:02",
+  "2026-11-24T22:13:02.656Z pid=71657 C \u00a7 cron.done {\"id\": \"66ff3e6d\", \"actor\": \"C\"}",
+  "2026-11-24T22:13:02.658Z pid=71709 O \u00a7 doc {\"id\": \"ab5e8c49\", \"doc\": {\"_id\": \"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:da732845-218b-419f-b471-f279dff21da4\", \"leaseCount\": 0, \"sandboxId\": \"fake-71634-1-526ka\", \"state\": \"READY\", \"cleanupAttempts\": 0, \"killRetryCount\": 0, \"expiresAt\": \"2026-11-25T00:13:02",
+  "2026-11-24T22:13:02.660Z pid=71657 C \u00a7 reap.done {\"id\": \"56ac80ad\", \"actor\": \"C\"}",
+  "2026-11-24T22:13:02.661Z pid=71709 O \u00a7 doc {\"id\": \"eee4580a\", \"doc\": {\"_id\": \"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:da732845-218b-419f-b471-f279dff21da4\", \"leaseCount\": 0, \"sandboxId\": \"fake-71634-1-526ka\", \"state\": \"READY\", \"cleanupAttempts\": 0, \"killRetryCount\": 0, \"expiresAt\": \"2026-11-25T00:13:02",
+  "2026-11-24T22:13:02.665Z pid=71709 O \u00a7 error {\"id\": \"89e71b92\", \"actor\": \"O\", \"cmd\": \"set\", \"err\": \"Cast to date failed for value \\\"{ '$date': '2000-01-01T00:00:00Z' }\\\" (type Object) at path \\\"expiresAt\\\"\"}",
+  "2026-11-24T22:13:02.673Z pid=71657 C \u00a7 e2b.kill.call {\"id\": \"fake-71634-1-526ka\", \"hasKey\": true, \"behavior\": \"ok\"}",
+  "2026-11-24T22:13:02.674Z pid=71657 C \u00a7 e2b.kill.ok {\"id\": \"fake-71634-1-526ka\", \"was\": \"running\"}",
+  "2026-11-24T22:13:02.679Z pid=71657 C info [SANDBOX-REAPER] Reaped expired lease",
+  "2026-11-24T22:13:02.680Z pid=71657 C \u00a7 reap.done {\"id\": \"681c248f\", \"actor\": \"C\"}",
+  "2026-11-24T22:13:02.682Z pid=71709 O \u00a7 doc {\"id\": \"d4bc9819\", \"doc\": null}"
+ ]
+}
