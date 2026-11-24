@@ -47,5 +47,8 @@
    "keys": "[\"rules.$.compileAttempt\",\"rules.$.updatedAt\"]"
   }
  ],
- "warns": []
+ "warns": [
+  "WARN KodyRuleDetectorCompilerService: Could not store the context need for rule d864a9f5-6cac-456f-adc8-ef7f227d050c; it stays diff-only | error=injected write failure (contextNeed)",
+  "WARN KodyRuleDetectorCompilerService: Could not record the compile attempt for rule d864a9f5-6cac-456f-adc8-ef7f227d050c; it will be retried on the next sweep | error=injected write failure (compileAttempt)"
+ ]
 }
