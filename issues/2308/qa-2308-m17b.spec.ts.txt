@@ -1,0 +1,39 @@
+import { buildStack, newDto, proj, writeOut, ruleContextNeedHash, VERSION } from './stack';
+import { KodyRulesSyncService } from '@libs/kodyRules/infrastructure/adapters/services/kodyRulesSync.service';
+import { CentralizedConfigDownloadUseCase } from '@libs/centralized-config/application/use-cases/centralized-config-download.use-case';
+import { BackfillRuleDetectorsUseCase } from '@libs/kodyRules/application/use-cases/backfill-rule-detectors.use-case';
+jest.setTimeout(180000);
+const ORG = 'org-qa2308-m17b';
+const SEM_EX = [{ snippet: 'await grades.save(g);', isCorrect: false }, { snippet: 'await assertEnrolled(s); await grades.save(g);', isCorrect: true }];
+const MECH_EX = [{ snippet: 'console.log(student.id);', isCorrect: false }, { snippet: 'this.logger.info(student.id);', isCorrect: true }];
+describe(`qa2308 M17 real callers (${VERSION})`, () => {
+    it('settled rules through the real IDE bulk pause/resume, centralized adoption and backfill', async () => {
+        const s = await buildStack('qa2308_m17b');
+        const ids: string[] = [];
+        for (let i = 0; i < 3; i++) { const r: any = await s.save(ORG, newDto(`qa2308 ide ${i}`, `Rule ${i}: attendance must keep campus id.`, SEM_EX, { repositoryId: 'repo-1', sourcePath: 'CLAUDE.md' })); ids.push(r.uuid); }
+        const m: any = await s.save(ORG, newDto('qa2308 ide mech', 'Do not call console.log in qa2308 files; use the injected logger.', MECH_EX, { repositoryId: 'repo-1', sourcePath: '.cursor/rules/logging.mdc' })); ids.push(m.uuid);
+        await s.settle();
+        // settle: the X1 race may have lost contextNeed; the real backfill (which passes the stored fileScope) repairs it
+        const backfill = new BackfillRuleDetectorsUseCase(s.service as any, s.compiler as any);
+        await backfill.execute({ organizationId: ORG, teamId: 'team-1' }, { onlyMissing: true }); await s.settle();
+        const settled = await Promise.all(ids.map(async (u) => { const r = await s.getRule(ORG, u); return { uuid: u, caCurrent: proj(r).caCurrent, ctxCurrent: r.contextNeed?.sourceHash === ruleContextNeedHash(r), fileScope: r.fileScope?.extensions ?? null }; }));
+        const sync = new KodyRulesSyncService(s.service as any, {} as any, {} as any, {} as any, {} as any, s.useCase as any, {} as any, {} as any, {} as any, {} as any, {} as any);
+        const out: any = { settled };
+        let c0 = s.ledger.llm.length;
+        out.pausedCount = await (sync as any).transitionIdeSyncRulesStatus({ organizationAndTeamData: { organizationId: ORG, teamId: 'team-1' }, repositoryIds: ['repo-1'], targetStatus: 'paused' }); await s.settle();
+        out.idePauseCalls = s.ledger.llm.length - c0;
+        c0 = s.ledger.llm.length;
+        out.resumedCount = await (sync as any).transitionIdeSyncRulesStatus({ organizationAndTeamData: { organizationId: ORG, teamId: 'team-1' }, repositoryIds: ['repo-1'], targetStatus: 'active' }); await s.settle();
+        out.ideResumeCalls = s.ledger.llm.length - c0;
+        const dl = new CentralizedConfigDownloadUseCase({} as any, {} as any, {} as any, s.useCase as any, {} as any, {} as any);
+        c0 = s.ledger.llm.length;
+        for (const u of ids) { const r = await s.getRule(ORG, u); await (dl as any).ensureRulePendingWithSourcePath(r, `athena/.kody-rules/review/${u}.yml`, ORG, { uuid: 'user-1' }, true); }
+        await s.settle(); out.centralAdoptionCalls = s.ledger.llm.length - c0;
+        out.adoptedStatus = await Promise.all(ids.map(async (u) => (await s.getRule(ORG, u)).centralizedConfig));
+        c0 = s.ledger.llm.length;
+        const bf = await backfill.execute({ organizationId: ORG, teamId: 'team-1' }, { onlyMissing: true }); await s.settle();
+        out.backfill = { calls: s.ledger.llm.length - c0, processed: bf.processed, skipped: bf.skipped };
+        out.statuses = await Promise.all(ids.map(async (u) => (await s.getRule(ORG, u)).status));
+        writeOut('M17b', out); await s.close();
+    });
+});
