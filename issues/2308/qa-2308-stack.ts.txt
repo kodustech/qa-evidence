@@ -16,7 +16,7 @@ import { ChangeStatusKodyRulesUseCase } from '@libs/kodyRules/application/use-ca
 import { ruleCompileHash, ruleContextNeedHash } from '@libs/common/utils/kody-rules/compile-hash';
 
 export const MONGO = process.env.QA2308_MONGO || 'mongodb://127.0.0.1:27399';
-export const OUT = process.env.QA2308_OUT || '/Users/juniorsartori/.kodus-qa-runs/2026-11-24/2308/hout';
+export const OUT = process.env.QA2308_OUT || '<run-dir>/hout';
 export const VERSION = process.env.QA2308_VERSION || 'merge';
 
 export const stub = (o: any = {}) => new Proxy(o, { get: (t, k) => (k in t ? t[k] : k === 'then' ? undefined : async () => null) });
