@@ -1,0 +1,117 @@
+{
+ "before": {
+  "conversation": {
+   "implicitReplies": false
+  },
+  "reviewCadence": {
+   "type": "manual"
+  },
+  "kodyRulesGeneratorEnabled": false
+ },
+ "cases": [
+  {
+   "case": "string_no",
+   "t": "2026-11-24T19:20:15Z",
+   "status": 201,
+   "body": {
+    "data": true,
+    "statusCode": 201,
+    "type": "Boolean"
+   },
+   "stored_global_conversation": null
+  },
+  {
+   "case": "string_false",
+   "t": "2026-11-24T19:20:18Z",
+   "status": 201,
+   "body": {
+    "data": true,
+    "statusCode": 201,
+    "type": "Boolean"
+   },
+   "stored_global_conversation": null
+  },
+  {
+   "case": "string_off",
+   "t": "2026-11-24T19:20:20Z",
+   "status": 201,
+   "body": {
+    "data": true,
+    "statusCode": 201,
+    "type": "Boolean"
+   },
+   "stored_global_conversation": null
+  },
+  {
+   "case": "array",
+   "t": "2026-11-24T19:20:21Z",
+   "status": 400,
+   "body": {
+    "statusCode": 400,
+    "timestamp": "2026-11-24T19:20:22.424Z",
+    "path": "/parameters/create-or-update-code-review",
+    "error": "Bad Request",
+    "message": "configValue.conversation.implicitReplies must be a boolean value"
+   },
+   "stored_global_conversation": null
+  },
+  {
+   "case": "scalar_conversation",
+   "t": "2026-11-24T19:20:24Z",
+   "status": 400,
+   "body": {
+    "statusCode": 400,
+    "timestamp": "2026-11-24T19:20:24.676Z",
+    "path": "/parameters/create-or-update-code-review",
+    "error": "Bad Request",
+    "message": "configValue.nested property conversation must be either object or array"
+   },
+   "stored_global_conversation": null
+  },
+  {
+   "case": "array_conversation",
+   "t": "2026-11-24T19:20:25Z",
+   "status": 201,
+   "body": {
+    "data": true,
+    "statusCode": 201,
+    "type": "Boolean"
+   },
+   "stored_global_conversation": [
+    {
+     "implicitReplies": false
+    }
+   ]
+  },
+  {
+   "case": "unknown_key",
+   "t": "2026-11-24T19:20:28Z",
+   "status": 400,
+   "body": {
+    "statusCode": 400,
+    "timestamp": "2026-11-24T19:20:29.449Z",
+    "path": "/parameters/create-or-update-code-review",
+    "error": "Bad Request",
+    "message": "configValue.conversation.property answerEveryone should not exist"
+   },
+   "stored_global_conversation": [
+    {
+     "implicitReplies": false
+    }
+   ]
+  },
+  {
+   "case": "null",
+   "t": "2026-11-24T19:20:31Z",
+   "status": 201,
+   "body": {
+    "data": true,
+    "statusCode": 201,
+    "type": "Boolean"
+   },
+   "stored_global_conversation": {
+    "implicitReplies": null
+   }
+  }
+ ]
+}
