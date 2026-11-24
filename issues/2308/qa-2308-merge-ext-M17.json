@@ -1,0 +1,17 @@
+{
+ "idePause": 2,
+ "ideResume": 0,
+ "centralAdoption": 0,
+ "backfillOnlyMissing": {
+  "calls": 0,
+  "result": {
+   "total": 4,
+   "processed": 0,
+   "skipped": 4,
+   "alreadyDecided": 0
+  }
+ },
+ "detectorKept": {
+  "pattern": "console\\.log\\s*\\("
+ }
+}
