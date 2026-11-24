@@ -1,0 +1,3 @@
+  ● CreateOrUpdateKodyRulesUseCase — detector compile on save › passes the stored compileAttempt and contextNeed to compileAndSave so unchanged rules are skipped
+  ● ConvertPendingUpdatesToNewUseCase › authorizes by deduplicated repository ids and converts rules to active memories
+Tests:       2 failed, 18 passed, 20 total
