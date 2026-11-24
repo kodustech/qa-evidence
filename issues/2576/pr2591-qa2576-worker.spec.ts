@@ -22,7 +22,7 @@ function emit(event: string, extra: any = {}) {
 }
 
 it('worker', async () => {
-    const ds = new DataSource({ type: 'postgres', host: 'localhost', port: 55476, username: 'postgres', password: 'qa2576', database: 'qa', entities: [InboxMessageModel, WorkflowJobModel, OutboxMessageModel], synchronize: process.env.ROLE === 'init' });
+    const ds = new DataSource({ type: 'postgres', host: 'localhost', port: Number(process.env.QA_PG_PORT), username: 'postgres', password: process.env.QA_PG_PASSWORD, database: 'qa', entities: [InboxMessageModel, WorkflowJobModel, OutboxMessageModel], synchronize: process.env.ROLE === 'init' });
     await ds.initialize();
     emit('db-ready');
     if (process.env.ROLE === 'init') { await ds.destroy(); return; }
@@ -56,6 +56,7 @@ it('worker', async () => {
         { acquire: async () => (emit('sandbox-acquire'), { sandbox: { type: 'null' }, leaseId: 'l' }), release: async () => undefined },
         { findByNumberAndRepositoryId: async () => null }, claimService, undefined, undefined, undefined, cbs);
     for (const lvl of ['log', 'warn', 'error']) useCase.logger[lvl] = (o: any) => emit('log', { level: lvl, message: o?.message, reason: o?.metadata?.implicitReplySilence, key: o?.metadata?.deliveryKey });
+    if (process.env.START_AT) { const w = Number(process.env.START_AT) - Date.now(); emit('barrier-wait', { ms: w }); if (w > 0) await new Promise((r) => setTimeout(r, w)); }
     emit('execute-start');
     await useCase.execute({ event: 'pull_request_review_comment', platformType: PlatformType.GITHUB, payload: { action: 'created', repository: { id: 123, name: 'athena', owner: { login: 'acme' }, html_url: 'https://github.com/acme/athena' }, pull_request: { number: 812, head: { ref: 'f' }, base: { ref: 'main' } }, comment: reply, sender: { id: 1, login: 'dev-one' } } });
     emit('execute-end');
