@@ -1,0 +1,28 @@
+{
+ "rev": "parent",
+ "order": "cron-reads-first",
+ "doc_end": null,
+ "errors": [],
+ "timeline": [
+  "2026-11-24T22:11:54.611Z pid=70867 A \u00a7 ready {\"actor\": \"A\"}",
+  "2026-11-24T22:11:55.209Z pid=70901 C \u00a7 ready {\"actor\": \"C\"}",
+  "2026-11-24T22:11:55.774Z pid=70902 O \u00a7 ready {\"actor\": \"O\"}",
+  "2026-11-24T22:11:55.784Z pid=70867 A info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:91035981-8cd3-4a1f-a37e-ec4e6be3a83d\" consumer=\"graph-",
+  "2026-11-24T22:11:55.802Z pid=70867 A info SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:91035981-8cd3-4a1f-a37e-ec4e6b",
+  "2026-11-24T22:11:55.802Z pid=70867 A \u00a7 provider.create.start {\"id\": \"fake-70867-1-60e2r\"}",
+  "2026-11-24T22:11:55.802Z pid=70867 A \u00a7 provider.create.done {\"id\": \"fake-70867-1-60e2r\"}",
+  "2026-11-24T22:11:55.809Z pid=70867 A info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:91035981-8cd3-4a1f-a37e-ec4e6be3a83d\" consumer=\"",
+  "2026-11-24T22:11:55.809Z pid=70867 A \u00a7 acquired {\"id\": \"f3f2d8a1\", \"actor\": \"A\", \"leaseId\": \"1110476a-c7d1-4160-b0e1-da3ca1e24aa7\", \"sandboxId\": \"fake-70867-1-60e2r\", \"waitedMs\": 34}",
+  "2026-11-24T22:11:55.813Z pid=70867 A info SandboxLeaseManager: released leaseId=\"1110476a-c7d1-4160-b0e1-da3ca1e24aa7\" prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:910359",
+  "2026-11-24T22:11:55.820Z pid=70867 A info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T22:11:55.813Z for sandboxId=\"fake-70867-1-60e2r\"",
+  "2026-11-24T22:11:55.820Z pid=70867 A \u00a7 e2b.setTimeout {\"id\": \"fake-70867-1-60e2r\", \"ms\": 0}",
+  "2026-11-24T22:11:55.820Z pid=70867 A \u00a7 released {\"id\": \"a99f75c2\", \"actor\": \"A\"}",
+  "2026-11-24T22:12:05.873Z pid=70901 C \u00a7 barrier.reached {\"actor\": \"C\", \"point\": \"cron-after-read\"}",
+  "2026-11-24T22:12:05.925Z pid=70901 C \u00a7 barrier.released {\"actor\": \"C\", \"point\": \"cron-after-read\"}",
+  "2026-11-24T22:12:05.925Z pid=70901 C \u00a7 e2b.kill.call {\"id\": \"fake-70867-1-60e2r\", \"hasKey\": true, \"behavior\": \"ok\"}",
+  "2026-11-24T22:12:05.925Z pid=70901 C \u00a7 e2b.kill.ok {\"id\": \"fake-70867-1-60e2r\", \"was\": \"running\"}",
+  "2026-11-24T22:12:05.939Z pid=70901 C info [SANDBOX-IDLE-KILL] Killed idle sandbox",
+  "2026-11-24T22:12:05.940Z pid=70901 C \u00a7 cron.done {\"id\": \"ab111623\", \"actor\": \"C\"}",
+  "2026-11-24T22:12:05.943Z pid=70902 O \u00a7 doc {\"id\": \"7a26a59f\", \"doc\": null}"
+ ]
+}
