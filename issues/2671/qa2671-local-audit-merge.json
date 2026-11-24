@@ -1,0 +1,674 @@
+{
+  "A3": {
+    "krFalse": {
+      "prLevel": [
+        "kody_rules/medium: `qa2671/instrumentation-client.ts:19` — QA2671-1 The student"
+      ],
+      "inline": [],
+      "discarded": [
+        "bug/medium@qa2671/instrumentation-client.ts:19 -> discarded-by-severity"
+      ],
+      "logs": [
+        "log: [AGENT] Reclassified severity for 2 suggestions (1 left unclassified, default kept)",
+        "log: [AGENT] Post-classification severity filter: 1 suggestions below high threshold removed (applyFiltersToKodyRules=false)"
+      ]
+    },
+    "krTrue": {
+      "prLevel": [],
+      "inline": [],
+      "discarded": [
+        "bug/medium@qa2671/instrumentation-client.ts:19 -> discarded-by-severity",
+        "kody_rules/medium@qa2671/instrumentation-client.ts:19 -> discarded-by-severity"
+      ],
+      "logs": [
+        "log: [AGENT] Reclassified severity for 2 suggestions (1 left unclassified, default kept)",
+        "log: [AGENT] Post-classification severity filter: 2 suggestions below high threshold removed (applyFiltersToKodyRules=true)"
+      ]
+    }
+  },
+  "XS10": {
+    "both_omitted": {
+      "posts": [
+        {
+          "api": "pulls.createReviewComment"
+        }
+      ],
+      "lineComments": [
+        {
+          "path": "qa2671/attendance.ts",
+          "deliveryStatus": "sent",
+          "tag": "QA2671-1 s"
+        }
+      ],
+      "logs": [
+        "log: Create Line Comments PR#7",
+        "log: Created line comment for PR#7"
+      ]
+    },
+    "synthetic_zero": {
+      "posts": [
+        {
+          "api": "pulls.createReviewComment",
+          "line": 0
+        }
+      ],
+      "lineComments": [
+        {
+          "path": "qa2671/attendance.ts",
+          "line": 0,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-2 s"
+        }
+      ],
+      "logs": [
+        "log: Create Line Comments PR#7",
+        "log: Created line comment for PR#7",
+        "log: Create Line Comments PR#7",
+        "log: Created line comment for PR#7"
+      ]
+    },
+    "synthetic_negative": {
+      "posts": [
+        {
+          "api": "pulls.createReviewComment",
+          "start_line": -3,
+          "line": 5
+        }
+      ],
+      "lineComments": [
+        {
+          "path": "qa2671/attendance.ts",
+          "start_line": -3,
+          "line": 5,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-3 s"
+        }
+      ],
+      "logs": [
+        "log: Create Line Comments PR#7",
+        "log: Created line comment for PR#7",
+        "log: Create Line Comments PR#7",
+        "log: Created line comment for PR#7"
+      ]
+    },
+    "synthetic_nan": {
+      "posts": [
+        {
+          "api": "pulls.createReviewComment",
+          "line": null
+        }
+      ],
+      "lineComments": [
+        {
+          "path": "qa2671/attendance.ts",
+          "line": null,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-4 s"
+        }
+      ],
+      "logs": [
+        "log: Create Line Comments PR#7",
+        "log: Created line comment for PR#7",
+        "log: Create Line Comments PR#7",
+        "log: Created line comment for PR#7"
+      ]
+    },
+    "synthetic_end_only_0": {
+      "posts": [
+        {
+          "api": "pulls.createReviewComment",
+          "line": 0
+        }
+      ],
+      "lineComments": [
+        {
+          "path": "qa2671/attendance.ts",
+          "line": 0,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-5 s"
+        }
+      ],
+      "logs": [
+        "log: Create Line Comments PR#7",
+        "log: Created line comment for PR#7",
+        "log: Create Line Comments PR#7",
+        "log: Created line comment for PR#7"
+      ]
+    }
+  },
+  "A6": {
+    "edits": [
+      {
+        "filepath": "qa2671/attendance.ts",
+        "a": 20,
+        "b": 22
+      },
+      {
+        "filepath": "qa2671/attendance.ts",
+        "a": 20,
+        "b": 22
+      },
+      {
+        "filepath": "qa2671/attendance.ts",
+        "a": 20,
+        "b": 21
+      }
+    ],
+    "validated": [
+      {
+        "id": "val-asc",
+        "isCommittable": true,
+        "start": 20,
+        "end": 22,
+        "validatedData": {
+          "lineStart": 20,
+          "lineEnd": 22,
+          "code": "const fixed20 = 20;\nconst fixed21 = 21;\nconst fixed22 = 22;"
+        }
+      },
+      {
+        "id": "val-rev",
+        "isCommittable": true,
+        "start": 22,
+        "end": 20,
+        "validatedData": {
+          "lineStart": 20,
+          "lineEnd": 22,
+          "code": "const fixed20 = 20;\nconst fixed21 = 21;\nconst fixed22 = 22;"
+        }
+      },
+      {
+        "id": "val-wide-rev",
+        "isCommittable": true,
+        "start": 40,
+        "end": 20,
+        "validatedData": {
+          "lineStart": 20,
+          "lineEnd": 21,
+          "code": "const fixed20 = 20;\nconst fixed21 = 21;"
+        }
+      }
+    ],
+    "posts": [
+      {
+        "start_line": 20,
+        "line": 22,
+        "path": "qa2671/attendance.ts",
+        "bodyHasSuggestionBlock": true
+      },
+      {
+        "start_line": 20,
+        "line": 22,
+        "path": "qa2671/attendance.ts",
+        "bodyHasSuggestionBlock": true
+      },
+      {
+        "start_line": 20,
+        "line": 21,
+        "path": "qa2671/attendance.ts",
+        "bodyHasSuggestionBlock": true
+      }
+    ],
+    "lineComments": [
+      {
+        "path": "qa2671/attendance.ts",
+        "start_line": 20,
+        "line": 22,
+        "deliveryStatus": "sent",
+        "tag": "QA2671-1 s"
+      },
+      {
+        "path": "qa2671/attendance.ts",
+        "start_line": 20,
+        "line": 22,
+        "deliveryStatus": "sent",
+        "tag": "QA2671-2 s"
+      },
+      {
+        "path": "qa2671/attendance.ts",
+        "line": 20,
+        "deliveryStatus": "sent",
+        "tag": "QA2671-3 s"
+      }
+    ],
+    "logs": []
+  },
+  "A7": {
+    "stageOutputs": {
+      "A": [
+        "`qa2671/instrumentation-client.ts:19` — QA2671 TAG-A finding for org A"
+      ],
+      "B": [
+        "`qa2671/instrumentation-client.ts:19` — QA2671 TAG-B finding for org B"
+      ]
+    },
+    "authSelectors": [
+      {
+        "fn": "getGithubAuthDetails",
+        "organizationId": "org-A",
+        "teamId": "team-A"
+      },
+      {
+        "fn": "getGithubAuthDetails",
+        "organizationId": "org-B",
+        "teamId": "team-B"
+      },
+      {
+        "fn": "instanceOctokit",
+        "organizationId": "org-A",
+        "teamId": "team-A"
+      },
+      {
+        "fn": "instanceOctokit",
+        "organizationId": "org-B",
+        "teamId": "team-B"
+      }
+    ],
+    "providerRequests": [
+      {
+        "owner": "owner-b",
+        "repo": "athena-b",
+        "issue_number": 7,
+        "tag": "TAG-B"
+      },
+      {
+        "owner": "owner-a",
+        "repo": "athena-a",
+        "issue_number": 7,
+        "tag": "TAG-A"
+      }
+    ],
+    "persistence": [
+      {
+        "prNumber": 7,
+        "repoId": "repo-B",
+        "repoName": "athena-b",
+        "organizationId": "org-B",
+        "teamId": "team-B",
+        "tags": [
+          "TAG-B"
+        ],
+        "commentIds": [
+          5001
+        ]
+      },
+      {
+        "prNumber": 7,
+        "repoId": "repo-A",
+        "repoName": "athena-a",
+        "organizationId": "org-A",
+        "teamId": "team-A",
+        "tags": [
+          "TAG-A"
+        ],
+        "commentIds": [
+          5002
+        ]
+      }
+    ],
+    "crossedIdentities": []
+  },
+  "A8": {
+    "persistedPrLevel": [
+      {
+        "summary": "QA2671-FAILED rename finding",
+        "deliveryStatus": "failed",
+        "commentId": null
+      },
+      {
+        "summary": "QA2671-SENT rename finding",
+        "deliveryStatus": "sent",
+        "commentId": 1001
+      }
+    ],
+    "json": {
+      "count": 2,
+      "prLevel": [
+        "QA2671-SENT rename finding/sent"
+      ],
+      "files": [
+        "qa2671/renamed-and-edited.ts/sent"
+      ]
+    },
+    "markdown": {
+      "count": 2,
+      "mentionsFailed": false,
+      "mentionsSent": true,
+      "text": "# Suggestions for PR #7 (kodus-olimpo/claude-athena)\n\n## File suggestions\n- [File] qa2671/renamed-and-edited.ts — QA2671-2 session token written to telemetry\n  - Severity: high\n  - Category: security\n  - Status: sent\n  - Lines: 11-12\n  - Content:\n\n```\nQA2671-2 The student session token is logged; remove it.\n```\n\n## PR-level suggestions\n- [PR] QA2671-SENT rename finding\n  - Severity: high\n  - Category: security\n  - Status: sent\n  - Content:\n\n```\n`qa2671/instrumentation-client.ts:19` — QA2671-SENT body\n```"
+    }
+  },
+  "A2": {
+    "rule_full_file_like_QA": {
+      "deltaFiles": [
+        {
+          "filename": "qa2671/index.ts",
+          "status": "modified",
+          "hasPatch": true,
+          "previous_filename": null
+        },
+        {
+          "filename": "qa2671/instrumentation-client.ts",
+          "status": "modified",
+          "hasPatch": true,
+          "previous_filename": null
+        },
+        {
+          "filename": "qa2671/school/attendance.ts",
+          "status": "renamed",
+          "hasPatch": false,
+          "previous_filename": null
+        }
+      ],
+      "historyRecords": [
+        {
+          "suggestionId": "pr-comment-7132185747",
+          "relevantFile": null,
+          "label": "kody_rules"
+        },
+        {
+          "suggestionId": "ab907d98",
+          "relevantFile": "qa2671/attendance.ts",
+          "label": "bug"
+        }
+      ],
+      "offeredToRepeatModel": [
+        {
+          "n": 0,
+          "where": "qa2671/instrumentation-client.ts:19-19",
+          "earlierOffered": [
+            "pr-comment-7132185747"
+          ]
+        },
+        {
+          "n": 1,
+          "where": "qa2671/instrumentation-client.ts:33-33",
+          "earlierOffered": [
+            "pr-comment-7132185747"
+          ]
+        }
+      ],
+      "routing": {
+        "prLevel": [
+          {
+            "label": "bug",
+            "severity": "high",
+            "suggestionContent": "`qa2671/school/attendance.ts:9` — QA2671-NEWRENAME duplicate check-ins inflate the rate",
+            "fullExplanation": "`qa2671/school/attendance.ts:9` — QA2671-NEWRENAME duplicate check-ins inflate the rate",
+            "agentPrompt": "QA2671-NEWRENAME present count ignores duplicate records\n\n`qa2671/school/attendance.ts:9` — QA2671-NEWRENAME duplicate check-ins inflate the rate",
+            "customAgent": null,
+            "brokenKodyRulesIds": null
+          }
+        ],
+        "validSuggestions": [
+          {
+            "file": "qa2671/instrumentation-client.ts",
+            "start": 33,
+            "end": 33,
+            "label": "kody_rules",
+            "tag": "QA2671-NEW",
+            "customAgent": null
+          }
+        ],
+        "inlineByFile": [
+          {
+            "file": "qa2671/instrumentation-client.ts",
+            "n": 1
+          }
+        ],
+        "discarded": [
+          {
+            "file": "qa2671/instrumentation-client.ts",
+            "start": 19,
+            "end": 19,
+            "status": "discarded-by-repeat",
+            "tag": "QA2671-OLD"
+          }
+        ]
+      },
+      "prLevelPosts": [
+        "`qa2671/school/attendance.ts:9` — QA2671-NEWRENAME duplicate check-ins inflate the rate"
+      ],
+      "prLevelSaved": [
+        {
+          "id": "b0891543-7a47-450c-bb8b-adfc218c83f9",
+          "deliveryStatus": "sent",
+          "commentId": 1001,
+          "label": "bug"
+        }
+      ],
+      "inlinePosts": [
+        {
+          "path": "qa2671/instrumentation-client.ts",
+          "line": 33
+        }
+      ],
+      "logs": [
+        "log: [AGENT] File-anchored finding for qa2671/instrumentation-client.ts: lines 19-19 sit outside every hunk, but the rule declared it needs context beyond the diff — delivering it as a PR-level comment",
+        "log: [REPEAT-CHECK] PR#12: 1 repeats, 0 withheld without a verdict, 2 kept, 0 linked revisions (history 2, model ok)",
+        "log: Starting PR-level comments creation for PR#12",
+        "log: Creating PR-level comments for PR#12",
+        "log: Created PR-level comment for suggestion b0891543-7a47-450c-bb8b-adfc218c83f9",
+        "log: Successfully created 1 PR-level comments for PR#12"
+      ],
+      "offered": [
+        {
+          "n": 0,
+          "where": "qa2671/instrumentation-client.ts:19-19",
+          "earlierOffered": [
+            "pr-comment-7132185747"
+          ]
+        },
+        {
+          "n": 1,
+          "where": "qa2671/instrumentation-client.ts:33-33",
+          "earlierOffered": [
+            "pr-comment-7132185747"
+          ]
+        }
+      ]
+    },
+    "rule_diff_only": {
+      "deltaFiles": [
+        {
+          "filename": "qa2671/index.ts",
+          "status": "modified",
+          "hasPatch": true,
+          "previous_filename": null
+        },
+        {
+          "filename": "qa2671/instrumentation-client.ts",
+          "status": "modified",
+          "hasPatch": true,
+          "previous_filename": null
+        },
+        {
+          "filename": "qa2671/school/attendance.ts",
+          "status": "renamed",
+          "hasPatch": false,
+          "previous_filename": null
+        }
+      ],
+      "historyRecords": [
+        {
+          "suggestionId": "pr-comment-7132185747",
+          "relevantFile": null,
+          "label": "kody_rules"
+        },
+        {
+          "suggestionId": "ab907d98",
+          "relevantFile": "qa2671/attendance.ts",
+          "label": "bug"
+        }
+      ],
+      "offeredToRepeatModel": [
+        {
+          "n": 0,
+          "where": "qa2671/instrumentation-client.ts:33-33",
+          "earlierOffered": [
+            "pr-comment-7132185747"
+          ]
+        }
+      ],
+      "routing": {
+        "prLevel": [
+          {
+            "label": "bug",
+            "severity": "high",
+            "suggestionContent": "`qa2671/school/attendance.ts:9` — QA2671-NEWRENAME duplicate check-ins inflate the rate",
+            "fullExplanation": "`qa2671/school/attendance.ts:9` — QA2671-NEWRENAME duplicate check-ins inflate the rate",
+            "agentPrompt": "QA2671-NEWRENAME present count ignores duplicate records\n\n`qa2671/school/attendance.ts:9` — QA2671-NEWRENAME duplicate check-ins inflate the rate",
+            "customAgent": null,
+            "brokenKodyRulesIds": null
+          }
+        ],
+        "validSuggestions": [
+          {
+            "file": "qa2671/instrumentation-client.ts",
+            "start": 33,
+            "end": 33,
+            "label": "kody_rules",
+            "tag": "QA2671-NEW",
+            "customAgent": null
+          }
+        ],
+        "inlineByFile": [
+          {
+            "file": "qa2671/instrumentation-client.ts",
+            "n": 1
+          }
+        ],
+        "discarded": [
+          {
+            "file": "qa2671/instrumentation-client.ts",
+            "start": 19,
+            "end": 19,
+            "status": "discarded-by-code-diff",
+            "tag": "QA2671-OLD"
+          }
+        ]
+      },
+      "prLevelPosts": [
+        "`qa2671/school/attendance.ts:9` — QA2671-NEWRENAME duplicate check-ins inflate the rate"
+      ],
+      "prLevelSaved": [
+        {
+          "id": "f6e99b77-6122-431e-a6bd-6072deab8699",
+          "deliveryStatus": "sent",
+          "commentId": 1001,
+          "label": "bug"
+        }
+      ],
+      "inlinePosts": [
+        {
+          "path": "qa2671/instrumentation-client.ts",
+          "line": 33
+        }
+      ],
+      "logs": [
+        "log: [AGENT] Dropped out-of-diff suggestion for qa2671/instrumentation-client.ts: lines 19-19 do not overlap any changed hunk",
+        "log: [REPEAT-CHECK] PR#12: 0 repeats, 0 withheld without a verdict, 2 kept, 0 linked revisions (history 2, model ok)",
+        "log: Starting PR-level comments creation for PR#12",
+        "log: Creating PR-level comments for PR#12",
+        "log: Created PR-level comment for suggestion f6e99b77-6122-431e-a6bd-6072deab8699",
+        "log: Successfully created 1 PR-level comments for PR#12"
+      ],
+      "offered": [
+        {
+          "n": 0,
+          "where": "qa2671/instrumentation-client.ts:33-33",
+          "earlierOffered": [
+            "pr-comment-7132185747"
+          ]
+        }
+      ]
+    }
+  },
+  "M7F": {
+    "mappedFiles": [
+      {
+        "filename": "qa2671/attendance.ts",
+        "status": "changed",
+        "patchLength": 661,
+        "previous_filename": null
+      },
+      {
+        "filename": "qa2671/index.ts",
+        "status": "changed",
+        "patchLength": 250,
+        "previous_filename": null
+      },
+      {
+        "filename": "qa2671/instrumentation-client.ts",
+        "status": "renamed",
+        "patchLength": 0,
+        "previous_filename": "qa2671/instrumentation.ts"
+      },
+      {
+        "filename": "qa2671/renamed-and-edited.ts",
+        "status": "renamed",
+        "patchLength": 420,
+        "previous_filename": "qa2671/edited.ts"
+      },
+      {
+        "filename": "qa2671/safe-control.ts",
+        "status": "changed",
+        "patchLength": 198,
+        "previous_filename": null
+      }
+    ],
+    "routing": {
+      "prLevel": [
+        {
+          "label": "kody_rules",
+          "severity": "high",
+          "suggestionContent": "`qa2671/instrumentation-client.ts:19` — QA2671-1 The student session token is logged; remove it.\n\nKody rule violation: [no session tokens in logs](/settings/code-review/global/kody-rules/rule-token?teamId=team-A)",
+          "fullExplanation": "`qa2671/instrumentation-client.ts:19` — QA2671-1 The student session token is logged; remove it.\n\nKody rule violation: [no session tokens in logs](/settings/code-review/global/kody-rules/rule-token?teamId=team-A)",
+          "agentPrompt": "QA2671-1 session token written to telemetry\n\n`qa2671/instrumentation-client.ts:19` — QA2671-1 The student session token is logged; remove it.\n\nKody rule violation: [no session tokens in logs](/settings/code-review/global/kody-rules/rule-token?teamId=team-A)",
+          "customAgent": null,
+          "brokenKodyRulesIds": [
+            "rule-token"
+          ]
+        }
+      ],
+      "validSuggestions": [
+        {
+          "file": "qa2671/renamed-and-edited.ts",
+          "start": 12,
+          "end": 12,
+          "label": "security",
+          "tag": "QA2671-2 s",
+          "customAgent": null
+        }
+      ],
+      "inlineByFile": [
+        {
+          "file": "qa2671/renamed-and-edited.ts",
+          "n": 1
+        }
+      ],
+      "discarded": []
+    },
+    "issueComments": [
+      {
+        "path": {
+          "owner": "kodus",
+          "repo": "claude-athena",
+          "index": 4
+        },
+        "citation": "`qa2671/instrumentation-client.ts:19` — QA2671-1 The student session token is logged; remove it."
+      }
+    ],
+    "saved": [
+      {
+        "deliveryStatus": "sent",
+        "commentId": 901
+      }
+    ],
+    "logs": [
+      "log: Starting PR-level comments creation for PR#4",
+      "log: Creating PR-level comments for PR#4",
+      "log: Created PR-level comment for suggestion e8621fd1-3433-4665-9fa2-21ddd41f5554",
+      "log: Successfully created 1 PR-level comments for PR#4"
+    ]
+  }
+}
