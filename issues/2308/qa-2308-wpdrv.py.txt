@@ -1,0 +1,71 @@
+# Driver for the worker-process harness: control server for the model door + process spawning/SIGKILL + DB reads.
+import json, os, subprocess, threading, time, signal, sys, hashlib
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+WT = os.path.expanduser('~/.kodus-qa-runs/2026-11-24/2308/wt')
+OUT = os.path.expanduser('~/.kodus-qa-runs/2026-11-24/2308/hout')
+MONGO = 'mongodb://127.0.0.1:27399'
+class Ctl:
+    def __init__(s):
+        s.policy = {}; s.events = {}; s.log = []; s.lock = threading.Lock()
+    def set(s, tag, kind, pol): s.policy[(tag, kind)] = pol  # pol: 'ok'|'429'|'timeout'|'hold'
+    def release(s, tag, kind): s.events.setdefault((tag, kind), threading.Event()).set()
+ctl = Ctl()
+def default_out(user):
+    if 'console.log' in user: return {'mechanical': True, 'pattern': 'console\\.log\\s*\\(', 'contextNeed': 'diff-only', 'reason': 'call'}
+    if 'eval' in user: return {'mechanical': True, 'pattern': '\\beval\\s*\\(', 'contextNeed': 'diff-only', 'reason': 'eval'}
+    return {'mechanical': False, 'cosmetic': False, 'contextNeed': 'diff-only', 'reason': 'semantic'}
+class H(BaseHTTPRequestHandler):
+    def log_message(self, *a): pass
+    def do_POST(self):
+        body = json.loads(self.rfile.read(int(self.headers['content-length'])) or b'{}')
+        kind = 'llm' if self.path == '/llm' else 'hook:' + body.get('name', '')
+        tag = body.get('tag'); pol = ctl.policy.get((tag, kind), 'ok')
+        with ctl.lock: ctl.log.append({'t': time.time(), 'kind': kind, 'tag': tag, 'pid': body.get('pid'), 'policy': pol})
+        if pol == 'hold':
+            ctl.events.setdefault((tag, kind), threading.Event()).wait(600)
+            pol = ctl.policy.get((tag, kind + ':after'), 'ok')
+        if pol == 'timeout': time.sleep(3); res = {'status': 'timeout'}
+        elif pol == '429': res = {'status': '429'}
+        else: res = {'status': 'ok', 'out': default_out(body.get('user', '')) if kind == 'llm' else None}
+        data = json.dumps(res).encode()
+        try:
+            self.send_response(200); self.send_header('content-type', 'application/json'); self.send_header('content-length', str(len(data))); self.end_headers(); self.wfile.write(data)
+        except Exception: pass
+srv = ThreadingHTTPServer(('127.0.0.1', 0), H); PORT = srv.server_address[1]
+threading.Thread(target=srv.serve_forever, daemon=True).start()
+EVENTS = f'{OUT}/wp-events.jsonl'
+def spawn(tag, role, **env):
+    e = dict(os.environ, API_NODE_ENV='test', QA2308_CTRL=f'http://127.0.0.1:{PORT}', QA2308_TAG=tag, QA2308_ROLE=role, QA2308_EVENTS=EVENTS, QA2308_DB=env.pop('db', 'qa2308_wp'))
+    for k, v in env.items(): e['QA2308_' + k.upper()] = v if isinstance(v, str) else json.dumps(v)
+    p = subprocess.Popen(['node', 'node_modules/.bin/jest', '--runInBand', '--silent', 'qa2308/wp.spec.ts'], cwd=WT, env=e, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, start_new_session=True)
+    return p
+def events(tag=None):
+    if not os.path.exists(EVENTS): return []
+    ev = [json.loads(l) for l in open(EVENTS) if l.strip()]
+    return [x for x in ev if tag is None or x['tag'] == tag]
+def wait_ev(tag, name, timeout=180):
+    t0 = time.time()
+    while time.time() - t0 < timeout:
+        for x in events(tag):
+            if x['ev'] == name: return x
+        time.sleep(0.2)
+    raise RuntimeError(f'timeout waiting {tag} {name}')
+def mongo(js):
+    r = subprocess.run(['mongosh', '--quiet', MONGO + '/qa2308_wp', '--eval', js], capture_output=True, text=True)
+    lines = [l for l in r.stdout.strip().splitlines() if l.strip()[:1] in '[{']
+    return json.loads(lines[-1]) if lines else r.stdout + r.stderr
+def rule(uuid, org='org-qa2308-wp'):
+    return mongo(f"const d=db.kodyrules.findOne({{organizationId:'{org}'}})||db.kodyRules.findOne({{organizationId:'{org}'}});const r=d&&d.rules.find(x=>x.uuid=='{uuid}');print(JSON.stringify(r?{{uuid:r.uuid,rule:r.rule,examples:r.examples,compileAttempt:r.compileAttempt,contextNeed:r.contextNeed,detector:r.detector||null,status:r.status,title:r.title}}:null))")
+def chash(rule, ex): return hashlib.sha256(f"{rule} {json.dumps(ex if ex is not None else [], separators=(',',':'), ensure_ascii=False)}".encode()).hexdigest()
+def nhash(rule): return hashlib.sha256(f"v2 {rule}".encode()).hexdigest()
+def state(uuid):
+    r = rule(uuid)
+    if not r: return None
+    ca = r.get('compileAttempt') or {}; cn = r.get('contextNeed') or {}
+    return {'rule': r['rule'][-40:], 'attemptHash': (ca.get('sourceHash') or '')[:12], 'attemptedAt': ca.get('attemptedAt'), 'outcome': ca.get('outcome'), 'detector': (r.get('detector') or {}).get('pattern'), 'caCurrent': ca.get('sourceHash') == chash(r['rule'], r.get('examples')), 'cnCurrent': cn.get('source') == 'author' or cn.get('sourceHash') == nhash(r['rule']), 'gateWouldSkip': ca.get('sourceHash') == chash(r['rule'], r.get('examples')) and (cn.get('source') == 'author' or cn.get('sourceHash') == nhash(r['rule']))}
+def finish(p, timeout=240):
+    try: out, _ = p.communicate(timeout=timeout)
+    except subprocess.TimeoutExpired: os.killpg(p.pid, signal.SIGKILL); out, _ = p.communicate()
+    return p.returncode, (out or b'').decode()[-600:]
+def kill(p):
+    os.killpg(p.pid, signal.SIGKILL); p.wait(); return p.returncode
