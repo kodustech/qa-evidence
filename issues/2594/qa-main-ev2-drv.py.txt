@@ -1,0 +1,34 @@
+import subprocess, json, os, time, uuid, signal
+WT='/private/tmp/claude-501/-Users-juniorsartori-Projects-Kody-kodus-ai/666a408e-4306-4597-a44f-d6d962970ed4/scratchpad/2594/wt-merge'
+DIR='/private/tmp/claude-501/-Users-juniorsartori-Projects-Kody-kodus-ai/666a408e-4306-4597-a44f-d6d962970ed4/scratchpad/2594/hw'
+NODE=os.path.expanduser('~/.nvm/versions/node/v22.22.0/bin')
+KEY=open(os.path.join(DIR,'..','cryptokey.local')).read().strip()
+def psql(sql):
+    r=subprocess.run(['docker','exec','qa2594-pg','psql','-U','kodusdev','-d','kodus_db','-tA','-F','\t','-c',sql],capture_output=True,text=True)
+    if r.returncode: raise RuntimeError(r.stderr)
+    return [l.split('\t') for l in r.stdout.strip().splitlines() if l]
+def seed():
+    org,team,ta=str(uuid.uuid4()),str(uuid.uuid4()),str(uuid.uuid4())
+    psql(f"insert into organizations(uuid,name,status) values('{org}','qa2594-h',true)")
+    psql(f"insert into teams(uuid,name,organization_id) values('{team}','qa2594-h','{org}')")
+    psql(f"""insert into team_automations(uuid,"teamUuid") values('{ta}','{team}')""")
+    return org,team,ta
+def env(job, ledger):
+    e=dict(os.environ, PATH=NODE+':'+os.environ['PATH'], QA_JOB=json.dumps(job), QA_LEDGER=ledger, API_CRYPTO_KEY=KEY, API_NODE_ENV='production', API_DATABASE_DISABLE_SSL='true',
+           TS_NODE_PROJECT='tsconfig.json', TS_NODE_TRANSPILE_ONLY='true', API_CLOUD_MODE='true', TZ='UTC')
+    for k in ['DATABASE_URL','API_PG_DB_URL']: e.pop(k,None)
+    return e
+def start(job, ledger, log):
+    return subprocess.Popen([NODE+'/node','-r','ts-node/register','-r','tsconfig-paths/register','qa2594/worker.ts'],cwd=WT,env=env(job,ledger),stdout=open(log,'a'),stderr=subprocess.STDOUT, start_new_session=True)
+def run(job, ledger, log, timeout=180):
+    p=start(job,ledger,log); p.wait(timeout); return p.returncode
+def read(ledger):
+    return [json.loads(l) for l in open(ledger)] if os.path.exists(ledger) else []
+def waitfile(f, timeout=120):
+    t=time.time()
+    while not os.path.exists(f):
+        if time.time()-t>timeout: raise TimeoutError(f)
+        time.sleep(0.2)
+def rows(ta, pr, repo):
+    return psql(f"""select left(uuid::text,8), status, to_char("createdAt",'HH24:MI:SS.MS'), to_char("updatedAt",'HH24:MI:SS.MS'), coalesce("dataExecution"->>'licenseNoticePostedAt','-'), left(coalesce("errorMessage",''),60) from automation_execution where team_automation_id='{ta}' and "repositoryId"='{repo}' and "pullRequestNumber"={pr} order by "createdAt" """)
+def accepted(ledger): return sum(1 for e in read(ledger) if e.get('ev')=='notice-accepted')
