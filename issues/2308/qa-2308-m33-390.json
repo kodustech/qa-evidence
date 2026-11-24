@@ -1,0 +1,38 @@
+{
+ "rule": {
+  "uuid": "45beae84-5231-472b-ab9d-03859e8be827",
+  "severity": "medium",
+  "compileAttempt": {
+   "sourceHash": "afe09275cd68de49793a1c73129a00493b9d6a4ce63b63ebffd6d874fc80271a",
+   "attemptedAt": "2026-11-24T21:00:00.969Z",
+   "outcome": "declined",
+   "declineReason": "not-mechanical",
+   "model": "byok"
+  },
+  "contextNeed": {
+   "need": "full-file",
+   "sourceHash": "f1a1bdbd2c44a4280bf7cc0c5d2eb2587301f87c9ac9287a79275cb48815f4ca",
+   "source": "compiler",
+   "inferredAt": "2026-11-24T21:00:00.845Z",
+   "model": "byok"
+  },
+  "fileScope": null
+ },
+ "obs": [
+  {
+   "t": "2026-11-24T20:59:57.477Z",
+   "end": "2026-11-24T21:00:00.842Z",
+   "trace": "70ff06a33d7891e88df45f806a18e7b5",
+   "level": "DEFAULT",
+   "status": ""
+  }
+ ],
+ "logs": [
+  {
+   "t": "2026-11-24T21:00:00.969Z",
+   "level": "info",
+   "message": "Rule 45beae84-5231-472b-ab9d-03859e8be827 stays semantic (not-mechanical)",
+   "ruleUuid": "45beae84-5231-472b-ab9d-03859e8be827"
+  }
+ ]
+}
