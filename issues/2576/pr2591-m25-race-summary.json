@@ -1,0 +1,68 @@
+[
+ {
+  "round": 1,
+  "row": "PROCESSED|1|2026-11-24 21:23:01.639924|2026-11-24 18:23:01.677",
+  "workers": {
+   "a": {
+    "execute_start": "2026-11-24T21:23:01.626Z",
+    "execute_end": "2026-11-24T21:23:01.685Z",
+    "outcome": [
+     "Unmentioned reply left unanswered: disabled"
+    ],
+    "classifier": 0
+   },
+   "b": {
+    "execute_start": "2026-11-24T21:23:01.626Z",
+    "execute_end": "2026-11-24T21:23:01.665Z",
+    "outcome": [
+     "Comment already claimed by another delivery; skipping"
+    ],
+    "classifier": 0
+   }
+  }
+ },
+ {
+  "round": 2,
+  "row": "PROCESSED|1|2026-11-24 21:23:10.972587|2026-11-24 18:23:10.986",
+  "workers": {
+   "a": {
+    "execute_start": "2026-11-24T21:23:10.968Z",
+    "execute_end": "2026-11-24T21:23:10.992Z",
+    "outcome": [
+     "Unmentioned reply left unanswered: disabled"
+    ],
+    "classifier": 0
+   },
+   "b": {
+    "execute_start": "2026-11-24T21:23:10.967Z",
+    "execute_end": "2026-11-24T21:23:10.982Z",
+    "outcome": [
+     "Comment already claimed by another delivery; skipping"
+    ],
+    "classifier": 0
+   }
+  }
+ },
+ {
+  "round": 3,
+  "row": "PROCESSED|1|2026-11-24 21:23:20.194955|2026-11-24 18:23:20.214",
+  "workers": {
+   "a": {
+    "execute_start": "2026-11-24T21:23:20.190Z",
+    "execute_end": "2026-11-24T21:23:20.209Z",
+    "outcome": [
+     "Comment already claimed by another delivery; skipping"
+    ],
+    "classifier": 0
+   },
+   "b": {
+    "execute_start": "2026-11-24T21:23:20.190Z",
+    "execute_end": "2026-11-24T21:23:20.219Z",
+    "outcome": [
+     "Unmentioned reply left unanswered: disabled"
+    ],
+    "classifier": 0
+   }
+  }
+ }
+]
