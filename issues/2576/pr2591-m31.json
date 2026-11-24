@@ -1,0 +1,31 @@
+{
+ "reactions_4685374675": 0,
+ "reactions_4685494967": 0,
+ "reactions_4685570196": 0,
+ "reactions_4685735990": 0,
+ "reactions_4685761566": 0,
+ "html_4685378734": {
+  "has_visible_marker": false,
+  "len": 4966,
+  "in_reply_to": 4685174009
+ },
+ "html_4685573338": {
+  "has_visible_marker": false,
+  "len": 114,
+  "in_reply_to": 4685172295
+ },
+ "kody_answers": [
+  4685378734,
+  4685499154,
+  4685573338,
+  4685739868,
+  4685765677
+ ],
+ "answers_by_root": {
+  "4685174009": 1,
+  "4685172870": 2,
+  "4685172295": 1,
+  "4685171814": 1
+ },
+ "gitlab_answer_render_visible_marker": false
+}
