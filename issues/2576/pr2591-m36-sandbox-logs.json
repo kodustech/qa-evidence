@@ -1,0 +1,1146 @@
+[
+ {
+  "t": "2026-11-24T19:12:02.995Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:12:03.010Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:12:17.839Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:12:17.864Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:16:01.890Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:16:02.046Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:02.603Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:02.629Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:16.851Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:16.876Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:18.563Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:18.576Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:20.627Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:20.640Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:26.508Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:26.531Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:31.604Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:31.630Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:48.503Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:48.527Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:52.854Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:52.867Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:55.649Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:55.662Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:58.398Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:20:58.413Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:21:01.360Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:21:01.378Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:21:05.635Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:21:05.648Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:24:01.811Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:24:01.910Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:27:22.161Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:27:22.224Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:27:42.526Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:27:42.553Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:28:02.417Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:28:02.492Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:32:02.027Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:32:02.207Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:36:01.197Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:36:01.367Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:36:02.694Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:36:02.724Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:37:39.058Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:37:39.115Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:37:39.898Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:37:39.919Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:37:57.887Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:37:57.917Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:39:27.411Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:39:27.466Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:40:02.493Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:40:02.545Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:44:02.485Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:44:02.575Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:44:09.151Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:44:09.171Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:46:45.179Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:46:45.284Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:46:45.871Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:46:45.892Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:47:15.843Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:47:15.858Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:48:02.377Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:48:02.413Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:51:33.239Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:51:33.323Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:56:02.214Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:56:02.290Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:57:41.092Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:57:41.122Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:59:45.655Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T19:59:45.673Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T20:00:05.441Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T20:00:05.482Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T20:01:38.721Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T20:01:38.774Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T20:03:01.441Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T20:03:01.511Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T20:03:02.094Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T20:03:02.151Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T20:04:02.505Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T20:04:02.564Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T20:05:07.902Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T20:05:08.017Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T20:08:02.187Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ },
+ {
+  "t": "2026-11-24T20:08:02.526Z",
+  "level": "info",
+  "component": "PermissionValidationService",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "md": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  }
+ }
+]
