@@ -1,0 +1,366 @@
+{
+ "M21_kill_before_accept": {
+  "after_kill": {
+   "accepted": 0,
+   "rows": [
+    [
+     "58a47578",
+     "in_progress",
+     "04:35:25.768",
+     "04:35:25.768",
+     "-"
+    ]
+   ],
+   "locks": [
+    [
+     "0"
+    ]
+   ]
+  },
+  "retrigger_immediate": {
+   "accepted": 0,
+   "out": [
+    "Code review already in progress for this PR"
+   ],
+   "warns": [
+    "Code review already in progress for PR#301",
+    "Code review already in progress for PR#301"
+   ],
+   "rows": [
+    [
+     "58a47578",
+     "in_progress",
+     "04:35:25.768",
+     "04:35:25.768",
+     "-"
+    ]
+   ]
+  },
+  "retrigger_after_6min": {
+   "accepted": 1,
+   "rows": [
+    [
+     "58a47578",
+     "in_progress",
+     "04:35:25.768",
+     "04:29:30.200",
+     "-",
+     ""
+    ],
+    [
+     "905aab22",
+     "skipped",
+     "04:35:32.352",
+     "04:35:32.380",
+     "2026-11-24T04:35:32.376Z",
+     "User Not Licensed \u2014 Assign seat to user"
+    ]
+   ]
+  },
+  "next": {
+   "accepted": 1,
+   "rows": [
+    [
+     "58a47578",
+     "in_progress",
+     "04:35:25.768",
+     "04:29:30.200",
+     "-",
+     ""
+    ],
+    [
+     "905aab22",
+     "skipped",
+     "04:35:32.352",
+     "04:35:32.380",
+     "2026-11-24T04:35:32.376Z",
+     "User Not Licensed \u2014 Assign seat to user"
+    ],
+    [
+     "2c7bfd53",
+     "skipped",
+     "04:35:35.907",
+     "04:35:35.930",
+     "-",
+     "User Not Licensed \u2014 Assign seat to user"
+    ]
+   ]
+  },
+  "after_watchdog": {
+   "rows": [
+    [
+     "58a47578",
+     "error",
+     "04:35:25.768",
+     "04:35:39.507",
+     "-",
+     "Code review interrupted \u2014 the review process stopped unexpec"
+    ],
+    [
+     "905aab22",
+     "skipped",
+     "04:35:32.352",
+     "04:35:32.380",
+     "2026-11-24T04:35:32.376Z",
+     "User Not Licensed \u2014 Assign seat to user"
+    ],
+    [
+     "2c7bfd53",
+     "skipped",
+     "04:35:35.907",
+     "04:35:35.930",
+     "-",
+     "User Not Licensed \u2014 Assign seat to user"
+    ]
+   ],
+   "watchdog_logs": [
+    "Found 3 stale in-progress code review executions",
+    "Reaped stale code review execution cc0dadfb-df5a-430f-8bcb-098516a45bf2",
+    "Reaped stale code review execution 316199c7-4e19-4c76-9620-4a8f8df41e5a",
+    "Reaped stale code review execution 58a47578-4a75-43dd-bfff-faac55aefead"
+   ]
+  }
+ },
+ "M21_kill_after_accept_before_final_update": {
+  "after_kill": {
+   "accepted": 1,
+   "rows": [
+    [
+     "eb206a8c",
+     "in_progress",
+     "04:35:43.015",
+     "04:35:43.015",
+     "-"
+    ]
+   ],
+   "locks": [
+    [
+     "0"
+    ]
+   ]
+  },
+  "retrigger_immediate": {
+   "accepted": 1,
+   "out": [
+    "Code review already in progress for this PR"
+   ],
+   "warns": [
+    "Code review already in progress for PR#302",
+    "Code review already in progress for PR#302"
+   ],
+   "rows": [
+    [
+     "eb206a8c",
+     "in_progress",
+     "04:35:43.015",
+     "04:35:43.015",
+     "-"
+    ]
+   ]
+  },
+  "retrigger_after_6min": {
+   "accepted": 2,
+   "rows": [
+    [
+     "eb206a8c",
+     "in_progress",
+     "04:35:43.015",
+     "04:29:47.333",
+     "-",
+     ""
+    ],
+    [
+     "b1f38785",
+     "skipped",
+     "04:35:49.090",
+     "04:35:49.112",
+     "2026-11-24T04:35:49.108Z",
+     "User Not Licensed \u2014 Assign seat to user"
+    ]
+   ]
+  },
+  "next": {
+   "accepted": 2,
+   "rows": [
+    [
+     "eb206a8c",
+     "in_progress",
+     "04:35:43.015",
+     "04:29:47.333",
+     "-",
+     ""
+    ],
+    [
+     "b1f38785",
+     "skipped",
+     "04:35:49.090",
+     "04:35:49.112",
+     "2026-11-24T04:35:49.108Z",
+     "User Not Licensed \u2014 Assign seat to user"
+    ],
+    [
+     "414b9f9a",
+     "skipped",
+     "04:35:52.559",
+     "04:35:52.580",
+     "-",
+     "User Not Licensed \u2014 Assign seat to user"
+    ]
+   ]
+  },
+  "after_watchdog": {
+   "rows": [
+    [
+     "eb206a8c",
+     "error",
+     "04:35:43.015",
+     "04:35:56.131",
+     "-",
+     "Code review interrupted \u2014 the review process stopped unexpec"
+    ],
+    [
+     "b1f38785",
+     "skipped",
+     "04:35:49.090",
+     "04:35:49.112",
+     "2026-11-24T04:35:49.108Z",
+     "User Not Licensed \u2014 Assign seat to user"
+    ],
+    [
+     "414b9f9a",
+     "skipped",
+     "04:35:52.559",
+     "04:35:52.580",
+     "-",
+     "User Not Licensed \u2014 Assign seat to user"
+    ]
+   ],
+   "watchdog_logs": [
+    "Found 1 stale in-progress code review executions",
+    "Reaped stale code review execution eb206a8c-ab94-4867-80e8-59d1d6572af7"
+   ]
+  }
+ },
+ "M21_committed_marker": {
+  "accepted": 1,
+  "rows": [
+   [
+    "001691fa",
+    "skipped",
+    "04:35:59.564",
+    "04:35:59.587",
+    "2026-11-24T04:35:59.584Z",
+    "User Not Licensed \u2014 Assign seat to user"
+   ],
+   [
+    "cbf926a0",
+    "skipped",
+    "04:36:02.918",
+    "04:36:02.936",
+    "-",
+    "User Not Licensed \u2014 Assign seat to user"
+   ]
+  ]
+ },
+ "M21_final_update_fails": {
+  "first": {
+   "accepted": 1,
+   "errors": [
+    "Error updating automation execution with code review"
+   ],
+   "warns": [
+    "User not licensed but company has licenses"
+   ],
+   "out": [
+    "Automation executed successfully"
+   ],
+   "success_log": [
+    "Successfully handled pull request for PR#304"
+   ],
+   "rows": [
+    [
+     "b1f334cf",
+     "in_progress",
+     "04:36:06.382",
+     "04:36:06.382",
+     "-"
+    ]
+   ]
+  },
+  "retrigger_immediate": {
+   "accepted": 1,
+   "rows": [
+    [
+     "b1f334cf",
+     "in_progress",
+     "04:36:06.382",
+     "04:36:06.382",
+     "-"
+    ]
+   ]
+  },
+  "retrigger_after_6min": {
+   "accepted": 2,
+   "rows": [
+    [
+     "b1f334cf",
+     "in_progress",
+     "04:36:06.382",
+     "04:30:11.654",
+     "-",
+     ""
+    ],
+    [
+     "a920dfaa",
+     "skipped",
+     "04:36:13.440",
+     "04:36:13.459",
+     "2026-11-24T04:36:13.455Z",
+     "User Not Licensed \u2014 Assign seat to user"
+    ]
+   ]
+  }
+ },
+ "M21_stagelog_fails": {
+  "first": {
+   "accepted": 1,
+   "errors": [
+    "Error updating automation execution with code review"
+   ],
+   "warns": [
+    "User not licensed but company has licenses"
+   ],
+   "rows": [
+    [
+     "97693374",
+     "skipped",
+     "04:36:17.013",
+     "04:36:17.036",
+     "2026-11-24T04:36:17.033Z",
+     "User Not Licensed \u2014 Assign seat to user"
+    ]
+   ]
+  },
+  "next": {
+   "accepted": 1,
+   "rows": [
+    [
+     "97693374",
+     "skipped",
+     "04:36:17.013",
+     "04:36:17.036",
+     "2026-11-24T04:36:17.033Z",
+     "User Not Licensed \u2014 Assign seat to user"
+    ],
+    [
+     "ae7af311",
+     "skipped",
+     "04:36:20.525",
+     "04:36:20.548",
+     "-",
+     "User Not Licensed \u2014 Assign seat to user"
+    ]
+   ]
+  }
+ }
+}
