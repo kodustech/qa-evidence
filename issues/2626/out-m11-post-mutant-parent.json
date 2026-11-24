@@ -1,0 +1,60 @@
+{
+ "rev": "parent",
+ "mutant": true,
+ "sigkill_at": "2026-11-24T22:13:26.324Z",
+ "A_pid": 71869,
+ "doc_after_claim": {
+  "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:d170f79f-3e83-4ee1-af4b-4dd4d1bd8b3b",
+  "__v": 0,
+  "cleanupAttempts": 0,
+  "consumer": "graph-build",
+  "createdAt": "2026-11-24T22:13:16.243Z",
+  "expiresAt": "2026-11-25T00:13:16.243Z",
+  "killRetryCount": 0,
+  "leaseCount": 0,
+  "organizationId": "11111111-1111-4111-8111-111111111111",
+  "repositoryId": "33333333-3333-4333-8333-333333333333",
+  "state": "READY",
+  "baseBranch": "main",
+  "privilegesDropped": false,
+  "sandboxId": "fake-71869-1-rgl2y",
+  "killAt": "2026-11-24T22:13:16.272Z"
+ },
+ "doc_after_sigkill": {
+  "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:d170f79f-3e83-4ee1-af4b-4dd4d1bd8b3b",
+  "leaseCount": 0,
+  "sandboxId": "fake-71869-1-rgl2y",
+  "state": "READY",
+  "killAt": "2026-11-24T22:13:16.272Z",
+  "cleanupAttempts": 0,
+  "killRetryCount": 0,
+  "expiresAt": "2026-11-25T00:13:16.243Z"
+ },
+ "doc_after_cron": null,
+ "provider": {
+  "fake-71869-1-rgl2y": "killed"
+ },
+ "timeline": [
+  "2026-11-24T22:13:15.138Z pid=71869 A \u00a7 mutant: claimCleanup drops killAt {}",
+  "2026-11-24T22:13:15.138Z pid=71869 A \u00a7 ready {\"actor\": \"A\"}",
+  "2026-11-24T22:13:15.682Z pid=71870 C \u00a7 ready {\"actor\": \"C\"}",
+  "2026-11-24T22:13:16.234Z pid=71875 O \u00a7 ready {\"actor\": \"O\"}",
+  "2026-11-24T22:13:16.243Z pid=71869 A info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:d170f79f-3e83-4ee1-af4b-4dd4d1bd8b3b\" consumer=\"graph-",
+  "2026-11-24T22:13:16.258Z pid=71869 A info SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:d170f79f-3e83-4ee1-af4b-4dd4d1",
+  "2026-11-24T22:13:16.259Z pid=71869 A \u00a7 provider.create.start {\"id\": \"fake-71869-1-rgl2y\"}",
+  "2026-11-24T22:13:16.259Z pid=71869 A \u00a7 provider.create.done {\"id\": \"fake-71869-1-rgl2y\"}",
+  "2026-11-24T22:13:16.268Z pid=71869 A info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:d170f79f-3e83-4ee1-af4b-4dd4d1bd8b3b\" consumer=\"",
+  "2026-11-24T22:13:16.268Z pid=71869 A \u00a7 acquired {\"id\": \"727a445f\", \"actor\": \"A\", \"leaseId\": \"e66628d9-8287-4668-9a35-4df370998c0b\", \"sandboxId\": \"fake-71869-1-rgl2y\", \"waitedMs\": 34}",
+  "2026-11-24T22:13:16.272Z pid=71869 A info SandboxLeaseManager: released leaseId=\"e66628d9-8287-4668-9a35-4df370998c0b\" prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:d170f7",
+  "2026-11-24T22:13:16.277Z pid=71869 A info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T22:13:16.272Z for sandboxId=\"fake-71869-1-rgl2y\"",
+  "2026-11-24T22:13:16.277Z pid=71869 A \u00a7 e2b.setTimeout {\"id\": \"fake-71869-1-rgl2y\", \"ms\": 0}",
+  "2026-11-24T22:13:16.277Z pid=71869 A \u00a7 released {\"id\": \"33150774\", \"actor\": \"A\"}",
+  "2026-11-24T22:13:26.308Z pid=71875 O \u00a7 raw {\"id\": \"1b625bbe\", \"doc\": {\"_id\": \"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:d170f79f-3e83-4ee1-af4b-4dd4d1bd8b3b\", \"__v\": 0, \"cleanupAttempts\": 0, \"consumer\": \"graph-build\", \"createdAt\": \"2026-11-24T22:13:16.243Z\", \"expiresAt\": \"2026-11-25T00:13:16.243Z\", \"kill",
+  "2026-11-24T22:13:26.327Z pid=71875 O \u00a7 doc {\"id\": \"90a5c132\", \"doc\": {\"_id\": \"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:d170f79f-3e83-4ee1-af4b-4dd4d1bd8b3b\", \"leaseCount\": 0, \"sandboxId\": \"fake-71869-1-rgl2y\", \"state\": \"READY\", \"killAt\": \"2026-11-24T22:13:16.272Z\", \"cleanupAttempts\": 0, \"killRetryCount\"",
+  "2026-11-24T22:13:26.357Z pid=71870 C \u00a7 e2b.kill.call {\"id\": \"fake-71869-1-rgl2y\", \"hasKey\": true, \"behavior\": \"ok\"}",
+  "2026-11-24T22:13:26.358Z pid=71870 C \u00a7 e2b.kill.ok {\"id\": \"fake-71869-1-rgl2y\", \"was\": \"running\"}",
+  "2026-11-24T22:13:26.374Z pid=71870 C info [SANDBOX-IDLE-KILL] Killed idle sandbox",
+  "2026-11-24T22:13:26.375Z pid=71870 C \u00a7 cron.done {\"id\": \"ac0d49e8\", \"actor\": \"C\"}",
+  "2026-11-24T22:13:26.376Z pid=71875 O \u00a7 doc {\"id\": \"f9804cc3\", \"doc\": null}"
+ ]
+}
