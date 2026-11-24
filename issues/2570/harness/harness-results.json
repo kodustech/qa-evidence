@@ -1737,6 +1737,21 @@
    }
   ]
  },
+ "base-x1": {
+  "tree": "2570-base",
+  "case": "x1",
+  "result": {
+   "ok": true,
+   "result": {
+    "success": false,
+    "status": "NO_REPOSITORIES"
+   },
+   "logs": [
+    "Failed to list repositories when creating integration"
+   ],
+   "tokenInProcessorMetadata": false
+  }
+ },
  "merge-m12": {
   "tree": "2570-merge",
   "case": "m12",
@@ -1779,6 +1794,504 @@
    "routingLookups": 0,
    "rows": []
   }
+ },
+ "merge-m13-run2": {
+  "tree": "2570-merge",
+  "case": "m13",
+  "result": [
+   {
+    "label": "auth insert fails: first call",
+    "ok": true,
+    "ms": 37,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:28:22.241Z",
+      "mode": "okB",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "14d77a5e-2f6b-4306-82af-0146882e3118",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": null,
+      "auth_status": null,
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": false,
+      "int_created": "2026-11-25T00:28:22.268Z",
+      "auth_updated": null
+     }
+    ]
+   },
+   {
+    "label": "auth insert fails: retry",
+    "ok": true,
+    "ms": 10,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:28:22.427Z",
+      "mode": "okB",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "14d77a5e-2f6b-4306-82af-0146882e3118",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": null,
+      "auth_status": null,
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": false,
+      "int_created": "2026-11-25T00:28:22.268Z",
+      "auth_updated": null
+     }
+    ]
+   },
+   {
+    "label": "auth insert fails: listing after retry",
+    "names": "GET /2.0/user/workspaces failed with 401: {\"error\":{\"message\":\"Unauthorized\"}}",
+    "dcHosts": []
+   },
+   {
+    "label": "integration insert fails: first call",
+    "ok": true,
+    "ms": 9,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:28:22.644Z",
+      "mode": "okB",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": null,
+      "int_status": null,
+      "platform": null,
+      "auth_uuid": "d5a0c8b2-17a5-41f3-bdec-429eb7d35c63",
+      "auth_status": true,
+      "host": "<dc>/okB",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": true,
+      "int_created": null,
+      "auth_updated": "2026-11-25T00:28:22.646Z"
+     }
+    ]
+   },
+   {
+    "label": "integration insert fails: retry",
+    "ok": true,
+    "ms": 9,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:28:22.804Z",
+      "mode": "okB",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": null,
+      "int_status": null,
+      "platform": null,
+      "auth_uuid": "d5a0c8b2-17a5-41f3-bdec-429eb7d35c63",
+      "auth_status": true,
+      "host": "<dc>/okB",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": true,
+      "int_created": null,
+      "auth_updated": "2026-11-25T00:28:22.646Z"
+     },
+     {
+      "int_uuid": "6e8b33c0-91e1-4e8f-aa72-f93e4b7cfe2d",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": "d1491b21-c294-4c19-a326-face7c40d8f6",
+      "auth_status": true,
+      "host": "<dc>/okB",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": true,
+      "int_created": "2026-11-25T00:28:22.810Z",
+      "auth_updated": "2026-11-25T00:28:22.806Z"
+     }
+    ]
+   },
+   {
+    "label": "integration insert fails: listing after retry",
+    "names": [
+     "okB-repo0",
+     "okB-repo1"
+    ],
+    "dcHosts": [
+     "okB"
+    ]
+   },
+   {
+    "label": "auth update fails (existing DC): seed valid DC",
+    "ok": true,
+    "ms": 10,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:28:22.988Z",
+      "mode": "okA",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "fc788903-b842-436f-ba71-1672adf94299",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": "2f305d58-3ce9-4247-b12d-fc5752222aaa",
+      "auth_status": true,
+      "host": "<dc>/okA",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": true,
+      "int_created": "2026-11-25T00:28:22.993Z",
+      "auth_updated": "2026-11-25T00:28:22.990Z"
+     }
+    ]
+   },
+   {
+    "label": "auth update fails (existing DC): first call",
+    "ok": true,
+    "ms": 12,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:28:23.156Z",
+      "mode": "okB",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "fc788903-b842-436f-ba71-1672adf94299",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": "2f305d58-3ce9-4247-b12d-fc5752222aaa",
+      "auth_status": true,
+      "host": "<dc>/okA",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": true,
+      "int_created": "2026-11-25T00:28:22.993Z",
+      "auth_updated": "2026-11-25T00:28:22.990Z"
+     }
+    ]
+   },
+   {
+    "label": "auth update fails (existing DC): retry",
+    "ok": true,
+    "ms": 8,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:28:23.320Z",
+      "mode": "okB",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "fc788903-b842-436f-ba71-1672adf94299",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": "2f305d58-3ce9-4247-b12d-fc5752222aaa",
+      "auth_status": true,
+      "host": "<dc>/okB",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": true,
+      "int_created": "2026-11-25T00:28:22.993Z",
+      "auth_updated": "2026-11-25T00:28:23.324Z"
+     }
+    ]
+   },
+   {
+    "label": "auth update fails (existing DC): listing after retry",
+    "names": [
+     "okB-repo0",
+     "okB-repo1"
+    ],
+    "dcHosts": [
+     "okB"
+    ]
+   },
+   {
+    "label": "integration update fails (existing DC): seed valid DC",
+    "ok": true,
+    "ms": 8,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:28:23.491Z",
+      "mode": "okA",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "19c20243-5955-4497-bb95-8cfa41e835aa",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": "d02894e8-1472-46ac-9400-ec68571ef612",
+      "auth_status": true,
+      "host": "<dc>/okA",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": true,
+      "int_created": "2026-11-25T00:28:23.496Z",
+      "auth_updated": "2026-11-25T00:28:23.493Z"
+     }
+    ]
+   },
+   {
+    "label": "integration update fails (existing DC): first call",
+    "ok": true,
+    "ms": 15,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:28:23.665Z",
+      "mode": "okB",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "19c20243-5955-4497-bb95-8cfa41e835aa",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": "d02894e8-1472-46ac-9400-ec68571ef612",
+      "auth_status": true,
+      "host": "<dc>/okB",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": true,
+      "int_created": "2026-11-25T00:28:23.496Z",
+      "auth_updated": "2026-11-25T00:28:23.672Z"
+     }
+    ]
+   },
+   {
+    "label": "integration update fails (existing DC): retry",
+    "ok": true,
+    "ms": 15,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:28:23.831Z",
+      "mode": "okB",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "19c20243-5955-4497-bb95-8cfa41e835aa",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": "d02894e8-1472-46ac-9400-ec68571ef612",
+      "auth_status": true,
+      "host": "<dc>/okB",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": true,
+      "int_created": "2026-11-25T00:28:23.496Z",
+      "auth_updated": "2026-11-25T00:28:23.841Z"
+     }
+    ]
+   },
+   {
+    "label": "integration update fails (existing DC): listing after retry",
+    "names": [
+     "okB-repo0",
+     "okB-repo1"
+    ],
+    "dcHosts": [
+     "okB"
+    ]
+   },
+   {
+    "label": "socket reset mid-body",
+    "ok": false,
+    "ms": 64,
+    "httpStatus": 400,
+    "name": "BadRequestException",
+    "message": "Error authenticating with Bitbucket Data Center.",
+    "response": {
+     "message": "Error authenticating with Bitbucket Data Center.",
+     "error": "Bad Request",
+     "statusCode": 400
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:28:24.020Z",
+      "mode": "reset",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error authenticating with Data Center token",
+      "service": "BitbucketDataCenterService",
+      "host": "<dc>/reset",
+      "org": "0925b82c-9bde-417a-8cf9-a116e9b29c85",
+      "errMsg": "stream has been aborted"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 0,
+    "rows": []
+   }
+  ]
  },
  "merge-m13": {
   "tree": "2570-merge",
@@ -3453,6 +3966,133 @@
    }
   }
  },
+ "merge-m26": {
+  "tree": "2570-merge",
+  "case": "m26",
+  "result": [
+   {
+    "label": "401",
+    "httpStatus": 400,
+    "logLevels": [
+     "error:undefined: Error authenticating with Data Center token"
+    ],
+    "responseMessage": {
+     "message": "Error authenticating with Bitbucket Data Center.",
+     "error": "Bad Request",
+     "statusCode": 400
+    },
+    "pwInLogs": false,
+    "b64InLogs": true,
+    "pwInResponse": false,
+    "b64InResponse": false
+   },
+   {
+    "label": "html",
+    "httpStatus": 400,
+    "logLevels": [
+     "error:undefined: Error authenticating with Data Center token"
+    ],
+    "responseMessage": {
+     "message": "Error authenticating with Bitbucket Data Center.",
+     "error": "Bad Request",
+     "statusCode": 400
+    },
+    "pwInLogs": false,
+    "b64InLogs": false,
+    "pwInResponse": false,
+    "b64InResponse": false
+   },
+   {
+    "label": "reset",
+    "httpStatus": 400,
+    "logLevels": [
+     "error:undefined: Error authenticating with Data Center token"
+    ],
+    "responseMessage": {
+     "message": "Error authenticating with Bitbucket Data Center.",
+     "error": "Bad Request",
+     "statusCode": 400
+    },
+    "pwInLogs": false,
+    "b64InLogs": true,
+    "pwInResponse": false,
+    "b64InResponse": false
+   },
+   {
+    "label": "dns",
+    "httpStatus": 400,
+    "logLevels": [
+     "error:undefined: Error authenticating with Data Center token"
+    ],
+    "responseMessage": {
+     "message": "Error authenticating with Bitbucket Data Center.",
+     "error": "Bad Request",
+     "statusCode": 400
+    },
+    "pwInLogs": false,
+    "b64InLogs": true,
+    "pwInResponse": false,
+    "b64InResponse": false
+   },
+   {
+    "label": "refused",
+    "httpStatus": 400,
+    "logLevels": [
+     "error:undefined: Error authenticating with Data Center token"
+    ],
+    "responseMessage": {
+     "message": "Error authenticating with Bitbucket Data Center.",
+     "error": "Bad Request",
+     "statusCode": 400
+    },
+    "pwInLogs": false,
+    "b64InLogs": true,
+    "pwInResponse": false,
+    "b64InResponse": false
+   },
+   {
+    "label": "500",
+    "httpStatus": 400,
+    "logLevels": [
+     "error:undefined: Error authenticating with Data Center token"
+    ],
+    "responseMessage": {
+     "message": "Error authenticating with Bitbucket Data Center.",
+     "error": "Bad Request",
+     "statusCode": 400
+    },
+    "pwInLogs": false,
+    "b64InLogs": true,
+    "pwInResponse": false,
+    "b64InResponse": false
+   },
+   {
+    "label": "ok",
+    "httpStatus": 200,
+    "logLevels": [],
+    "pwInLogs": false,
+    "b64InLogs": false,
+    "pwInResponse": false,
+    "b64InResponse": false
+   },
+   {
+    "label": "cloud basic no host",
+    "httpStatus": 400,
+    "logLevels": [
+     "error:undefined: Error to create auth integration"
+    ],
+    "responseMessage": {},
+    "pwInLogs": false,
+    "b64InLogs": false,
+    "pwInResponse": false,
+    "b64InResponse": false
+   },
+   {
+    "label": "cloud token refused (out of PR scope)",
+    "cloudPatInLogs": false
+   }
+  ]
+ },
  "merge-m28": {
   "tree": "2570-merge",
   "case": "m28",
@@ -4872,6 +5512,1082 @@
      "undefined: Error to authenticate with token",
      "undefined: Error to create auth integration"
     ]
+   }
+  ]
+ },
+ "merge-x1": {
+  "tree": "2570-merge",
+  "case": "x1",
+  "result": {
+   "ok": true,
+   "result": {
+    "success": false,
+    "status": "NO_REPOSITORIES"
+   },
+   "logs": [
+    "Failed to list repositories when creating integration"
+   ],
+   "tokenInProcessorMetadata": false
+  }
+ },
+ "rev-R1-m3": {
+  "tree": "2570-merge",
+  "case": "m3",
+  "result": {
+   "a": {
+    "label": "first-time Basic+host via use case",
+    "ok": false,
+    "ms": 16,
+    "httpStatus": 400,
+    "name": "BadRequestException",
+    "message": "Bitbucket Cloud authenticates with a token, not a username and password",
+    "response": {},
+    "dcRequests": [],
+    "cloudRequests": [],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error to create auth integration",
+      "service": "BitbucketCloudService createAuthIntegration",
+      "authMode": "basic",
+      "host": "<dc>/ok",
+      "org": "c75726d0-9964-4e3e-97be-77dbdd029b3c",
+      "errMsg": "Bitbucket Cloud authenticates with a token, not a username and password"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 1,
+    "rows": []
+   },
+   "repoListing": {
+    "ok": false,
+    "names": "GET /2.0/user/workspaces failed with 401: {\"error\":{\"message\":\"Unauthorized\"}}",
+    "dcRequests": [],
+    "cloudRequests": [
+     {
+      "t": "2026-11-24T21:27:50.672Z",
+      "method": "GET",
+      "path": "/2.0/user/workspaces?pagelen=50"
+     }
+    ],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error to instance Bitbucket API",
+      "service": "BitbucketCloudService instanceBitbucketApi",
+      "errMsg": "Invalid \"auth\" option: {\"password\":\"\"}"
+     },
+     {
+      "level": "error",
+      "message": "Error to get repositories",
+      "service": "BitbucketCloudService getRepositories",
+      "errMsg": "GET /2.0/user/workspaces failed with 401: {\"error\":{\"message\":\"Unauthorized\"}}"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 1
+   }
+  }
+ },
+ "rev-R2-m7": {
+  "tree": "2570-merge",
+  "case": "m7",
+  "result": [
+   {
+    "label": "Basic, no host (use case)",
+    "ok": false,
+    "ms": 12,
+    "httpStatus": 400,
+    "name": "BadRequestException",
+    "message": "A token is required to connect Bitbucket Cloud",
+    "response": {},
+    "dcRequests": [],
+    "cloudRequests": [],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error to create auth integration",
+      "service": "BitbucketCloudService createAuthIntegration",
+      "authMode": "basic",
+      "org": "3af653d7-bc2b-434a-ad9c-3976511fd6d8",
+      "errMsg": "A token is required to connect Bitbucket Cloud"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 1,
+    "rows": [],
+    "responseHasPassword": false
+   },
+   {
+    "label": "token mode, no token",
+    "ok": false,
+    "ms": 2,
+    "httpStatus": 400,
+    "name": "BadRequestException",
+    "message": "A token is required to connect Bitbucket Cloud",
+    "response": {},
+    "dcRequests": [],
+    "cloudRequests": [],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error to create auth integration",
+      "service": "BitbucketCloudService createAuthIntegration",
+      "authMode": "token",
+      "org": "7502a88d-34f4-49af-a375-e72c69b61a8c",
+      "errMsg": "A token is required to connect Bitbucket Cloud"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 1,
+    "rows": [],
+    "responseHasPassword": false
+   },
+   {
+    "label": "token mode, token \"\"",
+    "ok": false,
+    "ms": 6,
+    "httpStatus": 400,
+    "name": "BadRequestException",
+    "message": "A token is required to connect Bitbucket Cloud",
+    "response": {},
+    "dcRequests": [],
+    "cloudRequests": [],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error to create auth integration",
+      "service": "BitbucketCloudService createAuthIntegration",
+      "authMode": "token",
+      "org": "6f28524d-4aba-4889-9cf6-3e7e2b083922",
+      "errMsg": "A token is required to connect Bitbucket Cloud"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 1,
+    "rows": [],
+    "responseHasPassword": false
+   },
+   {
+    "label": "absent mode via use case (defaults to oauth)",
+    "ok": false,
+    "ms": 5,
+    "httpStatus": 400,
+    "name": "BadRequestException",
+    "message": "Authenticating on Bitbucket via OAuth not implemented",
+    "response": {},
+    "dcRequests": [],
+    "cloudRequests": [],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error to create auth integration",
+      "service": "BitbucketCloudService createAuthIntegration",
+      "authMode": "oauth",
+      "org": "cf88622d-38e8-44b8-acac-009443be361c",
+      "errMsg": "Authenticating on Bitbucket via OAuth not implemented"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 1,
+    "rows": [],
+    "responseHasPassword": false
+   },
+   {
+    "label": "oauth",
+    "ok": false,
+    "ms": 5,
+    "httpStatus": 400,
+    "name": "BadRequestException",
+    "message": "Authenticating on Bitbucket via OAuth not implemented",
+    "response": {},
+    "dcRequests": [],
+    "cloudRequests": [],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error to create auth integration",
+      "service": "BitbucketCloudService createAuthIntegration",
+      "authMode": "oauth",
+      "org": "0ab941b1-506f-49c2-8a23-1cd773ce7d92",
+      "errMsg": "Authenticating on Bitbucket via OAuth not implemented"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 1,
+    "rows": [],
+    "responseHasPassword": false
+   },
+   {
+    "label": "unknown mode",
+    "ok": false,
+    "ms": 5,
+    "httpStatus": 400,
+    "name": "BadRequestException",
+    "message": "A token is required to connect Bitbucket Cloud",
+    "response": {},
+    "dcRequests": [],
+    "cloudRequests": [],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error to create auth integration",
+      "service": "BitbucketCloudService createAuthIntegration",
+      "authMode": "foo",
+      "org": "f7b61f26-20f0-4495-979e-6428f9379315",
+      "errMsg": "A token is required to connect Bitbucket Cloud"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 1,
+    "rows": [],
+    "responseHasPassword": false
+   },
+   {
+    "label": "absent mode via facade (no use-case default)",
+    "ok": false,
+    "ms": 4,
+    "httpStatus": 400,
+    "name": "BadRequestException",
+    "message": "A token is required to connect Bitbucket Cloud",
+    "response": {},
+    "dcRequests": [],
+    "cloudRequests": [],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error to create auth integration",
+      "service": "BitbucketCloudService createAuthIntegration",
+      "org": "d4ccd3f1-cb8c-4ff3-8189-6d8d96fec836",
+      "errMsg": "A token is required to connect Bitbucket Cloud"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 1,
+    "rows": [],
+    "responseHasPassword": false
+   },
+   {
+    "label": "undefined params via facade",
+    "ok": false,
+    "ms": 2,
+    "httpStatus": 400,
+    "name": "BadRequestException",
+    "message": "A token is required to connect Bitbucket Cloud",
+    "response": {},
+    "dcRequests": [],
+    "cloudRequests": [],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error to create auth integration",
+      "service": "BitbucketCloudService createAuthIntegration",
+      "errMsg": "A token is required to connect Bitbucket Cloud"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 0,
+    "rows": [],
+    "responseHasPassword": false
+   }
+  ]
+ },
+ "rev-R3-m7": {
+  "tree": "2570-merge",
+  "case": "m7",
+  "result": [
+   {
+    "label": "Basic, no host (use case)",
+    "ok": false,
+    "ms": 12,
+    "httpStatus": 400,
+    "name": "BadRequestException",
+    "message": "Bitbucket Cloud authenticates with a token, not a username and password",
+    "response": {},
+    "dcRequests": [],
+    "cloudRequests": [],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error to create auth integration",
+      "service": "BitbucketCloudService createAuthIntegration",
+      "authMode": "basic",
+      "org": "1f9d7e7e-4fa1-4deb-a693-021a11d304ae",
+      "errMsg": "Bitbucket Cloud authenticates with a token, not a username and password"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 1,
+    "rows": [],
+    "responseHasPassword": false
+   },
+   {
+    "label": "token mode, no token",
+    "ok": true,
+    "ms": 2,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 1,
+    "rows": [],
+    "responseHasPassword": false
+   },
+   {
+    "label": "token mode, token \"\"",
+    "ok": true,
+    "ms": 5,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 1,
+    "rows": [],
+    "responseHasPassword": false
+   },
+   {
+    "label": "absent mode via use case (defaults to oauth)",
+    "ok": false,
+    "ms": 4,
+    "httpStatus": 400,
+    "name": "BadRequestException",
+    "message": "Authenticating on Bitbucket via OAuth not implemented",
+    "response": {},
+    "dcRequests": [],
+    "cloudRequests": [],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error to create auth integration",
+      "service": "BitbucketCloudService createAuthIntegration",
+      "authMode": "oauth",
+      "org": "6b27a0e2-667a-424a-85b5-b9001025a1fa",
+      "errMsg": "Authenticating on Bitbucket via OAuth not implemented"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 1,
+    "rows": [],
+    "responseHasPassword": false
+   },
+   {
+    "label": "oauth",
+    "ok": false,
+    "ms": 4,
+    "httpStatus": 400,
+    "name": "BadRequestException",
+    "message": "Authenticating on Bitbucket via OAuth not implemented",
+    "response": {},
+    "dcRequests": [],
+    "cloudRequests": [],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error to create auth integration",
+      "service": "BitbucketCloudService createAuthIntegration",
+      "authMode": "oauth",
+      "org": "cf877c31-dadf-4745-bf2b-4e48d74e0199",
+      "errMsg": "Authenticating on Bitbucket via OAuth not implemented"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 1,
+    "rows": [],
+    "responseHasPassword": false
+   },
+   {
+    "label": "unknown mode",
+    "ok": true,
+    "ms": 5,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 1,
+    "rows": [],
+    "responseHasPassword": false
+   },
+   {
+    "label": "absent mode via facade (no use-case default)",
+    "ok": true,
+    "ms": 3,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 0,
+    "mcpCalls": 1,
+    "telemetryCalls": 0,
+    "routingLookups": 1,
+    "rows": [],
+    "responseHasPassword": false
+   },
+   {
+    "label": "undefined params via facade",
+    "ok": false,
+    "ms": 1,
+    "httpStatus": 400,
+    "name": "BadRequestException",
+    "message": "Cannot read properties of undefined (reading 'organizationAndTeamData')",
+    "response": {},
+    "dcRequests": [],
+    "cloudRequests": [],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error to create auth integration",
+      "service": "BitbucketCloudService createAuthIntegration",
+      "errMsg": "Cannot read properties of undefined (reading 'organizationAndTeamData')"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 0,
+    "rows": [],
+    "responseHasPassword": false
+   }
+  ]
+ },
+ "rev-R4-m4": {
+  "tree": "2570-merge",
+  "case": "m4",
+  "result": [
+   {
+    "label": "basic first-time (nothing stored)",
+    "ok": false,
+    "ms": 17,
+    "httpStatus": 400,
+    "name": "BadRequestException",
+    "message": "Error authenticating with Bitbucket Data Center.",
+    "response": {
+     "message": "Error authenticating with Bitbucket Data Center.",
+     "error": "Bad Request",
+     "statusCode": 400
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:27:57.089Z",
+      "mode": "ok",
+      "method": "GET",
+      "path": "/projects?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error authenticating with Data Center token",
+      "service": "BitbucketDataCenterService",
+      "host": "<dc>/ok",
+      "org": "ae79e7dd-21ca-4a97-aad3-650d2884ed3f",
+      "errMsg": "Request failed with status code 403"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 0,
+    "rows": []
+   },
+   {
+    "label": "basic with a DC integration already stored (parent can reach DC)",
+    "ok": false,
+    "ms": 2,
+    "httpStatus": 400,
+    "name": "BadRequestException",
+    "message": "Error authenticating with Bitbucket Data Center.",
+    "response": {
+     "message": "Error authenticating with Bitbucket Data Center.",
+     "error": "Bad Request",
+     "statusCode": 400
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:27:57.273Z",
+      "mode": "ok",
+      "method": "GET",
+      "path": "/projects?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error authenticating with Data Center token",
+      "service": "BitbucketDataCenterService",
+      "host": "<dc>/ok",
+      "org": "0fdd0663-4df6-4f97-959c-92037d72992f",
+      "errMsg": "Request failed with status code 403"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "3d3f68c8-5acd-4f1c-85b5-f4489e473e6b",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": "63708621-ce88-41ad-8ce4-37517cf547db",
+      "auth_status": true,
+      "host": "<dc>/ok",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": false,
+      "int_created": "2026-11-25T00:27:57.269Z",
+      "auth_updated": "2026-11-25T00:27:57.262Z"
+     }
+    ]
+   },
+   {
+    "label": "pat first-time (nothing stored)",
+    "ok": false,
+    "ms": 6,
+    "httpStatus": 400,
+    "name": "BadRequestException",
+    "message": "Error authenticating with Bitbucket Data Center.",
+    "response": {
+     "message": "Error authenticating with Bitbucket Data Center.",
+     "error": "Bad Request",
+     "statusCode": 400
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:27:57.437Z",
+      "mode": "ok",
+      "method": "GET",
+      "path": "/projects?limit=1",
+      "scheme": "Bearer",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error authenticating with Data Center token",
+      "service": "BitbucketDataCenterService",
+      "host": "<dc>/ok",
+      "org": "43fd5a1b-b1b4-4c91-beac-6024e5d088b2",
+      "errMsg": "Request failed with status code 403"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 0,
+    "rows": []
+   },
+   {
+    "label": "pat with a DC integration already stored (parent can reach DC)",
+    "ok": false,
+    "ms": 6,
+    "httpStatus": 400,
+    "name": "BadRequestException",
+    "message": "Error authenticating with Bitbucket Data Center.",
+    "response": {
+     "message": "Error authenticating with Bitbucket Data Center.",
+     "error": "Bad Request",
+     "statusCode": 400
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:27:57.620Z",
+      "mode": "ok",
+      "method": "GET",
+      "path": "/projects?limit=1",
+      "scheme": "Bearer",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [
+     {
+      "level": "error",
+      "message": "Error authenticating with Data Center token",
+      "service": "BitbucketDataCenterService",
+      "host": "<dc>/ok",
+      "org": "57910adc-3774-4a61-a4cf-85a97d87a204",
+      "errMsg": "Request failed with status code 403"
+     }
+    ],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "9878c556-9138-4564-a0ba-4785f899174c",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": "3112b35e-9e51-4861-bdc8-279e84faa6a3",
+      "auth_status": true,
+      "host": "<dc>/ok",
+      "authMode": "token",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": false,
+      "int_created": "2026-11-25T00:27:57.611Z",
+      "auth_updated": "2026-11-25T00:27:57.604Z"
+     }
+    ]
+   }
+  ]
+ },
+ "rev-R5-m6": {
+  "tree": "2570-merge",
+  "case": "m6",
+  "result": [
+   {
+    "label": "200 non-page: html",
+    "ok": true,
+    "ms": 21,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:27:59.058Z",
+      "mode": "html",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "da5c5c7f-6636-4fb7-b9b4-40cfe7e69b60",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": "0fd13c78-fe39-4590-bedc-7fc906894bc0",
+      "auth_status": true,
+      "host": "<dc>/html",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": true,
+      "int_created": "2026-11-25T00:27:59.070Z",
+      "auth_updated": "2026-11-25T00:27:59.065Z"
+     }
+    ]
+   },
+   {
+    "label": "200 non-page: errjson",
+    "ok": true,
+    "ms": 11,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:27:59.233Z",
+      "mode": "errjson",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "dc37fd11-2bb4-41a3-9778-75d36b6f69e5",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": "1079a9e9-2af7-4263-ae64-e29547e54738",
+      "auth_status": true,
+      "host": "<dc>/errjson",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": true,
+      "int_created": "2026-11-25T00:27:59.239Z",
+      "auth_updated": "2026-11-25T00:27:59.236Z"
+     }
+    ]
+   },
+   {
+    "label": "200 non-page: nullbody",
+    "ok": true,
+    "ms": 21,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:27:59.409Z",
+      "mode": "nullbody",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "56854924-ca9e-4e49-8f84-f3995e76b62f",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": "5fe2e65c-22af-47c7-8c2f-1fa40754af7e",
+      "auth_status": true,
+      "host": "<dc>/nullbody",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": true,
+      "int_created": "2026-11-25T00:27:59.420Z",
+      "auth_updated": "2026-11-25T00:27:59.416Z"
+     }
+    ]
+   },
+   {
+    "label": "200 non-page: vnull",
+    "ok": true,
+    "ms": 21,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:27:59.591Z",
+      "mode": "vnull",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "a9f4c0c6-7314-4c73-a5f2-27f480c38ea8",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": "85f060fd-c91a-4f10-b8b6-50451c1dc08e",
+      "auth_status": true,
+      "host": "<dc>/vnull",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": true,
+      "int_created": "2026-11-25T00:27:59.603Z",
+      "auth_updated": "2026-11-25T00:27:59.598Z"
+     }
+    ]
+   },
+   {
+    "label": "200 non-page: vobj",
+    "ok": true,
+    "ms": 23,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:27:59.774Z",
+      "mode": "vobj",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "3b88555b-f5ab-4392-8475-8ff48e3433a1",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": "36e944fe-ac3f-49a1-bf23-60485d699065",
+      "auth_status": true,
+      "host": "<dc>/vobj",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": true,
+      "int_created": "2026-11-25T00:27:59.789Z",
+      "auth_updated": "2026-11-25T00:27:59.782Z"
+     }
+    ]
+   },
+   {
+    "label": "200 non-page: vstr",
+    "ok": true,
+    "ms": 21,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:27:59.958Z",
+      "mode": "vstr",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "c31916ab-68e5-4e11-bf5b-5742113eeca1",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": "2b82f73c-742e-4f06-8576-32329aba85a7",
+      "auth_status": true,
+      "host": "<dc>/vstr",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": true,
+      "int_created": "2026-11-25T00:27:59.971Z",
+      "auth_updated": "2026-11-25T00:27:59.966Z"
+     }
+    ]
+   },
+   {
+    "label": "200 non-page: redirect",
+    "ok": true,
+    "ms": 21,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:28:00.141Z",
+      "mode": "redirect",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     },
+     {
+      "t": "2026-11-24T21:28:00.147Z",
+      "mode": "html",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "5d4d93e4-f744-4b6f-aa03-6bd8ffd188b7",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": "28deaea6-7140-4da8-ad52-3816986d6bc5",
+      "auth_status": true,
+      "host": "<dc>/redirect",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": true,
+      "int_created": "2026-11-25T00:28:00.156Z",
+      "auth_updated": "2026-11-25T00:28:00.152Z"
+     }
+    ]
+   },
+   {
+    "label": "seed: valid DC connect",
+    "ok": true,
+    "ms": 9,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:28:00.318Z",
+      "mode": "okA",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "62180747-4c58-4354-b549-2b9b1ef58c15",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": "d051b806-f406-4a88-9f52-3e4ad28d8c4d",
+      "auth_status": true,
+      "host": "<dc>/okA",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": true,
+      "int_created": "2026-11-25T00:28:00.323Z",
+      "auth_updated": "2026-11-25T00:28:00.320Z"
+     }
+    ]
+   },
+   {
+    "label": "existing valid integration, then 200 HTML submit",
+    "ok": true,
+    "ms": 7,
+    "result": {
+     "success": true,
+     "status": "SUCCESS"
+    },
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:28:00.478Z",
+      "mode": "html",
+      "method": "GET",
+      "path": "/repos?limit=1",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 1,
+    "mcpCalls": 1,
+    "telemetryCalls": 1,
+    "routingLookups": 0,
+    "rows": [
+     {
+      "int_uuid": "62180747-4c58-4354-b549-2b9b1ef58c15",
+      "int_status": true,
+      "platform": "BITBUCKET",
+      "auth_uuid": "d051b806-f406-4a88-9f52-3e4ad28d8c4d",
+      "auth_status": true,
+      "host": "<dc>/html",
+      "authMode": "basic",
+      "username": "qa2570user",
+      "appPasswordIsPlain": false,
+      "decryptsToSubmitted": true,
+      "int_created": "2026-11-25T00:28:00.323Z",
+      "auth_updated": "2026-11-25T00:28:00.482Z"
+     }
+    ]
+   },
+   {
+    "label": "listing after the refused resubmit",
+    "names": [],
+    "dcRequests": [
+     {
+      "t": "2026-11-24T21:28:00.640Z",
+      "mode": "html",
+      "method": "GET",
+      "path": "/repos?limit=1000&start=0",
+      "scheme": "Basic",
+      "authMatches": true
+     }
+    ],
+    "cloudRequests": [],
+    "logs": [],
+    "auditEvents": 0,
+    "mcpCalls": 0,
+    "telemetryCalls": 0,
+    "routingLookups": 1
    }
   ]
  },
