@@ -1,0 +1,27 @@
+import { buildStack, dtoOf, newDto, proj, writeOut, ruleContextNeedHash, VERSION } from './stack';
+jest.setTimeout(120000);
+const ORG = 'org-qa2308-x1';
+const SEM_EX = [{ snippet: 'await grades.save(g);', isCorrect: false }, { snippet: 'await assertEnrolled(s); await grades.save(g);', isCorrect: true }];
+describe(`qa2308 X1 (${VERSION})`, () => {
+    it('X1: semantic rule whose compile infers a language scope — is contextNeed stored, and does the next unchanged save skip?', async () => {
+        const s = await buildStack('qa2308_x1');
+        s.setScript((user) => ({ mechanical: false, cosmetic: false, extensions: ['.ts', '.js'], contextNeed: 'full-file', reason: 'semantic, ts' }));
+        const runs: any[] = [];
+        for (let trial = 0; trial < 10; trial++) {
+            const r: any = await s.save(ORG, newDto(`qa2308 x1 ${trial}`, `In qa2308/ the grade service ${trial} must check enrollment first.`, SEM_EX)); await s.settle();
+            const r1 = await s.getRule(ORG, r.uuid);
+            // text edit, then two unchanged saves
+            const { compileAttempt, contextNeed, detector, fileScope, ...p } = r1;
+            let c = s.ledger.llm.length; await s.save(ORG, dtoOf(p, { rule: p.rule + ' Reject otherwise.' })); await s.settle(); const editCalls = s.ledger.llm.length - c;
+            const r2 = await s.getRule(ORG, r.uuid);
+            const seq: number[] = [];
+            for (let k = 0; k < 2; k++) { const cur = await s.getRule(ORG, r.uuid); const { compileAttempt: a, contextNeed: b, detector: d, fileScope: f, ...q } = cur; c = s.ledger.llm.length; await s.save(ORG, dtoOf(q)); await s.settle(); seq.push(s.ledger.llm.length - c); }
+            const r3 = await s.getRule(ORG, r.uuid);
+            runs.push({ trial, createCtxCurrent: r1.contextNeed?.sourceHash === ruleContextNeedHash(r1), createFileScope: r1.fileScope?.extensions ?? null, editCalls, afterEditCtxCurrent: r2.contextNeed?.sourceHash === ruleContextNeedHash(r2), afterEditCtx: r2.contextNeed && { need: r2.contextNeed.need, inferredAt: r2.contextNeed.inferredAt }, unchangedSaveCalls: seq, finalCtxCurrent: r3.contextNeed?.sourceHash === ruleContextNeedHash(r3), finalFileScope: r3.fileScope?.extensions ?? null });
+        }
+        const summary = { trials: runs.length, createLostCtx: runs.filter((x) => !x.createCtxCurrent).length, editLostCtx: runs.filter((x) => !x.afterEditCtxCurrent).length, unchangedSavesThatCompiled: runs.reduce((a, x) => a + x.unchangedSaveCalls.reduce((p: number, q: number) => p + q, 0), 0), unchangedSaves: runs.length * 2 };
+        writeOut('X1', { summary, runs });
+        await s.close();
+        console.log(JSON.stringify(summary));
+    });
+});
