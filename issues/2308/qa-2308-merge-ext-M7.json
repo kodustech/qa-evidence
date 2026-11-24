@@ -1,0 +1,50 @@
+{
+ "steps": [
+  {
+   "step": "unchanged save",
+   "calls": 0,
+   "contextNeed": {
+    "need": "full-file",
+    "source": "author",
+    "inferredAt": "2026-11-24T20:54:55.948Z",
+    "model": "author"
+   }
+  },
+  {
+   "step": "text edit (compiler scripted diff-only)",
+   "calls": 1,
+   "contextNeed": {
+    "need": "full-file",
+    "source": "author",
+    "inferredAt": "2026-11-24T20:54:55.948Z",
+    "model": "author"
+   },
+   "compileAttempt": {
+    "sourceHash": "d947ff45bbed409f52035df761e4244d81943418c4eba4bd211ae13aee3d5a57",
+    "attemptedAt": "2026-11-24T20:54:55.991Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   }
+  },
+  {
+   "step": "convert pending → new",
+   "calls": 1,
+   "newUuid": "44940d1a-6872-44a4-b8ec-5aaf23c2e272",
+   "contextNeed": {
+    "need": "full-file",
+    "source": "author",
+    "inferredAt": "2026-11-24T20:54:55.948Z",
+    "model": "author"
+   },
+   "compileAttempt": {
+    "sourceHash": "d947ff45bbed409f52035df761e4244d81943418c4eba4bd211ae13aee3d5a57",
+    "attemptedAt": "2026-11-24T20:54:56.032Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "pendingStatus": "rejected"
+  }
+ ]
+}
