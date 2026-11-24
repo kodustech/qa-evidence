@@ -1,0 +1,107 @@
+[
+ {
+  "timestamp": "2026-11-24T19:36:24.276Z",
+  "level": "info",
+  "message": "Unmentioned reply left unanswered: disabled",
+  "component": "ChatWithKodyFromGitUseCase",
+  "correlationId": "2cdc7acf-355d-440e-a291-aa66eb8d9a26",
+  "correlationIdSynthetic": true,
+  "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+  "executionId": null,
+  "sessionId": null,
+  "metadata": {
+   "component": "ChatWithKodyFromGitUseCase",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "implicitReplySilence": "disabled",
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "repository": "codex-athena",
+   "pullRequestNumber": 1,
+   "commentId": 4685476367,
+   "platformType": "GITHUB",
+   "component": "ChatWithKodyFromGitUseCase",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  },
+  "error": null,
+  "createdAt": "2026-11-24T19:36:24.276Z"
+ },
+ {
+  "timestamp": "2026-11-24T19:36:46.524Z",
+  "level": "info",
+  "message": "Unmentioned reply left unanswered: disabled",
+  "component": "ChatWithKodyFromGitUseCase",
+  "correlationId": "2dbed7bf-3229-4114-8ce8-ebd44a1ef226",
+  "correlationIdSynthetic": true,
+  "tenantId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+  "executionId": null,
+  "sessionId": null,
+  "metadata": {
+   "component": "ChatWithKodyFromGitUseCase",
+   "level": "info",
+   "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+   "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8",
+   "tenantId": "0a010c6e-6636-44b7-a741-a08d546d41c9"
+  },
+  "attributes": {
+   "implicitReplySilence": "disabled",
+   "organizationAndTeamData": {
+    "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+    "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8"
+   },
+   "repository": "codex-athena",
+   "pullRequestNumber": 1,
+   "commentId": 4315000069,
+   "platformType": "GITLAB",
+   "component": "ChatWithKodyFromGitUseCase",
+   "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+   "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8",
+   "originalCorrelationId": null
+  },
+  "error": null,
+  "createdAt": "2026-11-24T19:36:46.524Z"
+ },
+ {
+  "timestamp": "2026-11-24T19:36:57.815Z",
+  "level": "info",
+  "message": "Unmentioned reply left unanswered: disabled",
+  "component": "ChatWithKodyFromGitUseCase",
+  "correlationId": "e7f1e579-9adc-4e0b-865d-59c2d12a2faa",
+  "correlationIdSynthetic": true,
+  "tenantId": "63484f7f-97ad-40f6-92a7-8d26147cbd0d",
+  "executionId": null,
+  "sessionId": null,
+  "metadata": {
+   "component": "ChatWithKodyFromGitUseCase",
+   "level": "info",
+   "organizationId": "63484f7f-97ad-40f6-92a7-8d26147cbd0d",
+   "teamId": "ab9558e8-3687-44fe-abe3-ef6be71022f6",
+   "tenantId": "63484f7f-97ad-40f6-92a7-8d26147cbd0d"
+  },
+  "attributes": {
+   "implicitReplySilence": "disabled",
+   "organizationAndTeamData": {
+    "organizationId": "63484f7f-97ad-40f6-92a7-8d26147cbd0d",
+    "teamId": "ab9558e8-3687-44fe-abe3-ef6be71022f6"
+   },
+   "repository": "codex-athena",
+   "pullRequestNumber": 211,
+   "commentId": 2,
+   "platformType": "AZURE_REPOS",
+   "component": "ChatWithKodyFromGitUseCase",
+   "organizationId": "63484f7f-97ad-40f6-92a7-8d26147cbd0d",
+   "teamId": "ab9558e8-3687-44fe-abe3-ef6be71022f6",
+   "originalCorrelationId": null
+  },
+  "error": null,
+  "createdAt": "2026-11-24T19:36:57.815Z"
+ }
+]
