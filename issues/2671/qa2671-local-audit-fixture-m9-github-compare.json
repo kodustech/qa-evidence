@@ -1,0 +1,109 @@
+{
+ "compare": {
+  "files": [
+   {
+    "filename": "qa2671/index.ts",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "patch": "@@ -1,5 +1,5 @@\n export * from './types';\n export * from './instrumentation-client';\n export * from './renamed-and-edited';\n-export * from './attendance';\n+export * from './school/attendance';\n export * from './safe-control';",
+    "sha": "0d05537345fa5bb23674abe6b9f8fd5675144de9"
+   },
+   {
+    "filename": "qa2671/instrumentation-client.ts",
+    "status": "modified",
+    "additions": 5,
+    "deletions": 0,
+    "changes": 5,
+    "patch": "@@ -29,6 +29,11 @@ export function recordSessionStart(student: Student): TelemetryEvent {\n   return event;\n }\n \n+export function recordSessionEnd(student: Student): void {\n+  console.warn('session end', student.id, student.sessionToken);\n+  events.push({ name: 'session_end', studentId: student.id, at: new Date() });\n+}\n+\n export function flushEvents(): TelemetryEvent[] {\n   return events.splice(0, events.length);\n }",
+    "sha": "1045283e5565a84a3736f9abeb5c6bfb7b68ddcb"
+   },
+   {
+    "filename": "qa2671/school/attendance.ts",
+    "previous_filename": "qa2671/attendance.ts",
+    "status": "renamed",
+    "additions": 0,
+    "deletions": 0,
+    "changes": 0,
+    "sha": "de5776a225f3860b74ff018ddf0001b72a2e5ad6"
+   }
+  ]
+ },
+ "prFiles": [
+  {
+   "filename": "qa2671/attendance.ts",
+   "status": "removed",
+   "additions": 0,
+   "deletions": 11,
+   "changes": 11,
+   "patch": "@@ -1,11 +0,0 @@\n-// Attendance statistics for a class session.\n-export interface AttendanceRecord {\n-  studentId: string;\n-  present: boolean;\n-}\n-\n-export function attendanceRate(records: AttendanceRecord[]): number {\n-  if (records.length === 0) return 0;\n-  const present = records.filter((r) => r.present).length;\n-  return present / records.length;\n-}",
+   "sha": "47080ac0bf40a1184c77d94a343a896a647d5221"
+  },
+  {
+   "filename": "qa2671/index.ts",
+   "status": "modified",
+   "additions": 3,
+   "deletions": 3,
+   "changes": 6,
+   "patch": "@@ -1,5 +1,5 @@\n export * from './types';\n-export * from './instrumentation';\n-export * from './edited';\n-export * from './attendance';\n+export * from './instrumentation-client';\n+export * from './renamed-and-edited';\n+export * from './school/attendance';\n export * from './safe-control';",
+   "sha": "0d05537345fa5bb23674abe6b9f8fd5675144de9"
+  },
+  {
+   "filename": "qa2671/instrumentation-client.ts",
+   "previous_filename": "qa2671/instrumentation.ts",
+   "status": "renamed",
+   "additions": 5,
+   "deletions": 0,
+   "changes": 5,
+   "patch": "@@ -29,6 +29,11 @@ export function recordSessionStart(student: Student): TelemetryEvent {\n   return event;\n }\n \n+export function recordSessionEnd(student: Student): void {\n+  console.warn('session end', student.id, student.sessionToken);\n+  events.push({ name: 'session_end', studentId: student.id, at: new Date() });\n+}\n+\n export function flushEvents(): TelemetryEvent[] {\n   return events.splice(0, events.length);\n }",
+   "sha": "1045283e5565a84a3736f9abeb5c6bfb7b68ddcb"
+  },
+  {
+   "filename": "qa2671/renamed-and-edited.ts",
+   "previous_filename": "qa2671/edited.ts",
+   "status": "renamed",
+   "additions": 4,
+   "deletions": 1,
+   "changes": 5,
+   "patch": "@@ -7,7 +7,10 @@ export function averageGrade(grades: number[]): number {\n }\n \n export function describeStudent(student: Student): string {\n-  return `${student.name} (${student.id})`;\n+  const label = `${student.name} (${student.id})`;\n+  console.info('describing student', label);\n+  console.info('student auth', student.sessionToken);\n+  return label;\n }\n \n export function passingGrades(grades: number[]): number[] {",
+   "sha": "ab257b46c7aea8f275aff56bd2b4e269cb6d26e5"
+  },
+  {
+   "filename": "qa2671/safe-control.ts",
+   "status": "modified",
+   "additions": 1,
+   "deletions": 1,
+   "changes": 2,
+   "patch": "@@ -1,4 +1,4 @@\n // Formatting helpers for the class roster.\n export function rosterTitle(className: string): string {\n-  return `Roster - ${className}`;\n+  return `Roster - ${className.trim()}`;\n }",
+   "sha": "41ac0ff07eb480d22d04fb6251416edf7ab92211"
+  },
+  {
+   "filename": "qa2671/school/attendance.ts",
+   "status": "added",
+   "additions": 23,
+   "deletions": 0,
+   "changes": 23,
+   "patch": "@@ -0,0 +1,23 @@\n+// Attendance statistics for a class session.\n+export interface AttendanceRecord {\n+  studentId: string;\n+  present: boolean;\n+}\n+\n+export function attendanceRate(records: AttendanceRecord[]): number {\n+  if (records.length === 0) return 0;\n+  const present = records.filter((r) => r.present).length;\n+  return present / records.length;\n+}\n+\n+export function absenteeShare(records: AttendanceRecord[], expected: number): number {\n+  const absent = records.filter((r) => !r.present).length;\n+  // students that never checked in count as absent too\n+  const missing = expected - records.length;\n+  return (absent + missing) / expected;\n+}\n+\n+export function lastAbsentee(records: AttendanceRecord[]): string {\n+  const absentees = records.filter((r) => !r.present);\n+  return absentees[absentees.length].studentId;\n+}",
+   "sha": "de5776a225f3860b74ff018ddf0001b72a2e5ad6"
+  }
+ ],
+ "commits": [
+  {
+   "sha": "e0c88e3a15bd254e4d00e9534abbef3bd0007d97",
+   "commit": {
+    "author": {
+     "date": "2026-11-24T12:52:40Z"
+    }
+   }
+  },
+  {
+   "sha": "320ed78d8dab936c3fb3e389aeaa39ffb78ce47a",
+   "commit": {
+    "author": {
+     "date": "2026-11-24T18:12:31Z"
+    }
+   }
+  }
+ ]
+}
