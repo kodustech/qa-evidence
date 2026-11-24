@@ -1,0 +1,139 @@
+{
+ "org": "jr-claude-github",
+ "from": "2026-11-24T18:41:39Z",
+ "to": "2026-11-24T18:47:12Z",
+ "rules": [
+  {
+   "uuid": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2",
+   "title": "qa2308 grades require enrollment",
+   "status": "active",
+   "severity": "medium",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "cb9f621ec86a4c8f21d15f43ba3ecdd755cfaf075b0170d54d26ad43bafbae53",
+    "attemptedAt": "2026-11-24T18:41:59.802Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical"
+   },
+   "cn": {
+    "need": "full-file",
+    "source": "compiler",
+    "sourceHash": "39a27257e5a71252c125de0172988731b4a569f5e60fcc2f4a4f8f53865471c6",
+    "inferredAt": "2026-11-24T18:41:59.789Z"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "cnCurrent": true,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "In qa2308/, a service that records a grade must check that the student is enrolled in the course first."
+  },
+  {
+   "uuid": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "title": "qa2308 no console.log",
+   "status": "active",
+   "severity": "medium",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "68d724ff77fb2d4bea32128ed7b28773ae9ebef6b2180605b8477ebdace5d7a4",
+    "attemptedAt": "2026-11-24T18:42:23.142Z",
+    "outcome": "compiled",
+    "declineReason": null
+   },
+   "cn": {
+    "need": "diff-only",
+    "source": "compiler",
+    "sourceHash": "2e53a6765badc5614a76b5d153c553a1a6c516bdbb49b037d056ef776b0214dc",
+    "inferredAt": "2026-11-24T18:42:23.124Z"
+   },
+   "detector": "console\\.log\\s*\\(",
+   "fileScope": null,
+   "caCurrent": true,
+   "cnCurrent": true,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "Do not call console.log in TypeScript files under qa2308/; use the injected logger."
+  }
+ ],
+ "compilerObs": [
+  {
+   "t": "2026-11-24T18:41:55.365Z",
+   "end": "2026-11-24T18:41:59.787Z",
+   "trace": "b80e565f151d481fef3fce84ced82c69",
+   "level": "DEFAULT",
+   "status": ""
+  },
+  {
+   "t": "2026-11-24T18:42:21.046Z",
+   "end": "2026-11-24T18:42:23.121Z",
+   "trace": "f2ae29c347bf4f72ad00584e16cd81f8",
+   "level": "DEFAULT",
+   "status": ""
+  }
+ ],
+ "compilerLogs": [
+  {
+   "t": "2026-11-24T18:41:59.802Z",
+   "level": "info",
+   "message": "Rule f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2 stays semantic (not-mechanical)",
+   "ruleUuid": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2"
+  },
+  {
+   "t": "2026-11-24T18:42:23.142Z",
+   "level": "info",
+   "message": "Compiled T0 detector for rule 6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "ruleUuid": "6db8d934-1487-45fe-b4f8-2666b89662b8"
+  }
+ ],
+ "saveLogs": [
+  {
+   "t": "2026-11-24T18:41:55.356Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T18:41:56.626Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T18:42:21.040Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T18:42:22.150Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "org": "unknown"
+  }
+ ]
+}
