@@ -1,0 +1,40 @@
+2026-11-24 04:40:24.711 UTC [899] LOG:  execute <unnamed>: SELECT 1 AS "row_exists" FROM (SELECT 1 AS dummy_column) "dummy_table" WHERE EXISTS (SELECT 1 FROM "automation_execution" "automation_execution" WHERE "automation_execution"."team_automation_id" = $1 AND "automation_execution"."repositoryId" = $2 AND "automation_execution"."pullRequestNumber" = $3 AND "automation_execution"."dataExecution"
+2026-11-24 04:40:24.711 UTC [899] DETAIL:  parameters: $1 = 'b11f4286-644c-474a-911e-3c1ab656bd75', $2 = '9200000001', $3 = '2', $4 = 'licenseNoticePostedAt'
+2026-11-24 04:40:24.712 UTC [899] LOG:  execute <unnamed>: SELECT 1 AS "row_exists" FROM (SELECT 1 AS dummy_column) "dummy_table" WHERE EXISTS (SELECT 1 FROM "automation_execution" "automation_execution" WHERE "automation_execution"."team_automation_id" = $1 AND "automation_execution"."repositoryId" = $2 AND "automation_execution"."pullRequestNumber" = $3 AND "automation_execution"."dataExecution"
+2026-11-24 04:40:24.712 UTC [899] DETAIL:  parameters: $1 = '9f6e5dc8-b2f2-41ca-a4b1-2425d1abb8bd', $2 = '9200000002', $3 = '2', $4 = 'licenseNoticePostedAt'
+2026-11-24 04:40:24.713 UTC [899] LOG:  execute <unnamed>: SELECT 1 AS "row_exists" FROM (SELECT 1 AS dummy_column) "dummy_table" WHERE EXISTS (SELECT 1 FROM "automation_execution" "automation_execution" WHERE "automation_execution"."team_automation_id" = $1 AND "automation_execution"."repositoryId" = $2 AND "automation_execution"."pullRequestNumber" = $3 AND "automation_execution"."dataExecution"
+2026-11-24 04:40:24.713 UTC [899] DETAIL:  parameters: $1 = '9f6e5dc8-b2f2-41ca-a4b1-2425d1abb8bd', $2 = '9200000001', $3 = '3', $4 = 'licenseNoticePostedAt'
+2026-11-24 04:40:24.715 UTC [899] LOG:  execute <unnamed>: SELECT 1 AS "row_exists" FROM (SELECT 1 AS dummy_column) "dummy_table" WHERE EXISTS (SELECT 1 FROM "automation_execution" "automation_execution" WHERE "automation_execution"."team_automation_id" = $1 AND "automation_execution"."repositoryId" = $2 AND "automation_execution"."pullRequestNumber" = $3 AND "automation_execution"."dataExecution"
+2026-11-24 04:40:24.715 UTC [899] DETAIL:  parameters: $1 = '9f6e5dc8-b2f2-41ca-a4b1-2425d1abb8bd', $2 = '9200000001', $3 = '99', $4 = 'licenseNoticePostedAt'
+2026-11-24 04:40:24.716 UTC [899] LOG:  execute <unnamed>: DELETE FROM automation_execution WHERE team_automation_id = ANY($1::uuid[])
+2026-11-24 04:40:24.716 UTC [899] DETAIL:  parameters: $1 = '{9f6e5dc8-b2f2-41ca-a4b1-2425d1abb8bd,b11f4286-644c-474a-911e-3c1ab656bd75}'
+2026-11-24 04:40:31.954 UTC [912] LOG:  execute <unnamed>: INSERT INTO organizations (uuid, name) VALUES ($1, 'it-data-key-org')
+2026-11-24 04:40:31.954 UTC [912] DETAIL:  parameters: $1 = '4b143ae2-3f2a-4e33-9d4e-81571148bd8c'
+2026-11-24 04:40:31.960 UTC [912] LOG:  execute <unnamed>: INSERT INTO teams (uuid, name, organization_id) VALUES ($1, 'it-data-key-team', $2)
+2026-11-24 04:40:31.960 UTC [912] DETAIL:  parameters: $1 = '91308b2e-fdf8-49f1-a58e-57f44b1603ef', $2 = '4b143ae2-3f2a-4e33-9d4e-81571148bd8c'
+2026-11-24 04:40:31.970 UTC [912] LOG:  execute <unnamed>: INSERT INTO automation_execution
+	                    (uuid, "createdAt", "updatedAt", status, "dataExecution",
+2026-11-24 04:40:31.974 UTC [912] LOG:  execute <unnamed>: INSERT INTO automation_execution
+	                    (uuid, "createdAt", "updatedAt", status, "dataExecution",
+2026-11-24 04:40:31.976 UTC [912] LOG:  execute <unnamed>: INSERT INTO automation_execution
+	                    (uuid, "createdAt", "updatedAt", status, "dataExecution",
+2026-11-24 04:40:31.979 UTC [912] LOG:  execute <unnamed>: INSERT INTO automation_execution
+	                    (uuid, "createdAt", "updatedAt", status, "dataExecution",
+2026-11-24 04:40:31.983 UTC [912] LOG:  execute <unnamed>: INSERT INTO automation_execution
+	                    (uuid, "createdAt", "updatedAt", status, "dataExecution",
+2026-11-24 04:40:31.987 UTC [912] LOG:  execute <unnamed>: INSERT INTO automation_execution
+	                    (uuid, "createdAt", "updatedAt", status, "dataExecution",
+2026-11-24 04:40:31.993 UTC [912] LOG:  execute <unnamed>: SELECT 1 AS "row_exists" FROM (SELECT 1 AS dummy_column) "dummy_table" WHERE EXISTS (SELECT 1 FROM "automation_execution" "automation_execution" WHERE "automation_execution"."team_automation_id" = $1 AND "automation_execution"."repositoryId" = $2 AND "automation_execution"."pullRequestNumber" = $3 AND "automation_execution"."dataExecution"
+2026-11-24 04:40:31.993 UTC [912] DETAIL:  parameters: $1 = '08bcac72-8f51-4baa-8a0a-8166070f9e9f', $2 = '9200000001', $3 = '1', $4 = 'licenseNoticePostedAt'
+2026-11-24 04:40:31.995 UTC [912] LOG:  execute <unnamed>: SELECT 1 AS "row_exists" FROM (SELECT 1 AS dummy_column) "dummy_table" WHERE EXISTS (SELECT 1 FROM "automation_execution" "automation_execution" WHERE "automation_execution"."team_automation_id" = $1 AND "automation_execution"."repositoryId" = $2 AND "automation_execution"."pullRequestNumber" = $3 AND "automation_execution"."dataExecution"
+2026-11-24 04:40:31.995 UTC [912] DETAIL:  parameters: $1 = '08bcac72-8f51-4baa-8a0a-8166070f9e9f', $2 = '9200000001', $3 = '2', $4 = 'licenseNoticePostedAt'
+2026-11-24 04:40:31.997 UTC [912] LOG:  execute <unnamed>: SELECT 1 AS "row_exists" FROM (SELECT 1 AS dummy_column) "dummy_table" WHERE EXISTS (SELECT 1 FROM "automation_execution" "automation_execution" WHERE "automation_execution"."team_automation_id" = $1 AND "automation_execution"."repositoryId" = $2 AND "automation_execution"."pullRequestNumber" = $3 AND "automation_execution"."dataExecution"
+2026-11-24 04:40:31.997 UTC [912] DETAIL:  parameters: $1 = 'a4b2ec4a-1ad8-4fed-be22-42ce5de082c9', $2 = '9200000001', $3 = '2', $4 = 'licenseNoticePostedAt'
+2026-11-24 04:40:31.999 UTC [912] LOG:  execute <unnamed>: SELECT 1 AS "row_exists" FROM (SELECT 1 AS dummy_column) "dummy_table" WHERE EXISTS (SELECT 1 FROM "automation_execution" "automation_execution" WHERE "automation_execution"."team_automation_id" = $1 AND "automation_execution"."repositoryId" = $2 AND "automation_execution"."pullRequestNumber" = $3 AND "automation_execution"."dataExecution"
+2026-11-24 04:40:31.999 UTC [912] DETAIL:  parameters: $1 = '08bcac72-8f51-4baa-8a0a-8166070f9e9f', $2 = '9200000002', $3 = '2', $4 = 'licenseNoticePostedAt'
+2026-11-24 04:40:32.001 UTC [912] LOG:  execute <unnamed>: SELECT 1 AS "row_exists" FROM (SELECT 1 AS dummy_column) "dummy_table" WHERE EXISTS (SELECT 1 FROM "automation_execution" "automation_execution" WHERE "automation_execution"."team_automation_id" = $1 AND "automation_execution"."repositoryId" = $2 AND "automation_execution"."pullRequestNumber" = $3 AND "automation_execution"."dataExecution"
+2026-11-24 04:40:32.001 UTC [912] DETAIL:  parameters: $1 = '08bcac72-8f51-4baa-8a0a-8166070f9e9f', $2 = '9200000001', $3 = '3', $4 = 'licenseNoticePostedAt'
+2026-11-24 04:40:32.002 UTC [912] LOG:  execute <unnamed>: SELECT 1 AS "row_exists" FROM (SELECT 1 AS dummy_column) "dummy_table" WHERE EXISTS (SELECT 1 FROM "automation_execution" "automation_execution" WHERE "automation_execution"."team_automation_id" = $1 AND "automation_execution"."repositoryId" = $2 AND "automation_execution"."pullRequestNumber" = $3 AND "automation_execution"."dataExecution"
+2026-11-24 04:40:32.002 UTC [912] DETAIL:  parameters: $1 = '08bcac72-8f51-4baa-8a0a-8166070f9e9f', $2 = '9200000001', $3 = '99', $4 = 'licenseNoticePostedAt'
+2026-11-24 04:40:32.003 UTC [912] LOG:  execute <unnamed>: DELETE FROM automation_execution WHERE team_automation_id = ANY($1::uuid[])
+2026-11-24 04:40:32.003 UTC [912] DETAIL:  parameters: $1 = '{08bcac72-8f51-4baa-8a0a-8166070f9e9f,a4b2ec4a-1ad8-4fed-be22-42ce5de082c9}'
