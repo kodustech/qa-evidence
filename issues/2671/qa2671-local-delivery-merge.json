@@ -1,0 +1,653 @@
+{
+  "M16": {
+    "30-19": {
+      "start": 19,
+      "end": 30,
+      "built": {
+        "start_line": 19,
+        "line": 30,
+        "side": "RIGHT"
+      },
+      "err": null,
+      "inputUnchanged": true
+    },
+    "19-30": {
+      "start": 19,
+      "end": 30,
+      "built": {
+        "start_line": 19,
+        "line": 30,
+        "side": "RIGHT"
+      },
+      "err": null,
+      "inputUnchanged": true
+    },
+    "120-100": {
+      "end": 100,
+      "built": {
+        "line": 100,
+        "side": "RIGHT"
+      },
+      "err": null,
+      "inputUnchanged": true
+    },
+    "140-120": {
+      "end": 120,
+      "built": {
+        "line": 120,
+        "side": "RIGHT"
+      },
+      "err": null,
+      "inputUnchanged": true
+    },
+    "120-140": {
+      "end": 120,
+      "built": {
+        "line": 120,
+        "side": "RIGHT"
+      },
+      "err": null,
+      "inputUnchanged": true
+    },
+    "180-120": {
+      "end": 120,
+      "built": {
+        "line": 120,
+        "side": "RIGHT"
+      },
+      "err": null,
+      "inputUnchanged": true
+    },
+    "19-19": {
+      "end": 19,
+      "built": {
+        "line": 19,
+        "side": "RIGHT"
+      },
+      "err": null,
+      "inputUnchanged": true
+    },
+    "undefined-19": {
+      "end": 19,
+      "built": {
+        "line": 19,
+        "side": "RIGHT"
+      },
+      "err": null,
+      "inputUnchanged": true
+    },
+    "19-undefined": {
+      "end": 19,
+      "built": {
+        "line": 19,
+        "side": "RIGHT"
+      },
+      "err": null,
+      "inputUnchanged": true
+    },
+    "undefined-undefined": {
+      "built": {
+        "side": "RIGHT"
+      },
+      "err": null,
+      "inputUnchanged": true
+    }
+  },
+  "M17": {
+    "19-32": {
+      "util": {
+        "start": 19,
+        "end": 32
+      },
+      "stage": [
+        {
+          "tag": "QA2671 19-32",
+          "start_line": 19,
+          "line": 32,
+          "status": "sent"
+        }
+      ]
+    },
+    "32-19": {
+      "util": {
+        "start": 19,
+        "end": 32
+      },
+      "stage": [
+        {
+          "tag": "QA2671 32-19",
+          "start_line": 19,
+          "line": 32,
+          "status": "sent"
+        }
+      ]
+    },
+    "19-33": {
+      "util": {
+        "start": 19,
+        "end": 33
+      },
+      "stage": [
+        {
+          "tag": "QA2671 19-33",
+          "start_line": 19,
+          "line": 33,
+          "status": "sent"
+        }
+      ]
+    },
+    "33-19": {
+      "util": {
+        "start": 19,
+        "end": 33
+      },
+      "stage": [
+        {
+          "tag": "QA2671 33-19",
+          "start_line": 19,
+          "line": 33,
+          "status": "sent"
+        }
+      ]
+    },
+    "19-34": {
+      "util": {
+        "end": 19
+      },
+      "stage": [
+        {
+          "tag": "QA2671 19-34",
+          "line": 19,
+          "status": "sent"
+        }
+      ]
+    },
+    "34-19": {
+      "util": {
+        "end": 19
+      },
+      "stage": [
+        {
+          "tag": "QA2671 34-19",
+          "line": 19,
+          "status": "sent"
+        }
+      ]
+    },
+    "120-180": {
+      "util": {
+        "end": 120
+      },
+      "stage": [
+        {
+          "tag": "QA2671 120-180",
+          "line": 120,
+          "status": "sent"
+        }
+      ]
+    },
+    "180-120": {
+      "util": {
+        "end": 120
+      },
+      "stage": [
+        {
+          "tag": "QA2671 180-120",
+          "line": 120,
+          "status": "sent"
+        }
+      ]
+    },
+    "19-19": {
+      "util": {
+        "end": 19
+      },
+      "stage": [
+        {
+          "tag": "QA2671 19-19",
+          "line": 19,
+          "status": "sent"
+        }
+      ]
+    },
+    "undefined-19": {
+      "util": {
+        "end": 19
+      },
+      "stage": [
+        {
+          "tag": "QA2671 undefined-19",
+          "line": 19,
+          "status": "sent"
+        }
+      ]
+    },
+    "_githubPosts": [
+      {
+        "path": "qa2671/b.ts",
+        "start_line": 19,
+        "line": 32,
+        "side": "RIGHT",
+        "start_side": "RIGHT",
+        "commit_id": "head-sha"
+      },
+      {
+        "path": "qa2671/b.ts",
+        "start_line": 19,
+        "line": 32,
+        "side": "RIGHT",
+        "start_side": "RIGHT",
+        "commit_id": "head-sha"
+      },
+      {
+        "path": "qa2671/b.ts",
+        "start_line": 19,
+        "line": 33,
+        "side": "RIGHT",
+        "start_side": "RIGHT",
+        "commit_id": "head-sha"
+      },
+      {
+        "path": "qa2671/b.ts",
+        "start_line": 19,
+        "line": 33,
+        "side": "RIGHT",
+        "start_side": "RIGHT",
+        "commit_id": "head-sha"
+      },
+      {
+        "path": "qa2671/b.ts",
+        "line": 19,
+        "side": "RIGHT",
+        "start_side": "RIGHT",
+        "commit_id": "head-sha"
+      },
+      {
+        "path": "qa2671/b.ts",
+        "line": 19,
+        "side": "RIGHT",
+        "start_side": "RIGHT",
+        "commit_id": "head-sha"
+      },
+      {
+        "path": "qa2671/b.ts",
+        "line": 19,
+        "side": "RIGHT",
+        "start_side": "RIGHT",
+        "commit_id": "head-sha"
+      },
+      {
+        "path": "qa2671/b.ts",
+        "line": 19,
+        "side": "RIGHT",
+        "start_side": "RIGHT",
+        "commit_id": "head-sha"
+      },
+      {
+        "path": "qa2671/report.ts",
+        "line": 120,
+        "side": "RIGHT",
+        "start_side": "RIGHT",
+        "commit_id": "head-sha"
+      },
+      {
+        "path": "qa2671/report.ts",
+        "line": 120,
+        "side": "RIGHT",
+        "start_side": "RIGHT",
+        "commit_id": "head-sha"
+      }
+    ]
+  },
+  "M21": {
+    "posts": [
+      {
+        "owner": "o",
+        "repo": "kodus/claude-athena",
+        "pull_number": 7,
+        "commit_id": "head-sha",
+        "path": "qa2671/attendance.ts",
+        "start_line": 19,
+        "line": 30,
+        "side": "RIGHT",
+        "start_side": "RIGHT"
+      },
+      {
+        "owner": "o",
+        "repo": "kodus/claude-athena",
+        "pull_number": 7,
+        "commit_id": "head-sha",
+        "path": "qa2671/attendance.ts",
+        "start_line": 19,
+        "line": 30,
+        "side": "RIGHT",
+        "start_side": "RIGHT"
+      }
+    ],
+    "lineComments": [
+      {
+        "tag": "QA2671 30-19",
+        "start_line": 19,
+        "line": 30,
+        "status": "sent"
+      },
+      {
+        "tag": "QA2671 19-30",
+        "start_line": 19,
+        "line": 30,
+        "status": "sent"
+      }
+    ]
+  },
+  "M22": {
+    "fb_30_19_frozenCtx": {
+      "posts": [
+        {
+          "path": "qa2671/attendance.ts",
+          "start_line": 20,
+          "line": 22
+        }
+      ],
+      "lineComments": [],
+      "errors": [
+        "error: Error creating line comment for PR#7 :: Forbidden",
+        "error: Failed to create line comments for PR#7 :: Cannot assign to read only property 'priorityStatus' of object '#<Object>'",
+        "error: Error when trying to create line comments for PR#7 :: Cannot assign to read only property 'priorityStatus' of object '#<Object>'"
+      ]
+    },
+    "fb_30_19_plainCtx": {
+      "posts": [
+        {
+          "path": "qa2671/attendance.ts",
+          "start_line": 20,
+          "line": 22
+        },
+        {
+          "path": "qa2671/attendance.ts",
+          "start_line": 19,
+          "line": 30
+        }
+      ],
+      "lineComments": [
+        {
+          "tag": "QA2671 20-22",
+          "start_line": 20,
+          "line": 22,
+          "status": "replaced"
+        },
+        {
+          "tag": "QA2671 30-19",
+          "start_line": 19,
+          "line": 30,
+          "status": "sent"
+        }
+      ],
+      "errors": [
+        "error: Error creating line comment for PR#7 :: Forbidden",
+        "log: Attempting fallback suggestion for PR#7",
+        "log: Fallback suggestion commented successfully for PR#7"
+      ]
+    },
+    "fb_180_120_frozenCtx": {
+      "posts": [
+        {
+          "path": "qa2671/attendance.ts",
+          "start_line": 20,
+          "line": 22
+        }
+      ],
+      "lineComments": [],
+      "errors": [
+        "error: Error creating line comment for PR#7 :: Forbidden",
+        "error: Failed to create line comments for PR#7 :: Cannot assign to read only property 'priorityStatus' of object '#<Object>'",
+        "error: Error when trying to create line comments for PR#7 :: Cannot assign to read only property 'priorityStatus' of object '#<Object>'"
+      ]
+    },
+    "fb_180_120_plainCtx": {
+      "posts": [
+        {
+          "path": "qa2671/attendance.ts",
+          "start_line": 20,
+          "line": 22
+        },
+        {
+          "path": "qa2671/report.ts",
+          "line": 120
+        }
+      ],
+      "lineComments": [
+        {
+          "tag": "QA2671 20-22",
+          "start_line": 20,
+          "line": 22,
+          "status": "replaced"
+        },
+        {
+          "tag": "QA2671 180-120",
+          "line": 120,
+          "status": "sent"
+        }
+      ],
+      "errors": [
+        "error: Error creating line comment for PR#7 :: Forbidden",
+        "log: Attempting fallback suggestion for PR#7",
+        "log: Fallback suggestion commented successfully for PR#7"
+      ]
+    }
+  },
+  "M23": {
+    "validated_ascending": {
+      "posts": [
+        {
+          "start_line": 19,
+          "line": 22
+        }
+      ],
+      "lineComments": [
+        {
+          "tag": "QA2671 30-19",
+          "start_line": 19,
+          "line": 30,
+          "status": "sent"
+        }
+      ]
+    },
+    "synthetic_reversed_probe": {
+      "posts": [
+        {
+          "start_line": 30,
+          "line": 19
+        }
+      ],
+      "lineComments": [
+        {
+          "tag": "QA2671 30-19",
+          "start_line": 19,
+          "line": 30,
+          "status": "failed"
+        }
+      ]
+    }
+  },
+  "M24": {
+    "GITLAB": {
+      "requests": [
+        {
+          "positionType": "text",
+          "baseSha": "b",
+          "startSha": "s",
+          "headSha": "head-sha",
+          "newPath": "qa2671/attendance.ts",
+          "newLine": 19,
+          "endLine": 30
+        },
+        {
+          "positionType": "text",
+          "baseSha": "b",
+          "startSha": "s",
+          "headSha": "head-sha",
+          "newPath": "qa2671/attendance.ts",
+          "newLine": 19,
+          "endLine": 30
+        },
+        {
+          "positionType": "text",
+          "baseSha": "b",
+          "startSha": "s",
+          "headSha": "head-sha",
+          "newPath": "qa2671/report.ts",
+          "newLine": 120,
+          "endLine": null
+        }
+      ],
+      "lineComments": [
+        {
+          "tag": "QA2671 30-19",
+          "start_line": 19,
+          "line": 30,
+          "status": "sent"
+        },
+        {
+          "tag": "QA2671 19-30",
+          "start_line": 19,
+          "line": 30,
+          "status": "sent"
+        },
+        {
+          "tag": "QA2671 180-120",
+          "line": 120,
+          "status": "sent"
+        }
+      ]
+    },
+    "BITBUCKET": {
+      "requests": [
+        {
+          "path": "qa2671/attendance.ts",
+          "to": 19
+        },
+        null,
+        {
+          "path": "qa2671/attendance.ts",
+          "to": 19
+        },
+        null,
+        {
+          "path": "qa2671/report.ts",
+          "to": 120
+        },
+        null
+      ],
+      "lineComments": [
+        {
+          "tag": "QA2671 30-19",
+          "start_line": 19,
+          "line": 30,
+          "status": "sent"
+        },
+        {
+          "tag": "QA2671 19-30",
+          "start_line": 19,
+          "line": 30,
+          "status": "sent"
+        },
+        {
+          "tag": "QA2671 180-120",
+          "line": 120,
+          "status": "sent"
+        }
+      ]
+    },
+    "AZURE_REPOS": {
+      "requests": [
+        {
+          "filePath": "qa2671/attendance.ts",
+          "rightFileStart": {
+            "line": 19,
+            "offset": 1
+          },
+          "rightFileEnd": {
+            "line": 30,
+            "offset": 1
+          }
+        },
+        {
+          "filePath": "qa2671/attendance.ts",
+          "rightFileStart": {
+            "line": 19,
+            "offset": 1
+          },
+          "rightFileEnd": {
+            "line": 30,
+            "offset": 1
+          }
+        },
+        {
+          "filePath": "qa2671/report.ts",
+          "rightFileStart": {
+            "line": 120,
+            "offset": 1
+          },
+          "rightFileEnd": {
+            "line": 120,
+            "offset": 1
+          }
+        }
+      ],
+      "lineComments": [
+        {
+          "tag": "QA2671 30-19",
+          "start_line": 19,
+          "line": 30,
+          "status": "sent"
+        },
+        {
+          "tag": "QA2671 19-30",
+          "start_line": 19,
+          "line": 30,
+          "status": "sent"
+        },
+        {
+          "tag": "QA2671 180-120",
+          "line": 120,
+          "status": "sent"
+        }
+      ]
+    },
+    "FORGEJO": {
+      "requests": [
+        {
+          "new_position": 30,
+          "path": "qa2671/attendance.ts"
+        },
+        {
+          "new_position": 30,
+          "path": "qa2671/attendance.ts"
+        },
+        {
+          "new_position": 120,
+          "path": "qa2671/report.ts"
+        }
+      ],
+      "lineComments": [
+        {
+          "tag": "QA2671 30-19",
+          "start_line": 19,
+          "line": 30,
+          "status": "sent"
+        },
+        {
+          "tag": "QA2671 19-30",
+          "start_line": 19,
+          "line": 30,
+          "status": "sent"
+        },
+        {
+          "tag": "QA2671 180-120",
+          "line": 120,
+          "status": "sent"
+        }
+      ]
+    }
+  }
+}
