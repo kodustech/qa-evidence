@@ -1,0 +1,57 @@
+{
+ "res": [
+  {
+   "label": "examples absent → resave with []",
+   "ruleLen": 22,
+   "storedHashCurrent": true,
+   "exactRepeatCalls": 0,
+   "editCalls": 0,
+   "lastPromptLen": 128,
+   "lastPromptHasSentinel": false
+  },
+  {
+   "label": "unicode",
+   "ruleLen": 54,
+   "storedHashCurrent": true,
+   "exactRepeatCalls": 0,
+   "editCalls": 0,
+   "lastPromptLen": 268,
+   "lastPromptHasSentinel": false
+  },
+  {
+   "label": "CRLF body",
+   "ruleLen": 42,
+   "storedHashCurrent": true,
+   "exactRepeatCalls": 0,
+   "editCalls": 1,
+   "lastPromptLen": 252,
+   "lastPromptHasSentinel": false
+  },
+  {
+   "label": "16 KiB body, final sentence edited",
+   "ruleLen": 16397,
+   "storedHashCurrent": true,
+   "exactRepeatCalls": 0,
+   "editCalls": 1,
+   "lastPromptLen": 16616,
+   "lastPromptHasSentinel": true
+  },
+  {
+   "label": "100 examples, reorder two",
+   "ruleLen": 65,
+   "storedHashCurrent": true,
+   "exactRepeatCalls": 1,
+   "editCalls": 1,
+   "lastPromptLen": 3470,
+   "lastPromptHasSentinel": false
+  }
+ ],
+ "emptyRuleValidation": [
+  {
+   "property": "rule",
+   "constraints": {
+    "isNotEmpty": "rule should not be empty"
+   }
+  }
+ ]
+}
