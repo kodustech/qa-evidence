@@ -1,0 +1,153 @@
+import { buildStack, dtoOf, newDto, proj, writeOut, ruleCompileHash, ruleContextNeedHash, VERSION } from './stack';
+import { CliKodyRulesController } from '../apps/api/src/controllers/cli/cli-kody-rules.controller';
+import { BackfillRuleDetectorsUseCase } from '@libs/kodyRules/application/use-cases/backfill-rule-detectors.use-case';
+import { CreateKodyRuleDto } from '@libs/ee/kodyRules/dtos/create-kody-rule.dto';
+import { plainToInstance } from 'class-transformer';
+import { validate } from 'class-validator';
+import { createHash } from 'crypto';
+jest.setTimeout(180000);
+const ORG = 'org-qa2308-b';
+const MECH_EX = [{ snippet: 'console.log(student.id);', isCorrect: false }, { snippet: 'this.logger.info(student.id);', isCorrect: true }];
+const SEM_EX = [{ snippet: 'await grades.save(g);', isCorrect: false }, { snippet: 'await assertEnrolled(s); await grades.save(g);', isCorrect: true }];
+const MTEXT = 'Do not call console.log in qa2308 files; use the injected logger.';
+const calls = (s: any) => s.ledger.llm.length;
+const cli = (s: any, org = ORG) => new CliKodyRulesController({ validateKey: async () => ({ team: { uuid: 'team-1' }, organization: { uuid: org }, config: { capabilities: ['kody_rules:manage', 'kody-rules:manage', 'KODY_RULES_MANAGE', 'kody_rules_manage'] } }) } as any, s.useCase as any, {} as any);
+
+describe(`qa2308 H2 (${VERSION})`, () => {
+    it('M12/M13: CLI POST/PATCH shapes through the real controller', async () => {
+        const s = await buildStack('qa2308_m12');
+        const c = cli(s);
+        (c as any).ensureKodyRulesCapability = () => undefined; // capability string not under test
+        const step = async (name: string, fn: () => Promise<any>, uuid: string) => {
+            const before = proj(await s.getRule(ORG, uuid)); const c0 = calls(s); let err = null; try { await fn(); } catch (e: any) { err = e.message; } await s.settle();
+            const after = await s.getRule(ORG, uuid); const pl = s.ledger.compileCalls.slice(-1)[0];
+            return { name, calls: calls(s) - c0, err, beforeHash: before?.compileAttempt?.sourceHash, afterHash: after.compileAttempt?.sourceHash, hashRuleNoExamples: ruleCompileHash({ rule: after.rule, examples: [] }), hashStored: ruleCompileHash(after), detectorBefore: before?.detector, detectorAfter: after.detector ? { pattern: after.detector.pattern } : null, storedExamples: (after.examples || []).length, lastCompilePayloadHasExamples: pl?.hasExamples, rule: after.rule.slice(0, 60) };
+        };
+        const created: any = await c.createKodyRule({ title: 'qa2308 cli mech', rule: MTEXT, repositoryId: 'global', path: 'qa2308/**', examples: MECH_EX } as any, 'kodus_x'); await s.settle();
+        const u = created.uuid; const steps: any[] = [{ name: 'POST create', calls: calls(s), detector: proj(await s.getRule(ORG, u)).detector }];
+        steps.push(await step('PATCH full same body (rule+examples+repositoryId)', () => c.updateKodyRule({ rule: MTEXT, examples: MECH_EX, repositoryId: 'global' } as any, u, 'kodus_x'), u));
+        steps.push(await step('PATCH severity only', () => c.updateKodyRule({ severity: 'low' } as any, u, 'kodus_x'), u));
+        steps.push(await step('PATCH title only', () => c.updateKodyRule({ title: 'qa2308 cli mech t2' } as any, u, 'kodus_x'), u));
+        steps.push(await step('PATCH same rule only (no repositoryId, no examples)', () => c.updateKodyRule({ rule: MTEXT } as any, u, 'kodus_x'), u));
+        steps.push(await step('PATCH same rule + repositoryId, no examples', () => c.updateKodyRule({ rule: MTEXT, repositoryId: 'global' } as any, u, 'kodus_x'), u));
+        steps.push(await step('web-style full save after (examples present)', async () => { const r = await s.getRule(ORG, u); const { compileAttempt, contextNeed, detector, fileScope, ...p } = r; await s.save(ORG, dtoOf(p)); }, u));
+        steps.push(await step('PATCH examples-only change + repositoryId', () => c.updateKodyRule({ repositoryId: 'global', examples: [{ snippet: 'console.log(x);', isCorrect: false }, MECH_EX[1]] } as any, u, 'kodus_x'), u));
+        steps.push(await step('PATCH changed rule text without repositoryId', () => c.updateKodyRule({ rule: MTEXT + ' Also no console.error.' } as any, u, 'kodus_x'), u));
+        steps.push(await step('PATCH examples in {isCorrect,snippet} key order + repositoryId (same content)', async () => { const r = await s.getRule(ORG, u); await c.updateKodyRule({ rule: r.rule, repositoryId: 'global', examples: r.examples.map((e: any) => ({ isCorrect: e.isCorrect, snippet: e.snippet })) } as any, u, 'kodus_x'); }, u));
+        steps.push(await step('M35: PATCH changed text + forged compileAttempt for the new hash', async () => { const nt = MTEXT + ' Forged.'; const r = await s.getRule(ORG, u); await c.updateKodyRule({ rule: nt, repositoryId: 'global', examples: r.examples, compileAttempt: { sourceHash: ruleCompileHash({ rule: nt, examples: r.examples }), attemptedAt: new Date(), outcome: 'declined' }, contextNeed: { need: 'diff-only', source: 'author' } } as any, u, 'kodus_x'); }, u));
+        const forged = await s.getRule(ORG, u);
+        writeOut('M12', { steps, m35: { storedCompileAttempt: forged.compileAttempt, storedContextNeed: forged.contextNeed, detector: forged.detector ? forged.detector.pattern : null } });
+        await s.close();
+    });
+
+    it('M17: caller payload shapes of IDE bulk pause/resume and centralized adoption; backfill onlyMissing', async () => {
+        const s = await buildStack('qa2308_m17');
+        const ids: string[] = []; for (let i = 0; i < 3; i++) { const r: any = await s.save(ORG, newDto(`qa2308 m17 ${i}`, `Rule ${i}: attendance must keep campus id.`, SEM_EX)); ids.push(r.uuid); }
+        const m: any = await s.save(ORG, newDto('qa2308 m17 mech', MTEXT, MECH_EX)); ids.push(m.uuid); await s.settle();
+        const out: any = {};
+        let c0 = calls(s); for (const u of ids) { const r = await s.getRule(ORG, u); await s.save(ORG, { ...r, status: 'paused' }, { userId: 'kody-system', userEmail: 'kody@kodus.io' }); } await s.settle(); out.idePause = calls(s) - c0;
+        c0 = calls(s); for (const u of ids) { const r = await s.getRule(ORG, u); await s.save(ORG, { ...r, status: 'active' }, { userId: 'kody-system', userEmail: 'kody@kodus.io' }); } await s.settle(); out.ideResume = calls(s) - c0;
+        c0 = calls(s); for (const u of ids) { const r = await s.getRule(ORG, u); await s.save(ORG, { ...r, uuid: r.uuid, centralizedConfig: { path: `athena/.kody-rules/review/${u}.yml`, status: 'pending_add' } }, s.kody); } await s.settle(); out.centralAdoption = calls(s) - c0;
+        const backfill = new BackfillRuleDetectorsUseCase(s.service as any, s.compiler as any);
+        c0 = calls(s); const bf = await backfill.execute({ organizationId: ORG, teamId: 'team-1' }, { onlyMissing: true }); await s.settle(); out.backfillOnlyMissing = { calls: calls(s) - c0, result: { total: bf.total, processed: bf.processed, skipped: bf.skipped, alreadyDecided: bf.alreadyDecided } };
+        out.detectorKept = proj(await s.getRule(ORG, m.uuid)).detector;
+        writeOut('M17', out);
+        await s.close();
+        expect(out.idePause + out.ideResume + out.centralAdoption + out.backfillOnlyMissing.calls).toBe(0);
+    });
+
+    it('M27: DB write fails for contextNeed, then for compileAttempt', async () => {
+        const s = await buildStack('qa2308_m27');
+        const r: any = await s.save(ORG, newDto('qa2308 m27', 'Attendance import must reject an invalid student id.', SEM_EX)); await s.settle();
+        const orig = s.model.findOneAndUpdate.bind(s.model);
+        let failOn: string | null = null; let armed: string | null = null; const injected: any[] = [];
+        for (const m of ['updateRuleContextNeed', 'updateRuleCompileAttempt']) { const o = (s.service as any)[m].bind(s.service); (s.service as any)[m] = async (...a: any[]) => { armed = m; try { return await o(...a); } finally { armed = null; } }; }
+        (s.model as any).findOneAndUpdate = function (filter: any, update: any, ...rest: any[]) {
+            const keys = JSON.stringify(Object.keys((update && update.$set) || {}));
+            if (failOn && armed && armed.toLowerCase().includes(failOn.toLowerCase()) && keys.includes(failOn)) { injected.push({ failOn, keys: keys.slice(0, 200) }); const f = failOn; failOn = null; return { lean: () => ({ exec: async () => { throw new Error(`injected write failure (${f})`); } }), exec: async () => { throw new Error(`injected write failure (${f})`); } } as any; }
+            return orig(filter, update, ...rest);
+        };
+        const warns: string[] = []; const ow = console.warn; const ol = console.log;
+        const capture = (...a: any[]) => { const t = a.map((x) => (typeof x === 'string' ? x : JSON.stringify(x))).join(' '); if (/Could not (store|record)/.test(t)) warns.push(t.slice(0, 300)); };
+        (console as any).warn = (...a: any[]) => { capture(...a); }; (console as any).log = (...a: any[]) => { capture(...a); }; const ow2 = process.stdout.write.bind(process.stdout); (process.stdout as any).write = (c: any, ...r: any[]) => { capture(String(c)); return ow2(c, ...r); }; const oe2 = process.stderr.write.bind(process.stderr); (process.stderr as any).write = (c: any, ...r: any[]) => { capture(String(c)); return oe2(c, ...r); };
+        const edit = async (suffix: string) => { const cur = await s.getRule(ORG, r.uuid); const { compileAttempt, contextNeed, detector, fileScope, ...p } = cur; await s.save(ORG, dtoOf(p, suffix ? { rule: p.rule + suffix } : {})); await s.settle(); return s.getRule(ORG, r.uuid); };
+        const seq: any[] = [];
+        for (const f of ['contextNeed', 'compileAttempt']) {
+            failOn = f; let c0 = calls(s); const a = await edit(` (${f})`); seq.push({ step: `edit, ${f} write fails`, calls: calls(s) - c0, caCurrent: proj(a).caCurrent, ctxCurrent: a.contextNeed?.sourceHash === ruleContextNeedHash(a) });
+            c0 = calls(s); const b = await edit(''); seq.push({ step: 'unchanged save (repair)', calls: calls(s) - c0, caCurrent: proj(b).caCurrent, ctxCurrent: b.contextNeed?.sourceHash === ruleContextNeedHash(b) });
+            c0 = calls(s); const c = await edit(''); seq.push({ step: 'unchanged save (settled)', calls: calls(s) - c0, caCurrent: proj(c).caCurrent, ctxCurrent: c.contextNeed?.sourceHash === ruleContextNeedHash(c) });
+        }
+        (console as any).warn = ow; (console as any).log = ol; (process.stdout as any).write = ow2; (process.stderr as any).write = oe2;
+        writeOut('M27', { seq, injected, warns });
+        await s.close();
+        expect(injected.length).toBe(2);
+    });
+
+    it('M30: input boundaries', async () => {
+        const s = await buildStack('qa2308_m30');
+        const res: any[] = [];
+        const twice = async (label: string, dto: any, mutate?: (r: any) => any) => {
+            const r: any = await s.save(ORG, dto); await s.settle(); const c0 = calls(s);
+            const st = await s.getRule(ORG, r.uuid); const { compileAttempt, contextNeed, detector, fileScope, ...p } = st;
+            await s.save(ORG, dtoOf(p)); await s.settle(); const repeat = calls(s) - c0;
+            let changed = null; if (mutate) { const c1 = calls(s); await s.save(ORG, dtoOf(p, mutate(p))); await s.settle(); changed = calls(s) - c1; }
+            const last = s.ledger.llm.slice(-1)[0]?.userPrompt || '';
+            res.push({ label, ruleLen: dto.rule.length, storedHashCurrent: proj(await s.getRule(ORG, r.uuid)).caCurrent, exactRepeatCalls: repeat, editCalls: changed, lastPromptLen: last.length, lastPromptHasSentinel: last.includes('SENTINEL-END') });
+        };
+        await twice('examples absent → resave with []', newDto('qa2308 m30 absent', 'Rule with no examples.', undefined), () => ({ examples: [] }));
+        await twice('unicode', newDto('qa2308 m30 unicode', 'Registros de aluno: ação / 学生 devem validar matrícula.', SEM_EX), () => ({ examples: SEM_EX }));
+        await twice('CRLF body', newDto('qa2308 m30 crlf', 'Line one.\r\nLine two must check enrollment.', SEM_EX), (p) => ({ rule: p.rule.replace(/\r\n/g, '\n') }));
+        await twice('16 KiB body, final sentence edited', newDto('qa2308 m30 long', 'x'.repeat(16 * 1024) + ' SENTINEL-END', SEM_EX), (p) => ({ rule: p.rule.replace('SENTINEL-END', 'SENTINEL-END changed') }));
+        const ex100 = Array.from({ length: 100 }, (_, i) => ({ snippet: `console.log(a${i});`, isCorrect: i % 2 === 0 ? false : false }));
+        await twice('100 examples, reorder two', newDto('qa2308 m30 ex100', MTEXT, ex100), (p) => ({ examples: [p.examples[1], p.examples[0], ...p.examples.slice(2)] }));
+        const v = await validate(plainToInstance(CreateKodyRuleDto, { title: 't', rule: '', severity: 'medium', type: 'standard' }));
+        const out = { res, emptyRuleValidation: v.map((e) => ({ property: e.property, constraints: e.constraints })) };
+        writeOut('M30', out);
+        await s.close();
+    });
+
+    it('M36: two orgs with equal rule text; foreign UUID save and convert', async () => {
+        const s = await buildStack('qa2308_m36');
+        const X = 'org-qa2308-x', Y = 'org-qa2308-y';
+        const text = 'Attendance import must reject an invalid student id.';
+        const x: any = await s.save(X, newDto('qa2308 m36', text, SEM_EX)); const y: any = await s.save(Y, newDto('qa2308 m36', text, SEM_EX)); await s.settle();
+        await s.service.updateRuleContextNeed(Y, y.uuid, { need: 'symbol-references', source: 'author' } as any);
+        const yBefore = JSON.stringify(proj(await s.getRule(Y, y.uuid)));
+        const c0 = calls(s); const xr = await s.getRule(X, x.uuid); { const { compileAttempt, contextNeed, detector, fileScope, ...p } = xr; await s.save(X, dtoOf(p)); } await s.settle();
+        const xPayload = s.ledger.compileCalls.slice(-1)[0];
+        const out: any = { xSave: { calls: calls(s) - c0, forwardedContextNeed: xPayload.contextNeed, forwardedAttemptHash: xPayload.compileAttempt?.sourceHash, xStoredAttemptHash: xr.compileAttempt.sourceHash } };
+        const c1 = calls(s); let err: any = null; try { await s.save(X, dtoOf(await s.getRule(Y, y.uuid), { title: 'hijack' })); } catch (e: any) { err = e.message; } await s.settle(); out.foreignUuidSave = { err, calls: calls(s) - c1 };
+        await s.model.updateOne({ organizationId: Y }, { $push: { rules: { ...(await s.getRule(Y, y.uuid)), _id: undefined, uuid: 'y-pending', status: 'pending', requestType: 'update', targetRuleUuid: y.uuid } } });
+        await s.model.updateOne({ organizationId: X }, { $push: { rules: { ...(await s.getRule(X, x.uuid)), _id: undefined, uuid: 'x-pending', status: 'pending', requestType: 'update', targetRuleUuid: x.uuid } } });
+        const c2 = calls(s); const count0 = (await s.getRules(X)).length; let conv: any = null; let convErr: any = null; try { conv = await s.convertUC(X).execute({ ruleIds: ['y-pending', 'x-pending'] } as any); } catch (e: any) { convErr = e.message; } await s.settle();
+        out.mixedConvert = { convErr, createdCount: (await s.getRules(X)).length - count0, calls: calls(s) - c2, yPendingStatus: (await s.getRule(Y, 'y-pending')).status, xPendingStatus: (await s.getRule(X, 'x-pending')).status, yRulesCount: (await s.getRules(Y)).length };
+        out.yUnchanged = JSON.stringify(proj(await s.getRule(Y, y.uuid))) === yBefore;
+        writeOut('M36', out);
+        await s.close();
+        expect(out.foreignUuidSave.err).toMatch(/not found/i); expect(out.foreignUuidSave.calls).toBe(0); expect(out.yUnchanged).toBe(true); expect(out.mixedConvert.yPendingStatus).toBe('pending');
+    });
+
+    it('M37: legacy stored shapes', async () => {
+        const s = await buildStack('qa2308_m37');
+        const t = 'Attendance import must reject an invalid student id.';
+        const cur = { sourceHash: ruleCompileHash({ rule: t, examples: SEM_EX }), attemptedAt: new Date('2025-01-01'), outcome: 'declined', model: 'byok' };
+        const ctx = { need: 'diff-only', sourceHash: createHash('sha256').update(`v2 ${t}`).digest('hex'), source: 'compiler' };
+        const shapes: any = {
+            missing_both: {}, compiled_detector_no_attempt: { detector: { type: 'regex', pattern: 'eval\\(' }, contextNeed: ctx },
+            declined_attempt_no_outcome: { compileAttempt: { sourceHash: cur.sourceHash }, contextNeed: ctx }, null_context: { compileAttempt: cur, contextNeed: null },
+            author_without_hash: { compileAttempt: cur, contextNeed: { need: 'full-file', source: 'author' } },
+        };
+        await s.model.create({ organizationId: ORG, rules: Object.entries(shapes).map(([k, v]: any) => ({ uuid: `m37-${k}`, title: `qa2308 ${k}`, rule: t, examples: SEM_EX, path: 'qa2308/**', severity: 'medium', status: 'active', type: 'standard', origin: 'manual', repositoryId: 'global', ...v })) } as any);
+        const res: any = {};
+        for (const k of Object.keys(shapes)) {
+            const seq: number[] = [];
+            for (let i = 0; i < 2; i++) { const r = await s.getRule(ORG, `m37-${k}`); const { compileAttempt, contextNeed, detector, fileScope, ...p } = r; const c0 = calls(s); await s.save(ORG, dtoOf(p)); await s.settle(); seq.push(calls(s) - c0); }
+            res[k] = { calls: seq, after: proj(await s.getRule(ORG, `m37-${k}`)) };
+        }
+        // both new-rule literals: first rule of an org (no doc) and a later one
+        const c0 = calls(s); await s.save('org-qa2308-fresh', newDto('qa2308 first', t, SEM_EX)); await s.save('org-qa2308-fresh', newDto('qa2308 second', t + ' Second.', SEM_EX)); await s.settle();
+        res.newRuleLiterals = { calls: calls(s) - c0, rules: (await s.getRules('org-qa2308-fresh')).map(proj) };
+        writeOut('M37', res);
+        await s.close();
+    });
+});
