@@ -1,0 +1,27 @@
+{
+ "t": "2026-11-24T20:10:35Z",
+ "status": 404,
+ "resp": {
+  "statusCode": 404,
+  "timestamp": "2026-11-24T20:10:36.541Z",
+  "path": "/parameters/create-or-update-code-review",
+  "error": "Not Found",
+  "message": "Team not found"
+ },
+ "foreign_get": [
+  404,
+  "{'statusCode': 404, 'timestamp': '2026-11-24T20:10:38.329Z', 'path': '/parameters/code-review-parameter?teamId=fa0897ae-2dd7-40c2-8524-7ff5a44710e8&includeFileOverlay=false', 'error': 'Not Found', 'message': 'Team not found'}"
+ ],
+ "before": {
+  "reviewCadence": {
+   "type": "manual"
+  },
+  "kodyRulesGeneratorEnabled": false
+ },
+ "after": {
+  "reviewCadence": {
+   "type": "manual"
+  },
+  "kodyRulesGeneratorEnabled": false
+ }
+}
