@@ -1,0 +1,9 @@
+(node:31495) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+Test Suites: 4 passed, 4 total
+Tests:       160 passed, 160 total
+Snapshots:   0 total
+Time:        2.209 s
+Ran all test suites matching libs/sandbox/infrastructure/services/sandbox-lease-manager.spec.ts|libs/code-review/infrastructure/observers/code-review-pipeline.observer.spec.ts|test/unit/code-review/pipeline/stages/agent-review.stage.spec.ts|test/unit/code-review/pipeline/stages/create-sandbox.stage.spec.ts.
+EXIT 0
