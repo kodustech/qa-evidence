@@ -1,0 +1,393 @@
+{
+ "a_currentAttempt_missingContext": {
+  "firstSaveCalls": 1,
+  "secondSaveCalls": 0,
+  "before": {
+   "uuid": "m6-a_currentAttempt_missingContext",
+   "title": "qa2308 a_currentAttempt_missingContext",
+   "status": "active",
+   "rule": "Grades service must check enrollment before saving a grade.",
+   "compileAttempt": {
+    "sourceHash": "0621f6ebf97f2c55c57fab01477201d8032fd98691c2010b676caedd7aab675d",
+    "attemptedAt": "2026-01-01T00:00:00.000Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "ctxHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3"
+  },
+  "after": {
+   "uuid": "m6-a_currentAttempt_missingContext",
+   "title": "qa2308 a_currentAttempt_missingContext",
+   "status": "active",
+   "rule": "Grades service must check enrollment before saving a grade.",
+   "compileAttempt": {
+    "sourceHash": "0621f6ebf97f2c55c57fab01477201d8032fd98691c2010b676caedd7aab675d",
+    "attemptedAt": "2026-11-24T20:54:55.325Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T20:54:55.322Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": {
+    "extensions": [
+     ".ts",
+     ".js"
+    ],
+    "sourceHash": "a2b0e45723099f7da702a1e856f56224b7e07d612e98a66b419a86b773663d67",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T20:54:55.322Z",
+    "model": "byok"
+   },
+   "caCurrent": true,
+   "ctxHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3"
+  },
+  "ctxCurrentAfter": true
+ },
+ "b_currentAttempt_v1Context": {
+  "firstSaveCalls": 1,
+  "secondSaveCalls": 1,
+  "before": {
+   "uuid": "m6-b_currentAttempt_v1Context",
+   "title": "qa2308 b_currentAttempt_v1Context",
+   "status": "active",
+   "rule": "Grades service must check enrollment before saving a grade.",
+   "compileAttempt": {
+    "sourceHash": "0621f6ebf97f2c55c57fab01477201d8032fd98691c2010b676caedd7aab675d",
+    "attemptedAt": "2026-01-01T00:00:00.000Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "75bcd20c268724fe56ee39dec218d029ad8a32d28fe46846cf32f1b3a08b3ebf",
+    "source": "compiler",
+    "inferredAt": "2026-01-01T00:00:00.000Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "ctxHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3"
+  },
+  "after": {
+   "uuid": "m6-b_currentAttempt_v1Context",
+   "title": "qa2308 b_currentAttempt_v1Context",
+   "status": "active",
+   "rule": "Grades service must check enrollment before saving a grade.",
+   "compileAttempt": {
+    "sourceHash": "0621f6ebf97f2c55c57fab01477201d8032fd98691c2010b676caedd7aab675d",
+    "attemptedAt": "2026-11-24T20:54:55.432Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "75bcd20c268724fe56ee39dec218d029ad8a32d28fe46846cf32f1b3a08b3ebf",
+    "source": "compiler",
+    "inferredAt": "2026-01-01T00:00:00.000Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": {
+    "extensions": [
+     ".ts",
+     ".js"
+    ],
+    "sourceHash": "a2b0e45723099f7da702a1e856f56224b7e07d612e98a66b419a86b773663d67",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T20:54:55.430Z",
+    "model": "byok"
+   },
+   "caCurrent": true,
+   "ctxHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3"
+  },
+  "ctxCurrentAfter": false
+ },
+ "c_currentContext_noAttempt": {
+  "firstSaveCalls": 1,
+  "secondSaveCalls": 0,
+  "before": {
+   "uuid": "m6-c_currentContext_noAttempt",
+   "title": "qa2308 c_currentContext_noAttempt",
+   "status": "active",
+   "rule": "Grades service must check enrollment before saving a grade.",
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3",
+    "source": "compiler",
+    "inferredAt": "2026-01-01T00:00:00.000Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": false,
+   "ctxHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3"
+  },
+  "after": {
+   "uuid": "m6-c_currentContext_noAttempt",
+   "title": "qa2308 c_currentContext_noAttempt",
+   "status": "active",
+   "rule": "Grades service must check enrollment before saving a grade.",
+   "compileAttempt": {
+    "sourceHash": "0621f6ebf97f2c55c57fab01477201d8032fd98691c2010b676caedd7aab675d",
+    "attemptedAt": "2026-11-24T20:54:55.468Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3",
+    "source": "compiler",
+    "inferredAt": "2026-01-01T00:00:00.000Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": {
+    "extensions": [
+     ".ts",
+     ".js"
+    ],
+    "sourceHash": "a2b0e45723099f7da702a1e856f56224b7e07d612e98a66b419a86b773663d67",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T20:54:55.466Z",
+    "model": "byok"
+   },
+   "caCurrent": true,
+   "ctxHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3"
+  },
+  "ctxCurrentAfter": true
+ },
+ "d_staleAttempt_currentContext": {
+  "firstSaveCalls": 1,
+  "secondSaveCalls": 0,
+  "before": {
+   "uuid": "m6-d_staleAttempt_currentContext",
+   "title": "qa2308 d_staleAttempt_currentContext",
+   "status": "active",
+   "rule": "Grades service must check enrollment before saving a grade.",
+   "compileAttempt": {
+    "sourceHash": "f0b31511ffacb75d20c5458f77b21b2fcb1082275ca48dea49aef6e49fb6fd2f",
+    "attemptedAt": "2026-01-01T00:00:00.000Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3",
+    "source": "compiler",
+    "inferredAt": "2026-01-01T00:00:00.000Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": false,
+   "ctxHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3"
+  },
+  "after": {
+   "uuid": "m6-d_staleAttempt_currentContext",
+   "title": "qa2308 d_staleAttempt_currentContext",
+   "status": "active",
+   "rule": "Grades service must check enrollment before saving a grade.",
+   "compileAttempt": {
+    "sourceHash": "0621f6ebf97f2c55c57fab01477201d8032fd98691c2010b676caedd7aab675d",
+    "attemptedAt": "2026-11-24T20:54:55.537Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3",
+    "source": "compiler",
+    "inferredAt": "2026-01-01T00:00:00.000Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": {
+    "extensions": [
+     ".ts",
+     ".js"
+    ],
+    "sourceHash": "a2b0e45723099f7da702a1e856f56224b7e07d612e98a66b419a86b773663d67",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T20:54:55.536Z",
+    "model": "byok"
+   },
+   "caCurrent": true,
+   "ctxHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3"
+  },
+  "ctxCurrentAfter": true
+ },
+ "e_bothCurrent_declined": {
+  "firstSaveCalls": 0,
+  "secondSaveCalls": 0,
+  "before": {
+   "uuid": "m6-e_bothCurrent_declined",
+   "title": "qa2308 e_bothCurrent_declined",
+   "status": "active",
+   "rule": "Grades service must check enrollment before saving a grade.",
+   "compileAttempt": {
+    "sourceHash": "0621f6ebf97f2c55c57fab01477201d8032fd98691c2010b676caedd7aab675d",
+    "attemptedAt": "2026-01-01T00:00:00.000Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3",
+    "source": "compiler",
+    "inferredAt": "2026-01-01T00:00:00.000Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "ctxHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3"
+  },
+  "after": {
+   "uuid": "m6-e_bothCurrent_declined",
+   "title": "qa2308 e_bothCurrent_declined",
+   "status": "active",
+   "rule": "Grades service must check enrollment before saving a grade.",
+   "compileAttempt": {
+    "sourceHash": "0621f6ebf97f2c55c57fab01477201d8032fd98691c2010b676caedd7aab675d",
+    "attemptedAt": "2026-01-01T00:00:00.000Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3",
+    "source": "compiler",
+    "inferredAt": "2026-01-01T00:00:00.000Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "ctxHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3"
+  },
+  "ctxCurrentAfter": true
+ },
+ "f_bothCurrent_compiled": {
+  "firstSaveCalls": 0,
+  "secondSaveCalls": 0,
+  "before": {
+   "uuid": "m6-f_bothCurrent_compiled",
+   "title": "qa2308 f_bothCurrent_compiled",
+   "status": "active",
+   "rule": "Do not call console.log in qa2308 files; use the injected logger.",
+   "compileAttempt": {
+    "sourceHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+    "attemptedAt": "2026-01-01T00:00:00.000Z",
+    "outcome": "compiled",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "0316441b34c9460b92a66d152111f729b00c241e120ecbfdda51a91846112c87",
+    "source": "compiler",
+    "inferredAt": "2026-01-01T00:00:00.000Z",
+    "model": "byok"
+   },
+   "detector": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "fileScope": null,
+   "caCurrent": true,
+   "ctxHash": "0316441b34c9460b92a66d152111f729b00c241e120ecbfdda51a91846112c87"
+  },
+  "after": {
+   "uuid": "m6-f_bothCurrent_compiled",
+   "title": "qa2308 f_bothCurrent_compiled",
+   "status": "active",
+   "rule": "Do not call console.log in qa2308 files; use the injected logger.",
+   "compileAttempt": {
+    "sourceHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+    "attemptedAt": "2026-01-01T00:00:00.000Z",
+    "outcome": "compiled",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "0316441b34c9460b92a66d152111f729b00c241e120ecbfdda51a91846112c87",
+    "source": "compiler",
+    "inferredAt": "2026-01-01T00:00:00.000Z",
+    "model": "byok"
+   },
+   "detector": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "fileScope": null,
+   "caCurrent": true,
+   "ctxHash": "0316441b34c9460b92a66d152111f729b00c241e120ecbfdda51a91846112c87"
+  },
+  "ctxCurrentAfter": true
+ },
+ "g_author_bogusHash_currentAttempt": {
+  "firstSaveCalls": 0,
+  "secondSaveCalls": 0,
+  "before": {
+   "uuid": "m6-g_author_bogusHash_currentAttempt",
+   "title": "qa2308 g_author_bogusHash_currentAttempt",
+   "status": "active",
+   "rule": "Grades service must check enrollment before saving a grade.",
+   "compileAttempt": {
+    "sourceHash": "0621f6ebf97f2c55c57fab01477201d8032fd98691c2010b676caedd7aab675d",
+    "attemptedAt": "2026-01-01T00:00:00.000Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "full-file",
+    "sourceHash": "bogus",
+    "source": "author"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "ctxHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3"
+  },
+  "after": {
+   "uuid": "m6-g_author_bogusHash_currentAttempt",
+   "title": "qa2308 g_author_bogusHash_currentAttempt",
+   "status": "active",
+   "rule": "Grades service must check enrollment before saving a grade.",
+   "compileAttempt": {
+    "sourceHash": "0621f6ebf97f2c55c57fab01477201d8032fd98691c2010b676caedd7aab675d",
+    "attemptedAt": "2026-01-01T00:00:00.000Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "full-file",
+    "sourceHash": "bogus",
+    "source": "author"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "ctxHash": "d7b516d1e0b5173e0ad58d07e359641bf5b3f8fa87eccb155247e87984cff3d3"
+  },
+  "ctxCurrentAfter": true
+ }
+}
