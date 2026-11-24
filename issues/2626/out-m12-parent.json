@@ -1,0 +1,260 @@
+{
+ "rev": "parent",
+ "scenario": "m12",
+ "results": {
+  "(a) after release": {
+   "doc": {
+    "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-294453335595",
+    "leaseCount": 0,
+    "sandboxId": "fake-69275-1-jo255",
+    "state": "READY",
+    "killAt": "2026-11-24T22:08:15.852Z",
+    "cleanupAttempts": 0,
+    "killRetryCount": 0,
+    "expiresAt": "2026-11-25T00:08:15.784Z"
+   },
+   "alive": "running"
+  },
+  "(a) after cron": {
+   "doc": null
+  },
+  "(b) kill returns false (404)": {
+   "doc": {
+    "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-779021671374",
+    "leaseCount": 0,
+    "sandboxId": "fake-69275-2-o666d",
+    "state": "READY",
+    "killAt": "2026-11-24T22:08:15.899Z",
+    "cleanupAttempts": 0,
+    "killRetryCount": 0,
+    "expiresAt": "2026-11-25T00:08:15.873Z"
+   }
+  },
+  "(c) kill throws not-found: after release": {
+   "doc": {
+    "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-441845861522",
+    "leaseCount": 0,
+    "sandboxId": "fake-69275-3-dr5wf",
+    "state": "READY",
+    "killAt": "2026-11-24T22:08:15.912Z",
+    "cleanupAttempts": 0,
+    "killRetryCount": 0,
+    "expiresAt": "2026-11-25T00:08:15.905Z"
+   }
+  },
+  "(c) after cron (kill gone false)": {
+   "doc": null
+  }
+ },
+ "leaseLogs": [
+  "2026-11-24T22:08:15.784Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-294453335595\" consumer=\"graph-build\"",
+  "2026-11-24T22:08:15.840Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-294453335595\" consumer=\"graph-build\"",
+  "2026-11-24T22:08:15.847Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-294453335595\" consumer=\"graph-build\" leaseId=\"c3a97ae0",
+  "2026-11-24T22:08:15.851Z info SandboxLeaseManager: released leaseId=\"c3a97ae0-3d63-4d91-91f9-9011a7242871\" prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-294453335595",
+  "2026-11-24T22:08:15.866Z info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T22:08:15.852Z for sandboxId=\"fake-69275-1-jo255\"",
+  "2026-11-24T22:08:15.872Z info [SANDBOX-IDLE-KILL] Killed idle sandbox",
+  "2026-11-24T22:08:15.873Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-779021671374\" consumer=\"graph-build\"",
+  "2026-11-24T22:08:15.881Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-779021671374\" consumer=\"graph-build\"",
+  "2026-11-24T22:08:15.896Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-779021671374\" consumer=\"graph-build\" leaseId=\"23de8013",
+  "2026-11-24T22:08:15.899Z info SandboxLeaseManager: released leaseId=\"23de8013-6d64-40a9-bac0-4bed22e90723\" prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-779021671374",
+  "2026-11-24T22:08:15.904Z info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T22:08:15.899Z for sandboxId=\"fake-69275-2-o666d\"",
+  "2026-11-24T22:08:15.905Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-441845861522\" consumer=\"graph-build\"",
+  "2026-11-24T22:08:15.907Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-441845861522\" consumer=\"graph-build\"",
+  "2026-11-24T22:08:15.910Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-441845861522\" consumer=\"graph-build\" leaseId=\"9a1c9399",
+  "2026-11-24T22:08:15.912Z info SandboxLeaseManager: released leaseId=\"9a1c9399-9a82-4492-ba0b-b76d999a296e\" prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-441845861522",
+  "2026-11-24T22:08:15.914Z info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T22:08:15.912Z for sandboxId=\"fake-69275-3-dr5wf\"",
+  "2026-11-24T22:08:15.916Z info [SANDBOX-IDLE-KILL] Sandbox already gone — deleting lease",
+  "2026-11-24T22:08:15.918Z info [SANDBOX-IDLE-KILL] Killed idle sandbox",
+  "2026-11-24T22:08:15.918Z info [SANDBOX-IDLE-KILL] Killed idle sandbox"
+ ],
+ "transcript": [
+  {
+   "t": "2026-11-24T22:08:15.840Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "provider.create.start",
+   "id": "fake-69275-1-jo255"
+  },
+  {
+   "t": "2026-11-24T22:08:15.840Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "provider.create.done",
+   "id": "fake-69275-1-jo255"
+  },
+  {
+   "t": "2026-11-24T22:08:15.866Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "e2b.setTimeout",
+   "id": "fake-69275-1-jo255",
+   "ms": 0
+  },
+  {
+   "t": "2026-11-24T22:08:15.867Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "RESULT (a) after release",
+   "v": {
+    "doc": {
+     "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-294453335595",
+     "leaseCount": 0,
+     "sandboxId": "fake-69275-1-jo255",
+     "state": "READY",
+     "killAt": "2026-11-24T22:08:15.852Z",
+     "cleanupAttempts": 0,
+     "killRetryCount": 0,
+     "expiresAt": "2026-11-25T00:08:15.784Z"
+    },
+    "alive": "running"
+   }
+  },
+  {
+   "t": "2026-11-24T22:08:15.869Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "e2b.kill.call",
+   "id": "fake-69275-1-jo255",
+   "hasKey": true,
+   "behavior": "gone"
+  },
+  {
+   "t": "2026-11-24T22:08:15.869Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "e2b.kill.gone(false)",
+   "id": "fake-69275-1-jo255"
+  },
+  {
+   "t": "2026-11-24T22:08:15.873Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "RESULT (a) after cron",
+   "v": {
+    "doc": null
+   }
+  },
+  {
+   "t": "2026-11-24T22:08:15.881Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "provider.create.start",
+   "id": "fake-69275-2-o666d"
+  },
+  {
+   "t": "2026-11-24T22:08:15.881Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "provider.create.done",
+   "id": "fake-69275-2-o666d"
+  },
+  {
+   "t": "2026-11-24T22:08:15.904Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "e2b.setTimeout",
+   "id": "fake-69275-2-o666d",
+   "ms": 0
+  },
+  {
+   "t": "2026-11-24T22:08:15.905Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "RESULT (b) kill returns false (404)",
+   "v": {
+    "doc": {
+     "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-779021671374",
+     "leaseCount": 0,
+     "sandboxId": "fake-69275-2-o666d",
+     "state": "READY",
+     "killAt": "2026-11-24T22:08:15.899Z",
+     "cleanupAttempts": 0,
+     "killRetryCount": 0,
+     "expiresAt": "2026-11-25T00:08:15.873Z"
+    }
+   }
+  },
+  {
+   "t": "2026-11-24T22:08:15.907Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "provider.create.start",
+   "id": "fake-69275-3-dr5wf"
+  },
+  {
+   "t": "2026-11-24T22:08:15.907Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "provider.create.done",
+   "id": "fake-69275-3-dr5wf"
+  },
+  {
+   "t": "2026-11-24T22:08:15.914Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "e2b.setTimeout",
+   "id": "fake-69275-3-dr5wf",
+   "ms": 0
+  },
+  {
+   "t": "2026-11-24T22:08:15.915Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "RESULT (c) kill throws not-found: after release",
+   "v": {
+    "doc": {
+     "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-441845861522",
+     "leaseCount": 0,
+     "sandboxId": "fake-69275-3-dr5wf",
+     "state": "READY",
+     "killAt": "2026-11-24T22:08:15.912Z",
+     "cleanupAttempts": 0,
+     "killRetryCount": 0,
+     "expiresAt": "2026-11-25T00:08:15.905Z"
+    }
+   }
+  },
+  {
+   "t": "2026-11-24T22:08:15.915Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "e2b.kill.call",
+   "id": "fake-69275-2-o666d",
+   "hasKey": true,
+   "behavior": "gone-throw"
+  },
+  {
+   "t": "2026-11-24T22:08:15.915Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "e2b.kill.gone-throw",
+   "id": "fake-69275-2-o666d"
+  },
+  {
+   "t": "2026-11-24T22:08:15.915Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "e2b.kill.call",
+   "id": "fake-69275-3-dr5wf",
+   "hasKey": true,
+   "behavior": "ok"
+  },
+  {
+   "t": "2026-11-24T22:08:15.915Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "e2b.kill.ok",
+   "id": "fake-69275-3-dr5wf",
+   "was": "running"
+  },
+  {
+   "t": "2026-11-24T22:08:15.918Z",
+   "pid": 69275,
+   "rev": "parent",
+   "kind": "RESULT (c) after cron (kill gone false)",
+   "v": {
+    "doc": null
+   }
+  }
+ ]
+}
