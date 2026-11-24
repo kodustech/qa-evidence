@@ -1,0 +1,70 @@
+{
+ "logs": [
+  {
+   "timestamp": "2026-11-24T20:05:23.285Z",
+   "level": "info",
+   "message": "Receiving pull request review webhook for conversation",
+   "component": "ChatWithKodyFromGitUseCase",
+   "correlationId": "db29bb65-3067-475f-94cb-1731547fc627",
+   "correlationIdSynthetic": true,
+   "tenantId": "unknown",
+   "executionId": null,
+   "sessionId": null,
+   "metadata": {
+    "component": "ChatWithKodyFromGitUseCase",
+    "level": "info",
+    "organizationId": "unknown",
+    "teamId": "unknown",
+    "tenantId": "unknown"
+   },
+   "attributes": {
+    "eventName": "pull_request_review_comment",
+    "component": "ChatWithKodyFromGitUseCase",
+    "originalCorrelationId": null
+   },
+   "error": null,
+   "createdAt": "2026-11-24T20:05:23.285Z"
+  },
+  {
+   "timestamp": "2026-11-24T20:05:23.289Z",
+   "level": "info",
+   "message": "Comment already claimed by another delivery; skipping",
+   "component": "ChatWithKodyFromGitUseCase",
+   "correlationId": "fa6459ed-3a22-4340-be0f-d8929d88843e",
+   "correlationIdSynthetic": true,
+   "tenantId": "unknown",
+   "executionId": null,
+   "sessionId": null,
+   "metadata": {
+    "component": "ChatWithKodyFromGitUseCase",
+    "level": "info",
+    "organizationId": "unknown",
+    "teamId": "unknown",
+    "tenantId": "unknown"
+   },
+   "attributes": {
+    "deliveryKey": "GITHUB:1468015189:1::4685192810:2026-11-24T19:12:33Z",
+    "component": "ChatWithKodyFromGitUseCase",
+    "originalCorrelationId": null
+   },
+   "error": null,
+   "createdAt": "2026-11-24T20:05:23.289Z"
+  }
+ ],
+ "cls": [
+  [],
+  291
+ ],
+ "claim": [
+  [
+   "GITHUB:1468015189:1::4685192810:2026-11-24T19:12:33Z",
+   "chat-with-kody-from-git",
+   "PROCESSED",
+   "1",
+   "",
+   "",
+   "2026-11-24 19:12:38.192",
+   "2026-11-24 19:12:37.738489"
+  ]
+ ]
+}
