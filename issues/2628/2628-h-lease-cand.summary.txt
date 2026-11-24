@@ -1,0 +1,5 @@
+FAIL test/unit/qa2628/h-lease.spec.ts (13.309 s)
+  ● H lease harness @cand › M34 stale release schedule after a new holder acquires between decrement and setKillAt
+    Expected: false
+    Received: true
+Tests:       1 failed, 11 passed, 12 total
