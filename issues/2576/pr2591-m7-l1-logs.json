@@ -1,0 +1,181 @@
+[
+ {
+  "timestamp": "2026-11-24T20:07:05.515Z",
+  "level": "info",
+  "message": "Receiving pull request review webhook for conversation",
+  "component": "ChatWithKodyFromGitUseCase",
+  "correlationId": "45468e38-e408-4d4e-8303-8045c53ad66a",
+  "correlationIdSynthetic": true,
+  "tenantId": "unknown",
+  "executionId": null,
+  "sessionId": null,
+  "metadata": {
+   "component": "ChatWithKodyFromGitUseCase",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "eventName": "Note Hook",
+   "component": "ChatWithKodyFromGitUseCase",
+   "originalCorrelationId": null
+  },
+  "error": null,
+  "createdAt": "2026-11-24T20:07:05.515Z"
+ },
+ {
+  "timestamp": "2026-11-24T20:07:05.536Z",
+  "level": "info",
+  "message": "PR description extracted",
+  "component": "ChatWithKodyFromGitUseCase",
+  "correlationId": "8f564b30-1358-479b-aab1-6e4b5fa590be",
+  "correlationIdSynthetic": true,
+  "tenantId": "unknown",
+  "executionId": null,
+  "sessionId": null,
+  "metadata": {
+   "component": "ChatWithKodyFromGitUseCase",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "platformType": "GITLAB",
+   "hasDescription": true,
+   "descriptionLength": 2206,
+   "descriptionPreview": "<!-- kody-pr-summary:start -->\n## Summary\n\nAdds a new `ReportCardService` (`apps/api/src/report-card",
+   "component": "ChatWithKodyFromGitUseCase",
+   "originalCorrelationId": null
+  },
+  "error": null,
+  "createdAt": "2026-11-24T20:07:05.536Z"
+ },
+ {
+  "timestamp": "2026-11-24T20:07:05.537Z",
+  "level": "info",
+  "message": "Extracted PR information",
+  "component": "ChatWithKodyFromGitUseCase",
+  "correlationId": "0520c3c5-df63-4bc6-a3ff-12e00c14f94f",
+  "correlationIdSynthetic": true,
+  "tenantId": "unknown",
+  "executionId": null,
+  "sessionId": null,
+  "metadata": {
+   "component": "ChatWithKodyFromGitUseCase",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "platformType": "GITLAB",
+   "repository": "codex-athena",
+   "pullRequestNumber": 1,
+   "hasDescription": true,
+   "descriptionLength": 2206,
+   "component": "ChatWithKodyFromGitUseCase",
+   "originalCorrelationId": null
+  },
+  "error": null,
+  "createdAt": "2026-11-24T20:07:05.537Z"
+ },
+ {
+  "timestamp": "2026-11-24T20:07:15.588Z",
+  "level": "info",
+  "message": "Attempting to remove reaction from comment",
+  "component": "ChatWithKodyFromGitUseCase",
+  "correlationId": "38a01acb-dbf2-490b-801e-c1199c5880c6",
+  "correlationIdSynthetic": true,
+  "tenantId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+  "executionId": null,
+  "sessionId": null,
+  "metadata": {
+   "component": "ChatWithKodyFromGitUseCase",
+   "level": "info",
+   "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+   "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8",
+   "tenantId": "0a010c6e-6636-44b7-a741-a08d546d41c9"
+  },
+  "attributes": {
+   "commentId": 4315213999,
+   "reaction": "rocket",
+   "organizationAndTeamData": {
+    "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+    "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8"
+   },
+   "component": "ChatWithKodyFromGitUseCase",
+   "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+   "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8",
+   "originalCorrelationId": null
+  },
+  "error": null,
+  "createdAt": "2026-11-24T20:07:15.588Z"
+ },
+ {
+  "timestamp": "2026-11-24T20:07:15.866Z",
+  "level": "info",
+  "message": "Successfully removed reaction from comment",
+  "component": "ChatWithKodyFromGitUseCase",
+  "correlationId": "7e934d88-dd39-4811-ad97-301595747348",
+  "correlationIdSynthetic": true,
+  "tenantId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+  "executionId": null,
+  "sessionId": null,
+  "metadata": {
+   "component": "ChatWithKodyFromGitUseCase",
+   "level": "info",
+   "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+   "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8",
+   "tenantId": "0a010c6e-6636-44b7-a741-a08d546d41c9"
+  },
+  "attributes": {
+   "commentId": 4315213999,
+   "organizationAndTeamData": {
+    "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+    "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8"
+   },
+   "component": "ChatWithKodyFromGitUseCase",
+   "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+   "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8",
+   "originalCorrelationId": null
+  },
+  "error": null,
+  "createdAt": "2026-11-24T20:07:15.866Z"
+ },
+ {
+  "timestamp": "2026-11-24T20:07:15.866Z",
+  "level": "info",
+  "message": "Successfully executed conversation flow",
+  "component": "ChatWithKodyFromGitUseCase",
+  "correlationId": "cb5eea42-e5c7-4786-9d59-b2abdf5b1832",
+  "correlationIdSynthetic": true,
+  "tenantId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+  "executionId": null,
+  "sessionId": null,
+  "metadata": {
+   "component": "ChatWithKodyFromGitUseCase",
+   "level": "info",
+   "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+   "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8",
+   "tenantId": "0a010c6e-6636-44b7-a741-a08d546d41c9"
+  },
+  "attributes": {
+   "repository": "codex-athena",
+   "pullRequestNumber": 1,
+   "commentId": 4315213999,
+   "responseId": null,
+   "organizationAndTeamData": {
+    "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+    "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8"
+   },
+   "component": "ChatWithKodyFromGitUseCase",
+   "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+   "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8",
+   "originalCorrelationId": null
+  },
+  "error": null,
+  "createdAt": "2026-11-24T20:07:15.866Z"
+ }
+]
