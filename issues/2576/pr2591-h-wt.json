@@ -1,0 +1,2833 @@
+{
+ "M9_no_row": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M9_empty_configs": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M9_old_record_no_key": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M9_empty_block_under_global_false": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M9_no_service": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M6_global_false": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M10_repo_false_numeric_payload": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M10_other_repo_inherits_global_true": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:456:812::901:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "456"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "456"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:456:812::901:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M11_global_false_repo_true": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M11_other_repo_inherits_global_false": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1
+  },
+  "claims": [
+   [
+    "GITHUB:456:812::902:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "456"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:456:812::902:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M12_optin_file_false_stored_true": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M13_optin_file_true_stored_false": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M14_optout_file_false_stored_true": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M14_optout_explicit_false_file_false": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M14_optout_file_true_stored_false": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M15_global_optin_repo_unset_file_false_stored_true": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M15_pipeline_getFileOverridePreference_repoUnset": false,
+ "M16_stored_false_optin_missing": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_true_optin_missing": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_false_optin_empty": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_true_optin_empty": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_false_optin_no_conversation_key": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_true_optin_no_conversation_key": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_false_optin_empty_block": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_true_optin_empty_block": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_false_optin_true": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_true_optin_true": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_false_optin_false": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_true_optin_false": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_false_optin_quoted_false": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_true_optin_quoted_false": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_false_optin_zero": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_true_optin_zero": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_false_optin_null": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_true_optin_null": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_false_optin_no": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M16_stored_true_optin_no": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M17_malformed_yaml_stored_false": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [
+   "warn:Could not read the repository kodus-config.yml: the stored conversation setting applies | deficient indentation (4:1)\n\n 1 | version: \"1.2\"\n 2 | conversation: [\n 3 |   implicitReplies: false\n 4 | \n-----^"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M17_malformed_yaml_stored_true": {
+  "silence": [],
+  "warns": [
+   "warn:Could not read the repository kodus-config.yml: the stored conversation setting applies | deficient indentation (4:1)\n\n 1 | version: \"1.2\"\n 2 | conversation: [\n 3 |   implicitReplies: false\n 4 | \n-----^",
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M18_invalid_riskCriteria_file_false_stored_true": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M18_invalid_approvalPolicies_file_false_stored_true": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M19_repo_false_dir_true_anchor_inside": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M19_repo_false_dir_true_anchor_outside": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::903:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::903:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M19_repo_true_dir_false_anchor_inside": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M20_develop_branch_two_revisions": {
+  "content": [
+   [
+    "kodus-config.yml",
+    "develop",
+    "123"
+   ],
+   [
+    "kodus-config.yml",
+    "develop",
+    "123"
+   ]
+  ],
+  "silence": [
+   "disabled"
+  ],
+  "classify": 1
+ },
+ "M22_stored_read_throws": {
+  "silence": [],
+  "warns": [
+   "warn:Could not read the conversation settings: implicit replies stay as they were | Error getting simple code review config parameters",
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M23_file_timeout_stored_false": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [
+   "warn:Could not read the repository kodus-config.yml: the stored conversation setting applies | ETIMEDOUT"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M23_file_429_stored_true": {
+  "silence": [],
+  "warns": [
+   "warn:Could not read the repository kodus-config.yml: the stored conversation setting applies | Request failed with status code 429",
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1,
+   "llm.classify": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M23_file_500_stored_false": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [
+   "warn:Could not read the repository kodus-config.yml: the stored conversation setting applies | Request failed with status code 500"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M23_bitbucket_swallowed_null_stored_false": {
+  "silence": [
+   "log:disabled"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "provider.getDefaultBranch": 1,
+   "provider.getRepositoryContentFile": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "content": [
+    [
+     "kodus-config.yml",
+     "main",
+     "123"
+    ]
+   ],
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M24_classifier_throws": {
+  "silence": [
+   "error:classifier_error"
+  ],
+  "warns": [
+   "error:Unmentioned reply left unanswered: classifier_error | model 503"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M24_classifier_no_verdict": {
+  "silence": [
+   "log:classified_no"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M24_classifier_false": {
+  "silence": [
+   "log:classified_no"
+  ],
+  "warns": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "parameters.findOne": 1,
+   "permission.validate": 1,
+   "model.resolveTaskSlot": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::900:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "params": [
+    [
+     "22222222-2222-4222-8222-222222222222"
+    ]
+   ],
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::900:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M24_explicit_mention_classifier_broken": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "permission.validate": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::920:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::920:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M7_explicit_mention_setting_off": {
+  "silence": [],
+  "warns": [
+   "warn:Unhandled platoformtype for manual issue creation",
+   "warn:Failed to resolve sandbox clone params; conversation will run without native tools"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "permission.validate": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "claims": [
+   [
+    "GITHUB:123:812::921:2026-09-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "args": {
+   "integration": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "suggestion": [
+    [
+     "string",
+     "123"
+    ]
+   ],
+   "claim": [
+    [
+     "GITHUB:123:812::921:2026-09-24T10:01:00Z"
+    ]
+   ]
+  }
+ },
+ "M21_non_kody_root": {
+  "silence": [
+   "not_kody_thread"
+  ],
+  "findOne": 0
+ },
+ "M21_kody_author": {
+  "silence": [
+   "kody_author"
+  ],
+  "findOne": 0
+ },
+ "M21_bot_cap": {
+  "silence": [
+   "bot_cap"
+  ],
+  "findOne": 0
+ },
+ "M21_thread_cap": {
+  "silence": [
+   "thread_cap"
+  ],
+  "findOne": 0
+ },
+ "M21_eligible_control": {
+  "silence": [
+   "disabled"
+  ],
+  "findOne": 1
+ },
+ "M25_double_delivery": {
+  "first": {
+   "silence": 1,
+   "dup": 1,
+   "claims": [
+    [
+     "GITHUB:123:812::940:2026-09-24T10:01:00Z",
+     "PROCESSED"
+    ]
+   ]
+  },
+  "afterEnable": {
+   "silence": 1,
+   "dup": 2,
+   "classify": 0
+  },
+  "newReply": {
+   "classify": 1,
+   "claims": [
+    [
+     "GITHUB:123:812::940:2026-09-24T10:01:00Z",
+     "PROCESSED"
+    ],
+    [
+     "GITHUB:123:812::941:2026-09-24T10:01:00Z",
+     "PROCESSED"
+    ]
+   ]
+  }
+ },
+ "M39_claim_keys": [
+  [
+   "GITHUB:123:812::940:2026-09-24T10:01:00Z"
+  ],
+  [
+   "GITHUB:123:812::940:2026-09-24T10:01:00Z"
+  ],
+  [
+   "GITHUB:123:812::940:2026-09-24T10:01:00Z"
+  ],
+  [
+   "GITHUB:123:812::941:2026-09-24T10:01:00Z"
+  ]
+ ],
+ "M39_suggestion_lookup": [
+  [
+   "string",
+   "123"
+  ]
+ ],
+ "M39_integration_lookup": [
+  [
+   "string",
+   "123"
+  ],
+  [
+   "string",
+   "123"
+  ]
+ ],
+ "M27_isNewThreadReply": {
+  "github_created": true,
+  "github_edited": false,
+  "github_deleted": false,
+  "gitlab_create": true,
+  "gitlab_update": false,
+  "azure_new": true,
+  "azure_edited": false,
+  "bitbucket_parented": true,
+  "bitbucket_updated_parented": true
+ },
+ "M29": {
+  "github_numeric": {
+   "name": "codex-athena",
+   "id": "1468015189",
+   "owner": "kodus-olimpo"
+  },
+  "gitlab_numeric": {
+   "name": "codex-athena",
+   "id": "89319210",
+   "fullName": "<agent-login>/codex-athena",
+   "owner": "Junior"
+  },
+  "bitbucket_braced_uuid": {
+   "name": "codex-athena",
+   "id": "d7ecce61-5e9d-4e3d-b60a-67a295687125",
+   "owner": "kodustech"
+  },
+  "azure_guid": {
+   "name": "codex-athena",
+   "id": "32c159b2-ac16-419b-9445-8ab275cabadc",
+   "owner": "p"
+  },
+  "forgejo_numeric": {
+   "name": "kodus/codex-athena",
+   "id": "2929820",
+   "fullName": "kodus/codex-athena",
+   "owner": "kodus"
+  },
+  "github_null_id": {
+   "name": "x",
+   "id": null,
+   "owner": ""
+  },
+  "github_missing_id": {
+   "name": "x",
+   "owner": ""
+  }
+ },
+ "M10_getSimpleConfig_numeric_vs_string": {
+  "numeric": {
+   "implicitReplies": true
+  },
+  "string": {
+   "implicitReplies": false
+  }
+ },
+ "M30_inline_mention": {
+  "silence": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "permission.validate": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "msgs": [
+   "Unhandled platoformtype for manual issue creation",
+   "Failed to resolve sandbox clone params; conversation will run without native tools",
+   "Attempting to remove reaction from comment",
+   "Successfully removed reaction from comment",
+   "Successfully executed conversation flow"
+  ]
+ },
+ "M30_general_mention": {
+  "silence": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "permission.validate": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "msgs": [
+   "Unhandled platoformtype for manual issue creation",
+   "Failed to resolve sandbox clone params; conversation will run without native tools",
+   "Attempting to remove reaction from comment",
+   "Successfully removed reaction from comment",
+   "Successfully executed conversation flow"
+  ]
+ },
+ "M30_general_unmentioned": {
+  "silence": [
+   "not_kody_thread"
+  ],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1
+  },
+  "msgs": [
+   "Unmentioned reply left unanswered: not_kody_thread"
+  ]
+ },
+ "M30_start_review": {
+  "silence": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "permission.validate": 1,
+   "provider.addReaction": 1,
+   "suggestion.lookup": 1,
+   "sandbox.acquire": 1,
+   "agent.execute": 1,
+   "provider.createResponse": 1
+  },
+  "msgs": [
+   "Unhandled platoformtype for manual issue creation",
+   "Failed to resolve sandbox clone params; conversation will run without native tools",
+   "Attempting to remove reaction from comment",
+   "Successfully removed reaction from comment",
+   "Successfully executed conversation flow"
+  ]
+ },
+ "M30_business_logic": {
+  "silence": [],
+  "counts": {
+   "claim": 1,
+   "integration.lookup": 1,
+   "provider.addReaction": 1
+  },
+  "msgs": [
+   "Error while executing the git comment response agent"
+  ]
+ },
+ "M38_two_tenants": {
+  "findOneTeams": [
+   [
+    "22222222-2222-4222-8222-222222222222"
+   ],
+   [
+    "44444444-4444-4444-8444-444444444444"
+   ]
+  ],
+  "silences": [
+   {
+    "reason": "disabled",
+    "org": "11111111-1111-4111-8111-111111111111",
+    "commentId": 960
+   }
+  ],
+  "classify": 1
+ }
+}
