@@ -1,0 +1,64 @@
+{
+ "V_valid": true,
+ "V_errors": [],
+ "cases": {
+  "true": {
+   "valid": false,
+   "errors": [
+    " must NOT have additional properties {\"additionalProperty\":\"conversation\"}"
+   ]
+  },
+  "false": {
+   "valid": false,
+   "errors": [
+    " must NOT have additional properties {\"additionalProperty\":\"conversation\"}"
+   ]
+  },
+  "absent": {
+   "valid": true,
+   "errors": []
+  },
+  "empty": {
+   "valid": false,
+   "errors": [
+    " must NOT have additional properties {\"additionalProperty\":\"conversation\"}"
+   ]
+  },
+  "string_false": {
+   "valid": false,
+   "errors": [
+    " must NOT have additional properties {\"additionalProperty\":\"conversation\"}"
+   ]
+  },
+  "unknown_key": {
+   "valid": false,
+   "errors": [
+    " must NOT have additional properties {\"additionalProperty\":\"conversation\"}"
+   ]
+  },
+  "array": {
+   "valid": false,
+   "errors": [
+    " must NOT have additional properties {\"additionalProperty\":\"conversation\"}"
+   ]
+  },
+  "scalar": {
+   "valid": false,
+   "errors": [
+    " must NOT have additional properties {\"additionalProperty\":\"conversation\"}"
+   ]
+  },
+  "null_value": {
+   "valid": false,
+   "errors": [
+    " must NOT have additional properties {\"additionalProperty\":\"conversation\"}"
+   ]
+  },
+  "number0": {
+   "valid": false,
+   "errors": [
+    " must NOT have additional properties {\"additionalProperty\":\"conversation\"}"
+   ]
+  }
+ }
+}
