@@ -1,0 +1,138 @@
+[
+ {
+  "label": "m4",
+  "job": "614acebc-908a-4254-9ce4-e9fd629a1689",
+  "type": "AST_GRAPH_INCREMENTAL",
+  "status": "COMPLETED",
+  "org": "1376936a-961c-4267-862b-cbc19d309ce4",
+  "repo": "a847a63e-9e59-414c-a568-0c8b65cd6e90",
+  "prKey": "1376936a-961c-4267-862b-cbc19d309ce4:a847a63e-9e59-414c-a568-0c8b65cd6e90:graph:614acebc-908a-4254-9ce4-e9fd629a1689",
+  "sandboxId": "imwhbnpimp8iy3zqae5yk",
+  "t_release": "2026-11-24T21:54:06.864Z",
+  "t_kill_log": "2026-11-24T21:54:06.972Z",
+  "kill_idleMs": null,
+  "t_provider_kill": "2026-11-24T21:54:06.916884198Z",
+  "kill_reason": "request",
+  "paused": false,
+  "d_release_killlog": 0.108,
+  "d_release_provider": 0.053,
+  "scheduled_idle_kill": 0,
+  "other": [],
+  "lease_doc_after": 0,
+  "getInfo": "SandboxNotFoundError: Sandbox imwhbnpimp8iy3zqae5yk not found",
+  "stage": "graph-incremental",
+  "deployment": "homolog",
+  "events": [
+   [
+    "created",
+    "2026-11-24T21:53:54.130248139Z"
+   ],
+   [
+    "killed",
+    "2026-11-24T21:54:06.916884198Z"
+   ]
+  ]
+ },
+ {
+  "label": "m4",
+  "job": "32e6a599-0221-4d84-bd69-1b2d73660c26",
+  "type": "AST_GRAPH_INCREMENTAL",
+  "status": "COMPLETED",
+  "org": "4c73f172-aa70-4ad5-87a3-819a915c23e2",
+  "repo": "b8e6e249-2988-45d5-aa73-71716bd9b0ab",
+  "prKey": "4c73f172-aa70-4ad5-87a3-819a915c23e2:b8e6e249-2988-45d5-aa73-71716bd9b0ab:graph:32e6a599-0221-4d84-bd69-1b2d73660c26",
+  "sandboxId": "ikshk74azy4jh2fyj1gvk",
+  "t_release": "2026-11-24T21:54:25.050Z",
+  "t_kill_log": "2026-11-24T21:54:25.335Z",
+  "kill_idleMs": null,
+  "t_provider_kill": "2026-11-24T21:54:25.287486916Z",
+  "kill_reason": "request",
+  "paused": false,
+  "d_release_killlog": 0.285,
+  "d_release_provider": 0.237,
+  "scheduled_idle_kill": 0,
+  "other": [],
+  "lease_doc_after": 0,
+  "getInfo": "SandboxNotFoundError: Sandbox ikshk74azy4jh2fyj1gvk not found",
+  "stage": "graph-incremental",
+  "deployment": "homolog",
+  "events": [
+   [
+    "created",
+    "2026-11-24T21:54:05.354626062Z"
+   ],
+   [
+    "killed",
+    "2026-11-24T21:54:25.287486916Z"
+   ]
+  ]
+ },
+ {
+  "label": "m4",
+  "job": "902695e9-abfb-46a5-a8a9-2f835338f338",
+  "type": "AST_GRAPH_INCREMENTAL",
+  "status": "COMPLETED",
+  "org": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+  "repo": "149cbc06-617c-4e49-a760-f1ef98014571",
+  "prKey": "a570f880-a17c-46d5-8ffd-7955455f20aa:149cbc06-617c-4e49-a760-f1ef98014571:graph:902695e9-abfb-46a5-a8a9-2f835338f338",
+  "sandboxId": "ifpooyo10nso8gapq313b",
+  "t_release": "2026-11-24T21:54:32.422Z",
+  "t_kill_log": "2026-11-24T21:54:32.561Z",
+  "kill_idleMs": null,
+  "t_provider_kill": "2026-11-24T21:54:32.508086524Z",
+  "kill_reason": "request",
+  "paused": false,
+  "d_release_killlog": 0.139,
+  "d_release_provider": 0.086,
+  "scheduled_idle_kill": 0,
+  "other": [],
+  "lease_doc_after": 0,
+  "getInfo": "SandboxNotFoundError: Sandbox ifpooyo10nso8gapq313b not found",
+  "stage": "graph-incremental",
+  "deployment": "homolog",
+  "events": [
+   [
+    "created",
+    "2026-11-24T21:54:22.898505214Z"
+   ],
+   [
+    "killed",
+    "2026-11-24T21:54:32.508086524Z"
+   ]
+  ]
+ },
+ {
+  "label": "m4",
+  "job": "d8940aa8-0823-4139-a202-f30cbf46c72f",
+  "type": "AST_GRAPH_INCREMENTAL",
+  "status": "COMPLETED",
+  "org": "d1be5448-1918-44e7-8a52-363ad1ec07ed",
+  "repo": "cda0f034-676a-42e3-9196-b4bfda2d8497",
+  "prKey": "d1be5448-1918-44e7-8a52-363ad1ec07ed:cda0f034-676a-42e3-9196-b4bfda2d8497:graph:d8940aa8-0823-4139-a202-f30cbf46c72f",
+  "sandboxId": "i3yotu4aa6gezb89u2gsj",
+  "t_release": "2026-11-24T21:54:40.673Z",
+  "t_kill_log": "2026-11-24T21:54:40.791Z",
+  "kill_idleMs": null,
+  "t_provider_kill": "2026-11-24T21:54:40.742123472Z",
+  "kill_reason": "request",
+  "paused": false,
+  "d_release_killlog": 0.118,
+  "d_release_provider": 0.069,
+  "scheduled_idle_kill": 0,
+  "other": [],
+  "lease_doc_after": 0,
+  "getInfo": "SandboxNotFoundError: Sandbox i3yotu4aa6gezb89u2gsj not found",
+  "stage": "graph-incremental",
+  "deployment": "homolog",
+  "events": [
+   [
+    "created",
+    "2026-11-24T21:54:24.016674984Z"
+   ],
+   [
+    "killed",
+    "2026-11-24T21:54:40.742123472Z"
+   ]
+  ]
+ }
+]
