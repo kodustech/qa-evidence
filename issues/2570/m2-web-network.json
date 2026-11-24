@@ -1,0 +1,16 @@
+[
+ {
+  "t": "2026-11-24T21:06:47.375Z",
+  "dir": "req",
+  "method": "GET",
+  "url": "/api/proxy/api/code-management/repositories/org?teamId=1c73ac8b-5b33-4f19-9f87-7d79f45f52a1",
+  "body": null
+ },
+ {
+  "t": "2026-11-24T21:06:47.568Z",
+  "dir": "res",
+  "status": 200,
+  "url": "/api/proxy/api/code-management/repositories/org?teamId=1c73ac8b-5b33-4f19-9f87-7d79f45f52a1",
+  "body": "{\"data\":[{\"id\":\"9001\",\"name\":\"qa2570-alpha\",\"http_url\":\"https://example.invalid/scm/qa2570/qa2570-alpha.git\",\"avatar_url\":\"\",\"organizationName\":\"QA2570\",\"visibility\":\"private\",\"selected\":false,\"default_branch\":\"master\",\"workspaceId\":\"QA2570\",\"project\":{\"id\":\"77\",\"name\":\"QA 2570\"},\"archived\":false,\"fork\":false,\"mirror\":false},{\"id\":\"9002\",\"name\":\"qa2570-beta\",\"http_url\":\"https://example.invalid/scm"
+ }
+]
