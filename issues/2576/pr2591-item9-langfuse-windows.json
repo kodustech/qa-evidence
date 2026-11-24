@@ -1,0 +1,92 @@
+{
+ "M6": {
+  "from": "2026-11-24T19:12:20Z",
+  "to": "2026-11-24T19:22:00Z",
+  "observations": 125,
+  "classifyImplicitReply": 0,
+  "conversationAgent": 0,
+  "names": {
+   "chat accounts/fireworks/models/deepseek-v4p1-flash": 32,
+   "invoke_agent accounts/fireworks/models/deepseek-v4p1-flash": 25,
+   "step 1": 25,
+   "kody-rules.detector-compiler": 7,
+   "code-review-enrich": 6,
+   "detectExternalReferences": 5,
+   "grep": 4,
+   "generateSummaryPR": 2,
+   "step 4": 2,
+   "submitVerdict": 2,
+   "step 3": 2,
+   "step 2": 2,
+   "readFile": 2,
+   "code-review-generalist-verify": 2,
+   "suggestion-formatter": 1
+  }
+ },
+ "M26": {
+  "from": "2026-11-24T19:24:50Z",
+  "to": "2026-11-24T19:27:00Z",
+  "observations": 4,
+  "classifyImplicitReply": 0,
+  "conversationAgent": 0,
+  "names": {
+   "chat accounts/fireworks/models/deepseek-v4p1-flash": 1,
+   "step 1": 1,
+   "invoke_agent accounts/fireworks/models/deepseek-v4p1-flash": 1,
+   "kody-rules.detector-compiler": 1
+  }
+ },
+ "M10": {
+  "from": "2026-11-24T19:36:10Z",
+  "to": "2026-11-24T19:37:30Z",
+  "observations": 4,
+  "classifyImplicitReply": 0,
+  "conversationAgent": 0,
+  "names": {
+   "step 1": 1,
+   "chat accounts/fireworks/models/deepseek-v4p1-flash": 1,
+   "invoke_agent accounts/fireworks/models/deepseek-v4p1-flash": 1,
+   "kody-rules.detector-compiler": 1
+  }
+ },
+ "M12_M18": {
+  "from": "2026-11-24T19:47:10Z",
+  "to": "2026-11-24T19:50:30Z",
+  "observations": 0,
+  "classifyImplicitReply": 0,
+  "conversationAgent": 0,
+  "names": {}
+ },
+ "M17": {
+  "from": "2026-11-24T19:51:50Z",
+  "to": "2026-11-24T19:53:30Z",
+  "observations": 54,
+  "classifyImplicitReply": 0,
+  "conversationAgent": 0,
+  "names": {
+   "chat accounts/fireworks/models/deepseek-v4p1-flash": 15,
+   "readFile": 6,
+   "step 1": 5,
+   "invoke_agent accounts/fireworks/models/deepseek-v4p1-flash": 5,
+   "step 3": 4,
+   "grep": 4,
+   "step 4": 3,
+   "step 2": 3,
+   "code-review-generalist-verify": 3,
+   "submitVerdict": 2,
+   "code-review-repeat-check": 1,
+   "findFile": 1,
+   "listDir": 1,
+   "code-review-generalist-recovery": 1
+  }
+ },
+ "M14": {
+  "from": "2026-11-24T20:01:40Z",
+  "to": "2026-11-24T20:03:00Z",
+  "observations": 0,
+  "classifyImplicitReply": 0,
+  "conversationAgent": 0,
+  "names": {}
+ },
+ "code_order": "chatWithKodyFromGit.use-case.ts@3e4c30393: implicit branch computes `silence = implicitReplyGate(...) ?? (await implicitRepliesDisabled(...) ? \"disabled\" : undefined)` and on silence logs `Unmentioned reply left unanswered: <reason>` and `return`s (lines 1249-1259) before permission check (1288) and `isReplyAddressedToKody` -> classifyImplicitReply (1348). The `disabled` log line per commentId is therefore proof the classifier was not called for that comment."
+}
