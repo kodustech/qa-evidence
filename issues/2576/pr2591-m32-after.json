@@ -1,0 +1,41 @@
+{
+ "raw": {
+  "id": "global",
+  "name": "Global",
+  "configs": {
+   "reviewCadence": {
+    "type": "manual"
+   },
+   "kodyRulesGeneratorEnabled": false
+  },
+  "isSelected": true,
+  "repositories": [
+   {
+    "id": "1468015189",
+    "name": "codex-athena",
+    "configs": {
+     "conversation": {
+      "implicitReplies": false
+     }
+    },
+    "isSelected": true,
+    "directories": []
+   },
+   {
+    "id": "1468015288",
+    "name": "codex-ares",
+    "configs": {},
+    "isSelected": false,
+    "directories": []
+   }
+  ]
+ },
+ "get_repo_conversation": {
+  "implicitReplies": {
+   "value": false,
+   "level": "repository",
+   "overriddenValue": true,
+   "overriddenLevel": "default"
+  }
+ }
+}
