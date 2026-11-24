@@ -1,0 +1,248 @@
+$ (parent sources f5f987da9 for the 7 non-spec files, merge specs) env CI=true SKIP_INTEGRATION=false API_NODE_ENV=test TEST_PG_HOST=localhost TEST_PG_PORT=55494 TEST_PG_USER=kodusdev TEST_PG_PASSWORD=kodusdev TEST_PG_DB=kodus_db npx jest --config jest.config.ts --runInBand --forceExit --no-coverage --verbose --runTestsByPath libs/automation/infrastructure/adapters/repositories/automationExecution.repository.data-key.integration.spec.ts libs/automation/infrastructure/adapters/repositories/automationExecution.repository.spec.ts libs/automation/infrastructure/adapters/services/processAutomation/strategies/automationCodeReview.spec.ts libs/code-review/pipeline/stages/validate-prerequisites.stage.notify.spec.ts libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts 
+FAIL libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts
+  ● ValidatePrerequisitesStage › no-license notice › reacts and posts the notice on the first skip, recording when
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    Expected: {"key": "licenseNoticePostedAt", "pullRequestNumber": 42, "repositoryId": "repo-1", "teamAutomationId": "automation-1"}
+
+    Number of calls: 0
+
+      1074 |             expect(
+      1075 |                 mockAutomationExecutionService.hasPullRequestExecutionWithDataKey,
+    > 1076 |             ).toHaveBeenCalledWith({
+           |               ^
+      1077 |                 teamAutomationId: 'automation-1',
+      1078 |                 repositoryId: 'repo-1',
+      1079 |                 pullRequestNumber: 42,
+
+      at Object.toHaveBeenCalledWith (libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts:1076:15)
+
+  ● ValidatePrerequisitesStage › no-license notice › posts the notice on the first skip only, keeping the reaction on later runs
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: Any<String>
+    Received: undefined
+
+      1099 |
+      1100 |             const first = await stage.execute(makeContext());
+    > 1101 |             expect(first.licenseNoticePostedAt).toEqual(expect.any(String));
+           |                                                 ^
+      1102 |
+      1103 |             // The next run finds the notice the first one persisted.
+      1104 |             mockAutomationExecutionService.hasPullRequestExecutionWithDataKey.mockResolvedValue(
+
+      at Object.toEqual (libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts:1101:49)
+
+  ● ValidatePrerequisitesStage › no-license notice › posts only the notice on AZURE_REPOS, without the old reaction comment
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    Expected: ObjectContaining {"body": undefined}
+    Received: {"body": "[👎](https://docs.kodus.io/how_to_use/en/code_review/flow#what-each-emoji-means)", "organizationAndTeamData": {"organizationId": "org-1", "teamId": "team-1"}, "prNumber": 42, "repository": {"id": "repo-1", "name": "repo-1"}}
+
+    Number of calls: 1
+
+      1131 |                 expect(
+      1132 |                     mockCodeManagementService.createIssueComment,
+    > 1133 |                 ).toHaveBeenCalledWith(
+           |                   ^
+      1134 |                     expect.objectContaining({ body: USER_NO_LICENSE_NOTICE }),
+      1135 |                 );
+      1136 |                 expect(
+
+      at toHaveBeenCalledWith (libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts:1133:19)
+
+  ● ValidatePrerequisitesStage › no-license notice › posts only the notice on BITBUCKET, without the old reaction comment
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    Expected: ObjectContaining {"body": undefined}
+    Received: {"body": "[👎](https://docs.kodus.io/how_to_use/en/code_review/flow#what-each-emoji-means)", "organizationAndTeamData": {"organizationId": "org-1", "teamId": "team-1"}, "prNumber": 42, "repository": {"id": "repo-1", "name": "repo-1"}}
+
+    Number of calls: 1
+
+      1131 |                 expect(
+      1132 |                     mockCodeManagementService.createIssueComment,
+    > 1133 |                 ).toHaveBeenCalledWith(
+           |                   ^
+      1134 |                     expect.objectContaining({ body: USER_NO_LICENSE_NOTICE }),
+      1135 |                 );
+      1136 |                 expect(
+
+      at toHaveBeenCalledWith (libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts:1133:19)
+
+  ● ValidatePrerequisitesStage › no-license notice › answers a Bitbucket command in its thread
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    Expected: ObjectContaining {"body": undefined, "inReplyToId": 77}
+    Received: {"body": "[👎](https://docs.kodus.io/how_to_use/en/code_review/flow#what-each-emoji-means)", "inReplyToId": 77, "organizationAndTeamData": {"organizationId": "org-1", "teamId": "team-1"}, "prNumber": 42, "repository": {"id": "repo-1", "name": "repo-1"}}
+
+    Number of calls: 1
+
+      1156 |             expect(
+      1157 |                 mockCodeManagementService.createResponseToComment,
+    > 1158 |             ).toHaveBeenCalledWith(
+           |               ^
+      1159 |                 expect.objectContaining({
+      1160 |                     inReplyToId: 77,
+      1161 |                     body: USER_NO_LICENSE_NOTICE,
+
+      at Object.toHaveBeenCalledWith (libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts:1158:15)
+
+  ● ValidatePrerequisitesStage › no-license notice › does not record the notice when the provider did not post it
+
+    expect(jest.fn()).toHaveBeenCalled()
+
+    Expected number of calls: >= 1
+    Received number of calls:    0
+
+      1178 |             expect(
+      1179 |                 mockCodeManagementService.createIssueComment,
+    > 1180 |             ).toHaveBeenCalled();
+           |               ^
+      1181 |             expect(result.licenseNoticePostedAt).toBeUndefined();
+      1182 |         });
+      1183 |
+
+      at Object.toHaveBeenCalled (libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts:1180:15)
+
+  ● ValidatePrerequisitesStage › no-license notice › still posts the notice when the earlier-notice lookup fails
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    Expected: ObjectContaining {"body": undefined}
+
+    Number of calls: 0
+
+      1195 |             expect(
+      1196 |                 mockCodeManagementService.createIssueComment,
+    > 1197 |             ).toHaveBeenCalledWith(
+           |               ^
+      1198 |                 expect.objectContaining({ body: USER_NO_LICENSE_NOTICE }),
+      1199 |             );
+      1200 |             expect(result.licenseNoticePostedAt).toEqual(expect.any(String));
+
+      at Object.toHaveBeenCalledWith (libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts:1197:15)
+
+  console.log
+    ◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+
+      at _log (node_modules/dotenv/lib/main.js:131:11)
+
+FAIL libs/automation/infrastructure/adapters/repositories/automationExecution.repository.data-key.integration.spec.ts
+  ● AutomationExecutionRepository.hasPullRequestExecutionWithDataKey (integration, real Postgres) › finds the key on an earlier execution of the same PR
+
+    TypeError: repository.hasPullRequestExecutionWithDataKey is not a function
+
+      89 |             pullRequestNumber: number;
+      90 |         }) =>
+    > 91 |             repository.hasPullRequestExecutionWithDataKey({
+         |                        ^
+      92 |                 teamAutomationId: params.automation ?? automation,
+      93 |                 repositoryId: params.repositoryId ?? REPO,
+      94 |                 pullRequestNumber: params.pullRequestNumber,
+
+      at hasPullRequestExecutionWithDataKey (libs/automation/infrastructure/adapters/repositories/automationExecution.repository.data-key.integration.spec.ts:91:24)
+      at Object.has (libs/automation/infrastructure/adapters/repositories/automationExecution.repository.data-key.integration.spec.ts:191:26)
+
+  ● AutomationExecutionRepository.hasPullRequestExecutionWithDataKey (integration, real Postgres) › ignores the key set for another automation or another repository
+
+    TypeError: repository.hasPullRequestExecutionWithDataKey is not a function
+
+      89 |             pullRequestNumber: number;
+      90 |         }) =>
+    > 91 |             repository.hasPullRequestExecutionWithDataKey({
+         |                        ^
+      92 |                 teamAutomationId: params.automation ?? automation,
+      93 |                 repositoryId: params.repositoryId ?? REPO,
+      94 |                 pullRequestNumber: params.pullRequestNumber,
+
+      at hasPullRequestExecutionWithDataKey (libs/automation/infrastructure/adapters/repositories/automationExecution.repository.data-key.integration.spec.ts:91:24)
+      at Object.has (libs/automation/infrastructure/adapters/repositories/automationExecution.repository.data-key.integration.spec.ts:196:26)
+
+  ● AutomationExecutionRepository.hasPullRequestExecutionWithDataKey (integration, real Postgres) › treats a null value as not set
+
+    TypeError: repository.hasPullRequestExecutionWithDataKey is not a function
+
+      89 |             pullRequestNumber: number;
+      90 |         }) =>
+    > 91 |             repository.hasPullRequestExecutionWithDataKey({
+         |                        ^
+      92 |                 teamAutomationId: params.automation ?? automation,
+      93 |                 repositoryId: params.repositoryId ?? REPO,
+      94 |                 pullRequestNumber: params.pullRequestNumber,
+
+      at hasPullRequestExecutionWithDataKey (libs/automation/infrastructure/adapters/repositories/automationExecution.repository.data-key.integration.spec.ts:91:24)
+      at Object.has (libs/automation/infrastructure/adapters/repositories/automationExecution.repository.data-key.integration.spec.ts:207:26)
+
+  ● AutomationExecutionRepository.hasPullRequestExecutionWithDataKey (integration, real Postgres) › is false for a PR with no executions
+
+    TypeError: repository.hasPullRequestExecutionWithDataKey is not a function
+
+      89 |             pullRequestNumber: number;
+      90 |         }) =>
+    > 91 |             repository.hasPullRequestExecutionWithDataKey({
+         |                        ^
+      92 |                 teamAutomationId: params.automation ?? automation,
+      93 |                 repositoryId: params.repositoryId ?? REPO,
+      94 |                 pullRequestNumber: params.pullRequestNumber,
+
+      at hasPullRequestExecutionWithDataKey (libs/automation/infrastructure/adapters/repositories/automationExecution.repository.data-key.integration.spec.ts:91:24)
+      at Object.has (libs/automation/infrastructure/adapters/repositories/automationExecution.repository.data-key.integration.spec.ts:212:26)
+
+FAIL libs/automation/infrastructure/adapters/services/processAutomation/strategies/automationCodeReview.spec.ts
+  ● AutomationCodeReviewService › the stored execution › records the no-license notice on a skipped run, so the next push stays quiet (#2594)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 9
+
+    - ObjectContaining {
+    -   "licenseNoticePostedAt": "2026-11-22T12:00:00.000Z",
+    + Object {
+    +   "codeManagementEvent": undefined,
+    +   "organizationAndTeamData": Object {
+    +     "organizationId": "org-1",
+    +     "teamId": "team-1",
+    +   },
+    +   "platformType": "github",
+    +   "pullRequestNumber": 42,
+    +   "repositoryId": "repo-1",
+      }
+
+      409 |                     licenseNoticePostedAt: postedAt,
+      410 |                 }),
+    > 411 |             ).toEqual(
+          |               ^
+      412 |                 expect.objectContaining({ licenseNoticePostedAt: postedAt }),
+      413 |             );
+      414 |             expect(build({ lastAnalyzedCommit: undefined })).not.toHaveProperty(
+
+      at Object.toEqual (libs/automation/infrastructure/adapters/services/processAutomation/strategies/automationCodeReview.spec.ts:411:15)
+
+FAIL libs/automation/infrastructure/adapters/repositories/automationExecution.repository.spec.ts
+  ● AutomationExecutionRepository.hasPullRequestExecutionWithDataKey › looks for the key on any execution of that PR
+
+    TypeError: repository.hasPullRequestExecutionWithDataKey is not a function
+
+      229 |         const { repository, queryBuilder } = makeRepository();
+      230 |
+    > 231 |         await repository.hasPullRequestExecutionWithDataKey(params);
+          |                          ^
+      232 |
+      233 |         expect(queryBuilder.where).toHaveBeenCalledWith(
+      234 |             'automation_execution.team_automation_id = :teamAutomationId',
+
+      at Object.hasPullRequestExecutionWithDataKey (libs/automation/infrastructure/adapters/repositories/automationExecution.repository.spec.ts:231:26)
+
+Test Suites: 4 failed, 1 passed, 5 total
+Tests:       13 failed, 77 passed, 90 total
+Snapshots:   0 total
+Time:        1.287 s, estimated 2 s
+Ran all test suites within paths "libs/automation/infrastructure/adapters/repositories/automationExecution.repository.data-key.integration.spec.ts", "libs/automation/infrastructure/adapters/repositories/automationExecution.repository.spec.ts", "libs/automation/infrastructure/adapters/services/processAutomation/strategies/automationCodeReview.spec.ts", "libs/code-review/pipeline/stages/validate-prerequisites.stage.notify.spec.ts", "libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts".
+Test results written to: ../m39-parent2.json
+Force exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?
