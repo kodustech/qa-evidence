@@ -1,0 +1,20 @@
+{"rev": "ctrl", "driver": true, "event": "scenario", "at": "2026-11-24T22:19:27.158198Z", "mode": "hold", "key": "33333333-2628-4ccc-8ccc-000000000000:r1:1795558767"}
+{"rev":"ctrl","pid":75253,"mode":"hold","event":"acquired-holding","at":"2026-11-24T22:19:27.818Z","leaseId":"513fb818-8016-4574-9c97-500e009e36de","sandboxId":"sbx-ctrl-1795558767803"}
+{"rev": "ctrl", "driver": true, "event": "sigkill", "at": "2026-11-24T22:19:27.825480Z", "mode": "hold", "pid": 75253}
+{"rev":"ctrl","pid":75258,"mode":"read","event":"doc","at":"2026-11-24T22:19:28.316Z","doc":{"leaseCount":1,"killAt":null,"expiresAt":"2026-11-24T22:19:35.769Z","state":"READY","sandboxId":"sbx-ctrl-1795558767803"}}
+{"rev":"ctrl","pid":75259,"mode":"join-and-release","event":"joined","at":"2026-11-24T22:19:28.839Z","leaseId":"0a48327b-530e-4a4a-8aa0-0922fa790b08","leaseCount":2}
+{"rev":"ctrl","pid":75259,"mode":"join-and-release","event":"released","at":"2026-11-24T22:19:28.850Z","leaseCount":1,"killAt":null}
+{"rev":"ctrl","pid":75288,"mode":"reaper","event":"reaper-ran","at":"2026-11-24T22:19:38.789Z","docAfter":null}
+{"rev":"ctrl","pid":75289,"mode":"read","event":"doc","at":"2026-11-24T22:19:39.452Z","doc":null}
+{"rev": "ctrl", "driver": true, "event": "scenario", "at": "2026-11-24T22:19:39.460998Z", "mode": "pause-before-decrement", "key": "33333333-2628-4ccc-8ccc-000000000001:r1:1795558779"}
+{"rev":"ctrl","pid":75306,"mode":"pause-before-decrement","event":"release-decided-decrement-pending","at":"2026-11-24T22:19:39.995Z","leaseId":"b5219d60-1c7a-42cd-816c-6aa8c09a8af6"}
+{"rev": "ctrl", "driver": true, "event": "sigkill", "at": "2026-11-24T22:19:40.001646Z", "mode": "pause-before-decrement", "pid": 75306}
+{"rev":"ctrl","pid":75311,"mode":"read","event":"doc","at":"2026-11-24T22:19:40.492Z","doc":{"leaseCount":1,"killAt":null,"expiresAt":"2026-11-24T22:19:47.973Z","state":"READY","sandboxId":"sbx-ctrl-1795558779989"}}
+{"rev":"ctrl","pid":75345,"mode":"reaper","event":"reaper-ran","at":"2026-11-24T22:19:50.219Z","docAfter":null}
+{"rev":"ctrl","pid":75358,"mode":"read","event":"doc","at":"2026-11-24T22:19:50.843Z","doc":null}
+{"rev": "ctrl", "driver": true, "event": "scenario", "at": "2026-11-24T22:19:50.849179Z", "mode": "after-killat", "key": "33333333-2628-4ccc-8ccc-000000000002:r1:1795558790"}
+{"rev":"ctrl","pid":75360,"mode":"after-killat","event":"killat-written","at":"2026-11-24T22:19:51.384Z","killAt":"2026-11-24T22:19:54.378Z"}
+{"rev": "ctrl", "driver": true, "event": "sigkill", "at": "2026-11-24T22:19:51.390596Z", "mode": "after-killat", "pid": 75360}
+{"rev":"ctrl","pid":75361,"mode":"read","event":"doc","at":"2026-11-24T22:19:51.904Z","doc":{"leaseCount":0,"killAt":"2026-11-24T22:19:54.378Z","expiresAt":"2026-11-24T22:19:59.354Z","state":"READY","sandboxId":"sbx-ctrl-1795558791368"}}
+{"rev":"ctrl","pid":75371,"mode":"reaper","event":"reaper-ran","at":"2026-11-24T22:19:56.482Z","docAfter":null}
+{"rev":"ctrl","pid":75376,"mode":"read","event":"doc","at":"2026-11-24T22:19:57.100Z","doc":null}
