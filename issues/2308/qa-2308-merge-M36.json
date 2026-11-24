@@ -1,0 +1,27 @@
+{
+ "xSave": {
+  "calls": 0,
+  "forwardedContextNeed": {
+   "need": "diff-only",
+   "sourceHash": "4c512c219cf6601cad495ef2c268093aea64c2e319c4e593739a383c3f879c07",
+   "source": "compiler",
+   "inferredAt": "2026-11-24T19:13:42.475Z",
+   "model": "byok"
+  },
+  "forwardedAttemptHash": "d578e80104e2dbfea41ca29068d5e784711e459197388c60a3d2835df649eddc",
+  "xStoredAttemptHash": "d578e80104e2dbfea41ca29068d5e784711e459197388c60a3d2835df649eddc"
+ },
+ "foreignUuidSave": {
+  "err": "Rule not found",
+  "calls": 0
+ },
+ "mixedConvert": {
+  "convErr": "Rule not found: y-pending",
+  "createdCount": 0,
+  "calls": 0,
+  "yPendingStatus": "pending",
+  "xPendingStatus": "pending",
+  "yRulesCount": 8
+ },
+ "yUnchanged": true
+}
