@@ -1,0 +1,61 @@
+[
+ {
+  "label": "m23",
+  "job": "512c388b-0a50-406b-b5b3-bff3292192f8",
+  "type": "AST_GRAPH_INCREMENTAL",
+  "status": "COMPLETED",
+  "org": "1376936a-961c-4267-862b-cbc19d309ce4",
+  "repo": "a847a63e-9e59-414c-a568-0c8b65cd6e90",
+  "prKey": "1376936a-961c-4267-862b-cbc19d309ce4:a847a63e-9e59-414c-a568-0c8b65cd6e90:graph:512c388b-0a50-406b-b5b3-bff3292192f8",
+  "sandboxId": "ijxtz9wufwhvem26wq90e",
+  "t_release": "2026-11-24T23:20:07.491Z",
+  "t_kill_log": "2026-11-24T23:20:07.616Z",
+  "kill_idleMs": null,
+  "t_provider_kill": "2026-11-24T23:20:07.566079493Z",
+  "kill_reason": "request",
+  "paused": false,
+  "d_release_killlog": 0.125,
+  "d_release_provider": 0.075,
+  "scheduled_idle_kill": 0,
+  "other": [],
+  "lease_doc_after": 0,
+  "getInfo": "SandboxNotFoundError: Sandbox ijxtz9wufwhvem26wq90e not found",
+  "stage": "graph-incremental",
+  "deployment": "homolog",
+  "events": [
+   [
+    "created",
+    "2026-11-24T23:19:34.644337319Z"
+   ],
+   [
+    "killed",
+    "2026-11-24T23:20:07.566079493Z"
+   ]
+  ]
+ },
+ {
+  "label": "m23",
+  "job": "eb0ff383-ee30-4eb7-8960-6264d49c1171",
+  "type": "AST_GRAPH_INCREMENTAL",
+  "status": "COMPLETED",
+  "org": "1376936a-961c-4267-862b-cbc19d309ce4",
+  "repo": "a847a63e-9e59-414c-a568-0c8b65cd6e90",
+  "prKey": "1376936a-961c-4267-862b-cbc19d309ce4:a847a63e-9e59-414c-a568-0c8b65cd6e90:graph:eb0ff383-ee30-4eb7-8960-6264d49c1171",
+  "sandboxId": "i6ko3hm4glos3b6wzpzd5",
+  "t_release": "2026-11-24T23:19:53.889Z",
+  "t_kill_log": "2026-11-24T23:19:54.019Z",
+  "kill_idleMs": null,
+  "t_provider_kill": null,
+  "kill_reason": null,
+  "paused": false,
+  "d_release_killlog": 0.13,
+  "d_release_provider": null,
+  "scheduled_idle_kill": 0,
+  "other": [],
+  "lease_doc_after": 0,
+  "getInfo": "SandboxNotFoundError: Sandbox i6ko3hm4glos3b6wzpzd5 not found",
+  "stage": null,
+  "deployment": null,
+  "events": []
+ }
+]
