@@ -1,0 +1,395 @@
+{
+ "rev": "parent",
+ "scenario": "m22",
+ "results": {
+  "review 30000": {
+   "killInMs": 29953,
+   "cleanupStatus": null,
+   "setTimeout": [
+    30000
+   ],
+   "kills": 0,
+   "reacquiredSame": true,
+   "killAtAfterReacquire": null
+  },
+  "conversation default": {
+   "killInMs": 299983,
+   "cleanupStatus": null,
+   "setTimeout": [
+    300000
+   ],
+   "kills": 0,
+   "reacquiredSame": true,
+   "killAtAfterReacquire": null
+  },
+  "idleMs -1": {
+   "kills": 0,
+   "setTimeout": [
+    -1
+   ],
+   "doc": {
+    "killAt": "2026-11-24T22:28:17.306Z",
+    "cleanupStatus": null
+   }
+  },
+  "idleMs 0": {
+   "kills": 0,
+   "setTimeout": [
+    0
+   ],
+   "doc": {
+    "killAt": "2026-11-24T22:28:17.326Z",
+    "cleanupStatus": null
+   }
+  },
+  "idleMs 1": {
+   "kills": 0,
+   "setTimeout": [
+    1
+   ],
+   "doc": {
+    "killAt": "2026-11-24T22:28:17.352Z",
+    "cleanupStatus": null
+   }
+  }
+ },
+ "leaseLogs": [
+  "2026-11-24T22:28:17.043Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:123456:7\" consumer=\"review\"",
+  "2026-11-24T22:28:17.146Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:123456:7\" consumer=\"review\"",
+  "2026-11-24T22:28:17.163Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:123456:7\" consumer=\"review\" leaseId=\"e814550c-0d6a-4971-8311-37f7c628eeef\"",
+  "2026-11-24T22:28:17.183Z info SandboxLeaseManager: released leaseId=\"e814550c-0d6a-4971-8311-37f7c628eeef\" prKey=\"11111111-1111-4111-8111-111111111111:123456:7\" leaseCount=0",
+  "2026-11-24T22:28:17.193Z info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T22:28:47.183Z for sandboxId=\"fake-77495-1-066qs\"",
+  "2026-11-24T22:28:17.197Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:123456:7\" consumer=\"review\"",
+  "2026-11-24T22:28:17.223Z info SandboxLeaseManager: connecting to existing sandbox sandboxId=\"fake-77495-1-066qs\" prKey=\"11111111-1111-4111-8111-111111111111:123456:7\" consumer=\"review\"",
+  "2026-11-24T22:28:17.226Z info [DEBUG] syncE2BSandboxRepo: synced reused sandbox to refspec=refs/heads/main",
+  "2026-11-24T22:28:17.228Z info SandboxLeaseManager: connected to existing sandbox prKey=\"11111111-1111-4111-8111-111111111111:123456:7\" consumer=\"review\" leaseId=\"91e2febb-b108-4cb0-b6b5-9f25a2d43f8c\"",
+  "2026-11-24T22:28:17.235Z info SandboxLeaseManager: released leaseId=\"91e2febb-b108-4cb0-b6b5-9f25a2d43f8c\" prKey=\"11111111-1111-4111-8111-111111111111:123456:7\" leaseCount=0",
+  "2026-11-24T22:28:17.253Z info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T22:28:17.235Z for sandboxId=\"fake-77495-1-066qs\"",
+  "2026-11-24T22:28:17.254Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:123456:7\" consumer=\"conversation\"",
+  "2026-11-24T22:28:17.262Z info SandboxLeaseManager: connecting to existing sandbox sandboxId=\"fake-77495-1-066qs\" prKey=\"11111111-1111-4111-8111-111111111111:123456:7\" consumer=\"conversation\"",
+  "2026-11-24T22:28:17.264Z info [DEBUG] syncE2BSandboxRepo: synced reused sandbox to refspec=refs/heads/main",
+  "2026-11-24T22:28:17.265Z info SandboxLeaseManager: connected to existing sandbox prKey=\"11111111-1111-4111-8111-111111111111:123456:7\" consumer=\"conversation\" leaseId=\"5710fc33-97fd-44df-801e-3c0293d69fd0\"",
+  "2026-11-24T22:28:17.269Z info SandboxLeaseManager: released leaseId=\"5710fc33-97fd-44df-801e-3c0293d69fd0\" prKey=\"11111111-1111-4111-8111-111111111111:123456:7\" leaseCount=0",
+  "2026-11-24T22:28:17.276Z info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T22:33:17.269Z for sandboxId=\"fake-77495-1-066qs\"",
+  "2026-11-24T22:28:17.277Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:123456:7\" consumer=\"conversation\"",
+  "2026-11-24T22:28:17.283Z info SandboxLeaseManager: connecting to existing sandbox sandboxId=\"fake-77495-1-066qs\" prKey=\"11111111-1111-4111-8111-111111111111:123456:7\" consumer=\"conversation\"",
+  "2026-11-24T22:28:17.284Z info [DEBUG] syncE2BSandboxRepo: synced reused sandbox to refspec=refs/heads/main",
+  "2026-11-24T22:28:17.285Z info SandboxLeaseManager: connected to existing sandbox prKey=\"11111111-1111-4111-8111-111111111111:123456:7\" consumer=\"conversation\" leaseId=\"3ea2ca3e-7ec7-4cc5-931c-3e6ecfc6319d\"",
+  "2026-11-24T22:28:17.289Z info SandboxLeaseManager: released leaseId=\"3ea2ca3e-7ec7-4cc5-931c-3e6ecfc6319d\" prKey=\"11111111-1111-4111-8111-111111111111:123456:7\" leaseCount=0",
+  "2026-11-24T22:28:17.292Z info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T22:28:17.289Z for sandboxId=\"fake-77495-1-066qs\"",
+  "2026-11-24T22:28:17.293Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-830776714792\" consumer=\"graph-build\"",
+  "2026-11-24T22:28:17.298Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-830776714792\" consumer=\"graph-build\"",
+  "2026-11-24T22:28:17.303Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-830776714792\" consumer=\"graph-build\" leaseId=\"3278ecce",
+  "2026-11-24T22:28:17.307Z info SandboxLeaseManager: released leaseId=\"3278ecce-105e-492a-b849-130913ab6f7a\" prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-830776714792",
+  "2026-11-24T22:28:17.311Z info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T22:28:17.306Z for sandboxId=\"fake-77495-2-g48s6\"",
+  "2026-11-24T22:28:17.312Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-508402629723\" consumer=\"graph-build\"",
+  "2026-11-24T22:28:17.317Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-508402629723\" consumer=\"graph-build\"",
+  "2026-11-24T22:28:17.323Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-508402629723\" consumer=\"graph-build\" leaseId=\"0d16c92e",
+  "2026-11-24T22:28:17.326Z info SandboxLeaseManager: released leaseId=\"0d16c92e-f8dd-4d12-828b-ffedb4ad9f79\" prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-508402629723",
+  "2026-11-24T22:28:17.332Z info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T22:28:17.326Z for sandboxId=\"fake-77495-3-qzeif\"",
+  "2026-11-24T22:28:17.333Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-675892679468\" consumer=\"graph-build\"",
+  "2026-11-24T22:28:17.336Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-675892679468\" consumer=\"graph-build\"",
+  "2026-11-24T22:28:17.343Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-675892679468\" consumer=\"graph-build\" leaseId=\"5246735c",
+  "2026-11-24T22:28:17.351Z info SandboxLeaseManager: released leaseId=\"5246735c-45bd-4e43-b703-882e7c36bd40\" prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:44444444-4444-4444-8444-675892679468",
+  "2026-11-24T22:28:17.356Z info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T22:28:17.352Z for sandboxId=\"fake-77495-4-l4f3k\""
+ ],
+ "transcript": [
+  {
+   "t": "2026-11-24T22:28:17.147Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "provider.create.start",
+   "id": "fake-77495-1-066qs"
+  },
+  {
+   "t": "2026-11-24T22:28:17.147Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "provider.create.done",
+   "id": "fake-77495-1-066qs"
+  },
+  {
+   "t": "2026-11-24T22:28:17.194Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.setTimeout",
+   "id": "fake-77495-1-066qs",
+   "ms": 30000
+  },
+  {
+   "t": "2026-11-24T22:28:17.223Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.connect",
+   "id": "fake-77495-1-066qs",
+   "state": "running"
+  },
+  {
+   "t": "2026-11-24T22:28:17.225Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.run",
+   "id": "fake-77495-1-066qs",
+   "state": "running",
+   "cmd": "cd /home/user/repo && git fetch --depth=1 'https:/"
+  },
+  {
+   "t": "2026-11-24T22:28:17.226Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.run",
+   "id": "fake-77495-1-066qs",
+   "state": "running",
+   "cmd": "cat /home/user/repo/.gitmodules"
+  },
+  {
+   "t": "2026-11-24T22:28:17.226Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.run",
+   "id": "fake-77495-1-066qs",
+   "state": "running",
+   "cmd": "cd /home/user/repo && git 'config' '-f' '.gitmodul"
+  },
+  {
+   "t": "2026-11-24T22:28:17.230Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "RESULT review 30000",
+   "v": {
+    "killInMs": 29953,
+    "cleanupStatus": null,
+    "setTimeout": [
+     30000
+    ],
+    "kills": 0,
+    "reacquiredSame": true,
+    "killAtAfterReacquire": null
+   }
+  },
+  {
+   "t": "2026-11-24T22:28:17.253Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.setTimeout",
+   "id": "fake-77495-1-066qs",
+   "ms": 0
+  },
+  {
+   "t": "2026-11-24T22:28:17.262Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.connect",
+   "id": "fake-77495-1-066qs",
+   "state": "running"
+  },
+  {
+   "t": "2026-11-24T22:28:17.263Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.run",
+   "id": "fake-77495-1-066qs",
+   "state": "running",
+   "cmd": "cd /home/user/repo && git fetch --depth=1 'https:/"
+  },
+  {
+   "t": "2026-11-24T22:28:17.263Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.run",
+   "id": "fake-77495-1-066qs",
+   "state": "running",
+   "cmd": "cat /home/user/repo/.gitmodules"
+  },
+  {
+   "t": "2026-11-24T22:28:17.263Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.run",
+   "id": "fake-77495-1-066qs",
+   "state": "running",
+   "cmd": "cd /home/user/repo && git 'config' '-f' '.gitmodul"
+  },
+  {
+   "t": "2026-11-24T22:28:17.276Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.setTimeout",
+   "id": "fake-77495-1-066qs",
+   "ms": 300000
+  },
+  {
+   "t": "2026-11-24T22:28:17.283Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.connect",
+   "id": "fake-77495-1-066qs",
+   "state": "running"
+  },
+  {
+   "t": "2026-11-24T22:28:17.284Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.run",
+   "id": "fake-77495-1-066qs",
+   "state": "running",
+   "cmd": "cd /home/user/repo && git fetch --depth=1 'https:/"
+  },
+  {
+   "t": "2026-11-24T22:28:17.284Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.run",
+   "id": "fake-77495-1-066qs",
+   "state": "running",
+   "cmd": "cat /home/user/repo/.gitmodules"
+  },
+  {
+   "t": "2026-11-24T22:28:17.284Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.run",
+   "id": "fake-77495-1-066qs",
+   "state": "running",
+   "cmd": "cd /home/user/repo && git 'config' '-f' '.gitmodul"
+  },
+  {
+   "t": "2026-11-24T22:28:17.286Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "RESULT conversation default",
+   "v": {
+    "killInMs": 299983,
+    "cleanupStatus": null,
+    "setTimeout": [
+     300000
+    ],
+    "kills": 0,
+    "reacquiredSame": true,
+    "killAtAfterReacquire": null
+   }
+  },
+  {
+   "t": "2026-11-24T22:28:17.292Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.setTimeout",
+   "id": "fake-77495-1-066qs",
+   "ms": 0
+  },
+  {
+   "t": "2026-11-24T22:28:17.298Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "provider.create.start",
+   "id": "fake-77495-2-g48s6"
+  },
+  {
+   "t": "2026-11-24T22:28:17.298Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "provider.create.done",
+   "id": "fake-77495-2-g48s6"
+  },
+  {
+   "t": "2026-11-24T22:28:17.311Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.setTimeout",
+   "id": "fake-77495-2-g48s6",
+   "ms": -1
+  },
+  {
+   "t": "2026-11-24T22:28:17.312Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "RESULT idleMs -1",
+   "v": {
+    "kills": 0,
+    "setTimeout": [
+     -1
+    ],
+    "doc": {
+     "killAt": "2026-11-24T22:28:17.306Z",
+     "cleanupStatus": null
+    }
+   }
+  },
+  {
+   "t": "2026-11-24T22:28:17.317Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "provider.create.start",
+   "id": "fake-77495-3-qzeif"
+  },
+  {
+   "t": "2026-11-24T22:28:17.317Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "provider.create.done",
+   "id": "fake-77495-3-qzeif"
+  },
+  {
+   "t": "2026-11-24T22:28:17.332Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.setTimeout",
+   "id": "fake-77495-3-qzeif",
+   "ms": 0
+  },
+  {
+   "t": "2026-11-24T22:28:17.333Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "RESULT idleMs 0",
+   "v": {
+    "kills": 0,
+    "setTimeout": [
+     0
+    ],
+    "doc": {
+     "killAt": "2026-11-24T22:28:17.326Z",
+     "cleanupStatus": null
+    }
+   }
+  },
+  {
+   "t": "2026-11-24T22:28:17.336Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "provider.create.start",
+   "id": "fake-77495-4-l4f3k"
+  },
+  {
+   "t": "2026-11-24T22:28:17.336Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "provider.create.done",
+   "id": "fake-77495-4-l4f3k"
+  },
+  {
+   "t": "2026-11-24T22:28:17.357Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "e2b.setTimeout",
+   "id": "fake-77495-4-l4f3k",
+   "ms": 1
+  },
+  {
+   "t": "2026-11-24T22:28:17.358Z",
+   "pid": 77495,
+   "rev": "parent",
+   "kind": "RESULT idleMs 1",
+   "v": {
+    "kills": 0,
+    "setTimeout": [
+     1
+    ],
+    "doc": {
+     "killAt": "2026-11-24T22:28:17.352Z",
+     "cleanupStatus": null
+    }
+   }
+  }
+ ]
+}
