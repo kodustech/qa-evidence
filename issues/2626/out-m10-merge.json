@@ -1,0 +1,398 @@
+{
+ "rev": "merge",
+ "scenario": "m10",
+ "results": {
+  "after release (kill failed)": {
+   "doc": {
+    "_id": "11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe",
+    "leaseCount": 0,
+    "sandboxId": "fake-69196-1-7bmwg",
+    "state": "READY",
+    "killAt": "2026-11-24T22:08:05.461Z",
+    "cleanupStatus": "in_progress",
+    "cleanupAttempts": 1,
+    "cleanupStartedAt": "2026-11-24T22:08:05.461Z",
+    "killRetryCount": 0,
+    "expiresAt": "2026-11-25T00:08:05.406Z"
+   },
+   "jobStatus": "COMPLETED",
+   "repoStatus": "ready"
+  },
+  "canary persisted in lease doc?": false,
+  "while B waits": {
+   "doc": {
+    "_id": "11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe",
+    "leaseCount": 0,
+    "sandboxId": "fake-69196-1-7bmwg",
+    "state": "READY",
+    "killAt": "2026-11-24T22:08:05.461Z",
+    "cleanupStatus": "in_progress",
+    "cleanupAttempts": 1,
+    "cleanupStartedAt": "2026-11-24T22:08:05.461Z",
+    "killRetryCount": 0,
+    "expiresAt": "2026-11-25T00:08:05.406Z"
+   }
+  },
+  "after cron tick 1 (kill fails again)": {
+   "doc": {
+    "_id": "11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe",
+    "leaseCount": 0,
+    "sandboxId": "fake-69196-1-7bmwg",
+    "state": "READY",
+    "killAt": "2026-11-24T22:08:05.461Z",
+    "cleanupStatus": "in_progress",
+    "cleanupAttempts": 1,
+    "cleanupStartedAt": "2026-11-24T22:08:05.461Z",
+    "killRetryCount": 1,
+    "expiresAt": "2026-11-25T00:08:05.406Z"
+   }
+  },
+  "after cron tick 2 (kill ok)": {
+   "doc": null
+  },
+  "B result": {
+   "sandboxId": "fake-69196-2-vx6d2",
+   "oldSandbox": "fake-69196-1-7bmwg",
+   "fresh": true,
+   "doc": {
+    "_id": "11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe",
+    "leaseCount": 1,
+    "sandboxId": "fake-69196-2-vx6d2",
+    "state": "READY",
+    "cleanupAttempts": 0,
+    "killRetryCount": 0,
+    "expiresAt": "2026-11-25T00:08:07.031Z"
+   }
+  },
+  "after B release": {
+   "doc": null,
+   "killCalls": [
+    "fake-69196-1-7bmwg",
+    "fake-69196-1-7bmwg",
+    "fake-69196-1-7bmwg",
+    "fake-69196-2-vx6d2"
+   ]
+  }
+ },
+ "leaseLogs": [
+  "2026-11-24T22:08:05.405Z info [AST-GRAPH-JOB] Starting build for org/athena",
+  "2026-11-24T22:08:05.406Z info [AST-GRAPH-JOB] Auth resolved for org/athena (0ms)",
+  "2026-11-24T22:08:05.406Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe\" consumer=\"graph-build\"",
+  "2026-11-24T22:08:05.439Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe\" consumer=\"graph-build\"",
+  "2026-11-24T22:08:05.444Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe\" consumer=\"graph-build\" leaseId=\"6257a197",
+  "2026-11-24T22:08:05.444Z info [AST-GRAPH-JOB] Sandbox ready for org/athena (38ms)",
+  "2026-11-24T22:08:05.444Z info [AST-GRAPH-JOB] HEAD sha resolved: f00dface for org/athena",
+  "2026-11-24T22:08:05.444Z info [AST-GRAPH] Starting full build for repo c2c17672-a9a5-4cde-ae4a-81b25c2718dc",
+  "2026-11-24T22:08:05.445Z info [AST-GRAPH] kodus-graph installed (0ms)",
+  "2026-11-24T22:08:05.445Z info [AST-GRAPH] Parse completed (0ms)",
+  "2026-11-24T22:08:05.445Z info [AST-GRAPH] Graph read from sandbox (0ms): 16 nodes, 27 edges",
+  "2026-11-24T22:08:05.454Z info [AST-GRAPH] DB persist completed (9ms)",
+  "2026-11-24T22:08:05.454Z info [AST-GRAPH] Full build COMPLETE for repo c2c17672-a9a5-4cde-ae4a-81b25c2718dc in 10ms — 16 nodes, 27 edges",
+  "2026-11-24T22:08:05.454Z info [AST-GRAPH-JOB] Build COMPLETED for org/athena in 57ms",
+  "2026-11-24T22:08:05.461Z info SandboxLeaseManager: released leaseId=\"6257a197-2822-4e69-84a9-7916613cb62c\" prKey=\"11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe",
+  "2026-11-24T22:08:05.467Z warn SandboxLeaseManager: immediate kill failed, idle-kill cron retries sandboxId=\"fake-69196-1-7bmwg\" prKey=\"11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-4 | err=qa2626-provider-canary 502 upstream (api_key=<fake-canary-key>)",
+  "2026-11-24T22:08:05.467Z info [AST-GRAPH-JOB] Sandbox cleaned up for org/athena",
+  "2026-11-24T22:08:05.471Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe\" consumer=\"graph-build\"",
+  "2026-11-24T22:08:05.490Z info SandboxLeaseManager: cleanup in progress, waiting for completion prKey=\"11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe\"",
+  "2026-11-24T22:08:07.007Z warn [SANDBOX-IDLE-KILL] Failed to kill sandbox — leaving lease for retry next tick",
+  "2026-11-24T22:08:07.019Z info [SANDBOX-IDLE-KILL] Killed idle sandbox",
+  "2026-11-24T22:08:07.031Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe\" consumer=\"graph-build\"",
+  "2026-11-24T22:08:07.042Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe\" consumer=\"graph-build\"",
+  "2026-11-24T22:08:07.052Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe\" consumer=\"graph-build\" leaseId=\"0635b4a8",
+  "2026-11-24T22:08:07.057Z info SandboxLeaseManager: released leaseId=\"0635b4a8-e858-45b2-86e8-fd49a278ba2b\" prKey=\"11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe",
+  "2026-11-24T22:08:07.068Z info SandboxLeaseManager: killed single-use sandbox immediately sandboxId=\"fake-69196-2-vx6d2\" prKey=\"11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6"
+ ],
+ "transcript": [
+  {
+   "t": "2026-11-24T22:08:05.406Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe",
+   "status": "PROCESSING",
+   "stage": "VALIDATING"
+  },
+  {
+   "t": "2026-11-24T22:08:05.406Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe",
+   "status": "PROCESSING",
+   "stage": "RESOLVING_AUTH"
+  },
+  {
+   "t": "2026-11-24T22:08:05.406Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe",
+   "status": "PROCESSING",
+   "stage": "CLONING"
+  },
+  {
+   "t": "2026-11-24T22:08:05.439Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "provider.create.start",
+   "id": "fake-69196-1-7bmwg"
+  },
+  {
+   "t": "2026-11-24T22:08:05.439Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "provider.create.done",
+   "id": "fake-69196-1-7bmwg"
+  },
+  {
+   "t": "2026-11-24T22:08:05.444Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe",
+   "status": "PROCESSING",
+   "stage": "PARSING"
+  },
+  {
+   "t": "2026-11-24T22:08:05.444Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "repo.status",
+   "status": "building"
+  },
+  {
+   "t": "2026-11-24T22:08:05.445Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "cli.parse.start",
+   "id": "fake-69196-1-7bmwg",
+   "cmd": "export PATH=\"$HOME/.bun/bin:$PATH\" 2>/dev/null || true && cd /home/user/repo && mkdir -p '.kodus-graph' && kodus-graph p"
+  },
+  {
+   "t": "2026-11-24T22:08:05.445Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "cli.parse.done",
+   "id": "fake-69196-1-7bmwg"
+  },
+  {
+   "t": "2026-11-24T22:08:05.454Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "repo.status",
+   "status": "ready",
+   "sha": "f00dfacef00dfacef00dfacef00dfacef00dface",
+   "nodeCount": 16,
+   "edgeCount": 27
+  },
+  {
+   "t": "2026-11-24T22:08:05.454Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe",
+   "status": "COMPLETED"
+  },
+  {
+   "t": "2026-11-24T22:08:05.464Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "e2b.kill.call",
+   "id": "fake-69196-1-7bmwg",
+   "hasKey": true,
+   "behavior": "fail"
+  },
+  {
+   "t": "2026-11-24T22:08:05.464Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "e2b.kill.fail",
+   "id": "fake-69196-1-7bmwg"
+  },
+  {
+   "t": "2026-11-24T22:08:05.470Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "RESULT after release (kill failed)",
+   "v": {
+    "doc": {
+     "_id": "11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe",
+     "leaseCount": 0,
+     "sandboxId": "fake-69196-1-7bmwg",
+     "state": "READY",
+     "killAt": "2026-11-24T22:08:05.461Z",
+     "cleanupStatus": "in_progress",
+     "cleanupAttempts": 1,
+     "cleanupStartedAt": "2026-11-24T22:08:05.461Z",
+     "killRetryCount": 0,
+     "expiresAt": "2026-11-25T00:08:05.406Z"
+    },
+    "jobStatus": "COMPLETED",
+    "repoStatus": "ready"
+   }
+  },
+  {
+   "t": "2026-11-24T22:08:05.471Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "RESULT canary persisted in lease doc?",
+   "v": false
+  },
+  {
+   "t": "2026-11-24T22:08:06.976Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "RESULT while B waits",
+   "v": {
+    "doc": {
+     "_id": "11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe",
+     "leaseCount": 0,
+     "sandboxId": "fake-69196-1-7bmwg",
+     "state": "READY",
+     "killAt": "2026-11-24T22:08:05.461Z",
+     "cleanupStatus": "in_progress",
+     "cleanupAttempts": 1,
+     "cleanupStartedAt": "2026-11-24T22:08:05.461Z",
+     "killRetryCount": 0,
+     "expiresAt": "2026-11-25T00:08:05.406Z"
+    }
+   }
+  },
+  {
+   "t": "2026-11-24T22:08:06.988Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "e2b.kill.call",
+   "id": "fake-69196-1-7bmwg",
+   "hasKey": true,
+   "behavior": "fail"
+  },
+  {
+   "t": "2026-11-24T22:08:06.988Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "e2b.kill.fail",
+   "id": "fake-69196-1-7bmwg"
+  },
+  {
+   "t": "2026-11-24T22:08:07.010Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "RESULT after cron tick 1 (kill fails again)",
+   "v": {
+    "doc": {
+     "_id": "11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe",
+     "leaseCount": 0,
+     "sandboxId": "fake-69196-1-7bmwg",
+     "state": "READY",
+     "killAt": "2026-11-24T22:08:05.461Z",
+     "cleanupStatus": "in_progress",
+     "cleanupAttempts": 1,
+     "cleanupStartedAt": "2026-11-24T22:08:05.461Z",
+     "killRetryCount": 1,
+     "expiresAt": "2026-11-25T00:08:05.406Z"
+    }
+   }
+  },
+  {
+   "t": "2026-11-24T22:08:07.013Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "e2b.kill.call",
+   "id": "fake-69196-1-7bmwg",
+   "hasKey": true,
+   "behavior": "ok"
+  },
+  {
+   "t": "2026-11-24T22:08:07.013Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "e2b.kill.ok",
+   "id": "fake-69196-1-7bmwg",
+   "was": "running"
+  },
+  {
+   "t": "2026-11-24T22:08:07.020Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "RESULT after cron tick 2 (kill ok)",
+   "v": {
+    "doc": null
+   }
+  },
+  {
+   "t": "2026-11-24T22:08:07.043Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "provider.create.start",
+   "id": "fake-69196-2-vx6d2"
+  },
+  {
+   "t": "2026-11-24T22:08:07.043Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "provider.create.done",
+   "id": "fake-69196-2-vx6d2"
+  },
+  {
+   "t": "2026-11-24T22:08:07.052Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "B acquired",
+   "sandboxId": "fake-69196-2-vx6d2",
+   "waitedMs": 1581
+  },
+  {
+   "t": "2026-11-24T22:08:07.053Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "RESULT B result",
+   "v": {
+    "sandboxId": "fake-69196-2-vx6d2",
+    "oldSandbox": "fake-69196-1-7bmwg",
+    "fresh": true,
+    "doc": {
+     "_id": "11111111-1111-4111-8111-111111111111:c2c17672-a9a5-4cde-ae4a-81b25c2718dc:graph:ff4faae2-8d32-47a7-89d6-5a74ecf0f7fe",
+     "leaseCount": 1,
+     "sandboxId": "fake-69196-2-vx6d2",
+     "state": "READY",
+     "cleanupAttempts": 0,
+     "killRetryCount": 0,
+     "expiresAt": "2026-11-25T00:08:07.031Z"
+    }
+   }
+  },
+  {
+   "t": "2026-11-24T22:08:07.064Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "e2b.kill.call",
+   "id": "fake-69196-2-vx6d2",
+   "hasKey": true,
+   "behavior": "ok"
+  },
+  {
+   "t": "2026-11-24T22:08:07.064Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "e2b.kill.ok",
+   "id": "fake-69196-2-vx6d2",
+   "was": "running"
+  },
+  {
+   "t": "2026-11-24T22:08:07.068Z",
+   "pid": 69196,
+   "rev": "merge",
+   "kind": "RESULT after B release",
+   "v": {
+    "doc": null,
+    "killCalls": [
+     "fake-69196-1-7bmwg",
+     "fake-69196-1-7bmwg",
+     "fake-69196-1-7bmwg",
+     "fake-69196-2-vx6d2"
+    ]
+   }
+  }
+ ]
+}
