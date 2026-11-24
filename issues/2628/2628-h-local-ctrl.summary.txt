@@ -1,0 +1,5 @@
+FAIL test/unit/qa2628/h-local.spec.ts
+  ● H local provider @ctrl › M15 delayed rm -rf: publication proceeds, observer waits, stop stamped after removal
+    Expected: < -1
+    Received:   1
+Tests:       1 failed, 1 passed, 2 total
