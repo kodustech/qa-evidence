@@ -1,0 +1,239 @@
+/**
+ * QA #2594 local harness (scratch, never committed). Real ValidatePrerequisitesStage
+ * + real AutomationExecutionService + real AutomationExecutionRepository on a
+ * disposable local Postgres. Only permission/billing, auto-assign and the git
+ * provider (CodeManagementService) are stubbed.
+ */
+require('dotenv').config();
+import { randomUUID } from 'node:crypto';
+import * as fs from 'node:fs';
+import { DataSource } from 'typeorm';
+import { EventEmitter2 } from '@nestjs/event-emitter';
+import { Test } from '@nestjs/testing';
+
+import { frozenContext } from '../../../../test/fixtures/frozen-pipeline-context';
+import { PlatformType } from '@libs/core/domain/enums';
+import { PARAMETERS_SERVICE_TOKEN } from '@libs/organization/domain/parameters/contracts/parameters.service.contract';
+import { ORGANIZATION_PARAMETERS_SERVICE_TOKEN } from '@libs/organization/domain/organizationParameters/contracts/organizationParameters.service.contract';
+import { PULL_REQUESTS_SERVICE_TOKEN } from '@libs/platformData/domain/pullRequests/contracts/pullRequests.service.contracts';
+import { CodeManagementService } from '@libs/platform/infrastructure/adapters/services/codeManagement.service';
+import { AutoAssignLicenseUseCase } from '@libs/ee/license/use-cases/auto-assign-license.use-case';
+import { LICENSE_SERVICE_TOKEN } from '@libs/ee/license/interfaces/license.interface';
+import {
+    PermissionValidationService,
+    ValidationErrorType,
+} from '@libs/ee/shared/services/permissionValidation.service';
+import { NotificationService } from '@libs/notifications/application/notification.service';
+import { NotificationRateLimiter } from '@libs/notifications/application/notification-rate-limiter.service';
+import { PrAuthorRecipientResolver } from '@libs/notifications/application/pr-author-recipient.resolver';
+import { USER_SERVICE_TOKEN } from '@libs/identity/domain/user/contracts/user.service.contract';
+import { CODE_BASE_CONFIG_SERVICE_TOKEN } from '@libs/code-review/domain/contracts/CodeBaseConfigService.contract';
+import { PULL_REQUEST_MANAGER_SERVICE_TOKEN } from '@libs/code-review/domain/contracts/PullRequestManagerService.contract';
+import { AUTOMATION_EXECUTION_SERVICE_TOKEN } from '@libs/automation/domain/automationExecution/contracts/automation-execution.service';
+import { AutomationExecutionRepository } from '@libs/automation/infrastructure/adapters/repositories/automationExecution.repository';
+import { AutomationExecutionModel } from '@libs/automation/infrastructure/adapters/repositories/schemas/automationExecution.model';
+import { AutomationExecutionService } from '@libs/automation/infrastructure/adapters/services/automationExecution.service';
+import { ENTITIES } from '@libs/core/infrastructure/database/typeorm/entities';
+import { ValidatePrerequisitesStage } from './validate-prerequisites.stage';
+
+jest.mock('@libs/ee/configs/environment', () => {
+    const actual = jest.requireActual('@libs/ee/configs/environment');
+    return { ...actual, environment: { ...actual.environment, API_CLOUD_MODE: true } };
+});
+
+const OUT = process.env.QA2594_OUT ?? '/tmp/qa2594-harness.json';
+const journal: any[] = [];
+const log = (e: any) => journal.push({ t: Date.now(), ...e });
+
+const ds = new DataSource({
+    type: 'postgres',
+    host: 'localhost',
+    port: 55494,
+    username: 'kodusdev',
+    password: 'kodusdev',
+    database: 'kodus_db',
+    synchronize: false,
+    entities: ENTITIES,
+});
+
+describe('QA #2594 round-2 stage harness', () => {
+    let stage: ValidatePrerequisitesStage;
+    let realService: AutomationExecutionService;
+    let lookup: { hasPullRequestExecutionWithDataKey: jest.Mock };
+    let provider: {
+        addReactionToPR: jest.Mock;
+        addReactionToComment: jest.Mock;
+        createIssueComment: jest.Mock;
+        createResponseToComment: jest.Mock;
+    };
+    const posted: any[] = [];
+    const org = randomUUID();
+    const team = randomUUID();
+    const automation = randomUUID();
+    let loggerErrors: string[] = [];
+    const params: any = { findByKey: jest.fn().mockResolvedValue(undefined) };
+    let loggerWarns: string[] = [];
+
+    const ctx = (repoId: string, pr: number, over: any = {}) =>
+        frozenContext({
+            organizationAndTeamData: { organizationId: org, teamId: team } as any,
+            repository: { id: repoId, name: 'r' } as any,
+            pullRequest: { number: pr, state: 'open', locked: false } as any,
+            userGitId: 'author-1',
+            platformType: PlatformType.GITHUB,
+            branch: 'b',
+            teamAutomationId: automation,
+            origin: 'webhook',
+            action: 'synchronize',
+            errors: [],
+            preparedFileContexts: [],
+            validSuggestions: [],
+            discardedSuggestions: [],
+            validSuggestionsByPR: [],
+            validCrossFileSuggestions: [],
+            pipelineMetadata: {},
+            statusInfo: { status: 'in_progress' as any, message: 'started' },
+            pipelineVersion: '1.0.0',
+            ...over,
+        }) as any;
+
+    /** One production-like run: IN_PROGRESS row first, stage, then the final
+     * write of what _buildExecutionData persists (status + licenseNoticePostedAt). */
+    const run = async (repoId: string, pr: number, opts: { persist?: boolean; over?: any } = {}) => {
+        const uuid = randomUUID();
+        await ds.query(
+            `INSERT INTO automation_execution (uuid,"createdAt","updatedAt",status,"dataExecution","pullRequestNumber","repositoryId",team_automation_id,origin)
+             VALUES ($1,now(),now(),'in_progress',$2,$3,$4,$5,'System')`,
+            [uuid, JSON.stringify({ platformType: 'GITHUB' }), pr, repoId, automation],
+        );
+        const result: any = await stage.execute(ctx(repoId, pr, opts.over));
+        if (opts.persist !== false) {
+            const data: any = { platformType: 'GITHUB' };
+            if (result.licenseNoticePostedAt) data.licenseNoticePostedAt = result.licenseNoticePostedAt;
+            await ds.query(`UPDATE automation_execution SET status='skipped', "dataExecution"=$2 WHERE uuid=$1`, [uuid, JSON.stringify(data)]);
+        }
+        return { uuid, flag: result.licenseNoticePostedAt ?? null, status: result.statusInfo?.status };
+    };
+    const count = (pr: number, repoId = 'repo-A') => posted.filter((p) => p.prNumber === pr && p.repo === repoId).length;
+
+    beforeAll(async () => {
+        await ds.initialize();
+        await ds.query(`INSERT INTO organizations (uuid,name) VALUES ($1,'qa2594-org')`, [org]);
+        await ds.query(`INSERT INTO teams (uuid,name,organization_id) VALUES ($1,'qa2594-team',$2)`, [team, org]);
+        await ds.query(`INSERT INTO team_automations (uuid,"teamUuid") VALUES ($1,$2)`, [automation, team]);
+        const repo = new AutomationExecutionRepository(ds.getRepository(AutomationExecutionModel));
+        realService = new AutomationExecutionService(repo as any, {} as any, new EventEmitter2());
+    });
+    afterAll(async () => {
+        await ds.query(`DELETE FROM automation_execution WHERE team_automation_id=$1`, [automation]);
+        await ds.query(`DELETE FROM team_automations WHERE uuid=$1`, [automation]);
+        await ds.query(`DELETE FROM teams WHERE uuid=$1`, [team]);
+        await ds.query(`DELETE FROM organizations WHERE uuid=$1`, [org]);
+        await ds.destroy();
+        fs.writeFileSync(OUT, JSON.stringify(journal, null, 1));
+    });
+
+    beforeEach(async () => {
+        loggerErrors = [];
+        loggerWarns = [];
+        lookup = {
+            hasPullRequestExecutionWithDataKey: jest.fn((p) => realService.hasPullRequestExecutionWithDataKey(p)),
+        };
+        const accept = (kind: string) =>
+            jest.fn(async (p: any) => {
+                posted.push({ kind, prNumber: p.prNumber, repo: p.repository.id, inReplyToId: p.inReplyToId, body: p.body });
+                return { id: posted.length };
+            });
+        provider = {
+            addReactionToPR: jest.fn().mockResolvedValue(undefined),
+            addReactionToComment: jest.fn().mockResolvedValue(undefined),
+            createIssueComment: accept('issue'),
+            createResponseToComment: accept('reply'),
+        };
+        const module = await Test.createTestingModule({
+            providers: [
+                ValidatePrerequisitesStage,
+                { provide: AUTOMATION_EXECUTION_SERVICE_TOKEN, useValue: lookup },
+                { provide: CODE_BASE_CONFIG_SERVICE_TOKEN, useValue: { getConfig: jest.fn().mockResolvedValue({ automatedReviewActive: true }) } },
+                { provide: PULL_REQUEST_MANAGER_SERVICE_TOKEN, useValue: { getChangedFilesMetadata: jest.fn().mockResolvedValue([{ filename: 'a.ts' }]) } },
+                {
+                    provide: PermissionValidationService,
+                    useValue: {
+                        validateExecutionPermissions: jest.fn().mockResolvedValue({ allowed: false, errorType: ValidationErrorType.USER_NOT_LICENSED }),
+                        getBYOKConfig: jest.fn().mockResolvedValue(null),
+                        resolveTaskSlot: jest.fn().mockResolvedValue(null),
+                    },
+                },
+                { provide: AutoAssignLicenseUseCase, useValue: { execute: jest.fn().mockResolvedValue({ shouldProceed: false, reason: 'AUTO_ASSIGN_DISABLED' }) } },
+                { provide: ORGANIZATION_PARAMETERS_SERVICE_TOKEN, useValue: { findByKey: jest.fn().mockResolvedValue(undefined) } },
+                { provide: PARAMETERS_SERVICE_TOKEN, useValue: params },
+                { provide: PULL_REQUESTS_SERVICE_TOKEN, useValue: { find: jest.fn().mockResolvedValue([]), countByAuthor: jest.fn().mockResolvedValue(2) } },
+                { provide: CodeManagementService, useValue: provider },
+                { provide: NotificationService, useValue: { emit: jest.fn().mockResolvedValue(undefined) } },
+                { provide: NotificationRateLimiter, useValue: { shouldEmit: jest.fn().mockResolvedValue(true) } },
+                { provide: PrAuthorRecipientResolver, useValue: { resolve: jest.fn().mockResolvedValue(null) } },
+                { provide: USER_SERVICE_TOKEN, useValue: { find: jest.fn().mockResolvedValue([]) } },
+                { provide: LICENSE_SERVICE_TOKEN, useValue: { startTrial: jest.fn(), getAllUsersWithLicense: jest.fn().mockResolvedValue([]) } },
+            ],
+        }).compile();
+        stage = module.get(ValidatePrerequisitesStage);
+        const lg: any = (stage as any).logger;
+        jest.spyOn(lg, 'error').mockImplementation((e: any) => loggerErrors.push(e?.message));
+        jest.spyOn(lg, 'warn').mockImplementation((e: any) => loggerWarns.push(e?.message));
+    });
+
+
+    it('M8: repo feedback true overrides global false; absent settings and a failing parameter read default to on', async () => {
+        const cases: Array<[string, () => void, number]> = [
+            ['repo-on-global-off', () => params.findByKey.mockResolvedValue({ configValue: { configs: { showStatusFeedback: false }, repositories: [{ id: 'repo-A', configs: { showStatusFeedback: true } }] } }), 1],
+            ['repo-off-global-on', () => params.findByKey.mockResolvedValue({ configValue: { configs: { showStatusFeedback: true }, repositories: [{ id: 'repo-A', configs: { showStatusFeedback: false } }] } }), 0],
+            ['global-off-no-repo', () => params.findByKey.mockResolvedValue({ configValue: { configs: { showStatusFeedback: false }, repositories: [] } }), 0],
+            ['absent', () => params.findByKey.mockResolvedValue(undefined), 1],
+            ['param-read-error', () => params.findByKey.mockRejectedValue(new Error('parameters read failed')), 1],
+        ];
+        let pr = 500;
+        for (const [name, setup, expected] of cases) {
+            pr++;
+            loggerWarns = [];
+            setup();
+            const r = await run('repo-A', pr);
+            const reactions = provider.addReactionToPR.mock.calls.length;
+            provider.addReactionToPR.mockClear();
+            log({ case: `M8-${name}`, notices: count(pr), reactions, flag: !!r.flag, warns: loggerWarns.filter((w) => w !== 'User not licensed but company has licenses') });
+            expect(count(pr)).toBe(expected);
+            expect(reactions).toBe(expected);
+            expect(!!r.flag).toBe(expected === 1);
+        }
+        params.findByKey.mockResolvedValue(undefined);
+    });
+
+    it('M27: a premarked current IN_PROGRESS row DOES match (contrast with the markerless self-row)', async () => {
+        await ds.query(
+            `INSERT INTO automation_execution (uuid,"createdAt","updatedAt",status,"dataExecution","pullRequestNumber","repositoryId",team_automation_id,origin)
+             VALUES ($1,now(),now(),'in_progress',$2,520,'repo-A',$3,'System')`,
+            [randomUUID(), JSON.stringify({ licenseNoticePostedAt: '2026-11-24T00:00:00.000Z' }), automation],
+        );
+        const r = await stage.execute(ctx('repo-A', 520));
+        log({ case: 'M27-premarked-self', notices: count(520), flag: !!(r as any).licenseNoticePostedAt });
+        expect(count(520)).toBe(0);
+        // markerless self-row only
+        await ds.query(
+            `INSERT INTO automation_execution (uuid,"createdAt","updatedAt",status,"dataExecution","pullRequestNumber","repositoryId",team_automation_id,origin)
+             VALUES ($1,now(),now(),'in_progress',$2,521,'repo-A',$3,'System')`,
+            [randomUUID(), JSON.stringify({ platformType: 'GITHUB' }), automation],
+        );
+        const r2 = await stage.execute(ctx('repo-A', 521));
+        log({ case: 'M27-markerless-self', notices: count(521), flag: !!(r2 as any).licenseNoticePostedAt });
+        expect(count(521)).toBe(1);
+    });
+
+    it('M38: missing teamAutomationId bypasses the lookup (notice on every run); long/unicode metadata does not alter the body', async () => {
+        const noTa = { teamAutomationId: undefined, pullRequest: { number: 530, state: 'open', locked: false, title: 'Matrícula 学生 🎓 ' + 'ç'.repeat(2000) } };
+        await stage.execute(ctx('repo-ü', 530, noTa));
+        await stage.execute(ctx('repo-ü', 530, noTa));
+        const bodies = posted.filter((p) => p.prNumber === 530).map((p) => p.body);
+        log({ case: 'M38-missing-teamAutomationId', notices: bodies.length, lookupCalls: lookup.hasPullRequestExecutionWithDataKey.mock.calls.length, bodyUnchanged: bodies.every((b) => b === bodies[0] && b.startsWith('## Kodus license not found') && !b.includes('学生')) });
+        expect(lookup.hasPullRequestExecutionWithDataKey).not.toHaveBeenCalled();
+        expect(bodies.length).toBe(2);
+    });
+});
