@@ -1,0 +1,671 @@
+{
+ "org": "jr-claude-github",
+ "from": "2026-11-24T18:55:00Z",
+ "to": "2026-11-24T19:20:47Z",
+ "rules": [
+  {
+   "uuid": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2",
+   "title": "qa2308 grades require enrollment",
+   "status": "active",
+   "severity": "high",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "091bc1387e1cc4ac8d90930e021a54d644b991219439e5149646984891dac612",
+    "attemptedAt": "2026-11-24T19:04:15.987Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical"
+   },
+   "cn": {
+    "need": "full-file",
+    "source": "author",
+    "sourceHash": "bogus-qa2308",
+    "inferredAt": "2026-11-24T19:10:37.034Z"
+   },
+   "detector": null,
+   "fileScope": [
+    ".ts",
+    ".js"
+   ],
+   "caCurrent": true,
+   "cnCurrent": true,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "In qa2308/, a service that records a grade must chec that the student is enrolled in the course first. Reect the grade otherwise."
+  },
+  {
+   "uuid": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "title": "qa2308 no console.log",
+   "status": "active",
+   "severity": "high",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "c1a9c405186cb2c070a29c6c52f2d270363e962288dc9646d746283063c0cc3b",
+    "attemptedAt": "2026-11-24T19:19:03.485Z",
+    "outcome": "compiled",
+    "declineReason": null
+   },
+   "cn": {
+    "need": "diff-only",
+    "source": "compiler",
+    "sourceHash": "2e53a6765badc5614a76b5d153c553a1a6c516bdbb49b037d056ef776b0214dc",
+    "inferredAt": "2026-11-24T19:12:12.510Z"
+   },
+   "detector": "console\\.log\\s*\\(",
+   "fileScope": [
+    ".ts",
+    ".tsx",
+    ".mts",
+    ".cts"
+   ],
+   "caCurrent": true,
+   "cnCurrent": true,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "Do not call console.log in TypeScript files under qa2308/; use the injected logger."
+  },
+  {
+   "uuid": "8719ceb8-c644-483b-8177-54c868953e54",
+   "title": "qa2308 cli grades rounding",
+   "status": "active",
+   "severity": "medium",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "cd1c9bec3c0db796ca15f832a351c9cd62d2aa7e00ff17e05516c415133ec48c",
+    "attemptedAt": "2026-11-24T19:19:08.485Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical"
+   },
+   "cn": {
+    "need": null,
+    "source": null,
+    "sourceHash": null,
+    "inferredAt": null
+   },
+   "detector": null,
+   "fileScope": [
+    ".js",
+    ".jsx",
+    ".ts",
+    ".tsx",
+    ".mjs",
+    ".cjs"
+   ],
+   "caCurrent": true,
+   "cnCurrent": false,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "In qa2308/, grade averages must be rounded only when the report card is rendered, never when the grade is stored."
+  },
+  {
+   "uuid": "e0419abd-2264-42ab-b1ee-d22b4e734244",
+   "title": "qa-2308 no eval in attendance import",
+   "status": "active",
+   "severity": "medium",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "51106dc13a891bf6a10eaa05c340e58e26b3dcb2bd019dac2beee5599e37224a",
+    "attemptedAt": "2026-11-24T19:19:28.636Z",
+    "outcome": "compiled",
+    "declineReason": null
+   },
+   "cn": {
+    "need": null,
+    "source": null,
+    "sourceHash": null,
+    "inferredAt": null
+   },
+   "detector": "\\beval\\s*\\(",
+   "fileScope": [
+    ".ts",
+    ".tsx",
+    ".js",
+    ".jsx",
+    ".mjs",
+    ".cjs"
+   ],
+   "caCurrent": true,
+   "cnCurrent": false,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "In attendance JSON import code, never execute the payload with eval; parse it with JSON.parse.\n\n### Bad example\n```ts\nconst attendance = eva"
+  },
+  {
+   "uuid": "b47dfb9a-cfdf-4131-b64e-a5c6978a8a59",
+   "title": "qa2308 grades require enrollment (proposed)",
+   "status": "rejected",
+   "severity": "high",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "091bc1387e1cc4ac8d90930e021a54d644b991219439e5149646984891dac612",
+    "attemptedAt": "2026-11-24T19:04:15.987Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical"
+   },
+   "cn": {
+    "need": "full-file",
+    "source": "author",
+    "sourceHash": "bogus-qa2308",
+    "inferredAt": "2026-11-24T19:10:37.034Z"
+   },
+   "detector": null,
+   "fileScope": [
+    ".ts",
+    ".js"
+   ],
+   "caCurrent": true,
+   "cnCurrent": true,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "In qa2308/, a service that records a grade must chec that the student is enrolled in the course first. Reect the grade otherwise."
+  },
+  {
+   "uuid": "283d82a6-bbf2-4409-9805-9106f80c41be",
+   "title": "qa2308 grades require enrollment (proposed)",
+   "status": "active",
+   "severity": "high",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": "091bc1387e1cc4ac8d90930e021a54d644b991219439e5149646984891dac612",
+    "attemptedAt": "2026-11-24T19:20:43.822Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical"
+   },
+   "cn": {
+    "need": "full-file",
+    "source": "author",
+    "sourceHash": "bogus-qa2308",
+    "inferredAt": "2026-11-24T19:10:37.034Z"
+   },
+   "detector": null,
+   "fileScope": [
+    ".ts",
+    ".js"
+   ],
+   "caCurrent": true,
+   "cnCurrent": true,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "In qa2308/, a service that records a grade must chec that the student is enrolled in the course first. Reect the grade otherwise."
+  },
+  {
+   "uuid": "1eb95c7d-af59-4b39-a22a-b183252a7d1b",
+   "title": "qa2308 pending new attendance campus",
+   "status": "pending",
+   "severity": "medium",
+   "path": "qa2308/**",
+   "ca": {
+    "sourceHash": null,
+    "attemptedAt": null,
+    "outcome": null,
+    "declineReason": null
+   },
+   "cn": {
+    "need": null,
+    "source": null,
+    "sourceHash": null,
+    "inferredAt": null
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": false,
+   "cnCurrent": false,
+   "examplesKeyOrder": [
+    [
+     "snippet",
+     "isCorrect"
+    ],
+    [
+     "snippet",
+     "isCorrect"
+    ]
+   ],
+   "rule": "In qa2308/, an attendance record must keep the campus id the caller sent."
+  }
+ ],
+ "compilerObs": [
+  {
+   "t": "2026-11-24T18:57:10.777Z",
+   "end": "2026-11-24T18:57:13.283Z",
+   "trace": "9d22341f4e7280d89b283690e3af8a6d",
+   "level": "DEFAULT",
+   "status": ""
+  },
+  {
+   "t": "2026-11-24T18:57:33.710Z",
+   "end": "2026-11-24T18:57:35.927Z",
+   "trace": "6ccff7249801db9a60e4592875f3eb1a",
+   "level": "DEFAULT",
+   "status": ""
+  },
+  {
+   "t": "2026-11-24T18:59:30.944Z",
+   "end": "2026-11-24T18:59:32.741Z",
+   "trace": "0ecec3804a6fc7c3c3d9a50e4f60358d",
+   "level": "DEFAULT",
+   "status": ""
+  },
+  {
+   "t": "2026-11-24T19:04:13.432Z",
+   "end": "2026-11-24T19:04:15.972Z",
+   "trace": "60cc79926d504c2abf7f9d6516e26589",
+   "level": "DEFAULT",
+   "status": ""
+  },
+  {
+   "t": "2026-11-24T19:10:41.863Z",
+   "end": "2026-11-24T19:10:43.539Z",
+   "trace": "54e97d77fcb296dee5e4b09bbf50034c",
+   "level": "DEFAULT",
+   "status": ""
+  },
+  {
+   "t": "2026-11-24T19:12:11.071Z",
+   "end": "2026-11-24T19:12:12.508Z",
+   "trace": "d96d939b36f72d2b4793655033289684",
+   "level": "DEFAULT",
+   "status": ""
+  },
+  {
+   "t": "2026-11-24T19:16:17.638Z",
+   "end": "2026-11-24T19:16:20.290Z",
+   "trace": "5c6b3685e33f6a5e9948e64c6887d225",
+   "level": "DEFAULT",
+   "status": ""
+  },
+  {
+   "t": "2026-11-24T19:19:00.401Z",
+   "end": "2026-11-24T19:19:03.467Z",
+   "trace": "f98fb4104fb9c5c73dc91317807d79e4",
+   "level": "DEFAULT",
+   "status": ""
+  },
+  {
+   "t": "2026-11-24T19:19:01.215Z",
+   "end": "2026-11-24T19:19:08.471Z",
+   "trace": "738c9baa1b5cf4d56a8778047c7aea1b",
+   "level": "DEFAULT",
+   "status": ""
+  },
+  {
+   "t": "2026-11-24T19:19:26.007Z",
+   "end": "2026-11-24T19:19:28.614Z",
+   "trace": "4b9a9915a84cc64f395a55b5e7d760ed",
+   "level": "DEFAULT",
+   "status": ""
+  }
+ ],
+ "compilerLogs": [
+  {
+   "t": "2026-11-24T18:57:13.298Z",
+   "level": "info",
+   "message": "Rule f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2 stays semantic (not-mechanical)",
+   "ruleUuid": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2"
+  },
+  {
+   "t": "2026-11-24T18:57:35.944Z",
+   "level": "info",
+   "message": "Compiled T0 detector for rule 6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "ruleUuid": "6db8d934-1487-45fe-b4f8-2666b89662b8"
+  },
+  {
+   "t": "2026-11-24T18:59:32.753Z",
+   "level": "info",
+   "message": "Rule f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2 stays semantic (not-mechanical)",
+   "ruleUuid": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2"
+  },
+  {
+   "t": "2026-11-24T19:04:15.986Z",
+   "level": "info",
+   "message": "Rule f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2 stays semantic (not-mechanical)",
+   "ruleUuid": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2"
+  },
+  {
+   "t": "2026-11-24T19:10:43.559Z",
+   "level": "info",
+   "message": "Compiled T0 detector for rule 6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "ruleUuid": "6db8d934-1487-45fe-b4f8-2666b89662b8"
+  },
+  {
+   "t": "2026-11-24T19:12:12.527Z",
+   "level": "info",
+   "message": "Compiled T0 detector for rule 6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "ruleUuid": "6db8d934-1487-45fe-b4f8-2666b89662b8"
+  },
+  {
+   "t": "2026-11-24T19:16:20.304Z",
+   "level": "info",
+   "message": "Rule 6db8d934-1487-45fe-b4f8-2666b89662b8 stays semantic (no-usable-examples)",
+   "ruleUuid": "6db8d934-1487-45fe-b4f8-2666b89662b8"
+  },
+  {
+   "t": "2026-11-24T19:19:03.485Z",
+   "level": "info",
+   "message": "Compiled T0 detector for rule 6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "ruleUuid": "6db8d934-1487-45fe-b4f8-2666b89662b8"
+  },
+  {
+   "t": "2026-11-24T19:19:08.485Z",
+   "level": "info",
+   "message": "Rule 8719ceb8-c644-483b-8177-54c868953e54 stays semantic (not-mechanical)",
+   "ruleUuid": "8719ceb8-c644-483b-8177-54c868953e54"
+  },
+  {
+   "t": "2026-11-24T19:19:28.635Z",
+   "level": "info",
+   "message": "Compiled T0 detector for rule e0419abd-2264-42ab-b1ee-d22b4e734244",
+   "ruleUuid": "e0419abd-2264-42ab-b1ee-d22b4e734244"
+  },
+  {
+   "t": "2026-11-24T19:20:43.822Z",
+   "level": "info",
+   "message": "Rule 283d82a6-bbf2-4409-9805-9106f80c41be stays semantic (not-mechanical)",
+   "ruleUuid": "283d82a6-bbf2-4409-9805-9106f80c41be"
+  }
+ ],
+ "saveLogs": [
+  {
+   "t": "2026-11-24T18:57:10.766Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T18:57:11.993Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T18:57:33.702Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T18:57:33.741Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T18:59:30.935Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T18:59:30.979Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T18:59:35.474Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T18:59:35.498Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T19:04:13.423Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T19:04:13.471Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T19:10:41.852Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T19:10:41.963Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T19:10:48.584Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T19:10:48.624Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T19:12:11.062Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T19:12:11.103Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T19:12:23.894Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T19:12:23.926Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "f5f2a39f-d33a-4a9e-a6a0-511ee8d56ca2",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T19:15:29.210Z",
+   "level": "warn",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Reference detection skipped - missing required fields",
+   "ruleId": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T19:15:42.052Z",
+   "level": "warn",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Reference detection skipped - missing required fields",
+   "ruleId": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T19:16:04.819Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T19:16:04.856Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T19:16:17.629Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T19:16:17.672Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T19:19:00.383Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T19:19:00.455Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "6db8d934-1487-45fe-b4f8-2666b89662b8",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T19:19:01.207Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "8719ceb8-c644-483b-8177-54c868953e54",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T19:19:02.338Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "8719ceb8-c644-483b-8177-54c868953e54",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T19:19:25.999Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "e0419abd-2264-42ab-b1ee-d22b4e734244",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T19:19:26.703Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "e0419abd-2264-42ab-b1ee-d22b4e734244",
+   "org": "unknown"
+  },
+  {
+   "t": "2026-11-24T19:20:41.614Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "Rule created/updated, triggering reference detection",
+   "ruleId": "283d82a6-bbf2-4409-9805-9106f80c41be",
+   "org": "1376936a-961c-4267-862b-cbc19d309ce4"
+  },
+  {
+   "t": "2026-11-24T19:20:43.450Z",
+   "level": "info",
+   "component": "CreateOrUpdateKodyRulesUseCase",
+   "message": "KodyRule successfully processed with Context OS",
+   "ruleId": "283d82a6-bbf2-4409-9805-9106f80c41be",
+   "org": "unknown"
+  }
+ ]
+}
