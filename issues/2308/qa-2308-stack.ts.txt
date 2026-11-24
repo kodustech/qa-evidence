@@ -1,0 +1,93 @@
+// QA #2308 harness stack: real use cases, real KodyRulesService, real KodyRulesRepository on a disposable local Mongo,
+// real KodyRuleDetectorCompilerService and production hash/gate. Only external transports are stubbed:
+// the model door (LLM.run), authorization/telemetry/reference detection/centralized PR transport.
+import mongoose, { Connection, Model } from 'mongoose';
+import { EventEmitter2 } from '@nestjs/event-emitter';
+import * as fs from 'fs';
+import { LLM } from '@libs/llm/llm';
+import { KodyRulesModel, KodyRulesSchema } from '@libs/kodyRules/infrastructure/adapters/repositories/schemas/kodyRules.model';
+import { KodyRulesRepository } from '@libs/ee/kodyRules/repository/kodyRules.repository';
+import { KodyRulesService } from '@libs/ee/kodyRules/service/kodyRules.service';
+import { KodyRuleDetectorCompilerService } from '@libs/ee/kodyRules/service/kody-rule-detector-compiler.service';
+import { CreateOrUpdateKodyRulesUseCase } from '@libs/kodyRules/application/use-cases/create-or-update.use-case';
+import { ConvertPendingUpdatesToNewUseCase } from '@libs/kodyRules/application/use-cases/convert-pending-updates-to-new.use-case';
+import { FindRulesInOrganizationByRuleFilterKodyRulesUseCase } from '@libs/kodyRules/application/use-cases/find-rules-in-organization-by-filter.use-case';
+import { ChangeStatusKodyRulesUseCase } from '@libs/kodyRules/application/use-cases/change-status-kody-rules.use-case';
+import { ruleCompileHash, ruleContextNeedHash } from '@libs/common/utils/kody-rules/compile-hash';
+
+export const MONGO = process.env.QA2308_MONGO || 'mongodb://127.0.0.1:27399';
+export const OUT = process.env.QA2308_OUT || '/Users/juniorsartori/.kodus-qa-runs/2026-11-24/2308/hout';
+export const VERSION = process.env.QA2308_VERSION || 'merge';
+
+export const stub = (o: any = {}) => new Proxy(o, { get: (t, k) => (k in t ? t[k] : k === 'then' ? undefined : async () => null) });
+
+export type Script = (user: string, n: number) => Promise<any> | any;
+export const defaultScript: Script = (user) => {
+    if (/console\.log/.test(user)) return { mechanical: true, pattern: 'console\\.log\\s*\\(', extensions: ['.ts'], contextNeed: 'diff-only', reason: 'call' };
+    if (/\beval\b/.test(user)) return { mechanical: true, pattern: '\\beval\\s*\\(', contextNeed: 'diff-only', reason: 'eval call' };
+    return { mechanical: false, cosmetic: false, contextNeed: 'diff-only', reason: 'semantic' };
+};
+
+export async function buildStack(dbName: string, opts: { centralized?: boolean; keepDb?: boolean } = {}) {
+    const connection: Connection = await mongoose.createConnection(MONGO, { dbName, serverSelectionTimeoutMS: 5000 }).asPromise();
+    const model = connection.model<KodyRulesModel>(KodyRulesModel.name, KodyRulesSchema) as Model<any>;
+    const validation = stub({ validateRulesLimit: async () => true, MAX_KODY_RULES: 10000 });
+    const repository = new KodyRulesRepository(model as any, validation as any);
+    const permission = stub({ resolveTaskSlot: async () => ({ main: { provider: 'openai_compatible', model: 'stub-model' } }), shouldLimitResources: async () => false });
+    const service = new KodyRulesService(repository as any, new EventEmitter2(), stub() as any, stub() as any, validation as any, stub() as any, stub() as any, permission as any, stub({ get: () => stub(), resolve: async () => stub() }) as any, stub() as any, undefined);
+    const compiler = new KodyRuleDetectorCompilerService(permission as any, stub() as any, service as any);
+
+    const ledger: any = { llm: [], compileCalls: [], pending: [] as Promise<any>[] };
+    let script: Script = defaultScript;
+    const setScript = (s: Script) => { script = s; };
+    (LLM as any).run = async (args: any) => {
+        const n = ledger.llm.length + 1;
+        const rec: any = { n, t: new Date().toISOString(), runName: args.runName, org: args.organizationId, userPrompt: args.user };
+        ledger.llm.push(rec);
+        const out = await script(args.user, n);
+        rec.out = out; rec.done = new Date().toISOString();
+        return out;
+    };
+    const origCompile = compiler.compileAndSave.bind(compiler);
+    (compiler as any).compileAndSave = (org: any, uuid: string, rule: any) => {
+        ledger.compileCalls.push({ t: new Date().toISOString(), uuid, payloadKeys: Object.keys(rule), compileAttempt: rule.compileAttempt ?? null, contextNeed: rule.contextNeed ?? null, hasExamples: rule.examples !== undefined, gateHash: ruleCompileHash(rule), ctxHash: ruleContextNeedHash(rule) });
+        const p = origCompile(org, uuid, rule);
+        ledger.pending.push(p.catch(() => null));
+        return p;
+    };
+    const centralizedState = { enabled: !!opts.centralized, mutations: [] as any[] };
+    const centralizedPr = stub({
+        getCentralizedRepositoryIfEnabled: async () => (centralizedState.enabled ? { id: 'cfg-repo', name: 'cfg' } : null),
+        resolveDirectoryGroupFolderName: async () => null,
+        resolveRepositoryFolderName: async () => 'athena',
+        buildRuleFileName: (t: string, u?: string) => `${String(t).replace(/\W+/g, '-')}.yml`,
+        buildCentralizedPath: ({ repositoryFolder, relativePath }: any) => `${repositoryFolder}/${relativePath}`,
+        buildDirectoryGroupRulesPath: (...a: any[]) => a.join('/'),
+        createMutationPullRequestIfEnabled: async (req: any) => {
+            if (!centralizedState.enabled) return { mode: 'direct' };
+            centralizedState.mutations.push(JSON.parse(JSON.stringify(req, (k, v) => (k === 'centralizedConfigPrService' ? undefined : v))));
+            return { mode: 'centralized-pr', prUrl: 'https://example.invalid/pr/1', prNumber: 1 };
+        },
+    });
+    const authorization = stub({ ensure: async () => undefined, getRepositoryScope: async () => null });
+    const useCase = new CreateOrUpdateKodyRulesUseCase(service as any, stub() as any, authorization as any, stub() as any, centralizedPr as any, permission as any, compiler as any, stub({ kodyRuleChanged: async () => undefined }) as any);
+    const mkRequest = (orgId: string, teamId = 'team-1') => ({ user: { uuid: 'user-1', email: 'qa@example.invalid', organization: { uuid: orgId }, team: { uuid: teamId } } });
+    const findUC = (orgId: string) => new FindRulesInOrganizationByRuleFilterKodyRulesUseCase(service as any, mkRequest(orgId) as any, stub() as any, authorization as any);
+    const changeStatusUC = (orgId: string) => new ChangeStatusKodyRulesUseCase(service as any, useCase as any, stub() as any, centralizedPr as any, findUC(orgId) as any, authorization as any, stub({ kodyRuleChanged: async () => undefined }) as any, mkRequest(orgId) as any);
+    const convertUC = (orgId: string) => new ConvertPendingUpdatesToNewUseCase(useCase as any, findUC(orgId) as any, changeStatusUC(orgId) as any, centralizedPr as any, authorization as any, mkRequest(orgId) as any);
+
+    const settle = async () => { for (let i = 0; i < 5; i++) { const ps = ledger.pending.splice(0); if (!ps.length) { await new Promise((r) => setTimeout(r, 30)); if (!ledger.pending.length) return; } await Promise.all(ps); } };
+    const human = { userId: 'user-1', userEmail: 'qa@example.invalid' };
+    const kody = { userId: 'kody', userEmail: 'kody@kodus.io' };
+    const save = (orgId: string, dto: any, who: any = human, teamId = 'team-1') => useCase.execute(dto, orgId, who, true, teamId);
+    const getRules = async (orgId: string) => ((await model.findOne({ organizationId: orgId }).lean().exec()) as any)?.rules ?? [];
+    const getRule = async (orgId: string, uuid: string) => (await getRules(orgId)).find((r: any) => r.uuid === uuid);
+    const close = async () => { if (!opts.keepDb) await connection.dropDatabase(); await connection.close(); };
+    return { connection, model, repository, service, compiler, useCase, convertUC, changeStatusUC, ledger, setScript, settle, save, getRules, getRule, human, kody, centralizedState, close };
+}
+
+export const dtoOf = (r: any, over: any = {}) => ({ uuid: r.uuid, title: r.title, rule: r.rule, path: r.path, severity: r.severity, examples: r.examples, origin: r.origin ?? 'manual', status: r.status ?? 'active', type: r.type ?? 'standard', scope: 'file', repositoryId: r.repositoryId ?? 'global', ...over });
+export const newDto = (title: string, rule: string, examples?: any[], over: any = {}) => ({ title, rule, path: 'qa2308/**', severity: 'medium', examples, origin: 'manual', status: 'active', type: 'standard', scope: 'file', repositoryId: 'global', ...over });
+export const proj = (r: any) => r && ({ uuid: r.uuid, title: r.title, status: r.status, rule: String(r.rule).slice(0, 80), compileAttempt: r.compileAttempt, contextNeed: r.contextNeed, detector: r.detector ? { pattern: r.detector.pattern } : null, fileScope: r.fileScope ?? null, caCurrent: !!r.compileAttempt?.sourceHash && r.compileAttempt.sourceHash === ruleCompileHash(r), ctxHash: ruleContextNeedHash(r) });
+export function writeOut(name: string, obj: any) { fs.mkdirSync(OUT, { recursive: true }); fs.writeFileSync(`${OUT}/${VERSION}-${name}.json`, JSON.stringify(obj, null, 1)); }
+export { ruleCompileHash, ruleContextNeedHash };
