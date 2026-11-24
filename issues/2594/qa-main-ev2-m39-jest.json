@@ -1,0 +1,978 @@
+{
+ "merge": {
+  "numPassedTestSuites": 5,
+  "numFailedTestSuites": 0,
+  "numPassedTests": 90,
+  "numFailedTests": 0,
+  "suites": [
+   {
+    "suite": "libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts",
+    "status": "passed",
+    "assertions": [
+     {
+      "title": "should not add no-license reaction when show status feedback is disabled",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "should not add no-subscription comment when show status feedback is disabled",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "auto-provisions a missing trial and re-validates for an onboarded org",
+      "status": "passed",
+      "numPassingAsserts": 4
+     },
+     {
+      "title": "does not provision a trial for an org whose license exists but is canceled",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "does not provision a trial when onboarding is not finished",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "should mark notification as handled for early skips when show status feedback is disabled",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "should skip review for centralized config repository when centralized config is enabled",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "should not skip review for non-centralized config repository when centralized config is enabled",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "marks the pipeline SKIPPED with a subscription-related message when license is invalid",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "marks the pipeline SKIPPED with USER_IGNORED message when the user is in the ignored list",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "reviews an ignored identity that holds a seat instead of skipping it",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "reviews an identity excluded by allowedUsers when it holds a seat",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "keeps skipping an ignored identity when the seat lookup fails",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "reuses the seat list it already fetched for the permission check",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "does not look up seats when the identity is not filtered out",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "gates on trial credits WITHOUT consuming (consumption is deferred to a successful review)",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "posts a BYOK-focused comment and a trial-specific SKIPPED status when trial credits run out",
+      "status": "passed",
+      "numPassingAsserts": 6
+     },
+     {
+      "title": "posts a top-up comment (not BYOK-required, not trial-ended) when Kodus credits are exhausted",
+      "status": "passed",
+      "numPassingAsserts": 4
+     },
+     {
+      "title": "posts a \"subscription check unavailable\" message (not credits, not trial-ended) on a transient billing failure",
+      "status": "passed",
+      "numPassingAsserts": 5
+     },
+     {
+      "title": "posts \"subscription check unavailable\" when the license read itself failed, and never tries to provision a trial",
+      "status": "passed",
+      "numPassingAsserts": 5
+     },
+     {
+      "title": "keeps the generic \"Plan Limit Exceeded\" SKIPPED status for a non-trial plan limit",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "skips without assigning a seat when the effective setting is off",
+      "status": "passed",
+      "numPassingAsserts": 4
+     },
+     {
+      "title": "hands auto-assign the author's PR count, counted no further than 2",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "assigns the seat as before when the effective setting is on",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "skips without assigning a seat when the effective setting is off",
+      "status": "passed",
+      "numPassingAsserts": 4
+     },
+     {
+      "title": "hands auto-assign the author's PR count, counted no further than 2",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "assigns the seat as before when the effective setting is on",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "resolves the effective setting from the PR files, so directory and kodus-config.yml overrides apply",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "keeps auto-assign for an explicit command even when automated review is off",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "keeps auto-assign for an explicit command-force even when automated review is off",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "falls back to the repository and global settings when the effective config cannot be resolved",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "does not resolve the config when the author already holds a seat",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "reacts and posts the notice on the first skip, recording when",
+      "status": "passed",
+      "numPassingAsserts": 5
+     },
+     {
+      "title": "posts the notice on the first skip only, keeping the reaction on later runs",
+      "status": "passed",
+      "numPassingAsserts": 4
+     },
+     {
+      "title": "posts only the notice on AZURE_REPOS, without the old reaction comment",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "posts only the notice on BITBUCKET, without the old reaction comment",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "answers a Bitbucket command in its thread",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "does not record the notice when the provider did not post it",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "still posts the notice when the earlier-notice lookup fails",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "stays silent for a IGNORED_USER author",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "stays silent for a NOT_ALLOWED_USER author",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "posts nothing when auto-assign gives the author a seat",
+      "status": "passed",
+      "numPassingAsserts": 4
+     }
+    ]
+   },
+   {
+    "suite": "libs/automation/infrastructure/adapters/repositories/automationExecution.repository.data-key.integration.spec.ts",
+    "status": "passed",
+    "assertions": [
+     {
+      "title": "finds the key on an earlier execution of the same PR",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "ignores the key set for another automation or another repository",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "treats a null value as not set",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "is false for a PR with no executions",
+      "status": "passed",
+      "numPassingAsserts": 1
+     }
+    ]
+   },
+   {
+    "suite": "libs/automation/infrastructure/adapters/services/processAutomation/strategies/automationCodeReview.spec.ts",
+    "status": "passed",
+    "assertions": [
+     {
+      "title": "raises so the request can be retried (origin command)",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "raises so the request can be retried (origin command-force)",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "still drops an automation-triggered run quietly",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "anchors the retry deadline on the holder, not on the collision",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "falls back to now when the holder has no execution row yet",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "never starts the pipeline",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "raises so the request can be retried",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "still drops an automation-triggered run quietly",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "releases the lock it acquired",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "does not report the refusal as an execution error",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "does not block a new review once the row stopped heartbeating",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "still blocks while the holder keeps heartbeating",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "heartbeats its execution row and stops once it finishes",
+      "status": "passed",
+      "numPassingAsserts": 4
+     },
+     {
+      "title": "keeps reviewing when a heartbeat write fails",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "runs the review anyway",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "records the base branch the reviewed commit was compared against",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "records the mode it reviewed in, balanced unless heavy (#2578)",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "records no base branch when no commit was reviewed",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "preserves shared risk and intentional agent skips when a later stage did not complete review",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "records the no-license notice on a skipped run, so the next push stays quiet (#2594)",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "checks implementation against the reviewed commit (success)",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "checks implementation against the reviewed commit (partial_error)",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "enqueues only after the execution is persisted",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "does not check when error",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "does not check when skipped",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "does not check when no reviewed commit",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "does not check when the execution could not be persisted",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "a failed enqueue does not fail the review",
+      "status": "passed",
+      "numPassingAsserts": 1
+     }
+    ]
+   },
+   {
+    "suite": "libs/automation/infrastructure/adapters/repositories/automationExecution.repository.spec.ts",
+    "status": "passed",
+    "assertions": [
+     {
+      "title": "matches any of the values when a filter is a list",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "keeps equality for a single value and for an entity reference",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "returns the most recent match as an entity",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "passes compound filters through and loads the execution relations",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "uses IN for a list of statuses and equality for a single one",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "excludes in-progress pairs, drops invalid refs and marks only scope-decided PRs as zero-comment candidates",
+      "status": "passed",
+      "numPassingAsserts": 7
+     },
+     {
+      "title": "looks for the key on any execution of that PR",
+      "status": "passed",
+      "numPassingAsserts": 5
+     }
+    ]
+   },
+   {
+    "suite": "libs/code-review/pipeline/stages/validate-prerequisites.stage.notify.spec.ts",
+    "status": "passed",
+    "assertions": [
+     {
+      "title": "emits review.skipped_no_license when license fails AND author is a registered user",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "resolves the author handle like the pullRequests collection ({ login: 'octocat' })",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "resolves the author handle like the pullRequests collection ({ username: 'ada' })",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "resolves the author handle like the pullRequests collection ({ nickname: 'ada-lovelace' })",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "resolves the author handle like the pullRequests collection ({ uniqueName: 'ada@contoso.com' })",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "skips the emit when the rate limiter rejects (already notified within 24h)",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "falls back to org owners when the PR author is a bot/external user (resolver returns null)",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "omits ownerContact when no owner is registered for the org",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "uses a per-(user,org) rate-limit key so different users do not collide",
+      "status": "passed",
+      "numPassingAsserts": 2
+     }
+    ]
+   }
+  ]
+ },
+ "parent": {
+  "numPassedTestSuites": 1,
+  "numFailedTestSuites": 4,
+  "numPassedTests": 77,
+  "numFailedTests": 13,
+  "suites": [
+   {
+    "suite": "libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts",
+    "status": "failed",
+    "assertions": [
+     {
+      "title": "should not add no-license reaction when show status feedback is disabled",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "should not add no-subscription comment when show status feedback is disabled",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "auto-provisions a missing trial and re-validates for an onboarded org",
+      "status": "passed",
+      "numPassingAsserts": 4
+     },
+     {
+      "title": "does not provision a trial for an org whose license exists but is canceled",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "does not provision a trial when onboarding is not finished",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "should mark notification as handled for early skips when show status feedback is disabled",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "should skip review for centralized config repository when centralized config is enabled",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "should not skip review for non-centralized config repository when centralized config is enabled",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "marks the pipeline SKIPPED with a subscription-related message when license is invalid",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "marks the pipeline SKIPPED with USER_IGNORED message when the user is in the ignored list",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "reviews an ignored identity that holds a seat instead of skipping it",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "reviews an identity excluded by allowedUsers when it holds a seat",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "keeps skipping an ignored identity when the seat lookup fails",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "reuses the seat list it already fetched for the permission check",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "does not look up seats when the identity is not filtered out",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "gates on trial credits WITHOUT consuming (consumption is deferred to a successful review)",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "posts a BYOK-focused comment and a trial-specific SKIPPED status when trial credits run out",
+      "status": "passed",
+      "numPassingAsserts": 6
+     },
+     {
+      "title": "posts a top-up comment (not BYOK-required, not trial-ended) when Kodus credits are exhausted",
+      "status": "passed",
+      "numPassingAsserts": 4
+     },
+     {
+      "title": "posts a \"subscription check unavailable\" message (not credits, not trial-ended) on a transient billing failure",
+      "status": "passed",
+      "numPassingAsserts": 5
+     },
+     {
+      "title": "posts \"subscription check unavailable\" when the license read itself failed, and never tries to provision a trial",
+      "status": "passed",
+      "numPassingAsserts": 5
+     },
+     {
+      "title": "keeps the generic \"Plan Limit Exceeded\" SKIPPED status for a non-trial plan limit",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "skips without assigning a seat when the effective setting is off",
+      "status": "passed",
+      "numPassingAsserts": 4
+     },
+     {
+      "title": "hands auto-assign the author's PR count, counted no further than 2",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "assigns the seat as before when the effective setting is on",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "skips without assigning a seat when the effective setting is off",
+      "status": "passed",
+      "numPassingAsserts": 4
+     },
+     {
+      "title": "hands auto-assign the author's PR count, counted no further than 2",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "assigns the seat as before when the effective setting is on",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "resolves the effective setting from the PR files, so directory and kodus-config.yml overrides apply",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "keeps auto-assign for an explicit command even when automated review is off",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "keeps auto-assign for an explicit command-force even when automated review is off",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "falls back to the repository and global settings when the effective config cannot be resolved",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "does not resolve the config when the author already holds a seat",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "reacts and posts the notice on the first skip, recording when",
+      "status": "failed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "posts the notice on the first skip only, keeping the reaction on later runs",
+      "status": "failed",
+      "numPassingAsserts": 0
+     },
+     {
+      "title": "posts only the notice on AZURE_REPOS, without the old reaction comment",
+      "status": "failed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "posts only the notice on BITBUCKET, without the old reaction comment",
+      "status": "failed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "answers a Bitbucket command in its thread",
+      "status": "failed",
+      "numPassingAsserts": 0
+     },
+     {
+      "title": "does not record the notice when the provider did not post it",
+      "status": "failed",
+      "numPassingAsserts": 0
+     },
+     {
+      "title": "still posts the notice when the earlier-notice lookup fails",
+      "status": "failed",
+      "numPassingAsserts": 0
+     },
+     {
+      "title": "stays silent for a IGNORED_USER author",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "stays silent for a NOT_ALLOWED_USER author",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "posts nothing when auto-assign gives the author a seat",
+      "status": "passed",
+      "numPassingAsserts": 4
+     }
+    ]
+   },
+   {
+    "suite": "libs/automation/infrastructure/adapters/repositories/automationExecution.repository.data-key.integration.spec.ts",
+    "status": "failed",
+    "assertions": [
+     {
+      "title": "finds the key on an earlier execution of the same PR",
+      "status": "failed",
+      "numPassingAsserts": 0
+     },
+     {
+      "title": "ignores the key set for another automation or another repository",
+      "status": "failed",
+      "numPassingAsserts": 0
+     },
+     {
+      "title": "treats a null value as not set",
+      "status": "failed",
+      "numPassingAsserts": 0
+     },
+     {
+      "title": "is false for a PR with no executions",
+      "status": "failed",
+      "numPassingAsserts": 0
+     }
+    ]
+   },
+   {
+    "suite": "libs/automation/infrastructure/adapters/services/processAutomation/strategies/automationCodeReview.spec.ts",
+    "status": "failed",
+    "assertions": [
+     {
+      "title": "raises so the request can be retried (origin command)",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "raises so the request can be retried (origin command-force)",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "still drops an automation-triggered run quietly",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "anchors the retry deadline on the holder, not on the collision",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "falls back to now when the holder has no execution row yet",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "never starts the pipeline",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "raises so the request can be retried",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "still drops an automation-triggered run quietly",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "releases the lock it acquired",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "does not report the refusal as an execution error",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "does not block a new review once the row stopped heartbeating",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "still blocks while the holder keeps heartbeating",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "heartbeats its execution row and stops once it finishes",
+      "status": "passed",
+      "numPassingAsserts": 4
+     },
+     {
+      "title": "keeps reviewing when a heartbeat write fails",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "runs the review anyway",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "records the base branch the reviewed commit was compared against",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "records the mode it reviewed in, balanced unless heavy (#2578)",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "records no base branch when no commit was reviewed",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "preserves shared risk and intentional agent skips when a later stage did not complete review",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "records the no-license notice on a skipped run, so the next push stays quiet (#2594)",
+      "status": "failed",
+      "numPassingAsserts": 0
+     },
+     {
+      "title": "checks implementation against the reviewed commit (success)",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "checks implementation against the reviewed commit (partial_error)",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "enqueues only after the execution is persisted",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "does not check when error",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "does not check when skipped",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "does not check when no reviewed commit",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "does not check when the execution could not be persisted",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "a failed enqueue does not fail the review",
+      "status": "passed",
+      "numPassingAsserts": 1
+     }
+    ]
+   },
+   {
+    "suite": "libs/code-review/pipeline/stages/validate-prerequisites.stage.notify.spec.ts",
+    "status": "passed",
+    "assertions": [
+     {
+      "title": "emits review.skipped_no_license when license fails AND author is a registered user",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "resolves the author handle like the pullRequests collection ({ login: 'octocat' })",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "resolves the author handle like the pullRequests collection ({ username: 'ada' })",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "resolves the author handle like the pullRequests collection ({ nickname: 'ada-lovelace' })",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "resolves the author handle like the pullRequests collection ({ uniqueName: 'ada@contoso.com' })",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "skips the emit when the rate limiter rejects (already notified within 24h)",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "falls back to org owners when the PR author is a bot/external user (resolver returns null)",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "omits ownerContact when no owner is registered for the org",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "uses a per-(user,org) rate-limit key so different users do not collide",
+      "status": "passed",
+      "numPassingAsserts": 2
+     }
+    ]
+   },
+   {
+    "suite": "libs/automation/infrastructure/adapters/repositories/automationExecution.repository.spec.ts",
+    "status": "failed",
+    "assertions": [
+     {
+      "title": "matches any of the values when a filter is a list",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "keeps equality for a single value and for an entity reference",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "returns the most recent match as an entity",
+      "status": "passed",
+      "numPassingAsserts": 3
+     },
+     {
+      "title": "passes compound filters through and loads the execution relations",
+      "status": "passed",
+      "numPassingAsserts": 1
+     },
+     {
+      "title": "uses IN for a list of statuses and equality for a single one",
+      "status": "passed",
+      "numPassingAsserts": 2
+     },
+     {
+      "title": "excludes in-progress pairs, drops invalid refs and marks only scope-decided PRs as zero-comment candidates",
+      "status": "passed",
+      "numPassingAsserts": 7
+     },
+     {
+      "title": "looks for the key on any execution of that PR",
+      "status": "failed",
+      "numPassingAsserts": 0
+     }
+    ]
+   }
+  ]
+ }
+}
