@@ -1,0 +1,147 @@
+12:54:15.769 info RunCodeReviewAutomationUseCase | RunCodeReviewAutomationUseCase PR#5
+12:54:15.800 info PipelineExecutor | Starting pipeline: CodeReviewPipeline (ID: a3062576-76cc-42ca-81ff-8a67034da833)
+12:54:15.921 info PipelineExecutor | Stage 'ValidatePrerequisitesStage' completed in 121ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:54:15.938 info ValidateNewCommitsStage | No last analyzed commit found, analyzing all commits
+12:54:16.253 info ValidateNewCommitsStage | Processing 1 new commits for PR#5 (1 total)
+12:54:16.261 info PipelineExecutor | Stage 'ValidateNewCommitsStage' completed in 340ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:54:17.812 info PipelineExecutor | Stage 'ResolveConfigStage' completed in 1549ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:54:17.828 info ValidateConfigStage | Branch Review Validation
+12:54:17.836 info PipelineExecutor | Stage 'ValidateConfigStage' completed in 24ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:54:17.856 info PipelineExecutor | Stage 'AssessPrRiskStage' completed in 19ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:54:17.857 info PipelineExecutor | Stage 'ResolveRiskRoutingStage' completed in 0ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:54:17.869 info FetchChangedFilesStage | Found 5 files to analyze for PR#5 (5 total, 0 ignored)
+12:54:21.840 info PipelineExecutor | Stage 'FetchChangedFilesStage' completed in 3982ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:54:21.881 info PipelineExecutor | Stage 'LoadExternalContextStage' completed in 41ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:54:21.901 info PipelineExecutor | Stage 'LoadCiEvidenceStage' completed in 19ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:54:22.530 info BitbucketCloudService createIssueComment | Created issue comment for PR#5
+12:54:22.539 info PipelineExecutor | Stage 'InitialCommentStage' completed in 637ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:54:22.634 info BusinessValidationService | Business validation skipped (no_tracker)
+12:54:22.646 info BusinessLogicValidationStage | [BUSINESS-LOGIC] Skipped (no_tracker): no tracker.
+12:54:22.654 info PipelineExecutor | Stage 'BusinessLogicValidationStage' completed in 115ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:54:26.870 info PipelineExecutor | Stage 'CreateSandboxStage' completed in 4215ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:54:26.923 info PipelineExecutor | Stage 'RunAnalyzersStage' completed in 51ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:54:34.488 info GeneralistAgentProvider | [AGENT] Generalist finder settings for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash: family=deepseek, maxSteps=20, synthesisRescue=true
+12:54:34.489 info CodeReviewAgent | [AGENT] kodus-generalist-review-agent context window: 1048576 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash
+12:54:44.231 info KodyRulesShardedAgent | [kody-rules-shard] prompt cache: 5 file shard(s) in 1 head group(s), 1 shared; 1 of 4 sibling(s) ran after their group's first shard
+12:54:44.232 info KodyRulesShardedAgent | [AGENT] kodus-rules-review-agent (sharded) done for PR#5: 1 suggestions (1 confirmed across 5 shards; 0 detector candidate(s) offered; lookup 0 grep / 5 read / 0 exists) in 9747ms
+12:57:11.424 warn FindingsSchema | [LLM_ENVELOPE] [DONE-TOOL] FindingsOutput failed Zod validation, falling back to text parsing
+12:57:11.424 info finder | [DONE-TOOL] prose recovery returned 0 finding(s)
+12:57:16.026 info VerifierAgent | verifier verdict recovered from text (keep=true)
+12:57:17.299 info VerifierAgent | verifier verdict recovered from text (keep=true)
+12:57:24.602 info review-funnel | review recall funnel (verify gate)
+12:57:24.604 info ReviewOrchestratorService | [AGENT] generalist returned 3 suggestions in 170120ms
+12:57:24.604 info ReviewOrchestratorService | [AGENT] kody-rules returned 1 suggestions in 9747ms
+12:57:58.654 info AgentReviewStage | [AGENT] Reclassified severity for 3 suggestions (0 left unclassified, default kept)
+12:58:09.936 info AgentReviewStage | [ENRICH] PR#5: enriched 2, failed 0, skipped 1
+12:58:09.937 info AgentReviewStage | [AGENT] Titled 3 suggestions (from summary 3, from body 0, over the ceiling 0, empty 0)
+12:58:11.208 info AgentReviewStage | [AGENT] Formatted 3/3 suggestion contents
+12:58:11.208 info AgentReviewStage | [AGENT] Shaped 3 suggestion bodies (fences removed 0, title repeat dropped 0, capped 0, titles rewritten 0, titles cut 0)
+12:58:11.209 info AgentReviewStage | [AGENT] Downgraded 2 suggestion(s) with unusable improvedCode to plain comments
+12:58:11.220 info PipelineExecutor | Stage 'AgentReviewStage' completed in 224296ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:58:11.233 info CreatePrLevelCommentsStage | No PR-level suggestions to process for PR#5
+12:58:11.241 info PipelineExecutor | Stage 'CreatePrLevelCommentsStage' completed in 21ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:58:11.261 info ValidateSuggestionsStage | Skipping validation stage for non-GitHub platform
+12:58:11.270 info PipelineExecutor | Stage 'ValidateSuggestionsStage' completed in 28ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:58:11.286 info CreateFileCommentsStage | Starting file comments creation for PR#5
+12:58:11.760 info CommentManagerService | Create Line Comments PR#5
+12:58:12.513 info BitbucketCloudService createReviewComment | Created line comment for PR#5
+12:58:13.004 info CommentManagerService | Posted the agent prompt as a reply on Bitbucket for PR#5
+12:58:13.512 info BitbucketCloudService createReviewComment | Created line comment for PR#5
+12:58:13.997 info CommentManagerService | Posted the agent prompt as a reply on Bitbucket for PR#5
+12:58:14.625 info BitbucketCloudService createReviewComment | Created line comment for PR#5
+12:58:15.103 info ChatWithKodyFromGitUseCase | Unmentioned reply left unanswered: kody_author
+12:58:15.451 info CommentManagerService | Posted the agent prompt as a reply on Bitbucket for PR#5
+12:58:15.494 info CreateFileCommentsStage | Successfully processed file comments for PR#5
+12:58:15.503 info PipelineExecutor | Stage 'CreateFileCommentsStage' completed in 4232ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:58:15.515 info AggregateResultsStage | Aggregated 3 valid suggestions, 0 discarded suggestions
+12:58:15.516 warn AggregateResultsStage | No valid suggestions to aggregate for PR#5
+12:58:15.523 info PipelineExecutor | Stage 'AggregateResultsStage' completed in 20ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:58:15.536 info UpdateCommentsAndGenerateSummaryStage | Generating summary for PR#5
+12:58:16.506 info ChatWithKodyFromGitUseCase | Unmentioned reply left unanswered: kody_author
+12:58:16.837 info CommentManagerService | GenerateSummaryPR: Start PR#5. After get PR data
+12:58:17.492 info ChatWithKodyFromGitUseCase | Unmentioned reply left unanswered: kody_author
+12:58:20.968 info CommentManagerService | GenerateSummaryPR: End PR#5. After concatenate
+12:58:22.009 info BitbucketCloudService updateIssueComment | Updated issue comment for PR#5
+12:58:22.018 info PipelineExecutor | Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 6494ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:58:22.038 info PipelineExecutor | Stage 'DecidePrApprovalStage' completed in 19ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:58:22.049 info RequestChangesOrApproveStage | Finished processing PR#5
+12:58:22.057 info PipelineExecutor | Stage 'RequestChangesOrApproveStage' completed in 18ms: a3062576-76cc-42ca-81ff-8a67034da833
+12:58:22.058 info PipelineExecutor | Finished pipeline: CodeReviewPipeline (ID: a3062576-76cc-42ca-81ff-8a67034da833)
+12:58:22.114 info AutomationCodeReviewService | Successfully handled pull request for PR#5
+13:09:10.156 info RunCodeReviewAutomationUseCase | RunCodeReviewAutomationUseCase PR#5
+13:09:10.192 info PipelineExecutor | Starting pipeline: CodeReviewPipeline (ID: 63bf1bce-169d-40c9-bd2c-b79d632767e8)
+13:09:10.265 info PipelineExecutor | Stage 'ValidatePrerequisitesStage' completed in 71ms: 63bf1bce-169d-40c9-bd2c-b79d632767e8
+13:09:10.279 info ValidateNewCommitsStage | Found last analyzed commit: {"sha":"3d43acdb5b58a8ea133812482f09bc376e52331c"}
+13:09:10.685 info ValidateNewCommitsStage | Processing 0 new commits for PR#5 (1 total)
+13:09:10.694 info PipelineExecutor | Stage 'ValidateNewCommitsStage' completed in 428ms: 63bf1bce-169d-40c9-bd2c-b79d632767e8
+13:09:11.907 warn ResolveConfigStage | No files found in PR
+13:09:11.917 info PipelineExecutor | Stage 'ResolveConfigStage' completed in 1221ms: 63bf1bce-169d-40c9-bd2c-b79d632767e8
+13:09:11.918 info PipelineExecutor | Finished pipeline: CodeReviewPipeline (ID: 63bf1bce-169d-40c9-bd2c-b79d632767e8)
+13:09:11.918 info PipelineExecutor | Pipeline 'CodeReviewPipeline' skipped due to SKIP status 63bf1bce-169d-40c9-bd2c-b79d632767e8
+13:09:12.391 info CodeReviewHandlerService | Review skipped for PR#5 - adding skip reaction
+13:09:12.403 info AutomationCodeReviewService | Successfully handled pull request for PR#5
+13:09:16.608 info ChatWithKodyFromGitUseCase | Unmentioned reply left unanswered: not_kody_thread
+13:10:39.251 info RunCodeReviewAutomationUseCase | RunCodeReviewAutomationUseCase PR#5
+13:10:39.279 info PipelineExecutor | Starting pipeline: CodeReviewPipeline (ID: 130c8e73-0449-4374-a0c3-f1888ebbea01)
+13:10:39.374 info PipelineExecutor | Stage 'ValidatePrerequisitesStage' completed in 93ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:10:39.385 info ValidateNewCommitsStage | Found last analyzed commit: {"sha":"3d43acdb5b58a8ea133812482f09bc376e52331c"}
+13:10:39.385 info ValidateNewCommitsStage | Forcing full re-review for PR#5 via --force flag
+13:10:39.704 info ValidateNewCommitsStage | Processing 0 new commits for PR#5 (1 total)
+13:10:39.711 info PipelineExecutor | Stage 'ValidateNewCommitsStage' completed in 336ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:10:41.281 info PipelineExecutor | Stage 'ResolveConfigStage' completed in 1569ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:10:41.303 info PipelineExecutor | Stage 'ValidateConfigStage' completed in 21ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:10:41.317 info PipelineExecutor | Stage 'AssessPrRiskStage' completed in 12ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:10:41.319 info PipelineExecutor | Stage 'ResolveRiskRoutingStage' completed in 0ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:10:41.328 info FetchChangedFilesStage | Found 5 files to analyze for PR#5 (5 total, 0 ignored)
+13:10:45.306 info PipelineExecutor | Stage 'FetchChangedFilesStage' completed in 3986ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:10:45.333 info LoadExternalContextStage | Loaded 3 previous review decisions for PR#5
+13:10:45.343 info PipelineExecutor | Stage 'LoadExternalContextStage' completed in 36ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:10:45.361 info PipelineExecutor | Stage 'LoadCiEvidenceStage' completed in 16ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:10:45.877 info BitbucketCloudService createIssueComment | Created issue comment for PR#5
+13:10:45.884 info PipelineExecutor | Stage 'InitialCommentStage' completed in 522ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:10:45.959 info BusinessValidationService | Business validation skipped (no_tracker)
+13:10:45.971 info BusinessLogicValidationStage | [BUSINESS-LOGIC] Skipped (no_tracker): no tracker.
+13:10:45.979 info PipelineExecutor | Stage 'BusinessLogicValidationStage' completed in 94ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:10:50.213 info PipelineExecutor | Stage 'CreateSandboxStage' completed in 4233ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:10:50.248 info PipelineExecutor | Stage 'RunAnalyzersStage' completed in 35ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:11:05.588 info GeneralistAgentProvider | [AGENT] Generalist finder settings for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash: family=deepseek, maxSteps=20, synthesisRescue=true
+13:11:05.589 info CodeReviewAgent | [AGENT] kodus-generalist-review-agent context window: 1048576 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash
+13:11:25.119 info KodyRulesShardedAgent | [kody-rules-shard] prompt cache: 5 file shard(s) in 1 head group(s), 1 shared; 0 of 4 sibling(s) ran after their group's first shard
+13:11:25.120 info KodyRulesShardedAgent | [AGENT] kodus-rules-review-agent (sharded) done for PR#5: 2 suggestions (2 confirmed across 5 shards; 0 detector candidate(s) offered; lookup 0 grep / 5 read / 0 exists) in 19536ms
+13:16:42.446 info review-funnel | review recall funnel (verify gate)
+13:16:42.448 info ReviewOrchestratorService | [AGENT] generalist returned 1 suggestions in 336865ms
+13:16:42.449 info ReviewOrchestratorService | [AGENT] kody-rules returned 2 suggestions in 19536ms
+13:17:05.667 info AgentReviewStage | [REPEAT-CHECK] PR#5: 1 repeats, 0 withheld without a verdict, 2 kept, 0 linked revisions (history 3, model ok)
+13:17:32.890 info AgentReviewStage | [AGENT] Reclassified severity for 2 suggestions (0 left unclassified, default kept)
+13:17:34.729 info AgentReviewStage | [ENRICH] PR#5: enriched 1, failed 0, skipped 1
+13:17:34.731 info AgentReviewStage | [AGENT] Titled 2 suggestions (from summary 2, from body 0, over the ceiling 0, empty 0)
+13:17:35.751 info AgentReviewStage | [AGENT] Formatted 2/2 suggestion contents
+13:17:35.752 info AgentReviewStage | [AGENT] Shaped 2 suggestion bodies (fences removed 0, title repeat dropped 0, capped 0, titles rewritten 0, titles cut 0)
+13:17:35.764 info PipelineExecutor | Stage 'AgentReviewStage' completed in 405515ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:17:35.775 info CreatePrLevelCommentsStage | Starting PR-level comments creation for PR#5
+13:17:35.775 info CommentManagerService | Creating PR-level comments for PR#5
+13:17:36.526 info BitbucketCloudService createIssueComment | Created issue comment for PR#5
+13:17:37.093 info CommentManagerService | Posted the agent prompt as a reply on Bitbucket for PR#5
+13:17:37.095 info CreatePrLevelCommentsStage | Successfully created 1 PR-level comments for PR#5
+13:17:37.108 info CreatePrLevelCommentsStage | Saved 1 PR level suggestions to database
+13:17:37.116 info PipelineExecutor | Stage 'CreatePrLevelCommentsStage' completed in 1351ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:17:37.133 info ValidateSuggestionsStage | Skipping validation stage for non-GitHub platform
+13:17:37.142 info PipelineExecutor | Stage 'ValidateSuggestionsStage' completed in 25ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:17:37.156 info CreateFileCommentsStage | Starting file comments creation for PR#5
+13:17:37.431 info CommentManagerService | Create Line Comments PR#5
+13:17:38.103 info BitbucketCloudService createReviewComment | Created line comment for PR#5
+13:17:38.647 info CommentManagerService | Posted the agent prompt as a reply on Bitbucket for PR#5
+13:17:38.673 info CreateFileCommentsStage | Successfully processed file comments for PR#5
+13:17:38.680 info PipelineExecutor | Stage 'CreateFileCommentsStage' completed in 1537ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:17:38.693 info AggregateResultsStage | Aggregated 1 valid suggestions, 1 discarded suggestions
+13:17:38.694 warn AggregateResultsStage | No valid suggestions to aggregate for PR#5
+13:17:38.701 info PipelineExecutor | Stage 'AggregateResultsStage' completed in 20ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:17:39.130 info BitbucketCloudService updateIssueComment | Updated issue comment for PR#5
+13:17:39.138 info PipelineExecutor | Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 436ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:17:39.154 info PipelineExecutor | Stage 'DecidePrApprovalStage' completed in 14ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:17:39.163 info RequestChangesOrApproveStage | Finished processing PR#5
+13:17:39.170 info PipelineExecutor | Stage 'RequestChangesOrApproveStage' completed in 15ms: 130c8e73-0449-4374-a0c3-f1888ebbea01
+13:17:39.171 info PipelineExecutor | Finished pipeline: CodeReviewPipeline (ID: 130c8e73-0449-4374-a0c3-f1888ebbea01)
+13:17:39.224 info AutomationCodeReviewService | Successfully handled pull request for PR#5
+13:17:39.356 info ChatWithKodyFromGitUseCase | Unmentioned reply left unanswered: kody_author
+13:17:40.690 info ChatWithKodyFromGitUseCase | Unmentioned reply left unanswered: kody_author
