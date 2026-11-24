@@ -1,0 +1,125 @@
+{
+ "initialCompilerCalls": 10,
+ "batches": [
+  {
+   "batch": 1,
+   "saves": 10,
+   "compilerCalls": 10
+  },
+  {
+   "batch": 2,
+   "saves": 10,
+   "compilerCalls": 10
+  },
+  {
+   "batch": 3,
+   "saves": 10,
+   "compilerCalls": 10
+  },
+  {
+   "batch": "central title-only (kody actor)",
+   "saves": 10,
+   "compilerCalls": 10
+  }
+ ],
+ "attemptStable": false,
+ "titlesPersisted": true,
+ "sample": [
+  {
+   "uuid": "f88bf84b-2766-47c8-8c86-801150c3d533",
+   "title": "qa2308 m2 rule 0",
+   "status": "active",
+   "rule": "Grades service 0 must check enrollment before saving a grade.",
+   "compileAttempt": {
+    "sourceHash": "122d39ac203fe327accd53c3a3f99687aeee4e4f2b210ff0b8c871647ec7a3e5",
+    "attemptedAt": "2026-11-24T19:04:55.813Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "cbcb180adc8184bc574bb61363785ff2cd63fa581ae8505580bb3c6f8ae10be3",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T19:04:55.801Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "ctxHash": "cbcb180adc8184bc574bb61363785ff2cd63fa581ae8505580bb3c6f8ae10be3"
+  },
+  {
+   "uuid": "f88bf84b-2766-47c8-8c86-801150c3d533",
+   "title": "qa2308 m2 rule 0 (central)",
+   "status": "active",
+   "rule": "Grades service 0 must check enrollment before saving a grade.",
+   "compileAttempt": {
+    "sourceHash": "122d39ac203fe327accd53c3a3f99687aeee4e4f2b210ff0b8c871647ec7a3e5",
+    "attemptedAt": "2026-11-24T19:04:56.129Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "cbcb180adc8184bc574bb61363785ff2cd63fa581ae8505580bb3c6f8ae10be3",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T19:04:56.125Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "ctxHash": "cbcb180adc8184bc574bb61363785ff2cd63fa581ae8505580bb3c6f8ae10be3"
+  }
+ ],
+ "compilePayloadSample": [
+  {
+   "t": "2026-11-24T19:04:55.875Z",
+   "uuid": "f88bf84b-2766-47c8-8c86-801150c3d533",
+   "payloadKeys": [
+    "uuid",
+    "title",
+    "rule",
+    "path",
+    "severity",
+    "examples",
+    "origin",
+    "status",
+    "type",
+    "scope",
+    "repositoryId",
+    "detector"
+   ],
+   "compileAttempt": null,
+   "contextNeed": null,
+   "hasExamples": true,
+   "gateHash": "122d39ac203fe327accd53c3a3f99687aeee4e4f2b210ff0b8c871647ec7a3e5",
+   "ctxHash": "cbcb180adc8184bc574bb61363785ff2cd63fa581ae8505580bb3c6f8ae10be3"
+  },
+  {
+   "t": "2026-11-24T19:04:55.879Z",
+   "uuid": "0ff926df-2283-4fe9-8ddb-bb7f03df03e6",
+   "payloadKeys": [
+    "uuid",
+    "title",
+    "rule",
+    "path",
+    "severity",
+    "examples",
+    "origin",
+    "status",
+    "type",
+    "scope",
+    "repositoryId",
+    "detector"
+   ],
+   "compileAttempt": null,
+   "contextNeed": null,
+   "hasExamples": true,
+   "gateHash": "b728359827f4f66fffa126579c8bf91f26a53cd296a80631c9561905b6c22b8d",
+   "ctxHash": "673fe30b01678d6939d18778587f45e6af90d33380f7aa696ddac62daab33a66"
+  }
+ ]
+}
