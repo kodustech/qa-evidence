@@ -1,0 +1,121 @@
+{
+ "gitlab_optin_true": {
+  "reads": [
+   {
+    "op": "getDefaultBranch",
+    "repository": {
+     "name": "qa-2576-yaml",
+     "id": "89417220",
+     "fullName": "ns/qa-2576-yaml",
+     "owner": "NS"
+    },
+    "result": "main"
+   },
+   {
+    "op": "getRepositoryContentFile",
+    "repository": {
+     "id": "89417220",
+     "name": "qa-2576-yaml"
+    },
+    "ref": "main",
+    "gotContent": true,
+    "contentHead": "version: \"1.2\"\nconversation:\n  implicitReplies: false\n"
+   }
+  ],
+  "http": [],
+  "silence": [
+   "log:Unmentioned reply left unanswered: disabled"
+  ],
+  "warns": [],
+  "classifierCalls": 0
+ },
+ "gitlab_optin_false": {
+  "reads": [],
+  "http": [],
+  "silence": [
+   "log:Unmentioned reply left unanswered: classified_no"
+  ],
+  "warns": [],
+  "classifierCalls": 1
+ },
+ "bitbucket_optin_true": {
+  "reads": [
+   {
+    "op": "getDefaultBranch",
+    "repository": {
+     "name": "qa-2576-yaml",
+     "id": "c9443062-63e5-41e0-a940-d3902e068be8",
+     "owner": "ws"
+    },
+    "result": "main"
+   },
+   {
+    "op": "getRepositoryContentFile",
+    "repository": {
+     "id": "c9443062-63e5-41e0-a940-d3902e068be8",
+     "name": "qa-2576-yaml"
+    },
+    "ref": "main",
+    "gotContent": true,
+    "contentHead": "version: \"1.2\"\nconversation:\n  implicitReplies: false\n"
+   }
+  ],
+  "http": [
+   "https://api.bitbucket.org/2.0/repositories/%7B<bb-workspace-uuid>%7D/%7Bc9443062-63e5-41e0-a940-d3902e068be8%7D",
+   "https://api.bitbucket.org/2.0/repositories/%7B<bb-workspace-uuid>%7D/%7Bc9443062-63e5-41e0-a940-d3902e068be8%7D/commits",
+   "https://api.bitbucket.org/2.0/repositories/%7B<bb-workspace-uuid>%7D/%7Bc9443062-63e5-41e0-a940-d3902e068be8%7D/src/a46b05c8d04c498b2e313f270a732f559001e149/kodus-config.yml"
+  ],
+  "silence": [
+   "log:Unmentioned reply left unanswered: disabled"
+  ],
+  "warns": [],
+  "classifierCalls": 0
+ },
+ "bitbucket_optin_false": {
+  "reads": [],
+  "http": [],
+  "silence": [
+   "log:Unmentioned reply left unanswered: classified_no"
+  ],
+  "warns": [],
+  "classifierCalls": 1
+ },
+ "azure_optin_true": {
+  "reads": [
+   {
+    "op": "getDefaultBranch",
+    "repository": {
+     "name": "qa-2576-yaml",
+     "id": "1aa5158b-b55e-46d6-bbf1-43cafcdf49e0",
+     "owner": "10484f24-1450-4c34-9975-1cbef6a6c473"
+    },
+    "result": "refs/heads/main"
+   },
+   {
+    "op": "getRepositoryContentFile",
+    "repository": {
+     "id": "1aa5158b-b55e-46d6-bbf1-43cafcdf49e0",
+     "name": "qa-2576-yaml"
+    },
+    "ref": "refs/heads/main",
+    "gotContent": true,
+    "contentHead": "version: \"1.2\"\nconversation:\n  implicitReplies: false\n"
+   }
+  ],
+  "http": [],
+  "silence": [
+   "log:Unmentioned reply left unanswered: disabled"
+  ],
+  "warns": [],
+  "classifierCalls": 0
+ },
+ "azure_optin_false": {
+  "reads": [],
+  "http": [],
+  "silence": [
+   "log:Unmentioned reply left unanswered: classified_no"
+  ],
+  "warns": [],
+  "classifierCalls": 1
+ }
+}
