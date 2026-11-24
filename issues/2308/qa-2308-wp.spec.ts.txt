@@ -1,0 +1,47 @@
+// Worker-process role: ONE OS process per invocation (jest --runInBand). Real use case/service/repository/compiler on the
+// shared disposable Mongo; the model door calls the driver's HTTP control server, which can hold, fail (429/timeout) or answer.
+import * as fs from 'fs';
+import { buildStack, dtoOf, writeOut } from './stack';
+jest.setTimeout(600000);
+const CTRL = process.env.QA2308_CTRL!; const TAG = process.env.QA2308_TAG || 'p'; const DB = process.env.QA2308_DB || 'qa2308_wp';
+const ORG = process.env.QA2308_ORG || 'org-qa2308-wp';
+const EV = process.env.QA2308_EVENTS!;
+const ev = (e: string, x: any = {}) => fs.appendFileSync(EV, JSON.stringify({ t: new Date().toISOString(), pid: process.pid, tag: TAG, ev: e, ...x }) + '\n');
+const post = async (path: string, body: any) => { const r = await fetch(CTRL + path, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) }); return r.json(); };
+describe('wp', () => {
+    it(`role ${process.env.QA2308_ROLE} ${TAG}`, async () => {
+        const s = await buildStack(DB, { keepDb: true });
+        s.setScript(async (user: string, n: number) => {
+            ev('llm.request', { n });
+            const r: any = await post('/llm', { tag: TAG, pid: process.pid, user: user.slice(0, 400) });
+            ev('llm.response', { status: r.status });
+            if (r.status !== 'ok') { const e: any = new Error(r.status === '429' ? 'Rate limit exceeded (429)' : 'Request timed out'); e.status = Number(r.status) || undefined; throw e; }
+            return r.out;
+        });
+        const origDet = s.service.updateRuleDetector.bind(s.service);
+        (s.service as any).updateRuleDetector = async (...a: any[]) => { const res = await origDet(...a); ev('db.detectorWritten', { pattern: a[2]?.pattern ?? null }); await post('/hook', { tag: TAG, name: 'afterDetector' }); return res; };
+        const origAtt = s.service.updateRuleCompileAttempt.bind(s.service);
+        (s.service as any).updateRuleCompileAttempt = async (...a: any[]) => { const res = await origAtt(...a); ev('db.attemptWritten', { hash: a[2]?.sourceHash?.slice(0, 12) }); return res; };
+        const role = process.env.QA2308_ROLE;
+        if (role === 'save') {
+            const uuid = process.env.QA2308_UUID!; const over = JSON.parse(process.env.QA2308_OVER || '{}');
+            const r = await s.getRule(ORG, uuid);
+            const { compileAttempt, contextNeed, detector, fileScope, ...p } = r;
+            ev('save.start');
+            await s.save(ORG, dtoOf(p, over));
+            ev('save.returned');
+            await s.settle();
+            ev('settled', { llmCalls: s.ledger.llm.length });
+        } else if (role === 'create') {
+            const dto = JSON.parse(process.env.QA2308_DTO!);
+            const r: any = await s.save(ORG, dto); ev('created', { uuid: r.uuid }); await s.settle(); ev('settled', { llmCalls: s.ledger.llm.length });
+        } else if (role === 'backfill-read') {
+            const { compileAttemptIsCurrent, contextNeedIsCurrent } = await import('@libs/common/utils/kody-rules/compile-hash');
+            ev('read.start');
+            const doc = await s.service.findByOrganizationId(ORG);
+            const eligible = (doc?.rules ?? []).filter((r: any) => r.status === 'active' && (!compileAttemptIsCurrent(r) || !contextNeedIsCurrent(r))).map((r: any) => r.uuid);
+            ev('read.end', { rules: (doc?.rules ?? []).length, eligible });
+        }
+        await s.close();
+    });
+});
