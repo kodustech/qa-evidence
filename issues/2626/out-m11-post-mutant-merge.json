@@ -1,0 +1,68 @@
+{
+ "rev": "merge",
+ "mutant": true,
+ "sigkill_at": "2026-11-24T22:13:00.720Z",
+ "A_pid": 71627,
+ "doc_after_claim": {
+  "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:653f5854-1300-44f4-ae53-7a86964ebc42",
+  "__v": 0,
+  "cleanupAttempts": 1,
+  "consumer": "graph-build",
+  "createdAt": "2026-11-24T22:13:00.638Z",
+  "expiresAt": "2026-11-25T00:13:00.638Z",
+  "killRetryCount": 0,
+  "leaseCount": 0,
+  "organizationId": "11111111-1111-4111-8111-111111111111",
+  "repositoryId": "33333333-3333-4333-8333-333333333333",
+  "state": "READY",
+  "baseBranch": "main",
+  "privilegesDropped": false,
+  "sandboxId": "fake-71627-1-0qowd",
+  "cleanupRetryAt": null,
+  "cleanupStartedAt": "2026-11-24T22:13:00.662Z",
+  "cleanupStatus": "in_progress"
+ },
+ "doc_after_sigkill": {
+  "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:653f5854-1300-44f4-ae53-7a86964ebc42",
+  "leaseCount": 0,
+  "sandboxId": "fake-71627-1-0qowd",
+  "state": "READY",
+  "cleanupStatus": "in_progress",
+  "cleanupAttempts": 1,
+  "cleanupStartedAt": "2026-11-24T22:13:00.662Z",
+  "killRetryCount": 0,
+  "expiresAt": "2026-11-25T00:13:00.638Z"
+ },
+ "doc_after_cron": {
+  "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:653f5854-1300-44f4-ae53-7a86964ebc42",
+  "leaseCount": 0,
+  "sandboxId": "fake-71627-1-0qowd",
+  "state": "READY",
+  "cleanupStatus": "in_progress",
+  "cleanupAttempts": 1,
+  "cleanupStartedAt": "2026-11-24T22:13:00.662Z",
+  "killRetryCount": 0,
+  "expiresAt": "2026-11-25T00:13:00.638Z"
+ },
+ "provider": {
+  "fake-71627-1-0qowd": "running"
+ },
+ "timeline": [
+  "2026-11-24T22:12:59.493Z pid=71627 A \u00a7 mutant: claimCleanup drops killAt {}",
+  "2026-11-24T22:12:59.493Z pid=71627 A \u00a7 ready {\"actor\": \"A\"}",
+  "2026-11-24T22:13:00.036Z pid=71632 C \u00a7 ready {\"actor\": \"C\"}",
+  "2026-11-24T22:13:00.627Z pid=71633 O \u00a7 ready {\"actor\": \"O\"}",
+  "2026-11-24T22:13:00.638Z pid=71627 A info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:653f5854-1300-44f4-ae53-7a86964ebc42\" consumer=\"graph-",
+  "2026-11-24T22:13:00.649Z pid=71627 A info SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:653f5854-1300-44f4-ae53-7a8696",
+  "2026-11-24T22:13:00.650Z pid=71627 A \u00a7 provider.create.start {\"id\": \"fake-71627-1-0qowd\"}",
+  "2026-11-24T22:13:00.650Z pid=71627 A \u00a7 provider.create.done {\"id\": \"fake-71627-1-0qowd\"}",
+  "2026-11-24T22:13:00.658Z pid=71627 A info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:653f5854-1300-44f4-ae53-7a86964ebc42\" consumer=\"",
+  "2026-11-24T22:13:00.658Z pid=71627 A \u00a7 acquired {\"id\": \"8c9cd801\", \"actor\": \"A\", \"leaseId\": \"f36b0992-6b62-4019-8ba0-405acf71ab3b\", \"sandboxId\": \"fake-71627-1-0qowd\", \"waitedMs\": 30}",
+  "2026-11-24T22:13:00.662Z pid=71627 A info SandboxLeaseManager: released leaseId=\"f36b0992-6b62-4019-8ba0-405acf71ab3b\" prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:653f58",
+  "2026-11-24T22:13:00.666Z pid=71627 A \u00a7 barrier.reached {\"actor\": \"A\", \"point\": \"after-claim\"}",
+  "2026-11-24T22:13:00.712Z pid=71633 O \u00a7 raw {\"id\": \"02caede6\", \"doc\": {\"_id\": \"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:653f5854-1300-44f4-ae53-7a86964ebc42\", \"__v\": 0, \"cleanupAttempts\": 1, \"consumer\": \"graph-build\", \"createdAt\": \"2026-11-24T22:13:00.638Z\", \"expiresAt\": \"2026-11-25T00:13:00.638Z\", \"kill",
+  "2026-11-24T22:13:00.721Z pid=71633 O \u00a7 doc {\"id\": \"1a2d2809\", \"doc\": {\"_id\": \"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:653f5854-1300-44f4-ae53-7a86964ebc42\", \"leaseCount\": 0, \"sandboxId\": \"fake-71627-1-0qowd\", \"state\": \"READY\", \"cleanupStatus\": \"in_progress\", \"cleanupAttempts\": 1, \"cleanupStartedAt\": \"2",
+  "2026-11-24T22:13:00.736Z pid=71632 C \u00a7 cron.done {\"id\": \"dee6d883\", \"actor\": \"C\"}",
+  "2026-11-24T22:13:00.737Z pid=71633 O \u00a7 doc {\"id\": \"02780d9d\", \"doc\": {\"_id\": \"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:653f5854-1300-44f4-ae53-7a86964ebc42\", \"leaseCount\": 0, \"sandboxId\": \"fake-71627-1-0qowd\", \"state\": \"READY\", \"cleanupStatus\": \"in_progress\", \"cleanupAttempts\": 1, \"cleanupStartedAt\": \"2"
+ ]
+}
