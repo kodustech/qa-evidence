@@ -1,0 +1,1108 @@
+{
+  "M14": {
+    "routing": {
+      "prLevel": [],
+      "validSuggestions": [
+        {
+          "file": "qa2671/instrumentation-client.ts",
+          "start": 19,
+          "end": 30,
+          "label": "kody_rules",
+          "tag": "QA2671-4 s",
+          "customAgent": null
+        },
+        {
+          "file": "qa2671/instrumentation-client.ts",
+          "start": 19,
+          "end": 30,
+          "label": "bug",
+          "tag": "QA2671-1 s",
+          "customAgent": null
+        },
+        {
+          "file": "qa2671/instrumentation-client.ts",
+          "start": 19,
+          "end": 30,
+          "label": "security",
+          "tag": "QA2671-3 s",
+          "customAgent": null
+        },
+        {
+          "file": "qa2671/renamed-and-edited.ts",
+          "start": 11,
+          "end": 12,
+          "label": "security",
+          "tag": "QA2671-5 s",
+          "customAgent": null
+        },
+        {
+          "file": "qa2671/instrumentation-client.ts",
+          "start": 19,
+          "end": 30,
+          "label": "bug",
+          "tag": "QA2671-2 s",
+          "customAgent": null
+        },
+        {
+          "file": "qa2671/user.ts",
+          "start": 11,
+          "end": 11,
+          "label": "bug",
+          "tag": "QA2671-8 s",
+          "customAgent": null
+        }
+      ],
+      "inlineByFile": [
+        {
+          "file": "qa2671/instrumentation-client.ts",
+          "n": 4
+        },
+        {
+          "file": "qa2671/renamed-and-edited.ts",
+          "n": 1
+        },
+        {
+          "file": "qa2671/user.ts",
+          "n": 1
+        }
+      ],
+      "discarded": [
+        {
+          "file": "qa2671/elsewhere.ts",
+          "start": 11,
+          "end": 12,
+          "status": "discarded-by-code-diff",
+          "tag": "QA2671-6 s"
+        },
+        {
+          "file": "qa2671/instrumentation.ts",
+          "start": 19,
+          "end": 30,
+          "status": "discarded-by-code-diff",
+          "tag": "QA2671-7 s"
+        }
+      ]
+    },
+    "prLevelDelivery": {
+      "calls": [],
+      "saved": [],
+      "results": []
+    },
+    "inlineDelivery": {
+      "calls": [
+        {
+          "api": "pulls.createReviewComment",
+          "req": {
+            "owner": "kodus-olimpo",
+            "repo": "claude-athena",
+            "pull_number": 7,
+            "commit_id": "head-sha",
+            "path": "qa2671/instrumentation-client.ts",
+            "start_line": 19,
+            "line": 30,
+            "side": "RIGHT",
+            "start_side": "RIGHT"
+          }
+        },
+        {
+          "api": "pulls.createReviewComment",
+          "req": {
+            "owner": "kodus-olimpo",
+            "repo": "claude-athena",
+            "pull_number": 7,
+            "commit_id": "head-sha",
+            "path": "qa2671/instrumentation-client.ts",
+            "start_line": 19,
+            "line": 30,
+            "side": "RIGHT",
+            "start_side": "RIGHT"
+          }
+        },
+        {
+          "api": "pulls.createReviewComment",
+          "req": {
+            "owner": "kodus-olimpo",
+            "repo": "claude-athena",
+            "pull_number": 7,
+            "commit_id": "head-sha",
+            "path": "qa2671/instrumentation-client.ts",
+            "start_line": 19,
+            "line": 30,
+            "side": "RIGHT",
+            "start_side": "RIGHT"
+          }
+        },
+        {
+          "api": "pulls.createReviewComment",
+          "req": {
+            "owner": "kodus-olimpo",
+            "repo": "claude-athena",
+            "pull_number": 7,
+            "commit_id": "head-sha",
+            "path": "qa2671/instrumentation-client.ts",
+            "start_line": 19,
+            "line": 30,
+            "side": "RIGHT",
+            "start_side": "RIGHT"
+          }
+        },
+        {
+          "api": "pulls.createReviewComment",
+          "req": {
+            "owner": "kodus-olimpo",
+            "repo": "claude-athena",
+            "pull_number": 7,
+            "commit_id": "head-sha",
+            "path": "qa2671/renamed-and-edited.ts",
+            "start_line": 11,
+            "line": 12,
+            "side": "RIGHT",
+            "start_side": "RIGHT"
+          }
+        },
+        {
+          "api": "pulls.createReviewComment",
+          "req": {
+            "owner": "kodus-olimpo",
+            "repo": "claude-athena",
+            "pull_number": 7,
+            "commit_id": "head-sha",
+            "path": "qa2671/user.ts",
+            "line": 11,
+            "side": "RIGHT",
+            "start_side": "RIGHT"
+          }
+        }
+      ],
+      "lineComments": [
+        {
+          "path": "qa2671/instrumentation-client.ts",
+          "start_line": 19,
+          "line": 30,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-4 s"
+        },
+        {
+          "path": "qa2671/instrumentation-client.ts",
+          "start_line": 19,
+          "line": 30,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-1 s"
+        },
+        {
+          "path": "qa2671/instrumentation-client.ts",
+          "start_line": 19,
+          "line": 30,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-3 s"
+        },
+        {
+          "path": "qa2671/instrumentation-client.ts",
+          "start_line": 19,
+          "line": 30,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-2 s"
+        },
+        {
+          "path": "qa2671/renamed-and-edited.ts",
+          "start_line": 11,
+          "line": 12,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-5 s"
+        },
+        {
+          "path": "qa2671/user.ts",
+          "line": 11,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-8 s"
+        }
+      ]
+    },
+    "logs": [
+      "log: [AGENT] Dropped suggestion for qa2671/elsewhere.ts: the file is not changed by this PR",
+      "log: [AGENT] Dropped suggestion for qa2671/instrumentation.ts: the file is not changed by this PR",
+      "log: No PR-level suggestions to process for PR#7"
+    ]
+  },
+  "M15": {
+    "renamed/absent/prev": {
+      "prLevel": 0,
+      "inline": 1,
+      "cites": [],
+      "posted": [],
+      "saved": []
+    },
+    "renamed/absent/noprev": {
+      "prLevel": 0,
+      "inline": 1,
+      "cites": [],
+      "posted": [],
+      "saved": []
+    },
+    "renamed/null/prev": {
+      "prLevel": 0,
+      "inline": 1,
+      "cites": [],
+      "posted": [],
+      "saved": []
+    },
+    "renamed/null/noprev": {
+      "prLevel": 0,
+      "inline": 1,
+      "cites": [],
+      "posted": [],
+      "saved": []
+    },
+    "renamed/empty/prev": {
+      "prLevel": 0,
+      "inline": 1,
+      "cites": [],
+      "posted": [],
+      "saved": []
+    },
+    "renamed/empty/noprev": {
+      "prLevel": 0,
+      "inline": 1,
+      "cites": [],
+      "posted": [],
+      "saved": []
+    },
+    "copied/absent/prev": {
+      "prLevel": 0,
+      "inline": 1,
+      "cites": [],
+      "posted": [],
+      "saved": []
+    },
+    "copied/absent/noprev": {
+      "prLevel": 0,
+      "inline": 1,
+      "cites": [],
+      "posted": [],
+      "saved": []
+    },
+    "copied/null/prev": {
+      "prLevel": 0,
+      "inline": 1,
+      "cites": [],
+      "posted": [],
+      "saved": []
+    },
+    "copied/null/noprev": {
+      "prLevel": 0,
+      "inline": 1,
+      "cites": [],
+      "posted": [],
+      "saved": []
+    },
+    "copied/empty/prev": {
+      "prLevel": 0,
+      "inline": 1,
+      "cites": [],
+      "posted": [],
+      "saved": []
+    },
+    "copied/empty/noprev": {
+      "prLevel": 0,
+      "inline": 1,
+      "cites": [],
+      "posted": [],
+      "saved": []
+    }
+  },
+  "M19": {
+    "asc_19_30": {
+      "routing": {
+        "prLevel": [],
+        "validSuggestions": [
+          {
+            "file": "qa2671/attendance.ts",
+            "start": 19,
+            "end": 30,
+            "label": "bug",
+            "tag": "QA2671-1 s",
+            "customAgent": null
+          }
+        ],
+        "inlineByFile": [
+          {
+            "file": "qa2671/attendance.ts",
+            "n": 1
+          }
+        ],
+        "discarded": []
+      },
+      "posts": [
+        {
+          "api": "pulls.createReviewComment",
+          "req": {
+            "owner": "kodus-olimpo",
+            "repo": "claude-athena",
+            "pull_number": 7,
+            "commit_id": "head-sha",
+            "path": "qa2671/attendance.ts",
+            "start_line": 19,
+            "line": 30,
+            "side": "RIGHT",
+            "start_side": "RIGHT"
+          }
+        }
+      ],
+      "lineComments": [
+        {
+          "path": "qa2671/attendance.ts",
+          "start_line": 19,
+          "line": 30,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-1 s"
+        }
+      ],
+      "logs": [
+        "log: [AGENT] Running self-contained agent review for PR#7 (no sandbox available)",
+        "debug: [AGENT] Starting agent review for PR#7 with 5 files",
+        "log: [AGENT] Review fidelity warnings: SANDBOX_UNAVAILABLE",
+        "log: [AGENT] Reclassified severity for 1 suggestions (1 left unclassified, default kept)",
+        "log: [AGENT] Titled 1 suggestions (from summary 1, from body 0, over the ceiling 0, empty 0)",
+        "log: [AGENT] Formatted 0/1 suggestion contents",
+        "log: [AGENT] Shaped 1 suggestion bodies (fences removed 0, title repeat dropped 0, capped 0, titles rewritten 0, titles cut 0)"
+      ]
+    },
+    "rev_30_19": {
+      "routing": {
+        "prLevel": [],
+        "validSuggestions": [],
+        "inlineByFile": [
+          {
+            "file": "qa2671/attendance.ts",
+            "n": 0
+          }
+        ],
+        "discarded": [
+          {
+            "file": "qa2671/attendance.ts",
+            "start": 30,
+            "end": 19,
+            "status": "discarded-by-code-diff",
+            "tag": "QA2671-2 s"
+          }
+        ]
+      },
+      "posts": [],
+      "lineComments": [],
+      "logs": [
+        "log: [AGENT] Running self-contained agent review for PR#7 (no sandbox available)",
+        "debug: [AGENT] Starting agent review for PR#7 with 5 files",
+        "log: [AGENT] Review fidelity warnings: SANDBOX_UNAVAILABLE",
+        "log: [AGENT] Dropped out-of-diff suggestion for qa2671/attendance.ts: lines 30-19 do not overlap any changed hunk",
+        "log: [AGENT] Reclassified severity for 0 suggestions (0 left unclassified, default kept)",
+        "log: [AGENT] Titled 0 suggestions (from summary 0, from body 0, over the ceiling 0, empty 0)",
+        "log: [AGENT] Formatted 0/0 suggestion contents",
+        "log: [AGENT] Shaped 0 suggestion bodies (fences removed 0, title repeat dropped 0, capped 0, titles rewritten 0, titles cut 0)"
+      ]
+    },
+    "asc_120_180": {
+      "routing": {
+        "prLevel": [],
+        "validSuggestions": [
+          {
+            "file": "qa2671/report.ts",
+            "start": 120,
+            "end": 180,
+            "label": "bug",
+            "tag": "QA2671-3 s",
+            "customAgent": null
+          }
+        ],
+        "inlineByFile": [
+          {
+            "file": "qa2671/report.ts",
+            "n": 1
+          }
+        ],
+        "discarded": []
+      },
+      "posts": [
+        {
+          "api": "pulls.createReviewComment",
+          "req": {
+            "owner": "kodus-olimpo",
+            "repo": "claude-athena",
+            "pull_number": 7,
+            "commit_id": "head-sha",
+            "path": "qa2671/report.ts",
+            "line": 120,
+            "side": "RIGHT",
+            "start_side": "RIGHT"
+          }
+        }
+      ],
+      "lineComments": [
+        {
+          "path": "qa2671/report.ts",
+          "line": 120,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-3 s"
+        }
+      ],
+      "logs": [
+        "log: [AGENT] Running self-contained agent review for PR#7 (no sandbox available)",
+        "debug: [AGENT] Starting agent review for PR#7 with 5 files",
+        "log: [AGENT] Review fidelity warnings: SANDBOX_UNAVAILABLE",
+        "log: [AGENT] Reclassified severity for 1 suggestions (1 left unclassified, default kept)",
+        "log: [AGENT] Titled 1 suggestions (from summary 1, from body 0, over the ceiling 0, empty 0)",
+        "log: [AGENT] Formatted 0/1 suggestion contents",
+        "log: [AGENT] Shaped 1 suggestion bodies (fences removed 0, title repeat dropped 0, capped 0, titles rewritten 0, titles cut 0)"
+      ]
+    },
+    "rev_180_120": {
+      "routing": {
+        "prLevel": [],
+        "validSuggestions": [],
+        "inlineByFile": [
+          {
+            "file": "qa2671/report.ts",
+            "n": 0
+          }
+        ],
+        "discarded": [
+          {
+            "file": "qa2671/report.ts",
+            "start": 180,
+            "end": 120,
+            "status": "discarded-by-code-diff",
+            "tag": "QA2671-4 s"
+          }
+        ]
+      },
+      "posts": [],
+      "lineComments": [],
+      "logs": [
+        "log: [AGENT] Running self-contained agent review for PR#7 (no sandbox available)",
+        "debug: [AGENT] Starting agent review for PR#7 with 5 files",
+        "log: [AGENT] Review fidelity warnings: SANDBOX_UNAVAILABLE",
+        "log: [AGENT] Dropped out-of-diff suggestion for qa2671/report.ts: lines 180-120 do not overlap any changed hunk",
+        "log: [AGENT] Reclassified severity for 0 suggestions (0 left unclassified, default kept)",
+        "log: [AGENT] Titled 0 suggestions (from summary 0, from body 0, over the ceiling 0, empty 0)",
+        "log: [AGENT] Formatted 0/0 suggestion contents",
+        "log: [AGENT] Shaped 0 suggestion bodies (fences removed 0, title repeat dropped 0, capped 0, titles rewritten 0, titles cut 0)"
+      ]
+    },
+    "rev_kody_30_19": {
+      "routing": {
+        "prLevel": [],
+        "validSuggestions": [],
+        "inlineByFile": [
+          {
+            "file": "qa2671/attendance.ts",
+            "n": 0
+          }
+        ],
+        "discarded": [
+          {
+            "file": "qa2671/attendance.ts",
+            "start": 30,
+            "end": 19,
+            "status": "discarded-by-code-diff",
+            "tag": "QA2671-5 s"
+          }
+        ]
+      },
+      "posts": [],
+      "lineComments": [],
+      "logs": [
+        "log: [AGENT] Running self-contained agent review for PR#7 (no sandbox available)",
+        "debug: [AGENT] Starting agent review for PR#7 with 5 files",
+        "log: [AGENT] Review fidelity warnings: SANDBOX_UNAVAILABLE",
+        "log: [AGENT] Dropped out-of-diff suggestion for qa2671/attendance.ts: lines 30-19 do not overlap any changed hunk",
+        "log: [AGENT] Reclassified severity for 0 suggestions (0 left unclassified, default kept)",
+        "log: [AGENT] Titled 0 suggestions (from summary 0, from body 0, over the ceiling 0, empty 0)",
+        "log: [AGENT] Formatted 0/0 suggestion contents",
+        "log: [AGENT] Shaped 0 suggestion bodies (fences removed 0, title repeat dropped 0, capped 0, titles rewritten 0, titles cut 0)"
+      ]
+    },
+    "rev_edited_12_11": {
+      "routing": {
+        "prLevel": [],
+        "validSuggestions": [],
+        "inlineByFile": [
+          {
+            "file": "qa2671/renamed-and-edited.ts",
+            "n": 0
+          }
+        ],
+        "discarded": [
+          {
+            "file": "qa2671/renamed-and-edited.ts",
+            "start": 12,
+            "end": 11,
+            "status": "discarded-by-code-diff",
+            "tag": "QA2671-6 s"
+          }
+        ]
+      },
+      "posts": [],
+      "lineComments": [],
+      "logs": [
+        "log: [AGENT] Running self-contained agent review for PR#7 (no sandbox available)",
+        "debug: [AGENT] Starting agent review for PR#7 with 5 files",
+        "log: [AGENT] Review fidelity warnings: SANDBOX_UNAVAILABLE",
+        "log: [AGENT] Dropped out-of-diff suggestion for qa2671/renamed-and-edited.ts: lines 12-11 do not overlap any changed hunk",
+        "log: [AGENT] Reclassified severity for 0 suggestions (0 left unclassified, default kept)",
+        "log: [AGENT] Titled 0 suggestions (from summary 0, from body 0, over the ceiling 0, empty 0)",
+        "log: [AGENT] Formatted 0/0 suggestion contents",
+        "log: [AGENT] Shaped 0 suggestion bodies (fences removed 0, title repeat dropped 0, capped 0, titles rewritten 0, titles cut 0)"
+      ]
+    }
+  },
+  "M20": {
+    "rev_30_19": {
+      "routing": {
+        "prLevel": [],
+        "validSuggestions": [
+          {
+            "file": "qa2671/instrumentation-client.ts",
+            "start": 30,
+            "end": 19,
+            "label": "bug",
+            "tag": "QA2671-1 s",
+            "customAgent": null
+          }
+        ],
+        "inlineByFile": [
+          {
+            "file": "qa2671/instrumentation-client.ts",
+            "n": 1
+          }
+        ],
+        "discarded": []
+      },
+      "issueBodies": []
+    },
+    "missing_line_bug": {
+      "routing": {
+        "prLevel": [],
+        "validSuggestions": [],
+        "inlineByFile": [
+          {
+            "file": "qa2671/instrumentation-client.ts",
+            "n": 0
+          }
+        ],
+        "discarded": [
+          {
+            "file": "qa2671/instrumentation-client.ts",
+            "status": "discarded-by-schema",
+            "tag": "QA2671-2 s"
+          }
+        ]
+      },
+      "issueBodies": []
+    },
+    "zero_line_bug": {
+      "routing": {
+        "prLevel": [],
+        "validSuggestions": [
+          {
+            "file": "qa2671/instrumentation-client.ts",
+            "start": 0,
+            "end": 0,
+            "label": "bug",
+            "tag": "QA2671-3 s",
+            "customAgent": null
+          }
+        ],
+        "inlineByFile": [
+          {
+            "file": "qa2671/instrumentation-client.ts",
+            "n": 1
+          }
+        ],
+        "discarded": []
+      },
+      "issueBodies": []
+    },
+    "neg_line_bug": {
+      "routing": {
+        "prLevel": [],
+        "validSuggestions": [
+          {
+            "file": "qa2671/instrumentation-client.ts",
+            "start": -3,
+            "end": 5,
+            "label": "bug",
+            "tag": "QA2671-4 s",
+            "customAgent": null
+          }
+        ],
+        "inlineByFile": [
+          {
+            "file": "qa2671/instrumentation-client.ts",
+            "n": 1
+          }
+        ],
+        "discarded": []
+      },
+      "issueBodies": []
+    },
+    "missing_line_kody": {
+      "routing": {
+        "prLevel": [
+          {
+            "label": "kody_rules",
+            "severity": "high",
+            "suggestionContent": "`qa2671/instrumentation-client.ts` — QA2671-5 The student session token is logged; remove it.\n\nKody rule violation: [no session tokens in logs](/settings/code-review/global/kody-rules/rule-token?teamId=team-A)",
+            "fullExplanation": "`qa2671/instrumentation-client.ts` — QA2671-5 The student session token is logged; remove it.\n\nKody rule violation: [no session tokens in logs](/settings/code-review/global/kody-rules/rule-token?teamId=team-A)",
+            "agentPrompt": "QA2671-5 session token written to telemetry\n\n`qa2671/instrumentation-client.ts` — QA2671-5 The student session token is logged; remove it.\n\nKody rule violation: [no session tokens in logs](/settings/code-review/global/kody-rules/rule-token?teamId=team-A)",
+            "customAgent": null,
+            "brokenKodyRulesIds": [
+              "rule-token"
+            ]
+          }
+        ],
+        "validSuggestions": [],
+        "inlineByFile": [],
+        "discarded": []
+      },
+      "issueBodies": [
+        "`qa2671/instrumentation-client.ts` — QA2671-5 The student session token is logged; remove it."
+      ]
+    }
+  },
+  "M13": {
+    "filter_high_krFalse": {
+      "prLevel": [],
+      "inline": 2,
+      "discarded": [
+        "QA2671-1 s:discarded-by-severity",
+        "QA2671-4 s:discarded-by-severity"
+      ]
+    },
+    "filter_high_krTrue": {
+      "prLevel": [],
+      "inline": 2,
+      "discarded": [
+        "QA2671-5 s:discarded-by-severity",
+        "QA2671-8 s:discarded-by-severity"
+      ]
+    },
+    "filter_low": {
+      "prLevel": [],
+      "inline": 4,
+      "discarded": []
+    },
+    "security_lens_off": {
+      "prLevel": [],
+      "discarded": [
+        "QA2671-14 :discarded-by-category"
+      ]
+    }
+  },
+  "M25": {
+    "ignored_noagent": {
+      "prLevel": [
+        {
+          "label": "deterministic",
+          "severity": "high",
+          "suggestionContent": "`qa2671/instrumentation-client.ts:19`\n\n- **lodash@4.17.20** — affected by GHSA-x",
+          "fullExplanation": "`qa2671/instrumentation-client.ts:19`\n\n- **lodash@4.17.20** — affected by GHSA-x",
+          "agentPrompt": "This change introduces a package with a known vulnerability\n\n`qa2671/instrumentation-client.ts:19`\n\n- **lodash@4.17.20** — affected by GHSA-x",
+          "customAgent": null,
+          "brokenKodyRulesIds": null
+        }
+      ],
+      "validSuggestions": [],
+      "inlineByFile": [
+        {
+          "file": "qa2671/instrumentation-client.ts",
+          "n": 0
+        }
+      ],
+      "discarded": [
+        {
+          "file": "qa2671/instrumentation-client.ts",
+          "start": 19,
+          "end": 30,
+          "status": "discarded-by-code-diff",
+          "tag": "QA2671-1 s"
+        }
+      ]
+    },
+    "agent_inline": {
+      "routing": {
+        "prLevel": [],
+        "validSuggestions": [
+          {
+            "file": "qa2671/instrumentation-client.ts",
+            "start": 19,
+            "end": 30,
+            "label": "custom_agent",
+            "tag": "QA2671-2 s",
+            "customAgent": "agent-1"
+          }
+        ],
+        "inlineByFile": [
+          {
+            "file": "qa2671/instrumentation-client.ts",
+            "n": 1
+          }
+        ],
+        "discarded": []
+      },
+      "issueBodyHead": []
+    },
+    "agent_single-comment": {
+      "routing": {
+        "prLevel": [
+          {
+            "label": "custom_agent",
+            "severity": "high",
+            "suggestionContent": "1. **QA2671-3 session token written to telemetry** — `qa2671/instrumentation-client.ts:19` (high)\n\n   QA2671-3 The student session token is logged; remove it.",
+            "fullExplanation": "1. **QA2671-3 session token written to telemetry** — `qa2671/instrumentation-client.ts:19` (high)\n\n   QA2671-3 The student session token is logged; remove it.",
+            "agentPrompt": "Token Guard: 1 finding in this pull request\n\n1. **QA2671-3 session token written to telemetry** — `qa2671/instrumentation-client.ts:19` (high)\n\n   QA2671-3 The student session token is logged; remove it.",
+            "customAgent": {
+              "id": "agent-1",
+              "name": "Token Guard",
+              "color": "red"
+            },
+            "brokenKodyRulesIds": null
+          }
+        ],
+        "validSuggestions": [],
+        "inlineByFile": [],
+        "discarded": []
+      },
+      "issueBodyHead": [
+        "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Token Guard](https://img.shields.io/badge/Token_Guard-red) ![high](https://img.shields.io/badge/severity_level-high-6B6B92) |  | **Token Guard: 1 finding in this pull request**"
+      ]
+    },
+    "agent_reviewed_rename": {
+      "routing": {
+        "prLevel": [],
+        "validSuggestions": [
+          {
+            "file": "qa2671/instrumentation-client.ts",
+            "start": 19,
+            "end": 30,
+            "label": "custom_agent",
+            "tag": "QA2671-4 s",
+            "customAgent": "agent-1"
+          }
+        ],
+        "inlineByFile": [
+          {
+            "file": "qa2671/instrumentation-client.ts",
+            "n": 1
+          }
+        ],
+        "discarded": []
+      },
+      "issueBodyHead": [],
+      "saved": []
+    }
+  },
+  "M26": {
+    "prLevel": [
+      {
+        "label": "deterministic",
+        "severity": "high",
+        "suggestionContent": "`web/package-lock.json:11`\n\n- **lodash@4.17.20** — affected by GHSA-35jh",
+        "fullExplanation": "`web/package-lock.json:11`\n\n- **lodash@4.17.20** — affected by GHSA-35jh",
+        "agentPrompt": "This change introduces a package with a known vulnerability\n\n`web/package-lock.json:11`\n\n- **lodash@4.17.20** — affected by GHSA-35jh",
+        "customAgent": null,
+        "brokenKodyRulesIds": null
+      }
+    ],
+    "validSuggestions": [
+      {
+        "file": "web/package-lock.json",
+        "start": 11,
+        "end": 11,
+        "label": "bug",
+        "tag": "QA2671-1 s",
+        "customAgent": null
+      }
+    ],
+    "inlineByFile": [
+      {
+        "file": "web/package-lock.json",
+        "n": 1
+      }
+    ],
+    "discarded": []
+  },
+  "M28": {
+    "routing": {
+      "prLevel": [],
+      "validSuggestions": [
+        {
+          "file": "qa2671/café instrumentation-client.ts",
+          "start": 19,
+          "end": 30,
+          "label": "bug",
+          "tag": "QA2671-1 s",
+          "customAgent": null
+        }
+      ],
+      "inlineByFile": [
+        {
+          "file": "qa2671/café instrumentation-client.ts",
+          "n": 1
+        }
+      ],
+      "discarded": [
+        {
+          "file": "",
+          "start": 19,
+          "end": 30,
+          "status": "discarded-by-schema",
+          "tag": "QA2671-3 s"
+        },
+        {
+          "start": 19,
+          "end": 30,
+          "status": "discarded-by-schema",
+          "tag": "QA2671-4 s"
+        },
+        {
+          "file": "qa2671/café instrumentation.ts",
+          "start": 19,
+          "end": 30,
+          "status": "discarded-by-code-diff",
+          "tag": "QA2671-2 s"
+        }
+      ]
+    },
+    "issueBodies": [],
+    "twoOrgs": {
+      "org-A": [],
+      "org-B": []
+    }
+  },
+  "M29": {
+    "403": {
+      "prResults": [],
+      "saved": [],
+      "inline": [
+        {
+          "path": "qa2671/instrumentation-client.ts",
+          "start_line": 19,
+          "line": 30,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-5 s"
+        },
+        {
+          "path": "qa2671/renamed-and-edited.ts",
+          "start_line": 11,
+          "line": 12,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-6 s"
+        }
+      ],
+      "logs": [
+        "log: No PR-level suggestions to process for PR#7"
+      ]
+    },
+    "503": {
+      "prResults": [],
+      "saved": [],
+      "inline": [
+        {
+          "path": "qa2671/instrumentation-client.ts",
+          "start_line": 19,
+          "line": 30,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-1 s"
+        },
+        {
+          "path": "qa2671/renamed-and-edited.ts",
+          "start_line": 11,
+          "line": 12,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-2 s"
+        }
+      ],
+      "logs": [
+        "log: No PR-level suggestions to process for PR#7"
+      ]
+    },
+    "noid": {
+      "prResults": [],
+      "saved": [],
+      "inline": [
+        {
+          "path": "qa2671/instrumentation-client.ts",
+          "start_line": 19,
+          "line": 30,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-3 s"
+        },
+        {
+          "path": "qa2671/renamed-and-edited.ts",
+          "start_line": 11,
+          "line": 12,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-4 s"
+        }
+      ],
+      "logs": [
+        "log: No PR-level suggestions to process for PR#7"
+      ]
+    },
+    "ok": {
+      "prResults": [],
+      "saved": [],
+      "inline": [
+        {
+          "path": "qa2671/instrumentation-client.ts",
+          "start_line": 19,
+          "line": 30,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-7 s"
+        },
+        {
+          "path": "qa2671/renamed-and-edited.ts",
+          "start_line": 11,
+          "line": 12,
+          "deliveryStatus": "sent",
+          "tag": "QA2671-8 s"
+        }
+      ],
+      "logs": [
+        "log: No PR-level suggestions to process for PR#7"
+      ]
+    }
+  },
+  "M30": {
+    "first": {
+      "posts": 0,
+      "results": [],
+      "logs": [
+        "log: No PR-level suggestions to process for PR#7"
+      ]
+    },
+    "rerunSameInput": {
+      "posts": 0,
+      "saved": []
+    },
+    "idsDiffer": false
+  },
+  "M31": {
+    "order": [
+      "A:start",
+      "B:start",
+      "B:done",
+      "A:resume",
+      "A:done"
+    ],
+    "A": {
+      "prLevel": [],
+      "validSuggestions": [
+        {
+          "file": "qa2671/instrumentation-client.ts",
+          "start": 19,
+          "end": 30,
+          "label": "bug",
+          "tag": "QA2671-2 s",
+          "customAgent": null
+        }
+      ],
+      "inlineByFile": [
+        {
+          "file": "qa2671/instrumentation-client.ts",
+          "n": 1
+        }
+      ],
+      "discarded": []
+    },
+    "B": {
+      "prLevel": [],
+      "validSuggestions": [
+        {
+          "file": "qa2671/instrumentation-client.ts",
+          "start": 19,
+          "end": 30,
+          "label": "bug",
+          "tag": "QA2671-1 s",
+          "customAgent": null
+        }
+      ],
+      "inlineByFile": [
+        {
+          "file": "qa2671/instrumentation-client.ts",
+          "n": 1
+        }
+      ],
+      "discarded": []
+    },
+    "frozenInputUnchanged": true,
+    "frozen": true
+  },
+  "M32": {
+    "routing": {
+      "prLevel": [
+        {
+          "label": "deterministic",
+          "severity": "high",
+          "suggestionContent": "`qa2671/instrumentation-client.ts:19`\n\n- **lodash@4.17.20** — affected by GHSA-x",
+          "fullExplanation": "`qa2671/instrumentation-client.ts:19`\n\n- **lodash@4.17.20** — affected by GHSA-x",
+          "agentPrompt": "This change introduces a package with a known vulnerability\n\n`qa2671/instrumentation-client.ts:19`\n\n- **lodash@4.17.20** — affected by GHSA-x",
+          "customAgent": null,
+          "brokenKodyRulesIds": null
+        }
+      ],
+      "validSuggestions": [
+        {
+          "file": "qa2671/instrumentation-client.ts",
+          "start": 19,
+          "end": 30,
+          "label": "kody_rules",
+          "tag": "QA2671-2 s",
+          "customAgent": null
+        },
+        {
+          "file": "qa2671/instrumentation-client.ts",
+          "start": 19,
+          "end": 30,
+          "label": "bug",
+          "tag": "QA2671-1 s",
+          "customAgent": null
+        }
+      ],
+      "inlineByFile": [
+        {
+          "file": "qa2671/instrumentation-client.ts",
+          "n": 2
+        }
+      ],
+      "discarded": []
+    },
+    "bodies": {
+      "copyPrompt_true": [
+        "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Deterministic](https://img.shields.io/badge/Deterministic-4527A0) ![high](https://img.shields.io/badge/severity_level-high-6B6B92)\n\n**This change introduces a package with a known vulnerability**\n\n`qa2671/instrumentation-client.ts:19`\n\n- **lodash@4.17.20** — affected by GHSA-x\n\n<details>\n<summary>Prompt for LLM</summary>\n\n````text\nThis change introduces a package with a known vulnerability\n\n`qa2671/instrumentation-client.ts:19`\n\n- **lodash@4.17.20** — affected by GHSA-x\n````\n\n</details>\n\n<!-- kody-codereview -->\n&#8203;"
+      ],
+      "copyPrompt_false": [
+        "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Deterministic](https://img.shields.io/badge/Deterministic-4527A0) ![high](https://img.shields.io/badge/severity_level-high-6B6B92)\n\n**This change introduces a package with a known vulnerability**\n\n`qa2671/instrumentation-client.ts:19`\n\n- **lodash@4.17.20** — affected by GHSA-x\n\n<!-- kody-codereview -->\n&#8203;"
+      ]
+    }
+  },
+  "M34": {
+    "files_1_findings_10": {
+      "ms": 1,
+      "prLevel": 0,
+      "inline": 10,
+      "llmRunCalls": 68
+    },
+    "files_100_findings_10": {
+      "ms": 0,
+      "prLevel": 0,
+      "inline": 10,
+      "llmRunCalls": 79
+    },
+    "files_1000_findings_1000": {
+      "ms": 12,
+      "prLevel": 0,
+      "inline": 1000,
+      "llmRunCalls": 1080
+    }
+  }
+}
