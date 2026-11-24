@@ -1,0 +1,129 @@
+{
+  "GitHub": [
+    {
+      "filename": "qa2671/pure-rename.ts",
+      "status": "renamed",
+      "patch": "<absent>",
+      "previous_filename": "qa2671/old.ts",
+      "routedTo": "inline"
+    },
+    {
+      "filename": "qa2671/rename-edit.ts",
+      "status": "renamed",
+      "patch": "\"@@ -1,2 +1,3 @@\\n a\\n+b\\n c\"",
+      "previous_filename": "qa2671/old2.ts",
+      "routedTo": "inline"
+    },
+    {
+      "filename": "qa2671/copied.ts",
+      "status": "copied",
+      "patch": "<absent>",
+      "previous_filename": "qa2671/old3.ts",
+      "routedTo": "inline"
+    },
+    {
+      "filename": "qa2671/mode-only.sh",
+      "status": "changed",
+      "patch": "<absent>",
+      "routedTo": "inline"
+    },
+    {
+      "filename": "qa2671/logo-renamed.png",
+      "status": "renamed",
+      "patch": "<absent>",
+      "previous_filename": "qa2671/logo.png",
+      "routedTo": "inline"
+    },
+    {
+      "filename": "qa2671/huge.ts",
+      "status": "modified",
+      "patch": "<absent>",
+      "routedTo": "inline"
+    }
+  ],
+  "GitLab": [
+    {
+      "filename": "qa2671/pure-rename.ts",
+      "status": "renamed",
+      "patch": "\"\"",
+      "previous_filename": "qa2671/old.ts",
+      "routedTo": "inline"
+    },
+    {
+      "filename": "qa2671/rename-edit.ts",
+      "status": "renamed",
+      "patch": "\"@@ -1,2 +1,3 @@\\n a\\n+b\\n c\\n\"",
+      "previous_filename": "qa2671/old2.ts",
+      "routedTo": "inline"
+    },
+    {
+      "filename": "qa2671/mode-only.sh",
+      "status": "modified",
+      "patch": "\"\"",
+      "routedTo": "inline"
+    },
+    {
+      "filename": "qa2671/logo-renamed.png",
+      "status": "renamed",
+      "patch": "\"Binary files a/qa2671/logo.png and b/qa2671/logo-renamed.png differ\\n\"",
+      "previous_filename": "qa2671/logo.png",
+      "routedTo": "inline"
+    }
+  ],
+  "splitUnifiedDiff": [
+    {
+      "filename": "qa2671/pure-rename.ts",
+      "status": "renamed",
+      "patch": "\"\"",
+      "previous_filename": "qa2671/old.ts",
+      "routedWithParsedStatus": "inline",
+      "routedAsDiffstatRenamed": "inline"
+    },
+    {
+      "filename": "qa2671/copied.ts",
+      "status": "modified",
+      "patch": "\"\"",
+      "routedWithParsedStatus": "inline",
+      "routedAsDiffstatRenamed": "inline"
+    },
+    {
+      "filename": "qa2671/mode-only.sh",
+      "status": "modified",
+      "patch": "\"\"",
+      "routedWithParsedStatus": "inline",
+      "routedAsDiffstatRenamed": null
+    },
+    {
+      "filename": "qa2671/logo-renamed.png",
+      "status": "renamed",
+      "patch": "\"\"",
+      "previous_filename": "qa2671/logo.png",
+      "routedWithParsedStatus": "inline",
+      "routedAsDiffstatRenamed": "inline"
+    },
+    {
+      "filename": "qa2671/rename-edit.ts",
+      "status": "renamed",
+      "patch": "\"@@ -1,2 +1,3 @@\\n a\\n+b\\n c\"",
+      "previous_filename": "qa2671/old2.ts",
+      "routedWithParsedStatus": "inline",
+      "routedAsDiffstatRenamed": "inline"
+    }
+  ],
+  "Azure": {
+    "rename": {
+      "status": "renamed",
+      "hunks": 1,
+      "patchHead": "\"Index: /qa2671/pure-rename.ts\\n===================================================================\\n--- /qa2671/pure-re",
+      "additions": 30,
+      "routedTo": "inline"
+    },
+    "edit, rename": {
+      "status": "renamed",
+      "hunks": 1,
+      "patchHead": "\"Index: /qa2671/pure-rename.ts\\n===================================================================\\n--- /qa2671/pure-re",
+      "additions": 30,
+      "routedTo": "inline"
+    }
+  }
+}
