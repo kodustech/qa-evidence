@@ -68,6 +68,7 @@ describe(`qa2308 H2 (${VERSION})`, () => {
             return orig(filter, update, ...rest);
         };
         const warns: string[] = []; const ow = console.warn; const ol = console.log;
+        const lg = (s.compiler as any).logger; const origWarn = lg.warn.bind(lg); lg.warn = (o: any, ...r: any[]) => { warns.push(`WARN ${o?.context ?? ''}: ${o?.message ?? o} | error=${o?.error?.message ?? ''}`); return origWarn(o, ...r); };
         const capture = (...a: any[]) => { const t = a.map((x) => (typeof x === 'string' ? x : JSON.stringify(x))).join(' '); if (/Could not (store|record)/.test(t)) warns.push(t.slice(0, 300)); };
         (console as any).warn = (...a: any[]) => { capture(...a); }; (console as any).log = (...a: any[]) => { capture(...a); }; const ow2 = process.stdout.write.bind(process.stdout); (process.stdout as any).write = (c: any, ...r: any[]) => { capture(String(c)); return ow2(c, ...r); }; const oe2 = process.stderr.write.bind(process.stderr); (process.stderr as any).write = (c: any, ...r: any[]) => { capture(String(c)); return oe2(c, ...r); };
         const edit = async (suffix: string) => { const cur = await s.getRule(ORG, r.uuid); const { compileAttempt, contextNeed, detector, fileScope, ...p } = cur; await s.save(ORG, dtoOf(p, suffix ? { rule: p.rule + suffix } : {})); await s.settle(); return s.getRule(ORG, r.uuid); };
