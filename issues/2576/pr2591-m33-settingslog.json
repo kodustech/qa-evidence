@@ -1,0 +1,53 @@
+[
+ {
+  "t": "2026-11-24T19:05:41.989Z",
+  "action": "edit",
+  "cfg": "global",
+  "d": [
+   "Configuration Updated |  | {\"automatedReviewActive\":true,\"reviewCadence\":{\"type\":\"automatic\",\"timeWindow\":15,\"pushesToTrigger\":3}} -> {\"automatedReviewActive\":true,\"reviewCadence\":{\"type\":\"manual\",\"timeWindow\":15,\"pushesToTrigger\":3}}"
+  ]
+ },
+ {
+  "t": "2026-11-24T19:36:01.373Z",
+  "action": "create",
+  "cfg": "repository",
+  "repo": "codex-athena",
+  "d": [
+   "Repository Configuration Created |  | null -> {\"repositoryId\":\"1468015189\",\"repositoryName\":\"codex-athena\"}"
+  ]
+ },
+ {
+  "t": "2026-11-24T19:46:45.897Z",
+  "action": "edit",
+  "cfg": "repository",
+  "repo": "codex-athena",
+  "d": [
+   "Configuration Updated |  | {\"kodusConfigFileOverridesWebPreferences\":false} -> {\"kodusConfigFileOverridesWebPreferences\":true}"
+  ]
+ },
+ {
+  "t": "2026-11-24T20:01:38.787Z",
+  "action": "edit",
+  "cfg": "repository",
+  "repo": "codex-athena",
+  "d": [
+   "Configuration Updated |  | {\"kodusConfigFileOverridesWebPreferences\":true} -> {\"kodusConfigFileOverridesWebPreferences\":false}"
+  ]
+ },
+ {
+  "t": "2026-11-24T20:03:02.158Z",
+  "action": "edit",
+  "cfg": "global",
+  "d": [
+   "Configuration Updated |  | {\"kodusConfigFileOverridesWebPreferences\":false} -> {\"kodusConfigFileOverridesWebPreferences\":true}"
+  ]
+ },
+ {
+  "t": "2026-11-24T20:05:08.024Z",
+  "action": "edit",
+  "cfg": "global",
+  "d": [
+   "Configuration Updated |  | {\"kodusConfigFileOverridesWebPreferences\":true} -> {\"kodusConfigFileOverridesWebPreferences\":false}"
+  ]
+ }
+]
