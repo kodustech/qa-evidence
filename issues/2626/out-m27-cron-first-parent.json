@@ -1,0 +1,26 @@
+{
+ "rev": "parent",
+ "order": "cron-first",
+ "doc_end": null,
+ "errors": [],
+ "timeline": [
+  "2026-11-24T22:11:42.495Z pid=70651 A \u00a7 ready {\"actor\": \"A\"}",
+  "2026-11-24T22:11:43.053Z pid=70655 C \u00a7 ready {\"actor\": \"C\"}",
+  "2026-11-24T22:11:43.612Z pid=70656 O \u00a7 ready {\"actor\": \"O\"}",
+  "2026-11-24T22:11:43.623Z pid=70651 A info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:49efcfd9-de06-49cd-9972-e666e4aceaa2\" consumer=\"graph-",
+  "2026-11-24T22:11:43.640Z pid=70651 A info SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:49efcfd9-de06-49cd-9972-e666e4",
+  "2026-11-24T22:11:43.640Z pid=70651 A \u00a7 provider.create.start {\"id\": \"fake-70651-1-ep7rl\"}",
+  "2026-11-24T22:11:43.641Z pid=70651 A \u00a7 provider.create.done {\"id\": \"fake-70651-1-ep7rl\"}",
+  "2026-11-24T22:11:43.648Z pid=70651 A info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:49efcfd9-de06-49cd-9972-e666e4aceaa2\" consumer=\"",
+  "2026-11-24T22:11:43.648Z pid=70651 A \u00a7 acquired {\"id\": \"2d303381\", \"actor\": \"A\", \"leaseId\": \"55d37801-aa7a-45cb-9981-6b8c7e8fd0f7\", \"sandboxId\": \"fake-70651-1-ep7rl\", \"waitedMs\": 35}",
+  "2026-11-24T22:11:43.655Z pid=70651 A info SandboxLeaseManager: released leaseId=\"55d37801-aa7a-45cb-9981-6b8c7e8fd0f7\" prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:49efcf",
+  "2026-11-24T22:11:43.658Z pid=70651 A info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T22:11:43.655Z for sandboxId=\"fake-70651-1-ep7rl\"",
+  "2026-11-24T22:11:43.658Z pid=70651 A \u00a7 e2b.setTimeout {\"id\": \"fake-70651-1-ep7rl\", \"ms\": 0}",
+  "2026-11-24T22:11:43.658Z pid=70651 A \u00a7 released {\"id\": \"34e4a965\", \"actor\": \"A\"}",
+  "2026-11-24T22:11:53.678Z pid=70655 C \u00a7 e2b.kill.call {\"id\": \"fake-70651-1-ep7rl\", \"hasKey\": true, \"behavior\": \"ok\"}",
+  "2026-11-24T22:11:53.678Z pid=70655 C \u00a7 e2b.kill.ok {\"id\": \"fake-70651-1-ep7rl\", \"was\": \"running\"}",
+  "2026-11-24T22:11:53.693Z pid=70655 C info [SANDBOX-IDLE-KILL] Killed idle sandbox",
+  "2026-11-24T22:11:53.694Z pid=70655 C \u00a7 cron.done {\"id\": \"33b49b9e\", \"actor\": \"C\"}",
+  "2026-11-24T22:11:53.697Z pid=70656 O \u00a7 doc {\"id\": \"b2853035\", \"doc\": null}"
+ ]
+}
