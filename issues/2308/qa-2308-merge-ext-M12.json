@@ -1,0 +1,199 @@
+{
+ "steps": [
+  {
+   "name": "POST create",
+   "calls": 1,
+   "detector": {
+    "pattern": "console\\.log\\s*\\("
+   }
+  },
+  {
+   "name": "PATCH full same body (rule+examples+repositoryId)",
+   "calls": 0,
+   "err": null,
+   "beforeHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "afterHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "hashRuleNoExamples": "9c35bf4fe48a289ade7ac3bb5162be9a4a1df550a873f16f0bd2e247a47e108d",
+   "hashStored": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "detectorBefore": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "detectorAfter": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "storedExamples": 2,
+   "lastCompilePayloadHasExamples": true,
+   "rule": "Do not call console.log in qa2308 files; use the injected lo"
+  },
+  {
+   "name": "PATCH severity only",
+   "calls": 0,
+   "err": null,
+   "beforeHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "afterHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "hashRuleNoExamples": "9c35bf4fe48a289ade7ac3bb5162be9a4a1df550a873f16f0bd2e247a47e108d",
+   "hashStored": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "detectorBefore": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "detectorAfter": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "storedExamples": 2,
+   "lastCompilePayloadHasExamples": true,
+   "rule": "Do not call console.log in qa2308 files; use the injected lo"
+  },
+  {
+   "name": "PATCH title only",
+   "calls": 0,
+   "err": null,
+   "beforeHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "afterHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "hashRuleNoExamples": "9c35bf4fe48a289ade7ac3bb5162be9a4a1df550a873f16f0bd2e247a47e108d",
+   "hashStored": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "detectorBefore": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "detectorAfter": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "storedExamples": 2,
+   "lastCompilePayloadHasExamples": true,
+   "rule": "Do not call console.log in qa2308 files; use the injected lo"
+  },
+  {
+   "name": "PATCH same rule only (no repositoryId, no examples)",
+   "calls": 0,
+   "err": null,
+   "beforeHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "afterHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "hashRuleNoExamples": "9c35bf4fe48a289ade7ac3bb5162be9a4a1df550a873f16f0bd2e247a47e108d",
+   "hashStored": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "detectorBefore": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "detectorAfter": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "storedExamples": 2,
+   "lastCompilePayloadHasExamples": true,
+   "rule": "Do not call console.log in qa2308 files; use the injected lo"
+  },
+  {
+   "name": "PATCH same rule + repositoryId, no examples",
+   "calls": 1,
+   "err": null,
+   "beforeHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "afterHash": "9c35bf4fe48a289ade7ac3bb5162be9a4a1df550a873f16f0bd2e247a47e108d",
+   "hashRuleNoExamples": "9c35bf4fe48a289ade7ac3bb5162be9a4a1df550a873f16f0bd2e247a47e108d",
+   "hashStored": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "detectorBefore": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "detectorAfter": null,
+   "storedExamples": 2,
+   "lastCompilePayloadHasExamples": false,
+   "rule": "Do not call console.log in qa2308 files; use the injected lo"
+  },
+  {
+   "name": "web-style full save after (examples present)",
+   "calls": 1,
+   "err": null,
+   "beforeHash": "9c35bf4fe48a289ade7ac3bb5162be9a4a1df550a873f16f0bd2e247a47e108d",
+   "afterHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "hashRuleNoExamples": "9c35bf4fe48a289ade7ac3bb5162be9a4a1df550a873f16f0bd2e247a47e108d",
+   "hashStored": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "detectorBefore": null,
+   "detectorAfter": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "storedExamples": 2,
+   "lastCompilePayloadHasExamples": true,
+   "rule": "Do not call console.log in qa2308 files; use the injected lo"
+  },
+  {
+   "name": "PATCH examples-only change + repositoryId",
+   "calls": 0,
+   "err": null,
+   "beforeHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "afterHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "hashRuleNoExamples": "9c35bf4fe48a289ade7ac3bb5162be9a4a1df550a873f16f0bd2e247a47e108d",
+   "hashStored": "543a18e00abb5dea33b13c4a89b88f0608321c47839062ca17ad3215057d1912",
+   "detectorBefore": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "detectorAfter": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "storedExamples": 2,
+   "lastCompilePayloadHasExamples": true,
+   "rule": "Do not call console.log in qa2308 files; use the injected lo"
+  },
+  {
+   "name": "PATCH changed rule text without repositoryId",
+   "calls": 0,
+   "err": null,
+   "beforeHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "afterHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "hashRuleNoExamples": "d2f50a28592e24b5fb995ee2b4b9683d5220979f873382305897ca6bd5c0bd27",
+   "hashStored": "b55be66c532198af7ed50f43243742ff35ed7ca3b5d19d78067fd2fdc776e098",
+   "detectorBefore": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "detectorAfter": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "storedExamples": 2,
+   "lastCompilePayloadHasExamples": true,
+   "rule": "Do not call console.log in qa2308 files; use the injected lo"
+  },
+  {
+   "name": "PATCH examples in {isCorrect,snippet} key order + repositoryId (same content)",
+   "calls": 1,
+   "err": null,
+   "beforeHash": "de72513e7b488e0f74a43f088673fc6091f91d0004d12bcdde7c4abd82aa7d16",
+   "afterHash": "59a58ba012f867d9a8651509557ec4cd8e00606f4a5cd54556e574aae5e5ec12",
+   "hashRuleNoExamples": "d2f50a28592e24b5fb995ee2b4b9683d5220979f873382305897ca6bd5c0bd27",
+   "hashStored": "59a58ba012f867d9a8651509557ec4cd8e00606f4a5cd54556e574aae5e5ec12",
+   "detectorBefore": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "detectorAfter": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "storedExamples": 2,
+   "lastCompilePayloadHasExamples": true,
+   "rule": "Do not call console.log in qa2308 files; use the injected lo"
+  },
+  {
+   "name": "M35: PATCH changed text + forged compileAttempt for the new hash",
+   "calls": 0,
+   "err": null,
+   "beforeHash": "59a58ba012f867d9a8651509557ec4cd8e00606f4a5cd54556e574aae5e5ec12",
+   "afterHash": "2e36a13f9da27c5a9b0843e6c5b356384369cc32536ac3aa8f3a8cce3d74dd1e",
+   "hashRuleNoExamples": "9434696e6594900669b2798e5c0a34a1d0dd97b3cee9dbc2e3ebe22d7fb5c28b",
+   "hashStored": "2e36a13f9da27c5a9b0843e6c5b356384369cc32536ac3aa8f3a8cce3d74dd1e",
+   "detectorBefore": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "detectorAfter": {
+    "pattern": "console\\.log\\s*\\("
+   },
+   "storedExamples": 2,
+   "lastCompilePayloadHasExamples": true,
+   "rule": "Do not call console.log in qa2308 files; use the injected lo"
+  }
+ ],
+ "m35": {
+  "storedCompileAttempt": {
+   "sourceHash": "2e36a13f9da27c5a9b0843e6c5b356384369cc32536ac3aa8f3a8cce3d74dd1e",
+   "attemptedAt": "2026-11-24T20:54:57.346Z",
+   "outcome": "declined"
+  },
+  "storedContextNeed": {
+   "need": "diff-only",
+   "source": "author"
+  },
+  "detector": "console\\.log\\s*\\("
+ }
+}
