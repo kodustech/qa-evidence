@@ -1,0 +1,73 @@
+{
+ "settled": [
+  {
+   "uuid": "c75dd985-1893-40e4-948a-86b31c0436a3",
+   "caCurrent": true,
+   "ctxCurrent": true,
+   "fileScope": [
+    ".ts",
+    ".js"
+   ]
+  },
+  {
+   "uuid": "f45c02a9-dbcb-4ac5-95f5-40f0a130626e",
+   "caCurrent": true,
+   "ctxCurrent": true,
+   "fileScope": [
+    ".ts",
+    ".js"
+   ]
+  },
+  {
+   "uuid": "6533ad46-44f1-4b8d-ae6d-9225fcb6baef",
+   "caCurrent": true,
+   "ctxCurrent": true,
+   "fileScope": [
+    ".ts",
+    ".js"
+   ]
+  },
+  {
+   "uuid": "92a6fb3e-9cc0-442d-a71a-096e6db17239",
+   "caCurrent": true,
+   "ctxCurrent": true,
+   "fileScope": [
+    ".ts"
+   ]
+  }
+ ],
+ "pausedCount": 4,
+ "idePauseCalls": 0,
+ "resumedCount": 4,
+ "ideResumeCalls": 0,
+ "centralAdoptionCalls": 0,
+ "adoptedStatus": [
+  {
+   "path": "athena/.kody-rules/review/c75dd985-1893-40e4-948a-86b31c0436a3.yml",
+   "status": "pending_add"
+  },
+  {
+   "path": "athena/.kody-rules/review/f45c02a9-dbcb-4ac5-95f5-40f0a130626e.yml",
+   "status": "pending_add"
+  },
+  {
+   "path": "athena/.kody-rules/review/6533ad46-44f1-4b8d-ae6d-9225fcb6baef.yml",
+   "status": "pending_add"
+  },
+  {
+   "path": "athena/.kody-rules/review/92a6fb3e-9cc0-442d-a71a-096e6db17239.yml",
+   "status": "pending_add"
+  }
+ ],
+ "backfill": {
+  "calls": 0,
+  "processed": 0,
+  "skipped": 4
+ },
+ "statuses": [
+  "active",
+  "active",
+  "active",
+  "active"
+ ]
+}
