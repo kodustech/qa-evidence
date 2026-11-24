@@ -1,16 +1,42 @@
 [
  {
-  "t": "2026-11-24T21:06:47.375Z",
+  "t": "2026-11-24T21:43:36.620Z",
+  "dir": "req",
+  "method": "POST",
+  "url": "/api/proxy/api/code-management/auth-integration",
+  "body": {
+   "code": "",
+   "integrationType": "BITBUCKET",
+   "organizationAndTeamData": {
+    "teamId": "dad3dc66-c06a-4f73-9501-d7aa68000324"
+   },
+   "authMode": "basic",
+   "token": "<16 chars>",
+   "host": "https://kodustech.github.io/qa-evidence/issues/2570/dc-ok",
+   "username": "qa2570user",
+   "email": "",
+   "orgName": ""
+  }
+ },
+ {
+  "t": "2026-11-24T21:43:36.880Z",
+  "dir": "res",
+  "status": 201,
+  "url": "/api/proxy/api/code-management/auth-integration",
+  "body": "{\"data\":{\"success\":true,\"status\":\"SUCCESS\"},\"statusCode\":201,\"type\":\"Object\"}"
+ },
+ {
+  "t": "2026-11-24T21:43:37.356Z",
   "dir": "req",
   "method": "GET",
-  "url": "/api/proxy/api/code-management/repositories/org?teamId=1c73ac8b-5b33-4f19-9f87-7d79f45f52a1",
+  "url": "/api/proxy/api/code-management/repositories/org?teamId=dad3dc66-c06a-4f73-9501-d7aa68000324",
   "body": null
  },
  {
-  "t": "2026-11-24T21:06:47.568Z",
+  "t": "2026-11-24T21:43:37.614Z",
   "dir": "res",
   "status": 200,
-  "url": "/api/proxy/api/code-management/repositories/org?teamId=1c73ac8b-5b33-4f19-9f87-7d79f45f52a1",
+  "url": "/api/proxy/api/code-management/repositories/org?teamId=dad3dc66-c06a-4f73-9501-d7aa68000324",
   "body": "{\"data\":[{\"id\":\"9001\",\"name\":\"qa2570-alpha\",\"http_url\":\"https://example.invalid/scm/qa2570/qa2570-alpha.git\",\"avatar_url\":\"\",\"organizationName\":\"QA2570\",\"visibility\":\"private\",\"selected\":false,\"default_branch\":\"master\",\"workspaceId\":\"QA2570\",\"project\":{\"id\":\"77\",\"name\":\"QA 2570\"},\"archived\":false,\"fork\":false,\"mirror\":false},{\"id\":\"9002\",\"name\":\"qa2570-beta\",\"http_url\":\"https://example.invalid/scm"
  }
 ]
