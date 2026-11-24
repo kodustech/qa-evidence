@@ -1,0 +1,873 @@
+{
+ "item1": {
+  "approvalPolicies": {
+   "validatorErrors": [
+    "/approvalPolicies must satisfy the code review settings contract"
+   ],
+   "strictLoad": "THREW: Invalid code review settings in kodus-config.yml: /approvalPolicies",
+   "tolerantLoad": {
+    "otherKeys": [
+     "reviewSettingsError"
+    ]
+   },
+   "gate": []
+  },
+  "riskCriteria": {
+   "validatorErrors": [
+    "/riskCriteria must satisfy the code review settings contract"
+   ],
+   "strictLoad": "THREW: Invalid code review settings in kodus-config.yml: /riskCriteria",
+   "tolerantLoad": {
+    "otherKeys": [
+     "reviewSettingsError"
+    ]
+   },
+   "gate": []
+  },
+  "validControl": {
+   "validatorErrors": [],
+   "strictLoad": "returned (no throw)",
+   "tolerantLoad": {
+    "otherKeys": []
+   },
+   "gate": []
+  }
+ },
+ "item1_gate_approvalPolicies": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "GITHUB:1468015189:1::900:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "reaction": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "response": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "GITHUB:1468015189:1::900:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "item1_gate_riskCriteria": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "GITHUB:1468015189:1::900:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "reaction": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "response": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "GITHUB:1468015189:1::900:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "item1_gate_validControl": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "GITHUB:1468015189:1::900:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "reaction": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "response": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "GITHUB:1468015189:1::900:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "items23_github_repo_false": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "GITHUB:1468015189:1::900:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "reaction": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "response": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "GITHUB:1468015189:1::900:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "items23_github_global_false_repo_true": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "GITHUB:1468015189:1::900:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "reaction": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "response": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "GITHUB:1468015189:1::900:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "items23_github_global_true_repo_false": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "GITHUB:1468015189:1::900:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "reaction": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "response": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "GITHUB:1468015189:1::900:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "items23_github": [
+  {
+   "step": "repo false, global default",
+   "stored": {
+    "global": null,
+    "repo": {
+     "implicitReplies": false
+    }
+   },
+   "gate": []
+  },
+  {
+   "step": "global false, repo true",
+   "stored": {
+    "global": {
+     "implicitReplies": false
+    },
+    "repo": {
+     "implicitReplies": true
+    }
+   },
+   "gate": 1
+  },
+  {
+   "step": "global true, repo false (differs from inherited)",
+   "stored": {
+    "global": {
+     "implicitReplies": true
+    },
+    "repo": {
+     "implicitReplies": false
+    }
+   },
+   "gate": []
+  }
+ ],
+ "items23_gitlab_repo_false": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "GITLAB:89319210:1::901:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "reaction": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "response": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "GITLAB:89319210:1::901:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "items23_gitlab_global_false_repo_true": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "GITLAB:89319210:1::901:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "reaction": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "response": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "GITLAB:89319210:1::901:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "items23_gitlab_global_true_repo_false": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "GITLAB:89319210:1::901:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "reaction": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "response": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "GITLAB:89319210:1::901:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "items23_gitlab": [
+  {
+   "step": "repo false, global default",
+   "stored": {
+    "global": null,
+    "repo": {
+     "implicitReplies": false
+    }
+   },
+   "gate": []
+  },
+  {
+   "step": "global false, repo true",
+   "stored": {
+    "global": {
+     "implicitReplies": false
+    },
+    "repo": {
+     "implicitReplies": true
+    }
+   },
+   "gate": 1
+  },
+  {
+   "step": "global true, repo false (differs from inherited)",
+   "stored": {
+    "global": {
+     "implicitReplies": true
+    },
+    "repo": {
+     "implicitReplies": false
+    }
+   },
+   "gate": []
+  }
+ ],
+ "items23_azure_repo_false": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "AZURE_REPOS:32c159b2-ac16-419b-9445-8ab275cabadc:211:1372:2:"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "response": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "update": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "AZURE_REPOS:32c159b2-ac16-419b-9445-8ab275cabadc:211:1372:2:",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "items23_azure_global_false_repo_true": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "AZURE_REPOS:32c159b2-ac16-419b-9445-8ab275cabadc:211:1372:2:"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "response": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "update": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "AZURE_REPOS:32c159b2-ac16-419b-9445-8ab275cabadc:211:1372:2:",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "items23_azure_global_true_repo_false": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "AZURE_REPOS:32c159b2-ac16-419b-9445-8ab275cabadc:211:1372:2:"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "response": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "update": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "AZURE_REPOS:32c159b2-ac16-419b-9445-8ab275cabadc:211:1372:2:",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "items23_azure": [
+  {
+   "step": "repo false, global default",
+   "stored": {
+    "global": null,
+    "repo": {
+     "implicitReplies": false
+    }
+   },
+   "gate": []
+  },
+  {
+   "step": "global false, repo true",
+   "stored": {
+    "global": {
+     "implicitReplies": false
+    },
+    "repo": {
+     "implicitReplies": true
+    }
+   },
+   "gate": 1
+  },
+  {
+   "step": "global true, repo false (differs from inherited)",
+   "stored": {
+    "global": {
+     "implicitReplies": true
+    },
+    "repo": {
+     "implicitReplies": false
+    }
+   },
+   "gate": []
+  }
+ ],
+ "item5_tenant_A": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "GITLAB:42:1::901:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "reaction": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "response": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "GITLAB:42:1::901:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "item5_tenant_B": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "GITLAB:42:1::902:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "reaction": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "response": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "GITLAB:42:1::902:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "item5": {
+  "contextLookups": [
+   [
+    "string",
+    "42",
+    "GITLAB"
+   ],
+   [
+    "string",
+    "42",
+    "GITLAB"
+   ]
+  ],
+  "A": {
+   "silence": [],
+   "findOneTeams": [],
+   "classifier": 1
+  },
+  "B": {
+   "silence": [],
+   "findOneTeams": [],
+   "classifier": 1
+  }
+ },
+ "items6_14": {
+  "handlerPredicate": {
+   "editedMention": true,
+   "editedUnmentioned": false,
+   "createdUnmentioned": true
+  },
+  "silence": [],
+  "claimKeys": [
+   "GITHUB:1468015189:1::900:2026-11-24T10:01:00Z",
+   "GITHUB:1468015189:1::900:2026-11-24T10:05:00Z"
+  ],
+  "claims": [
+   [
+    "GITHUB:1468015189:1::900:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ],
+   [
+    "GITHUB:1468015189:1::900:2026-11-24T10:05:00Z",
+    "PROCESSED"
+   ]
+  ],
+  "agent": 2,
+  "classifier": 1,
+  "responses": 2,
+  "dupSkips": 0
+ },
+ "item7_gitlab_no_discussion_id_off": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "GITLAB:89319210:1::901:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "reaction": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "response": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "GITLAB:89319210:1::901:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "item7_gitlab_no_discussion_id_on": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "GITLAB:89319210:1::901:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "reaction": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "response": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "GITLAB:89319210:1::901:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "item11_github_toplevel_mention_off": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "GITHUB:1468015189:1::951:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "reaction": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "response": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "GITHUB:1468015189:1::951:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "item11_bitbucket_thread_mention_off": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "BITBUCKET:d7ecce61-5e9d-4e3d-b60a-67a295687125:1::300:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "response": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "update": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "BITBUCKET:d7ecce61-5e9d-4e3d-b60a-67a295687125:1::300:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "item11_bitbucket_general_mention_off": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "BITBUCKET:d7ecce61-5e9d-4e3d-b60a-67a295687125:1::301:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "response": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "update": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "BITBUCKET:d7ecce61-5e9d-4e3d-b60a-67a295687125:1::301:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "item11_azure_thread_mention_off": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "AZURE_REPOS:32c159b2-ac16-419b-9445-8ab275cabadc:211:1372:2:"
+   ],
+   "permission": 1,
+   "response": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "update": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "AZURE_REPOS:32c159b2-ac16-419b-9445-8ab275cabadc:211:1372:2:",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "item11_forgejo_general_mention_off": {
+  "silence": [],
+  "counts": {},
+  "cfgCalls": [],
+  "notable": [
+   "warn:Unsupported platform type: FORGEJO",
+   "warn:Unsupported platform type: FORGEJO",
+   "warn:Unsupported platform type: FORGEJO for head ref",
+   "warn:Unsupported platform type: FORGEJO for base ref",
+   "warn:Unsupported platform type: FORGEJO for default branch",
+   "warn:Unsupported platform type: FORGEJO"
+  ],
+  "claims": []
+ },
+ "item11_forgejo_inline_mention_off": {
+  "silence": [],
+  "counts": {},
+  "cfgCalls": [],
+  "notable": [
+   "warn:Unsupported platform type: FORGEJO",
+   "warn:Unsupported platform type: FORGEJO",
+   "warn:Unsupported platform type: FORGEJO for head ref",
+   "warn:Unsupported platform type: FORGEJO for base ref",
+   "warn:Unsupported platform type: FORGEJO for default branch",
+   "warn:Unsupported platform type: FORGEJO"
+  ],
+  "claims": []
+ },
+ "item12_gitlab_implicit_on": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "GITLAB:89319210:1::901:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "reaction": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "response": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "GITLAB:89319210:1::901:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "item12_bitbucket_implicit_on": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "BITBUCKET:d7ecce61-5e9d-4e3d-b60a-67a295687125:1::300:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "response": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "update": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "BITBUCKET:d7ecce61-5e9d-4e3d-b60a-67a295687125:1::300:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "item12_azure_implicit_on": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "AZURE_REPOS:32c159b2-ac16-419b-9445-8ab275cabadc:211:1372:2:"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "response": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "update": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "AZURE_REPOS:32c159b2-ac16-419b-9445-8ab275cabadc:211:1372:2:",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "item12_gitlab_implicit_off": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "GITLAB:89319210:1::901:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "reaction": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "response": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "GITLAB:89319210:1::901:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "item12_bitbucket_implicit_off": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "BITBUCKET:d7ecce61-5e9d-4e3d-b60a-67a295687125:1::300:2026-11-24T10:01:00Z"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "response": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "update": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "BITBUCKET:d7ecce61-5e9d-4e3d-b60a-67a295687125:1::300:2026-11-24T10:01:00Z",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "item12_azure_implicit_off": {
+  "silence": [],
+  "counts": {
+   "claimKeys": [
+    "AZURE_REPOS:32c159b2-ac16-419b-9445-8ab275cabadc:211:1372:2:"
+   ],
+   "permission": 1,
+   "modelSlot": 1,
+   "classifier": 1,
+   "response": 1,
+   "sandbox": 1,
+   "agent": 1,
+   "update": 1
+  },
+  "cfgCalls": [],
+  "notable": [
+   "log:Successfully executed conversation flow"
+  ],
+  "claims": [
+   [
+    "AZURE_REPOS:32c159b2-ac16-419b-9445-8ab275cabadc:211:1372:2:",
+    "PROCESSED"
+   ]
+  ]
+ },
+ "item17": {
+  "teamA_globalFalse": {
+   "implicitReplies": false
+  },
+  "findOneTeams": [
+   "22222222-2222-4222-8222-222222222222",
+   "44444444-4444-4444-8444-444444444444"
+  ]
+ }
+}
