@@ -1,0 +1,62 @@
+{
+ "rev": "merge",
+ "mutant": false,
+ "sigkill_at": "2026-11-24T22:12:58.936Z",
+ "A_pid": 71584,
+ "doc_after_claim": {
+  "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:c8788f0b-09fc-4e8f-a902-8ed60922bbad",
+  "__v": 0,
+  "cleanupAttempts": 1,
+  "consumer": "graph-build",
+  "createdAt": "2026-11-24T22:12:58.840Z",
+  "expiresAt": "2026-11-25T00:12:58.840Z",
+  "killRetryCount": 0,
+  "leaseCount": 0,
+  "organizationId": "11111111-1111-4111-8111-111111111111",
+  "repositoryId": "33333333-3333-4333-8333-333333333333",
+  "state": "READY",
+  "baseBranch": "main",
+  "privilegesDropped": false,
+  "sandboxId": "fake-71584-1-ywjo0",
+  "cleanupRetryAt": null,
+  "cleanupStartedAt": "2026-11-24T22:12:58.876Z",
+  "cleanupStatus": "in_progress",
+  "killAt": "2026-11-24T22:12:58.876Z"
+ },
+ "doc_after_sigkill": {
+  "_id": "11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:c8788f0b-09fc-4e8f-a902-8ed60922bbad",
+  "leaseCount": 0,
+  "sandboxId": "fake-71584-1-ywjo0",
+  "state": "READY",
+  "killAt": "2026-11-24T22:12:58.876Z",
+  "cleanupStatus": "in_progress",
+  "cleanupAttempts": 1,
+  "cleanupStartedAt": "2026-11-24T22:12:58.876Z",
+  "killRetryCount": 0,
+  "expiresAt": "2026-11-25T00:12:58.840Z"
+ },
+ "doc_after_cron": null,
+ "provider": {
+  "fake-71584-1-ywjo0": "killed"
+ },
+ "timeline": [
+  "2026-11-24T22:12:57.618Z pid=71584 A \u00a7 ready {\"actor\": \"A\"}",
+  "2026-11-24T22:12:58.252Z pid=71616 C \u00a7 ready {\"actor\": \"C\"}",
+  "2026-11-24T22:12:58.830Z pid=71619 O \u00a7 ready {\"actor\": \"O\"}",
+  "2026-11-24T22:12:58.840Z pid=71584 A info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:c8788f0b-09fc-4e8f-a902-8ed60922bbad\" consumer=\"graph-",
+  "2026-11-24T22:12:58.859Z pid=71584 A info SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:c8788f0b-09fc-4e8f-a902-8ed609",
+  "2026-11-24T22:12:58.859Z pid=71584 A \u00a7 provider.create.start {\"id\": \"fake-71584-1-ywjo0\"}",
+  "2026-11-24T22:12:58.860Z pid=71584 A \u00a7 provider.create.done {\"id\": \"fake-71584-1-ywjo0\"}",
+  "2026-11-24T22:12:58.870Z pid=71584 A info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:c8788f0b-09fc-4e8f-a902-8ed60922bbad\" consumer=\"",
+  "2026-11-24T22:12:58.870Z pid=71584 A \u00a7 acquired {\"id\": \"3ed8e310\", \"actor\": \"A\", \"leaseId\": \"948e20b3-90fb-46cc-8dad-06dfc724d082\", \"sandboxId\": \"fake-71584-1-ywjo0\", \"waitedMs\": 39}",
+  "2026-11-24T22:12:58.876Z pid=71584 A info SandboxLeaseManager: released leaseId=\"948e20b3-90fb-46cc-8dad-06dfc724d082\" prKey=\"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:c8788f",
+  "2026-11-24T22:12:58.880Z pid=71584 A \u00a7 barrier.reached {\"actor\": \"A\", \"point\": \"after-claim\"}",
+  "2026-11-24T22:12:58.929Z pid=71619 O \u00a7 raw {\"id\": \"6ef6d1b4\", \"doc\": {\"_id\": \"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:c8788f0b-09fc-4e8f-a902-8ed60922bbad\", \"__v\": 0, \"cleanupAttempts\": 1, \"consumer\": \"graph-build\", \"createdAt\": \"2026-11-24T22:12:58.840Z\", \"expiresAt\": \"2026-11-25T00:12:58.840Z\", \"kill",
+  "2026-11-24T22:12:58.939Z pid=71619 O \u00a7 doc {\"id\": \"1d964ad3\", \"doc\": {\"_id\": \"11111111-1111-4111-8111-111111111111:33333333-3333-4333-8333-333333333333:graph:c8788f0b-09fc-4e8f-a902-8ed60922bbad\", \"leaseCount\": 0, \"sandboxId\": \"fake-71584-1-ywjo0\", \"state\": \"READY\", \"killAt\": \"2026-11-24T22:12:58.876Z\", \"cleanupStatus\": \"in_progress\", \"clean",
+  "2026-11-24T22:12:58.952Z pid=71616 C \u00a7 e2b.kill.call {\"id\": \"fake-71584-1-ywjo0\", \"hasKey\": true, \"behavior\": \"ok\"}",
+  "2026-11-24T22:12:58.952Z pid=71616 C \u00a7 e2b.kill.ok {\"id\": \"fake-71584-1-ywjo0\", \"was\": \"running\"}",
+  "2026-11-24T22:12:58.956Z pid=71616 C info [SANDBOX-IDLE-KILL] Killed idle sandbox",
+  "2026-11-24T22:12:58.957Z pid=71616 C \u00a7 cron.done {\"id\": \"8414701e\", \"actor\": \"C\"}",
+  "2026-11-24T22:12:58.958Z pid=71619 O \u00a7 doc {\"id\": \"fbbf6c78\", \"doc\": null}"
+ ]
+}
