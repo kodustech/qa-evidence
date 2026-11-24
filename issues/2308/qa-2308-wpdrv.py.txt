@@ -11,9 +11,11 @@ class Ctl:
     def release(s, tag, kind): s.events.setdefault((tag, kind), threading.Event()).set()
 ctl = Ctl()
 def default_out(user):
+    if 'console.log' in user and 'Variant C' in user: return {'mechanical': True, 'pattern': 'console\\.log\\(', 'extensions': ['.ts'], 'contextNeed': 'diff-only', 'reason': 'C'}
+    if 'console.log' in user and 'Variant B' in user: return {'mechanical': True, 'pattern': '\\bconsole\\.log\\s*\\(', 'extensions': ['.ts'], 'contextNeed': 'diff-only', 'reason': 'B'}
     if 'console.log' in user: return {'mechanical': True, 'pattern': 'console\\.log\\s*\\(', 'contextNeed': 'diff-only', 'reason': 'call'}
     if 'eval' in user: return {'mechanical': True, 'pattern': '\\beval\\s*\\(', 'contextNeed': 'diff-only', 'reason': 'eval'}
-    return {'mechanical': False, 'cosmetic': False, 'contextNeed': 'diff-only', 'reason': 'semantic'}
+    return {'mechanical': False, 'cosmetic': False, 'contextNeed': 'diff-only', 'reason': 'semantic', 'extensions': ['.ts', '.js']}
 class H(BaseHTTPRequestHandler):
     def log_message(self, *a): pass
     def do_POST(self):
