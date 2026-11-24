@@ -526,6 +526,21 @@ const cases: Record<string, () => Promise<any>> = {
         const r2 = await attempt('no host, stored none', t2, () => uc(t2, { authMode: 'token', token: 'qa2570-cloud-pat', email: 'x@example.invalid' }), 'qa2570-cloud-pat');
         return { explicitHost: { ms: r.ms, routingLookups: r.routingLookups, dcRequests: r.dcRequests.map((x: any) => x.path) }, cloudNoHost: { routingLookups: r2.routingLookups, dcRequests: r2.dcRequests.length, cloudRequests: r2.cloudRequests.length } };
     },
+    async x1() {
+        // Cloud token path where listing repositories fails: checkRepositoryPermissions logs `metadata: params` (holds auth.token)
+        nock.cleanAll();
+        nock('https://api.bitbucket.org').persist().get(/.*/).reply(function (uri) {
+            cloudLog.push({ t: new Date().toISOString(), method: 'GET', path: uri });
+            if (uri.startsWith('/2.0/user/workspaces')) return [200, { values: [{ workspace: { uuid: '{w1}', slug: 'w' }, uuid: '{w1}', slug: 'w' }] }];
+            if (uri.startsWith('/2.0/user')) return [200, { uuid: '{u1}', username: 'qa2570' }];
+            return [500, { error: { message: 'boom' } }];
+        });
+        const t = await tenant('x1');
+        const l0 = logs.length;
+        const r = await attempt('cloud token, repo listing 500', t, () => uc(t, { authMode: 'token', token: 'qa2570-CLOUD-MARKER', email: 'x@example.invalid', username: 'u' }), 'qa2570-CLOUD-MARKER');
+        const meta = logs.slice(l0).map((x) => x._raw).join('\n');
+        return { ok: r.ok, result: (r as any).result, httpStatus: r.httpStatus, logs: r.logs.map((x: any) => x.message), tokenInProcessorMetadata: meta.includes('qa2570-CLOUD-MARKER') };
+    },
     async m31() {
         cloudNock('deny');
         const enc = require('@libs/common/utils/crypto').encrypt;
