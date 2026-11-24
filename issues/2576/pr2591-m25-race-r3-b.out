@@ -1,0 +1,16 @@
+QAEVT {"t":"2026-11-24T21:23:12.286Z","pid":37269,"role":"race3b","event":"db-ready"}
+QAEVT {"t":"2026-11-24T21:23:12.290Z","pid":37269,"role":"race3b","event":"barrier-wait","ms":7898}
+QAEVT {"t":"2026-11-24T21:23:20.190Z","pid":37269,"role":"race3b","event":"execute-start"}
+QAEVT {"t":"2026-11-24T21:23:20.191Z","pid":37269,"role":"race3b","event":"log","level":"log","message":"Receiving pull request review webhook for conversation"}
+QAEVT {"t":"2026-11-24T21:23:20.209Z","pid":37269,"role":"race3b","event":"log","level":"log","message":"PR description extracted"}
+QAEVT {"t":"2026-11-24T21:23:20.209Z","pid":37269,"role":"race3b","event":"log","level":"log","message":"Extracted PR information"}
+QAEVT {"t":"2026-11-24T21:23:20.213Z","pid":37269,"role":"race3b","event":"file-read-start"}
+QAEVT {"t":"2026-11-24T21:23:20.213Z","pid":37269,"role":"race3b","event":"file-read-end"}
+QAEVT {"t":"2026-11-24T21:23:20.214Z","pid":37269,"role":"race3b","event":"log","level":"log","message":"Unmentioned reply left unanswered: disabled","reason":"disabled"}
+QAEVT {"t":"2026-11-24T21:23:20.219Z","pid":37269,"role":"race3b","event":"execute-end"}
+QAEVT {"t":"2026-11-24T21:23:20.220Z","pid":37269,"role":"race3b","event":"rows","rows":[{"messageId":"GITHUB:123:812::900:2026-11-24T10:01:00Z","status":"PROCESSED","lockedBy":null,"lockedAt":null,"attempts":1,"processedAt":"2026-11-24T21:23:20.214Z"}]}
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        8.834 s, estimated 9 s
+Ran all test suites matching libs/platform/application/use-cases/codeManagement/qa2576-worker.spec.ts.
