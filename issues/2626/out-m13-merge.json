@@ -1,0 +1,587 @@
+{
+ "rev": "merge",
+ "scenario": "m13",
+ "results": {
+  "decrement": {
+   "job": "COMPLETED",
+   "afterRelease": {
+    "_id": "11111111-1111-4111-8111-111111111111:2c7674bc-ecaf-417e-a8a5-203a630c0a91:graph:d7b586b4-fc58-4edb-afa7-b0a25f464b2e",
+    "leaseCount": 1,
+    "sandboxId": "fake-78049-1-kmr23",
+    "state": "READY",
+    "cleanupAttempts": 0,
+    "killRetryCount": 0,
+    "expiresAt": "2026-11-25T01:15:58.606Z"
+   },
+   "killsAfterRelease": 1,
+   "afterIdleCron": {
+    "_id": "11111111-1111-4111-8111-111111111111:2c7674bc-ecaf-417e-a8a5-203a630c0a91:graph:d7b586b4-fc58-4edb-afa7-b0a25f464b2e",
+    "leaseCount": 1,
+    "sandboxId": "fake-78049-1-kmr23",
+    "state": "READY",
+    "cleanupAttempts": 0,
+    "killRetryCount": 0,
+    "expiresAt": "2026-11-25T01:15:58.606Z"
+   },
+   "afterTTLreaper": null,
+   "sandboxState": "killed",
+   "warn": [
+    "warn [AST-GRAPH-JOB] Sandbox cleanup failed for org/athena"
+   ],
+   "killedLog": false
+  },
+  "claim": {
+   "job": "COMPLETED",
+   "afterRelease": {
+    "_id": "11111111-1111-4111-8111-111111111111:d8265d59-ce55-43e6-92ba-a191b31abf36:graph:a8e06235-67e5-47da-9907-b87b5d45b741",
+    "leaseCount": 0,
+    "sandboxId": "fake-78049-2-quvyd",
+    "state": "READY",
+    "cleanupAttempts": 0,
+    "killRetryCount": 0,
+    "expiresAt": "2026-11-25T01:16:01.041Z"
+   },
+   "killsAfterRelease": 1,
+   "afterIdleCron": {
+    "_id": "11111111-1111-4111-8111-111111111111:d8265d59-ce55-43e6-92ba-a191b31abf36:graph:a8e06235-67e5-47da-9907-b87b5d45b741",
+    "leaseCount": 0,
+    "sandboxId": "fake-78049-2-quvyd",
+    "state": "READY",
+    "cleanupAttempts": 0,
+    "killRetryCount": 0,
+    "expiresAt": "2026-11-25T01:16:01.041Z"
+   },
+   "afterTTLreaper": null,
+   "sandboxState": "killed",
+   "warn": [
+    "warn [AST-GRAPH-JOB] Sandbox cleanup failed for org/athena",
+    "warn [AST-GRAPH-JOB] Sandbox cleanup failed for org/athena"
+   ],
+   "killedLog": false
+  },
+  "claim-committed": {
+   "job": "COMPLETED",
+   "afterRelease": {
+    "_id": "11111111-1111-4111-8111-111111111111:5fa542de-87fb-4861-84f0-18f5fb41ce12:graph:8048f45d-36a8-4546-a856-f6a8e6d3942e",
+    "leaseCount": 0,
+    "sandboxId": "fake-78049-3-8uds2",
+    "state": "READY",
+    "killAt": "2026-11-24T23:16:15.130Z",
+    "cleanupStatus": "in_progress",
+    "cleanupAttempts": 1,
+    "cleanupStartedAt": "2026-11-24T23:16:15.131Z",
+    "killRetryCount": 0,
+    "expiresAt": "2026-11-25T01:16:02.350Z"
+   },
+   "killsAfterRelease": 1,
+   "afterIdleCron": null,
+   "afterTTLreaper": null,
+   "sandboxState": "killed",
+   "warn": [
+    "warn [AST-GRAPH-JOB] Sandbox cleanup failed for org/athena",
+    "warn [AST-GRAPH-JOB] Sandbox cleanup failed for org/athena",
+    "warn [AST-GRAPH-JOB] Sandbox cleanup failed for org/athena"
+   ],
+   "killedLog": false
+  }
+ },
+ "leaseLogs": [
+  "2026-11-24T23:15:58.594Z info [AST-GRAPH-JOB] Starting build for org/athena",
+  "2026-11-24T23:15:58.599Z info [AST-GRAPH-JOB] Auth resolved for org/athena (1ms)",
+  "2026-11-24T23:15:58.606Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:2c7674bc-ecaf-417e-a8a5-203a630c0a91:graph:d7b586b4-fc58-4edb-afa7-b0a25f464b2e\" consumer=\"graph-build\"",
+  "2026-11-24T23:15:59.928Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:2c7674bc-ecaf-417e-a8a5-203a630c0a91:graph:d7b586b4-fc58-4edb-afa7-b0a25f464b2e\" consumer=\"graph-build\"",
+  "2026-11-24T23:16:00.571Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:2c7674bc-ecaf-417e-a8a5-203a630c0a91:graph:d7b586b4-fc58-4edb-afa7-b0a25f464b2e\" consumer=\"graph-build\" leaseId=\"e714a146",
+  "2026-11-24T23:16:00.572Z info [AST-GRAPH-JOB] Sandbox ready for org/athena (1971ms)",
+  "2026-11-24T23:16:00.573Z info [AST-GRAPH-JOB] HEAD sha resolved: f00dface for org/athena",
+  "2026-11-24T23:16:00.574Z info [AST-GRAPH] Starting full build for repo 2c7674bc-ecaf-417e-a8a5-203a630c0a91",
+  "2026-11-24T23:16:00.575Z info [AST-GRAPH] kodus-graph installed (0ms)",
+  "2026-11-24T23:16:00.577Z info [AST-GRAPH] Parse completed (1ms)",
+  "2026-11-24T23:16:00.578Z info [AST-GRAPH] Graph read from sandbox (0ms): 16 nodes, 27 edges",
+  "2026-11-24T23:16:00.740Z info [AST-GRAPH] DB persist completed (161ms)",
+  "2026-11-24T23:16:00.740Z info [AST-GRAPH] Full build COMPLETE for repo 2c7674bc-ecaf-417e-a8a5-203a630c0a91 in 167ms — 16 nodes, 27 edges",
+  "2026-11-24T23:16:00.741Z info [AST-GRAPH-JOB] Build COMPLETED for org/athena in 2324ms",
+  "2026-11-24T23:16:00.775Z warn [AST-GRAPH-JOB] Sandbox cleanup failed for org/athena | err=MongoNetworkError: connection reset",
+  "2026-11-24T23:16:00.965Z info [SANDBOX-REAPER] Reaped expired lease",
+  "2026-11-24T23:16:01.038Z info [AST-GRAPH-JOB] Starting build for org/athena",
+  "2026-11-24T23:16:01.039Z info [AST-GRAPH-JOB] Auth resolved for org/athena (0ms)",
+  "2026-11-24T23:16:01.041Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:d8265d59-ce55-43e6-92ba-a191b31abf36:graph:a8e06235-67e5-47da-9907-b87b5d45b741\" consumer=\"graph-build\"",
+  "2026-11-24T23:16:01.404Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:d8265d59-ce55-43e6-92ba-a191b31abf36:graph:a8e06235-67e5-47da-9907-b87b5d45b741\" consumer=\"graph-build\"",
+  "2026-11-24T23:16:01.473Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:d8265d59-ce55-43e6-92ba-a191b31abf36:graph:a8e06235-67e5-47da-9907-b87b5d45b741\" consumer=\"graph-build\" leaseId=\"466f5c06",
+  "2026-11-24T23:16:01.474Z info [AST-GRAPH-JOB] Sandbox ready for org/athena (434ms)",
+  "2026-11-24T23:16:01.474Z info [AST-GRAPH-JOB] HEAD sha resolved: f00dface for org/athena",
+  "2026-11-24T23:16:01.474Z info [AST-GRAPH] Starting full build for repo d8265d59-ce55-43e6-92ba-a191b31abf36",
+  "2026-11-24T23:16:01.474Z info [AST-GRAPH] kodus-graph installed (0ms)",
+  "2026-11-24T23:16:01.476Z info [AST-GRAPH] Parse completed (2ms)",
+  "2026-11-24T23:16:01.476Z info [AST-GRAPH] Graph read from sandbox (0ms): 16 nodes, 27 edges",
+  "2026-11-24T23:16:01.813Z info [AST-GRAPH] DB persist completed (336ms)",
+  "2026-11-24T23:16:01.813Z info [AST-GRAPH] Full build COMPLETE for repo d8265d59-ce55-43e6-92ba-a191b31abf36 in 339ms — 16 nodes, 27 edges",
+  "2026-11-24T23:16:01.813Z info [AST-GRAPH-JOB] Build COMPLETED for org/athena in 776ms",
+  "2026-11-24T23:16:02.024Z info SandboxLeaseManager: released leaseId=\"466f5c06-5833-4d04-9fdf-9739d0ea66a1\" prKey=\"11111111-1111-4111-8111-111111111111:d8265d59-ce55-43e6-92ba-a191b31abf36:graph:a8e06235-67e5-47da-9907-b87b5d45b741",
+  "2026-11-24T23:16:02.025Z warn [AST-GRAPH-JOB] Sandbox cleanup failed for org/athena | err=MongoNetworkError: connection reset",
+  "2026-11-24T23:16:02.296Z info [SANDBOX-REAPER] Reaped expired lease",
+  "2026-11-24T23:16:02.349Z info [AST-GRAPH-JOB] Starting build for org/athena",
+  "2026-11-24T23:16:02.350Z info [AST-GRAPH-JOB] Auth resolved for org/athena (0ms)",
+  "2026-11-24T23:16:02.350Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:5fa542de-87fb-4861-84f0-18f5fb41ce12:graph:8048f45d-36a8-4546-a856-f6a8e6d3942e\" consumer=\"graph-build\"",
+  "2026-11-24T23:16:03.447Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:5fa542de-87fb-4861-84f0-18f5fb41ce12:graph:8048f45d-36a8-4546-a856-f6a8e6d3942e\" consumer=\"graph-build\"",
+  "2026-11-24T23:16:09.158Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:5fa542de-87fb-4861-84f0-18f5fb41ce12:graph:8048f45d-36a8-4546-a856-f6a8e6d3942e\" consumer=\"graph-build\" leaseId=\"65c73088",
+  "2026-11-24T23:16:09.163Z info [AST-GRAPH-JOB] Sandbox ready for org/athena (6813ms)",
+  "2026-11-24T23:16:09.163Z info [AST-GRAPH-JOB] HEAD sha resolved: f00dface for org/athena",
+  "2026-11-24T23:16:09.164Z info [AST-GRAPH] Starting full build for repo 5fa542de-87fb-4861-84f0-18f5fb41ce12",
+  "2026-11-24T23:16:09.164Z info [AST-GRAPH] kodus-graph installed (0ms)",
+  "2026-11-24T23:16:09.164Z info [AST-GRAPH] Parse completed (0ms)",
+  "2026-11-24T23:16:09.165Z info [AST-GRAPH] Graph read from sandbox (1ms): 16 nodes, 27 edges",
+  "2026-11-24T23:16:09.923Z info [AST-GRAPH] DB persist completed (757ms)",
+  "2026-11-24T23:16:09.923Z info [AST-GRAPH] Full build COMPLETE for repo 5fa542de-87fb-4861-84f0-18f5fb41ce12 in 760ms — 16 nodes, 27 edges",
+  "2026-11-24T23:16:09.924Z info [AST-GRAPH-JOB] Build COMPLETED for org/athena in 7574ms",
+  "2026-11-24T23:16:15.125Z info SandboxLeaseManager: released leaseId=\"65c73088-a9a1-4f02-9fe6-d9a5f13db161\" prKey=\"11111111-1111-4111-8111-111111111111:5fa542de-87fb-4861-84f0-18f5fb41ce12:graph:8048f45d-36a8-4546-a856-f6a8e6d3942e",
+  "2026-11-24T23:16:26.741Z warn [AST-GRAPH-JOB] Sandbox cleanup failed for org/athena | err=MongoNetworkError: connection closed after write",
+  "2026-11-24T23:16:39.616Z info [SANDBOX-IDLE-KILL] Killed idle sandbox"
+ ],
+ "transcript": [
+  {
+   "t": "2026-11-24T23:15:58.595Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "d7b586b4-fc58-4edb-afa7-b0a25f464b2e",
+   "status": "PROCESSING",
+   "stage": "VALIDATING"
+  },
+  {
+   "t": "2026-11-24T23:15:58.595Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "d7b586b4-fc58-4edb-afa7-b0a25f464b2e",
+   "status": "PROCESSING",
+   "stage": "RESOLVING_AUTH"
+  },
+  {
+   "t": "2026-11-24T23:15:58.600Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "d7b586b4-fc58-4edb-afa7-b0a25f464b2e",
+   "status": "PROCESSING",
+   "stage": "CLONING"
+  },
+  {
+   "t": "2026-11-24T23:15:59.929Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "provider.create.start",
+   "id": "fake-78049-1-kmr23"
+  },
+  {
+   "t": "2026-11-24T23:15:59.929Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "provider.create.done",
+   "id": "fake-78049-1-kmr23"
+  },
+  {
+   "t": "2026-11-24T23:16:00.573Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "d7b586b4-fc58-4edb-afa7-b0a25f464b2e",
+   "status": "PROCESSING",
+   "stage": "PARSING"
+  },
+  {
+   "t": "2026-11-24T23:16:00.574Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "repo.status",
+   "status": "building"
+  },
+  {
+   "t": "2026-11-24T23:16:00.576Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "cli.parse.start",
+   "id": "fake-78049-1-kmr23",
+   "cmd": "export PATH=\"$HOME/.bun/bin:$PATH\" 2>/dev/null || true && cd /home/user/repo && mkdir -p '.kodus-graph' && kodus-graph p"
+  },
+  {
+   "t": "2026-11-24T23:16:00.576Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "cli.parse.done",
+   "id": "fake-78049-1-kmr23"
+  },
+  {
+   "t": "2026-11-24T23:16:00.740Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "repo.status",
+   "status": "ready",
+   "sha": "f00dfacef00dfacef00dfacef00dfacef00dface",
+   "nodeCount": 16,
+   "edgeCount": 27
+  },
+  {
+   "t": "2026-11-24T23:16:00.741Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "d7b586b4-fc58-4edb-afa7-b0a25f464b2e",
+   "status": "COMPLETED"
+  },
+  {
+   "t": "2026-11-24T23:16:00.744Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "injected: transport error before write",
+   "m": "decrementLease"
+  },
+  {
+   "t": "2026-11-24T23:16:00.859Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "e2b.kill.call",
+   "id": "fake-78049-1-kmr23",
+   "stack": "at ~/.kodus-qa-runs/2026-11-24/2626/work/merge/libs/sandbox/infrastructure/services/sandbox-lease-reaper.service.ts:140:43 < at worker (libs/sandbox/infrastructure/services/sandbox-lease-reaper.service.ts:76:36) < at ~/.kodus-qa-runs/2026-11-24/2626/work/merge/libs/sandbox/infrastructure/services/sandbox-lease-reaper.service.ts:85:15 < at Array.from (<anonymous>) < at mapWithConcurrency (libs/sandbox/infrastructure/services/sandbox-lease-reaper.service.ts:83:27)",
+   "hasKey": true,
+   "behavior": "ok"
+  },
+  {
+   "t": "2026-11-24T23:16:00.859Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "e2b.kill.ok",
+   "id": "fake-78049-1-kmr23",
+   "was": "running"
+  },
+  {
+   "t": "2026-11-24T23:16:00.973Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "RESULT decrement",
+   "v": {
+    "job": "COMPLETED",
+    "afterRelease": {
+     "_id": "11111111-1111-4111-8111-111111111111:2c7674bc-ecaf-417e-a8a5-203a630c0a91:graph:d7b586b4-fc58-4edb-afa7-b0a25f464b2e",
+     "leaseCount": 1,
+     "sandboxId": "fake-78049-1-kmr23",
+     "state": "READY",
+     "cleanupAttempts": 0,
+     "killRetryCount": 0,
+     "expiresAt": "2026-11-25T01:15:58.606Z"
+    },
+    "killsAfterRelease": 1,
+    "afterIdleCron": {
+     "_id": "11111111-1111-4111-8111-111111111111:2c7674bc-ecaf-417e-a8a5-203a630c0a91:graph:d7b586b4-fc58-4edb-afa7-b0a25f464b2e",
+     "leaseCount": 1,
+     "sandboxId": "fake-78049-1-kmr23",
+     "state": "READY",
+     "cleanupAttempts": 0,
+     "killRetryCount": 0,
+     "expiresAt": "2026-11-25T01:15:58.606Z"
+    },
+    "afterTTLreaper": null,
+    "sandboxState": "killed",
+    "warn": [
+     "warn [AST-GRAPH-JOB] Sandbox cleanup failed for org/athena"
+    ],
+    "killedLog": false
+   }
+  },
+  {
+   "t": "2026-11-24T23:16:01.038Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "a8e06235-67e5-47da-9907-b87b5d45b741",
+   "status": "PROCESSING",
+   "stage": "VALIDATING"
+  },
+  {
+   "t": "2026-11-24T23:16:01.039Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "a8e06235-67e5-47da-9907-b87b5d45b741",
+   "status": "PROCESSING",
+   "stage": "RESOLVING_AUTH"
+  },
+  {
+   "t": "2026-11-24T23:16:01.039Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "a8e06235-67e5-47da-9907-b87b5d45b741",
+   "status": "PROCESSING",
+   "stage": "CLONING"
+  },
+  {
+   "t": "2026-11-24T23:16:01.404Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "provider.create.start",
+   "id": "fake-78049-2-quvyd"
+  },
+  {
+   "t": "2026-11-24T23:16:01.404Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "provider.create.done",
+   "id": "fake-78049-2-quvyd"
+  },
+  {
+   "t": "2026-11-24T23:16:01.474Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "a8e06235-67e5-47da-9907-b87b5d45b741",
+   "status": "PROCESSING",
+   "stage": "PARSING"
+  },
+  {
+   "t": "2026-11-24T23:16:01.474Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "repo.status",
+   "status": "building"
+  },
+  {
+   "t": "2026-11-24T23:16:01.476Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "cli.parse.start",
+   "id": "fake-78049-2-quvyd",
+   "cmd": "export PATH=\"$HOME/.bun/bin:$PATH\" 2>/dev/null || true && cd /home/user/repo && mkdir -p '.kodus-graph' && kodus-graph p"
+  },
+  {
+   "t": "2026-11-24T23:16:01.476Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "cli.parse.done",
+   "id": "fake-78049-2-quvyd"
+  },
+  {
+   "t": "2026-11-24T23:16:01.813Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "repo.status",
+   "status": "ready",
+   "sha": "f00dfacef00dfacef00dfacef00dfacef00dface",
+   "nodeCount": 16,
+   "edgeCount": 27
+  },
+  {
+   "t": "2026-11-24T23:16:01.813Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "a8e06235-67e5-47da-9907-b87b5d45b741",
+   "status": "COMPLETED"
+  },
+  {
+   "t": "2026-11-24T23:16:02.024Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "injected: transport error before write",
+   "m": "claimCleanup"
+  },
+  {
+   "t": "2026-11-24T23:16:02.099Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "e2b.kill.call",
+   "id": "fake-78049-2-quvyd",
+   "stack": "at ~/.kodus-qa-runs/2026-11-24/2626/work/merge/libs/sandbox/infrastructure/services/sandbox-lease-reaper.service.ts:140:43 < at worker (libs/sandbox/infrastructure/services/sandbox-lease-reaper.service.ts:76:36) < at ~/.kodus-qa-runs/2026-11-24/2626/work/merge/libs/sandbox/infrastructure/services/sandbox-lease-reaper.service.ts:85:15 < at Array.from (<anonymous>) < at mapWithConcurrency (libs/sandbox/infrastructure/services/sandbox-lease-reaper.service.ts:83:27)",
+   "hasKey": true,
+   "behavior": "ok"
+  },
+  {
+   "t": "2026-11-24T23:16:02.099Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "e2b.kill.ok",
+   "id": "fake-78049-2-quvyd",
+   "was": "running"
+  },
+  {
+   "t": "2026-11-24T23:16:02.299Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "RESULT claim",
+   "v": {
+    "job": "COMPLETED",
+    "afterRelease": {
+     "_id": "11111111-1111-4111-8111-111111111111:d8265d59-ce55-43e6-92ba-a191b31abf36:graph:a8e06235-67e5-47da-9907-b87b5d45b741",
+     "leaseCount": 0,
+     "sandboxId": "fake-78049-2-quvyd",
+     "state": "READY",
+     "cleanupAttempts": 0,
+     "killRetryCount": 0,
+     "expiresAt": "2026-11-25T01:16:01.041Z"
+    },
+    "killsAfterRelease": 1,
+    "afterIdleCron": {
+     "_id": "11111111-1111-4111-8111-111111111111:d8265d59-ce55-43e6-92ba-a191b31abf36:graph:a8e06235-67e5-47da-9907-b87b5d45b741",
+     "leaseCount": 0,
+     "sandboxId": "fake-78049-2-quvyd",
+     "state": "READY",
+     "cleanupAttempts": 0,
+     "killRetryCount": 0,
+     "expiresAt": "2026-11-25T01:16:01.041Z"
+    },
+    "afterTTLreaper": null,
+    "sandboxState": "killed",
+    "warn": [
+     "warn [AST-GRAPH-JOB] Sandbox cleanup failed for org/athena",
+     "warn [AST-GRAPH-JOB] Sandbox cleanup failed for org/athena"
+    ],
+    "killedLog": false
+   }
+  },
+  {
+   "t": "2026-11-24T23:16:02.349Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "8048f45d-36a8-4546-a856-f6a8e6d3942e",
+   "status": "PROCESSING",
+   "stage": "VALIDATING"
+  },
+  {
+   "t": "2026-11-24T23:16:02.349Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "8048f45d-36a8-4546-a856-f6a8e6d3942e",
+   "status": "PROCESSING",
+   "stage": "RESOLVING_AUTH"
+  },
+  {
+   "t": "2026-11-24T23:16:02.350Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "8048f45d-36a8-4546-a856-f6a8e6d3942e",
+   "status": "PROCESSING",
+   "stage": "CLONING"
+  },
+  {
+   "t": "2026-11-24T23:16:03.447Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "provider.create.start",
+   "id": "fake-78049-3-8uds2"
+  },
+  {
+   "t": "2026-11-24T23:16:03.447Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "provider.create.done",
+   "id": "fake-78049-3-8uds2"
+  },
+  {
+   "t": "2026-11-24T23:16:09.163Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "8048f45d-36a8-4546-a856-f6a8e6d3942e",
+   "status": "PROCESSING",
+   "stage": "PARSING"
+  },
+  {
+   "t": "2026-11-24T23:16:09.164Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "repo.status",
+   "status": "building"
+  },
+  {
+   "t": "2026-11-24T23:16:09.164Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "cli.parse.start",
+   "id": "fake-78049-3-8uds2",
+   "cmd": "export PATH=\"$HOME/.bun/bin:$PATH\" 2>/dev/null || true && cd /home/user/repo && mkdir -p '.kodus-graph' && kodus-graph p"
+  },
+  {
+   "t": "2026-11-24T23:16:09.164Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "cli.parse.done",
+   "id": "fake-78049-3-8uds2"
+  },
+  {
+   "t": "2026-11-24T23:16:09.923Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "repo.status",
+   "status": "ready",
+   "sha": "f00dfacef00dfacef00dfacef00dfacef00dface",
+   "nodeCount": 16,
+   "edgeCount": 27
+  },
+  {
+   "t": "2026-11-24T23:16:09.923Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "job.update",
+   "id": "8048f45d-36a8-4546-a856-f6a8e6d3942e",
+   "status": "COMPLETED"
+  },
+  {
+   "t": "2026-11-24T23:16:26.331Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "injected: write committed, client sees error",
+   "m": "claimCleanup"
+  },
+  {
+   "t": "2026-11-24T23:16:27.268Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "e2b.kill.call",
+   "id": "fake-78049-3-8uds2",
+   "stack": "at ~/.kodus-qa-runs/2026-11-24/2626/work/merge/libs/sandbox/infrastructure/services/sandbox-lease-reaper.service.ts:297:43 < at worker (libs/sandbox/infrastructure/services/sandbox-lease-reaper.service.ts:76:36) < at ~/.kodus-qa-runs/2026-11-24/2626/work/merge/libs/sandbox/infrastructure/services/sandbox-lease-reaper.service.ts:85:15 < at Array.from (<anonymous>) < at mapWithConcurrency (libs/sandbox/infrastructure/services/sandbox-lease-reaper.service.ts:83:27)",
+   "hasKey": true,
+   "behavior": "ok"
+  },
+  {
+   "t": "2026-11-24T23:16:27.276Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "e2b.kill.ok",
+   "id": "fake-78049-3-8uds2",
+   "was": "running"
+  },
+  {
+   "t": "2026-11-24T23:16:39.687Z",
+   "pid": 78049,
+   "rev": "merge",
+   "kind": "RESULT claim-committed",
+   "v": {
+    "job": "COMPLETED",
+    "afterRelease": {
+     "_id": "11111111-1111-4111-8111-111111111111:5fa542de-87fb-4861-84f0-18f5fb41ce12:graph:8048f45d-36a8-4546-a856-f6a8e6d3942e",
+     "leaseCount": 0,
+     "sandboxId": "fake-78049-3-8uds2",
+     "state": "READY",
+     "killAt": "2026-11-24T23:16:15.130Z",
+     "cleanupStatus": "in_progress",
+     "cleanupAttempts": 1,
+     "cleanupStartedAt": "2026-11-24T23:16:15.131Z",
+     "killRetryCount": 0,
+     "expiresAt": "2026-11-25T01:16:02.350Z"
+    },
+    "killsAfterRelease": 1,
+    "afterIdleCron": null,
+    "afterTTLreaper": null,
+    "sandboxState": "killed",
+    "warn": [
+     "warn [AST-GRAPH-JOB] Sandbox cleanup failed for org/athena",
+     "warn [AST-GRAPH-JOB] Sandbox cleanup failed for org/athena",
+     "warn [AST-GRAPH-JOB] Sandbox cleanup failed for org/athena"
+    ],
+    "killedLog": false
+   }
+  }
+ ]
+}
