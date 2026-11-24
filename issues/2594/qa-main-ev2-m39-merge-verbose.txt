@@ -1,0 +1,14 @@
+$ env CI=true SKIP_INTEGRATION=false API_NODE_ENV=test TEST_PG_HOST=localhost TEST_PG_PORT=55494 TEST_PG_USER=kodusdev TEST_PG_PASSWORD=kodusdev TEST_PG_DB=kodus_db npx jest --config jest.config.ts --runInBand --forceExit --no-coverage --verbose --runTestsByPath libs/automation/infrastructure/adapters/repositories/automationExecution.repository.data-key.integration.spec.ts libs/automation/infrastructure/adapters/repositories/automationExecution.repository.spec.ts libs/automation/infrastructure/adapters/services/processAutomation/strategies/automationCodeReview.spec.ts libs/code-review/pipeline/stages/validate-prerequisites.stage.notify.spec.ts libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts 
+be54920d861569517694318e54896cad17f52d21
+  console.log
+    ◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+
+      at _log (node_modules/dotenv/lib/main.js:131:11)
+
+Test Suites: 5 passed, 5 total
+Tests:       90 passed, 90 total
+Snapshots:   0 total
+Time:        1.864 s, estimated 2 s
+Ran all test suites within paths "libs/automation/infrastructure/adapters/repositories/automationExecution.repository.data-key.integration.spec.ts", "libs/automation/infrastructure/adapters/repositories/automationExecution.repository.spec.ts", "libs/automation/infrastructure/adapters/services/processAutomation/strategies/automationCodeReview.spec.ts", "libs/code-review/pipeline/stages/validate-prerequisites.stage.notify.spec.ts", "libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts".
+Test results written to: ../m39-merge2.json
+Force exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?
