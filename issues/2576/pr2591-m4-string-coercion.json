@@ -1,0 +1,96 @@
+[
+ {
+  "case": "reset_false",
+  "t": "2026-11-24T19:20:47Z",
+  "status": 201,
+  "body": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "stored": {
+   "implicitReplies": false
+  },
+  "effective": {
+   "implicitReplies": {
+    "value": false,
+    "level": "global",
+    "overriddenValue": true,
+    "overriddenLevel": "default"
+   }
+  }
+ },
+ {
+  "case": "post_string_false",
+  "t": "2026-11-24T19:20:52Z",
+  "status": 201,
+  "body": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "stored": null,
+  "effective": {
+   "implicitReplies": {
+    "value": true,
+    "level": "default"
+   }
+  }
+ },
+ {
+  "case": "reset_false2",
+  "t": "2026-11-24T19:20:55Z",
+  "status": 201,
+  "body": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "stored": {
+   "implicitReplies": false
+  },
+  "effective": {
+   "implicitReplies": {
+    "value": false,
+    "level": "global",
+    "overriddenValue": true,
+    "overriddenLevel": "default"
+   }
+  }
+ },
+ {
+  "case": "post_string_no",
+  "t": "2026-11-24T19:20:57Z",
+  "status": 201,
+  "body": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "stored": null,
+  "effective": {
+   "implicitReplies": {
+    "value": true,
+    "level": "default"
+   }
+  }
+ },
+ {
+  "case": "reset_false3",
+  "t": "2026-11-24T19:21:00Z",
+  "status": 201,
+  "body": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "stored": {
+   "implicitReplies": false
+  },
+  "effective": {
+   "implicitReplies": {
+    "value": false,
+    "level": "global",
+    "overriddenValue": true,
+    "overriddenLevel": "default"
+   }
+  }
+ },
+ {
+  "case": "post_number0",
+  "t": "2026-11-24T19:21:04Z",
+  "status": 201,
+  "body": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "stored": {
+   "implicitReplies": false
+  },
+  "effective": {
+   "implicitReplies": {
+    "value": false,
+    "level": "global",
+    "overriddenValue": true,
+    "overriddenLevel": "default"
+   }
+  }
+ }
+]
