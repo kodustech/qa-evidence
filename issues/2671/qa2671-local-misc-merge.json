@@ -1,0 +1,65 @@
+{
+  "M35_token": {
+    "calls": [
+      [
+        "issues.createComment",
+        7
+      ],
+      [
+        "pulls.createReviewComment",
+        19,
+        30
+      ]
+    ],
+    "pr": [
+      "sent"
+    ],
+    "inline": [
+      "sent"
+    ]
+  },
+  "M35_app": {
+    "calls": [
+      [
+        "issues.createComment",
+        7
+      ],
+      [
+        "pulls.createReviewComment",
+        19,
+        30
+      ],
+      [
+        "reaction"
+      ],
+      [
+        "reaction"
+      ]
+    ],
+    "pr": [
+      "sent"
+    ],
+    "inline": [
+      "sent"
+    ]
+  },
+  "M36": {
+    "fromDiff": [
+      {
+        "filename": "qa2671/old.ts",
+        "status": "renamed",
+        "patchTruthy": true,
+        "patchWithLinesStrTruthy": true
+      }
+    ],
+    "fromFiles": [
+      {
+        "filename": "qa2671/pure-rename.ts",
+        "status": "renamed",
+        "patchTruthy": false,
+        "patchWithLinesStrTruthy": false,
+        "keptByPrepareCliFiles": false
+      }
+    ]
+  }
+}
