@@ -1,0 +1,143 @@
+{
+ "initialCompilerCalls": 10,
+ "batches": [
+  {
+   "batch": 1,
+   "saves": 10,
+   "compilerCalls": 10
+  },
+  {
+   "batch": 2,
+   "saves": 10,
+   "compilerCalls": 10
+  },
+  {
+   "batch": 3,
+   "saves": 10,
+   "compilerCalls": 10
+  },
+  {
+   "batch": "central title-only (kody actor)",
+   "saves": 10,
+   "compilerCalls": 10
+  }
+ ],
+ "attemptStable": false,
+ "titlesPersisted": true,
+ "sample": [
+  {
+   "uuid": "0e7b24e6-64c7-4333-a042-853e46c65dc2",
+   "title": "qa2308 m2 rule 0",
+   "status": "active",
+   "rule": "Grades service 0 must check enrollment before saving a grade.",
+   "compileAttempt": {
+    "sourceHash": "122d39ac203fe327accd53c3a3f99687aeee4e4f2b210ff0b8c871647ec7a3e5",
+    "attemptedAt": "2026-11-24T20:55:11.096Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "cbcb180adc8184bc574bb61363785ff2cd63fa581ae8505580bb3c6f8ae10be3",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T20:55:11.082Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": {
+    "extensions": [
+     ".ts",
+     ".js"
+    ],
+    "sourceHash": "c4ceff431c3a693629ce0d33c68005a3cf03322369a487eca8e39ef30826e4a5",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T20:55:11.083Z",
+    "model": "byok"
+   },
+   "caCurrent": true,
+   "ctxHash": "cbcb180adc8184bc574bb61363785ff2cd63fa581ae8505580bb3c6f8ae10be3"
+  },
+  {
+   "uuid": "0e7b24e6-64c7-4333-a042-853e46c65dc2",
+   "title": "qa2308 m2 rule 0 (central)",
+   "status": "active",
+   "rule": "Grades service 0 must check enrollment before saving a grade.",
+   "compileAttempt": {
+    "sourceHash": "122d39ac203fe327accd53c3a3f99687aeee4e4f2b210ff0b8c871647ec7a3e5",
+    "attemptedAt": "2026-11-24T20:55:11.367Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "cbcb180adc8184bc574bb61363785ff2cd63fa581ae8505580bb3c6f8ae10be3",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T20:55:11.300Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": {
+    "extensions": [
+     ".ts",
+     ".js"
+    ],
+    "sourceHash": "c4ceff431c3a693629ce0d33c68005a3cf03322369a487eca8e39ef30826e4a5",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T20:55:11.365Z",
+    "model": "byok"
+   },
+   "caCurrent": true,
+   "ctxHash": "cbcb180adc8184bc574bb61363785ff2cd63fa581ae8505580bb3c6f8ae10be3"
+  }
+ ],
+ "compilePayloadSample": [
+  {
+   "t": "2026-11-24T20:55:11.170Z",
+   "uuid": "0e7b24e6-64c7-4333-a042-853e46c65dc2",
+   "payloadKeys": [
+    "uuid",
+    "title",
+    "rule",
+    "path",
+    "severity",
+    "examples",
+    "origin",
+    "status",
+    "type",
+    "scope",
+    "repositoryId",
+    "detector"
+   ],
+   "compileAttempt": null,
+   "contextNeed": null,
+   "hasExamples": true,
+   "gateHash": "122d39ac203fe327accd53c3a3f99687aeee4e4f2b210ff0b8c871647ec7a3e5",
+   "ctxHash": "cbcb180adc8184bc574bb61363785ff2cd63fa581ae8505580bb3c6f8ae10be3"
+  },
+  {
+   "t": "2026-11-24T20:55:11.174Z",
+   "uuid": "3a213bff-558a-4aca-99e9-8ed1250ca2fe",
+   "payloadKeys": [
+    "uuid",
+    "title",
+    "rule",
+    "path",
+    "severity",
+    "examples",
+    "origin",
+    "status",
+    "type",
+    "scope",
+    "repositoryId",
+    "detector"
+   ],
+   "compileAttempt": null,
+   "contextNeed": null,
+   "hasExamples": true,
+   "gateHash": "b728359827f4f66fffa126579c8bf91f26a53cd296a80631c9561905b6c22b8d",
+   "ctxHash": "673fe30b01678d6939d18778587f45e6af90d33380f7aa696ddac62daab33a66"
+  }
+ ]
+}
