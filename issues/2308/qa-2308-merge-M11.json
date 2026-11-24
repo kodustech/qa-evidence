@@ -1,0 +1,113 @@
+{
+ "humanEdit": {
+  "result": {
+   "mode": "centralized-pr",
+   "prUrl": "https://example.invalid/pr/1",
+   "prNumber": 1
+  },
+  "calls": 0,
+  "ruleTextUnchangedInDb": true,
+  "centralizedStatus": {
+   "path": "athena/.kody-rules/review/qa2308-central-A.yml",
+   "status": "pending_edit"
+  },
+  "mutationsRecorded": 1
+ },
+ "syncTitleOnly": {
+  "calls": 0
+ },
+ "syncTextChange": {
+  "calls": 1,
+  "rule": {
+   "uuid": "c25db15c-8cae-4d7c-84dd-bf7851f10ee6",
+   "title": "qa2308 central A",
+   "status": "active",
+   "rule": "Attendance import must reject an invalid student id. Explain the rejection.",
+   "compileAttempt": {
+    "sourceHash": "193727f31fd8e79eb57c42310ef34d45c7c32c2e4859b3ca1e27ad1872c5e057",
+    "attemptedAt": "2026-11-24T19:03:21.601Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "6d6d65ad906419ef41d59d62876ae1e8477910a8b20cd3b3188095f61544f9b8",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T19:03:21.596Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "ctxHash": "6d6d65ad906419ef41d59d62876ae1e8477910a8b20cd3b3188095f61544f9b8"
+  }
+ },
+ "convertCentralOn": {
+  "result": {
+   "mode": "centralized-pr",
+   "prUrl": "https://example.invalid/pr/1",
+   "prNumber": 1
+  },
+  "calls": 0,
+  "pendingStatus": "rejected",
+  "rulesWithTitle": [
+   {
+    "uuid": "pend-c",
+    "status": "rejected",
+    "centralizedConfig": {
+     "path": "athena/.kody-rules/review/qa2308-central-A.yml",
+     "status": "pending_edit"
+    },
+    "compileAttempt": {
+     "sourceHash": "193727f31fd8e79eb57c42310ef34d45c7c32c2e4859b3ca1e27ad1872c5e057",
+     "attemptedAt": "2026-11-24T19:03:21.601Z",
+     "outcome": "declined",
+     "declineReason": "not-mechanical",
+     "model": "byok"
+    }
+   },
+   {
+    "uuid": "2eefff59-c272-48cc-a752-79dbd7bf4cda",
+    "status": "active",
+    "centralizedConfig": {
+     "path": "athena/.kody-rules/review/qa2308-central-M.yml",
+     "status": "pending_add"
+    },
+    "compileAttempt": null
+   }
+  ],
+  "lastMutationHasCompileAttempt": false
+ },
+ "syncCreatesConverted": {
+  "calls": 1,
+  "rule": {
+   "uuid": "1e036358-9c44-43ce-a109-0c2c5fa32001",
+   "title": "qa2308 central M (synced)",
+   "status": "active",
+   "rule": "Attendance import must reject an invalid student id. Explain the rejection.",
+   "compileAttempt": {
+    "sourceHash": "193727f31fd8e79eb57c42310ef34d45c7c32c2e4859b3ca1e27ad1872c5e057",
+    "attemptedAt": "2026-11-24T19:03:21.706Z",
+    "outcome": "declined",
+    "declineReason": "not-mechanical",
+    "model": "byok"
+   },
+   "contextNeed": {
+    "need": "diff-only",
+    "sourceHash": "6d6d65ad906419ef41d59d62876ae1e8477910a8b20cd3b3188095f61544f9b8",
+    "source": "compiler",
+    "inferredAt": "2026-11-24T19:03:21.699Z",
+    "model": "byok"
+   },
+   "detector": null,
+   "fileScope": null,
+   "caCurrent": true,
+   "ctxHash": "6d6d65ad906419ef41d59d62876ae1e8477910a8b20cd3b3188095f61544f9b8"
+  }
+ },
+ "centralOffHumanEdit": {
+  "calls": 1,
+  "written": true
+ }
+}
