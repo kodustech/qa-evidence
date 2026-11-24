@@ -1,0 +1,205 @@
+[
+{
+"t": 1795547668.303179,
+"kind": "llm",
+"tag": "seedA",
+"pid": 70110,
+"policy": "ok"
+},
+{
+"t": 1795547669.427289,
+"kind": "llm",
+"tag": "seedM",
+"pid": 70153,
+"policy": "ok"
+},
+{
+"t": 1795547669.4380102,
+"kind": "hook:afterDetector",
+"tag": "seedM",
+"pid": null,
+"policy": "ok"
+},
+{
+"t": 1795547670.5163531,
+"kind": "llm",
+"tag": "seed0",
+"pid": 70227,
+"policy": "ok"
+},
+{
+"t": 1795547671.6082308,
+"kind": "llm",
+"tag": "seed1",
+"pid": 70270,
+"policy": "ok"
+},
+{
+"t": 1795547672.695762,
+"kind": "llm",
+"tag": "seed2",
+"pid": 70326,
+"policy": "ok"
+},
+{
+"t": 1795547673.808838,
+"kind": "llm",
+"tag": "seed3",
+"pid": 70410,
+"policy": "ok"
+},
+{
+"t": 1795547674.933024,
+"kind": "llm",
+"tag": "seed4",
+"pid": 70451,
+"policy": "ok"
+},
+{
+"t": 1795547676.0504441,
+"kind": "llm",
+"tag": "seed5",
+"pid": 70496,
+"policy": "ok"
+},
+{
+"t": 1795547677.155693,
+"kind": "llm",
+"tag": "seed6",
+"pid": 70564,
+"policy": "ok"
+},
+{
+"t": 1795547678.2782562,
+"kind": "llm",
+"tag": "seed7",
+"pid": 70603,
+"policy": "ok"
+},
+{
+"t": 1795547679.38077,
+"kind": "llm",
+"tag": "seed8",
+"pid": 70677,
+"policy": "ok"
+},
+{
+"t": 1795547680.542481,
+"kind": "llm",
+"tag": "seed9",
+"pid": 70716,
+"policy": "ok"
+},
+{
+"t": 1795547687.9780202,
+"kind": "llm",
+"tag": "m26a1",
+"pid": 71092,
+"policy": "429"
+},
+{
+"t": 1795547689.542046,
+"kind": "llm",
+"tag": "m26a2",
+"pid": 71144,
+"policy": "ok"
+},
+{
+"t": 1795547692.553577,
+"kind": "llm",
+"tag": "m26t1",
+"pid": 71308,
+"policy": "timeout"
+},
+{
+"t": 1795547697.180629,
+"kind": "llm",
+"tag": "m26t2",
+"pid": 71632,
+"policy": "ok"
+},
+{
+"t": 1795547700.875961,
+"kind": "llm",
+"tag": "m26b1",
+"pid": 71878,
+"policy": "hold"
+},
+{
+"t": 1795547702.232019,
+"kind": "llm",
+"tag": "m26b2",
+"pid": 72014,
+"policy": "ok"
+},
+{
+"t": 1795547705.652564,
+"kind": "llm",
+"tag": "m26c1",
+"pid": 72244,
+"policy": "ok"
+},
+{
+"t": 1795547705.662736,
+"kind": "hook:afterDetector",
+"tag": "m26c1",
+"pid": null,
+"policy": "hold"
+},
+{
+"t": 1795547707.166698,
+"kind": "llm",
+"tag": "m26c2",
+"pid": 72321,
+"policy": "ok"
+},
+{
+"t": 1795547707.173203,
+"kind": "hook:afterDetector",
+"tag": "m26c2",
+"pid": null,
+"policy": "ok"
+},
+{
+"t": 1795547728.206996,
+"kind": "llm",
+"tag": "m29B",
+"pid": 73824,
+"policy": "hold"
+},
+{
+"t": 1795547729.2174022,
+"kind": "llm",
+"tag": "m29C",
+"pid": 73885,
+"policy": "ok"
+},
+{
+"t": 1795547729.228616,
+"kind": "hook:afterDetector",
+"tag": "m29C",
+"pid": null,
+"policy": "ok"
+},
+{
+"t": 1795547729.858602,
+"kind": "hook:afterDetector",
+"tag": "m29B",
+"pid": null,
+"policy": "ok"
+},
+{
+"t": 1795547731.386949,
+"kind": "llm",
+"tag": "m29heal",
+"pid": 74137,
+"policy": "ok"
+},
+{
+"t": 1795547731.3967738,
+"kind": "hook:afterDetector",
+"tag": "m29heal",
+"pid": null,
+"policy": "ok"
+}
+]
