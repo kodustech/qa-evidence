@@ -1,0 +1,64 @@
+{
+ "V_valid": true,
+ "V_errors": [],
+ "cases": {
+  "true": {
+   "valid": true,
+   "errors": []
+  },
+  "false": {
+   "valid": true,
+   "errors": []
+  },
+  "absent": {
+   "valid": true,
+   "errors": []
+  },
+  "empty": {
+   "valid": true,
+   "errors": []
+  },
+  "string_false": {
+   "valid": false,
+   "errors": [
+    "/conversation/implicitReplies must be boolean {\"type\":\"boolean\"}"
+   ]
+  },
+  "unknown_key": {
+   "valid": false,
+   "errors": [
+    "/conversation must NOT have additional properties {\"additionalProperty\":\"answerEveryone\"}"
+   ]
+  },
+  "array": {
+   "valid": false,
+   "errors": [
+    "/conversation must be object {\"type\":\"object\"}"
+   ]
+  },
+  "scalar": {
+   "valid": false,
+   "errors": [
+    "/conversation must be object {\"type\":\"object\"}"
+   ]
+  },
+  "null_value": {
+   "valid": false,
+   "errors": [
+    "/conversation/implicitReplies must be boolean {\"type\":\"boolean\"}"
+   ]
+  },
+  "number0": {
+   "valid": false,
+   "errors": [
+    "/conversation/implicitReplies must be boolean {\"type\":\"boolean\"}"
+   ]
+  }
+ },
+ "shippedDefault": {
+  "implicitReplies": true
+ },
+ "shippedRaw": {
+  "implicitReplies": true
+ }
+}
