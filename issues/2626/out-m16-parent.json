@@ -1,0 +1,396 @@
+{
+ "rev": "parent",
+ "scenario": "m16",
+ "results": {
+  "full (a) pre-aborted": {
+   "thrown": "Job 0da9760f-b649-4f79-95bf-b3f9856ac059 aborted before start",
+   "lease": null,
+   "creates": 0
+  },
+  "full (c) abort during create": {
+   "thrown": null,
+   "job": "COMPLETED",
+   "repo": "ready",
+   "leaseAtReturn": {
+    "_id": "11111111-1111-4111-8111-111111111111:3a54fad1-afe3-4d10-8ca0-fbd28d4ae525:graph:772e128e-445c-4bb6-97de-2fbef55b7dad",
+    "leaseCount": 1,
+    "state": "CREATING",
+    "cleanupAttempts": 0,
+    "killRetryCount": 0,
+    "expiresAt": "2026-11-25T00:23:54.985Z"
+   },
+   "leaseAfterCreateResolved": {
+    "_id": "11111111-1111-4111-8111-111111111111:3a54fad1-afe3-4d10-8ca0-fbd28d4ae525:graph:772e128e-445c-4bb6-97de-2fbef55b7dad",
+    "leaseCount": 1,
+    "sandboxId": "fake-77280-1-lnyjt",
+    "state": "READY",
+    "cleanupAttempts": 0,
+    "killRetryCount": 0,
+    "expiresAt": "2026-11-25T00:23:54.985Z"
+   },
+   "afterIdleCron": true,
+   "afterReaperBeforeExpiry": true,
+   "sandboxState": "running",
+   "releaseOrKill": 0,
+   "ttlMs": 7196971
+  },
+  "incr (a) pre-aborted": {
+   "thrown": "Job c9d185c7-3595-4dfe-b4d2-3aa0b58ef582 aborted before start",
+   "lease": null,
+   "creates": 1
+  },
+  "incr (c) abort during create": {
+   "thrown": null,
+   "job": "COMPLETED",
+   "repo": "ready",
+   "leaseAtReturn": {
+    "_id": "11111111-1111-4111-8111-111111111111:5a31126c-1d98-43f8-8ed8-d07bb1f31708:graph:5405c43f-07a1-486e-bbe2-1e00c0e00fb8",
+    "leaseCount": 1,
+    "state": "CREATING",
+    "cleanupAttempts": 0,
+    "killRetryCount": 0,
+    "expiresAt": "2026-11-25T00:23:58.017Z"
+   },
+   "leaseAfterCreateResolved": {
+    "_id": "11111111-1111-4111-8111-111111111111:5a31126c-1d98-43f8-8ed8-d07bb1f31708:graph:5405c43f-07a1-486e-bbe2-1e00c0e00fb8",
+    "leaseCount": 1,
+    "sandboxId": "fake-77280-2-04gmk",
+    "state": "READY",
+    "cleanupAttempts": 0,
+    "killRetryCount": 0,
+    "expiresAt": "2026-11-25T00:23:58.017Z"
+   },
+   "afterIdleCron": true,
+   "afterReaperBeforeExpiry": true,
+   "sandboxState": "running",
+   "releaseOrKill": 0,
+   "ttlMs": 7196961
+  }
+ },
+ "leaseLogs": [
+  "2026-11-24T22:23:54.984Z info [AST-GRAPH-JOB] Starting build for org/athena",
+  "2026-11-24T22:23:54.984Z info [AST-GRAPH-JOB] Auth resolved for org/athena (0ms)",
+  "2026-11-24T22:23:54.985Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:3a54fad1-afe3-4d10-8ca0-fbd28d4ae525:graph:772e128e-445c-4bb6-97de-2fbef55b7dad\" consumer=\"graph-build\"",
+  "2026-11-24T22:23:55.020Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:3a54fad1-afe3-4d10-8ca0-fbd28d4ae525:graph:772e128e-445c-4bb6-97de-2fbef55b7dad\" consumer=\"graph-build\"",
+  "2026-11-24T22:23:55.974Z error [AST-GRAPH-JOB] Build FAILED for org/athena after 1003ms — Job aborted by parent signal | err=Job aborted by parent signal",
+  "2026-11-24T22:23:56.012Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:3a54fad1-afe3-4d10-8ca0-fbd28d4ae525:graph:772e128e-445c-4bb6-97de-2fbef55b7dad\" consumer=\"graph-build\" leaseId=\"9fa5b503",
+  "2026-11-24T22:23:56.013Z info [AST-GRAPH-JOB] Sandbox ready for org/athena (1029ms)",
+  "2026-11-24T22:23:56.013Z info [AST-GRAPH-JOB] HEAD sha resolved: f00dface for org/athena",
+  "2026-11-24T22:23:56.014Z info [AST-GRAPH] Starting full build for repo 3a54fad1-afe3-4d10-8ca0-fbd28d4ae525",
+  "2026-11-24T22:23:56.014Z info [AST-GRAPH] kodus-graph installed (0ms)",
+  "2026-11-24T22:23:56.015Z info [AST-GRAPH] Parse completed (0ms)",
+  "2026-11-24T22:23:56.015Z info [AST-GRAPH] Graph read from sandbox (0ms): 16 nodes, 27 edges",
+  "2026-11-24T22:23:56.038Z info [AST-GRAPH] DB persist completed (23ms)",
+  "2026-11-24T22:23:56.038Z info [AST-GRAPH] Full build COMPLETE for repo 3a54fad1-afe3-4d10-8ca0-fbd28d4ae525 in 24ms — 16 nodes, 27 edges",
+  "2026-11-24T22:23:56.038Z info [AST-GRAPH-JOB] Build COMPLETED for org/athena in 1081ms",
+  "2026-11-24T22:23:58.017Z info [AST-GRAPH-INCR] Starting incremental update for org/athena",
+  "2026-11-24T22:23:58.017Z info [AST-GRAPH-INCR] Auth resolved for org/athena (0ms)",
+  "2026-11-24T22:23:58.017Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:5a31126c-1d98-43f8-8ed8-d07bb1f31708:graph:5405c43f-07a1-486e-bbe2-1e00c0e00fb8\" consumer=\"graph-incremental\"",
+  "2026-11-24T22:23:58.032Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:5a31126c-1d98-43f8-8ed8-d07bb1f31708:graph:5405c43f-07a1-486e-bbe2-1e00c0e00fb8\" consumer=\"graph-increm",
+  "2026-11-24T22:23:59.025Z error [AST-GRAPH-INCR] Incremental update FAILED for org/athena after 1004ms — Job aborted by parent signal | err=Job aborted by parent signal",
+  "2026-11-24T22:23:59.055Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:5a31126c-1d98-43f8-8ed8-d07bb1f31708:graph:5405c43f-07a1-486e-bbe2-1e00c0e00fb8\" consumer=\"graph-incremental\" leaseId=\"6b",
+  "2026-11-24T22:23:59.056Z info [AST-GRAPH-INCR] Sandbox ready for org/athena (1038ms)",
+  "2026-11-24T22:23:59.056Z info [AST-GRAPH] Starting incremental update: 4 files for repo 5a31126c-1d98-43f8-8ed8-d07bb1f31708",
+  "2026-11-24T22:23:59.056Z info [AST-GRAPH] kodus-graph installed (0ms)",
+  "2026-11-24T22:23:59.057Z info [AST-GRAPH] Incremental parse completed (0ms)",
+  "2026-11-24T22:23:59.057Z info [AST-GRAPH] Graph read from sandbox (0ms): 16 nodes, 27 edges",
+  "2026-11-24T22:23:59.074Z info [AST-GRAPH] Incremental DB persist completed (16ms)",
+  "2026-11-24T22:23:59.074Z info [AST-GRAPH] Incremental update COMPLETE for repo 5a31126c-1d98-43f8-8ed8-d07bb1f31708 in 18ms — 16 nodes, 27 edges from 4 files",
+  "2026-11-24T22:23:59.074Z info [AST-GRAPH-INCR] Incremental update COMPLETED for org/athena in 1058ms (4 files)"
+ ],
+ "transcript": [
+  {
+   "t": "2026-11-24T22:23:54.949Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "RESULT full (a) pre-aborted",
+   "v": {
+    "thrown": "Job 0da9760f-b649-4f79-95bf-b3f9856ac059 aborted before start",
+    "lease": null,
+    "creates": 0
+   }
+  },
+  {
+   "t": "2026-11-24T22:23:54.984Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "772e128e-445c-4bb6-97de-2fbef55b7dad",
+   "status": "PROCESSING",
+   "stage": "VALIDATING"
+  },
+  {
+   "t": "2026-11-24T22:23:54.984Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "772e128e-445c-4bb6-97de-2fbef55b7dad",
+   "status": "PROCESSING",
+   "stage": "RESOLVING_AUTH"
+  },
+  {
+   "t": "2026-11-24T22:23:54.984Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "772e128e-445c-4bb6-97de-2fbef55b7dad",
+   "status": "PROCESSING",
+   "stage": "CLONING"
+  },
+  {
+   "t": "2026-11-24T22:23:55.020Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "provider.create.start",
+   "id": "fake-77280-1-lnyjt"
+  },
+  {
+   "t": "2026-11-24T22:23:55.975Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "772e128e-445c-4bb6-97de-2fbef55b7dad",
+   "status": "FAILED",
+   "stage": "FAILED"
+  },
+  {
+   "t": "2026-11-24T22:23:55.975Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "failed"
+  },
+  {
+   "t": "2026-11-24T22:23:55.982Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "provider.create.done",
+   "id": "fake-77280-1-lnyjt"
+  },
+  {
+   "t": "2026-11-24T22:23:56.013Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "772e128e-445c-4bb6-97de-2fbef55b7dad",
+   "status": "PROCESSING",
+   "stage": "PARSING"
+  },
+  {
+   "t": "2026-11-24T22:23:56.014Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "building"
+  },
+  {
+   "t": "2026-11-24T22:23:56.014Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "cli.parse.start",
+   "id": "fake-77280-1-lnyjt",
+   "cmd": "export PATH=\"$HOME/.bun/bin:$PATH\" 2>/dev/null || true && cd /home/user/repo && mkdir -p '.kodus-graph' && kodus-graph p"
+  },
+  {
+   "t": "2026-11-24T22:23:56.014Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "cli.parse.done",
+   "id": "fake-77280-1-lnyjt"
+  },
+  {
+   "t": "2026-11-24T22:23:56.038Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "ready",
+   "sha": "f00dfacef00dfacef00dfacef00dfacef00dface",
+   "nodeCount": 16,
+   "edgeCount": 27
+  },
+  {
+   "t": "2026-11-24T22:23:56.038Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "772e128e-445c-4bb6-97de-2fbef55b7dad",
+   "status": "COMPLETED"
+  },
+  {
+   "t": "2026-11-24T22:23:58.014Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "RESULT full (c) abort during create",
+   "v": {
+    "thrown": null,
+    "job": "COMPLETED",
+    "repo": "ready",
+    "leaseAtReturn": {
+     "_id": "11111111-1111-4111-8111-111111111111:3a54fad1-afe3-4d10-8ca0-fbd28d4ae525:graph:772e128e-445c-4bb6-97de-2fbef55b7dad",
+     "leaseCount": 1,
+     "state": "CREATING",
+     "cleanupAttempts": 0,
+     "killRetryCount": 0,
+     "expiresAt": "2026-11-25T00:23:54.985Z"
+    },
+    "leaseAfterCreateResolved": {
+     "_id": "11111111-1111-4111-8111-111111111111:3a54fad1-afe3-4d10-8ca0-fbd28d4ae525:graph:772e128e-445c-4bb6-97de-2fbef55b7dad",
+     "leaseCount": 1,
+     "sandboxId": "fake-77280-1-lnyjt",
+     "state": "READY",
+     "cleanupAttempts": 0,
+     "killRetryCount": 0,
+     "expiresAt": "2026-11-25T00:23:54.985Z"
+    },
+    "afterIdleCron": true,
+    "afterReaperBeforeExpiry": true,
+    "sandboxState": "running",
+    "releaseOrKill": 0,
+    "ttlMs": 7196971
+   }
+  },
+  {
+   "t": "2026-11-24T22:23:58.016Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "RESULT incr (a) pre-aborted",
+   "v": {
+    "thrown": "Job c9d185c7-3595-4dfe-b4d2-3aa0b58ef582 aborted before start",
+    "lease": null,
+    "creates": 1
+   }
+  },
+  {
+   "t": "2026-11-24T22:23:58.017Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "5405c43f-07a1-486e-bbe2-1e00c0e00fb8",
+   "status": "PROCESSING",
+   "stage": "VALIDATING"
+  },
+  {
+   "t": "2026-11-24T22:23:58.017Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "5405c43f-07a1-486e-bbe2-1e00c0e00fb8",
+   "status": "PROCESSING",
+   "stage": "RESOLVING_AUTH"
+  },
+  {
+   "t": "2026-11-24T22:23:58.017Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "5405c43f-07a1-486e-bbe2-1e00c0e00fb8",
+   "status": "PROCESSING",
+   "stage": "CLONING"
+  },
+  {
+   "t": "2026-11-24T22:23:58.032Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "provider.create.start",
+   "id": "fake-77280-2-04gmk"
+  },
+  {
+   "t": "2026-11-24T22:23:59.026Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "5405c43f-07a1-486e-bbe2-1e00c0e00fb8",
+   "status": "FAILED",
+   "stage": "FAILED"
+  },
+  {
+   "t": "2026-11-24T22:23:59.026Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "ready"
+  },
+  {
+   "t": "2026-11-24T22:23:59.030Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "provider.create.done",
+   "id": "fake-77280-2-04gmk"
+  },
+  {
+   "t": "2026-11-24T22:23:59.056Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "5405c43f-07a1-486e-bbe2-1e00c0e00fb8",
+   "status": "PROCESSING",
+   "stage": "PARSING"
+  },
+  {
+   "t": "2026-11-24T22:23:59.056Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "cli.parse.start",
+   "id": "fake-77280-2-04gmk",
+   "cmd": "export PATH=\"$HOME/.bun/bin:$PATH\" 2>/dev/null || true && cd /home/user/repo && mkdir -p '.kodus-graph' && kodus-graph p"
+  },
+  {
+   "t": "2026-11-24T22:23:59.056Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "cli.parse.done",
+   "id": "fake-77280-2-04gmk"
+  },
+  {
+   "t": "2026-11-24T22:23:59.074Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "ready",
+   "sha": "beef",
+   "nodeCount": 16,
+   "edgeCount": 27
+  },
+  {
+   "t": "2026-11-24T22:23:59.074Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "5405c43f-07a1-486e-bbe2-1e00c0e00fb8",
+   "status": "COMPLETED"
+  },
+  {
+   "t": "2026-11-24T22:24:01.056Z",
+   "pid": 77280,
+   "rev": "parent",
+   "kind": "RESULT incr (c) abort during create",
+   "v": {
+    "thrown": null,
+    "job": "COMPLETED",
+    "repo": "ready",
+    "leaseAtReturn": {
+     "_id": "11111111-1111-4111-8111-111111111111:5a31126c-1d98-43f8-8ed8-d07bb1f31708:graph:5405c43f-07a1-486e-bbe2-1e00c0e00fb8",
+     "leaseCount": 1,
+     "state": "CREATING",
+     "cleanupAttempts": 0,
+     "killRetryCount": 0,
+     "expiresAt": "2026-11-25T00:23:58.017Z"
+    },
+    "leaseAfterCreateResolved": {
+     "_id": "11111111-1111-4111-8111-111111111111:5a31126c-1d98-43f8-8ed8-d07bb1f31708:graph:5405c43f-07a1-486e-bbe2-1e00c0e00fb8",
+     "leaseCount": 1,
+     "sandboxId": "fake-77280-2-04gmk",
+     "state": "READY",
+     "cleanupAttempts": 0,
+     "killRetryCount": 0,
+     "expiresAt": "2026-11-25T00:23:58.017Z"
+    },
+    "afterIdleCron": true,
+    "afterReaperBeforeExpiry": true,
+    "sandboxState": "running",
+    "releaseOrKill": 0,
+    "ttlMs": 7196961
+   }
+  }
+ ]
+}
