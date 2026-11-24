@@ -1,0 +1,16 @@
+FAIL test/unit/qa2628/h-lease.spec.ts (17.522 s)
+  ● H lease harness @ctrl › M3 slow decrement: stage snapshot before the Mongo writes, then the release completes
+    Received: undefined
+  ● H lease harness @ctrl › M24 command in flight at release, late commands, rejected late command
+  ● H lease harness @ctrl › M30 stage and observer cleanup overlap: one decrement, observer waits
+    Expected: 1
+    Received: 2
+  ● H lease harness @ctrl › M32 E2B setTimeout hangs or fails: release does not wait, WARN only, durable killAt
+    Expected: "released"
+    Received: "timeout-2s"
+  ● H lease harness @ctrl › M33 wrapped commands keep their semantics; timestamps cover overlap; usage bounded
+  ● H lease harness @ctrl › M34 stale release schedule after a new holder acquires between decrement and setKillAt
+    Expected: false
+    Received: true
+  ● H lease harness @ctrl › M35 isolation: same repo/PR numbers across two orgs, two PRs in one org, two holders on one key
+Tests:       7 failed, 5 passed, 12 total
