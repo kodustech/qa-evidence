@@ -1,0 +1,154 @@
+[
+ {
+  "trace": "ca80ba2443af",
+  "models": [],
+  "usage": [
+   {
+    "input": 956,
+    "output": 63,
+    "input_cached_tokens": 0,
+    "total": 1019
+   }
+  ],
+  "meta": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "prNumber": 1
+  },
+  "names": [
+   "ChatWithKodyFromGitUseCase::classifyImplicitReply",
+   "chat accounts/fireworks/models/deepseek-v4p1-flash",
+   "invoke_agent accounts/fireworks/models/deepseek-v4p1-flash",
+   "step 1"
+  ]
+ },
+ {
+  "trace": "0729281b96e8",
+  "models": [],
+  "usage": [
+   {
+    "input": 1012,
+    "output": 58,
+    "input_cached_tokens": 0,
+    "total": 1070
+   }
+  ],
+  "meta": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "prNumber": 1
+  },
+  "names": [
+   "ChatWithKodyFromGitUseCase::classifyImplicitReply",
+   "chat accounts/fireworks/models/deepseek-v4p1-flash",
+   "invoke_agent accounts/fireworks/models/deepseek-v4p1-flash",
+   "step 1"
+  ]
+ },
+ {
+  "trace": "83bc85da99f2",
+  "models": [],
+  "usage": [
+   {
+    "input": 589,
+    "output": 79,
+    "input_cached_tokens": 480,
+    "total": 1148
+   }
+  ],
+  "meta": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "prNumber": 1
+  },
+  "names": [
+   "ChatWithKodyFromGitUseCase::classifyImplicitReply",
+   "chat accounts/fireworks/models/deepseek-v4p1-flash",
+   "invoke_agent accounts/fireworks/models/deepseek-v4p1-flash",
+   "step 1"
+  ]
+ },
+ {
+  "trace": "eb0392a68e8f",
+  "models": [],
+  "usage": [
+   {
+    "input": 1544,
+    "output": 127,
+    "input_cached_tokens": 0,
+    "total": 1671
+   }
+  ],
+  "meta": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "prNumber": 1
+  },
+  "names": [
+   "ChatWithKodyFromGitUseCase::classifyImplicitReply",
+   "chat accounts/fireworks/models/deepseek-v4p1-flash",
+   "invoke_agent accounts/fireworks/models/deepseek-v4p1-flash",
+   "step 1"
+  ]
+ },
+ {
+  "trace": "b4455310086f",
+  "models": [],
+  "usage": [
+   {
+    "input": 725,
+    "output": 20,
+    "input_cached_tokens": 11414,
+    "total": 12159
+   },
+   {
+    "input": 3480,
+    "output": 540,
+    "input_cached_tokens": 8064,
+    "total": 12084
+   }
+  ],
+  "meta": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+  },
+  "names": [
+   "chat accounts/fireworks/models/deepseek-v4p1-flash",
+   "conversationAgent",
+   "invoke_agent accounts/fireworks/models/deepseek-v4p1-flash",
+   "kodusDecideAction",
+   "step 1",
+   "step 2"
+  ]
+ },
+ {
+  "trace": "2204b835197c",
+  "models": [],
+  "usage": [
+   {
+    "input": 1080,
+    "output": 60,
+    "input_cached_tokens": 10112,
+    "total": 11252
+   },
+   {
+    "input": 2219,
+    "output": 314,
+    "input_cached_tokens": 8604,
+    "total": 11137
+   }
+  ],
+  "meta": {
+   "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+   "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8"
+  },
+  "names": [
+   "chat accounts/fireworks/models/deepseek-v4p1-flash",
+   "conversationAgent",
+   "invoke_agent accounts/fireworks/models/deepseek-v4p1-flash",
+   "kodusDecideAction",
+   "step 1",
+   "step 2"
+  ]
+ }
+]
