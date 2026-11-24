@@ -1,0 +1,319 @@
+[
+ {
+  "org": "jr-claude-github",
+  "uuid": "f5f2a39f",
+  "title": "qa2308 grades require enrollment",
+  "status": "active",
+  "path": "web/API/CLI",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "author",
+  "keyOrder": [
+   [
+    "snippet",
+    "isCorrect"
+   ]
+  ]
+ },
+ {
+  "org": "jr-claude-github",
+  "uuid": "6db8d934",
+  "title": "qa2308 no console.log",
+  "status": "active",
+  "path": "web/API/CLI",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "compiler",
+  "keyOrder": [
+   [
+    "snippet",
+    "isCorrect"
+   ]
+  ]
+ },
+ {
+  "org": "jr-claude-github",
+  "uuid": "8719ceb8",
+  "title": "qa2308 cli grades rounding (proposed)",
+  "status": "active",
+  "path": "web/API/CLI",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "compiler",
+  "keyOrder": [
+   [
+    "snippet",
+    "isCorrect"
+   ]
+  ]
+ },
+ {
+  "org": "jr-claude-github",
+  "uuid": "e0419abd",
+  "title": "qa-2308 no eval in attendance import",
+  "status": "active",
+  "path": ".kody/rules",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "compiler",
+  "keyOrder": [
+   [
+    "snippet",
+    "isCorrect"
+   ]
+  ]
+ },
+ {
+  "org": "jr-claude-github",
+  "uuid": "b47dfb9a",
+  "title": "qa2308 grades require enrollment (propos",
+  "status": "rejected",
+  "path": "web/API/CLI",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "author",
+  "keyOrder": [
+   [
+    "snippet",
+    "isCorrect"
+   ]
+  ]
+ },
+ {
+  "org": "jr-claude-github",
+  "uuid": "283d82a6",
+  "title": "qa2308 grades require enrollment (propos",
+  "status": "active",
+  "path": "web/API/CLI",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "author",
+  "keyOrder": [
+   [
+    "snippet",
+    "isCorrect"
+   ]
+  ]
+ },
+ {
+  "org": "jr-claude-github",
+  "uuid": "1eb95c7d",
+  "title": "qa2308 pending new attendance campus",
+  "status": "active",
+  "path": "web/API/CLI",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "compiler",
+  "keyOrder": [
+   [
+    "snippet",
+    "isCorrect"
+   ]
+  ]
+ },
+ {
+  "org": "jr-claude-github",
+  "uuid": "04949b9d",
+  "title": "qa2308 cli grades rounding (proposed)",
+  "status": "applied",
+  "path": "web/API/CLI",
+  "compileHashEqual": false,
+  "contextHashEqual": false,
+  "ctxSource": null,
+  "keyOrder": [
+   [
+    "snippet",
+    "isCorrect"
+   ]
+  ]
+ },
+ {
+  "org": "jr-claude-github",
+  "uuid": "f976b2f2",
+  "title": "qa2308 lib Use Promise.allSettled for ba",
+  "status": "active",
+  "path": "web/API/CLI",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "compiler",
+  "keyOrder": [
+   [
+    "snippet",
+    "isCorrect"
+   ]
+  ]
+ },
+ {
+  "org": "jr-claude-github",
+  "uuid": "f2f16786",
+  "title": "qa-2308 A reject invalid student id (t)",
+  "status": "active",
+  "path": "centralized",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "compiler",
+  "keyOrder": []
+ },
+ {
+  "org": "jr-claude-github",
+  "uuid": "53d46a57",
+  "title": "qa-2308 B preserve campus id (t)",
+  "status": "active",
+  "path": "centralized",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "compiler",
+  "keyOrder": []
+ },
+ {
+  "org": "jr-claude-github",
+  "uuid": "d37a3c43",
+  "title": "qa-2308 M no eval in attendance JSON (t)",
+  "status": "active",
+  "path": "centralized",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "compiler",
+  "keyOrder": []
+ },
+ {
+  "org": "jr-claude-github",
+  "uuid": "1555056b",
+  "title": "qa2308 no console.log in grade services",
+  "status": "rejected",
+  "path": "web/API/CLI",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "author",
+  "keyOrder": [
+   [
+    "snippet",
+    "isCorrect"
+   ]
+  ]
+ },
+ {
+  "org": "jr-claude-github",
+  "uuid": "ab4c5bd0",
+  "title": "qa2308 no console.log in grade services",
+  "status": "active",
+  "path": "web/API/CLI",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "author",
+  "keyOrder": [
+   [
+    "snippet",
+    "isCorrect"
+   ]
+  ]
+ },
+ {
+  "org": "jr-claude-gitlab",
+  "uuid": "71b37a8e",
+  "title": "qa-2308 A reject invalid student id (t)",
+  "status": "active",
+  "path": ".kody/rules",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "compiler",
+  "keyOrder": []
+ },
+ {
+  "org": "jr-claude-gitlab",
+  "uuid": "6ba488a2",
+  "title": "qa-2308 M no eval in attendance JSON (t)",
+  "status": "active",
+  "path": ".kody/rules",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "compiler",
+  "keyOrder": [
+   [
+    "snippet",
+    "isCorrect"
+   ]
+  ]
+ },
+ {
+  "org": "jr-claude-bitbucket",
+  "uuid": "50014e50",
+  "title": "qa-2308 A reject invalid student id (t)",
+  "status": "active",
+  "path": ".kody/rules",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "compiler",
+  "keyOrder": []
+ },
+ {
+  "org": "jr-claude-bitbucket",
+  "uuid": "63d98c8c",
+  "title": "qa-2308 M no eval in attendance JSON (t)",
+  "status": "active",
+  "path": ".kody/rules",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "compiler",
+  "keyOrder": [
+   [
+    "snippet",
+    "isCorrect"
+   ]
+  ]
+ },
+ {
+  "org": "jr-claude-azure",
+  "uuid": "c20aa277",
+  "title": "qa-2308 A reject invalid student id (t)",
+  "status": "active",
+  "path": ".kody/rules",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "compiler",
+  "keyOrder": []
+ },
+ {
+  "org": "jr-claude-azure",
+  "uuid": "a23f15ec",
+  "title": "qa-2308 M no eval in attendance JSON (t)",
+  "status": "active",
+  "path": ".kody/rules",
+  "compileHashEqual": true,
+  "contextHashEqual": false,
+  "ctxSource": null,
+  "keyOrder": [
+   [
+    "snippet",
+    "isCorrect"
+   ]
+  ]
+ },
+ {
+  "org": "jr-claude-forgejo",
+  "uuid": "237fe88f",
+  "title": "qa-2308 A reject invalid student id (t)",
+  "status": "active",
+  "path": ".kody/rules",
+  "compileHashEqual": true,
+  "contextHashEqual": true,
+  "ctxSource": "compiler",
+  "keyOrder": []
+ },
+ {
+  "org": "jr-claude-forgejo",
+  "uuid": "7553a366",
+  "title": "qa-2308 M no eval in attendance JSON (t)",
+  "status": "active",
+  "path": ".kody/rules",
+  "compileHashEqual": true,
+  "contextHashEqual": false,
+  "ctxSource": null,
+  "keyOrder": [
+   [
+    "snippet",
+    "isCorrect"
+   ]
+  ]
+ }
+]
