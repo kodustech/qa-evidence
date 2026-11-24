@@ -19,7 +19,7 @@ def wait_for(role, ev, timeout=120):
         time.sleep(0.2)
     return False
 def psql(q):
-    return subprocess.run(['/opt/homebrew/opt/libpq/bin/psql','-h','localhost','-p','55476','-U','postgres','-d','qa','-At','-c',q], env={**os.environ,'PGPASSWORD':'qa2576'}, capture_output=True, text=True).stdout.strip()
+    return subprocess.run(['/opt/homebrew/opt/libpq/bin/psql','-h','localhost','-p',os.environ['QA_PG_PORT'],'-U','postgres','-d','qa','-At','-c',q], env={**os.environ,'PGPASSWORD':os.environ['QA_PG_PASSWORD']}, capture_output=True, text=True).stdout.strip()
 psql('delete from kodus_workflow.inbox_messages')
 v=start('victim'); assert wait_for('victim','file-read-start'), 'victim never reached file read'
 note('victim in file read; row=' + psql('select status,"lockedBy","lockedAt",attempts from kodus_workflow.inbox_messages'))
