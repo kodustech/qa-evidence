@@ -35,6 +35,39 @@ describe('wp', () => {
         } else if (role === 'create') {
             const dto = JSON.parse(process.env.QA2308_DTO!);
             const r: any = await s.save(ORG, dto); ev('created', { uuid: r.uuid }); await s.settle(); ev('settled', { llmCalls: s.ledger.llm.length });
+        } else if (role === 'api-server') {
+            const http = await import('http');
+            const { ValidationPipe } = await import('@nestjs/common');
+            const { CreateKodyRuleDto } = await import('@libs/ee/kodyRules/dtos/create-kody-rule.dto');
+            const pipe = new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true, transform: true });
+            await new Promise<void>((resolve) => {
+                const srv = http.createServer((req, res) => {
+                    let raw = ''; req.on('data', (c) => (raw += c));
+                    req.on('end', async () => {
+                        const t0 = new Date().toISOString();
+                        try {
+                            if (req.url === '/shutdown') { res.end('{}'); srv.close(); return resolve(); }
+                            const body = JSON.parse(raw || '{}');
+                            const dto = await pipe.transform(body, { type: 'body', metatype: CreateKodyRuleDto } as any);
+                            const r: any = await s.save(ORG, dto);
+                            ev('http.save', { start: t0, uuid: r?.uuid, severity: body.severity });
+                            res.writeHead(201, { 'content-type': 'application/json' }); res.end(JSON.stringify({ uuid: r?.uuid, start: t0, end: new Date().toISOString() }));
+                        } catch (e: any) { res.writeHead(400); res.end(JSON.stringify({ error: String(e?.message ?? e), response: e?.response })); }
+                    });
+                });
+                srv.listen(Number(process.env.QA2308_PORT), '127.0.0.1', () => ev('api.listening', { port: process.env.QA2308_PORT }));
+            });
+            await s.settle();
+        } else if (role === 'backfill') {
+            const { BackfillRuleDetectorsUseCase } = await import('@libs/kodyRules/application/use-cases/backfill-rule-detectors.use-case');
+            const loops = Number(process.env.QA2308_LOOPS || 1);
+            for (let i = 0; i < loops; i++) {
+                ev('backfill.start', { i });
+                const r = await new BackfillRuleDetectorsUseCase(s.service as any, s.compiler as any).execute({ organizationId: ORG, teamId: 'team-1' }, { onlyMissing: true });
+                await s.settle();
+                ev('backfill.end', { i, total: r.total, processed: r.processed, skipped: r.skipped, llmCalls: s.ledger.llm.length });
+                if (loops > 1) await new Promise((res) => setTimeout(res, 5));
+            }
         } else if (role === 'backfill-read') {
             const { compileAttemptIsCurrent, contextNeedIsCurrent } = await import('@libs/common/utils/kody-rules/compile-hash');
             ev('read.start');
