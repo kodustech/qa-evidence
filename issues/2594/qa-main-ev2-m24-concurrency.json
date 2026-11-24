@@ -1,0 +1,152 @@
+{
+ "M24_ttl_expired": {
+  "held_for_s": 70.5,
+  "B_webhook": [
+   "Code review already in progress for this PR"
+  ],
+  "B_webhook_warns": [
+   "Code review already in progress for PR#401"
+  ],
+  "B_command": [
+   "threw: PrReviewInProgressError: Code review already in progress for PR#401"
+  ],
+  "accepted_while_held": 0,
+  "A": [
+   "Automation executed successfully"
+  ],
+  "B_command_retry": [
+   "Automation executed successfully"
+  ],
+  "accepted_total": 1,
+  "rows": [
+   [
+    "b9c02da4",
+    "skipped",
+    "04:36:44.619",
+    "04:37:55.304",
+    "2026-11-24T04:37:55.282Z",
+    "User Not Licensed \u2014 Assign seat to user"
+   ],
+   [
+    "96fe8f45",
+    "skipped",
+    "04:37:58.640",
+    "04:37:58.669",
+    "-",
+    "User Not Licensed \u2014 Assign seat to user"
+   ]
+  ]
+ },
+ "M24_creation_window_expired": {
+  "accepted_after_B": 1,
+  "B": [
+   "Automation executed successfully"
+  ],
+  "accepted_total": 2,
+  "rows": [
+   [
+    "aae760e4",
+    "skipped",
+    "04:08:05.487",
+    "04:39:09.963",
+    "2026-11-24T04:39:09.956Z",
+    "User Not Licensed \u2014 Assign seat to user"
+   ],
+   [
+    "4c53cf13",
+    "skipped",
+    "04:39:08.288",
+    "04:39:08.312",
+    "2026-11-24T04:39:08.309Z",
+    "User Not Licensed \u2014 Assign seat to user"
+   ]
+  ]
+ },
+ "M24_lock_outage_both_pass": {
+  "active_check": [
+   {
+    "t": "2026-11-24T04:39:13.685Z",
+    "pid": 44056,
+    "w": "m24c-B",
+    "ev": "active-check",
+    "found": 0
+   },
+   {
+    "t": "2026-11-24T04:39:13.702Z",
+    "pid": 44055,
+    "w": "m24c-A",
+    "ev": "active-check",
+    "found": 0
+   }
+  ],
+  "lock_errors": [
+   "Error acquiring distributed lock for PR#403, proceeding without lock",
+   "Error acquiring distributed lock for PR#403, proceeding without lock"
+  ],
+  "accepted_total": 1,
+  "rows": [
+   [
+    "eb159645",
+    "skipped",
+    "04:39:13.790",
+    "04:39:13.813",
+    "2026-11-24T04:39:13.810Z",
+    "User Not Licensed \u2014 Assign seat to user"
+   ],
+   [
+    "bf478d9e",
+    "skipped",
+    "04:39:13.806",
+    "04:39:13.821",
+    "-",
+    "User Not Licensed \u2014 Assign seat to user"
+   ]
+  ],
+  "after": {
+   "accepted_total": 1
+  }
+ },
+ "M24_lock_outage_both_at_lookup": {
+  "accepted_total": 2,
+  "lookups": [
+   [
+    "m24d-B",
+    false
+   ],
+   [
+    "m24d-A",
+    false
+   ],
+   [
+    "m24d-C",
+    true
+   ]
+  ],
+  "rows": [
+   [
+    "4cc397e4",
+    "skipped",
+    "04:39:38.569",
+    "04:39:38.810",
+    "2026-11-24T04:39:38.804Z",
+    "User Not Licensed \u2014 Assign seat to user"
+   ],
+   [
+    "16c53cba",
+    "skipped",
+    "04:39:38.569",
+    "04:39:38.806",
+    "2026-11-24T04:39:38.799Z",
+    "User Not Licensed \u2014 Assign seat to user"
+   ],
+   [
+    "b44f9aed",
+    "skipped",
+    "04:39:42.148",
+    "04:39:42.166",
+    "-",
+    "User Not Licensed \u2014 Assign seat to user"
+   ]
+  ]
+ }
+}
