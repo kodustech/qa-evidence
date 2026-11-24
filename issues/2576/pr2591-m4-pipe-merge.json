@@ -1,0 +1,58 @@
+{
+ "string_false": {
+  "ok": true,
+  "conversation": {
+   "implicitReplies": true
+  }
+ },
+ "string_no": {
+  "ok": true,
+  "conversation": {
+   "implicitReplies": true
+  }
+ },
+ "string_off": {
+  "ok": true,
+  "conversation": {
+   "implicitReplies": true
+  }
+ },
+ "number0": {
+  "ok": true,
+  "conversation": {
+   "implicitReplies": false
+  }
+ },
+ "null": {
+  "ok": true,
+  "conversation": {
+   "implicitReplies": null
+  }
+ },
+ "array_val": {
+  "ok": false,
+  "msg": [
+   "configValue.conversation.implicitReplies must be a boolean value"
+  ]
+ },
+ "scalar": {
+  "ok": false,
+  "msg": [
+   "configValue.nested property conversation must be either object or array"
+  ]
+ },
+ "array_conv": {
+  "ok": true,
+  "conversation": [
+   {
+    "implicitReplies": false
+   }
+  ]
+ },
+ "unknown": {
+  "ok": false,
+  "msg": [
+   "configValue.conversation.property answerEveryone should not exist"
+  ]
+ }
+}
