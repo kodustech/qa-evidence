@@ -1,0 +1,7 @@
+org12 51430817 [['4b57e3d6-0803-45d1-915f-4cdd148bf947', 't', 'BITBUCKET', '51be3a6a-86a0-4641-8965-3d52d7d7e690', 't', 'https://kodustech.github.io/qa-evidence/issues/2570/dc-ok', 'basic', 'qa2570user', 'f', 't', '2026-11-24 21:43:36.787', '2026-11-24 21:43:36.780']]
+member before: role owner own org 8cd1c61f
+team_member before [['89949ff3-29cc-47f4-84c9-77af803d8e1f', '8cd1c61f-609a-437e-8a31-a945e2c56ff8', '5b718fb0-cec7-48b9-987b-e17d77b9185f', 'team_leader']]
+member after [['contributor', 'b823c687-eb1a-4f85-b57b-6c4909754f8a']] [['team_leader', '5c4e0197-6ca7-4fb0-bf16-6f6ceead134d']]
+member sees teams 200 ['5c4e0197-6ca7-4fb0-bf16-6f6ceead134d']
+contributor POST -> 403 {"statusCode": 403, "timestamp": "2026-11-24T21:42:23.055Z", "path": "/code-management/auth-integration", "error": "Forbidden", "message": "Forbidden resource"}
+org4 rows after []
