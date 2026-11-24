@@ -1,0 +1,12 @@
+QAEVT {"t":"2026-11-24T21:23:12.283Z","pid":37268,"role":"race3a","event":"db-ready"}
+QAEVT {"t":"2026-11-24T21:23:12.287Z","pid":37268,"role":"race3a","event":"barrier-wait","ms":7901}
+QAEVT {"t":"2026-11-24T21:23:20.190Z","pid":37268,"role":"race3a","event":"execute-start"}
+QAEVT {"t":"2026-11-24T21:23:20.191Z","pid":37268,"role":"race3a","event":"log","level":"log","message":"Receiving pull request review webhook for conversation"}
+QAEVT {"t":"2026-11-24T21:23:20.209Z","pid":37268,"role":"race3a","event":"log","level":"log","message":"Comment already claimed by another delivery; skipping","key":"GITHUB:123:812::900:2026-11-24T10:01:00Z"}
+QAEVT {"t":"2026-11-24T21:23:20.209Z","pid":37268,"role":"race3a","event":"execute-end"}
+QAEVT {"t":"2026-11-24T21:23:20.211Z","pid":37268,"role":"race3a","event":"rows","rows":[{"messageId":"GITHUB:123:812::900:2026-11-24T10:01:00Z","status":"PROCESSING","lockedBy":"<host>:33a27e5f-7d11-43c9-8c0e-7af18f8ccb21","lockedAt":"2026-11-25T00:23:20.194Z","attempts":1,"processedAt":null}]}
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        8.825 s, estimated 9 s
+Ran all test suites matching libs/platform/application/use-cases/codeManagement/qa2576-worker.spec.ts.
