@@ -1,0 +1,64 @@
+[
+ {
+  "t": 1795495149685,
+  "case": "M8-repo-on-global-off",
+  "notices": 1,
+  "reactions": 1,
+  "flag": true,
+  "warns": []
+ },
+ {
+  "t": 1795495149690,
+  "case": "M8-repo-off-global-on",
+  "notices": 0,
+  "reactions": 0,
+  "flag": false,
+  "warns": []
+ },
+ {
+  "t": 1795495149696,
+  "case": "M8-global-off-no-repo",
+  "notices": 0,
+  "reactions": 0,
+  "flag": false,
+  "warns": []
+ },
+ {
+  "t": 1795495149703,
+  "case": "M8-absent",
+  "notices": 1,
+  "reactions": 1,
+  "flag": true,
+  "warns": []
+ },
+ {
+  "t": 1795495149709,
+  "case": "M8-param-read-error",
+  "notices": 1,
+  "reactions": 1,
+  "flag": true,
+  "warns": [
+   "Error resolving show status feedback config",
+   "Error resolving centralized config repository review exclusion"
+  ]
+ },
+ {
+  "t": 1795495149714,
+  "case": "M27-premarked-self",
+  "notices": 0,
+  "flag": false
+ },
+ {
+  "t": 1795495149718,
+  "case": "M27-markerless-self",
+  "notices": 1,
+  "flag": true
+ },
+ {
+  "t": 1795495149720,
+  "case": "M38-missing-teamAutomationId",
+  "notices": 2,
+  "lookupCalls": 0,
+  "bodyUnchanged": true
+ }
+]
