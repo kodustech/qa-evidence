@@ -1,0 +1,204 @@
+{
+ "logs": [
+  {
+   "timestamp": "2026-11-24T19:25:03.826Z",
+   "level": "info",
+   "message": "Receiving pull request review webhook for conversation",
+   "component": "ChatWithKodyFromGitUseCase",
+   "correlationId": "c60ff219-7b93-4da3-9190-1f57042db9ca",
+   "correlationIdSynthetic": true,
+   "tenantId": "unknown",
+   "executionId": null,
+   "sessionId": null,
+   "metadata": {
+    "component": "ChatWithKodyFromGitUseCase",
+    "level": "info",
+    "organizationId": "unknown",
+    "teamId": "unknown",
+    "tenantId": "unknown"
+   },
+   "attributes": {
+    "eventName": "pull_request_review_comment",
+    "component": "ChatWithKodyFromGitUseCase",
+    "originalCorrelationId": null
+   },
+   "error": null,
+   "createdAt": "2026-11-24T19:25:03.826Z"
+  },
+  {
+   "timestamp": "2026-11-24T19:25:03.849Z",
+   "level": "info",
+   "message": "Receiving pull request review webhook for conversation",
+   "component": "ChatWithKodyFromGitUseCase",
+   "correlationId": "bcbb844a-d8dc-4a50-bd91-3e8c9f651d20",
+   "correlationIdSynthetic": true,
+   "tenantId": "unknown",
+   "executionId": null,
+   "sessionId": null,
+   "metadata": {
+    "component": "ChatWithKodyFromGitUseCase",
+    "level": "info",
+    "organizationId": "unknown",
+    "teamId": "unknown",
+    "tenantId": "unknown"
+   },
+   "attributes": {
+    "eventName": "pull_request_review_comment",
+    "component": "ChatWithKodyFromGitUseCase",
+    "originalCorrelationId": null
+   },
+   "error": null,
+   "createdAt": "2026-11-24T19:25:03.849Z"
+  },
+  {
+   "timestamp": "2026-11-24T19:25:03.890Z",
+   "level": "info",
+   "message": "Receiving pull request review webhook for conversation",
+   "component": "ChatWithKodyFromGitUseCase",
+   "correlationId": "42cd60b7-4b22-4010-a226-7668d176a68e",
+   "correlationIdSynthetic": true,
+   "tenantId": "unknown",
+   "executionId": null,
+   "sessionId": null,
+   "metadata": {
+    "component": "ChatWithKodyFromGitUseCase",
+    "level": "info",
+    "organizationId": "unknown",
+    "teamId": "unknown",
+    "tenantId": "unknown"
+   },
+   "attributes": {
+    "eventName": "pull_request_review_comment",
+    "component": "ChatWithKodyFromGitUseCase",
+    "originalCorrelationId": null
+   },
+   "error": null,
+   "createdAt": "2026-11-24T19:25:03.890Z"
+  },
+  {
+   "timestamp": "2026-11-24T19:25:04.207Z",
+   "level": "info",
+   "message": "Unmentioned reply left unanswered: disabled",
+   "component": "ChatWithKodyFromGitUseCase",
+   "correlationId": "7338fc22-3a8d-400e-91a0-5f7b23c1171a",
+   "correlationIdSynthetic": true,
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "executionId": null,
+   "sessionId": null,
+   "metadata": {
+    "component": "ChatWithKodyFromGitUseCase",
+    "level": "info",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   },
+   "attributes": {
+    "implicitReplySilence": "disabled",
+    "organizationAndTeamData": {
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+    },
+    "repository": "codex-athena",
+    "pullRequestNumber": 1,
+    "commentId": 4685345019,
+    "platformType": "GITHUB",
+    "component": "ChatWithKodyFromGitUseCase",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "originalCorrelationId": null
+   },
+   "error": null,
+   "createdAt": "2026-11-24T19:25:04.207Z"
+  },
+  {
+   "timestamp": "2026-11-24T19:25:04.277Z",
+   "level": "info",
+   "message": "Unmentioned reply left unanswered: disabled",
+   "component": "ChatWithKodyFromGitUseCase",
+   "correlationId": "1843254d-21db-406c-9a39-4ed0f18ed98e",
+   "correlationIdSynthetic": true,
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "executionId": null,
+   "sessionId": null,
+   "metadata": {
+    "component": "ChatWithKodyFromGitUseCase",
+    "level": "info",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   },
+   "attributes": {
+    "implicitReplySilence": "disabled",
+    "organizationAndTeamData": {
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+    },
+    "repository": "codex-athena",
+    "pullRequestNumber": 1,
+    "commentId": 4685345025,
+    "platformType": "GITHUB",
+    "component": "ChatWithKodyFromGitUseCase",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "originalCorrelationId": null
+   },
+   "error": null,
+   "createdAt": "2026-11-24T19:25:04.277Z"
+  },
+  {
+   "timestamp": "2026-11-24T19:25:04.293Z",
+   "level": "info",
+   "message": "Unmentioned reply left unanswered: disabled",
+   "component": "ChatWithKodyFromGitUseCase",
+   "correlationId": "9472044d-aaaf-4468-b9c2-436066053fe8",
+   "correlationIdSynthetic": true,
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "executionId": null,
+   "sessionId": null,
+   "metadata": {
+    "component": "ChatWithKodyFromGitUseCase",
+    "level": "info",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   },
+   "attributes": {
+    "implicitReplySilence": "disabled",
+    "organizationAndTeamData": {
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+    },
+    "repository": "codex-athena",
+    "pullRequestNumber": 1,
+    "commentId": 4685345010,
+    "platformType": "GITHUB",
+    "component": "ChatWithKodyFromGitUseCase",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "originalCorrelationId": null
+   },
+   "error": null,
+   "createdAt": "2026-11-24T19:25:04.293Z"
+  }
+ ],
+ "claims": [
+  [
+   "GITHUB:1468015189:1::4685345019:2026-11-24T19:24:59Z",
+   "PROCESSED",
+   "2026-11-24 19:25:03.82747",
+   "2026-11-24 19:25:04.207"
+  ],
+  [
+   "GITHUB:1468015189:1::4685345025:2026-11-24T19:24:59Z",
+   "PROCESSED",
+   "2026-11-24 19:25:03.85097",
+   "2026-11-24 19:25:04.277"
+  ],
+  [
+   "GITHUB:1468015189:1::4685345010:2026-11-24T19:24:59Z",
+   "PROCESSED",
+   "2026-11-24 19:25:03.89217",
+   "2026-11-24 19:25:04.293"
+  ]
+ ]
+}
