@@ -1,0 +1,254 @@
+#!/usr/bin/env node
+// QA #2420 orchestrator: fake git provider HTTP server (the only transport
+// stub) + spawns one `jest -i` OS process per worker. Usage:
+//   node orchestrate.js <scenario> <treeDir> <outDir>
+'use strict';
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+const { spawn } = require('child_process');
+
+const [, , SCENARIO, TREE, OUTDIR] = process.argv;
+fs.mkdirSync(OUTDIR, { recursive: true });
+const PG = 'postgres://qa:qa@127.0.0.1:55432/qa2420';
+const MONGO = 'mongodb://127.0.0.1:57017/?directConnection=true';
+const ORGS = {
+    A: { org: '11111111-1111-4111-8111-111111111111', team: '11111111-1111-4111-8111-aaaaaaaaaaaa', ta: '11111111-1111-4111-8111-ffffffffffff' },
+    B: { org: '22222222-2222-4222-8222-222222222222', team: '22222222-2222-4222-8222-aaaaaaaaaaaa', ta: '22222222-2222-4222-8222-ffffffffffff' },
+};
+
+const providerLog = path.join(OUTDIR, 'provider-requests.jsonl');
+const orchLog = path.join(OUTDIR, 'orchestrator.jsonl');
+const note = (o) => fs.appendFileSync(orchLog, JSON.stringify({ ts: new Date().toISOString(), ...o }) + '\n');
+
+// ---- fake provider -------------------------------------------------------
+let seq = 1000;
+const state = {
+    prLevelMode: 'ok', // ok | 503 | drop | noid | ok-then-kill
+    killTarget: null,
+    barriers: {}, // name -> {released:boolean, waiting:Set}
+    posted: [],
+};
+function classify(method, url, body) {
+    if (method !== 'POST') return 'read';
+    if (/\/issues\/\d+\/comments$/.test(url)) return 'gh-pr-level';
+    if (/\/pulls\/\d+\/comments$/.test(url)) return 'gh-inline';
+    if (/\/pulls\/\d+\/reviews$/.test(url)) return 'gh-inline-review';
+    if (/\/merge_requests\/\d+\/discussions$/.test(url)) return body && body.includes('position') ? 'gl-inline' : 'gl-pr-level';
+    if (/\/merge_requests\/\d+\/notes$/.test(url)) return 'gl-note';
+    return 'other-post';
+}
+const server = http.createServer((req, res) => {
+    let body = '';
+    req.on('data', (c) => (body += c));
+    req.on('end', () => {
+        const u = new URL(req.url, 'http://x');
+        if (u.pathname === '/__barrier') {
+            const name = u.searchParams.get('name');
+            const b = (state.barriers[name] ||= { released: false, waiting: new Set() });
+            b.waiting.add(u.searchParams.get('worker'));
+            res.end(b.released ? 'go' : 'wait');
+            return;
+        }
+        const kind = classify(req.method, u.pathname, body);
+        let parsed = {};
+        try { parsed = body ? JSON.parse(body) : {}; } catch { try { const q = new URLSearchParams(body); parsed = Object.fromEntries(q.entries()); parsed.position = [...q.keys()].some((k) => k.startsWith('position')) ? Object.fromEntries([...q.entries()].filter(([k]) => k.startsWith('position'))) : undefined; } catch { parsed = { raw: body.slice(0, 200) }; } }
+        if (String(req.headers['content-type'] || '').startsWith('multipart/form-data')) {
+            const fields = {};
+            for (const m of body.matchAll(/name="([^"]+)"\r\n\r\n([\s\S]*?)\r\n--/g)) fields[m[1]] = m[2];
+            parsed = { body: fields.body, position: Object.keys(fields).some((k) => k.startsWith('position')) ? Object.fromEntries(Object.entries(fields).filter(([k]) => k.startsWith('position'))) : undefined };
+            parsed.line = fields['position[new_line]'];
+        }
+        const auth = req.headers['authorization'] || req.headers['private-token'] || '';
+        const entry = {
+            ts: new Date().toISOString(), method: req.method, path: u.pathname, kind,
+            auth: String(auth).replace(/(tok-[0-9a-f]{8}).*/, '$1'),
+            bodyFirstLine: (String(parsed.body || '').match(/[AB]\[[AB]\][^\n]*/) || [''])[0].slice(0, 120),
+            hasPosition: !!parsed.position, line: parsed.line, path_: parsed.path,
+            ctype: req.headers['content-type'], rawHead: kind.startsWith('gl-') ? body.slice(0, 160) : undefined,
+        };
+        const respond = (status, obj) => {
+            entry.status = status; entry.response = obj;
+            fs.appendFileSync(providerLog, JSON.stringify(entry) + '\n');
+            res.writeHead(status, { 'content-type': 'application/json' });
+            res.end(JSON.stringify(obj));
+        };
+        if (kind === 'gh-pr-level' || kind === 'gl-pr-level') {
+            const mode = state.prLevelMode;
+            if (mode === '503') return respond(503, { message: 'Service Unavailable' });
+            if (mode === 'noid') return respond(201, {});
+            if (mode === 'drop') {
+                entry.status = 'dropped-after-2s'; fs.appendFileSync(providerLog, JSON.stringify(entry) + '\n');
+                setTimeout(() => req.socket.destroy(), 2000);
+                return;
+            }
+            const id = ++seq;
+            state.posted.push({ kind, id, body: entry.bodyFirstLine, auth: entry.auth });
+            if (mode === 'ok-then-kill-mongo') {
+                // the provider has the comment; the store goes away before the worker hears back
+                require('child_process').execSync('docker kill qa2420-l2-mongo');
+                note({ event: 'mongo container killed', before: 'pr-level 201 response written', commentId: id });
+                state.prLevelMode = 'ok';
+            }
+            const obj = kind === 'gl-pr-level' ? { id: `disc-${id}`, notes: [{ id }] } : { id, html_url: `http://fake/c/${id}` };
+            respond(201, obj);
+            if (mode === 'ok-then-kill' && state.killTarget) {
+                const child = state.killTarget;
+                state.killTarget = null;
+                setImmediate(() => { try { process.kill(child.pid, 'SIGKILL'); note({ event: 'SIGKILL sent', pid: child.pid, after: 'pr-level 201 response written', commentId: id }); } catch (e) { note({ event: 'kill failed', e: String(e) }); } });
+            }
+            return;
+        }
+        if (kind === 'gh-inline' || kind === 'gl-inline' || kind === 'gh-inline-review' || kind === 'gl-note' || kind === 'other-post') {
+            const id = ++seq;
+            state.posted.push({ kind, id, body: entry.bodyFirstLine, auth: entry.auth });
+            return respond(201, kind === 'gl-inline' ? { id: `disc-${id}`, notes: [{ id }] } : { id });
+        }
+        // reads
+        if (/\/pulls\/\d+\/commits$/.test(u.pathname)) return respond(200, [{ sha: 'headsha', commit: { message: 'm', author: { name: 'qa', date: '2026-11-25T00:00:00Z' }, committer: { date: '2026-11-25T00:00:00Z' } }, parents: [] }]);
+        if (/\/merge_requests\/\d+\/commits$/.test(u.pathname)) return respond(200, [{ id: 'headsha', message: 'm', created_at: '2026-11-25T00:00:00Z', author_name: 'qa', parent_ids: [] }]);
+        if (/\/merge_requests\/\d+\/versions$/.test(u.pathname)) return respond(200, [{ id: 1, head_commit_sha: 'headsha', base_commit_sha: 'basesha', start_commit_sha: 'basesha' }]);
+        if (/\/merge_requests\/\d+$/.test(u.pathname)) return respond(200, { iid: 1, diff_refs: { base_sha: 'basesha', head_sha: 'headsha', start_sha: 'basesha' }, sha: 'headsha' });
+        if (/\/pulls\/\d+$/.test(u.pathname)) return respond(200, { number: 1, head: { sha: 'headsha' }, base: { sha: 'basesha' } });
+        return respond(200, []);
+    });
+});
+
+// ---- workers ---------------------------------------------------------------
+function spawnWorker(id, env) {
+    const out = path.join(OUTDIR, `worker-${id}.jsonl`);
+    const log = path.join(OUTDIR, `worker-${id}.log.jsonl`);
+    const stdio = fs.openSync(path.join(OUTDIR, `worker-${id}.stdout.txt`), 'a');
+    const child = spawn('npx', ['jest', '-i', '--testTimeout=1800000', 'qa2420h/worker.qa2420.spec.ts'], {
+        cwd: TREE,
+        env: { ...process.env, TZ: 'UTC', API_NODE_ENV: 'test', QA_PG_URL: PG, QA_MONGO_URL: MONGO, QA_PROVIDER_URL: `http://127.0.0.1:${PORT}`, QA_OUT: out, QA_LOG: log, QA_WORKER_ID: id, ...env },
+        stdio: ['ignore', stdio, stdio],
+        detached: false,
+    });
+    note({ event: 'spawn', worker: id, pid: child.pid, env: Object.fromEntries(Object.entries(env).filter(([k]) => k.startsWith('QA_'))) });
+    const done = new Promise((resolve) => child.on('exit', (code, signal) => { note({ event: 'exit', worker: id, pid: child.pid, code, signal }); resolve({ code, signal }); }));
+    return { child, done, id };
+}
+// jest -i runs the spec in the npx->node process tree; kill the deepest node
+// child so the SIGKILL hits the process that runs the worker code.
+function deepestPid(pid) {
+    const { execSync } = require('child_process');
+    for (;;) {
+        let kids = '';
+        try { kids = execSync(`pgrep -P ${pid}`).toString().trim(); } catch { return pid; }
+        if (!kids) return pid;
+        pid = Number(kids.split('\n')[0]);
+    }
+}
+async function waitAllAtBarrier(name, n) {
+    for (;;) {
+        const b = state.barriers[name];
+        if (b && b.waiting.size >= n) return;
+        await new Promise((r) => setTimeout(r, 100));
+    }
+}
+function release(name) { state.barriers[name].released = true; note({ event: 'barrier released', name }); }
+
+const base = (o, extra = {}) => ({
+    QA_ORG: ORGS[o].org, QA_TEAM: ORGS[o].team, QA_TEAM_AUTOMATION: ORGS[o].ta,
+    QA_RULE_A: `rule-a-${o}`, QA_RULE_B: `rule-b-${o}`, QA_TAG: o, ...extra,
+});
+
+const scenarios = {
+    // smoke: one clean GitHub run
+    async smoke() {
+        const w = spawnWorker('smoke', base('A', { QA_PLATFORM: 'github', QA_REPO_ID: 'repo-smoke', QA_REPO_NAME: 'codex-athena', QA_PR: '9001', QA_ORIGIN: 'automation', QA_SEED_PR: '1', QA_MONGO_DB: 'qa2420_smoke' }));
+        await w.done;
+    },
+    // M25: PR-level post fails, then a clean attempt, per platform and mode
+    async m25() {
+        let n = 0;
+        for (const platform of ['github', 'gitlab']) {
+            for (const mode of ['503', 'drop', 'noid', 'ok']) {
+                n++;
+                state.prLevelMode = mode;
+                note({ event: 'attempt', platform, prLevelMode: mode });
+                const w = spawnWorker(`m25-${platform}-${mode}`, base('A', { QA_PLATFORM: platform, QA_REPO_ID: `repo-m25-${platform}`, QA_REPO_NAME: 'codex-athena', QA_PR: String(2500 + (platform === 'github' ? 1 : 2)), QA_ORIGIN: 'automation', QA_SEED_PR: '1', QA_MONGO_DB: `qa2420_m25_${platform}` }));
+                await w.done;
+            }
+        }
+    },
+    // M26: (1) provider ok, store write fails; (2) store available; (3) SIGKILL after post, before save; restart now; restart +6 min; watchdog +16 min
+    async m26() {
+        state.prLevelMode = 'ok';
+        const common = { QA_PLATFORM: 'github', QA_REPO_NAME: 'codex-athena', QA_ORIGIN: 'automation', QA_SEED_PR: '1' };
+        note({ event: 'attempt', what: 'store write fails (appendPrLevelSuggestions rejects)' });
+        await spawnWorker('m26-savefail', base('A', { ...common, QA_REPO_ID: 'repo-m26-a', QA_PR: '2601', QA_MONGO_FAIL: 'throw-on-append', QA_MONGO_DB: 'qa2420_m26_a' })).done;
+        note({ event: 'attempt', what: 'PR document missing (no seed)' });
+        await spawnWorker('m26-nodoc', base('A', { ...common, QA_REPO_ID: 'repo-m26-b', QA_PR: '2602', QA_SEED_PR: '0', QA_MONGO_DB: 'qa2420_m26_b' })).done;
+        note({ event: 'attempt', what: 'real MongoDB outage after the provider accepted (container killed before the 201 reaches the worker)' });
+        state.prLevelMode = 'ok-then-kill-mongo';
+        await spawnWorker('m26-mongodown', base('A', { ...common, QA_REPO_ID: 'repo-m26-d', QA_PR: '2605', QA_MONGO_DB: 'qa2420_m26_d' })).done;
+        state.prLevelMode = 'ok';
+        require('child_process').execSync('docker start qa2420-l2-mongo');
+        for (let i = 0; i < 60; i++) {
+            try { const o = require('child_process').execSync(`docker exec qa2420-l2-mongo mongosh --quiet --eval 'db.hello().isWritablePrimary'`).toString().trim(); if (o === 'true') break; } catch {}
+            await new Promise((r) => setTimeout(r, 1000));
+        }
+        note({ event: 'mongo container restarted' });
+        await spawnWorker('m26-mongodown-inspect', base('A', { ...common, QA_MODE: 'inspect', QA_REPO_ID: 'repo-m26-d', QA_PR: '2605', QA_MONGO_DB: 'qa2420_m26_d' })).done;
+        note({ event: 'attempt', what: 'store available' });
+        await spawnWorker('m26-ok', base('A', { ...common, QA_REPO_ID: 'repo-m26-c', QA_PR: '2603', QA_MONGO_DB: 'qa2420_m26_c' })).done;
+        // SIGKILL between post and save
+        state.prLevelMode = 'ok-then-kill';
+        const k = spawnWorker('m26-kill', base('A', { ...common, QA_REPO_ID: 'repo-m26-k', QA_PR: '2604', QA_MONGO_DB: 'qa2420_m26_k', QA_BARRIER: 'kill' }));
+        await waitAllAtBarrier('kill', 1);
+        state.killTarget = { pid: deepestPid(k.child.pid) };
+        note({ event: 'kill target resolved', pid: state.killTarget.pid, spawnPid: k.child.pid });
+        release('kill');
+        await k.done;
+        state.prLevelMode = 'ok';
+        note({ event: 'restart', what: 'immediate redelivery' });
+        await spawnWorker('m26-restart-now', base('A', { ...common, QA_REPO_ID: 'repo-m26-k', QA_PR: '2604', QA_MONGO_DB: 'qa2420_m26_k' })).done;
+        note({ event: 'restart', what: 'redelivery seen 6 minutes later (worker clock +6 min)' });
+        await spawnWorker('m26-restart-6m', base('A', { ...common, QA_REPO_ID: 'repo-m26-k', QA_PR: '2604', QA_MONGO_DB: 'qa2420_m26_k', QA_CLOCK_OFFSET_MIN: '6' })).done;
+        note({ event: 'watchdog', what: 'real StaleReviewWatchdogCronProvider.handleCron with clock +16 min' });
+        await spawnWorker('m26-watchdog', base('A', { ...common, QA_MODE: 'watchdog', QA_REPO_ID: 'repo-m26-k', QA_PR: '2604', QA_CLOCK_OFFSET_MIN: '16' })).done;
+        await spawnWorker('m26-final-inspect', base('A', { ...common, QA_MODE: 'inspect', QA_REPO_ID: 'repo-m26-k', QA_PR: '2604', QA_MONGO_DB: 'qa2420_m26_k' })).done;
+    },
+    // M15a: push (automation) + @kody start-review (command) on the same PR at once
+    async m15a() {
+        state.prLevelMode = 'ok';
+        const common = { QA_PLATFORM: 'github', QA_REPO_ID: 'repo-m15a', QA_REPO_NAME: 'codex-athena', QA_PR: '1501', QA_SEED_PR: '1', QA_MONGO_DB: 'qa2420_m15a', QA_BARRIER: 'm15a', QA_MODEL_DELAY_MS: '4000' };
+        const p = spawnWorker('m15a-push', base('A', { ...common, QA_ORIGIN: 'automation' }));
+        const c = spawnWorker('m15a-command', base('A', { ...common, QA_ORIGIN: 'command' }));
+        await waitAllAtBarrier('m15a', 2);
+        release('m15a');
+        await Promise.all([p.done, c.done]);
+    },
+    // M15a2: same, push takes the lock first (command arrives 300 ms later, inside the run)
+    async m15a2() {
+        state.prLevelMode = 'ok';
+        const common = { QA_PLATFORM: 'github', QA_REPO_ID: 'repo-m15a2', QA_REPO_NAME: 'codex-athena', QA_PR: '1503', QA_SEED_PR: '1', QA_MONGO_DB: 'qa2420_m15a2', QA_BARRIER: 'm15a2', QA_MODEL_DELAY_MS: '4000' };
+        const p = spawnWorker('m15a2-push', base('A', { ...common, QA_ORIGIN: 'automation' }));
+        const c = spawnWorker('m15a2-command', base('A', { ...common, QA_ORIGIN: 'command', QA_START_DELAY_MS: '300' }));
+        await waitAllAtBarrier('m15a2', 2);
+        release('m15a2');
+        await Promise.all([p.done, c.done]);
+    },
+    // M15b: two orgs, equal PR number and repository name, distinct repo ids; B finishes first
+    async m15b() {
+        state.prLevelMode = 'ok';
+        const common = { QA_PLATFORM: 'github', QA_REPO_NAME: 'codex-athena', QA_PR: '1502', QA_SEED_PR: '1', QA_MONGO_DB: 'qa2420_m15b', QA_BARRIER: 'm15b', QA_ORIGIN: 'automation' };
+        const a = spawnWorker('m15b-orgA', base('A', { ...common, QA_REPO_ID: 'repo-orgA-1', QA_MODEL_DELAY_MS: '6000', QA_FILE: 'qa2420/a-only.ts' }));
+        const b = spawnWorker('m15b-orgB', base('B', { ...common, QA_REPO_ID: 'repo-orgB-1', QA_MODEL_DELAY_MS: '500', QA_FILE: 'qa2420/b-only.ts' }));
+        await waitAllAtBarrier('m15b', 2);
+        release('m15b');
+        await Promise.all([a.done, b.done]);
+    },
+};
+
+let PORT;
+server.listen(0, '127.0.0.1', async () => {
+    PORT = server.address().port;
+    note({ event: 'provider listening', port: PORT, scenario: SCENARIO, tree: path.basename(TREE) });
+    try { await scenarios[SCENARIO](); } catch (e) { note({ event: 'orchestrator error', e: String(e && e.stack) }); }
+    fs.writeFileSync(path.join(OUTDIR, 'provider-posted.json'), JSON.stringify(state.posted, null, 2));
+    server.close();
+    process.exit(0);
+});
