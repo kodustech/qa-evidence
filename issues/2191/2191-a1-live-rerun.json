@@ -1,0 +1,92 @@
+{
+ "execution": [
+  [
+   "6d55fe07-204a-4f10-abcf-d0d7b0d67064",
+   "error",
+   "2026-11-25 03:01:45.248912",
+   "2026-11-25 03:04:46.933328",
+   "Code review failed: The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  ]
+ ],
+ "stages": [
+  [
+   "BusinessLogicValidationStage",
+   "skipped",
+   "Skipped: no reference.",
+   ""
+  ],
+  [
+   "AgentReviewStage",
+   "error",
+   "The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan.",
+   "[{\"file\": \"agent:security\", \"message\": \"Insufficient balance\", \"category\": \"security\", \"prNumber\": 19, \"agentName\": \"security\", \"isTimeout\": false, \"orgOwnedKey\": true, \"errorCategory\": \"QUOTA_EXCEEDED\"}]"
+  ],
+  [
+   "AgentReview::performance",
+   "success",
+   "Performance Agent \u2014 0 findings in 53s",
+   ""
+  ],
+  [
+   "AgentReview::security",
+   "error",
+   "Security Agent \u2014 failed in 1s \u2014 The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan.",
+   ""
+  ],
+  [
+   "AgentReview::bug",
+   "success",
+   "Bug Agent \u2014 0 findings in 137s",
+   ""
+  ],
+  [
+   "Kody Review Finished",
+   "error",
+   "Code review failed: The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  ]
+ ],
+ "statuses": [
+  {
+   "created_at": "2026-11-25T04:04:46+01:00",
+   "status": "warning",
+   "description": "Code Review Skipped"
+  },
+  {
+   "created_at": "2026-11-25T04:01:45+01:00",
+   "status": "pending",
+   "description": "Code Review Starting"
+  },
+  {
+   "created_at": "2026-11-25T04:00:56+01:00",
+   "status": "warning",
+   "description": "Code Review Skipped"
+  },
+  {
+   "created_at": "2026-11-25T03:57:53+01:00",
+   "status": "pending",
+   "description": "Code Review Starting"
+  }
+ ],
+ "reviews": [
+  [
+   "COMMENT",
+   "2026-11-25T04:00:48+01:00"
+  ],
+  [
+   "COMMENT",
+   "2026-11-25T04:00:49+01:00"
+  ],
+  [
+   "COMMENT",
+   "2026-11-25T04:00:49+01:00"
+  ],
+  [
+   "COMMENT",
+   "2026-11-25T04:00:50+01:00"
+  ],
+  [
+   "COMMENT",
+   "2026-11-25T04:00:51+01:00"
+  ]
+ ]
+}
