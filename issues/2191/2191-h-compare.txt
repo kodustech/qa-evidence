@@ -1,0 +1,321 @@
+revision_has_usesOrgOwnedKey
+   M: True
+   P: False
+M13.owned_quota_only
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M13.owned_quota_plus_unknown
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/True;agent:bug:critical/UNKNOWN/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None;agent:bug:critical/None/None
+M13.observer_literal_Q
+   M: ['SKIPPED'] | 
+   P: ['FAILURE'] | 
+M13.observer_Q_plus_mixed
+   M: ['FAILURE'] | 
+   P: ['FAILURE'] | 
+M14.cloud_no_slot
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/False
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M14.cloud_managed_slot_no_credential
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/False
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M14.kodus_credential
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/False
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M15.explicit_openai_env_key
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True env={'kind': 'openai_compat', 'name': 'openai_compatible'}
+   P: ['FAILURE'] | agent:generalist:critical/None/None env={'kind': 'openai_compat', 'name': 'openai_compatible'}
+M15.inferred_openai_base_url
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True env={'kind': 'openai_compat', 'name': 'openai_compatible'}
+   P: ['FAILURE'] | agent:generalist:critical/None/None env={'kind': 'openai_compat', 'name': 'openai_compatible'}
+M15.auto_no_env
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/False env=None
+   P: ['FAILURE'] | agent:generalist:critical/None/None env=None
+M15.model_set_no_key
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/False env=None
+   P: ['FAILURE'] | agent:generalist:critical/None/None env=None
+M15.invalid_declared
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True env={'kind': 'invalid', 'name': 'invalid'}
+   P: ['FAILURE'] | agent:generalist:critical/None/None env={'kind': 'invalid', 'name': 'invalid'}
+M15.vertex_adc
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True env={'kind': 'vertex_adc', 'name': 'google_vertex'}
+   P: ['FAILURE'] | agent:generalist:critical/None/None env={'kind': 'vertex_adc', 'name': 'google_vertex'}
+M15.explicit_openai_env_key_cloud
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/False env={'kind': 'openai_compat', 'name': 'openai_compatible'}
+   P: ['FAILURE'] | agent:generalist:critical/None/None env={'kind': 'openai_compat', 'name': 'openai_compatible'}
+M15.vertex_adc_cloud
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/False env={'kind': 'vertex_adc', 'name': 'google_vertex'}
+   P: ['FAILURE'] | agent:generalist:critical/None/None env={'kind': 'vertex_adc', 'name': 'google_vertex'}
+M16.byok_then_funded_both_402.returned
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/False attempts=2
+   P: ['FAILURE'] | agent:generalist:critical/None/None attempts=2
+M16.byok_then_funded_both_402.catch
+   M: ['FAILURE'] | AgentReviewStage:critical/QUOTA_EXCEEDED/False
+   P: ['FAILURE'] | AgentReviewStage:critical/None/None
+M16.funded_then_byok_both_402.returned
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True attempts=2
+   P: ['FAILURE'] | agent:generalist:critical/None/None attempts=2
+M16.funded_then_byok_both_402.catch
+   M: ['SKIPPED'] | AgentReviewStage:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | AgentReviewStage:critical/None/None
+M16.byokA_then_byokB_both_402.returned
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True attempts=2
+   P: ['FAILURE'] | agent:generalist:critical/None/None attempts=2
+M16.byokA_then_byokB_both_402.catch
+   M: ['SKIPPED'] | AgentReviewStage:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | AgentReviewStage:critical/None/None
+M16.byok_402_then_funded_500.returned
+   M: ['FAILURE'] | agent:generalist:critical/TRANSIENT/False attempts=2
+   P: ['FAILURE'] | agent:generalist:critical/None/None attempts=2
+M16.byok_402_then_funded_500.catch
+   M: ['FAILURE'] | AgentReviewStage:critical/TRANSIENT/False
+   P: ['FAILURE'] | AgentReviewStage:critical/None/None
+M16.funded_402_then_byok_401.returned
+   M: ['FAILURE'] | agent:generalist:critical/AUTH_INVALID/True attempts=2
+   P: ['FAILURE'] | agent:generalist:critical/None/None attempts=2
+M16.funded_402_then_byok_401.catch
+   M: ['FAILURE'] | AgentReviewStage:critical/AUTH_INVALID/True
+   P: ['FAILURE'] | AgentReviewStage:critical/None/None
+M17.web_byokModelId_slot
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M17.legacy_model_name_no_credential
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/False
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M17.heavy_slot_byok
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M17.managed_default_undefined
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/False
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M18.generalist_alone
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M18.bug_alone
+   M: ['SKIPPED'] | agent:bug:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:bug:critical/None/None
+M18.security_alone
+   M: ['SKIPPED'] | agent:security:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:security:critical/None/None
+M18.performance_alone
+   M: ['SKIPPED'] | agent:performance:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:performance:critical/None/None
+M18.all_four
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True;agent:bug:critical/QUOTA_EXCEEDED/True;agent:security:critical/QUOTA_EXCEEDED/True;agent:performance:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None;agent:bug:critical/None/None;agent:security:critical/None/None;agent:performance:critical/None/None
+M19.Q_then_unknown
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/True;agent:bug:critical/UNKNOWN/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None;agent:bug:critical/None/None
+M19.unknown_then_Q
+   M: ['FAILURE'] | agent:generalist:critical/UNKNOWN/True;agent:bug:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None;agent:bug:critical/None/None
+M19.Q_then_auth401
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/True;agent:bug:critical/AUTH_INVALID/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None;agent:bug:critical/None/None
+M19.auth401_then_Q
+   M: ['FAILURE'] | agent:generalist:critical/AUTH_INVALID/True;agent:bug:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None;agent:bug:critical/None/None
+M19.Q_then_rate429
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/True;agent:bug:critical/RATE_LIMIT/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None;agent:bug:critical/None/None
+M19.rate429_then_Q
+   M: ['FAILURE'] | agent:generalist:critical/RATE_LIMIT/True;agent:bug:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None;agent:bug:critical/None/None
+M19.Q_then_funded_quota
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/True;agent:bug:critical/QUOTA_EXCEEDED/False
+   P: ['FAILURE'] | agent:generalist:critical/None/None;agent:bug:critical/None/None
+M19.funded_quota_then_Q
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/False;agent:bug:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None;agent:bug:critical/None/None
+M19.Q_only_control
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M20.Q_plus_truncated
+   M: ['NEUTRAL'] | agent:generalist:critical/QUOTA_EXCEEDED/True;agent:bug:partial/None/None
+   P: ['FAILURE'] | agent:generalist:critical/None/None;agent:bug:partial/None/None
+M20.Q_plus_step_limit
+   M: ['NEUTRAL'] | agent:generalist:critical/QUOTA_EXCEEDED/True;agent:security:partial/None/None
+   P: ['FAILURE'] | agent:generalist:critical/None/None;agent:security:partial/None/None
+M20.Q_plus_unverified
+   M: ['NEUTRAL'] | agent:generalist:critical/QUOTA_EXCEEDED/True;agent:performance:partial/None/None
+   P: ['FAILURE'] | agent:generalist:critical/None/None;agent:performance:partial/None/None
+M20.Q_plus_kody_rules_quota_partial
+   M: ['NEUTRAL'] | agent:generalist:critical/QUOTA_EXCEEDED/True;agent:kody-rules:partial/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None;agent:kody-rules:partial/None/None
+M20.Q_plus_custom_agent_quota_partial
+   M: ['NEUTRAL'] | agent:generalist:critical/QUOTA_EXCEEDED/True;agent:my-custom-agent:partial/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None;agent:my-custom-agent:partial/None/None
+M20.auxiliary_only_quota
+   M: ['FAILURE'] | agent:kody-rules:partial/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:kody-rules:partial/None/None
+M21.throw_owned_402
+   M: ['SKIPPED'] | AgentReviewStage:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | AgentReviewStage:critical/None/None
+M21.throw_funded_402
+   M: ['FAILURE'] | AgentReviewStage:critical/QUOTA_EXCEEDED/False
+   P: ['FAILURE'] | AgentReviewStage:critical/None/None
+M21.throw_plain_error
+   M: ['FAILURE'] | AgentReviewStage:critical/UNKNOWN/True
+   P: ['FAILURE'] | AgentReviewStage:critical/None/None
+M21.throw_string
+   M: ['FAILURE'] | AgentReviewStage:critical/UNKNOWN/True
+   P: ['FAILURE'] | AgentReviewStage:critical/None/None
+M21.throw_string_quota_words
+   M: ['SKIPPED'] | AgentReviewStage:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | AgentReviewStage:critical/None/None
+M21.before_orchestration_402
+   M: ['FAILURE'] | 
+   P: ['FAILURE'] | 
+M22.s402
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M22.s429_insufficient_quota
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M22.s429_balance
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M22.s403_key_limit
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M22.gemini_per_minute_429
+   M: ['FAILURE'] | agent:generalist:critical/RATE_LIMIT/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M22.plain_429
+   M: ['FAILURE'] | agent:generalist:critical/RATE_LIMIT/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M22.s401
+   M: ['FAILURE'] | agent:generalist:critical/AUTH_INVALID/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M22.s403
+   M: ['FAILURE'] | agent:generalist:critical/AUTH_INVALID/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M22.s404
+   M: ['FAILURE'] | agent:generalist:critical/MODEL_NOT_FOUND/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M22.s500
+   M: ['FAILURE'] | agent:generalist:critical/TRANSIENT/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M22.abort
+   M: ['FAILURE'] | agent:generalist:critical/TRANSIENT/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M22.unknown
+   M: ['FAILURE'] | agent:generalist:critical/UNKNOWN/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M23.attached_quota_on_500
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M23.attached_unknown_on_402
+   M: ['FAILURE'] | agent:generalist:critical/UNKNOWN/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M23.retry_error_wrapping_402
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M23.plain_object_402_no_symbols
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M23.stamped_funded_no_classification
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/False
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M23.stamped_byok_no_classification
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M24.Q_plus_executor_critical_no_metadata
+   M: ['FAILURE'] | FetchChangedFilesStage:critical/None/None;agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | FetchChangedFilesStage:critical/None/None;agent:generalist:critical/None/None
+M24.executor_quota_throw_outside_agentreview
+   M: ['FAILURE'] | UpdateCommentsAndGenerateSummaryStage:None/None/None
+   P: ['FAILURE'] | UpdateCommentsAndGenerateSummaryStage:None/None/None
+M24.Q_only_control
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M25.no_severity_Q
+   M: ['SKIPPED'] | 
+   P: ['FAILURE'] | 
+M25.no_metadata
+   M: ['FAILURE'] | 
+   P: ['FAILURE'] | 
+M25.owner_false
+   M: ['FAILURE'] | 
+   P: ['FAILURE'] | 
+M25.owner_string_true
+   M: ['FAILURE'] | 
+   P: ['FAILURE'] | 
+M25.missing_errorCategory
+   M: ['FAILURE'] | 
+   P: ['FAILURE'] | 
+M25.agent_category_is_QUOTA
+   M: ['FAILURE'] | 
+   P: ['FAILURE'] | 
+M25.no_severity_no_metadata_plus_Q
+   M: ['FAILURE'] | 
+   P: ['FAILURE'] | 
+M26.empty_errors_success
+   M: ['SUCCESS'] | 
+   P: ['SUCCESS'] | 
+M26.status_only_error
+   M: ['FAILURE'] | 
+   P: ['FAILURE'] | 
+M26.partial_only
+   M: ['NEUTRAL'] | 
+   P: ['NEUTRAL'] | 
+M26.Q_under_ERROR
+   M: ['SKIPPED'] | 
+   P: ['FAILURE'] | 
+M26.Q_under_IN_PROGRESS
+   M: ['SKIPPED'] | 
+   P: ['FAILURE'] | 
+M26.Q_under_SUCCESS
+   M: ['SKIPPED'] | 
+   P: ['FAILURE'] | 
+M26.Q_under_PARTIAL_ERROR
+   M: ['SKIPPED'] | 
+   P: ['FAILURE'] | 
+M27.license_skip
+   M: ['SKIPPED'] | 
+   P: ['SKIPPED'] | 
+M28.Q_plus_summary
+   M: ['SKIPPED'] | 
+   P: ['FAILURE'] | 
+M28.summary_alone
+   M: ['SUCCESS'] | 
+   P: ['SUCCESS'] | 
+M28.summary_plus_partial
+   M: ['NEUTRAL'] | 
+   P: ['NEUTRAL'] | 
+M28.summary_plus_critical
+   M: ['FAILURE'] | 
+   P: ['FAILURE'] | 
+M33.canary_in_slot_and_error
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M33.canary_in_slot_only
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M34.hundred_Q
+   M: ['SKIPPED'] | 
+   P: ['FAILURE'] | 
+M34.hundred_Q_tail_critical
+   M: ['FAILURE'] | 
+   P: ['FAILURE'] | 
+M34.hundred_Q_tail_partial
+   M: ['NEUTRAL'] | 
+   P: ['FAILURE'] | 
+M35.empty_changed_files
+   M: ['FAILURE'] | 
+   P: ['FAILURE'] | 
+M35.one_changed_file
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M6h.B_funded_fast
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/False
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M6h.A_owned_slow
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M6h.A_owned_fast
+   M: ['SKIPPED'] | agent:generalist:critical/QUOTA_EXCEEDED/True
+   P: ['FAILURE'] | agent:generalist:critical/None/None
+M6h.B_funded_slow
+   M: ['FAILURE'] | agent:generalist:critical/QUOTA_EXCEEDED/False
+   P: ['FAILURE'] | agent:generalist:critical/None/None
