@@ -1,0 +1,8 @@
+{
+ "query": "sandbox_leases where _id matches :graph:, grouped by cleanupStatus/state (all QA orgs, counts only); plus full docs for the five jr-claude-* orgs",
+ "result": {
+  "at": "2026-11-25T01:01:18.144Z",
+  "graphLeaseDocs": [],
+  "slotOrgGraphDocs": []
+ }
+}
