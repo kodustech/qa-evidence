@@ -1,0 +1,5953 @@
+{
+ "M3a": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319753,
+    "files": [
+     "src/f0.ts",
+     "src/f1.ts",
+     "src/f2.ts",
+     "src/f3.ts",
+     "src/f4.ts",
+     "src/f5.ts",
+     "src/f6.ts",
+     "src/f7.ts",
+     "src/f8.ts",
+     "src/f9.ts"
+    ],
+    "fileTiers": {
+     "src/f0.ts": "critical",
+     "src/f1.ts": "critical",
+     "src/f2.ts": "warm",
+     "src/f3.ts": "warm",
+     "src/f4.ts": "optional",
+     "src/f5.ts": "optional",
+     "src/f6.ts": "optional",
+     "src/f7.ts": "optional",
+     "src/f8.ts": "optional",
+     "src/f9.ts": "optional"
+    },
+    "userPromptChars": 602982,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 200000,
+    "estimate": 165817,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "src/f0.ts",
+     "src/f1.ts",
+     "src/f2.ts",
+     "src/f3.ts",
+     "src/f4.ts",
+     "src/f5.ts",
+     "src/f6.ts",
+     "src/f7.ts",
+     "src/f8.ts",
+     "src/f9.ts"
+    ],
+    "tierKeys": [
+     "src/f0.ts",
+     "src/f1.ts",
+     "src/f2.ts",
+     "src/f3.ts",
+     "src/f4.ts",
+     "src/f5.ts",
+     "src/f6.ts",
+     "src/f7.ts",
+     "src/f8.ts",
+     "src/f9.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 200000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 200000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=2 warm=2 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 2,
+     "warmCount": 2,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "src/f0.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M3b_fixture": {
+  "files": [
+   {
+    "f": "qa2205/attendance/attendance-service.ts",
+    "chars": 11420,
+    "adds": 247,
+    "score": 1.798,
+    "tier": "critical"
+   },
+   {
+    "f": "qa2205/enrollment/enrollment-service.ts",
+    "chars": 10969,
+    "adds": 249,
+    "score": 1.8,
+    "tier": "critical"
+   },
+   {
+    "f": "qa2205/grading/report-card-service.ts",
+    "chars": 10242,
+    "adds": 247,
+    "score": 1.798,
+    "tier": "critical"
+   },
+   {
+    "f": "qa2205/reference/attendance-codes-table.ts",
+    "chars": 11434,
+    "adds": 2,
+    "score": 0.839,
+    "tier": "optional"
+   },
+   {
+    "f": "qa2205/reference/fee-schedule-table.ts",
+    "chars": 11435,
+    "adds": 2,
+    "score": 0.839,
+    "tier": "optional"
+   },
+   {
+    "f": "qa2205/reference/grade-bands-early-years.ts",
+    "chars": 11458,
+    "adds": 2,
+    "score": 0.839,
+    "tier": "optional"
+   },
+   {
+    "f": "qa2205/reference/grade-bands-middle-years.ts",
+    "chars": 11458,
+    "adds": 2,
+    "score": 0.839,
+    "tier": "optional"
+   },
+   {
+    "f": "qa2205/reference/grade-bands-secondary.ts",
+    "chars": 11423,
+    "adds": 2,
+    "score": 0.839,
+    "tier": "optional"
+   },
+   {
+    "f": "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+    "chars": 11465,
+    "adds": 2,
+    "score": 0.839,
+    "tier": "optional"
+   },
+   {
+    "f": "qa2205/tuition/tuition-service.ts",
+    "chars": 10030,
+    "adds": 232,
+    "score": 1.785,
+    "tier": "critical"
+   }
+  ],
+  "totalDiffChars": 111334,
+  "estimateFull": 43611,
+  "estimateWithTiersArg": 26713,
+  "overhead": 15777
+ },
+ "M3b": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319758,
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205/enrollment/enrollment-service.ts": "critical",
+     "qa2205/attendance/attendance-service.ts": "critical",
+     "qa2205/grading/report-card-service.ts": "critical",
+     "qa2205/tuition/tuition-service.ts": "critical",
+     "qa2205/reference/attendance-codes-table.ts": "optional",
+     "qa2205/reference/fee-schedule-table.ts": "optional",
+     "qa2205/reference/grade-bands-early-years.ts": "optional",
+     "qa2205/reference/grade-bands-middle-years.ts": "optional",
+     "qa2205/reference/grade-bands-secondary.ts": "optional",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+    },
+    "userPromptChars": 114517,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_ATTENDANCE_HEAD",
+     "F2205_GH_ATTENDANCE_TAIL",
+     "F2205_GH_ENROLLMENT_HEAD",
+     "F2205_GH_ENROLLMENT_TAIL",
+     "F2205_GH_REF1_HEAD",
+     "F2205_GH_REF1_TAIL",
+     "F2205_GH_REF2_HEAD",
+     "F2205_GH_REF2_TAIL",
+     "F2205_GH_REF3_HEAD",
+     "F2205_GH_REF3_TAIL",
+     "F2205_GH_REF4_HEAD",
+     "F2205_GH_REF4_TAIL",
+     "F2205_GH_REF5_HEAD",
+     "F2205_GH_REF5_TAIL",
+     "F2205_GH_REF6_HEAD",
+     "F2205_GH_REF6_TAIL",
+     "F2205_GH_REPORTCARD_HEAD",
+     "F2205_GH_REPORTCARD_TAIL",
+     "F2205_GH_TUITION_HEAD",
+     "F2205_GH_TUITION_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 43611,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/tuition/tuition-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=4 warm=0 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 4,
+     "warmCount": 0,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205/attendance/attendance-service.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M3b_cg6k": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319759,
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205/enrollment/enrollment-service.ts": "critical",
+     "qa2205/attendance/attendance-service.ts": "critical",
+     "qa2205/grading/report-card-service.ts": "critical",
+     "qa2205/tuition/tuition-service.ts": "critical",
+     "qa2205/reference/attendance-codes-table.ts": "optional",
+     "qa2205/reference/fee-schedule-table.ts": "optional",
+     "qa2205/reference/grade-bands-early-years.ts": "optional",
+     "qa2205/reference/grade-bands-middle-years.ts": "optional",
+     "qa2205/reference/grade-bands-secondary.ts": "optional",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+    },
+    "userPromptChars": 114517,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_ATTENDANCE_HEAD",
+     "F2205_GH_ATTENDANCE_TAIL",
+     "F2205_GH_ENROLLMENT_HEAD",
+     "F2205_GH_ENROLLMENT_TAIL",
+     "F2205_GH_REF1_HEAD",
+     "F2205_GH_REF1_TAIL",
+     "F2205_GH_REF2_HEAD",
+     "F2205_GH_REF2_TAIL",
+     "F2205_GH_REF3_HEAD",
+     "F2205_GH_REF3_TAIL",
+     "F2205_GH_REF4_HEAD",
+     "F2205_GH_REF4_TAIL",
+     "F2205_GH_REF5_HEAD",
+     "F2205_GH_REF5_TAIL",
+     "F2205_GH_REF6_HEAD",
+     "F2205_GH_REF6_TAIL",
+     "F2205_GH_REPORTCARD_HEAD",
+     "F2205_GH_REPORTCARD_TAIL",
+     "F2205_GH_TUITION_HEAD",
+     "F2205_GH_TUITION_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 45236,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/tuition/tuition-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=4 warm=0 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 4,
+     "warmCount": 0,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205/attendance/attendance-service.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M4_c24": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319762,
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205/enrollment/enrollment-service.ts": "critical",
+     "qa2205/attendance/attendance-service.ts": "critical"
+    },
+    "userPromptChars": 25047,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_ATTENDANCE_HEAD",
+     "F2205_GH_ATTENDANCE_TAIL",
+     "F2205_GH_ENROLLMENT_HEAD",
+     "F2205_GH_ENROLLMENT_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 24000,
+    "estimate": 17715,
+    "systemPromptHash": "cf20956da461"
+   },
+   {
+    "idx": 2,
+    "at": 1795573319762,
+    "files": [
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts"
+    ],
+    "fileTiers": {
+     "qa2205/grading/report-card-service.ts": "critical",
+     "qa2205/reference/attendance-codes-table.ts": "optional"
+    },
+    "userPromptChars": 24335,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_REF4_HEAD",
+     "F2205_GH_REF4_TAIL",
+     "F2205_GH_REPORTCARD_HEAD",
+     "F2205_GH_REPORTCARD_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 24000,
+    "estimate": 17536,
+    "systemPromptHash": "cf20956da461"
+   },
+   {
+    "idx": 3,
+    "at": 1795573319762,
+    "files": [
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts"
+    ],
+    "fileTiers": {
+     "qa2205/reference/fee-schedule-table.ts": "critical",
+     "qa2205/reference/grade-bands-early-years.ts": "critical"
+    },
+    "userPromptChars": 25554,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_REF1_HEAD",
+     "F2205_GH_REF1_TAIL",
+     "F2205_GH_REF5_HEAD",
+     "F2205_GH_REF5_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 24000,
+    "estimate": 17841,
+    "systemPromptHash": "cf20956da461"
+   },
+   {
+    "idx": 4,
+    "at": 1795573319763,
+    "files": [
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts"
+    ],
+    "fileTiers": {
+     "qa2205/reference/grade-bands-middle-years.ts": "critical",
+     "qa2205/reference/grade-bands-secondary.ts": "critical"
+    },
+    "userPromptChars": 25546,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_REF2_HEAD",
+     "F2205_GH_REF2_TAIL",
+     "F2205_GH_REF3_HEAD",
+     "F2205_GH_REF3_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 24000,
+    "estimate": 17838,
+    "systemPromptHash": "cf20956da461"
+   },
+   {
+    "idx": 5,
+    "at": 1795573319763,
+    "files": [
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205/tuition/tuition-service.ts": "critical",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+    },
+    "userPromptChars": 24203,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_REF6_HEAD",
+     "F2205_GH_REF6_TAIL",
+     "F2205_GH_TUITION_HEAD",
+     "F2205_GH_TUITION_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 24000,
+    "estimate": 17491,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [
+   {
+    "depth": 0,
+    "files": 10,
+    "parentFileTiers": {
+     "qa2205/enrollment/enrollment-service.ts": "critical",
+     "qa2205/attendance/attendance-service.ts": "critical",
+     "qa2205/grading/report-card-service.ts": "critical",
+     "qa2205/tuition/tuition-service.ts": "critical",
+     "qa2205/reference/attendance-codes-table.ts": "optional",
+     "qa2205/reference/fee-schedule-table.ts": "optional",
+     "qa2205/reference/grade-bands-early-years.ts": "optional",
+     "qa2205/reference/grade-bands-middle-years.ts": "optional",
+     "qa2205/reference/grade-bands-secondary.ts": "optional",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+    },
+    "diffBudget": 7200
+   }
+  ],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/attendance/attendance-service.ts"
+    ],
+    "batchIndex": 1,
+    "coverageTierWords": 0
+   },
+   {
+    "files": [
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts"
+    ],
+    "tierKeys": [
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts"
+    ],
+    "batchIndex": 2,
+    "coverageTierWords": 0
+   },
+   {
+    "files": [
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts"
+    ],
+    "tierKeys": [
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts"
+    ],
+    "batchIndex": 3,
+    "coverageTierWords": 0
+   },
+   {
+    "files": [
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts"
+    ],
+    "tierKeys": [
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts"
+    ],
+    "batchIndex": 4,
+    "coverageTierWords": 0
+   },
+   {
+    "files": [
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205/tuition/tuition-service.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts"
+    ],
+    "batchIndex": 5,
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 24000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 24000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=4 warm=0 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 4,
+     "warmCount": 0,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   },
+   {
+    "level": "warn",
+    "message": "[AGENT] kodus-generalist prompt exceeds context budget (23213 tokens > 13200 budget), splitting into batches",
+    "metadata": {
+     "estimatedPromptTokens": 23213,
+     "promptBudget": 13200,
+     "chunkDiffBudget": 7200,
+     "contextWindow": 24000,
+     "filesCount": 10
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist PR#2205: reviewing 10 files in 5 batch(es)",
+    "metadata": {
+     "batches": [
+      {
+       "batch": 1,
+       "files": 2,
+       "tokens": 5598
+      },
+      {
+       "batch": 2,
+       "files": 2,
+       "tokens": 5420
+      },
+      {
+       "batch": 3,
+       "files": 2,
+       "tokens": 5724
+      },
+      {
+       "batch": 4,
+       "files": 2,
+       "tokens": 5721
+      },
+      {
+       "batch": 5,
+       "files": 2,
+       "tokens": 5375
+      }
+     ]
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 1/5 starting: 2 files",
+    "metadata": {
+     "files": [
+      "qa2205/attendance/attendance-service.ts",
+      "qa2205/enrollment/enrollment-service.ts"
+     ]
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] Starting kodus-generalist batch 1/5 for PR#2205",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "filesCount": 2
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 1/5 using model: openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 1/5 context window: 24000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 24000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 1/5 large-PR priority tiering: critical=2 warm=0 optional=0 / 2 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 2,
+     "criticalCount": 2,
+     "warmCount": 0,
+     "optionalCount": 0,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 1/5 chunker would return 1 chunk for 2 files; running single batch directly (overhead, not diff size, is the constraint)",
+    "metadata": {
+     "prNumber": 2205,
+     "filesCount": 2,
+     "overheadTokens": 12117,
+     "chunkDiffBudget": 7200,
+     "estimatedPromptTokens": 17715,
+     "promptBudget": 13200
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 1/5 prompt context: memoryRules=0, overrides=false, language=en-US"
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 1/5 completed for PR#2205: 1 suggestions in 0ms (source=json-parse, steps=3, tools=0, input=1 [cacheRead=0, hit=0%], output=1, total=2)",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "prNumber": 2205,
+     "suggestionsCount": 1,
+     "durationMs": 0,
+     "source": "json-parse",
+     "steps": 3,
+     "toolCalls": 0,
+     "inputTokens": 1,
+     "cacheReadTokens": 0,
+     "cacheWriteTokens": 0,
+     "cacheHitRate": 0,
+     "outputTokens": 1,
+     "totalTokens": 2,
+     "finishReason": "stop",
+     "model": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "coverage": {
+      "covered": 1,
+      "total": 1
+     },
+     "verification": null,
+     "anomalies": {
+      "stepsLe2": false,
+      "zeroToolCalls": false,
+      "zeroStrongEvidenceFiles": false,
+      "zeroCoverage": false,
+      "lowCoverage": false,
+      "lowStrongEvidenceFiles": false
+     }
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 1/5 completed: 1 findings"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 2/5 starting: 2 files",
+    "metadata": {
+     "files": [
+      "qa2205/grading/report-card-service.ts",
+      "qa2205/reference/attendance-codes-table.ts"
+     ]
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] Starting kodus-generalist batch 2/5 for PR#2205",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "filesCount": 2
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 2/5 using model: openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 2/5 context window: 24000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 24000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 2/5 large-PR priority tiering: critical=1 warm=0 optional=1 / 2 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 2,
+     "criticalCount": 1,
+     "warmCount": 0,
+     "optionalCount": 1,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 2/5 chunker would return 1 chunk for 2 files; running single batch directly (overhead, not diff size, is the constraint)",
+    "metadata": {
+     "prNumber": 2205,
+     "filesCount": 2,
+     "overheadTokens": 12117,
+     "chunkDiffBudget": 7200,
+     "estimatedPromptTokens": 14723,
+     "promptBudget": 13200
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 2/5 prompt context: memoryRules=0, overrides=false, language=en-US"
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 2/5 completed for PR#2205: 1 suggestions in 0ms (source=json-parse, steps=3, tools=0, input=1 [cacheRead=0, hit=0%], output=1, total=2)",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "prNumber": 2205,
+     "suggestionsCount": 1,
+     "durationMs": 0,
+     "source": "json-parse",
+     "steps": 3,
+     "toolCalls": 0,
+     "inputTokens": 1,
+     "cacheReadTokens": 0,
+     "cacheWriteTokens": 0,
+     "cacheHitRate": 0,
+     "outputTokens": 1,
+     "totalTokens": 2,
+     "finishReason": "stop",
+     "model": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "coverage": {
+      "covered": 1,
+      "total": 1
+     },
+     "verification": null,
+     "anomalies": {
+      "stepsLe2": false,
+      "zeroToolCalls": false,
+      "zeroStrongEvidenceFiles": false,
+      "zeroCoverage": false,
+      "lowCoverage": false,
+      "lowStrongEvidenceFiles": false
+     }
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 2/5 completed: 1 findings"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 3/5 starting: 2 files",
+    "metadata": {
+     "files": [
+      "qa2205/reference/fee-schedule-table.ts",
+      "qa2205/reference/grade-bands-early-years.ts"
+     ]
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] Starting kodus-generalist batch 3/5 for PR#2205",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "filesCount": 2
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 3/5 using model: openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 3/5 context window: 24000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 24000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 3/5 large-PR priority tiering: critical=2 warm=0 optional=0 / 2 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 2,
+     "criticalCount": 2,
+     "warmCount": 0,
+     "optionalCount": 0,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 3/5 chunker would return 1 chunk for 2 files; running single batch directly (overhead, not diff size, is the constraint)",
+    "metadata": {
+     "prNumber": 2205,
+     "filesCount": 2,
+     "overheadTokens": 12117,
+     "chunkDiffBudget": 7200,
+     "estimatedPromptTokens": 17841,
+     "promptBudget": 13200
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 3/5 prompt context: memoryRules=0, overrides=false, language=en-US"
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 3/5 completed for PR#2205: 1 suggestions in 0ms (source=json-parse, steps=3, tools=0, input=1 [cacheRead=0, hit=0%], output=1, total=2)",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "prNumber": 2205,
+     "suggestionsCount": 1,
+     "durationMs": 0,
+     "source": "json-parse",
+     "steps": 3,
+     "toolCalls": 0,
+     "inputTokens": 1,
+     "cacheReadTokens": 0,
+     "cacheWriteTokens": 0,
+     "cacheHitRate": 0,
+     "outputTokens": 1,
+     "totalTokens": 2,
+     "finishReason": "stop",
+     "model": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "coverage": {
+      "covered": 1,
+      "total": 1
+     },
+     "verification": null,
+     "anomalies": {
+      "stepsLe2": false,
+      "zeroToolCalls": false,
+      "zeroStrongEvidenceFiles": false,
+      "zeroCoverage": false,
+      "lowCoverage": false,
+      "lowStrongEvidenceFiles": false
+     }
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 3/5 completed: 1 findings"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 4/5 starting: 2 files",
+    "metadata": {
+     "files": [
+      "qa2205/reference/grade-bands-middle-years.ts",
+      "qa2205/reference/grade-bands-secondary.ts"
+     ]
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] Starting kodus-generalist batch 4/5 for PR#2205",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "filesCount": 2
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 4/5 using model: openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 4/5 context window: 24000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 24000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 4/5 large-PR priority tiering: critical=2 warm=0 optional=0 / 2 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 2,
+     "criticalCount": 2,
+     "warmCount": 0,
+     "optionalCount": 0,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 4/5 chunker would return 1 chunk for 2 files; running single batch directly (overhead, not diff size, is the constraint)",
+    "metadata": {
+     "prNumber": 2205,
+     "filesCount": 2,
+     "overheadTokens": 12117,
+     "chunkDiffBudget": 7200,
+     "estimatedPromptTokens": 17838,
+     "promptBudget": 13200
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 4/5 prompt context: memoryRules=0, overrides=false, language=en-US"
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 4/5 completed for PR#2205: 1 suggestions in 1ms (source=json-parse, steps=3, tools=0, input=1 [cacheRead=0, hit=0%], output=1, total=2)",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "prNumber": 2205,
+     "suggestionsCount": 1,
+     "durationMs": 1,
+     "source": "json-parse",
+     "steps": 3,
+     "toolCalls": 0,
+     "inputTokens": 1,
+     "cacheReadTokens": 0,
+     "cacheWriteTokens": 0,
+     "cacheHitRate": 0,
+     "outputTokens": 1,
+     "totalTokens": 2,
+     "finishReason": "stop",
+     "model": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "coverage": {
+      "covered": 1,
+      "total": 1
+     },
+     "verification": null,
+     "anomalies": {
+      "stepsLe2": false,
+      "zeroToolCalls": false,
+      "zeroStrongEvidenceFiles": false,
+      "zeroCoverage": false,
+      "lowCoverage": false,
+      "lowStrongEvidenceFiles": false
+     }
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 4/5 completed: 1 findings"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 5/5 starting: 2 files",
+    "metadata": {
+     "files": [
+      "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+      "qa2205/tuition/tuition-service.ts"
+     ]
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] Starting kodus-generalist batch 5/5 for PR#2205",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "filesCount": 2
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 5/5 using model: openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 5/5 context window: 24000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 24000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 5/5 large-PR priority tiering: critical=1 warm=0 optional=1 / 2 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 2,
+     "criticalCount": 1,
+     "warmCount": 0,
+     "optionalCount": 1,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 5/5 chunker would return 1 chunk for 2 files; running single batch directly (overhead, not diff size, is the constraint)",
+    "metadata": {
+     "prNumber": 2205,
+     "filesCount": 2,
+     "overheadTokens": 12117,
+     "chunkDiffBudget": 7200,
+     "estimatedPromptTokens": 14670,
+     "promptBudget": 13200
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 5/5 prompt context: memoryRules=0, overrides=false, language=en-US"
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 5/5 completed for PR#2205: 1 suggestions in 0ms (source=json-parse, steps=3, tools=0, input=1 [cacheRead=0, hit=0%], output=1, total=2)",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "prNumber": 2205,
+     "suggestionsCount": 1,
+     "durationMs": 0,
+     "source": "json-parse",
+     "steps": 3,
+     "toolCalls": 0,
+     "inputTokens": 1,
+     "cacheReadTokens": 0,
+     "cacheWriteTokens": 0,
+     "cacheHitRate": 0,
+     "outputTokens": 1,
+     "totalTokens": 2,
+     "finishReason": "stop",
+     "model": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "coverage": {
+      "covered": 1,
+      "total": 1
+     },
+     "verification": null,
+     "anomalies": {
+      "stepsLe2": false,
+      "zeroToolCalls": false,
+      "zeroStrongEvidenceFiles": false,
+      "zeroCoverage": false,
+      "lowCoverage": false,
+      "lowStrongEvidenceFiles": false
+     }
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 5/5 completed: 1 findings"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist PR#2205 all batches done: 5 total findings in 2ms"
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205/attendance/attendance-service.ts",
+    "qa2205/grading/report-card-service.ts",
+    "qa2205/reference/fee-schedule-table.ts",
+    "qa2205/reference/grade-bands-middle-years.ts",
+    "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [
+    {
+     "kind": "PROMPT_COMPACTED",
+     "reason": "small_context_window"
+    },
+    {
+     "kind": "PROMPT_COMPACTED",
+     "reason": "small_context_window"
+    },
+    {
+     "kind": "PROMPT_COMPACTED",
+     "reason": "small_context_window"
+    },
+    {
+     "kind": "PROMPT_COMPACTED",
+     "reason": "small_context_window"
+    },
+    {
+     "kind": "PROMPT_COMPACTED",
+     "reason": "small_context_window"
+    },
+    {
+     "kind": "PROMPT_COMPACTED",
+     "reason": "small_context_window"
+    }
+   ],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "hitHardLimit",
+    "finishReason",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings"
+   ]
+  }
+ },
+ "M5": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319764,
+    "files": [
+     "qa2205filter/library/fine-policy.ts",
+     "qa2205filter/library/loan-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205filter/library/loan-service.ts": "critical",
+     "qa2205filter/library/fine-policy.ts": "critical"
+    },
+    "userPromptChars": 10731,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_FINE_HEAD",
+     "F2205_GH_FINE_TAIL",
+     "F2205_GH_LOAN_HEAD",
+     "F2205_GH_LOAN_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 17637,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205filter/library/fine-policy.ts",
+     "qa2205filter/library/loan-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205filter/library/loan-service.ts",
+     "qa2205filter/library/fine-policy.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist large-PR aggressive filter dropped 3 low-signal files (tests/md/css): 51211 → 17637 prompt tokens",
+    "metadata": {
+     "filesBefore": 5,
+     "filesAfter": 2,
+     "tokensBefore": 51211,
+     "tokensAfter": 17637,
+     "reviewMode": "balanced"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=2 warm=0 optional=0 / 2 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 2,
+     "criticalCount": 2,
+     "warmCount": 0,
+     "optionalCount": 0,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205filter/library/fine-policy.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [
+    {
+     "kind": "LOW_SIGNAL_FILES_DROPPED",
+     "reason": "large_pr",
+     "detail": "3 files dropped (tests/md/css) to fit a large pull request"
+    }
+   ],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M6a_retained_over": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319767,
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205/enrollment/enrollment-service.ts": "critical",
+     "qa2205/attendance/attendance-service.ts": "critical",
+     "qa2205/grading/report-card-service.ts": "critical",
+     "qa2205/tuition/tuition-service.ts": "critical",
+     "qa2205/reference/attendance-codes-table.ts": "optional",
+     "qa2205/reference/fee-schedule-table.ts": "optional",
+     "qa2205/reference/grade-bands-early-years.ts": "optional",
+     "qa2205/reference/grade-bands-middle-years.ts": "optional",
+     "qa2205/reference/grade-bands-secondary.ts": "optional",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+    },
+    "userPromptChars": 114517,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_ATTENDANCE_HEAD",
+     "F2205_GH_ATTENDANCE_TAIL",
+     "F2205_GH_ENROLLMENT_HEAD",
+     "F2205_GH_ENROLLMENT_TAIL",
+     "F2205_GH_REF1_HEAD",
+     "F2205_GH_REF1_TAIL",
+     "F2205_GH_REF2_HEAD",
+     "F2205_GH_REF2_TAIL",
+     "F2205_GH_REF3_HEAD",
+     "F2205_GH_REF3_TAIL",
+     "F2205_GH_REF4_HEAD",
+     "F2205_GH_REF4_TAIL",
+     "F2205_GH_REF5_HEAD",
+     "F2205_GH_REF5_TAIL",
+     "F2205_GH_REF6_HEAD",
+     "F2205_GH_REF6_TAIL",
+     "F2205_GH_REPORTCARD_HEAD",
+     "F2205_GH_REPORTCARD_TAIL",
+     "F2205_GH_TUITION_HEAD",
+     "F2205_GH_TUITION_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 43611,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/tuition/tuition-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist large-PR aggressive filter dropped 3 low-signal files (tests/md/css): 77184 → 43611 prompt tokens",
+    "metadata": {
+     "filesBefore": 13,
+     "filesAfter": 10,
+     "tokensBefore": 77184,
+     "tokensAfter": 43611,
+     "reviewMode": "balanced"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=4 warm=0 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 4,
+     "warmCount": 0,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205/attendance/attendance-service.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [
+    {
+     "kind": "LOW_SIGNAL_FILES_DROPPED",
+     "reason": "large_pr",
+     "detail": "3 files dropped (tests/md/css) to fit a large pull request"
+    }
+   ],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M6b_all_low_signal_over": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319768,
+    "files": [],
+    "fileTiers": {},
+    "userPromptChars": 2570,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 15577,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [],
+    "tierKeys": [],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist large-PR aggressive filter dropped 3 low-signal files (tests/md/css): 49151 → 15577 prompt tokens",
+    "metadata": {
+     "filesBefore": 3,
+     "filesAfter": 0,
+     "tokensBefore": 49151,
+     "tokensAfter": 15577,
+     "reviewMode": "balanced"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=0 warm=0 optional=0 / 0 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 0,
+     "criticalCount": 0,
+     "warmCount": 0,
+     "optionalCount": 0,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [
+    {
+     "kind": "LOW_SIGNAL_FILES_DROPPED",
+     "reason": "large_pr",
+     "detail": "3 files dropped (tests/md/css) to fit a large pull request"
+    }
+   ],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M6c_zero_files": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319768,
+    "files": [],
+    "userPromptChars": 2570,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 15577,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [],
+    "tierKeys": null,
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M6d_small_low_signal": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319769,
+    "files": [
+     "a/README.md",
+     "a/x.spec.ts"
+    ],
+    "userPromptChars": 2704,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 15643,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "a/README.md",
+     "a/x.spec.ts"
+    ],
+    "tierKeys": null,
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "a/README.md"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M8_16k": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319769,
+    "files": [
+     "qa2205small/fees/invoice.ts",
+     "qa2205small/fees/late-fee.ts"
+    ],
+    "fileTiers": {
+     "qa2205small/fees/invoice.ts": "critical",
+     "qa2205small/fees/late-fee.ts": "critical"
+    },
+    "userPromptChars": 3269,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 16000,
+    "estimate": 12276,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205small/fees/invoice.ts",
+     "qa2205small/fees/late-fee.ts"
+    ],
+    "tierKeys": [
+     "qa2205small/fees/invoice.ts",
+     "qa2205small/fees/late-fee.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 16000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 16000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=2 warm=0 optional=0 / 2 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 2,
+     "criticalCount": 2,
+     "warmCount": 0,
+     "optionalCount": 0,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist chunker would return 1 chunk for 2 files; running single batch directly (overhead, not diff size, is the constraint)",
+    "metadata": {
+     "prNumber": 2205,
+     "filesCount": 2,
+     "overheadTokens": 12117,
+     "chunkDiffBudget": 4800,
+     "estimatedPromptTokens": 12276,
+     "promptBudget": 8800
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205small/fees/invoice.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [
+    {
+     "kind": "PROMPT_COMPACTED",
+     "reason": "small_context_window"
+    }
+   ],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M8_12288": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319769,
+    "files": [
+     "qa2205small/fees/invoice.ts",
+     "qa2205small/fees/late-fee.ts"
+    ],
+    "fileTiers": {
+     "qa2205small/fees/invoice.ts": "optional",
+     "qa2205small/fees/late-fee.ts": "optional"
+    },
+    "userPromptChars": 3269,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 12288,
+    "estimate": 12276,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205small/fees/invoice.ts",
+     "qa2205small/fees/late-fee.ts"
+    ],
+    "tierKeys": [
+     "qa2205small/fees/invoice.ts",
+     "qa2205small/fees/late-fee.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 12288 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 12288,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=0 warm=0 optional=2 / 2 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 2,
+     "criticalCount": 0,
+     "warmCount": 0,
+     "optionalCount": 2,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist chunker would return 1 chunk for 2 files; running single batch directly (overhead, not diff size, is the constraint)",
+    "metadata": {
+     "prNumber": 2205,
+     "filesCount": 2,
+     "overheadTokens": 12117,
+     "chunkDiffBudget": 3686,
+     "estimatedPromptTokens": 12207,
+     "promptBudget": 6758
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205small/fees/invoice.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [
+    {
+     "kind": "PROMPT_COMPACTED",
+     "reason": "small_context_window"
+    },
+    {
+     "kind": "HUNK_HEADERS_ONLY",
+     "reason": "small_context_window"
+    }
+   ],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M23_20k": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319769,
+    "files": [
+     "qa2205small/fees/invoice.ts",
+     "qa2205small/fees/late-fee.ts"
+    ],
+    "fileTiers": {
+     "qa2205small/fees/invoice.ts": "critical",
+     "qa2205small/fees/late-fee.ts": "critical"
+    },
+    "userPromptChars": 3269,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 20000,
+    "estimate": 12276,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205small/fees/invoice.ts",
+     "qa2205small/fees/late-fee.ts"
+    ],
+    "tierKeys": [
+     "qa2205small/fees/invoice.ts",
+     "qa2205small/fees/late-fee.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 20000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 20000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=2 warm=0 optional=0 / 2 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 2,
+     "criticalCount": 2,
+     "warmCount": 0,
+     "optionalCount": 0,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist chunker would return 1 chunk for 2 files; running single batch directly (overhead, not diff size, is the constraint)",
+    "metadata": {
+     "prNumber": 2205,
+     "filesCount": 2,
+     "overheadTokens": 12117,
+     "chunkDiffBudget": 6000,
+     "estimatedPromptTokens": 12276,
+     "promptBudget": 11000
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205small/fees/invoice.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [
+    {
+     "kind": "PROMPT_COMPACTED",
+     "reason": "small_context_window"
+    }
+   ],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M9_full_bigCallGraph": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319769,
+    "files": [
+     "qa2205small/fees/invoice.ts",
+     "qa2205small/fees/late-fee.ts"
+    ],
+    "fileTiers": {
+     "qa2205small/fees/invoice.ts": "critical",
+     "qa2205small/fees/late-fee.ts": "critical"
+    },
+    "userPromptChars": 3269,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 40776,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205small/fees/invoice.ts",
+     "qa2205small/fees/late-fee.ts"
+    ],
+    "tierKeys": [
+     "qa2205small/fees/invoice.ts",
+     "qa2205small/fees/late-fee.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=2 warm=0 optional=0 / 2 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 2,
+     "criticalCount": 2,
+     "warmCount": 0,
+     "optionalCount": 0,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist chunker would return 1 chunk for 2 files; running single batch directly (overhead, not diff size, is the constraint)",
+    "metadata": {
+     "prNumber": 2205,
+     "filesCount": 2,
+     "overheadTokens": 40617,
+     "chunkDiffBudget": 19200,
+     "estimatedPromptTokens": 40776,
+     "promptBudget": 35200
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205small/fees/invoice.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M9_full_O_ge_window": {
+  "loops": [],
+  "chunkCalls": [],
+  "promptInputs": [],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "error": {
+   "name": "AgentContextWindowTooSmallError",
+   "message": "Model 'openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash' has a context length of 64000 tokens, but the agent's static overhead alone is 65617 tokens. Choose a model with at least 32K context, or raise the model's max input tokens if the deployed model genuinely supports more than the default lookup reports.",
+   "contextWindow": 64000,
+   "overheadTokens": 65617
+  }
+ },
+ "M9_single_oversized": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319774,
+    "files": [
+     "big/one.ts"
+    ],
+    "userPromptChars": 338612,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 99608,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "big/one.ts"
+    ],
+    "tierKeys": null,
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "big/one.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M10": {
+  "full": {
+   "chars": 114469,
+   "allDiffsWhole": true,
+   "wholeCount": 10,
+   "sentinels": 20,
+   "tierLabelsOnHeadings": 0,
+   "hunkOnlyBlocks": 0,
+   "coverageTierWords": 0
+  },
+  "compact": {
+   "chars": 114948,
+   "allDiffsWhole": true,
+   "wholeCount": 10,
+   "sentinels": 20,
+   "tierLabelsOnHeadings": 0,
+   "hunkOnlyBlocks": 0,
+   "coverageTierWords": 5
+  },
+  "selfContained": {
+   "chars": 114469,
+   "allDiffsWhole": true,
+   "wholeCount": 10,
+   "sentinels": 20,
+   "tierLabelsOnHeadings": 0,
+   "hunkOnlyBlocks": 0,
+   "coverageTierWords": 0
+  }
+ },
+ "M13_ctx_on_batch2": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319778,
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205/enrollment/enrollment-service.ts": "critical",
+     "qa2205/attendance/attendance-service.ts": "critical",
+     "qa2205/grading/report-card-service.ts": "critical",
+     "qa2205/tuition/tuition-service.ts": "critical",
+     "qa2205/reference/attendance-codes-table.ts": "optional",
+     "qa2205/reference/fee-schedule-table.ts": "optional",
+     "qa2205/reference/grade-bands-early-years.ts": "optional",
+     "qa2205/reference/grade-bands-middle-years.ts": "optional",
+     "qa2205/reference/grade-bands-secondary.ts": "optional",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+    },
+    "userPromptChars": 114517,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_ATTENDANCE_HEAD",
+     "F2205_GH_ATTENDANCE_TAIL",
+     "F2205_GH_ENROLLMENT_HEAD",
+     "F2205_GH_ENROLLMENT_TAIL",
+     "F2205_GH_REF1_HEAD",
+     "F2205_GH_REF1_TAIL",
+     "F2205_GH_REF2_HEAD",
+     "F2205_GH_REF2_TAIL",
+     "F2205_GH_REF3_HEAD",
+     "F2205_GH_REF3_TAIL",
+     "F2205_GH_REF4_HEAD",
+     "F2205_GH_REF4_TAIL",
+     "F2205_GH_REF5_HEAD",
+     "F2205_GH_REF5_TAIL",
+     "F2205_GH_REF6_HEAD",
+     "F2205_GH_REF6_TAIL",
+     "F2205_GH_REPORTCARD_HEAD",
+     "F2205_GH_REPORTCARD_TAIL",
+     "F2205_GH_TUITION_HEAD",
+     "F2205_GH_TUITION_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 43611,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/tuition/tuition-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=4 warm=0 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 4,
+     "warmCount": 0,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205/attendance/attendance-service.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M13_429_on_batch1": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319779,
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205/enrollment/enrollment-service.ts": "critical",
+     "qa2205/attendance/attendance-service.ts": "critical",
+     "qa2205/grading/report-card-service.ts": "critical",
+     "qa2205/tuition/tuition-service.ts": "critical",
+     "qa2205/reference/attendance-codes-table.ts": "optional",
+     "qa2205/reference/fee-schedule-table.ts": "optional",
+     "qa2205/reference/grade-bands-early-years.ts": "optional",
+     "qa2205/reference/grade-bands-middle-years.ts": "optional",
+     "qa2205/reference/grade-bands-secondary.ts": "optional",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+    },
+    "userPromptChars": 114517,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_ATTENDANCE_HEAD",
+     "F2205_GH_ATTENDANCE_TAIL",
+     "F2205_GH_ENROLLMENT_HEAD",
+     "F2205_GH_ENROLLMENT_TAIL",
+     "F2205_GH_REF1_HEAD",
+     "F2205_GH_REF1_TAIL",
+     "F2205_GH_REF2_HEAD",
+     "F2205_GH_REF2_TAIL",
+     "F2205_GH_REF3_HEAD",
+     "F2205_GH_REF3_TAIL",
+     "F2205_GH_REF4_HEAD",
+     "F2205_GH_REF4_TAIL",
+     "F2205_GH_REF5_HEAD",
+     "F2205_GH_REF5_TAIL",
+     "F2205_GH_REF6_HEAD",
+     "F2205_GH_REF6_TAIL",
+     "F2205_GH_REPORTCARD_HEAD",
+     "F2205_GH_REPORTCARD_TAIL",
+     "F2205_GH_TUITION_HEAD",
+     "F2205_GH_TUITION_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 43611,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/tuition/tuition-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=4 warm=0 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 4,
+     "warmCount": 0,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   },
+   {
+    "level": "error",
+    "message": "[AGENT] kodus-generalist failed for PR#2205 after 0ms: 429 Too Many Requests: rate limit exceeded",
+    "metadata": {
+     "prNumber": 2205,
+     "durationMs": 0,
+     "model": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "errorName": "Error",
+     "errorStack": "Error: 429 Too Many Requests: rate limit exceeded\n    at rl (<repo>/libs/qa2205/qa2205-provider.spec.ts:210:40)\n    at Object.rl [as loopImpl] (<repo>/libs/qa2205/qa2205-provider.spec.ts:212:109)\n    at loopImpl (<local>"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "error": {
+   "name": "Error",
+   "message": "429 Too Many Requests: rate limit exceeded"
+  }
+ },
+ "M13_all_fail": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319784,
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205/enrollment/enrollment-service.ts": "critical",
+     "qa2205/attendance/attendance-service.ts": "critical",
+     "qa2205/grading/report-card-service.ts": "critical",
+     "qa2205/tuition/tuition-service.ts": "critical",
+     "qa2205/reference/attendance-codes-table.ts": "optional",
+     "qa2205/reference/fee-schedule-table.ts": "optional",
+     "qa2205/reference/grade-bands-early-years.ts": "optional",
+     "qa2205/reference/grade-bands-middle-years.ts": "optional",
+     "qa2205/reference/grade-bands-secondary.ts": "optional",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+    },
+    "userPromptChars": 114517,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_ATTENDANCE_HEAD",
+     "F2205_GH_ATTENDANCE_TAIL",
+     "F2205_GH_ENROLLMENT_HEAD",
+     "F2205_GH_ENROLLMENT_TAIL",
+     "F2205_GH_REF1_HEAD",
+     "F2205_GH_REF1_TAIL",
+     "F2205_GH_REF2_HEAD",
+     "F2205_GH_REF2_TAIL",
+     "F2205_GH_REF3_HEAD",
+     "F2205_GH_REF3_TAIL",
+     "F2205_GH_REF4_HEAD",
+     "F2205_GH_REF4_TAIL",
+     "F2205_GH_REF5_HEAD",
+     "F2205_GH_REF5_TAIL",
+     "F2205_GH_REF6_HEAD",
+     "F2205_GH_REF6_TAIL",
+     "F2205_GH_REPORTCARD_HEAD",
+     "F2205_GH_REPORTCARD_TAIL",
+     "F2205_GH_TUITION_HEAD",
+     "F2205_GH_TUITION_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 43611,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/tuition/tuition-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=4 warm=0 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 4,
+     "warmCount": 0,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   },
+   {
+    "level": "error",
+    "message": "[AGENT] kodus-generalist failed for PR#2205 after 1ms: Model 'deepseek' has a context length of 24000 tokens, but the agent's static overhead alone is 13300 tokens. Choose a model with at least 32K context, or raise the model's max input tokens if the deployed model genuinely supports more than the ",
+    "metadata": {
+     "prNumber": 2205,
+     "durationMs": 1,
+     "model": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "errorName": "AgentContextWindowTooSmallError",
+     "errorStack": "AgentContextWindowTooSmallError: Model 'deepseek' has a context length of 24000 tokens, but the agent's static overhead alone is 13300 tokens. Choose a model with at least 32K context, or raise the model's max input tokens if the deployed model genuinely supports more than the default lookup reports.\n    at ctxErr (<repo>/libs/qa2205/qa2205-provider.spec.ts:209:30)\n    at Object"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "error": {
+   "name": "AgentContextWindowTooSmallError",
+   "message": "Model 'deepseek' has a context length of 24000 tokens, but the agent's static overhead alone is 13300 tokens. Choose a model with at least 32K context, or raise the model's max input tokens if the deployed model genuinely supports more than the default lookup reports.",
+   "contextWindow": 24000,
+   "overheadTokens": 13300
+  }
+ },
+ "M13_hard_limit_batch2": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319787,
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205/enrollment/enrollment-service.ts": "critical",
+     "qa2205/attendance/attendance-service.ts": "critical",
+     "qa2205/grading/report-card-service.ts": "critical",
+     "qa2205/tuition/tuition-service.ts": "critical",
+     "qa2205/reference/attendance-codes-table.ts": "optional",
+     "qa2205/reference/fee-schedule-table.ts": "optional",
+     "qa2205/reference/grade-bands-early-years.ts": "optional",
+     "qa2205/reference/grade-bands-middle-years.ts": "optional",
+     "qa2205/reference/grade-bands-secondary.ts": "optional",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+    },
+    "userPromptChars": 114517,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_ATTENDANCE_HEAD",
+     "F2205_GH_ATTENDANCE_TAIL",
+     "F2205_GH_ENROLLMENT_HEAD",
+     "F2205_GH_ENROLLMENT_TAIL",
+     "F2205_GH_REF1_HEAD",
+     "F2205_GH_REF1_TAIL",
+     "F2205_GH_REF2_HEAD",
+     "F2205_GH_REF2_TAIL",
+     "F2205_GH_REF3_HEAD",
+     "F2205_GH_REF3_TAIL",
+     "F2205_GH_REF4_HEAD",
+     "F2205_GH_REF4_TAIL",
+     "F2205_GH_REF5_HEAD",
+     "F2205_GH_REF5_TAIL",
+     "F2205_GH_REF6_HEAD",
+     "F2205_GH_REF6_TAIL",
+     "F2205_GH_REPORTCARD_HEAD",
+     "F2205_GH_REPORTCARD_TAIL",
+     "F2205_GH_TUITION_HEAD",
+     "F2205_GH_TUITION_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 43611,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/tuition/tuition-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=4 warm=0 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 4,
+     "warmCount": 0,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205/attendance/attendance-service.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M13_verify_discards": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319788,
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205/enrollment/enrollment-service.ts": "critical",
+     "qa2205/attendance/attendance-service.ts": "critical",
+     "qa2205/grading/report-card-service.ts": "critical",
+     "qa2205/tuition/tuition-service.ts": "critical",
+     "qa2205/reference/attendance-codes-table.ts": "optional",
+     "qa2205/reference/fee-schedule-table.ts": "optional",
+     "qa2205/reference/grade-bands-early-years.ts": "optional",
+     "qa2205/reference/grade-bands-middle-years.ts": "optional",
+     "qa2205/reference/grade-bands-secondary.ts": "optional",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+    },
+    "userPromptChars": 114517,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_ATTENDANCE_HEAD",
+     "F2205_GH_ATTENDANCE_TAIL",
+     "F2205_GH_ENROLLMENT_HEAD",
+     "F2205_GH_ENROLLMENT_TAIL",
+     "F2205_GH_REF1_HEAD",
+     "F2205_GH_REF1_TAIL",
+     "F2205_GH_REF2_HEAD",
+     "F2205_GH_REF2_TAIL",
+     "F2205_GH_REF3_HEAD",
+     "F2205_GH_REF3_TAIL",
+     "F2205_GH_REF4_HEAD",
+     "F2205_GH_REF4_TAIL",
+     "F2205_GH_REF5_HEAD",
+     "F2205_GH_REF5_TAIL",
+     "F2205_GH_REF6_HEAD",
+     "F2205_GH_REF6_TAIL",
+     "F2205_GH_REPORTCARD_HEAD",
+     "F2205_GH_REPORTCARD_TAIL",
+     "F2205_GH_TUITION_HEAD",
+     "F2205_GH_TUITION_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 43611,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/tuition/tuition-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=4 warm=0 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 4,
+     "warmCount": 0,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205/attendance/attendance-service.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M13_classify": {
+  "ctx": {
+   "category": "CONTEXT_OVERFLOW",
+   "friendly": "This PR is too large for the configured model. `deepseek` has a context window of 24,000 tokens, but this review needs at least 13,300 tokens of context.\n\n**To resolve, choose one:**\n- **Switch to a recommended model**: pick one of Kodus's recommended models in your BYOK settings (Claude Sonnet 4.6, Claude Opus 4.7, Gemini 3.1 Pro, GPT-5.4, Kimi K2.6 Coding, or GLM 5.1).\n- **Split the PR into smaller ones**: file count drives prompt overhead.\n- **Raise the model's Max input tokens**: only if your deployed model genuinely supports more than the 24,000 tokens our lookup reports (e.g. self-hosted vLLM or Ollama with a custom limit)."
+  },
+  "r429": {
+   "category": "RATE_LIMIT"
+  }
+ },
+ "M22_github": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319789,
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205/enrollment/enrollment-service.ts": "critical",
+     "qa2205/attendance/attendance-service.ts": "critical",
+     "qa2205/grading/report-card-service.ts": "critical",
+     "qa2205/tuition/tuition-service.ts": "critical",
+     "qa2205/reference/attendance-codes-table.ts": "optional",
+     "qa2205/reference/fee-schedule-table.ts": "optional",
+     "qa2205/reference/grade-bands-early-years.ts": "optional",
+     "qa2205/reference/grade-bands-middle-years.ts": "optional",
+     "qa2205/reference/grade-bands-secondary.ts": "optional",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+    },
+    "userPromptChars": 114517,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_ATTENDANCE_HEAD",
+     "F2205_GH_ATTENDANCE_TAIL",
+     "F2205_GH_ENROLLMENT_HEAD",
+     "F2205_GH_ENROLLMENT_TAIL",
+     "F2205_GH_REF1_HEAD",
+     "F2205_GH_REF1_TAIL",
+     "F2205_GH_REF2_HEAD",
+     "F2205_GH_REF2_TAIL",
+     "F2205_GH_REF3_HEAD",
+     "F2205_GH_REF3_TAIL",
+     "F2205_GH_REF4_HEAD",
+     "F2205_GH_REF4_TAIL",
+     "F2205_GH_REF5_HEAD",
+     "F2205_GH_REF5_TAIL",
+     "F2205_GH_REF6_HEAD",
+     "F2205_GH_REF6_TAIL",
+     "F2205_GH_REPORTCARD_HEAD",
+     "F2205_GH_REPORTCARD_TAIL",
+     "F2205_GH_TUITION_HEAD",
+     "F2205_GH_TUITION_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 43611,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/tuition/tuition-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=4 warm=0 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 4,
+     "warmCount": 0,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205/attendance/attendance-service.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M22_gitlab": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319790,
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205/enrollment/enrollment-service.ts": "critical",
+     "qa2205/attendance/attendance-service.ts": "critical",
+     "qa2205/grading/report-card-service.ts": "critical",
+     "qa2205/tuition/tuition-service.ts": "critical",
+     "qa2205/reference/attendance-codes-table.ts": "optional",
+     "qa2205/reference/fee-schedule-table.ts": "optional",
+     "qa2205/reference/grade-bands-early-years.ts": "optional",
+     "qa2205/reference/grade-bands-middle-years.ts": "optional",
+     "qa2205/reference/grade-bands-secondary.ts": "optional",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+    },
+    "userPromptChars": 114597,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_ATTENDANCE_HEAD",
+     "F2205_GH_ATTENDANCE_TAIL",
+     "F2205_GH_ENROLLMENT_HEAD",
+     "F2205_GH_ENROLLMENT_TAIL",
+     "F2205_GH_REF1_HEAD",
+     "F2205_GH_REF1_TAIL",
+     "F2205_GH_REF2_HEAD",
+     "F2205_GH_REF2_TAIL",
+     "F2205_GH_REF3_HEAD",
+     "F2205_GH_REF3_TAIL",
+     "F2205_GH_REF4_HEAD",
+     "F2205_GH_REF4_TAIL",
+     "F2205_GH_REF5_HEAD",
+     "F2205_GH_REF5_TAIL",
+     "F2205_GH_REF6_HEAD",
+     "F2205_GH_REF6_TAIL",
+     "F2205_GH_REPORTCARD_HEAD",
+     "F2205_GH_REPORTCARD_TAIL",
+     "F2205_GH_TUITION_HEAD",
+     "F2205_GH_TUITION_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 43631,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/tuition/tuition-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=4 warm=0 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 4,
+     "warmCount": 0,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205/attendance/attendance-service.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M22_bitbucket": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319792,
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205/enrollment/enrollment-service.ts": "critical",
+     "qa2205/attendance/attendance-service.ts": "critical",
+     "qa2205/grading/report-card-service.ts": "critical",
+     "qa2205/tuition/tuition-service.ts": "critical",
+     "qa2205/reference/attendance-codes-table.ts": "optional",
+     "qa2205/reference/fee-schedule-table.ts": "optional",
+     "qa2205/reference/grade-bands-early-years.ts": "optional",
+     "qa2205/reference/grade-bands-middle-years.ts": "optional",
+     "qa2205/reference/grade-bands-secondary.ts": "optional",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+    },
+    "userPromptChars": 114597,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_ATTENDANCE_HEAD",
+     "F2205_GH_ATTENDANCE_TAIL",
+     "F2205_GH_ENROLLMENT_HEAD",
+     "F2205_GH_ENROLLMENT_TAIL",
+     "F2205_GH_REF1_HEAD",
+     "F2205_GH_REF1_TAIL",
+     "F2205_GH_REF2_HEAD",
+     "F2205_GH_REF2_TAIL",
+     "F2205_GH_REF3_HEAD",
+     "F2205_GH_REF3_TAIL",
+     "F2205_GH_REF4_HEAD",
+     "F2205_GH_REF4_TAIL",
+     "F2205_GH_REF5_HEAD",
+     "F2205_GH_REF5_TAIL",
+     "F2205_GH_REF6_HEAD",
+     "F2205_GH_REF6_TAIL",
+     "F2205_GH_REPORTCARD_HEAD",
+     "F2205_GH_REPORTCARD_TAIL",
+     "F2205_GH_TUITION_HEAD",
+     "F2205_GH_TUITION_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 43631,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/tuition/tuition-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=4 warm=0 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 4,
+     "warmCount": 0,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205/attendance/attendance-service.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M22_azure": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319793,
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205/enrollment/enrollment-service.ts": "critical",
+     "qa2205/attendance/attendance-service.ts": "critical",
+     "qa2205/grading/report-card-service.ts": "critical",
+     "qa2205/tuition/tuition-service.ts": "critical",
+     "qa2205/reference/attendance-codes-table.ts": "optional",
+     "qa2205/reference/fee-schedule-table.ts": "optional",
+     "qa2205/reference/grade-bands-early-years.ts": "optional",
+     "qa2205/reference/grade-bands-middle-years.ts": "optional",
+     "qa2205/reference/grade-bands-secondary.ts": "optional",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+    },
+    "userPromptChars": 114597,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_ATTENDANCE_HEAD",
+     "F2205_GH_ATTENDANCE_TAIL",
+     "F2205_GH_ENROLLMENT_HEAD",
+     "F2205_GH_ENROLLMENT_TAIL",
+     "F2205_GH_REF1_HEAD",
+     "F2205_GH_REF1_TAIL",
+     "F2205_GH_REF2_HEAD",
+     "F2205_GH_REF2_TAIL",
+     "F2205_GH_REF3_HEAD",
+     "F2205_GH_REF3_TAIL",
+     "F2205_GH_REF4_HEAD",
+     "F2205_GH_REF4_TAIL",
+     "F2205_GH_REF5_HEAD",
+     "F2205_GH_REF5_TAIL",
+     "F2205_GH_REF6_HEAD",
+     "F2205_GH_REF6_TAIL",
+     "F2205_GH_REPORTCARD_HEAD",
+     "F2205_GH_REPORTCARD_TAIL",
+     "F2205_GH_TUITION_HEAD",
+     "F2205_GH_TUITION_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 43631,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/tuition/tuition-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=4 warm=0 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 4,
+     "warmCount": 0,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205/attendance/attendance-service.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M22_forgejo": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319795,
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205/enrollment/enrollment-service.ts": "critical",
+     "qa2205/attendance/attendance-service.ts": "critical",
+     "qa2205/grading/report-card-service.ts": "critical",
+     "qa2205/tuition/tuition-service.ts": "critical",
+     "qa2205/reference/attendance-codes-table.ts": "optional",
+     "qa2205/reference/fee-schedule-table.ts": "optional",
+     "qa2205/reference/grade-bands-early-years.ts": "optional",
+     "qa2205/reference/grade-bands-middle-years.ts": "optional",
+     "qa2205/reference/grade-bands-secondary.ts": "optional",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+    },
+    "userPromptChars": 117040,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_ATTENDANCE_HEAD",
+     "F2205_GH_ATTENDANCE_TAIL",
+     "F2205_GH_ENROLLMENT_HEAD",
+     "F2205_GH_ENROLLMENT_TAIL",
+     "F2205_GH_REF1_HEAD",
+     "F2205_GH_REF1_TAIL",
+     "F2205_GH_REF2_HEAD",
+     "F2205_GH_REF2_TAIL",
+     "F2205_GH_REF3_HEAD",
+     "F2205_GH_REF3_TAIL",
+     "F2205_GH_REF4_HEAD",
+     "F2205_GH_REF4_TAIL",
+     "F2205_GH_REF5_HEAD",
+     "F2205_GH_REF5_TAIL",
+     "F2205_GH_REF6_HEAD",
+     "F2205_GH_REF6_TAIL",
+     "F2205_GH_REPORTCARD_HEAD",
+     "F2205_GH_REPORTCARD_TAIL",
+     "F2205_GH_TUITION_HEAD",
+     "F2205_GH_TUITION_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 44242,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/tuition/tuition-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=4 warm=0 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 4,
+     "warmCount": 0,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205/attendance/attendance-service.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M26_A_64k": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319796,
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205/enrollment/enrollment-service.ts": "critical",
+     "qa2205/attendance/attendance-service.ts": "critical",
+     "qa2205/grading/report-card-service.ts": "critical",
+     "qa2205/tuition/tuition-service.ts": "critical",
+     "qa2205/reference/attendance-codes-table.ts": "optional",
+     "qa2205/reference/fee-schedule-table.ts": "optional",
+     "qa2205/reference/grade-bands-early-years.ts": "optional",
+     "qa2205/reference/grade-bands-middle-years.ts": "optional",
+     "qa2205/reference/grade-bands-secondary.ts": "optional",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+    },
+    "userPromptChars": 114517,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_ATTENDANCE_HEAD",
+     "F2205_GH_ATTENDANCE_TAIL",
+     "F2205_GH_ENROLLMENT_HEAD",
+     "F2205_GH_ENROLLMENT_TAIL",
+     "F2205_GH_REF1_HEAD",
+     "F2205_GH_REF1_TAIL",
+     "F2205_GH_REF2_HEAD",
+     "F2205_GH_REF2_TAIL",
+     "F2205_GH_REF3_HEAD",
+     "F2205_GH_REF3_TAIL",
+     "F2205_GH_REF4_HEAD",
+     "F2205_GH_REF4_TAIL",
+     "F2205_GH_REF5_HEAD",
+     "F2205_GH_REF5_TAIL",
+     "F2205_GH_REF6_HEAD",
+     "F2205_GH_REF6_TAIL",
+     "F2205_GH_REPORTCARD_HEAD",
+     "F2205_GH_REPORTCARD_TAIL",
+     "F2205_GH_TUITION_HEAD",
+     "F2205_GH_TUITION_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-A",
+     "teamId": "team-A",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 43611,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/tuition/tuition-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-A",
+     "teamId": "team-A",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=4 warm=0 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 4,
+     "warmCount": 0,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205/attendance/attendance-service.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "M4b_full": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319829,
+    "files": [
+     "src/f0.ts"
+    ],
+    "userPromptChars": 62586,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 30601,
+    "systemPromptHash": "cf20956da461"
+   },
+   {
+    "idx": 2,
+    "at": 1795573319829,
+    "files": [
+     "src/f1.ts"
+    ],
+    "userPromptChars": 62586,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 30601,
+    "systemPromptHash": "cf20956da461"
+   },
+   {
+    "idx": 3,
+    "at": 1795573319829,
+    "files": [
+     "src/f2.ts"
+    ],
+    "userPromptChars": 62586,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 30601,
+    "systemPromptHash": "cf20956da461"
+   },
+   {
+    "idx": 4,
+    "at": 1795573319829,
+    "files": [
+     "src/f3.ts"
+    ],
+    "userPromptChars": 62586,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 30601,
+    "systemPromptHash": "cf20956da461"
+   },
+   {
+    "idx": 5,
+    "at": 1795573319830,
+    "files": [
+     "src/f4.ts"
+    ],
+    "userPromptChars": 62586,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 30601,
+    "systemPromptHash": "cf20956da461"
+   },
+   {
+    "idx": 6,
+    "at": 1795573319830,
+    "files": [
+     "src/f5.ts"
+    ],
+    "userPromptChars": 62586,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 30601,
+    "systemPromptHash": "cf20956da461"
+   },
+   {
+    "idx": 7,
+    "at": 1795573319830,
+    "files": [
+     "src/f6.ts"
+    ],
+    "userPromptChars": 62586,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 30601,
+    "systemPromptHash": "cf20956da461"
+   },
+   {
+    "idx": 8,
+    "at": 1795573319830,
+    "files": [
+     "src/f7.ts"
+    ],
+    "userPromptChars": 62586,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 30601,
+    "systemPromptHash": "cf20956da461"
+   },
+   {
+    "idx": 9,
+    "at": 1795573319830,
+    "files": [
+     "src/f8.ts"
+    ],
+    "userPromptChars": 62586,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 30601,
+    "systemPromptHash": "cf20956da461"
+   },
+   {
+    "idx": 10,
+    "at": 1795573319831,
+    "files": [
+     "src/f9.ts"
+    ],
+    "userPromptChars": 62586,
+    "systemPromptChars": 2371,
+    "userSentinels": [],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 30601,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [
+   {
+    "depth": 0,
+    "files": 10,
+    "parentFileTiers": {
+     "src/f0.ts": "critical",
+     "src/f1.ts": "critical",
+     "src/f2.ts": "critical",
+     "src/f3.ts": "critical",
+     "src/f4.ts": "optional",
+     "src/f5.ts": "optional",
+     "src/f6.ts": "optional",
+     "src/f7.ts": "optional",
+     "src/f8.ts": "optional",
+     "src/f9.ts": "optional"
+    },
+    "diffBudget": 19423
+   }
+  ],
+  "promptInputs": [
+   {
+    "files": [
+     "src/f0.ts"
+    ],
+    "tierKeys": [
+     "src/f0.ts",
+     "src/f1.ts",
+     "src/f2.ts",
+     "src/f3.ts",
+     "src/f4.ts",
+     "src/f5.ts",
+     "src/f6.ts",
+     "src/f7.ts",
+     "src/f8.ts",
+     "src/f9.ts"
+    ],
+    "batchIndex": 1,
+    "coverageTierWords": 0
+   },
+   {
+    "files": [
+     "src/f1.ts"
+    ],
+    "tierKeys": [
+     "src/f0.ts",
+     "src/f1.ts",
+     "src/f2.ts",
+     "src/f3.ts",
+     "src/f4.ts",
+     "src/f5.ts",
+     "src/f6.ts",
+     "src/f7.ts",
+     "src/f8.ts",
+     "src/f9.ts"
+    ],
+    "batchIndex": 2,
+    "coverageTierWords": 0
+   },
+   {
+    "files": [
+     "src/f2.ts"
+    ],
+    "tierKeys": [
+     "src/f0.ts",
+     "src/f1.ts",
+     "src/f2.ts",
+     "src/f3.ts",
+     "src/f4.ts",
+     "src/f5.ts",
+     "src/f6.ts",
+     "src/f7.ts",
+     "src/f8.ts",
+     "src/f9.ts"
+    ],
+    "batchIndex": 3,
+    "coverageTierWords": 0
+   },
+   {
+    "files": [
+     "src/f3.ts"
+    ],
+    "tierKeys": [
+     "src/f0.ts",
+     "src/f1.ts",
+     "src/f2.ts",
+     "src/f3.ts",
+     "src/f4.ts",
+     "src/f5.ts",
+     "src/f6.ts",
+     "src/f7.ts",
+     "src/f8.ts",
+     "src/f9.ts"
+    ],
+    "batchIndex": 4,
+    "coverageTierWords": 0
+   },
+   {
+    "files": [
+     "src/f4.ts"
+    ],
+    "tierKeys": [
+     "src/f0.ts",
+     "src/f1.ts",
+     "src/f2.ts",
+     "src/f3.ts",
+     "src/f4.ts",
+     "src/f5.ts",
+     "src/f6.ts",
+     "src/f7.ts",
+     "src/f8.ts",
+     "src/f9.ts"
+    ],
+    "batchIndex": 5,
+    "coverageTierWords": 0
+   },
+   {
+    "files": [
+     "src/f5.ts"
+    ],
+    "tierKeys": [
+     "src/f0.ts",
+     "src/f1.ts",
+     "src/f2.ts",
+     "src/f3.ts",
+     "src/f4.ts",
+     "src/f5.ts",
+     "src/f6.ts",
+     "src/f7.ts",
+     "src/f8.ts",
+     "src/f9.ts"
+    ],
+    "batchIndex": 6,
+    "coverageTierWords": 0
+   },
+   {
+    "files": [
+     "src/f6.ts"
+    ],
+    "tierKeys": [
+     "src/f0.ts",
+     "src/f1.ts",
+     "src/f2.ts",
+     "src/f3.ts",
+     "src/f4.ts",
+     "src/f5.ts",
+     "src/f6.ts",
+     "src/f7.ts",
+     "src/f8.ts",
+     "src/f9.ts"
+    ],
+    "batchIndex": 7,
+    "coverageTierWords": 0
+   },
+   {
+    "files": [
+     "src/f7.ts"
+    ],
+    "tierKeys": [
+     "src/f0.ts",
+     "src/f1.ts",
+     "src/f2.ts",
+     "src/f3.ts",
+     "src/f4.ts",
+     "src/f5.ts",
+     "src/f6.ts",
+     "src/f7.ts",
+     "src/f8.ts",
+     "src/f9.ts"
+    ],
+    "batchIndex": 8,
+    "coverageTierWords": 0
+   },
+   {
+    "files": [
+     "src/f8.ts"
+    ],
+    "tierKeys": [
+     "src/f0.ts",
+     "src/f1.ts",
+     "src/f2.ts",
+     "src/f3.ts",
+     "src/f4.ts",
+     "src/f5.ts",
+     "src/f6.ts",
+     "src/f7.ts",
+     "src/f8.ts",
+     "src/f9.ts"
+    ],
+    "batchIndex": 9,
+    "coverageTierWords": 0
+   },
+   {
+    "files": [
+     "src/f9.ts"
+    ],
+    "tierKeys": [
+     "src/f0.ts",
+     "src/f1.ts",
+     "src/f2.ts",
+     "src/f3.ts",
+     "src/f4.ts",
+     "src/f5.ts",
+     "src/f6.ts",
+     "src/f7.ts",
+     "src/f8.ts",
+     "src/f9.ts"
+    ],
+    "batchIndex": 10,
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=4 warm=0 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 4,
+     "warmCount": 0,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   },
+   {
+    "level": "warn",
+    "message": "[AGENT] kodus-generalist prompt exceeds context budget (76063 tokens > 35200 budget), splitting into batches",
+    "metadata": {
+     "estimatedPromptTokens": 76063,
+     "promptBudget": 35200,
+     "chunkDiffBudget": 19423,
+     "contextWindow": 64000,
+     "filesCount": 10
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist PR#2205: reviewing 10 files in 10 batch(es)",
+    "metadata": {
+     "batches": [
+      {
+       "batch": 1,
+       "files": 1,
+       "tokens": 15004
+      },
+      {
+       "batch": 2,
+       "files": 1,
+       "tokens": 15004
+      },
+      {
+       "batch": 3,
+       "files": 1,
+       "tokens": 15004
+      },
+      {
+       "batch": 4,
+       "files": 1,
+       "tokens": 15004
+      },
+      {
+       "batch": 5,
+       "files": 1,
+       "tokens": 15004
+      },
+      {
+       "batch": 6,
+       "files": 1,
+       "tokens": 15004
+      },
+      {
+       "batch": 7,
+       "files": 1,
+       "tokens": 15004
+      },
+      {
+       "batch": 8,
+       "files": 1,
+       "tokens": 15004
+      },
+      {
+       "batch": 9,
+       "files": 1,
+       "tokens": 15004
+      },
+      {
+       "batch": 10,
+       "files": 1,
+       "tokens": 15004
+      }
+     ]
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 1/10 starting: 1 files",
+    "metadata": {
+     "files": [
+      "src/f0.ts"
+     ]
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] Starting kodus-generalist batch 1/10 for PR#2205",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "filesCount": 1
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 1/10 using model: openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 1/10 context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 1/10 prompt context: memoryRules=0, overrides=false, language=en-US"
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 1/10 completed for PR#2205: 1 suggestions in 0ms (source=json-parse, steps=3, tools=0, input=1 [cacheRead=0, hit=0%], output=1, total=2)",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "prNumber": 2205,
+     "suggestionsCount": 1,
+     "durationMs": 0,
+     "source": "json-parse",
+     "steps": 3,
+     "toolCalls": 0,
+     "inputTokens": 1,
+     "cacheReadTokens": 0,
+     "cacheWriteTokens": 0,
+     "cacheHitRate": 0,
+     "outputTokens": 1,
+     "totalTokens": 2,
+     "finishReason": "stop",
+     "model": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "coverage": {
+      "covered": 1,
+      "total": 1
+     },
+     "verification": null,
+     "anomalies": {
+      "stepsLe2": false,
+      "zeroToolCalls": false,
+      "zeroStrongEvidenceFiles": false,
+      "zeroCoverage": false,
+      "lowCoverage": false,
+      "lowStrongEvidenceFiles": false
+     }
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 1/10 completed: 1 findings"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 2/10 starting: 1 files",
+    "metadata": {
+     "files": [
+      "src/f1.ts"
+     ]
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] Starting kodus-generalist batch 2/10 for PR#2205",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "filesCount": 1
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 2/10 using model: openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 2/10 context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 2/10 prompt context: memoryRules=0, overrides=false, language=en-US"
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 2/10 completed for PR#2205: 1 suggestions in 0ms (source=json-parse, steps=3, tools=0, input=1 [cacheRead=0, hit=0%], output=1, total=2)",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "prNumber": 2205,
+     "suggestionsCount": 1,
+     "durationMs": 0,
+     "source": "json-parse",
+     "steps": 3,
+     "toolCalls": 0,
+     "inputTokens": 1,
+     "cacheReadTokens": 0,
+     "cacheWriteTokens": 0,
+     "cacheHitRate": 0,
+     "outputTokens": 1,
+     "totalTokens": 2,
+     "finishReason": "stop",
+     "model": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "coverage": {
+      "covered": 1,
+      "total": 1
+     },
+     "verification": null,
+     "anomalies": {
+      "stepsLe2": false,
+      "zeroToolCalls": false,
+      "zeroStrongEvidenceFiles": false,
+      "zeroCoverage": false,
+      "lowCoverage": false,
+      "lowStrongEvidenceFiles": false
+     }
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 2/10 completed: 1 findings"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 3/10 starting: 1 files",
+    "metadata": {
+     "files": [
+      "src/f2.ts"
+     ]
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] Starting kodus-generalist batch 3/10 for PR#2205",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "filesCount": 1
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 3/10 using model: openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 3/10 context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 3/10 prompt context: memoryRules=0, overrides=false, language=en-US"
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 3/10 completed for PR#2205: 1 suggestions in 0ms (source=json-parse, steps=3, tools=0, input=1 [cacheRead=0, hit=0%], output=1, total=2)",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "prNumber": 2205,
+     "suggestionsCount": 1,
+     "durationMs": 0,
+     "source": "json-parse",
+     "steps": 3,
+     "toolCalls": 0,
+     "inputTokens": 1,
+     "cacheReadTokens": 0,
+     "cacheWriteTokens": 0,
+     "cacheHitRate": 0,
+     "outputTokens": 1,
+     "totalTokens": 2,
+     "finishReason": "stop",
+     "model": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "coverage": {
+      "covered": 1,
+      "total": 1
+     },
+     "verification": null,
+     "anomalies": {
+      "stepsLe2": false,
+      "zeroToolCalls": false,
+      "zeroStrongEvidenceFiles": false,
+      "zeroCoverage": false,
+      "lowCoverage": false,
+      "lowStrongEvidenceFiles": false
+     }
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 3/10 completed: 1 findings"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 4/10 starting: 1 files",
+    "metadata": {
+     "files": [
+      "src/f3.ts"
+     ]
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] Starting kodus-generalist batch 4/10 for PR#2205",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "filesCount": 1
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 4/10 using model: openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 4/10 context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 4/10 prompt context: memoryRules=0, overrides=false, language=en-US"
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 4/10 completed for PR#2205: 1 suggestions in 1ms (source=json-parse, steps=3, tools=0, input=1 [cacheRead=0, hit=0%], output=1, total=2)",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "prNumber": 2205,
+     "suggestionsCount": 1,
+     "durationMs": 1,
+     "source": "json-parse",
+     "steps": 3,
+     "toolCalls": 0,
+     "inputTokens": 1,
+     "cacheReadTokens": 0,
+     "cacheWriteTokens": 0,
+     "cacheHitRate": 0,
+     "outputTokens": 1,
+     "totalTokens": 2,
+     "finishReason": "stop",
+     "model": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "coverage": {
+      "covered": 1,
+      "total": 1
+     },
+     "verification": null,
+     "anomalies": {
+      "stepsLe2": false,
+      "zeroToolCalls": false,
+      "zeroStrongEvidenceFiles": false,
+      "zeroCoverage": false,
+      "lowCoverage": false,
+      "lowStrongEvidenceFiles": false
+     }
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 4/10 completed: 1 findings"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 5/10 starting: 1 files",
+    "metadata": {
+     "files": [
+      "src/f4.ts"
+     ]
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] Starting kodus-generalist batch 5/10 for PR#2205",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "filesCount": 1
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 5/10 using model: openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 5/10 context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 5/10 prompt context: memoryRules=0, overrides=false, language=en-US"
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 5/10 completed for PR#2205: 1 suggestions in 0ms (source=json-parse, steps=3, tools=0, input=1 [cacheRead=0, hit=0%], output=1, total=2)",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "prNumber": 2205,
+     "suggestionsCount": 1,
+     "durationMs": 0,
+     "source": "json-parse",
+     "steps": 3,
+     "toolCalls": 0,
+     "inputTokens": 1,
+     "cacheReadTokens": 0,
+     "cacheWriteTokens": 0,
+     "cacheHitRate": 0,
+     "outputTokens": 1,
+     "totalTokens": 2,
+     "finishReason": "stop",
+     "model": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "coverage": {
+      "covered": 1,
+      "total": 1
+     },
+     "verification": null,
+     "anomalies": {
+      "stepsLe2": false,
+      "zeroToolCalls": false,
+      "zeroStrongEvidenceFiles": false,
+      "zeroCoverage": false,
+      "lowCoverage": false,
+      "lowStrongEvidenceFiles": false
+     }
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 5/10 completed: 1 findings"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 6/10 starting: 1 files",
+    "metadata": {
+     "files": [
+      "src/f5.ts"
+     ]
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] Starting kodus-generalist batch 6/10 for PR#2205",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "filesCount": 1
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 6/10 using model: openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 6/10 context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 6/10 prompt context: memoryRules=0, overrides=false, language=en-US"
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 6/10 completed for PR#2205: 1 suggestions in 0ms (source=json-parse, steps=3, tools=0, input=1 [cacheRead=0, hit=0%], output=1, total=2)",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "prNumber": 2205,
+     "suggestionsCount": 1,
+     "durationMs": 0,
+     "source": "json-parse",
+     "steps": 3,
+     "toolCalls": 0,
+     "inputTokens": 1,
+     "cacheReadTokens": 0,
+     "cacheWriteTokens": 0,
+     "cacheHitRate": 0,
+     "outputTokens": 1,
+     "totalTokens": 2,
+     "finishReason": "stop",
+     "model": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "coverage": {
+      "covered": 1,
+      "total": 1
+     },
+     "verification": null,
+     "anomalies": {
+      "stepsLe2": false,
+      "zeroToolCalls": false,
+      "zeroStrongEvidenceFiles": false,
+      "zeroCoverage": false,
+      "lowCoverage": false,
+      "lowStrongEvidenceFiles": false
+     }
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 6/10 completed: 1 findings"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 7/10 starting: 1 files",
+    "metadata": {
+     "files": [
+      "src/f6.ts"
+     ]
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] Starting kodus-generalist batch 7/10 for PR#2205",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "filesCount": 1
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 7/10 using model: openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 7/10 context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 7/10 prompt context: memoryRules=0, overrides=false, language=en-US"
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 7/10 completed for PR#2205: 1 suggestions in 0ms (source=json-parse, steps=3, tools=0, input=1 [cacheRead=0, hit=0%], output=1, total=2)",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "prNumber": 2205,
+     "suggestionsCount": 1,
+     "durationMs": 0,
+     "source": "json-parse",
+     "steps": 3,
+     "toolCalls": 0,
+     "inputTokens": 1,
+     "cacheReadTokens": 0,
+     "cacheWriteTokens": 0,
+     "cacheHitRate": 0,
+     "outputTokens": 1,
+     "totalTokens": 2,
+     "finishReason": "stop",
+     "model": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "coverage": {
+      "covered": 1,
+      "total": 1
+     },
+     "verification": null,
+     "anomalies": {
+      "stepsLe2": false,
+      "zeroToolCalls": false,
+      "zeroStrongEvidenceFiles": false,
+      "zeroCoverage": false,
+      "lowCoverage": false,
+      "lowStrongEvidenceFiles": false
+     }
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 7/10 completed: 1 findings"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 8/10 starting: 1 files",
+    "metadata": {
+     "files": [
+      "src/f7.ts"
+     ]
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] Starting kodus-generalist batch 8/10 for PR#2205",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "filesCount": 1
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 8/10 using model: openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 8/10 context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 8/10 prompt context: memoryRules=0, overrides=false, language=en-US"
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 8/10 completed for PR#2205: 1 suggestions in 0ms (source=json-parse, steps=3, tools=0, input=1 [cacheRead=0, hit=0%], output=1, total=2)",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "prNumber": 2205,
+     "suggestionsCount": 1,
+     "durationMs": 0,
+     "source": "json-parse",
+     "steps": 3,
+     "toolCalls": 0,
+     "inputTokens": 1,
+     "cacheReadTokens": 0,
+     "cacheWriteTokens": 0,
+     "cacheHitRate": 0,
+     "outputTokens": 1,
+     "totalTokens": 2,
+     "finishReason": "stop",
+     "model": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "coverage": {
+      "covered": 1,
+      "total": 1
+     },
+     "verification": null,
+     "anomalies": {
+      "stepsLe2": false,
+      "zeroToolCalls": false,
+      "zeroStrongEvidenceFiles": false,
+      "zeroCoverage": false,
+      "lowCoverage": false,
+      "lowStrongEvidenceFiles": false
+     }
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 8/10 completed: 1 findings"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 9/10 starting: 1 files",
+    "metadata": {
+     "files": [
+      "src/f8.ts"
+     ]
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] Starting kodus-generalist batch 9/10 for PR#2205",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "filesCount": 1
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 9/10 using model: openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 9/10 context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 9/10 prompt context: memoryRules=0, overrides=false, language=en-US"
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 9/10 completed for PR#2205: 1 suggestions in 1ms (source=json-parse, steps=3, tools=0, input=1 [cacheRead=0, hit=0%], output=1, total=2)",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "prNumber": 2205,
+     "suggestionsCount": 1,
+     "durationMs": 1,
+     "source": "json-parse",
+     "steps": 3,
+     "toolCalls": 0,
+     "inputTokens": 1,
+     "cacheReadTokens": 0,
+     "cacheWriteTokens": 0,
+     "cacheHitRate": 0,
+     "outputTokens": 1,
+     "totalTokens": 2,
+     "finishReason": "stop",
+     "model": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "coverage": {
+      "covered": 1,
+      "total": 1
+     },
+     "verification": null,
+     "anomalies": {
+      "stepsLe2": false,
+      "zeroToolCalls": false,
+      "zeroStrongEvidenceFiles": false,
+      "zeroCoverage": false,
+      "lowCoverage": false,
+      "lowStrongEvidenceFiles": false
+     }
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 9/10 completed: 1 findings"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 10/10 starting: 1 files",
+    "metadata": {
+     "files": [
+      "src/f9.ts"
+     ]
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] Starting kodus-generalist batch 10/10 for PR#2205",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "filesCount": 1
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 10/10 using model: openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 10/10 context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 10/10 prompt context: memoryRules=0, overrides=false, language=en-US"
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist batch 10/10 completed for PR#2205: 1 suggestions in 0ms (source=json-parse, steps=3, tools=0, input=1 [cacheRead=0, hit=0%], output=1, total=2)",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "prNumber": 2205,
+     "suggestionsCount": 1,
+     "durationMs": 0,
+     "source": "json-parse",
+     "steps": 3,
+     "toolCalls": 0,
+     "inputTokens": 1,
+     "cacheReadTokens": 0,
+     "cacheWriteTokens": 0,
+     "cacheHitRate": 0,
+     "outputTokens": 1,
+     "totalTokens": 2,
+     "finishReason": "stop",
+     "model": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "coverage": {
+      "covered": 1,
+      "total": 1
+     },
+     "verification": null,
+     "anomalies": {
+      "stepsLe2": false,
+      "zeroToolCalls": false,
+      "zeroStrongEvidenceFiles": false,
+      "zeroCoverage": false,
+      "lowCoverage": false,
+      "lowStrongEvidenceFiles": false
+     }
+    }
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist batch 10/10 completed: 1 findings"
+   },
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist PR#2205 all batches done: 10 total findings in 2ms"
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "src/f0.ts",
+    "src/f1.ts",
+    "src/f2.ts",
+    "src/f3.ts",
+    "src/f4.ts",
+    "src/f5.ts",
+    "src/f6.ts",
+    "src/f7.ts",
+    "src/f8.ts",
+    "src/f9.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "hitHardLimit",
+    "finishReason",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings"
+   ]
+  }
+ },
+ "M16": {
+  "category": "CONTEXT_OVERFLOW",
+  "body": "This PR is too large for the configured model. `openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash` has a context window of 20,000 tokens, but this review needs at least 12,117 tokens of context.\n\n**To resolve, choose one:**\n- **Switch to a recommended model**: pick one of Kodus's recommended models in your BYOK settings (Claude Sonnet 4.6, Claude Opus 4.7, Gemini 3.1 Pro, GPT-5.4, Kimi K2.6 Coding, or GLM 5.1).\n- **Split the PR into smaller ones**: file count drives prompt overhead.\n- **Raise the model's Max input tokens**: only if your deployed model genuinely supports more than the 20,000 tokens our lookup reports (e.g. self-hosted vLLM or Ollama with a custom limit).\n\nopenai_compatible · accounts/fireworks/models/deepseek-v4p1-flash",
+  "rawMessage": "Model 'openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash' has a context length of 20000 tokens, but the agent's static overhead alone is 12117 tokens. Choose a model with at least 32K context, or raise the model's max input tokens if the deployed model genuinely supports more than the default lookup reports.",
+  "plainSerialized": {
+   "category": "CONTEXT_OVERFLOW",
+   "friendly": "This PR exceeded the maximum context size accepted by the configured model.\n\n**To resolve, choose one:**\n- **Switch to a recommended model**: pick one of Kodus's recommended models in your BYOK settings (Claude Sonnet 4.6, Claude Opus 4.7, Gemini 3.1 Pro, GPT-5.4, Kimi K2.6 Coding, or GLM 5.1).\n- **"
+  },
+  "plainError": {
+   "category": "CONTEXT_OVERFLOW",
+   "friendly": "This PR exceeded the maximum context size accepted by the configured model.\n\n**To resolve, choose one:**\n- **Switch to a recommended model**: pick one of Kodus's recommended models in your BYOK settings (Claude Sonnet 4.6, Claude Opus 4.7, Gemini 3.1 Pro, GPT-5.4, Kimi K2.6 Coding, or GLM 5.1).\n- **"
+  }
+ },
+ "REAL_gh5_tiers": {
+  "qa2205/enrollment/enrollment-service.ts": "critical",
+  "qa2205/attendance/attendance-service.ts": "critical",
+  "qa2205/grading/report-card-service.ts": "critical",
+  "qa2205/tuition/tuition-service.ts": "critical",
+  "qa2205/reference/attendance-codes-table.ts": "optional",
+  "qa2205/reference/fee-schedule-table.ts": "optional",
+  "qa2205/reference/grade-bands-early-years.ts": "optional",
+  "qa2205/reference/grade-bands-middle-years.ts": "optional",
+  "qa2205/reference/grade-bands-secondary.ts": "optional",
+  "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+ },
+ "REAL_gh5_est": {
+  "full": 43748,
+  "withTiers": 26850
+ },
+ "REAL_gh5": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319832,
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205/enrollment/enrollment-service.ts": "critical",
+     "qa2205/attendance/attendance-service.ts": "critical",
+     "qa2205/grading/report-card-service.ts": "critical",
+     "qa2205/tuition/tuition-service.ts": "critical",
+     "qa2205/reference/attendance-codes-table.ts": "optional",
+     "qa2205/reference/fee-schedule-table.ts": "optional",
+     "qa2205/reference/grade-bands-early-years.ts": "optional",
+     "qa2205/reference/grade-bands-middle-years.ts": "optional",
+     "qa2205/reference/grade-bands-secondary.ts": "optional",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+    },
+    "userPromptChars": 115013,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GH_ATTENDANCE_HEAD",
+     "F2205_GH_ATTENDANCE_TAIL",
+     "F2205_GH_ENROLLMENT_HEAD",
+     "F2205_GH_ENROLLMENT_TAIL",
+     "F2205_GH_REF1_HEAD",
+     "F2205_GH_REF1_TAIL",
+     "F2205_GH_REF2_HEAD",
+     "F2205_GH_REF2_TAIL",
+     "F2205_GH_REF3_HEAD",
+     "F2205_GH_REF3_TAIL",
+     "F2205_GH_REF4_HEAD",
+     "F2205_GH_REF4_TAIL",
+     "F2205_GH_REF5_HEAD",
+     "F2205_GH_REF5_TAIL",
+     "F2205_GH_REF6_HEAD",
+     "F2205_GH_REF6_TAIL",
+     "F2205_GH_REPORTCARD_HEAD",
+     "F2205_GH_REPORTCARD_TAIL",
+     "F2205_GH_TUITION_HEAD",
+     "F2205_GH_TUITION_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 43735,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/tuition/tuition-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=4 warm=0 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 4,
+     "warmCount": 0,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205/attendance/attendance-service.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ },
+ "REAL_gl3_tiers": {
+  "qa2205/enrollment/enrollment-service.ts": "critical",
+  "qa2205/attendance/attendance-service.ts": "critical",
+  "qa2205/grading/report-card-service.ts": "critical",
+  "qa2205/tuition/tuition-service.ts": "critical",
+  "qa2205/reference/attendance-codes-table.ts": "optional",
+  "qa2205/reference/fee-schedule-table.ts": "optional",
+  "qa2205/reference/grade-bands-early-years.ts": "optional",
+  "qa2205/reference/grade-bands-middle-years.ts": "optional",
+  "qa2205/reference/grade-bands-secondary.ts": "optional",
+  "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+ },
+ "REAL_gl3_est": {
+  "full": 43768,
+  "withTiers": 26858
+ },
+ "REAL_gl3": {
+  "loops": [
+   {
+    "idx": 1,
+    "at": 1795573319833,
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "fileTiers": {
+     "qa2205/enrollment/enrollment-service.ts": "critical",
+     "qa2205/attendance/attendance-service.ts": "critical",
+     "qa2205/grading/report-card-service.ts": "critical",
+     "qa2205/tuition/tuition-service.ts": "critical",
+     "qa2205/reference/attendance-codes-table.ts": "optional",
+     "qa2205/reference/fee-schedule-table.ts": "optional",
+     "qa2205/reference/grade-bands-early-years.ts": "optional",
+     "qa2205/reference/grade-bands-middle-years.ts": "optional",
+     "qa2205/reference/grade-bands-secondary.ts": "optional",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts": "optional"
+    },
+    "userPromptChars": 115093,
+    "systemPromptChars": 2371,
+    "userSentinels": [
+     "F2205_GL_ATTENDANCE_HEAD",
+     "F2205_GL_ATTENDANCE_TAIL",
+     "F2205_GL_ENROLLMENT_HEAD",
+     "F2205_GL_ENROLLMENT_TAIL",
+     "F2205_GL_REF1_HEAD",
+     "F2205_GL_REF1_TAIL",
+     "F2205_GL_REF2_HEAD",
+     "F2205_GL_REF2_TAIL",
+     "F2205_GL_REF3_HEAD",
+     "F2205_GL_REF3_TAIL",
+     "F2205_GL_REF4_HEAD",
+     "F2205_GL_REF4_TAIL",
+     "F2205_GL_REF5_HEAD",
+     "F2205_GL_REF5_TAIL",
+     "F2205_GL_REF6_HEAD",
+     "F2205_GL_REF6_TAIL",
+     "F2205_GL_REPORTCARD_HEAD",
+     "F2205_GL_REPORTCARD_TAIL",
+     "F2205_GL_TUITION_HEAD",
+     "F2205_GL_TUITION_TAIL"
+    ],
+    "tierLabelsOnDiffHeadings": 0,
+    "hunkHeaderOnlyBlocks": 0,
+    "coverageMentionsTier": false,
+    "telemetry": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "pullRequestId": 2205,
+     "repositoryId": "repo-canary-2205",
+     "provider": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash"
+    },
+    "secretInParams": false,
+    "secretInSecrets": true,
+    "contextWindowTokens": 64000,
+    "estimate": 43755,
+    "systemPromptHash": "cf20956da461"
+   }
+  ],
+  "chunkCalls": [],
+  "promptInputs": [
+   {
+    "files": [
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts",
+     "qa2205/tuition/tuition-service.ts"
+    ],
+    "tierKeys": [
+     "qa2205/enrollment/enrollment-service.ts",
+     "qa2205/attendance/attendance-service.ts",
+     "qa2205/grading/report-card-service.ts",
+     "qa2205/tuition/tuition-service.ts",
+     "qa2205/reference/attendance-codes-table.ts",
+     "qa2205/reference/fee-schedule-table.ts",
+     "qa2205/reference/grade-bands-early-years.ts",
+     "qa2205/reference/grade-bands-middle-years.ts",
+     "qa2205/reference/grade-bands-secondary.ts",
+     "qa2205/reference/tabelas-de-avaliação-pedagógica-ensino-fundamental-séries-iniciais-e-finais.ts"
+    ],
+    "coverageTierWords": 0
+   }
+  ],
+  "logs": [
+   {
+    "level": "log",
+    "message": "[AGENT] kodus-generalist context window: 64000 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+    "metadata": {
+     "organizationId": "org-canary-2205",
+     "teamId": "team-canary-2205",
+     "prNumber": 2205,
+     "modelName": "openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash",
+     "modelId": "accounts/fireworks/models/deepseek-v4p1-flash",
+     "contextWindowTokens": 64000,
+     "contextWindowSource": "byok"
+    }
+   },
+   {
+    "level": "debug",
+    "message": "[AGENT] kodus-generalist large-PR priority tiering: critical=4 warm=0 optional=6 / 10 (callGraph=fallback)",
+    "metadata": {
+     "totalFiles": 10,
+     "criticalCount": 4,
+     "warmCount": 0,
+     "optionalCount": 6,
+     "usedCallGraph": false,
+     "reviewMode": "balanced"
+    }
+   }
+  ],
+  "secretInLogs": false,
+  "output": {
+   "suggestions": [
+    "qa2205/attendance/attendance-service.ts"
+   ],
+   "finishReason": "stop",
+   "hitHardLimit": false,
+   "warnings": [],
+   "keys": [
+    "suggestions",
+    "discardedBySeverity",
+    "discardedByVerify",
+    "discardedByVerifyError",
+    "agentName",
+    "agentCategory",
+    "agentReplicaIndex",
+    "agentReplicaTotal",
+    "turnsUsed",
+    "durationMs",
+    "warnings",
+    "hitHardLimit",
+    "finishReason"
+   ]
+  }
+ }
+}
