@@ -1,0 +1,24 @@
+[
+ [
+  "BusinessLogicValidationStage",
+  "skipped",
+  "Skipped: no reference.",
+  ""
+ ],
+ [
+  "CreateSandboxStage",
+  "success",
+  "",
+  ""
+ ],
+ [
+  "CreatePrLevelCommentsStage",
+  "success",
+  "",
+  ""
+ ],
+ [
+  "CreateFileCommentsStage",
+  "success"
+ ]
+]
