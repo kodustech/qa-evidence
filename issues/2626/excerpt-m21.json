@@ -1,0 +1,36 @@
+{
+ "note": "M21: @kody conversation on #21 (22:06-22:13 UTC)",
+ "filter": "only lines naming a jr-claude-* org id, a slot-a repo uuid or a sandbox id created by this run; GraphContextService Step 3/4 lines only when they follow a Step 3 line for a slot-a repo within 2 s; other orgs removed",
+ "lines": [
+  {
+   "t": "2026-11-24T22:06:57.690Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: acquire prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:1468014267:21\" consumer=\"conversation\""
+  },
+  {
+   "t": "2026-11-24T22:06:57.709Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:1468014267:21\" consumer=\"conversation\""
+  },
+  {
+   "t": "2026-11-24T22:07:01.524Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: sandbox READY prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:1468014267:21\" consumer=\"conversation\" leaseId=\"c4a991ef-d476-420c-acc5-0923c73f2e8e\""
+  },
+  {
+   "t": "2026-11-24T22:07:09.870Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: released leaseId=\"c4a991ef-d476-420c-acc5-0923c73f2e8e\" prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:1468014267:21\" leaseCount=0"
+  },
+  {
+   "t": "2026-11-24T22:07:09.875Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-24T22:12:09.870Z for sandboxId=\"i8363qiauspamie5mfitt\""
+  }
+ ]
+}
