@@ -1,0 +1,31 @@
+import json, sys, os
+d = sys.argv[1]
+def jl(p): return [json.loads(l) for l in open(p)] if os.path.exists(p) else []
+prov = jl(f'{d}/provider-requests.jsonl')
+orch = jl(f'{d}/orchestrator.jsonl')
+rows = []
+for o in orch:
+    if o.get('event') != 'spawn': continue
+    w = o['worker']; ev = jl(f'{d}/worker-{w}.jsonl'); lg = jl(f'{d}/worker-{w}.log.jsonl')
+    start = next(e['realTs'] for e in ev if e['event'] == 'run-start'); end = next(e['realTs'] for e in ev if e['event'] == 'run-end')
+    mine = [p for p in prov if start <= p['ts'] <= end and p['method'] == 'POST']
+    prl = [p for p in mine if p['kind'].endswith('pr-level')]
+    inl = [p for p in mine if 'inline' in p['kind']]
+    mongo = next(e for e in ev if e['event'] == 'mongo-after')
+    msgs = [l['message'] for l in lg]
+    last_prl = mongo['prLevelSuggestions'][-1]
+    rows.append({
+        'worker': w,
+        'returned': next(e['returned'] for e in ev if e['event'] == 'run-end'),
+        'prLevelTransportAttempts': [p.get('status') for p in prl],
+        'inlinePosts': [(p['bodyFirstLine'][:6], p.get('line') or p.get('path_')) for p in inl],
+        'inlinePostsOfA': sum(1 for p in inl if p['bodyFirstLine'].startswith('A[')),
+        'storedThisAttempt_prLevel': (last_prl['deliveryStatus'], last_prl.get('commentId')),
+        'storedThisAttempt_B': (mongo['fileSuggestions'][-1]['deliveryStatus'], mongo['fileSuggestions'][-1].get('commentId')),
+        'log_successfullyCreated': sum('Successfully created' in (m or '') for m in msgs),
+        'log_failedToDeliver': [m for m in msgs if m and 'failed to deliver' in m],
+        'log_adapterError': [l['component'] + ': ' + (l.get('error') or '') for l in lg if l['level'] == 'error'],
+        'log_saved': [m for m in msgs if m and m.startswith('Saved')],
+        'finalExecutionStatus': next(e for e in ev if e['event'] == 'pg-after')['executions'][-1]['status'] if False else sorted(next(e for e in ev if e['event'] == 'pg-after')['executions'], key=lambda x: x['createdAt'])[-1]['status'],
+    })
+for r in rows: print(json.dumps(r))
