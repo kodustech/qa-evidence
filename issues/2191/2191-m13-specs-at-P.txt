@@ -1,0 +1,12 @@
+Test Suites: 2 failed, 2 total
+Tests:       10 failed, 33 passed, 43 total
+  ● AgentReviewStage — LLM error category on recorded failures (#2191) › judges ownership by the attempt that failed, not the pre-run slot
+  ● AgentReviewStage — LLM error category on recorded failures (#2191) › records the classified error category of a failed core agent
+  ● AgentReviewStage — LLM error category on recorded failures (#2191) › records UNKNOWN for a failure the classifier does not map
+  ● AgentReviewStage — LLM error category on recorded failures (#2191) › records whether a platform-funded kodus credential served the run
+  ● AgentReviewStage — LLM error category on recorded failures (#2191) › records whether a self-hosted install used its env key
+  ● AgentReviewStage — LLM error category on recorded failures (#2191) › records whether a self-hosted install with no usable env key fell to the managed default
+  ● AgentReviewStage — LLM error category on recorded failures (#2191) › records whether the Kodus-managed key served the run
+  ● AgentReviewStage — LLM error category on recorded failures (#2191) › records whether the org brought its own key
+  ● CodeReviewPipelineObserver › finalizes as NEUTRAL when an exhausted org quota comes with a partial error from another agent
+  ● CodeReviewPipelineObserver › finalizes as SKIPPED when every critical error is an exhausted API quota (#2191)
