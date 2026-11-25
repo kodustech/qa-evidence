@@ -1,0 +1,57 @@
+{
+  "M": [
+    {
+      "tree": "M",
+      "scenario": "M29",
+      "case": "zero-model-calls",
+      "modelCallsDuringAnchorAndMerge": 0
+    },
+    {
+      "tree": "M",
+      "scenario": "M29",
+      "case": "merge-1000",
+      "ms": 0.373166,
+      "outCount": 10,
+      "merges": 10,
+      "scopes": {
+        "file": 6,
+        "pr": 4
+      },
+      "otherLocationsTotal": 494,
+      "invented": 0,
+      "inventedSample": [],
+      "placeholderRendered": 0,
+      "modelCalls": 0
+    }
+  ],
+  "P": [
+    {
+      "tree": "P",
+      "scenario": "M29",
+      "case": "zero-model-calls",
+      "modelCallsDuringAnchorAndMerge": 0
+    },
+    {
+      "tree": "P",
+      "scenario": "M29",
+      "case": "merge-1000",
+      "ms": 0.430417,
+      "outCount": 10,
+      "merges": 10,
+      "scopes": {
+        "file": 10
+      },
+      "otherLocationsTotal": 517,
+      "invented": 270,
+      "inventedSample": [
+        "qa2420/f11.ts:21-?",
+        "qa2420/f41.ts:?-?",
+        "qa2420/f21.ts:87-?",
+        "qa2420/f1.ts:?-?",
+        "qa2420/f31.ts:56-?"
+      ],
+      "placeholderRendered": 270,
+      "modelCalls": 0
+    }
+  ]
+}
