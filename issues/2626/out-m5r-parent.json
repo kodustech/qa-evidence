@@ -1,0 +1,932 @@
+{
+ "rev": "parent",
+ "scenario": "m5r",
+ "results": {
+  "full@F then incr@I parse --files output": {
+   "nodes": 5,
+   "edges": 11,
+   "edgeList": [
+    "CALLS src/qa2626/enrollment.ts::EnrollmentService.quote -> src/qa2626/scholarship.ts::applyScholarship",
+    "CALLS src/qa2626/enrollment.ts::EnrollmentService.quote -> src/qa2626/tuition.ts::tuitionDue",
+    "CALLS src/qa2626/enrollment.ts::EnrollmentService.enroll -> src/qa2626/enrollment.ts::EnrollmentService.quote",
+    "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/tuition.ts",
+    "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/scholarship.ts",
+    "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/unchanged.ts",
+    "CONTAINS src/qa2626/scholarship.ts -> src/qa2626/scholarship.ts::applyScholarship",
+    "CONTAINS src/qa2626/tuition.ts -> src/qa2626/tuition.ts::tuitionDue",
+    "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService.quote",
+    "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService.enroll",
+    "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService"
+   ]
+  },
+  "full@F then incr@I": {
+   "nodes": 16,
+   "edges": 26,
+   "nh": "ed4520d3163b6511",
+   "eh": "63d9be11897a0a91",
+   "status": "ready",
+   "edgeList": [
+    "CALLS src/qa2626/enrollment.ts::EnrollmentService.enroll -> src/qa2626/enrollment.ts::EnrollmentService.quote",
+    "CALLS src/qa2626/enrollment.ts::EnrollmentService.quote -> src/qa2626/scholarship.ts::applyScholarship",
+    "CALLS src/qa2626/enrollment.ts::EnrollmentService.quote -> src/qa2626/tuition.ts::tuitionDue",
+    "CONTAINS qa2671/attendance.ts -> qa2671/attendance.ts::attendanceRate",
+    "CONTAINS qa2671/edited.ts -> qa2671/edited.ts::averageGrade",
+    "CONTAINS qa2671/edited.ts -> qa2671/edited.ts::describeStudent",
+    "CONTAINS qa2671/edited.ts -> qa2671/edited.ts::passingGrades",
+    "CONTAINS qa2671/instrumentation.ts -> qa2671/instrumentation.ts::flushEvents",
+    "CONTAINS qa2671/instrumentation.ts -> qa2671/instrumentation.ts::recordSessionStart",
+    "CONTAINS qa2671/safe-control.ts -> qa2671/safe-control.ts::rosterTitle",
+    "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService",
+    "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService.enroll",
+    "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService.quote",
+    "CONTAINS src/qa2626/scholarship.ts -> src/qa2626/scholarship.ts::applyScholarship",
+    "CONTAINS src/qa2626/tuition.ts -> src/qa2626/tuition.ts::tuitionDue",
+    "CONTAINS src/qa2626/unchanged.ts -> src/qa2626/unchanged.ts::schoolTerm",
+    "IMPORTS qa2671/edited.ts -> qa2671/types.ts",
+    "IMPORTS qa2671/instrumentation.ts -> qa2671/types.ts",
+    "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/scholarship.ts",
+    "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/tuition.ts",
+    "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/unchanged.ts",
+    "USES_TYPE qa2671/attendance.ts::attendanceRate -> qa2671/attendance.ts::AttendanceRecord",
+    "USES_TYPE qa2671/edited.ts::describeStudent -> qa2671/types.ts::Student",
+    "USES_TYPE qa2671/instrumentation.ts::flushEvents -> qa2671/instrumentation.ts::TelemetryEvent",
+    "USES_TYPE qa2671/instrumentation.ts::recordSessionStart -> qa2671/instrumentation.ts::TelemetryEvent",
+    "USES_TYPE qa2671/instrumentation.ts::recordSessionStart -> qa2671/types.ts::Student"
+   ]
+  },
+  "full@I": {
+   "nodes": 16,
+   "edges": 27,
+   "nh": "ed4520d3163b6511",
+   "eh": "30a304fba721d39d",
+   "status": "ready",
+   "edgeList": [
+    "CALLS src/qa2626/enrollment.ts::EnrollmentService.enroll -> src/qa2626/enrollment.ts::EnrollmentService.quote",
+    "CALLS src/qa2626/enrollment.ts::EnrollmentService.enroll -> src/qa2626/unchanged.ts::schoolTerm",
+    "CALLS src/qa2626/enrollment.ts::EnrollmentService.quote -> src/qa2626/scholarship.ts::applyScholarship",
+    "CALLS src/qa2626/enrollment.ts::EnrollmentService.quote -> src/qa2626/tuition.ts::tuitionDue",
+    "CONTAINS qa2671/attendance.ts -> qa2671/attendance.ts::attendanceRate",
+    "CONTAINS qa2671/edited.ts -> qa2671/edited.ts::averageGrade",
+    "CONTAINS qa2671/edited.ts -> qa2671/edited.ts::describeStudent",
+    "CONTAINS qa2671/edited.ts -> qa2671/edited.ts::passingGrades",
+    "CONTAINS qa2671/instrumentation.ts -> qa2671/instrumentation.ts::flushEvents",
+    "CONTAINS qa2671/instrumentation.ts -> qa2671/instrumentation.ts::recordSessionStart",
+    "CONTAINS qa2671/safe-control.ts -> qa2671/safe-control.ts::rosterTitle",
+    "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService",
+    "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService.enroll",
+    "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService.quote",
+    "CONTAINS src/qa2626/scholarship.ts -> src/qa2626/scholarship.ts::applyScholarship",
+    "CONTAINS src/qa2626/tuition.ts -> src/qa2626/tuition.ts::tuitionDue",
+    "CONTAINS src/qa2626/unchanged.ts -> src/qa2626/unchanged.ts::schoolTerm",
+    "IMPORTS qa2671/edited.ts -> qa2671/types.ts",
+    "IMPORTS qa2671/instrumentation.ts -> qa2671/types.ts",
+    "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/scholarship.ts",
+    "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/tuition.ts",
+    "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/unchanged.ts",
+    "USES_TYPE qa2671/attendance.ts::attendanceRate -> qa2671/attendance.ts::AttendanceRecord",
+    "USES_TYPE qa2671/edited.ts::describeStudent -> qa2671/types.ts::Student",
+    "USES_TYPE qa2671/instrumentation.ts::flushEvents -> qa2671/instrumentation.ts::TelemetryEvent",
+    "USES_TYPE qa2671/instrumentation.ts::recordSessionStart -> qa2671/instrumentation.ts::TelemetryEvent",
+    "USES_TYPE qa2671/instrumentation.ts::recordSessionStart -> qa2671/types.ts::Student"
+   ]
+  },
+  "diff incr vs full (edge tuples kind/source/target)": {
+   "onlyFull": [
+    "CALLS src/qa2626/enrollment.ts::EnrollmentService.enroll -> src/qa2626/unchanged.ts::schoolTerm"
+   ],
+   "onlyIncr": [],
+   "nodesEqual": true
+  },
+  "azure paths: full@F then incr@I with /src/... parse --files output": {
+   "nodes": 0,
+   "edges": 0,
+   "edgeList": []
+  },
+  "azure paths: full@F then incr@I with /src/...": {
+   "nodes": 16,
+   "edges": 27,
+   "nh": "898b25fc7727cbe5",
+   "eh": "583ec1490ac087a5",
+   "status": "ready",
+   "edgeList": [
+    "CALLS src/qa2626/archive.ts::archiveStudent -> src/qa2626/unchanged.ts::schoolTerm",
+    "CALLS src/qa2626/enrollment.ts::EnrollmentService.enroll -> src/qa2626/enrollment.ts::EnrollmentService.quote",
+    "CALLS src/qa2626/enrollment.ts::EnrollmentService.enroll -> src/qa2626/unchanged.ts::schoolTerm",
+    "CALLS src/qa2626/enrollment.ts::EnrollmentService.quote -> src/qa2626/tuition.ts::totalTuition",
+    "CONTAINS qa2671/attendance.ts -> qa2671/attendance.ts::attendanceRate",
+    "CONTAINS qa2671/edited.ts -> qa2671/edited.ts::averageGrade",
+    "CONTAINS qa2671/edited.ts -> qa2671/edited.ts::describeStudent",
+    "CONTAINS qa2671/edited.ts -> qa2671/edited.ts::passingGrades",
+    "CONTAINS qa2671/instrumentation.ts -> qa2671/instrumentation.ts::flushEvents",
+    "CONTAINS qa2671/instrumentation.ts -> qa2671/instrumentation.ts::recordSessionStart",
+    "CONTAINS qa2671/safe-control.ts -> qa2671/safe-control.ts::rosterTitle",
+    "CONTAINS src/qa2626/archive.ts -> src/qa2626/archive.ts::archiveStudent",
+    "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService",
+    "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService.enroll",
+    "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService.quote",
+    "CONTAINS src/qa2626/tuition.ts -> src/qa2626/tuition.ts::totalTuition",
+    "CONTAINS src/qa2626/unchanged.ts -> src/qa2626/unchanged.ts::schoolTerm",
+    "IMPORTS qa2671/edited.ts -> qa2671/types.ts",
+    "IMPORTS qa2671/instrumentation.ts -> qa2671/types.ts",
+    "IMPORTS src/qa2626/archive.ts -> src/qa2626/unchanged.ts",
+    "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/tuition.ts",
+    "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/unchanged.ts",
+    "USES_TYPE qa2671/attendance.ts::attendanceRate -> qa2671/attendance.ts::AttendanceRecord",
+    "USES_TYPE qa2671/edited.ts::describeStudent -> qa2671/types.ts::Student",
+    "USES_TYPE qa2671/instrumentation.ts::flushEvents -> qa2671/instrumentation.ts::TelemetryEvent",
+    "USES_TYPE qa2671/instrumentation.ts::recordSessionStart -> qa2671/instrumentation.ts::TelemetryEvent",
+    "USES_TYPE qa2671/instrumentation.ts::recordSessionStart -> qa2671/types.ts::Student"
+   ]
+  }
+ },
+ "leaseLogs": [
+  "2026-11-24T23:54:07.953Z info [AST-GRAPH-JOB] Starting build for org/athena",
+  "2026-11-24T23:54:07.953Z info [AST-GRAPH-JOB] Auth resolved for org/athena (0ms)",
+  "2026-11-24T23:54:07.954Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:645dbd9b-2dae-406f-9799-19d726b98215:graph:003d9709-b7cc-47a0-ba41-88598b7602bf\" consumer=\"graph-build\"",
+  "2026-11-24T23:54:07.972Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:645dbd9b-2dae-406f-9799-19d726b98215:graph:003d9709-b7cc-47a0-ba41-88598b7602bf\" consumer=\"graph-build\"",
+  "2026-11-24T23:54:07.994Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:645dbd9b-2dae-406f-9799-19d726b98215:graph:003d9709-b7cc-47a0-ba41-88598b7602bf\" consumer=\"graph-build\" leaseId=\"e7a8783a",
+  "2026-11-24T23:54:07.994Z info [AST-GRAPH-JOB] Sandbox ready for org/athena (41ms)",
+  "2026-11-24T23:54:08.008Z info [AST-GRAPH-JOB] HEAD sha resolved: 61587abf for org/athena",
+  "2026-11-24T23:54:08.008Z info [AST-GRAPH] Starting full build for repo 645dbd9b-2dae-406f-9799-19d726b98215",
+  "2026-11-24T23:54:08.077Z info [AST-GRAPH] kodus-graph installed (69ms)",
+  "2026-11-24T23:54:08.141Z info [AST-GRAPH] Parse completed (64ms)",
+  "2026-11-24T23:54:08.142Z info [AST-GRAPH] Graph read from sandbox (0ms): 16 nodes, 27 edges",
+  "2026-11-24T23:54:08.150Z info [AST-GRAPH] DB persist completed (8ms)",
+  "2026-11-24T23:54:08.150Z info [AST-GRAPH] Full build COMPLETE for repo 645dbd9b-2dae-406f-9799-19d726b98215 in 142ms — 16 nodes, 27 edges",
+  "2026-11-24T23:54:08.150Z info [AST-GRAPH-JOB] Build COMPLETED for org/athena in 205ms",
+  "2026-11-24T23:54:08.162Z info SandboxLeaseManager: released leaseId=\"e7a8783a-538e-47e4-acdb-50bd698750b3\" prKey=\"11111111-1111-4111-8111-111111111111:645dbd9b-2dae-406f-9799-19d726b98215:graph:003d9709-b7cc-47a0-ba41-88598b7602bf",
+  "2026-11-24T23:54:08.167Z info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T23:59:08.162Z for sandboxId=\"fake-8661-1-ofyvr\"",
+  "2026-11-24T23:54:08.167Z info [AST-GRAPH-JOB] Sandbox cleaned up for org/athena",
+  "2026-11-24T23:54:08.224Z info [AST-GRAPH-INCR] Starting incremental update for org/athena",
+  "2026-11-24T23:54:08.225Z info [AST-GRAPH-INCR] Auth resolved for org/athena (0ms)",
+  "2026-11-24T23:54:08.225Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:645dbd9b-2dae-406f-9799-19d726b98215:graph:b11b506b-5396-4f2b-abcb-a637e77d3b52\" consumer=\"graph-incremental\"",
+  "2026-11-24T23:54:08.240Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:645dbd9b-2dae-406f-9799-19d726b98215:graph:b11b506b-5396-4f2b-abcb-a637e77d3b52\" consumer=\"graph-increm",
+  "2026-11-24T23:54:08.245Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:645dbd9b-2dae-406f-9799-19d726b98215:graph:b11b506b-5396-4f2b-abcb-a637e77d3b52\" consumer=\"graph-incremental\" leaseId=\"00",
+  "2026-11-24T23:54:08.245Z info [AST-GRAPH-INCR] Sandbox ready for org/athena (20ms)",
+  "2026-11-24T23:54:08.246Z info [AST-GRAPH] Starting incremental update: 4 files for repo 645dbd9b-2dae-406f-9799-19d726b98215",
+  "2026-11-24T23:54:08.300Z info [AST-GRAPH] kodus-graph installed (54ms)",
+  "2026-11-24T23:54:08.363Z info [AST-GRAPH] Incremental parse completed (63ms)",
+  "2026-11-24T23:54:08.363Z info [AST-GRAPH] Graph read from sandbox (0ms): 5 nodes, 11 edges",
+  "2026-11-24T23:54:08.370Z info [AST-GRAPH] Incremental DB persist completed (7ms)",
+  "2026-11-24T23:54:08.370Z info [AST-GRAPH] Incremental update COMPLETE for repo 645dbd9b-2dae-406f-9799-19d726b98215 in 125ms — 16 nodes, 26 edges from 4 files",
+  "2026-11-24T23:54:08.370Z info [AST-GRAPH-INCR] Incremental update COMPLETED for org/athena in 146ms (4 files)",
+  "2026-11-24T23:54:08.381Z info SandboxLeaseManager: released leaseId=\"0090fc94-436b-4d79-9dcd-b3b511cd1887\" prKey=\"11111111-1111-4111-8111-111111111111:645dbd9b-2dae-406f-9799-19d726b98215:graph:b11b506b-5396-4f2b-abcb-a637e77d3b52",
+  "2026-11-24T23:54:08.383Z info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T23:59:08.381Z for sandboxId=\"fake-8661-2-k1g7y\"",
+  "2026-11-24T23:54:08.383Z info [AST-GRAPH-INCR] Sandbox cleaned up for org/athena",
+  "2026-11-24T23:54:08.441Z info [AST-GRAPH-JOB] Starting build for org/athena",
+  "2026-11-24T23:54:08.442Z info [AST-GRAPH-JOB] Auth resolved for org/athena (0ms)",
+  "2026-11-24T23:54:08.442Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:ac82655f-6209-4a2f-9fa5-a6d0b0616784:graph:36c5ab60-6414-46d5-8b21-36abe0ad5324\" consumer=\"graph-build\"",
+  "2026-11-24T23:54:08.450Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:ac82655f-6209-4a2f-9fa5-a6d0b0616784:graph:36c5ab60-6414-46d5-8b21-36abe0ad5324\" consumer=\"graph-build\"",
+  "2026-11-24T23:54:08.455Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:ac82655f-6209-4a2f-9fa5-a6d0b0616784:graph:36c5ab60-6414-46d5-8b21-36abe0ad5324\" consumer=\"graph-build\" leaseId=\"569704f8",
+  "2026-11-24T23:54:08.455Z info [AST-GRAPH-JOB] Sandbox ready for org/athena (13ms)",
+  "2026-11-24T23:54:08.467Z info [AST-GRAPH-JOB] HEAD sha resolved: b4aaa354 for org/athena",
+  "2026-11-24T23:54:08.467Z info [AST-GRAPH] Starting full build for repo ac82655f-6209-4a2f-9fa5-a6d0b0616784",
+  "2026-11-24T23:54:08.526Z info [AST-GRAPH] kodus-graph installed (59ms)",
+  "2026-11-24T23:54:08.587Z info [AST-GRAPH] Parse completed (61ms)",
+  "2026-11-24T23:54:08.588Z info [AST-GRAPH] Graph read from sandbox (0ms): 16 nodes, 27 edges",
+  "2026-11-24T23:54:08.592Z info [AST-GRAPH] DB persist completed (4ms)",
+  "2026-11-24T23:54:08.592Z info [AST-GRAPH] Full build COMPLETE for repo ac82655f-6209-4a2f-9fa5-a6d0b0616784 in 125ms — 16 nodes, 27 edges",
+  "2026-11-24T23:54:08.592Z info [AST-GRAPH-JOB] Build COMPLETED for org/athena in 151ms",
+  "2026-11-24T23:54:08.599Z info SandboxLeaseManager: released leaseId=\"569704f8-e2ed-4814-819d-de0be547733b\" prKey=\"11111111-1111-4111-8111-111111111111:ac82655f-6209-4a2f-9fa5-a6d0b0616784:graph:36c5ab60-6414-46d5-8b21-36abe0ad5324",
+  "2026-11-24T23:54:08.605Z info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T23:59:08.599Z for sandboxId=\"fake-8661-3-3dmar\"",
+  "2026-11-24T23:54:08.605Z info [AST-GRAPH-JOB] Sandbox cleaned up for org/athena",
+  "2026-11-24T23:54:08.663Z info [AST-GRAPH-JOB] Starting build for org/athena",
+  "2026-11-24T23:54:08.663Z info [AST-GRAPH-JOB] Auth resolved for org/athena (0ms)",
+  "2026-11-24T23:54:08.663Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:25db62e5-43a0-4457-9197-0b686f064a5e:graph:56ef91dd-d618-4f9d-aa2f-b44ef0e23761\" consumer=\"graph-build\"",
+  "2026-11-24T23:54:08.672Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:25db62e5-43a0-4457-9197-0b686f064a5e:graph:56ef91dd-d618-4f9d-aa2f-b44ef0e23761\" consumer=\"graph-build\"",
+  "2026-11-24T23:54:08.677Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:25db62e5-43a0-4457-9197-0b686f064a5e:graph:56ef91dd-d618-4f9d-aa2f-b44ef0e23761\" consumer=\"graph-build\" leaseId=\"2b11c6b2",
+  "2026-11-24T23:54:08.678Z info [AST-GRAPH-JOB] Sandbox ready for org/athena (14ms)",
+  "2026-11-24T23:54:08.689Z info [AST-GRAPH-JOB] HEAD sha resolved: 9b277197 for org/athena",
+  "2026-11-24T23:54:08.689Z info [AST-GRAPH] Starting full build for repo 25db62e5-43a0-4457-9197-0b686f064a5e",
+  "2026-11-24T23:54:08.741Z info [AST-GRAPH] kodus-graph installed (52ms)",
+  "2026-11-24T23:54:08.803Z info [AST-GRAPH] Parse completed (62ms)",
+  "2026-11-24T23:54:08.803Z info [AST-GRAPH] Graph read from sandbox (0ms): 16 nodes, 27 edges",
+  "2026-11-24T23:54:08.808Z info [AST-GRAPH] DB persist completed (5ms)",
+  "2026-11-24T23:54:08.808Z info [AST-GRAPH] Full build COMPLETE for repo 25db62e5-43a0-4457-9197-0b686f064a5e in 119ms — 16 nodes, 27 edges",
+  "2026-11-24T23:54:08.808Z info [AST-GRAPH-JOB] Build COMPLETED for org/athena in 145ms",
+  "2026-11-24T23:54:08.815Z info SandboxLeaseManager: released leaseId=\"2b11c6b2-d8bf-47a6-a63a-2277805fc7c6\" prKey=\"11111111-1111-4111-8111-111111111111:25db62e5-43a0-4457-9197-0b686f064a5e:graph:56ef91dd-d618-4f9d-aa2f-b44ef0e23761",
+  "2026-11-24T23:54:08.821Z info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T23:59:08.815Z for sandboxId=\"fake-8661-4-rocbz\"",
+  "2026-11-24T23:54:08.821Z info [AST-GRAPH-JOB] Sandbox cleaned up for org/athena",
+  "2026-11-24T23:54:08.879Z info [AST-GRAPH-INCR] Starting incremental update for org/athena",
+  "2026-11-24T23:54:08.879Z info [AST-GRAPH-INCR] Auth resolved for org/athena (0ms)",
+  "2026-11-24T23:54:08.880Z info SandboxLeaseManager: acquire prKey=\"11111111-1111-4111-8111-111111111111:25db62e5-43a0-4457-9197-0b686f064a5e:graph:6ea22072-b361-40be-b0da-8a6d059bf68c\" consumer=\"graph-incremental\"",
+  "2026-11-24T23:54:08.887Z info SandboxLeaseManager: creator path — creating sandbox prKey=\"11111111-1111-4111-8111-111111111111:25db62e5-43a0-4457-9197-0b686f064a5e:graph:6ea22072-b361-40be-b0da-8a6d059bf68c\" consumer=\"graph-increm",
+  "2026-11-24T23:54:08.892Z info SandboxLeaseManager: sandbox READY prKey=\"11111111-1111-4111-8111-111111111111:25db62e5-43a0-4457-9197-0b686f064a5e:graph:6ea22072-b361-40be-b0da-8a6d059bf68c\" consumer=\"graph-incremental\" leaseId=\"99",
+  "2026-11-24T23:54:08.893Z info [AST-GRAPH-INCR] Sandbox ready for org/athena (14ms)",
+  "2026-11-24T23:54:08.893Z info [AST-GRAPH] Starting incremental update: 4 files for repo 25db62e5-43a0-4457-9197-0b686f064a5e",
+  "2026-11-24T23:54:08.945Z info [AST-GRAPH] kodus-graph installed (52ms)",
+  "2026-11-24T23:54:08.998Z info [AST-GRAPH] Incremental parse completed (53ms)",
+  "2026-11-24T23:54:08.998Z info [AST-GRAPH] Graph read from sandbox (0ms): 0 nodes, 0 edges",
+  "2026-11-24T23:54:09.000Z info [AST-GRAPH] Incremental DB persist completed (2ms)",
+  "2026-11-24T23:54:09.000Z info [AST-GRAPH] Incremental update COMPLETE for repo 25db62e5-43a0-4457-9197-0b686f064a5e in 107ms — 16 nodes, 27 edges from 4 files",
+  "2026-11-24T23:54:09.000Z info [AST-GRAPH-INCR] Incremental update COMPLETED for org/athena in 121ms (4 files)",
+  "2026-11-24T23:54:09.007Z info SandboxLeaseManager: released leaseId=\"99b9f4c0-49af-4323-be09-6893d16dac29\" prKey=\"11111111-1111-4111-8111-111111111111:25db62e5-43a0-4457-9197-0b686f064a5e:graph:6ea22072-b361-40be-b0da-8a6d059bf68c",
+  "2026-11-24T23:54:09.010Z info SandboxLeaseManager: scheduled idle-kill at 2026-11-24T23:59:09.007Z for sandboxId=\"fake-8661-5-coxiz\"",
+  "2026-11-24T23:54:09.010Z info [AST-GRAPH-INCR] Sandbox cleaned up for org/athena"
+ ],
+ "transcript": [
+  {
+   "t": "2026-11-24T23:54:07.953Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "003d9709-b7cc-47a0-ba41-88598b7602bf",
+   "status": "PROCESSING",
+   "stage": "VALIDATING"
+  },
+  {
+   "t": "2026-11-24T23:54:07.953Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "003d9709-b7cc-47a0-ba41-88598b7602bf",
+   "status": "PROCESSING",
+   "stage": "RESOLVING_AUTH"
+  },
+  {
+   "t": "2026-11-24T23:54:07.953Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "003d9709-b7cc-47a0-ba41-88598b7602bf",
+   "status": "PROCESSING",
+   "stage": "CLONING"
+  },
+  {
+   "t": "2026-11-24T23:54:07.972Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "provider.create.start",
+   "id": "fake-8661-1-ofyvr"
+  },
+  {
+   "t": "2026-11-24T23:54:07.972Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "provider.create.done",
+   "id": "fake-8661-1-ofyvr"
+  },
+  {
+   "t": "2026-11-24T23:54:08.007Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "real.exec",
+   "id": "fake-8661-1-ofyvr",
+   "cmd": "git -C $TMPDIR/qa2626-F-oki8BW rev-parse HEAD",
+   "exit": 0,
+   "stderr": ""
+  },
+  {
+   "t": "2026-11-24T23:54:08.008Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "003d9709-b7cc-47a0-ba41-88598b7602bf",
+   "status": "PROCESSING",
+   "stage": "PARSING"
+  },
+  {
+   "t": "2026-11-24T23:54:08.008Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "building"
+  },
+  {
+   "t": "2026-11-24T23:54:08.077Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "real.exec",
+   "id": "fake-8661-1-ofyvr",
+   "cmd": "which kodus-graph 2>/dev/null && kodus-graph --version 2>/dev/null || true",
+   "exit": 0,
+   "stderr": ""
+  },
+  {
+   "t": "2026-11-24T23:54:08.141Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "real.exec",
+   "id": "fake-8661-1-ofyvr",
+   "cmd": "cd $TMPDIR/qa2626-F-oki8BW && mkdir -p '.kodus-graph' && kodus-graph parse --all --repo-dir . --out '.kodus-graph/graph",
+   "exit": 0,
+   "stderr": "[INFO] kodus-graph v0.3.0 {\"node\":\"v24.3.0\",\"platform\":\"darwin\"}\n[1/5] Discovered 10 files\n[2/5] Parsed 12 functions, 1 classes, 14 call sites\n[3/5] Resolved 5/5 imports\n[4/5] Resolved 4 calls (receiv"
+  },
+  {
+   "t": "2026-11-24T23:54:08.150Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "ready",
+   "sha": "61587abf30648a0bf1160467c6cc9b2995f81796",
+   "nodeCount": 16,
+   "edgeCount": 27
+  },
+  {
+   "t": "2026-11-24T23:54:08.150Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "003d9709-b7cc-47a0-ba41-88598b7602bf",
+   "status": "COMPLETED"
+  },
+  {
+   "t": "2026-11-24T23:54:08.167Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "e2b.setTimeout",
+   "id": "fake-8661-1-ofyvr",
+   "ms": 300000
+  },
+  {
+   "t": "2026-11-24T23:54:08.224Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "b11b506b-5396-4f2b-abcb-a637e77d3b52",
+   "status": "PROCESSING",
+   "stage": "VALIDATING"
+  },
+  {
+   "t": "2026-11-24T23:54:08.224Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "b11b506b-5396-4f2b-abcb-a637e77d3b52",
+   "status": "PROCESSING",
+   "stage": "RESOLVING_AUTH"
+  },
+  {
+   "t": "2026-11-24T23:54:08.225Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "b11b506b-5396-4f2b-abcb-a637e77d3b52",
+   "status": "PROCESSING",
+   "stage": "CLONING"
+  },
+  {
+   "t": "2026-11-24T23:54:08.240Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "provider.create.start",
+   "id": "fake-8661-2-k1g7y"
+  },
+  {
+   "t": "2026-11-24T23:54:08.240Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "provider.create.done",
+   "id": "fake-8661-2-k1g7y"
+  },
+  {
+   "t": "2026-11-24T23:54:08.245Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "b11b506b-5396-4f2b-abcb-a637e77d3b52",
+   "status": "PROCESSING",
+   "stage": "PARSING"
+  },
+  {
+   "t": "2026-11-24T23:54:08.300Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "real.exec",
+   "id": "fake-8661-2-k1g7y",
+   "cmd": "which kodus-graph 2>/dev/null && kodus-graph --version 2>/dev/null || true",
+   "exit": 0,
+   "stderr": ""
+  },
+  {
+   "t": "2026-11-24T23:54:08.363Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "real.exec",
+   "id": "fake-8661-2-k1g7y",
+   "cmd": "cd $TMPDIR/qa2626-I-88rQr8 && mkdir -p '.kodus-graph' && kodus-graph parse --files 'src/qa2626/archive.ts' 'src/qa2626/",
+   "exit": 0,
+   "stderr": "[INFO] kodus-graph v0.3.0 {\"node\":\"v24.3.0\",\"platform\":\"darwin\"}\n[1/5] Discovered 4 files\n[WARN] Failed to read file {\"file\":\"$TMPDIR/qa2626-I-88rQr8/s"
+  },
+  {
+   "t": "2026-11-24T23:54:08.370Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "ready",
+   "sha": "beef",
+   "nodeCount": 16,
+   "edgeCount": 26
+  },
+  {
+   "t": "2026-11-24T23:54:08.370Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "b11b506b-5396-4f2b-abcb-a637e77d3b52",
+   "status": "COMPLETED"
+  },
+  {
+   "t": "2026-11-24T23:54:08.383Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "e2b.setTimeout",
+   "id": "fake-8661-2-k1g7y",
+   "ms": 300000
+  },
+  {
+   "t": "2026-11-24T23:54:08.383Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "RESULT full@F then incr@I parse --files output",
+   "v": {
+    "nodes": 5,
+    "edges": 11,
+    "edgeList": [
+     "CALLS src/qa2626/enrollment.ts::EnrollmentService.quote -> src/qa2626/scholarship.ts::applyScholarship",
+     "CALLS src/qa2626/enrollment.ts::EnrollmentService.quote -> src/qa2626/tuition.ts::tuitionDue",
+     "CALLS src/qa2626/enrollment.ts::EnrollmentService.enroll -> src/qa2626/enrollment.ts::EnrollmentService.quote",
+     "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/tuition.ts",
+     "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/scholarship.ts",
+     "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/unchanged.ts",
+     "CONTAINS src/qa2626/scholarship.ts -> src/qa2626/scholarship.ts::applyScholarship",
+     "CONTAINS src/qa2626/tuition.ts -> src/qa2626/tuition.ts::tuitionDue",
+     "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService.quote",
+     "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService.enroll",
+     "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-24T23:54:08.385Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "RESULT full@F then incr@I",
+   "v": {
+    "nodes": 16,
+    "edges": 26,
+    "nh": "ed4520d3163b6511",
+    "eh": "63d9be11897a0a91",
+    "status": "ready",
+    "edgeList": [
+     "CALLS src/qa2626/enrollment.ts::EnrollmentService.enroll -> src/qa2626/enrollment.ts::EnrollmentService.quote",
+     "CALLS src/qa2626/enrollment.ts::EnrollmentService.quote -> src/qa2626/scholarship.ts::applyScholarship",
+     "CALLS src/qa2626/enrollment.ts::EnrollmentService.quote -> src/qa2626/tuition.ts::tuitionDue",
+     "CONTAINS qa2671/attendance.ts -> qa2671/attendance.ts::attendanceRate",
+     "CONTAINS qa2671/edited.ts -> qa2671/edited.ts::averageGrade",
+     "CONTAINS qa2671/edited.ts -> qa2671/edited.ts::describeStudent",
+     "CONTAINS qa2671/edited.ts -> qa2671/edited.ts::passingGrades",
+     "CONTAINS qa2671/instrumentation.ts -> qa2671/instrumentation.ts::flushEvents",
+     "CONTAINS qa2671/instrumentation.ts -> qa2671/instrumentation.ts::recordSessionStart",
+     "CONTAINS qa2671/safe-control.ts -> qa2671/safe-control.ts::rosterTitle",
+     "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService",
+     "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService.enroll",
+     "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService.quote",
+     "CONTAINS src/qa2626/scholarship.ts -> src/qa2626/scholarship.ts::applyScholarship",
+     "CONTAINS src/qa2626/tuition.ts -> src/qa2626/tuition.ts::tuitionDue",
+     "CONTAINS src/qa2626/unchanged.ts -> src/qa2626/unchanged.ts::schoolTerm",
+     "IMPORTS qa2671/edited.ts -> qa2671/types.ts",
+     "IMPORTS qa2671/instrumentation.ts -> qa2671/types.ts",
+     "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/scholarship.ts",
+     "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/tuition.ts",
+     "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/unchanged.ts",
+     "USES_TYPE qa2671/attendance.ts::attendanceRate -> qa2671/attendance.ts::AttendanceRecord",
+     "USES_TYPE qa2671/edited.ts::describeStudent -> qa2671/types.ts::Student",
+     "USES_TYPE qa2671/instrumentation.ts::flushEvents -> qa2671/instrumentation.ts::TelemetryEvent",
+     "USES_TYPE qa2671/instrumentation.ts::recordSessionStart -> qa2671/instrumentation.ts::TelemetryEvent",
+     "USES_TYPE qa2671/instrumentation.ts::recordSessionStart -> qa2671/types.ts::Student"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-24T23:54:08.442Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "36c5ab60-6414-46d5-8b21-36abe0ad5324",
+   "status": "PROCESSING",
+   "stage": "VALIDATING"
+  },
+  {
+   "t": "2026-11-24T23:54:08.442Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "36c5ab60-6414-46d5-8b21-36abe0ad5324",
+   "status": "PROCESSING",
+   "stage": "RESOLVING_AUTH"
+  },
+  {
+   "t": "2026-11-24T23:54:08.442Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "36c5ab60-6414-46d5-8b21-36abe0ad5324",
+   "status": "PROCESSING",
+   "stage": "CLONING"
+  },
+  {
+   "t": "2026-11-24T23:54:08.450Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "provider.create.start",
+   "id": "fake-8661-3-3dmar"
+  },
+  {
+   "t": "2026-11-24T23:54:08.450Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "provider.create.done",
+   "id": "fake-8661-3-3dmar"
+  },
+  {
+   "t": "2026-11-24T23:54:08.467Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "real.exec",
+   "id": "fake-8661-3-3dmar",
+   "cmd": "git -C $TMPDIR/qa2626-I-vONAg2 rev-parse HEAD",
+   "exit": 0,
+   "stderr": ""
+  },
+  {
+   "t": "2026-11-24T23:54:08.467Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "36c5ab60-6414-46d5-8b21-36abe0ad5324",
+   "status": "PROCESSING",
+   "stage": "PARSING"
+  },
+  {
+   "t": "2026-11-24T23:54:08.467Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "building"
+  },
+  {
+   "t": "2026-11-24T23:54:08.526Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "real.exec",
+   "id": "fake-8661-3-3dmar",
+   "cmd": "which kodus-graph 2>/dev/null && kodus-graph --version 2>/dev/null || true",
+   "exit": 0,
+   "stderr": ""
+  },
+  {
+   "t": "2026-11-24T23:54:08.587Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "real.exec",
+   "id": "fake-8661-3-3dmar",
+   "cmd": "cd $TMPDIR/qa2626-I-vONAg2 && mkdir -p '.kodus-graph' && kodus-graph parse --all --repo-dir . --out '.kodus-graph/graph",
+   "exit": 0,
+   "stderr": "[INFO] kodus-graph v0.3.0 {\"node\":\"v24.3.0\",\"platform\":\"darwin\"}\n[1/5] Discovered 10 files\n[2/5] Parsed 12 functions, 1 classes, 16 call sites\n[3/5] Resolved 5/5 imports\n[4/5] Resolved 4 calls (receiv"
+  },
+  {
+   "t": "2026-11-24T23:54:08.592Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "ready",
+   "sha": "b4aaa35434d75d1f5d3ab2c924d334666c841c14",
+   "nodeCount": 16,
+   "edgeCount": 27
+  },
+  {
+   "t": "2026-11-24T23:54:08.592Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "36c5ab60-6414-46d5-8b21-36abe0ad5324",
+   "status": "COMPLETED"
+  },
+  {
+   "t": "2026-11-24T23:54:08.605Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "e2b.setTimeout",
+   "id": "fake-8661-3-3dmar",
+   "ms": 300000
+  },
+  {
+   "t": "2026-11-24T23:54:08.606Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "RESULT full@I",
+   "v": {
+    "nodes": 16,
+    "edges": 27,
+    "nh": "ed4520d3163b6511",
+    "eh": "30a304fba721d39d",
+    "status": "ready",
+    "edgeList": [
+     "CALLS src/qa2626/enrollment.ts::EnrollmentService.enroll -> src/qa2626/enrollment.ts::EnrollmentService.quote",
+     "CALLS src/qa2626/enrollment.ts::EnrollmentService.enroll -> src/qa2626/unchanged.ts::schoolTerm",
+     "CALLS src/qa2626/enrollment.ts::EnrollmentService.quote -> src/qa2626/scholarship.ts::applyScholarship",
+     "CALLS src/qa2626/enrollment.ts::EnrollmentService.quote -> src/qa2626/tuition.ts::tuitionDue",
+     "CONTAINS qa2671/attendance.ts -> qa2671/attendance.ts::attendanceRate",
+     "CONTAINS qa2671/edited.ts -> qa2671/edited.ts::averageGrade",
+     "CONTAINS qa2671/edited.ts -> qa2671/edited.ts::describeStudent",
+     "CONTAINS qa2671/edited.ts -> qa2671/edited.ts::passingGrades",
+     "CONTAINS qa2671/instrumentation.ts -> qa2671/instrumentation.ts::flushEvents",
+     "CONTAINS qa2671/instrumentation.ts -> qa2671/instrumentation.ts::recordSessionStart",
+     "CONTAINS qa2671/safe-control.ts -> qa2671/safe-control.ts::rosterTitle",
+     "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService",
+     "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService.enroll",
+     "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService.quote",
+     "CONTAINS src/qa2626/scholarship.ts -> src/qa2626/scholarship.ts::applyScholarship",
+     "CONTAINS src/qa2626/tuition.ts -> src/qa2626/tuition.ts::tuitionDue",
+     "CONTAINS src/qa2626/unchanged.ts -> src/qa2626/unchanged.ts::schoolTerm",
+     "IMPORTS qa2671/edited.ts -> qa2671/types.ts",
+     "IMPORTS qa2671/instrumentation.ts -> qa2671/types.ts",
+     "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/scholarship.ts",
+     "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/tuition.ts",
+     "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/unchanged.ts",
+     "USES_TYPE qa2671/attendance.ts::attendanceRate -> qa2671/attendance.ts::AttendanceRecord",
+     "USES_TYPE qa2671/edited.ts::describeStudent -> qa2671/types.ts::Student",
+     "USES_TYPE qa2671/instrumentation.ts::flushEvents -> qa2671/instrumentation.ts::TelemetryEvent",
+     "USES_TYPE qa2671/instrumentation.ts::recordSessionStart -> qa2671/instrumentation.ts::TelemetryEvent",
+     "USES_TYPE qa2671/instrumentation.ts::recordSessionStart -> qa2671/types.ts::Student"
+    ]
+   }
+  },
+  {
+   "t": "2026-11-24T23:54:08.606Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "RESULT diff incr vs full (edge tuples kind/source/target)",
+   "v": {
+    "onlyFull": [
+     "CALLS src/qa2626/enrollment.ts::EnrollmentService.enroll -> src/qa2626/unchanged.ts::schoolTerm"
+    ],
+    "onlyIncr": [],
+    "nodesEqual": true
+   }
+  },
+  {
+   "t": "2026-11-24T23:54:08.663Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "56ef91dd-d618-4f9d-aa2f-b44ef0e23761",
+   "status": "PROCESSING",
+   "stage": "VALIDATING"
+  },
+  {
+   "t": "2026-11-24T23:54:08.663Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "56ef91dd-d618-4f9d-aa2f-b44ef0e23761",
+   "status": "PROCESSING",
+   "stage": "RESOLVING_AUTH"
+  },
+  {
+   "t": "2026-11-24T23:54:08.663Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "56ef91dd-d618-4f9d-aa2f-b44ef0e23761",
+   "status": "PROCESSING",
+   "stage": "CLONING"
+  },
+  {
+   "t": "2026-11-24T23:54:08.672Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "provider.create.start",
+   "id": "fake-8661-4-rocbz"
+  },
+  {
+   "t": "2026-11-24T23:54:08.672Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "provider.create.done",
+   "id": "fake-8661-4-rocbz"
+  },
+  {
+   "t": "2026-11-24T23:54:08.689Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "real.exec",
+   "id": "fake-8661-4-rocbz",
+   "cmd": "git -C $TMPDIR/qa2626-F-KQfpZg rev-parse HEAD",
+   "exit": 0,
+   "stderr": ""
+  },
+  {
+   "t": "2026-11-24T23:54:08.689Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "56ef91dd-d618-4f9d-aa2f-b44ef0e23761",
+   "status": "PROCESSING",
+   "stage": "PARSING"
+  },
+  {
+   "t": "2026-11-24T23:54:08.689Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "building"
+  },
+  {
+   "t": "2026-11-24T23:54:08.741Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "real.exec",
+   "id": "fake-8661-4-rocbz",
+   "cmd": "which kodus-graph 2>/dev/null && kodus-graph --version 2>/dev/null || true",
+   "exit": 0,
+   "stderr": ""
+  },
+  {
+   "t": "2026-11-24T23:54:08.803Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "real.exec",
+   "id": "fake-8661-4-rocbz",
+   "cmd": "cd $TMPDIR/qa2626-F-KQfpZg && mkdir -p '.kodus-graph' && kodus-graph parse --all --repo-dir . --out '.kodus-graph/graph",
+   "exit": 0,
+   "stderr": "[INFO] kodus-graph v0.3.0 {\"node\":\"v24.3.0\",\"platform\":\"darwin\"}\n[1/5] Discovered 10 files\n[2/5] Parsed 12 functions, 1 classes, 14 call sites\n[3/5] Resolved 5/5 imports\n[4/5] Resolved 4 calls (receiv"
+  },
+  {
+   "t": "2026-11-24T23:54:08.808Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "ready",
+   "sha": "9b277197a06650a2e7263c5e7e72f6c1b91dae04",
+   "nodeCount": 16,
+   "edgeCount": 27
+  },
+  {
+   "t": "2026-11-24T23:54:08.808Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "56ef91dd-d618-4f9d-aa2f-b44ef0e23761",
+   "status": "COMPLETED"
+  },
+  {
+   "t": "2026-11-24T23:54:08.821Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "e2b.setTimeout",
+   "id": "fake-8661-4-rocbz",
+   "ms": 300000
+  },
+  {
+   "t": "2026-11-24T23:54:08.879Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "6ea22072-b361-40be-b0da-8a6d059bf68c",
+   "status": "PROCESSING",
+   "stage": "VALIDATING"
+  },
+  {
+   "t": "2026-11-24T23:54:08.879Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "6ea22072-b361-40be-b0da-8a6d059bf68c",
+   "status": "PROCESSING",
+   "stage": "RESOLVING_AUTH"
+  },
+  {
+   "t": "2026-11-24T23:54:08.879Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "6ea22072-b361-40be-b0da-8a6d059bf68c",
+   "status": "PROCESSING",
+   "stage": "CLONING"
+  },
+  {
+   "t": "2026-11-24T23:54:08.887Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "provider.create.start",
+   "id": "fake-8661-5-coxiz"
+  },
+  {
+   "t": "2026-11-24T23:54:08.887Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "provider.create.done",
+   "id": "fake-8661-5-coxiz"
+  },
+  {
+   "t": "2026-11-24T23:54:08.893Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "6ea22072-b361-40be-b0da-8a6d059bf68c",
+   "status": "PROCESSING",
+   "stage": "PARSING"
+  },
+  {
+   "t": "2026-11-24T23:54:08.944Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "real.exec",
+   "id": "fake-8661-5-coxiz",
+   "cmd": "which kodus-graph 2>/dev/null && kodus-graph --version 2>/dev/null || true",
+   "exit": 0,
+   "stderr": ""
+  },
+  {
+   "t": "2026-11-24T23:54:08.998Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "real.exec",
+   "id": "fake-8661-5-coxiz",
+   "cmd": "cd $TMPDIR/qa2626-I-UtbEpo && mkdir -p '.kodus-graph' && kodus-graph parse --files '/src/qa2626/archive.ts' '/src/qa262",
+   "exit": 0,
+   "stderr": "[INFO] kodus-graph v0.3.0 {\"node\":\"v24.3.0\",\"platform\":\"darwin\"}\n[WARN] Skipping file outside repository root {\"file\":\"/src/qa2626/archive.ts\",\"error\":\"Error: Path escapes repository root: /src/qa2626"
+  },
+  {
+   "t": "2026-11-24T23:54:09.000Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "repo.status",
+   "status": "ready",
+   "sha": "beef",
+   "nodeCount": 16,
+   "edgeCount": 27
+  },
+  {
+   "t": "2026-11-24T23:54:09.000Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "job.update",
+   "id": "6ea22072-b361-40be-b0da-8a6d059bf68c",
+   "status": "COMPLETED"
+  },
+  {
+   "t": "2026-11-24T23:54:09.010Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "e2b.setTimeout",
+   "id": "fake-8661-5-coxiz",
+   "ms": 300000
+  },
+  {
+   "t": "2026-11-24T23:54:09.010Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "RESULT azure paths: full@F then incr@I with /src/... parse --files output",
+   "v": {
+    "nodes": 0,
+    "edges": 0,
+    "edgeList": []
+   }
+  },
+  {
+   "t": "2026-11-24T23:54:09.011Z",
+   "pid": 8661,
+   "rev": "parent",
+   "kind": "RESULT azure paths: full@F then incr@I with /src/...",
+   "v": {
+    "nodes": 16,
+    "edges": 27,
+    "nh": "898b25fc7727cbe5",
+    "eh": "583ec1490ac087a5",
+    "status": "ready",
+    "edgeList": [
+     "CALLS src/qa2626/archive.ts::archiveStudent -> src/qa2626/unchanged.ts::schoolTerm",
+     "CALLS src/qa2626/enrollment.ts::EnrollmentService.enroll -> src/qa2626/enrollment.ts::EnrollmentService.quote",
+     "CALLS src/qa2626/enrollment.ts::EnrollmentService.enroll -> src/qa2626/unchanged.ts::schoolTerm",
+     "CALLS src/qa2626/enrollment.ts::EnrollmentService.quote -> src/qa2626/tuition.ts::totalTuition",
+     "CONTAINS qa2671/attendance.ts -> qa2671/attendance.ts::attendanceRate",
+     "CONTAINS qa2671/edited.ts -> qa2671/edited.ts::averageGrade",
+     "CONTAINS qa2671/edited.ts -> qa2671/edited.ts::describeStudent",
+     "CONTAINS qa2671/edited.ts -> qa2671/edited.ts::passingGrades",
+     "CONTAINS qa2671/instrumentation.ts -> qa2671/instrumentation.ts::flushEvents",
+     "CONTAINS qa2671/instrumentation.ts -> qa2671/instrumentation.ts::recordSessionStart",
+     "CONTAINS qa2671/safe-control.ts -> qa2671/safe-control.ts::rosterTitle",
+     "CONTAINS src/qa2626/archive.ts -> src/qa2626/archive.ts::archiveStudent",
+     "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService",
+     "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService.enroll",
+     "CONTAINS src/qa2626/enrollment.ts -> src/qa2626/enrollment.ts::EnrollmentService.quote",
+     "CONTAINS src/qa2626/tuition.ts -> src/qa2626/tuition.ts::totalTuition",
+     "CONTAINS src/qa2626/unchanged.ts -> src/qa2626/unchanged.ts::schoolTerm",
+     "IMPORTS qa2671/edited.ts -> qa2671/types.ts",
+     "IMPORTS qa2671/instrumentation.ts -> qa2671/types.ts",
+     "IMPORTS src/qa2626/archive.ts -> src/qa2626/unchanged.ts",
+     "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/tuition.ts",
+     "IMPORTS src/qa2626/enrollment.ts -> src/qa2626/unchanged.ts",
+     "USES_TYPE qa2671/attendance.ts::attendanceRate -> qa2671/attendance.ts::AttendanceRecord",
+     "USES_TYPE qa2671/edited.ts::describeStudent -> qa2671/types.ts::Student",
+     "USES_TYPE qa2671/instrumentation.ts::flushEvents -> qa2671/instrumentation.ts::TelemetryEvent",
+     "USES_TYPE qa2671/instrumentation.ts::recordSessionStart -> qa2671/instrumentation.ts::TelemetryEvent",
+     "USES_TYPE qa2671/instrumentation.ts::recordSessionStart -> qa2671/types.ts::Student"
+    ]
+   }
+  }
+ ]
+}
