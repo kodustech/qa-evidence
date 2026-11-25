@@ -1,0 +1,165 @@
+FAIL libs/code-review/infrastructure/agents/engine/kody-rules-merge.mport.qa2420.spec.ts
+  ● otherLocationsToRender › drops an unresolved location on another file instead of rendering ?-?
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+      Array [
+    +   "src/ledger/void.ts:?-?",
+        "b.ts:1-2",
+      ]
+
+      38 |                 kodyRuleOtherLocations: ['src/ledger/void.ts:?-?', 'b.ts:1-2'],
+      39 |             }),
+    > 40 |         ).toEqual(['b.ts:1-2']);
+         |           ^
+      41 |     });
+      42 |
+      43 |     it('recognises a start-only range as the comment itself', () => {
+
+      at Object.toEqual (libs/code-review/infrastructure/agents/engine/kody-rules-merge.mport.qa2420.spec.ts:40:11)
+
+  ● otherLocationsToRender › recognises a start-only range as the comment itself
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+      Array [
+    +   "a.ts:7-7",
+        "b.ts:1-2",
+      ]
+
+      48 |                 kodyRuleOtherLocations: ['a.ts:7-7', 'b.ts:1-2'],
+      49 |             }),
+    > 50 |         ).toEqual(['b.ts:1-2']);
+         |           ^
+      51 |     });
+      52 |
+      53 |     it('merges both lists once each', () => {
+
+      at Object.toEqual (libs/code-review/infrastructure/agents/engine/kody-rules-merge.mport.qa2420.spec.ts:50:11)
+
+  ● mergeKodyRuleFindings › does not carry a location with no known line into the merged list
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+      Array [
+    +   "b.ts:?-?",
+        "c.ts:5-6",
+      ]
+
+      125 |
+      126 |         expect(out).toHaveLength(1);
+    > 127 |         expect(out[0].kodyRuleOtherLocations).toEqual(['c.ts:5-6']);
+          |                                               ^
+      128 |         expect(merges[0].otherLocations).toBe(1);
+      129 |     });
+      130 |
+
+      at Object.toEqual (libs/code-review/infrastructure/agents/engine/kody-rules-merge.mport.qa2420.spec.ts:127:47)
+
+  ● mergeKodyRuleFindings › reports the scope of the kept finding, not of the group
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "pr"
+    Received: "file"
+
+      153 |         );
+      154 |
+    > 155 |         expect(merges[0].scope).toBe('pr');
+          |                                 ^
+      156 |     });
+      157 | });
+      158 |
+
+      at Object.toBe (libs/code-review/infrastructure/agents/engine/kody-rules-merge.mport.qa2420.spec.ts:155:33)
+
+(node:18324) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+FAIL libs/code-review/infrastructure/adapters/services/suggestion.service.implementation-check.mport.qa2420.spec.ts
+  ● SuggestionService.checkImplementedSuggestions › a suggestion that groups several locations › does not measure a line-less Kody Rule against a file diff (no line, #2420)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "NO_RELEVANT_CHANGES"
+    Received: undefined
+
+      721 |                 );
+      722 |
+    > 723 |                 expect(result.skipped).toBe('NO_RELEVANT_CHANGES');
+          |                                        ^
+      724 |                 expect(
+      725 |                     aiAnalysisService.checkSuggestionImplementation,
+      726 |                 ).not.toHaveBeenCalled();
+
+      at toBe (libs/code-review/infrastructure/adapters/services/suggestion.service.implementation-check.mport.qa2420.spec.ts:723:40)
+
+  ● SuggestionService.checkImplementedSuggestions › a suggestion that groups several locations › does not measure a line-less Kody Rule against a file diff (line 0, #2420)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "NO_RELEVANT_CHANGES"
+    Received: undefined
+
+      721 |                 );
+      722 |
+    > 723 |                 expect(result.skipped).toBe('NO_RELEVANT_CHANGES');
+          |                                        ^
+      724 |                 expect(
+      725 |                     aiAnalysisService.checkSuggestionImplementation,
+      726 |                 ).not.toHaveBeenCalled();
+
+      at toBe (libs/code-review/infrastructure/adapters/services/suggestion.service.implementation-check.mport.qa2420.spec.ts:723:40)
+
+(node:18325) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+FAIL libs/code-review/pipeline/stages/agent-review.stage.file-anchor.mport.qa2420.spec.ts
+  ● a kody_rules finding with a line but no file goes PR-level, not discarded › keeps a line-less finding on a file with a real patch at PR level instead of snapping it to the first hunk
+
+    TypeError: expect(received).toHaveLength(expected)
+
+    Matcher error: received value must have a length property whose value must be a number
+
+    Received has value: undefined
+
+      393 |         ]);
+      394 |
+    > 395 |         expect(result.validSuggestionsByPR).toHaveLength(1);
+          |                                             ^
+      396 |         expect(inlineSuggestionsOf(result)).toEqual([]);
+      397 |         expect(result.validSuggestionsByPR[0].suggestionContent).toContain(
+      398 |             '`src/user.ts`',
+
+      at Object.toHaveLength (libs/code-review/pipeline/stages/agent-review.stage.file-anchor.mport.qa2420.spec.ts:395:45)
+
+  ● a kody_rules finding with a line but no file goes PR-level, not discarded › routes a line-less finding from a context-needing rule to PR level, not to the first hunk
+
+    TypeError: expect(received).toHaveLength(expected)
+
+    Matcher error: received value must have a length property whose value must be a number
+
+    Received has value: undefined
+
+      418 |         ]);
+      419 |
+    > 420 |         expect(result.validSuggestionsByPR).toHaveLength(1);
+          |                                             ^
+      421 |         expect(inlineSuggestionsOf(result)).toEqual([]);
+      422 |         expect(result.validSuggestionsByPR[0].suggestionContent).toContain(
+      423 |             '`src/user.ts`',
+
+      at Object.toHaveLength (libs/code-review/pipeline/stages/agent-review.stage.file-anchor.mport.qa2420.spec.ts:420:45)
+
+Test Suites: 3 failed, 3 total
+Tests:       8 failed, 63 passed, 71 total
+Snapshots:   0 total
+Time:        1.046 s
+Ran all test suites matching mport.qa2420.
