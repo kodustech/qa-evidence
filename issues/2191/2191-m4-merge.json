@@ -1,0 +1,22 @@
+{
+ "merge_status": 200,
+ "merge_body": {
+  "message": "not allowed to merge [reason: Not all required status checks successful]",
+  "url": "https://codeberg.org/api/swagger"
+ },
+ "merged": false,
+ "merge_commit_sha": null,
+ "retry_pr11": [
+  405,
+  {
+   "message": "not allowed to merge [reason: Not all required status checks successful]",
+   "url": "https://codeberg.org/api/swagger"
+  }
+ ],
+ "positive_control_pr11_after_success": [
+  200,
+  null
+ ],
+ "pr11_merged": true,
+ "protection_removed": 204
+}
