@@ -1,0 +1,199 @@
+## orchestrator
+  {"ts": "2026-11-25T03:38:35.488Z", "event": "provider listening", "port": 61112, "scenario": "m26", "tree": "wt-L"}
+  {"ts": "2026-11-25T03:38:35.488Z", "event": "attempt", "what": "store write fails (appendPrLevelSuggestions rejects)"}
+  {"ts": "2026-11-25T03:38:35.490Z", "event": "spawn", "worker": "m26-savefail", "pid": 43581}
+  {"ts": "2026-11-25T03:38:40.823Z", "event": "exit", "worker": "m26-savefail", "pid": 43581, "code": 0, "signal": null}
+  {"ts": "2026-11-25T03:38:40.823Z", "event": "attempt", "what": "PR document missing (no seed)"}
+  {"ts": "2026-11-25T03:38:40.824Z", "event": "spawn", "worker": "m26-nodoc", "pid": 43665}
+  {"ts": "2026-11-25T03:38:45.488Z", "event": "exit", "worker": "m26-nodoc", "pid": 43665, "code": 0, "signal": null}
+  {"ts": "2026-11-25T03:38:45.488Z", "event": "attempt", "what": "real MongoDB outage after the provider accepted (container killed before the 201 reaches the worker)"}
+  {"ts": "2026-11-25T03:38:45.490Z", "event": "spawn", "worker": "m26-mongodown", "pid": 43765}
+  {"ts": "2026-11-25T03:38:47.180Z", "event": "mongo container killed", "before": "pr-level 201 response written", "commentId": 1005}
+  {"ts": "2026-11-25T03:38:59.435Z", "event": "exit", "worker": "m26-mongodown", "pid": 43765, "code": 0, "signal": null}
+  {"ts": "2026-11-25T03:39:02.192Z", "event": "mongo container restarted"}
+  {"ts": "2026-11-25T03:39:02.193Z", "event": "spawn", "worker": "m26-mongodown-inspect", "pid": 43913}
+  {"ts": "2026-11-25T03:39:04.811Z", "event": "exit", "worker": "m26-mongodown-inspect", "pid": 43913, "code": 0, "signal": null}
+  {"ts": "2026-11-25T03:39:04.811Z", "event": "attempt", "what": "store available"}
+  {"ts": "2026-11-25T03:39:04.812Z", "event": "spawn", "worker": "m26-ok", "pid": 43990}
+  {"ts": "2026-11-25T03:39:09.500Z", "event": "exit", "worker": "m26-ok", "pid": 43990, "code": 0, "signal": null}
+  {"ts": "2026-11-25T03:39:09.501Z", "event": "spawn", "worker": "m26-kill", "pid": 44105}
+  {"ts": "2026-11-25T03:39:10.956Z", "event": "kill target resolved", "pid": 44124, "spawnPid": 44105}
+  {"ts": "2026-11-25T03:39:10.956Z", "event": "barrier released", "name": "kill"}
+  {"ts": "2026-11-25T03:39:11.022Z", "event": "SIGKILL sent", "pid": 44124, "after": "pr-level 201 response written", "commentId": 1009}
+  {"ts": "2026-11-25T03:39:11.033Z", "event": "exit", "worker": "m26-kill", "pid": 44105, "code": null, "signal": "SIGKILL"}
+  {"ts": "2026-11-25T03:39:11.033Z", "event": "restart", "what": "immediate redelivery"}
+  {"ts": "2026-11-25T03:39:11.034Z", "event": "spawn", "worker": "m26-restart-now", "pid": 44183}
+  {"ts": "2026-11-25T03:39:12.518Z", "event": "exit", "worker": "m26-restart-now", "pid": 44183, "code": 0, "signal": null}
+  {"ts": "2026-11-25T03:39:12.518Z", "event": "restart", "what": "redelivery seen 6 minutes later (worker clock +6 min)"}
+  {"ts": "2026-11-25T03:39:12.518Z", "event": "spawn", "worker": "m26-restart-6m", "pid": 44259}
+  {"ts": "2026-11-25T03:39:17.230Z", "event": "exit", "worker": "m26-restart-6m", "pid": 44259, "code": 0, "signal": null}
+  {"ts": "2026-11-25T03:39:17.230Z", "event": "watchdog", "what": "real StaleReviewWatchdogCronProvider.handleCron with clock +16 min"}
+  {"ts": "2026-11-25T03:39:17.231Z", "event": "spawn", "worker": "m26-watchdog", "pid": 44343}
+  {"ts": "2026-11-25T03:39:18.744Z", "event": "exit", "worker": "m26-watchdog", "pid": 44343, "code": 0, "signal": null}
+  {"ts": "2026-11-25T03:39:18.745Z", "event": "spawn", "worker": "m26-final-inspect", "pid": 44438}
+  {"ts": "2026-11-25T03:39:20.239Z", "event": "exit", "worker": "m26-final-inspect", "pid": 44438, "code": 0, "signal": null}
+## worker m26-savefail
+  EV {"ts": "2026-11-25T03:38:37.428Z", "realTs": "2026-11-25T03:38:37.428Z", "event": "boot", "platform": "github", "org": "11111111-1111-4111-8111-111111111111", "repo": "repo-m26-a", "pr": 2601, "clockOffsetMin": 0}
+  EV {"ts": "2026-11-25T03:38:37.509Z", "realTs": "2026-11-25T03:38:37.509Z", "event": "seeded-pr-doc"}
+  EV {"ts": "2026-11-25T03:38:37.509Z", "realTs": "2026-11-25T03:38:37.509Z", "event": "run-start", "origin": "automation"}
+  EV {"ts": "2026-11-25T03:38:37.532Z", "realTs": "2026-11-25T03:38:37.532Z", "event": "handler-start"}
+  EV {"ts": "2026-11-25T03:38:37.535Z", "realTs": "2026-11-25T03:38:37.535Z", "event": "model-start"}
+  EV {"ts": "2026-11-25T03:38:37.536Z", "realTs": "2026-11-25T03:38:37.536Z", "event": "model-end"}
+  EV {"ts": "2026-11-25T03:38:37.544Z", "realTs": "2026-11-25T03:38:37.544Z", "event": "stage-done", "stage": "AgentReviewStage", "validSuggestionsByPR": ["A[A]: qa2420/attendance-report.ts has no test file"], "validSuggestions": [["B[A]: console.log in source", "qa2420/attendance-report.ts", 90]]}
+  EV {"ts": "2026-11-25T03:38:37.585Z", "realTs": "2026-11-25T03:38:37.585Z", "event": "stage-done", "stage": "CreatePrLevelCommentsStage", "errors": []}
+  EV {"ts": "2026-11-25T03:38:40.637Z", "realTs": "2026-11-25T03:38:40.637Z", "event": "stage-done", "stage": "CreateFileCommentsStage", "lastAnalyzedCommit": {"sha": "headsha"}, "errors": []}
+  EV {"ts": "2026-11-25T03:38:40.648Z", "realTs": "2026-11-25T03:38:40.648Z", "event": "run-end", "returned": "Automation executed successfully"}
+  EV {"ts": "2026-11-25T03:38:40.650Z", "realTs": "2026-11-25T03:38:40.650Z", "event": "mongo-after", "prDocId": "6b06583d26d8066d2ae13edc", "organizationId": "11111111-1111-4111-8111-111111111111", "repositoryId": "repo-m26-a", "prLevelSuggestions": [], "fileSuggestions": [{"path": "qa2420/attendance-report.ts", "summary": "B[A]: console.log in source", "start": 90, "deliveryStatus": "sent", "commentId": 1002}]}
+  EV {"ts": "2026-11-25T03:38:40.653Z", "realTs": "2026-11-25T03:38:40.653Z", "event": "pg-after", "executions": [{"uuid": "a7fdc920-e110-494e-bdf5-af79ca989442", "status": "success", "origin": "automation", "createdAt": "2026-11-25T03:38:37.521Z", "updatedAt": "2026-11-25T03:38:40.638Z", "errorMessage": null}]}
+  LOG 03:38:37.511 pid=43600 debug DistributedLockService: Distributed lock acquired
+  LOG 03:38:37.544 pid=43600 info  CreatePrLevelCommentsStage: Starting PR-level comments creation for PR#2601
+  LOG 03:38:37.544 pid=43600 info  CommentManagerService: Creating PR-level comments for PR#2601
+  LOG 03:38:37.584 pid=43600 info  CommentManagerService: Created PR-level comment for suggestion 81d9b77c-8a56-4d23-9010-eb30ac50ea5f
+  LOG 03:38:37.584 pid=43600 info  CreatePrLevelCommentsStage: Successfully created 1 PR-level comments for PR#2601
+  LOG 03:38:37.585 pid=43600 error CreatePrLevelCommentsStage: Error saving PR level suggestions to database | err=connection <monitor> to 127.0.0.1:57017 closed
+  LOG 03:38:40.584 pid=43600 info  GithubService: Created line comment for PR#2601
+  LOG 03:38:40.636 pid=43600 info  CreateFileCommentsStage: Successfully processed file comments for PR#2601
+  LOG 03:38:40.646 pid=43600 info  AutomationCodeReviewService: Successfully handled pull request for PR#2601
+  LOG 03:38:40.647 pid=43600 debug DistributedLockService: Distributed lock released
+## worker m26-nodoc
+  EV {"ts": "2026-11-25T03:38:42.135Z", "realTs": "2026-11-25T03:38:42.135Z", "event": "boot", "platform": "github", "org": "11111111-1111-4111-8111-111111111111", "repo": "repo-m26-b", "pr": 2602, "clockOffsetMin": 0}
+  EV {"ts": "2026-11-25T03:38:42.172Z", "realTs": "2026-11-25T03:38:42.172Z", "event": "run-start", "origin": "automation"}
+  EV {"ts": "2026-11-25T03:38:42.197Z", "realTs": "2026-11-25T03:38:42.197Z", "event": "handler-start"}
+  EV {"ts": "2026-11-25T03:38:42.199Z", "realTs": "2026-11-25T03:38:42.199Z", "event": "model-start"}
+  EV {"ts": "2026-11-25T03:38:42.201Z", "realTs": "2026-11-25T03:38:42.201Z", "event": "model-end"}
+  EV {"ts": "2026-11-25T03:38:42.208Z", "realTs": "2026-11-25T03:38:42.208Z", "event": "stage-done", "stage": "AgentReviewStage", "validSuggestionsByPR": ["A[A]: qa2420/attendance-report.ts has no test file"], "validSuggestions": [["B[A]: console.log in source", "qa2420/attendance-report.ts", 90]]}
+  EV {"ts": "2026-11-25T03:38:42.257Z", "realTs": "2026-11-25T03:38:42.257Z", "event": "stage-done", "stage": "CreatePrLevelCommentsStage", "errors": []}
+  EV {"ts": "2026-11-25T03:38:45.286Z", "realTs": "2026-11-25T03:38:45.286Z", "event": "stage-done", "stage": "CreateFileCommentsStage", "lastAnalyzedCommit": {"sha": "headsha"}, "errors": []}
+  EV {"ts": "2026-11-25T03:38:45.305Z", "realTs": "2026-11-25T03:38:45.305Z", "event": "run-end", "returned": "Automation executed successfully"}
+  EV {"ts": "2026-11-25T03:38:45.309Z", "realTs": "2026-11-25T03:38:45.309Z", "event": "mongo-after", "prDocId": "6b065845f88e143f443bd837", "organizationId": "11111111-1111-4111-8111-111111111111", "repositoryId": "repo-m26-b", "prLevelSuggestions": [], "fileSuggestions": [{"path": "qa2420/attendance-report.ts", "summary": "B[A]: console.log in source", "start": 90, "deliveryStatus": "sent", "commentId": 1004}]}
+  EV {"ts": "2026-11-25T03:38:45.314Z", "realTs": "2026-11-25T03:38:45.314Z", "event": "pg-after", "executions": [{"uuid": "51b45b38-7167-4c46-bc9c-6c7d65037e99", "status": "success", "origin": "automation", "createdAt": "2026-11-25T03:38:42.184Z", "updatedAt": "2026-11-25T03:38:45.291Z", "errorMessage": null}]}
+  LOG 03:38:42.175 pid=43684 debug DistributedLockService: Distributed lock acquired
+  LOG 03:38:42.209 pid=43684 info  CreatePrLevelCommentsStage: Starting PR-level comments creation for PR#2602
+  LOG 03:38:42.209 pid=43684 info  CommentManagerService: Creating PR-level comments for PR#2602
+  LOG 03:38:42.252 pid=43684 info  CommentManagerService: Created PR-level comment for suggestion 0d689579-5a78-4ebb-88db-4a12cedeb591
+  LOG 03:38:42.252 pid=43684 info  CreatePrLevelCommentsStage: Successfully created 1 PR-level comments for PR#2602
+  LOG 03:38:42.256 pid=43684 warn  PullRequestsService: PR not found when trying to add PR level suggestions
+  LOG 03:38:42.257 pid=43684 info  CreatePrLevelCommentsStage: Saved 1 PR level suggestions to database
+  LOG 03:38:42.258 pid=43684 warn  SuggestionService: PR #2602 not found, skipping comment resolution.
+  LOG 03:38:45.251 pid=43684 info  GithubService: Created line comment for PR#2602
+  LOG 03:38:45.285 pid=43684 info  CreateFileCommentsStage: Successfully processed file comments for PR#2602
+  LOG 03:38:45.302 pid=43684 info  AutomationCodeReviewService: Successfully handled pull request for PR#2602
+  LOG 03:38:45.303 pid=43684 debug DistributedLockService: Distributed lock released
+## worker m26-mongodown
+  EV {"ts": "2026-11-25T03:38:46.863Z", "realTs": "2026-11-25T03:38:46.863Z", "event": "boot", "platform": "github", "org": "11111111-1111-4111-8111-111111111111", "repo": "repo-m26-d", "pr": 2605, "clockOffsetMin": 0}
+  EV {"ts": "2026-11-25T03:38:46.943Z", "realTs": "2026-11-25T03:38:46.943Z", "event": "seeded-pr-doc"}
+  EV {"ts": "2026-11-25T03:38:46.943Z", "realTs": "2026-11-25T03:38:46.943Z", "event": "run-start", "origin": "automation"}
+  EV {"ts": "2026-11-25T03:38:46.967Z", "realTs": "2026-11-25T03:38:46.967Z", "event": "handler-start"}
+  EV {"ts": "2026-11-25T03:38:46.970Z", "realTs": "2026-11-25T03:38:46.970Z", "event": "model-start"}
+  EV {"ts": "2026-11-25T03:38:46.971Z", "realTs": "2026-11-25T03:38:46.971Z", "event": "model-end"}
+  EV {"ts": "2026-11-25T03:38:46.979Z", "realTs": "2026-11-25T03:38:46.979Z", "event": "stage-done", "stage": "AgentReviewStage", "validSuggestionsByPR": ["A[A]: qa2420/attendance-report.ts has no test file"], "validSuggestions": [["B[A]: console.log in source", "qa2420/attendance-report.ts", 90]]}
+  EV {"ts": "2026-11-25T03:38:50.191Z", "realTs": "2026-11-25T03:38:50.191Z", "event": "stage-done", "stage": "CreatePrLevelCommentsStage", "errors": []}
+  EV {"ts": "2026-11-25T03:38:56.251Z", "realTs": "2026-11-25T03:38:56.251Z", "event": "stage-done", "stage": "CreateFileCommentsStage", "lastAnalyzedCommit": {"sha": "headsha"}, "errors": []}
+  EV {"ts": "2026-11-25T03:38:56.276Z", "realTs": "2026-11-25T03:38:56.276Z", "event": "run-end", "returned": "Automation executed successfully"}
+  EV {"ts": "2026-11-25T03:38:59.280Z", "realTs": "2026-11-25T03:38:59.280Z", "event": "inspect-failed", "error": "connect ECONNREFUSED 127.0.0.1:57017"}
+  LOG 03:38:46.944 pid=43784 debug DistributedLockService: Distributed lock acquired
+  LOG 03:38:46.979 pid=43784 info  CreatePrLevelCommentsStage: Starting PR-level comments creation for PR#2605
+  LOG 03:38:46.979 pid=43784 info  CommentManagerService: Creating PR-level comments for PR#2605
+  LOG 03:38:47.188 pid=43784 info  CommentManagerService: Created PR-level comment for suggestion 421ca71a-14b8-46b2-85ab-db5a5d976bc1
+  LOG 03:38:47.189 pid=43784 info  CreatePrLevelCommentsStage: Successfully created 1 PR-level comments for PR#2605
+  LOG 03:38:50.190 pid=43784 error PullRequestsService: Failed to add PR level suggestions to PR#2605 | err=connect ECONNREFUSED 127.0.0.1:57017
+  LOG 03:38:50.191 pid=43784 info  CreatePrLevelCommentsStage: Saved 1 PR level suggestions to database
+  LOG 03:38:53.194 pid=43784 error SuggestionService: Error while resolving comments for PR#2605 | err=connect ECONNREFUSED 127.0.0.1:57017
+  LOG 03:38:53.247 pid=43784 info  GithubService: Created line comment for PR#2605
+  LOG 03:38:56.249 pid=43784 error PullRequestsService: Timeout or error in aggregateAndSaveDataStructure for PR#2605 | err=connect ECONNREFUSED 127.0.0.1:57017
+  LOG 03:38:56.250 pid=43784 info  CreateFileCommentsStage: Successfully processed file comments for PR#2605
+  LOG 03:38:56.274 pid=43784 info  AutomationCodeReviewService: Successfully handled pull request for PR#2605
+  LOG 03:38:56.276 pid=43784 debug DistributedLockService: Distributed lock released
+## worker m26-mongodown-inspect
+  EV {"ts": "2026-11-25T03:39:04.615Z", "realTs": "2026-11-25T03:39:04.615Z", "event": "boot", "mode": "inspect", "platform": "github", "org": "11111111-1111-4111-8111-111111111111", "repo": "repo-m26-d", "pr": 2605, "clockOffsetMin": 0}
+  EV {"ts": "2026-11-25T03:39:04.672Z", "realTs": "2026-11-25T03:39:04.672Z", "event": "mongo-after", "prDocId": "6b065846a231f4732bb36a83", "organizationId": "11111111-1111-4111-8111-111111111111", "repositoryId": "repo-m26-d", "prLevelSuggestions": [], "fileSuggestions": []}
+  EV {"ts": "2026-11-25T03:39:04.679Z", "realTs": "2026-11-25T03:39:04.679Z", "event": "pg-after", "executions": [{"uuid": "998eecb0-0bfb-44ee-b03c-4a0bceea77de", "status": "success", "origin": "automation", "createdAt": "2026-11-25T03:38:46.954Z", "updatedAt": "2026-11-25T03:38:56.256Z", "errorMessage": null}]}
+## worker m26-ok
+  EV {"ts": "2026-11-25T03:39:06.158Z", "realTs": "2026-11-25T03:39:06.158Z", "event": "boot", "platform": "github", "org": "11111111-1111-4111-8111-111111111111", "repo": "repo-m26-c", "pr": 2603, "clockOffsetMin": 0}
+  EV {"ts": "2026-11-25T03:39:06.242Z", "realTs": "2026-11-25T03:39:06.242Z", "event": "seeded-pr-doc"}
+  EV {"ts": "2026-11-25T03:39:06.242Z", "realTs": "2026-11-25T03:39:06.242Z", "event": "run-start", "origin": "automation"}
+  EV {"ts": "2026-11-25T03:39:06.269Z", "realTs": "2026-11-25T03:39:06.269Z", "event": "handler-start"}
+  EV {"ts": "2026-11-25T03:39:06.271Z", "realTs": "2026-11-25T03:39:06.271Z", "event": "model-start"}
+  EV {"ts": "2026-11-25T03:39:06.273Z", "realTs": "2026-11-25T03:39:06.273Z", "event": "model-end"}
+  EV {"ts": "2026-11-25T03:39:06.281Z", "realTs": "2026-11-25T03:39:06.281Z", "event": "stage-done", "stage": "AgentReviewStage", "validSuggestionsByPR": ["A[A]: qa2420/attendance-report.ts has no test file"], "validSuggestions": [["B[A]: console.log in source", "qa2420/attendance-report.ts", 90]]}
+  EV {"ts": "2026-11-25T03:39:06.330Z", "realTs": "2026-11-25T03:39:06.330Z", "event": "stage-done", "stage": "CreatePrLevelCommentsStage", "errors": []}
+  EV {"ts": "2026-11-25T03:39:09.341Z", "realTs": "2026-11-25T03:39:09.341Z", "event": "stage-done", "stage": "CreateFileCommentsStage", "lastAnalyzedCommit": {"sha": "headsha"}, "errors": []}
+  EV {"ts": "2026-11-25T03:39:09.347Z", "realTs": "2026-11-25T03:39:09.347Z", "event": "run-end", "returned": "Automation executed successfully"}
+  EV {"ts": "2026-11-25T03:39:09.349Z", "realTs": "2026-11-25T03:39:09.349Z", "event": "mongo-after", "prDocId": "6b06585a441143effdc2e3ae", "organizationId": "11111111-1111-4111-8111-111111111111", "repositoryId": "repo-m26-c", "prLevelSuggestions": [{"id": "60234026-28bc-46af-a09a-2444a654f02f", "summary": "A[A]: qa2420/attendance-report.ts has no test file", "deliveryStatus": "sent", "commentId": 1007, "brokenKodyRulesIds": ["rule-a-A"]}], "fileSuggestions": [{"path": "qa2420/attendance-report.ts", "summary": "B[A]: console.log in source", "start": 90, "deliveryStatus": "sent", "commentId": 1008}]}
+  EV {"ts": "2026-11-25T03:39:09.352Z", "realTs": "2026-11-25T03:39:09.352Z", "event": "pg-after", "executions": [{"uuid": "81ced2ef-471a-4447-9592-382c799a9ce0", "status": "success", "origin": "automation", "createdAt": "2026-11-25T03:39:06.256Z", "updatedAt": "2026-11-25T03:39:09.342Z", "errorMessage": null}]}
+  LOG 03:39:06.243 pid=44009 debug DistributedLockService: Distributed lock acquired
+  LOG 03:39:06.281 pid=44009 info  CreatePrLevelCommentsStage: Starting PR-level comments creation for PR#2603
+  LOG 03:39:06.281 pid=44009 info  CommentManagerService: Creating PR-level comments for PR#2603
+  LOG 03:39:06.322 pid=44009 info  CommentManagerService: Created PR-level comment for suggestion 60234026-28bc-46af-a09a-2444a654f02f
+  LOG 03:39:06.323 pid=44009 info  CreatePrLevelCommentsStage: Successfully created 1 PR-level comments for PR#2603
+  LOG 03:39:06.330 pid=44009 info  CreatePrLevelCommentsStage: Saved 1 PR level suggestions to database
+  LOG 03:39:09.316 pid=44009 info  GithubService: Created line comment for PR#2603
+  LOG 03:39:09.341 pid=44009 info  CreateFileCommentsStage: Successfully processed file comments for PR#2603
+  LOG 03:39:09.347 pid=44009 info  AutomationCodeReviewService: Successfully handled pull request for PR#2603
+  LOG 03:39:09.347 pid=44009 debug DistributedLockService: Distributed lock released
+## worker m26-kill
+  EV {"ts": "2026-11-25T03:39:10.804Z", "realTs": "2026-11-25T03:39:10.804Z", "event": "boot", "platform": "github", "org": "11111111-1111-4111-8111-111111111111", "repo": "repo-m26-k", "pr": 2604, "clockOffsetMin": 0}
+  EV {"ts": "2026-11-25T03:39:10.881Z", "realTs": "2026-11-25T03:39:10.881Z", "event": "seeded-pr-doc"}
+  EV {"ts": "2026-11-25T03:39:10.957Z", "realTs": "2026-11-25T03:39:10.957Z", "event": "run-start", "origin": "automation"}
+  EV {"ts": "2026-11-25T03:39:10.979Z", "realTs": "2026-11-25T03:39:10.979Z", "event": "handler-start"}
+  EV {"ts": "2026-11-25T03:39:10.981Z", "realTs": "2026-11-25T03:39:10.981Z", "event": "model-start"}
+  EV {"ts": "2026-11-25T03:39:10.982Z", "realTs": "2026-11-25T03:39:10.982Z", "event": "model-end"}
+  EV {"ts": "2026-11-25T03:39:10.990Z", "realTs": "2026-11-25T03:39:10.990Z", "event": "stage-done", "stage": "AgentReviewStage", "validSuggestionsByPR": ["A[A]: qa2420/attendance-report.ts has no test file"], "validSuggestions": [["B[A]: console.log in source", "qa2420/attendance-report.ts", 90]]}
+  LOG 03:39:10.958 pid=44124 debug DistributedLockService: Distributed lock acquired
+  LOG 03:39:10.990 pid=44124 info  CreatePrLevelCommentsStage: Starting PR-level comments creation for PR#2604
+  LOG 03:39:10.990 pid=44124 info  CommentManagerService: Creating PR-level comments for PR#2604
+## worker m26-restart-now
+  EV {"ts": "2026-11-25T03:39:12.335Z", "realTs": "2026-11-25T03:39:12.335Z", "event": "boot", "platform": "github", "org": "11111111-1111-4111-8111-111111111111", "repo": "repo-m26-k", "pr": 2604, "clockOffsetMin": 0}
+  EV {"ts": "2026-11-25T03:39:12.377Z", "realTs": "2026-11-25T03:39:12.377Z", "event": "run-start", "origin": "automation"}
+  EV {"ts": "2026-11-25T03:39:12.389Z", "realTs": "2026-11-25T03:39:12.389Z", "event": "run-end", "returned": "Code review already in progress for this PR"}
+  EV {"ts": "2026-11-25T03:39:12.390Z", "realTs": "2026-11-25T03:39:12.390Z", "event": "mongo-after", "prDocId": "6b06585ecc1625e74b28c39c", "organizationId": "11111111-1111-4111-8111-111111111111", "repositoryId": "repo-m26-k", "prLevelSuggestions": [], "fileSuggestions": []}
+  EV {"ts": "2026-11-25T03:39:12.392Z", "realTs": "2026-11-25T03:39:12.392Z", "event": "pg-after", "executions": [{"uuid": "2bc78744-d95a-48d4-8e61-31e791422c2f", "status": "in_progress", "origin": "automation", "createdAt": "2026-11-25T03:39:10.967Z", "updatedAt": "2026-11-25T03:39:10.967Z", "errorMessage": null}]}
+  LOG 03:39:12.379 pid=44202 debug DistributedLockService: Distributed lock acquired
+  LOG 03:39:12.387 pid=44202 warn  AutomationCodeReviewService: Code review already in progress for PR#2604
+  LOG 03:39:12.389 pid=44202 debug DistributedLockService: Distributed lock released
+## worker m26-restart-6m
+  EV {"ts": "2026-11-25T03:45:13.858Z", "realTs": "2026-11-25T03:39:13.858Z", "event": "boot", "platform": "github", "org": "11111111-1111-4111-8111-111111111111", "repo": "repo-m26-k", "pr": 2604, "clockOffsetMin": 6}
+  EV {"ts": "2026-11-25T03:45:13.901Z", "realTs": "2026-11-25T03:39:13.901Z", "event": "run-start", "origin": "automation"}
+  EV {"ts": "2026-11-25T03:45:13.927Z", "realTs": "2026-11-25T03:39:13.927Z", "event": "handler-start"}
+  EV {"ts": "2026-11-25T03:45:13.929Z", "realTs": "2026-11-25T03:39:13.929Z", "event": "model-start"}
+  EV {"ts": "2026-11-25T03:45:13.931Z", "realTs": "2026-11-25T03:39:13.931Z", "event": "model-end"}
+  EV {"ts": "2026-11-25T03:45:13.938Z", "realTs": "2026-11-25T03:39:13.938Z", "event": "stage-done", "stage": "AgentReviewStage", "validSuggestionsByPR": ["A[A]: qa2420/attendance-report.ts has no test file"], "validSuggestions": [["B[A]: console.log in source", "qa2420/attendance-report.ts", 90]]}
+  EV {"ts": "2026-11-25T03:45:13.989Z", "realTs": "2026-11-25T03:39:13.989Z", "event": "stage-done", "stage": "CreatePrLevelCommentsStage", "errors": []}
+  EV {"ts": "2026-11-25T03:45:17.040Z", "realTs": "2026-11-25T03:39:17.040Z", "event": "stage-done", "stage": "CreateFileCommentsStage", "lastAnalyzedCommit": {"sha": "headsha"}, "errors": []}
+  EV {"ts": "2026-11-25T03:45:17.051Z", "realTs": "2026-11-25T03:39:17.051Z", "event": "run-end", "returned": "Automation executed successfully"}
+  EV {"ts": "2026-11-25T03:45:17.053Z", "realTs": "2026-11-25T03:39:17.053Z", "event": "mongo-after", "prDocId": "6b06585ecc1625e74b28c39c", "organizationId": "11111111-1111-4111-8111-111111111111", "repositoryId": "repo-m26-k", "prLevelSuggestions": [{"id": "27992e33-ba1b-4d20-ad0e-f706899200ee", "summary": "A[A]: qa2420/attendance-report.ts has no test file", "deliveryStatus": "sent", "commentId": 1010, "brokenKodyRulesIds": ["rule-a-A"]}], "fileSuggestions": [{"path": "qa2420/attendance-report.ts", "summary": "B[A]: console.log in source", "start": 90, "deliveryStatus": "sent", "commentId": 1011}]}
+  EV {"ts": "2026-11-25T03:45:17.057Z", "realTs": "2026-11-25T03:39:17.057Z", "event": "pg-after", "executions": [{"uuid": "2bc78744-d95a-48d4-8e61-31e791422c2f", "status": "in_progress", "origin": "automation", "createdAt": "2026-11-25T03:39:10.967Z", "updatedAt": "2026-11-25T03:39:10.967Z", "errorMessage": null}, {"uuid": "458aeed9-840c-4bcf-ad47-65823b248c1a", "status": "success", "origin": "automation", "createdAt": "2026-11-25T03:39:13.912Z", "updatedAt": "2026-11-25T03:39:17.042Z", "errorMessage": null}]}
+  LOG 03:39:13.903 pid=44278 debug DistributedLockService: Distributed lock acquired
+  LOG 03:39:13.938 pid=44278 info  CreatePrLevelCommentsStage: Starting PR-level comments creation for PR#2604
+  LOG 03:39:13.938 pid=44278 info  CommentManagerService: Creating PR-level comments for PR#2604
+  LOG 03:39:13.981 pid=44278 info  CommentManagerService: Created PR-level comment for suggestion 27992e33-ba1b-4d20-ad0e-f706899200ee
+  LOG 03:39:13.981 pid=44278 info  CreatePrLevelCommentsStage: Successfully created 1 PR-level comments for PR#2604
+  LOG 03:39:13.988 pid=44278 info  CreatePrLevelCommentsStage: Saved 1 PR level suggestions to database
+  LOG 03:39:16.978 pid=44278 info  GithubService: Created line comment for PR#2604
+  LOG 03:39:17.040 pid=44278 info  CreateFileCommentsStage: Successfully processed file comments for PR#2604
+  LOG 03:39:17.049 pid=44278 info  AutomationCodeReviewService: Successfully handled pull request for PR#2604
+  LOG 03:39:17.051 pid=44278 debug DistributedLockService: Distributed lock released
+## worker m26-watchdog
+  EV {"ts": "2026-11-25T03:55:18.558Z", "realTs": "2026-11-25T03:39:18.558Z", "event": "boot", "mode": "watchdog", "platform": "github", "org": "11111111-1111-4111-8111-111111111111", "repo": "repo-m26-k", "pr": 2604, "clockOffsetMin": 16}
+  EV {"ts": "2026-11-25T03:55:18.618Z", "realTs": "2026-11-25T03:39:18.618Z", "event": "watchdog-done"}
+  LOG 03:39:18.585 pid=44362 debug DistributedLockService: Distributed lock acquired
+  LOG 03:39:18.593 pid=44362 info  StaleReviewWatchdogCronProvider: Found 1 stale in-progress code review executions
+  LOG 03:39:18.594 pid=44362 warn  CodeReviewExecutionRepository: No code review executions found
+  LOG 03:39:18.617 pid=44362 info  StaleReviewWatchdogCronProvider: Reaped stale code review execution 2bc78744-d95a-48d4-8e61-31e791422c2f
+  LOG 03:39:18.618 pid=44362 debug DistributedLockService: Distributed lock released
+## worker m26-final-inspect
+  EV {"ts": "2026-11-25T03:39:20.060Z", "realTs": "2026-11-25T03:39:20.060Z", "event": "boot", "mode": "inspect", "platform": "github", "org": "11111111-1111-4111-8111-111111111111", "repo": "repo-m26-k", "pr": 2604, "clockOffsetMin": 0}
+  EV {"ts": "2026-11-25T03:39:20.105Z", "realTs": "2026-11-25T03:39:20.105Z", "event": "mongo-after", "prDocId": "6b06585ecc1625e74b28c39c", "organizationId": "11111111-1111-4111-8111-111111111111", "repositoryId": "repo-m26-k", "prLevelSuggestions": [{"id": "27992e33-ba1b-4d20-ad0e-f706899200ee", "summary": "A[A]: qa2420/attendance-report.ts has no test file", "deliveryStatus": "sent", "commentId": 1010, "brokenKodyRulesIds": ["rule-a-A"]}], "fileSuggestions": [{"path": "qa2420/attendance-report.ts", "summary": "B[A]: console.log in source", "start": 90, "deliveryStatus": "sent", "commentId": 1011}]}
+  EV {"ts": "2026-11-25T03:39:20.111Z", "realTs": "2026-11-25T03:39:20.111Z", "event": "pg-after", "executions": [{"uuid": "458aeed9-840c-4bcf-ad47-65823b248c1a", "status": "success", "origin": "automation", "createdAt": "2026-11-25T03:39:13.912Z", "updatedAt": "2026-11-25T03:39:17.042Z", "errorMessage": null}, {"uuid": "2bc78744-d95a-48d4-8e61-31e791422c2f", "status": "error", "origin": "automation", "createdAt": "2026-11-25T03:39:10.967Z", "updatedAt": "2026-11-25T03:39:18.595Z", "errorMessage": "Code review interrupted \u2014 the review process stopped unexpectedly (e.g. service restart) and did not complete. Push a new commit or start a new review to retry."}]}
+## provider POSTs
+  03:38:37.578 gh-pr-level /api/v3/repos/qa-owner/codex-athena/issues/2601/comments status=201 auth=token tok-11111111 body='A[A]: qa2420/attendance-report.ts has no test file**' position=False
+  03:38:40.577 gh-inline   /api/v3/repos/qa-owner/codex-athena/pulls/2601/comments status=201 auth=token tok-11111111 body='B[A]: console.log in source**' position=False
+  03:38:42.244 gh-pr-level /api/v3/repos/qa-owner/codex-athena/issues/2602/comments status=201 auth=token tok-11111111 body='A[A]: qa2420/attendance-report.ts has no test file**' position=False
+  03:38:45.245 gh-inline   /api/v3/repos/qa-owner/codex-athena/pulls/2602/comments status=201 auth=token tok-11111111 body='B[A]: console.log in source**' position=False
+  03:38:47.011 gh-pr-level /api/v3/repos/qa-owner/codex-athena/issues/2605/comments status=201 auth=token tok-11111111 body='A[A]: qa2420/attendance-report.ts has no test file**' position=False
+  03:38:53.242 gh-inline   /api/v3/repos/qa-owner/codex-athena/pulls/2605/comments status=201 auth=token tok-11111111 body='B[A]: console.log in source**' position=False
+  03:39:06.314 gh-pr-level /api/v3/repos/qa-owner/codex-athena/issues/2603/comments status=201 auth=token tok-11111111 body='A[A]: qa2420/attendance-report.ts has no test file**' position=False
+  03:39:09.311 gh-inline   /api/v3/repos/qa-owner/codex-athena/pulls/2603/comments status=201 auth=token tok-11111111 body='B[A]: console.log in source**' position=False
+  03:39:11.022 gh-pr-level /api/v3/repos/qa-owner/codex-athena/issues/2604/comments status=201 auth=token tok-11111111 body='A[A]: qa2420/attendance-report.ts has no test file**' position=False
+  03:39:13.973 gh-pr-level /api/v3/repos/qa-owner/codex-athena/issues/2604/comments status=201 auth=token tok-11111111 body='A[A]: qa2420/attendance-report.ts has no test file**' position=False
+  03:39:16.972 gh-inline   /api/v3/repos/qa-owner/codex-athena/pulls/2604/comments status=201 auth=token tok-11111111 body='B[A]: console.log in source**' position=False
