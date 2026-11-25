@@ -1,0 +1,494 @@
+/* QA #2420 audit items 2/3/10 harness (A1). REAL: mapAgentFindings,
+ * AgentReviewStage.executeStage (rounds 1 and 2, incl. dropRepeats ->
+ * checkRepeats), CreatePrLevelCommentsStage, CreateFileCommentsStage,
+ * CommentManagerService, SuggestionService, PullRequestsService,
+ * CodeManagementService + PlatformIntegrationFactory, BitbucketService ->
+ * BitbucketCloudService (bitbucket SDK), AzureReposService ->
+ * AzureReposRequestHelper (axios), ForgejoService (forgejo client),
+ * BuildPreviousReviewDecisionsUseCase + PrDecisionStoreService.
+ * STUBBED: model output (scripted findings), LLM.run (dedup default answer;
+ * repeat-check verdict scripted per scenario, prompt recorded), integration
+ * config lookups, the pull-requests repository (in-memory), and the HTTP
+ * transport: fetch (Bitbucket) and axios.create (Azure) are redirected to an
+ * in-process fake provider that records every request; Forgejo's host points
+ * at it directly. */
+import * as fs from 'fs';
+import * as http from 'http';
+import axios from 'axios';
+import { produce } from 'immer';
+import { AgentReviewStage } from './agent-review.stage';
+import { CreatePrLevelCommentsStage } from './create-pr-level-comments.stage';
+import { CreateFileCommentsStage } from './create-file-comments.stage';
+import { CommentManagerService } from '@libs/code-review/infrastructure/adapters/services/commentManager.service';
+import { MessageTemplateProcessor } from '@libs/code-review/infrastructure/adapters/services/messageTemplateProcessor.service';
+import { SuggestionService } from '@libs/code-review/infrastructure/adapters/services/suggestion.service';
+import { PrDecisionStoreService } from '@libs/code-review/infrastructure/adapters/services/pr-decision-store.service';
+import { BuildPreviousReviewDecisionsUseCase } from '@libs/code-review/application/use-cases/previousReviewDecisions/build-previous-review-decisions.use-case';
+import * as repeatCheckModule from '@libs/code-review/infrastructure/agents/engine/repeat-check';
+import { mapAgentFindings } from '@libs/code-review/infrastructure/agents/collaborators/finding-mapper';
+import { resolveAgentPrompt } from '@libs/common/utils/codeManagement/suggestion-comment-blocks';
+import { CodeManagementService } from '@libs/platform/infrastructure/adapters/services/codeManagement.service';
+import { PlatformIntegrationFactory } from '@libs/platform/infrastructure/adapters/services/platformIntegration.factory';
+import { BitbucketService } from '@libs/platform/infrastructure/adapters/services/bitbucket.service';
+import { BitbucketCloudService } from '@libs/platform/infrastructure/adapters/services/bitbucket/bitbucket-cloud.service';
+import { AzureReposService } from '@libs/platform/infrastructure/adapters/services/azureRepos/azureRepos.service';
+import { AzureReposRequestHelper } from '@libs/platform/infrastructure/adapters/services/azureRepos/azure-repos-request-helper';
+import { ForgejoService } from '@libs/platform/infrastructure/adapters/services/forgejo.service';
+import { PullRequestsService } from '@libs/platformData/infrastructure/adapters/services/pullRequests.service';
+import { PlatformType } from '@libs/core/domain/enums/platform-type.enum';
+import { DeliveryStatus } from '@libs/platformData/domain/pullRequests/enums/deliveryStatus.enum';
+import { encrypt } from '@libs/common/utils/crypto';
+import { LLM } from '@libs/llm/llm';
+
+jest.mock(
+    '@libs/code-review/infrastructure/agents/engine/classify-severity',
+    () => ({ classifySeverity: jest.fn().mockResolvedValue(new Map()) }),
+);
+jest.mock(
+    '@libs/code-review/infrastructure/agents/engine/format-suggestion-content',
+    () => ({ formatSuggestionContent: jest.fn().mockResolvedValue(new Map()) }),
+);
+jest.mock('@libs/code-review/infrastructure/agents/engine/repeat-check', () => {
+    const actual = jest.requireActual('@libs/code-review/infrastructure/agents/engine/repeat-check');
+    return { ...actual, checkRepeats: jest.fn((...a: any[]) => actual.checkRepeats(...a)) };
+});
+jest.mock('@libs/llm/managed-slot', () => {
+    const actual = jest.requireActual('@libs/llm/managed-slot');
+    return { ...actual, hasManagedModelKey: jest.fn(() => false) };
+});
+
+jest.setTimeout(10 * 60_000);
+
+const TREE = process.env.QA_TREE || '?';
+const OUTDIR = process.env.QA_OUTDIR!;
+const write = (name: string, obj: any) =>
+    fs.writeFileSync(`${OUTDIR}/${name}`, JSON.stringify(obj, null, 2));
+
+// ── fake provider ──────────────────────────────────────────────────────────
+type Req = { seq: number; provider: string; method: string; path: string; body: any };
+let requests: Req[] = [];
+let idSeq = 5000;
+let azThreadSeq = 70;
+let PORT = 0;
+let server: http.Server;
+const now = '2026-11-25T00:00:00Z';
+const route = (method: string, path: string, body: any): [number, any] => {
+    if (path.startsWith('/bb/')) {
+        if (method === 'POST' && /\/pullrequests\/\d+\/comments$/.test(path)) {
+            const id = ++idSeq;
+            return [201, { id, content: { raw: body?.content?.raw }, inline: body?.inline, parent: body?.parent }];
+        }
+        if (/\/pullrequests\/\d+\/commits$/.test(path))
+            return [200, { values: [{ hash: 'headsha', date: now, message: 'm', author: { raw: 'qa <qa@example.invalid>' }, parents: [] }] }];
+        return [200, { values: [] }];
+    }
+    if (path.startsWith('/az/')) {
+        if (method === 'POST' && /\/threads$/.test(path)) {
+            const threadId = ++azThreadSeq;
+            // Azure numbers comments inside each thread from 1.
+            return [200, { id: threadId, comments: [{ id: 1, content: body?.comments?.[0]?.content }], threadContext: body?.threadContext ?? null, status: 'active' }];
+        }
+        if (/\/commits$/.test(path))
+            return [200, { value: [{ commitId: 'headsha', comment: 'm', author: { name: 'qa', email: 'qa@example.invalid', date: now }, committer: { name: 'qa', date: now } }] }];
+        if (/\/iterations$/.test(path)) return [200, { value: [{ id: 1, sourceRefCommit: { commitId: 'headsha' }, targetRefCommit: { commitId: 'basesha' } }] }];
+        return [200, { value: [] }];
+    }
+    if (path.startsWith('/fj/')) {
+        if (method === 'POST' && /\/issues\/\d+\/comments$/.test(path)) {
+            const id = ++idSeq;
+            return [201, { id, body: body?.body, html_url: `http://fake/fj/c/${id}` }];
+        }
+        if (method === 'POST' && /\/pulls\/\d+\/reviews$/.test(path)) {
+            const id = ++idSeq;
+            return [200, { id, body: body?.body, comments: body?.comments }];
+        }
+        if (/\/pulls\/\d+\/commits$/.test(path))
+            return [200, [{ sha: 'headsha', commit: { message: 'm', author: { name: 'qa', email: 'qa@example.invalid', date: now }, committer: { date: now } }, parents: [] }]];
+        if (/\/pulls\/\d+\/reviews\/\d+\/comments$/.test(path)) return [200, [{ id: idSeq + 1, path: 'x', position: 1 }]];
+        return [200, []];
+    }
+    return [404, {}];
+};
+
+beforeAll(async () => {
+    server = http.createServer((req, res) => {
+        let raw = '';
+        req.on('data', (c) => (raw += c));
+        req.on('end', () => {
+            const u = new URL(req.url!, 'http://x');
+            let body: any = raw;
+            try { body = raw ? JSON.parse(raw) : undefined; } catch { /* keep raw */ }
+            const provider = u.pathname.split('/')[1];
+            const [status, obj] = route(req.method!, u.pathname, body);
+            if (req.method !== 'GET') requests.push({ seq: requests.length, provider, method: req.method!, path: u.pathname, body });
+            res.writeHead(status, { 'content-type': 'application/json' });
+            res.end(JSON.stringify(obj));
+        });
+    });
+    await new Promise<void>((r) => server.listen(0, '127.0.0.1', () => r()));
+    PORT = (server.address() as any).port;
+    const realFetch = globalThis.fetch;
+    (globalThis as any).fetch = (url: any, opts: any) =>
+        realFetch(String(url).replace('https://api.bitbucket.org', `http://127.0.0.1:${PORT}/bb`), opts);
+    const realCreate = axios.create.bind(axios);
+    jest.spyOn(axios, 'create').mockImplementation((cfg: any) => {
+        const inst = realCreate(cfg);
+        inst.interceptors.request.use((c: any) => {
+            c.baseURL = String(c.baseURL || '').replace('https://dev.azure.com', `http://127.0.0.1:${PORT}/az`);
+            return c;
+        });
+        return inst;
+    });
+});
+afterAll(async () => {
+    await new Promise((r) => server.close(r));
+});
+
+// ── fixtures ───────────────────────────────────────────────────────────────
+const ORG = { organizationId: '11111111-1111-4111-8111-111111111111', teamId: '11111111-1111-4111-8111-aaaaaaaaaaaa' };
+const REPO_ID = 'repo-qa2420';
+const need = (n: string) => ({ need: n, sourceHash: 'h', source: 'compiler', inferredAt: new Date(0) });
+const RULES = [
+    { uuid: 'qa2420-T', title: 'QA2420 PR title prefix', rule: 'The PR title must start with [qa2420].', severity: 'high', scope: 'pull-request' },
+    { uuid: 'qa2420-D', title: 'QA2420 report file naming', rule: 'Report classes must live in files named *ReportService.cs.', severity: 'high', scope: 'file', contextNeed: need('diff-only') },
+];
+const ADDED_1_10 = ['@@ -0,0 +1,10 @@', ...Array.from({ length: 10 }, (_, i) => `+line ${i + 1}`)].join('\n');
+const RAW = () => [
+    { ruleUuid: 'qa2420-T', oneSentenceSummary: 'PR title lacks the [qa2420] prefix', suggestionContent: 'The PR title must start with [qa2420]; it is "update".' },
+    { ruleUuid: 'qa2420-D', relevantFile: 'qa2420/CheckinReport.cs', oneSentenceSummary: 'Report file is not named *ReportService.cs', suggestionContent: 'CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.' },
+    { ruleUuid: 'qa2420-D', relevantFile: 'qa2420/AverageDues.cs', relevantLinesStart: 1, relevantLinesEnd: 1, oneSentenceSummary: 'Report file is not named *ReportService.cs', suggestionContent: 'AverageDues.cs is misnamed.' },
+];
+const PROVIDERS: Record<string, { type: PlatformType; slash: boolean; repoName: string }> = {
+    bitbucket: { type: PlatformType.BITBUCKET, slash: false, repoName: 'qa-repo' },
+    azure: { type: PlatformType.AZURE_REPOS, slash: true, repoName: 'qa-repo' },
+    forgejo: { type: PlatformType.FORGEJO, slash: false, repoName: 'qa-owner/qa-repo' },
+};
+
+// ── in-memory pull-requests repository ──────────────────────────────────────
+const makeRepo = () => {
+    const doc: any = { uuid: 'pr-doc-qa', number: 2420, repository: { id: REPO_ID, name: 'qa-repo', fullName: 'qa-owner/qa-repo' }, organizationId: ORG.organizationId, files: [], prLevelSuggestions: [] };
+    const fileSent: any[] = [];
+    const calls: string[] = [];
+    const known: any = {
+        findByNumberAndRepositoryId: async () => doc,
+        findByNumberAndRepositoryName: async () => doc,
+        appendPrLevelSuggestions: async (_d: any, list: any[]) => {
+            doc.prLevelSuggestions.push(...list.map((s) => ({ ...s, createdAt: s.createdAt ?? new Date(Date.now()).toISOString() })));
+            return doc;
+        },
+        findPrLevelSuggestionsByPR: async (_n: number, _r: string, _o: string, status: string) =>
+            doc.prLevelSuggestions.filter((s: any) => s.deliveryStatus === status),
+        findSuggestionsOnPR: async (_n: number, _r: string, _o: string, status: string) => fileSent.filter((s: any) => s.deliveryStatus === status),
+    };
+    const repo = new Proxy(known, {
+        get: (t, p: string) => {
+            if (p in t) return (...a: any[]) => { calls.push(p); return t[p](...a); };
+            if (p === 'then') return undefined;
+            return async () => { calls.push(p); return null; };
+        },
+    });
+    return { repo, doc, fileSent, calls };
+};
+
+// ── wiring ─────────────────────────────────────────────────────────────────
+const wire = (providerKey: string, prRepo: any) => {
+    const p = PROVIDERS[providerKey];
+    const repositories = [{ id: REPO_ID, name: p.repoName, fullName: 'qa-owner/qa-repo', workspaceId: 'ws-qa', project: { id: 'proj-qa', name: 'qa' } }];
+    const integrationService: any = {
+        getPlatformAuthDetails: async (_o: any, type: PlatformType) =>
+            type === PlatformType.BITBUCKET
+                ? { email: 'qa@example.invalid', appPassword: encrypt('pw-qa'), authMode: 'token' }
+                : { orgName: 'qa-az-org', token: encrypt('pat-qa'), authMode: 'token' },
+        findOne: async () => ({ uuid: 'integration-qa', platform: p.type, authIntegration: { authDetails: { host: `http://127.0.0.1:${PORT}/fj`, accessToken: encrypt('tok-qa') } } }),
+    };
+    const integrationConfigService: any = { findOne: async () => ({ configValue: repositories }) };
+    const configService: any = { get: (k: string) => process.env[k] };
+    const cloud = new BitbucketCloudService(integrationService, integrationConfigService, {} as any, configService);
+    const bitbucket = new BitbucketService(cloud, {} as any, integrationService, integrationConfigService, {} as any);
+    const azure = new AzureReposService(integrationService, integrationConfigService, {} as any, new AzureReposRequestHelper(), configService);
+    const forgejo = new ForgejoService(integrationService, integrationConfigService, {} as any, configService);
+    const factory = new PlatformIntegrationFactory();
+    factory.registerCodeManagementService(PlatformType.BITBUCKET, bitbucket as any);
+    factory.registerCodeManagementService(PlatformType.AZURE_REPOS, azure as any);
+    factory.registerCodeManagementService(PlatformType.FORGEJO, forgejo as any);
+    const codeManagement = new CodeManagementService({ ...integrationService, findOne: async () => ({ platform: p.type }) } as any, factory);
+    const pullRequestsService = new PullRequestsService(prRepo, codeManagement);
+    const permissionValidationService: any = { resolveTaskSlot: async () => ({ provider: 'openai', model: 'scripted' }) };
+    const commentManager = new CommentManagerService(
+        { findByKey: async () => null } as any,
+        new MessageTemplateProcessor(),
+        { runLLMInSpan: async ({ runFn }: any) => runFn?.() } as any,
+        permissionValidationService,
+        codeManagement,
+        pullRequestsService as any,
+    );
+    const cacheService: any = { getFromCache: async () => null, addToCache: async () => undefined, get: async () => undefined, set: async () => undefined, del: async () => undefined, deleteByKeyPattern: async () => undefined };
+    const suggestionService = new SuggestionService(
+        { checkSuggestionImplementation: async () => ({ verdicts: [], unmeasured: [] }) } as any,
+        pullRequestsService as any,
+        commentManager as any,
+        codeManagement,
+        cacheService,
+        permissionValidationService,
+    );
+    return { p, codeManagement, pullRequestsService, commentManager, suggestionService };
+};
+
+// ── scripted model ─────────────────────────────────────────────────────────
+type Script = 'none' | 'correct' | 'fail' | 'caused';
+let script: Script = 'none';
+let repeatPrompts: string[] = [];
+let llmSpy: jest.SpyInstance;
+beforeEach(() => {
+    llmSpy = jest.spyOn(LLM, 'run').mockImplementation(async (params: any) => {
+        if (params?.runName === 'code-review-repeat-check') {
+            const user: string = params.user;
+            repeatPrompts.push(user);
+            if (script === 'fail') throw new Error('scripted: repeat-check model unavailable');
+            const blocks = [...user.matchAll(/<Finding n="(\d+)">([\s\S]*?)<\/Finding>/g)];
+            return {
+                verdicts: blocks.map(([, n, inner]) => {
+                    const earlierId = (inner.match(/<Earlier id="([^"]+)">/) || [])[1] ?? null;
+                    const isD = /report file naming/.test(inner.split('<Earlier')[0]);
+                    const verdict = script === 'caused' && isD ? 'caused_by_earlier' : 'same_occurrence';
+                    return { finding: Number(n), verdict, earlierId };
+                }),
+            } as any;
+        }
+        return { groups: [], unique: Array.from({ length: 60 }, (_, i) => i) } as any;
+    });
+});
+afterEach(() => llmSpy?.mockRestore());
+
+// ── stage helpers ──────────────────────────────────────────────────────────
+const mapRaw = (changedFiles: any[]) => {
+    const logs: string[] = [];
+    const mapped = mapAgentFindings(
+        { findings: { suggestions: RAW() } } as any,
+        {
+            changedFiles,
+            kodyRules: RULES as any,
+            prNumber: 2420,
+            isKodyRules: true,
+            identityName: 'kody-rules',
+            labelPolicy: { categoryLabel: 'kody_rules', allowedLabels: ['kody_rules'], supportsMixed: false } as any,
+            logger: { warn: (e: any) => logs.push(`warn: ${e.message}`), log: (e: any) => logs.push(`log: ${e.message}`) },
+        } as any,
+    );
+    return { mapped: mapped.suggestions, mapperLogs: logs, droppedForPath: (mapped as any).droppedForPath };
+};
+
+const makeAgentStage = (codeManagement: any, useCase?: any) => {
+    const orchestrator = { execute: jest.fn() };
+    const stage = new AgentReviewStage(
+        { findLatestStageLog: jest.fn(), updateCodeReview: jest.fn(), updateStageLog: jest.fn() } as any,
+        { findByExternalId: jest.fn().mockResolvedValue(null) } as any,
+        orchestrator as any,
+        { runLLMInSpan: jest.fn(async ({ runFn }: any) => runFn?.()) } as any,
+        { generateContext: jest.fn(), generateContextLegacy: jest.fn().mockResolvedValue('') } as any,
+        { isEnabled: jest.fn().mockResolvedValue(false) } as any,
+        { getReleaseTrack: jest.fn().mockResolvedValue('stable') } as any,
+        codeManagement,
+        undefined,
+        undefined,
+        useCase,
+    );
+    const logs: any[] = [];
+    const sink = (level: string) => (e: any) => logs.push({ level, message: e?.message, metadata: /REPEAT-CHECK|KODY-DEDUP/.test(e?.message ?? '') ? e?.metadata : undefined });
+    (stage as any).logger = { log: sink('log'), warn: sink('warn'), error: sink('error'), debug: () => {}, verbose: () => {} };
+    return { stage, orchestrator, logs };
+};
+
+const baseCtx = (providerKey: string, changedFiles: any[], over: any = {}) =>
+    produce(
+        {
+            organizationAndTeamData: ORG,
+            repository: { id: REPO_ID, name: PROVIDERS[providerKey].repoName, fullName: 'qa-owner/qa-repo', language: 'csharp' },
+            pullRequest: { number: 2420, title: 'update', head: { sha: 'headsha', ref: 'qa2420' }, base: { ref: 'main', repo: { fullName: 'qa-owner/qa-repo' } } },
+            platformType: PROVIDERS[providerKey].type,
+            changedFiles,
+            prAllCommits: [{ sha: 'headsha', created_at: now }],
+            pullRequestMessagesConfig: { globalSettings: { suggestionCopyPrompt: true } },
+            codeReviewConfig: {
+                reviewOptions: {},
+                languageResultPrompt: 'en-US',
+                resolvedModelSlot: { provider: 'openai', model: 'scripted' },
+                kodyRules: RULES,
+            },
+            validSuggestions: [],
+            discardedSuggestions: [],
+            errors: [],
+            ...over,
+        } as any,
+        () => {},
+    ) as any;
+
+const pickS = (s: any) => s && ({
+    id: s.id, file: s.relevantFile, start: s.relevantLinesStart, end: s.relevantLinesEnd, label: s.label, rules: s.brokenKodyRulesIds,
+    suggestionContent: s.suggestionContent, fullExplanation: s.fullExplanation, revisesSuggestionId: s.revisesSuggestionId, priorityStatus: s.priorityStatus,
+});
+
+const bodyOf = (r: Req) =>
+    r.provider === 'bb' ? r.body?.content?.raw : r.provider === 'az' ? r.body?.comments?.[0]?.content : r.body?.body;
+
+const checkBody = (text: string | undefined, slash: boolean) => {
+    const f = (x: string) => (slash ? `/${x}` : x);
+    const t = text ?? '';
+    return {
+        hasCitation: t.includes(`\`${f('qa2420/CheckinReport.cs')}\` — `),
+        hasCitationOtherSlashForm: t.includes(`\`${slash ? 'qa2420/CheckinReport.cs' : '/qa2420/CheckinReport.cs'}\` — `),
+        hasAlsoFoundIn: t.includes(`**Also found in:**\n- \`${f('qa2420/AverageDues.cs')}:1-1\``),
+        hasAlsoFoundInOtherSlashForm: t.includes(`- \`${slash ? 'qa2420/AverageDues.cs' : '/qa2420/AverageDues.cs'}:1-1\``),
+        hasQmark: t.includes('?-?'),
+        hasUndefined: /undefined/.test(t),
+        hasNullWord: /\bnull\b/.test(t),
+        hasLiteralBackslashN: t.includes('\\n'),
+    };
+};
+
+// ── one provider, one tree: round 1 (+ round 2 repeat scenarios) ─────────────
+const runProvider = async (providerKey: string) => {
+    const out: any = { tree: TREE, provider: providerKey };
+    const p = PROVIDERS[providerKey];
+    const changedFiles = ['qa2420/CheckinReport.cs', 'qa2420/AverageDues.cs'].map((f) => ({ filename: p.slash ? `/${f}` : f, patch: ADDED_1_10, status: 'modified' }));
+    out.changedFileNames = changedFiles.map((f) => f.filename);
+    const { mapped, mapperLogs, droppedForPath } = mapRaw(changedFiles);
+    out.mapper = { kept: mapped.map(pickS), logs: mapperLogs, droppedForPath };
+
+    // round 1
+    const r1 = makeRepo();
+    const w = wire(providerKey, r1.repo);
+    const { stage, orchestrator, logs } = makeAgentStage(w.codeManagement);
+    orchestrator.execute.mockResolvedValue({ suggestions: mapped, agentResults: [], failures: [], incomplete: [], unverified: [], warnings: [] });
+    requests = [];
+    let ctx = await (stage as any).executeStage(baseCtx(providerKey, changedFiles));
+    out.round1 = {
+        agentStage: {
+            validSuggestionsByPR: (ctx.validSuggestionsByPR ?? []).map((s: any) => ({ ...pickS(s), agentPrompt: resolveAgentPrompt(s) })),
+            validSuggestions: (ctx.validSuggestions ?? []).map(pickS),
+            discarded: (ctx.discardedSuggestions ?? []).map(pickS),
+            logs: logs.filter((l) => /KODY-DEDUP|Snapped|File-anchored|Rendered|REPEAT/.test(l.message ?? '')),
+        },
+    };
+    // formatter output on its own (same call the comment manager makes)
+    out.round1.formatReviewCommentBody = [];
+    for (const s of ctx.validSuggestionsByPR ?? []) {
+        out.round1.formatReviewCommentBody.push({
+            rules: s.brokenKodyRulesIds,
+            body: await w.codeManagement.formatReviewCommentBody(
+                { suggestion: s, repository: { name: p.repoName, language: 'csharp' }, includeHeader: true, includeFooter: false, language: 'en-US', organizationAndTeamData: ORG, suggestionCopyPrompt: true },
+                p.type,
+            ),
+        });
+    }
+    const prLevelStage = new CreatePrLevelCommentsStage(w.commentManager as any, w.suggestionService as any, w.pullRequestsService as any);
+    const fileStage = new CreateFileCommentsStage(w.commentManager as any, w.pullRequestsService as any, w.suggestionService as any);
+    const lineSpy = jest.spyOn(w.commentManager, 'createLineComments');
+    ctx = await (prLevelStage as any).executeStage(ctx);
+    const afterPrLevel = requests.length;
+    ctx = await (fileStage as any).executeStage(ctx);
+    const lineResults = await (lineSpy.mock.results[0]?.value ?? Promise.resolve(null));
+    out.round1.requests = requests.map((r, i) => ({ ...r, stage: i < afterPrLevel ? 'CreatePrLevelCommentsStage' : 'CreateFileCommentsStage', text: bodyOf(r) }));
+    out.round1.bodyChecks = requests
+        .filter((r) => /qa2420\/CheckinReport\.cs|CheckinReport/.test(bodyOf(r) ?? '') && !(r.provider === 'bb' && r.body?.parent))
+        .map((r) => ({ path: r.path, general: r.provider === 'bb' ? !r.body?.inline : r.provider === 'az' ? !r.body?.threadContext : /\/issues\/\d+\/comments$/.test(r.path), inlineFields: r.provider === 'bb' ? r.body?.inline : r.provider === 'az' ? r.body?.threadContext : r.body?.comments?.map((c: any) => ({ path: c.path, new_position: c.new_position })), ...checkBody(bodyOf(r), p.slash) }));
+    out.round1.promptReplies = requests.filter((r) => r.provider === 'bb' && r.body?.parent).map((r) => ({ parent: r.body.parent, text: r.body?.content?.raw, ...checkBody(r.body?.content?.raw, p.slash) }));
+    out.round1.storedPrLevel = r1.doc.prLevelSuggestions;
+    out.round1.lineCommentResults = lineResults?.commentResults?.map((c: any) => ({ deliveryStatus: c.deliveryStatus, commentId: c.codeReviewFeedbackData?.commentId, path: c.comment?.path, line: c.comment?.line, start_line: c.comment?.start_line, suggestionId: c.comment?.suggestion?.id })) ?? null;
+    out.round1.ctxErrors = ctx.errors;
+    out.round1.repoCalls = [...new Set(r1.calls)];
+
+    // the inline D (P) becomes a file-scoped sent record, as the file stage's persistence would store it
+    for (const c of lineResults?.commentResults ?? []) {
+        if (c.deliveryStatus !== DeliveryStatus.SENT) continue;
+        const s = c.comment.suggestion;
+        // The persisted file suggestion carries a unique id (Mongo doc); the stage output has none here, so a synthetic one stands in.
+        r1.fileSent.push({ ...s, id: s.id ?? `file-suggestion-${c.codeReviewFeedbackData?.commentId}`, deliveryStatus: DeliveryStatus.SENT, createdAt: new Date(Date.now()).toISOString(), comment: { id: c.codeReviewFeedbackData?.commentId } });
+    }
+
+    // round 2: same findings re-emitted, history read by the real use case + store
+    out.round2 = {};
+    const store = new PrDecisionStoreService(r1.repo);
+    const useCase = new BuildPreviousReviewDecisionsUseCase(store);
+    const history = await useCase.execute({ organizationId: ORG.organizationId, prNumber: 2420, repositoryFullName: 'qa-owner/qa-repo' } as any);
+    out.history = history;
+    const ids = history.map((h) => h.suggestionId);
+    out.historyIdCollision = ids.length !== new Set(ids).size;
+    for (const sc of ['correct', 'fail', 'caused'] as Script[]) {
+        script = sc;
+        repeatPrompts = [];
+        const crSpy = repeatCheckModule.checkRepeats as unknown as jest.Mock;
+        crSpy.mockClear();
+        const { stage: s2, orchestrator: o2, logs: l2 } = makeAgentStage(w.codeManagement, useCase);
+        o2.execute.mockResolvedValue({ suggestions: mapRaw(changedFiles).mapped, agentResults: [], failures: [], incomplete: [], unverified: [], warnings: [] });
+        requests = [];
+        let c2 = await (s2 as any).executeStage(baseCtx(providerKey, changedFiles, { previousDecisions: history }));
+        const cr: any = await (crSpy.mock.results[0]?.value ?? Promise.resolve(null));
+                const r2repo = makeRepo();
+        const w2 = wire(providerKey, r2repo.repo);
+        c2 = await (new CreatePrLevelCommentsStage(w2.commentManager as any, w2.suggestionService as any, w2.pullRequestsService as any) as any).executeStage(c2);
+        const nPr = requests.length;
+        c2 = await (new CreateFileCommentsStage(w2.commentManager as any, w2.pullRequestsService as any, w2.suggestionService as any) as any).executeStage(c2);
+        out.round2[sc] = {
+            repeatPrompts,
+            checkRepeats: cr && {
+                model: cr.model,
+                repeats: cr.repeats.map((r: any) => ({ finding: { file: r.finding.relevantFile, start: r.finding.relevantLinesStart, rules: r.finding.brokenKodyRulesIds }, by: r.by, earlier: { suggestionId: r.earlier.suggestionId, rules: r.earlier.brokenKodyRulesIds, relevantFile: r.earlier.relevantFile, contentHead: (r.earlier.suggestionContent || '').slice(0, 80) } })),
+                withheld: cr.withheld.map((f: any) => ({ file: f.relevantFile, start: f.relevantLinesStart, rules: f.brokenKodyRulesIds })),
+                kept: cr.kept.map((f: any) => ({ file: f.relevantFile, start: f.relevantLinesStart, rules: f.brokenKodyRulesIds })),
+                revisions: cr.revisions.map((r: any) => ({ finding: { file: r.finding.relevantFile, rules: r.finding.brokenKodyRulesIds }, earlier: { suggestionId: r.earlier.suggestionId, rules: r.earlier.brokenKodyRulesIds, relevantFile: r.earlier.relevantFile } })),
+            },
+            stageLogs: l2.filter((l) => /REPEAT/.test(l.message ?? '')),
+            validSuggestionsByPR: (c2.validSuggestionsByPR ?? []).map(pickS),
+            validSuggestions: (c2.validSuggestions ?? []).map(pickS),
+            discarded: (c2.discardedSuggestions ?? []).map(pickS),
+            posted: requests.map((r, i) => ({ stage: i < nPr ? 'CreatePrLevelCommentsStage' : 'CreateFileCommentsStage', provider: r.provider, path: r.path, isReply: !!r.body?.parent, textHead: (bodyOf(r) || '').slice(0, 400) })),
+        };
+    }
+    script = 'none';
+    return out;
+};
+
+describe('A1 #2420 items A/B', () => {
+    it.each(Object.keys(PROVIDERS))('%s', async (k) => {
+        const out = await runProvider(k);
+        write(`A1-${TREE}-${k}.json`, out);
+    });
+});
+
+// Direct: a non-rule finding whose candidates hold BOTH colliding PR-level records.
+describe('A1 B-direct non-rule finding against colliding ids', () => {
+    it.each(['azure', 'forgejo'])('%s', async (k) => {
+        const prior = JSON.parse(fs.readFileSync(`${OUTDIR}/A1-${TREE}-${k}.json`, 'utf8'));
+        const r = makeRepo();
+        r.doc.prLevelSuggestions.push(...prior.round1.storedPrLevel);
+        const history = await new BuildPreviousReviewDecisionsUseCase(new PrDecisionStoreService(r.repo)).execute({ organizationId: ORG.organizationId, prNumber: 2420, repositoryFullName: 'qa-owner/qa-repo' } as any);
+        const actual = jest.requireActual('@libs/code-review/infrastructure/agents/engine/repeat-check');
+        const bug = {
+            label: 'maintainability',
+            relevantFile: PROVIDERS[k].slash ? '/qa2420/CheckinReport.cs' : 'qa2420/CheckinReport.cs',
+            relevantLinesStart: 3,
+            relevantLinesEnd: 3,
+            oneSentenceSummary: 'Report class file name',
+            suggestionContent: 'CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs as required for every report class; the PR title must start with [qa2420].',
+        };
+        const linked = { ...bug, revisesSuggestionId: history.find((h: any) => (h.brokenKodyRulesIds ?? []).includes('qa2420-D'))!.suggestionId };
+        const out: any = { tree: TREE, provider: k, history: history.map((h: any) => ({ suggestionId: h.suggestionId, rules: h.brokenKodyRulesIds, decidedAt: h.decidedAt })) };
+        out.candidatesForBug = actual.repeatCandidates(bug, history).map((c: any) => ({ suggestionId: c.suggestionId, rules: c.brokenKodyRulesIds }));
+        out.candidatesForBugLinkedToD = actual.repeatCandidates(linked, history).map((c: any) => ({ suggestionId: c.suggestionId, rules: c.brokenKodyRulesIds }));
+        // Model answers "same_occurrence" with the id of the D comment (the one it is about).
+        const dId = linked.revisesSuggestionId;
+        repeatPrompts = [];
+        llmSpy.mockImplementation(async (params: any) => {
+            repeatPrompts.push(params.user);
+            return { verdicts: [{ finding: 0, verdict: 'same_occurrence', earlierId: dId }] } as any;
+        });
+        const res = await actual.checkRepeats([bug], history, { organizationId: ORG.organizationId, byokConfig: { provider: 'openai', model: 'scripted' } as any, prNumber: 2420 });
+        out.sameOccurrence = { modelAnsweredId: dId, model: res.model, matchedEarlier: res.repeats.map((x: any) => ({ suggestionId: x.earlier.suggestionId, rules: x.earlier.brokenKodyRulesIds, contentHead: x.earlier.suggestionContent.slice(0, 60) })), kept: res.kept.length };
+        llmSpy.mockImplementation(async () => ({ verdicts: [{ finding: 0, verdict: 'caused_by_earlier', earlierId: dId }] }) as any);
+        const res2 = await actual.checkRepeats([{ ...bug }], history, { organizationId: ORG.organizationId, byokConfig: { provider: 'openai', model: 'scripted' } as any, prNumber: 2420 });
+        out.causedByEarlier = { revisions: res2.revisions.map((x: any) => ({ suggestionId: x.earlier.suggestionId, rules: x.earlier.brokenKodyRulesIds })) };
+        out.prompts = repeatPrompts;
+        write(`A1-${TREE}-${k}-Bdirect.json`, out);
+    });
+});
