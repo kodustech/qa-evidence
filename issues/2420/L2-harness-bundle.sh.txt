@@ -1,0 +1,6 @@
+#!/bin/bash
+# bundle a run dir into one evidence text file, home path masked
+RUN=$1; OUT=$2
+: > $OUT
+for f in $(ls $RUN | sort); do echo "===== $f" >> $OUT; grep -v "npm warn\|DeprecationWarning\|trace-deprecation\|MONGOOSE\] Warning" $RUN/$f >> $OUT; done
+sed -i '' 's#~#~#g' $OUT
