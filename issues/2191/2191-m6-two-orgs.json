@@ -1,0 +1,90 @@
+{
+ "A": {
+  "repo": "kodus/claude-athena",
+  "pr": 20,
+  "sha": "d1c60c0cf56da87ec28211a8bb59c625657b9458",
+  "executions": [
+   [
+    "b7a7e065-984d-431d-93a2-6b10d06d0293",
+    "error",
+    "2026-11-25 03:06:00.430781",
+    "2026-11-25 03:06:19.093033",
+    "Code review failed: The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+   ]
+  ],
+  "agentReview": [
+   [
+    "AgentReviewStage",
+    "error",
+    "[{\"file\": \"agent:generalist\", \"message\": \"Insufficient balance\", \"category\": \"generalist\", \"prNumber\": 20, \"agentName\": \"generalist\", \"isTimeout\": false, \"orgOwnedKey\": true, \"errorCategory\": \"QUOTA_EXCEEDED\"}]"
+   ]
+  ],
+  "statuses": [
+   {
+    "created_at": "2026-11-25T04:06:18+01:00",
+    "status": "warning",
+    "description": "Code Review Skipped"
+   },
+   {
+    "created_at": "2026-11-25T04:06:00+01:00",
+    "status": "pending",
+    "description": "Code Review Starting"
+   }
+  ]
+ },
+ "B": {
+  "repo": "kodus/claude-ares",
+  "pr": 3,
+  "sha": "af41e7a00e706a6fa39e8e1c6da598945ee3f1c0",
+  "executions": [
+   [
+    "05e5ca6e-d432-4105-a4a7-bf4428ebfd09",
+    "error",
+    "2026-11-25 03:06:01.866963",
+    "2026-11-25 03:06:51.223624",
+    "Code review failed: Unexpected error while running the code review (openai_compatible)."
+   ]
+  ],
+  "agentReview": [
+   [
+    "AgentReviewStage",
+    "error",
+    "[{\"file\": \"agent:generalist\", \"message\": \"Method Not Allowed\", \"category\": \"generalist\", \"prNumber\": 3, \"agentName\": \"generalist\", \"isTimeout\": false, \"orgOwnedKey\": true, \"errorCategory\": \"UNKNOWN\"}]"
+   ]
+  ],
+  "statuses": [
+   {
+    "created_at": "2026-11-25T04:06:50+01:00",
+    "status": "failure",
+    "description": "Code Review Failed"
+   },
+   {
+    "created_at": "2026-11-25T04:06:02+01:00",
+    "status": "pending",
+    "description": "Code Review Starting"
+   }
+  ]
+ },
+ "executions_last_15min_both_teams": [
+  [
+   "B",
+   "2929811",
+   "3"
+  ],
+  [
+   "A",
+   "2929808",
+   "20"
+  ],
+  [
+   "A",
+   "2929808",
+   "19"
+  ],
+  [
+   "A",
+   "2929808",
+   "19"
+  ]
+ ]
+}
