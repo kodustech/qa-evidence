@@ -1,0 +1,420 @@
+{
+ "item": "M2",
+ "execution": [
+  [
+   "ac614c9b-2046-46ff-b8dc-843faaab4acc",
+   "success",
+   "System",
+   "2026-11-24 21:16:20.841295",
+   "2026-11-24 21:20:02.62319"
+  ]
+ ],
+ "stages": [
+  {
+   "stage": "Kody Review Started",
+   "status": "success",
+   "createdAt": "2026-11-24T21:16:20.847369",
+   "finishedAt": null,
+   "metadataKeys": [],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "ValidatePrerequisitesStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:16:21.458223",
+   "finishedAt": "2026-11-24T21:16:21.597",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "ValidateNewCommitsStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:16:21.610179",
+   "finishedAt": "2026-11-24T21:16:21.845",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "ResolveConfigStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:16:21.857597",
+   "finishedAt": "2026-11-24T21:16:22.439",
+   "metadataKeys": [
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "ValidateConfigStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:16:22.452576",
+   "finishedAt": "2026-11-24T21:16:22.466",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "AssessPrRiskStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:16:22.47808",
+   "finishedAt": "2026-11-24T21:16:22.486",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "FetchChangedFilesStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:16:22.498814",
+   "finishedAt": "2026-11-24T21:16:22.753",
+   "metadataKeys": [
+    "ignoredFiles",
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "LoadExternalContextStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:16:22.76596",
+   "finishedAt": "2026-11-24T21:16:22.798",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "LoadCiEvidenceStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:16:22.810245",
+   "finishedAt": "2026-11-24T21:16:22.818",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "InitialCommentStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:16:22.830025",
+   "finishedAt": "2026-11-24T21:16:23.691",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "BusinessLogicValidationStage",
+   "status": "skipped",
+   "createdAt": "2026-11-24T21:16:23.702765",
+   "finishedAt": "2026-11-24T21:16:23.802",
+   "metadataKeys": [
+    "businessLogicOutcome",
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "CreateSandboxStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:16:23.814974",
+   "finishedAt": "2026-11-24T21:16:27.648",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "RunAnalyzersStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:16:27.660973",
+   "finishedAt": "2026-11-24T21:16:27.702",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "AgentReviewStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:16:27.714058",
+   "finishedAt": "2026-11-24T21:19:44.498",
+   "metadataKeys": [
+    "dedupTrace",
+    "label",
+    "sandboxUsage",
+    "visibility"
+   ],
+   "sandboxUsage": {
+    "stopAt": "2026-11-24T21:20:04.881Z",
+    "consumer": "review",
+    "acquiredAt": "2026-11-24T21:16:27.645Z",
+    "lastUsedAt": "2026-11-24T21:19:31.442Z",
+    "releasedAt": "2026-11-24T21:19:34.832Z",
+    "firstUsedAt": "2026-11-24T21:16:27.723Z"
+   },
+   "metadata": {
+    "label": "Agent-Based Code Review",
+    "dedupTrace": {
+     "groups": [
+      {
+       "keep": {
+        "label": "bug",
+        "severity": "medium",
+        "relevantFile": "qa2628/enrollment/capacity.ts",
+        "relevantLinesEnd": 11,
+        "oneSentenceSummary": "remainingSeats now returns capacity + enrolled instead of capacity - enrolled, so the open-seat count grows as students enroll and only reaches 0 when both values are 0. Since its only caller isFull t",
+        "relevantLinesStart": 11
+       },
+       "duplicates": [
+        {
+         "label": "bug",
+         "severity": "medium",
+         "relevantFile": "qa2628/enrollment/capacity.ts",
+         "relevantLinesEnd": 11,
+         "oneSentenceSummary": "remainingSeats was changed from `capacity - enrolled` to `capacity + enrolled`. Its only caller, isFull (capacity.ts:20), compares the result with === 0, so the sign flip makes isFull effectively alwa",
+         "relevantLinesStart": 11
+        }
+       ]
+      },
+      {
+       "keep": {
+        "label": "bug",
+        "severity": "medium",
+        "relevantFile": "qa2628/enrollment/enrollment.service.ts",
+        "relevantLinesEnd": 17,
+        "oneSentenceSummary": "countEnrolled is declared to return Promise<number> (line 6) but is invoked without await, so `Number(enrolled)` evaluates a pending Promise to NaN. isFull then receives enrolled: NaN, remainingSeats ",
+        "relevantLinesStart": 16
+       },
+       "duplicates": [
+        {
+         "label": "bug",
+         "severity": "medium",
+         "relevantFile": "qa2628/enrollment/enrollment.service.ts",
+         "relevantLinesEnd": 19,
+         "oneSentenceSummary": "countEnrolled is typed Promise<number> (line 6) but is called without await inside enroll (lines 13-19), so Number(enrolled) is NaN and isFull always returns false. Await the promise before using the ",
+         "relevantLinesStart": 13
+        }
+       ]
+      }
+     ],
+     "status": "success",
+     "unique": [],
+     "groupsCount": 2,
+     "uniqueCount": 0,
+     "removedCount": 2,
+     "finalOutputCount": 2,
+     "nonKodyInputCount": 4,
+     "nonKodyOutputCount": 2,
+     "totalClassifiedCount": 4,
+     "kodyRulesSkippedCount": 0
+    },
+    "visibility": "primary",
+    "sandboxUsage": {
+     "stopAt": "2026-11-24T21:20:04.881Z",
+     "consumer": "review",
+     "acquiredAt": "2026-11-24T21:16:27.645Z",
+     "lastUsedAt": "2026-11-24T21:19:31.442Z",
+     "releasedAt": "2026-11-24T21:19:34.832Z",
+     "firstUsedAt": "2026-11-24T21:16:27.723Z"
+    }
+   }
+  },
+  {
+   "stage": "AgentReview::generalist",
+   "status": "success",
+   "createdAt": "2026-11-24T21:16:40.151671",
+   "finishedAt": "2026-11-24T21:19:34.878",
+   "metadataKeys": [
+    "agentTrace",
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "CreatePrLevelCommentsStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:19:44.510869",
+   "finishedAt": "2026-11-24T21:19:44.519",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "ValidateSuggestionsStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:19:44.530374",
+   "finishedAt": "2026-11-24T21:19:49.222",
+   "metadataKeys": [
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "CreateFileCommentsStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:19:49.234555",
+   "finishedAt": "2026-11-24T21:19:53.664",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "AggregateResultsStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:19:53.676515",
+   "finishedAt": "2026-11-24T21:19:53.684",
+   "metadataKeys": [
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "UpdateCommentsAndGenerateSummaryStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:19:53.695457",
+   "finishedAt": "2026-11-24T21:20:00.585",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "DecidePrApprovalStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:20:00.600953",
+   "finishedAt": "2026-11-24T21:20:00.611",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "RequestChangesOrApproveStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:20:00.624178",
+   "finishedAt": "2026-11-24T21:20:00.633",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "Kody Review Finished",
+   "status": "success",
+   "createdAt": "2026-11-24T21:20:02.62944",
+   "finishedAt": null,
+   "metadataKeys": [],
+   "sandboxUsage": null
+  }
+ ],
+ "leaseLines": [
+  {
+   "t": "2026-11-24T21:16:23.830Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: acquire prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" consumer=\"review\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "consumer": "review",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:16:23.840Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" consumer=\"review\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "consumer": "review",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:16:27.644Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: sandbox READY prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" consumer=\"review\" leaseId=\"b23ca490-aa8e-4160-b53d-3f182de81985\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "consumer": "review",
+    "leaseId": "b23ca490-aa8e-4160-b53d-3f182de81985",
+    "sandboxId": "sbx#6",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:19:34.881Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: released leaseId=\"b23ca490-aa8e-4160-b53d-3f182de81985\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" leaseCount=0",
+   "a": {
+    "leaseId": "b23ca490-aa8e-4160-b53d-3f182de81985",
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "leaseCount": 0,
+    "consumer": "review",
+    "heldMs": 187187,
+    "acquireToFirstUseMs": 78,
+    "lastUseToReleaseMs": 3390,
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:19:34.887Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: scheduled idle-kill at 2026-11-24T21:20:04.881Z for sandboxId=\"sbx#6\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "sandboxId": "sbx#6",
+    "idleTimeoutMs": 30000,
+    "killAt": "2026-11-24T21:20:04.881Z",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:20:30.156Z",
+   "l": "info",
+   "c": "SandboxLeaseReaperService",
+   "m": "[SANDBOX-IDLE-KILL] Killed idle sandbox",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "sandboxId": "sbx#6",
+    "killAt": "2026-11-24T21:20:04.881Z",
+    "component": "SandboxLeaseReaperService",
+    "originalCorrelationId": null
+   }
+  }
+ ]
+}
