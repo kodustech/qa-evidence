@@ -1,0 +1,9 @@
+{"releasedByConsumer": [{"_id": {"c": "graph-build", "l": "info"}, "n": 14, "first": "2026-11-24T18:34:00.628Z", "last": "2026-11-24T22:00:55.805Z"}, {"_id": {"c": "review", "l": "info"}, "n": 68, "first": "2026-11-24T17:33:52.042Z", "last": "2026-11-24T22:24:11.430Z"}, {"_id": {"c": "conversation", "l": "info"}, "n": 11, "first": "2026-11-24T19:27:50.426Z", "last": "2026-11-24T22:07:09.870Z"}, {"_id": {"c": "graph-incremental", "l": "info"}, "n": 4, "first": "2026-11-24T21:54:06.864Z", "last": "2026-11-24T21:54:40.673Z"}]}
+{"isNotAFunction": "SandboxLeaseManager", "count": "0"}
+{"isNotAFunction": "AstGraphBuildJobProcessor", "count": "0"}
+{"isNotAFunction": "AstGraphIncrementalJobProcessor", "count": "0"}
+{"isNotAFunction": "SecurityScanJobProcessor", "count": "0"}
+{"isNotAFunction": "ChatWithKodyFromGitUseCase", "count": "0"}
+{"isNotAFunction": "AgentReviewStage", "count": "0"}
+{"isNotAFunction": "CodeReviewPipelineObserver", "count": "0"}
+{"isNotAFunction": "CreateSandboxStage", "count": "0"}
