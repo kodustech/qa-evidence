@@ -1,0 +1,4472 @@
+{
+ "revision_has_usesOrgOwnedKey": false,
+ "M13.owned_quota_only": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M13.owned_quota_plus_unknown": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   },
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:bug",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance\n- something odd happened"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M13.observer_literal_Q": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  ],
+  "finalizeCalls": 1
+ },
+ "M13.observer_Q_plus_mixed": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan.\n- x"
+  ],
+  "finalizeCalls": 1
+ },
+ "M14.cloud_no_slot": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED"
+  }
+ },
+ "M14.cloud_managed_slot_no_credential": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai"
+  }
+ },
+ "M14.kodus_credential": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "kodus"
+  }
+ },
+ "M15.explicit_openai_env_key": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED"
+  },
+  "envResolution": {
+   "kind": "openai_compat",
+   "name": "openai_compatible"
+  },
+  "cloud": false
+ },
+ "M15.inferred_openai_base_url": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED"
+  },
+  "envResolution": {
+   "kind": "openai_compat",
+   "name": "openai_compatible"
+  },
+  "cloud": false
+ },
+ "M15.auto_no_env": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED"
+  },
+  "envResolution": null,
+  "cloud": false
+ },
+ "M15.model_set_no_key": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED"
+  },
+  "envResolution": null,
+  "cloud": false
+ },
+ "M15.invalid_declared": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED"
+  },
+  "envResolution": {
+   "kind": "invalid",
+   "name": "invalid"
+  },
+  "cloud": false
+ },
+ "M15.vertex_adc": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED"
+  },
+  "envResolution": {
+   "kind": "vertex_adc",
+   "name": "google_vertex"
+  },
+  "cloud": false
+ },
+ "M15.explicit_openai_env_key_cloud": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED"
+  },
+  "envResolution": {
+   "kind": "openai_compat",
+   "name": "openai_compatible"
+  },
+  "cloud": true
+ },
+ "M15.vertex_adc_cloud": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED"
+  },
+  "envResolution": {
+   "kind": "vertex_adc",
+   "name": "google_vertex"
+  },
+  "cloud": true
+ },
+ "M16.byok_then_funded_both_402.returned": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "kodus"
+  },
+  "attempts": 2
+ },
+ "M16.byok_then_funded_both_402.catch": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "durationMs",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "warn: [AGENT] Agent review failed for PR#7 after 0ms, continuing with empty results"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "kodus"
+  }
+ },
+ "M16.funded_then_byok_both_402.returned": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  },
+  "attempts": 2
+ },
+ "M16.funded_then_byok_both_402.catch": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "durationMs",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "warn: [AGENT] Agent review failed for PR#7 after 0ms, continuing with empty results"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M16.byokA_then_byokB_both_402.returned": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "anthropic"
+  },
+  "attempts": 2
+ },
+ "M16.byokA_then_byokB_both_402.catch": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "durationMs",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "warn: [AGENT] Agent review failed for PR#7 after 0ms, continuing with empty results"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "anthropic"
+  }
+ },
+ "M16.byok_402_then_funded_500.returned": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Internal Server Error"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "TRANSIENT",
+   "provider": "kodus"
+  },
+  "attempts": 2
+ },
+ "M16.byok_402_then_funded_500.catch": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "durationMs",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Internal Server Error"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "error: [AGENT] Agent review failed for PR#7 after 0ms, continuing with empty results"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "TRANSIENT",
+   "provider": "kodus"
+  }
+ },
+ "M16.funded_402_then_byok_401.returned": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Incorrect API key provided"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "AUTH_INVALID",
+   "provider": "openai_compatible"
+  },
+  "attempts": 2
+ },
+ "M16.funded_402_then_byok_401.catch": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "durationMs",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Incorrect API key provided"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "warn: [AGENT] Agent review failed for PR#7 after 0ms, continuing with empty results"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "AUTH_INVALID",
+   "provider": "openai_compatible"
+  }
+ },
+ "M17.web_byokModelId_slot": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M17.legacy_model_name_no_credential": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai"
+  }
+ },
+ "M17.heavy_slot_byok": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "anthropic"
+  }
+ },
+ "M17.managed_default_undefined": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED"
+  }
+ },
+ "M18.generalist_alone": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M18.bug_alone": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:bug",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M18.security_alone": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:security",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M18.performance_alone": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:performance",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M18.all_four": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   },
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:bug",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   },
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:security",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   },
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:performance",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance (4 files/stages)"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M19.Q_then_unknown": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   },
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:bug",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance\n- something odd happened"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M19.unknown_then_Q": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   },
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:bug",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- something odd happened\n- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M19.Q_then_auth401": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   },
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:bug",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance\n- Incorrect API key provided"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M19.auth401_then_Q": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   },
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:bug",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Incorrect API key provided\n- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "AUTH_INVALID",
+   "provider": "openai_compatible"
+  }
+ },
+ "M19.Q_then_rate429": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   },
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:bug",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance\n- Too Many Requests"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M19.rate429_then_Q": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   },
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:bug",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Too Many Requests\n- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "RATE_LIMIT",
+   "provider": "openai_compatible"
+  }
+ },
+ "M19.Q_then_funded_quota": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   },
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:bug",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance (2 files/stages)"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M19.funded_quota_then_Q": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   },
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:bug",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance (2 files/stages)"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "kodus"
+  }
+ },
+ "M19.Q_only_control": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M20.Q_plus_truncated": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   },
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:bug",
+    "severity": "partial",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "finishReason",
+     "prNumber",
+     "suggestionsFound"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance\n- Agent \"bug\" had its turn truncated by the model provider after 10ms — the review did not complete"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M20.Q_plus_step_limit": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   },
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:security",
+    "severity": "partial",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "finishReason",
+     "prNumber",
+     "suggestionsFound"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance\n- Agent \"security\" ran out of steps after 10ms — the review did not complete"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M20.Q_plus_unverified": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   },
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:performance",
+    "severity": "partial",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber",
+     "unverifiedCount"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance\n- Agent \"performance\" could not verify 2 finding(s) — they were not posted and the review did not complete"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M20.Q_plus_kody_rules_quota_partial": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   },
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:kody-rules",
+    "severity": "partial",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance (2 files/stages)"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M20.Q_plus_custom_agent_quota_partial": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   },
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:my-custom-agent",
+    "severity": "partial",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance (2 files/stages)"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M20.auxiliary_only_quota": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:kody-rules",
+    "severity": "partial",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M20.auxiliary_only_quota_status_success": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:kody-rules",
+    "severity": "partial",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "NEUTRAL"
+  ],
+  "checkStage": [
+   "_pipelineEndPartial"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M20.auxiliary_only_quota_status_partial": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:kody-rules",
+    "severity": "partial",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "NEUTRAL"
+  ],
+  "checkStage": [
+   "_pipelineEndPartial"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M21.throw_owned_402": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "durationMs",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "warn: [AGENT] Agent review failed for PR#7 after 0ms, continuing with empty results"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M21.throw_funded_402": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "durationMs",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "warn: [AGENT] Agent review failed for PR#7 after 0ms, continuing with empty results"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "kodus"
+  }
+ },
+ "M21.throw_plain_error": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "durationMs",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- boom"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "error: [AGENT] Agent review failed for PR#7 after 0ms, continuing with empty results"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "UNKNOWN",
+   "provider": "openai_compatible"
+  }
+ },
+ "M21.throw_string": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "durationMs",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- string failure"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "error: [AGENT] Agent review failed for PR#7 after 0ms, continuing with empty results"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "UNKNOWN",
+   "provider": "openai_compatible"
+  }
+ },
+ "M21.throw_string_quota_words": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "durationMs",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "warn: [AGENT] Agent review failed for PR#7 after 0ms, continuing with empty results"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M21.before_orchestration_402": {
+  "errors": [],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   ""
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": null
+ },
+ "M22.s402": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M22.s429_insufficient_quota": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- You exceeded your current quota, please check your plan and billing details"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M22.s429_balance": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M22.s403_key_limit": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Key limit exceeded"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M22.gemini_per_minute_429": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 10, model: gemini-2.5-pro."
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "RATE_LIMIT",
+   "provider": "openai_compatible"
+  }
+ },
+ "M22.plain_429": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Too Many Requests"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "RATE_LIMIT",
+   "provider": "openai_compatible"
+  }
+ },
+ "M22.s401": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Incorrect API key provided"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "AUTH_INVALID",
+   "provider": "openai_compatible"
+  }
+ },
+ "M22.s403": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Forbidden"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "AUTH_INVALID",
+   "provider": "openai_compatible"
+  }
+ },
+ "M22.s404": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Not Found"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "MODEL_NOT_FOUND",
+   "provider": "openai_compatible"
+  }
+ },
+ "M22.s500": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Internal Server Error"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "TRANSIENT",
+   "provider": "openai_compatible"
+  }
+ },
+ "M22.abort": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- This operation was aborted"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "TRANSIENT",
+   "provider": "openai_compatible"
+  }
+ },
+ "M22.unknown": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- something odd happened"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "UNKNOWN",
+   "provider": "openai_compatible"
+  }
+ },
+ "M23.attached_quota_on_500": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- x"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M23.attached_unknown_on_402": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "UNKNOWN",
+   "provider": "openai_compatible"
+  }
+ },
+ "M23.retry_error_wrapping_402": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Failed after 3 attempts. Last error: Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M23.plain_object_402_no_symbols": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M23.stamped_funded_no_classification": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "kodus"
+  }
+ },
+ "M23.stamped_byok_no_classification": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M24.Q_plus_executor_critical_no_metadata": {
+  "errors": [
+   {
+    "stage": "FetchChangedFilesStage",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": []
+   },
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- stage threw\n- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M24.executor_quota_throw_outside_agentreview": {
+  "errors": [
+   {
+    "stage": "UpdateCommentsAndGenerateSummaryStage",
+    "severity": null,
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": []
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": null
+ },
+ "M24.Q_only_control": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M25.no_severity_Q": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1
+ },
+ "M25.no_metadata": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1
+ },
+ "M25.owner_false": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1
+ },
+ "M25.owner_string_true": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1
+ },
+ "M25.missing_errorCategory": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1
+ },
+ "M25.agent_category_is_QUOTA": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1
+ },
+ "M25.no_severity_no_metadata_plus_Q": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance\n- The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  ],
+  "finalizeCalls": 1
+ },
+ "M26.empty_errors_success": {
+  "conclusion": [
+   "SUCCESS"
+  ],
+  "checkStage": [
+   "_pipelineEndSuccess"
+  ],
+  "reasonHead": [
+   ""
+  ],
+  "finalizeCalls": 1
+ },
+ "M26.status_only_error": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   ""
+  ],
+  "finalizeCalls": 1
+ },
+ "M26.partial_only": {
+  "conclusion": [
+   "NEUTRAL"
+  ],
+  "checkStage": [
+   "_pipelineEndPartial"
+  ],
+  "reasonHead": [
+   "- p"
+  ],
+  "finalizeCalls": 1
+ },
+ "M26.Q_under_ERROR": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  ],
+  "finalizeCalls": 1
+ },
+ "M26.Q_under_IN_PROGRESS": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  ],
+  "finalizeCalls": 1
+ },
+ "M26.Q_under_SUCCESS": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  ],
+  "finalizeCalls": 1
+ },
+ "M26.Q_under_PARTIAL_ERROR": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  ],
+  "finalizeCalls": 1
+ },
+ "M27.license_skip": {
+  "conclusion": [
+   "SKIPPED"
+  ],
+  "checkStage": [
+   "_pipelineEndSkipped"
+  ],
+  "reasonHead": [
+   "User does not have a valid license"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 0
+ },
+ "M28.Q_plus_summary": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan.\n- Failed to generate summary"
+  ],
+  "finalizeCalls": 1
+ },
+ "M28.summary_alone": {
+  "conclusion": [
+   "SUCCESS"
+  ],
+  "checkStage": [
+   "_pipelineEndSuccess"
+  ],
+  "reasonHead": [
+   ""
+  ],
+  "finalizeCalls": 1
+ },
+ "M28.summary_plus_partial": {
+  "conclusion": [
+   "NEUTRAL"
+  ],
+  "checkStage": [
+   "_pipelineEndPartial"
+  ],
+  "reasonHead": [
+   "- Failed to generate summary\n- p"
+  ],
+  "finalizeCalls": 1
+ },
+ "M28.summary_plus_critical": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Failed to generate summary\n- c"
+  ],
+  "finalizeCalls": 1
+ },
+ "M33.canary_in_slot_and_error": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance for key sk-QA2191-CANARY-7f3a"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": true,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M33.canary_in_slot_only": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M34.hundred_Q": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan. (100 files/stages)"
+  ],
+  "finalizeCalls": 1
+ },
+ "M34.hundred_Q_tail_critical": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan. (100 files/stages)\n- tail critical"
+  ],
+  "finalizeCalls": 1
+ },
+ "M34.hundred_Q_tail_partial": {
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan. (100 files/stages)\n- tail partial"
+  ],
+  "finalizeCalls": 1
+ },
+ "M35.empty_changed_files": {
+  "errors": [],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   ""
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 0,
+  "llmRunCalls": 0,
+  "stageLogLevels": [],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": null
+ },
+ "M35.empty_changed_files_status_success": {
+  "errors": [],
+  "conclusion": [
+   "SUCCESS"
+  ],
+  "checkStage": [
+   "_pipelineEndSuccess"
+  ],
+  "reasonHead": [
+   ""
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 0,
+  "llmRunCalls": 0,
+  "stageLogLevels": [],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": null
+ },
+ "M35.one_changed_file": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  }
+ },
+ "M8h.clean": {
+  "errors": [],
+  "conclusion": [
+   "SUCCESS"
+  ],
+  "checkStage": [
+   "_pipelineEndSuccess"
+  ],
+  "reasonHead": [
+   ""
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": null,
+  "failoverAttempts": [
+   "quota-a",
+   "deepseek"
+  ],
+  "failoverValue": "ok"
+ },
+ "M8h.one_finding": {
+  "errors": [],
+  "conclusion": [
+   "SUCCESS"
+  ],
+  "checkStage": [
+   "_pipelineEndSuccess"
+  ],
+  "reasonHead": [
+   ""
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": null,
+  "failoverAttempts": [
+   "quota-a",
+   "deepseek"
+  ],
+  "failoverValue": "ok"
+ },
+ "A1.generalist_finding_plus_security_Q": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:security",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 1,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 1, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  },
+  "note": "suggestions are passed in orchestrator output; see validSuggestionsCount"
+ },
+ "A1.deep_bug_perf_findings_security_Q": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:security",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 3,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 2, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  },
+  "note": "suggestions are passed in orchestrator output; see validSuggestionsCount"
+ },
+ "A1.suggestions_kept_in_context": {
+  "validSuggestions": 1,
+  "validSuggestionsByPR": 0,
+  "discarded": 0
+ },
+ "A9.byok_default_byok_fallback.plain": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  },
+  "routed": {
+   "blocked": false,
+   "reason": "resolved \"codeReview\" via default to \"mA\"",
+   "slot": {
+    "provider": "openai_compatible",
+    "model": "a",
+    "credentialId": "cA",
+    "fallback": {
+     "provider": "openai_compatible",
+     "model": "b",
+     "credentialId": "cB"
+    }
+   }
+  },
+  "attemptsTried": [
+   {
+    "provider": "openai_compatible",
+    "model": "a",
+    "credentialId": "cA"
+   },
+   {
+    "provider": "openai_compatible",
+    "model": "b",
+    "credentialId": "cB"
+   }
+  ]
+ },
+ "A9.byok_default_managed_fallback.plain": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  },
+  "routed": {
+   "blocked": false,
+   "reason": "resolved \"codeReview\" via default to \"mA\"",
+   "slot": {
+    "provider": "openai_compatible",
+    "model": "a",
+    "credentialId": "cA",
+    "fallback": null
+   }
+  },
+  "attemptsTried": [
+   {
+    "provider": "openai_compatible",
+    "model": "a",
+    "credentialId": "cA"
+   }
+  ]
+ },
+ "A9.byok_default_kodus_fallback.plain": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  },
+  "routed": {
+   "blocked": false,
+   "reason": "resolved \"codeReview\" via default to \"mA\"",
+   "slot": {
+    "provider": "openai_compatible",
+    "model": "a",
+    "credentialId": "cA",
+    "fallback": null
+   }
+  },
+  "attemptsTried": [
+   {
+    "provider": "openai_compatible",
+    "model": "a",
+    "credentialId": "cA"
+   }
+  ]
+ },
+ "A9.managed_default_only.plain": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED"
+  },
+  "routed": {
+   "blocked": true,
+   "reason": "BLOCKED for \"codeReview\": default \"mM\": credential is managed (env-default path)",
+   "slot": null
+  },
+  "attemptsTried": [
+   null
+  ]
+ },
+ "A9.heavy_override_to_managed.risk_reroute_heavy": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  },
+  "routed": {
+   "blocked": false,
+   "reason": "taskOverride \"mM\": credential is managed (env-default path) → resolved \"codeReviewHeavy\" via default to \"mA\"",
+   "slot": {
+    "provider": "openai_compatible",
+    "model": "a",
+    "credentialId": "cA",
+    "fallback": null
+   }
+  },
+  "attemptsTried": [
+   {
+    "provider": "openai_compatible",
+    "model": "a",
+    "credentialId": "cA"
+   }
+  ]
+ },
+ "A9.heavy_override_to_byok.risk_reroute_heavy": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "anthropic"
+  },
+  "routed": {
+   "blocked": false,
+   "reason": "resolved \"codeReviewHeavy\" via taskOverride to \"mH\"",
+   "slot": {
+    "provider": "anthropic",
+    "model": "h",
+    "credentialId": "cH",
+    "fallback": null
+   }
+  },
+  "attemptsTried": [
+   {
+    "provider": "anthropic",
+    "model": "h",
+    "credentialId": "cH"
+   }
+  ]
+ },
+ "A9.byok_default_byok_fallback.web_byokModelId_mB": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  },
+  "routed": {
+   "blocked": false,
+   "reason": "resolved \"codeReview\" via override to \"mB\"",
+   "slot": {
+    "provider": "openai_compatible",
+    "model": "b",
+    "credentialId": "cB",
+    "fallback": null
+   }
+  },
+  "attemptsTried": [
+   {
+    "provider": "openai_compatible",
+    "model": "b",
+    "credentialId": "cB"
+   }
+  ]
+ },
+ "A9.byok_default_byok_fallback.legacy_byokModel_name_b": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  },
+  "routed": {
+   "blocked": false,
+   "reason": "resolved \"codeReview\" via override(name) to \"mA\"",
+   "slot": {
+    "provider": "openai_compatible",
+    "model": "b",
+    "credentialId": "cA",
+    "fallback": {
+     "provider": "openai_compatible",
+     "model": "b",
+     "credentialId": "cB"
+    }
+   }
+  },
+  "attemptsTried": [
+   {
+    "provider": "openai_compatible",
+    "model": "b",
+    "credentialId": "cA"
+   },
+   {
+    "provider": "openai_compatible",
+    "model": "b",
+    "credentialId": "cB"
+   }
+  ]
+ },
+ "A9.byok_default_byok_fallback.yaml_unknown_model_id": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  },
+  "routed": {
+   "blocked": false,
+   "reason": "override \"does-not-exist\": no model with this id → resolved \"codeReview\" via default to \"mA\"",
+   "slot": {
+    "provider": "openai_compatible",
+    "model": "a",
+    "credentialId": "cA",
+    "fallback": {
+     "provider": "openai_compatible",
+     "model": "b",
+     "credentialId": "cB"
+    }
+   }
+  },
+  "attemptsTried": [
+   {
+    "provider": "openai_compatible",
+    "model": "a",
+    "credentialId": "cA"
+   },
+   {
+    "provider": "openai_compatible",
+    "model": "b",
+    "credentialId": "cB"
+   }
+  ]
+ },
+ "A9.M16b_byok_then_managed_fireworks_both_402": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "fireworks"
+  }
+ },
+ "A9.M16b_catch_path": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "durationMs",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "warn: [AGENT] Agent review failed for PR#7 after 0ms, continuing with empty results"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "fireworks"
+  }
+ },
+ "A10.resolveRepoInstructions": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "durationMs",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "orchestratorCalls": 0
+ },
+ "A10.resolveCustomAgents": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "durationMs",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "orchestratorCalls": 0
+ },
+ "A10.resolveReviewKnowledge": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "durationMs",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "orchestratorCalls": 0
+ },
+ "M6h.B_funded_fast": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "kodus"
+  },
+  "startedAt": "2026-11-25T02:56:30.317Z",
+  "endedAt": "2026-11-25T02:56:30.317Z"
+ },
+ "M6h.A_owned_slow": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  },
+  "startedAt": "2026-11-25T02:56:30.343Z",
+  "endedAt": "2026-11-25T02:56:30.343Z"
+ },
+ "M6h.A_owned_fast": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "openai_compatible"
+  },
+  "startedAt": "2026-11-25T02:56:30.349Z",
+  "endedAt": "2026-11-25T02:56:30.350Z"
+ },
+ "M6h.B_funded_slow": {
+  "errors": [
+   {
+    "stage": "AgentReviewStage",
+    "substage": "agent:generalist",
+    "severity": "critical",
+    "errorCategory": null,
+    "orgOwnedKey": null,
+    "metadataKeys": [
+     "agentName",
+     "category",
+     "prNumber"
+    ]
+   }
+  ],
+  "conclusion": [
+   "FAILURE"
+  ],
+  "checkStage": [
+   "_pipelineEndFailure"
+  ],
+  "reasonHead": [
+   "- Insufficient balance"
+  ],
+  "finalizeCalls": 1,
+  "orchestratorCalls": 1,
+  "llmRunCalls": 0,
+  "stageLogLevels": [
+   "log: [ENRICH] PR#7: enriched 0, failed 0, skipped 0"
+  ],
+  "observerLogLevels": [],
+  "canaryInNewMetadata": false,
+  "canaryInCheckReason": false,
+  "lastReviewError": {
+   "category": "QUOTA_EXCEEDED",
+   "provider": "kodus"
+  },
+  "startedAt": "2026-11-25T02:56:30.375Z",
+  "endedAt": "2026-11-25T02:56:30.375Z"
+ }
+}
