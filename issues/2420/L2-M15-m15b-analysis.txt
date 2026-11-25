@@ -1,0 +1,58 @@
+## orchestrator
+  {"ts": "2026-11-25T03:43:36.567Z", "event": "provider listening", "port": 61832, "scenario": "m15b", "tree": "wt-M"}
+  {"ts": "2026-11-25T03:43:36.569Z", "event": "spawn", "worker": "m15b-orgA", "pid": 46912}
+  {"ts": "2026-11-25T03:43:36.570Z", "event": "spawn", "worker": "m15b-orgB", "pid": 46917}
+  {"ts": "2026-11-25T03:43:38.405Z", "event": "barrier released", "name": "m15b"}
+  {"ts": "2026-11-25T03:43:42.257Z", "event": "exit", "worker": "m15b-orgB", "pid": 46917, "code": 0, "signal": null}
+  {"ts": "2026-11-25T03:43:47.791Z", "event": "exit", "worker": "m15b-orgA", "pid": 46912, "code": 0, "signal": null}
+## worker m15b-orgA
+  EV {"ts": "2026-11-25T03:43:38.279Z", "realTs": "2026-11-25T03:43:38.279Z", "event": "boot", "platform": "github", "org": "11111111-1111-4111-8111-111111111111", "repo": "repo-orgA-1", "pr": 1502, "clockOffsetMin": 0}
+  EV {"ts": "2026-11-25T03:43:38.377Z", "realTs": "2026-11-25T03:43:38.377Z", "event": "seeded-pr-doc"}
+  EV {"ts": "2026-11-25T03:43:38.439Z", "realTs": "2026-11-25T03:43:38.439Z", "event": "run-start", "origin": "automation"}
+  EV {"ts": "2026-11-25T03:43:38.463Z", "realTs": "2026-11-25T03:43:38.463Z", "event": "handler-start"}
+  EV {"ts": "2026-11-25T03:43:38.465Z", "realTs": "2026-11-25T03:43:38.465Z", "event": "model-start"}
+  EV {"ts": "2026-11-25T03:43:44.468Z", "realTs": "2026-11-25T03:43:44.468Z", "event": "model-end"}
+  EV {"ts": "2026-11-25T03:43:44.494Z", "realTs": "2026-11-25T03:43:44.494Z", "event": "stage-done", "stage": "AgentReviewStage", "validSuggestionsByPR": ["A[A]: qa2420/a-only.ts has no test file"], "validSuggestions": [["B[A]: console.log in source", "qa2420/a-only.ts", 90]]}
+  EV {"ts": "2026-11-25T03:43:44.565Z", "realTs": "2026-11-25T03:43:44.565Z", "event": "stage-done", "stage": "CreatePrLevelCommentsStage", "errors": []}
+  EV {"ts": "2026-11-25T03:43:47.590Z", "realTs": "2026-11-25T03:43:47.590Z", "event": "stage-done", "stage": "CreateFileCommentsStage", "lastAnalyzedCommit": {"sha": "headsha"}, "errors": []}
+  EV {"ts": "2026-11-25T03:43:47.601Z", "realTs": "2026-11-25T03:43:47.601Z", "event": "run-end", "returned": "Automation executed successfully"}
+  EV {"ts": "2026-11-25T03:43:47.603Z", "realTs": "2026-11-25T03:43:47.603Z", "event": "mongo-after", "prDocId": "6b06596aeece09114277dd3a", "organizationId": "11111111-1111-4111-8111-111111111111", "repositoryId": "repo-orgA-1", "prLevelSuggestions": [{"id": "65785ca2-c310-4178-b951-46e06e618a7b", "summary": "A[A]: qa2420/a-only.ts has no test file", "deliveryStatus": "sent", "commentId": 1003, "brokenKodyRulesIds": ["rule-a-A"]}], "fileSuggestions": [{"path": "qa2420/a-only.ts", "summary": "B[A]: console.log in source", "start": 90, "deliveryStatus": "sent", "commentId": 1004}]}
+  EV {"ts": "2026-11-25T03:43:47.608Z", "realTs": "2026-11-25T03:43:47.608Z", "event": "pg-after", "executions": [{"uuid": "914f73bf-7500-4277-ab5a-1550f1d1d12c", "status": "success", "origin": "automation", "createdAt": "2026-11-25T03:43:38.451Z", "updatedAt": "2026-11-25T03:43:47.592Z", "errorMessage": null}]}
+  LOG 03:43:38.440 pid=46953 debug DistributedLockService: Distributed lock acquired
+  LOG 03:43:44.495 pid=46953 info  CreatePrLevelCommentsStage: Starting PR-level comments creation for PR#1502
+  LOG 03:43:44.495 pid=46953 info  CommentManagerService: Creating PR-level comments for PR#1502
+  LOG 03:43:44.544 pid=46953 info  CommentManagerService: Created PR-level comment for suggestion 65785ca2-c310-4178-b951-46e06e618a7b
+  LOG 03:43:44.544 pid=46953 info  CreatePrLevelCommentsStage: Successfully created 1 PR-level comments for PR#1502
+  LOG 03:43:44.565 pid=46953 info  CreatePrLevelCommentsStage: Saved 1 PR level suggestions to database
+  LOG 03:43:47.542 pid=46953 info  GithubService: Created line comment for PR#1502
+  LOG 03:43:47.590 pid=46953 info  CreateFileCommentsStage: Successfully processed file comments for PR#1502
+  LOG 03:43:47.600 pid=46953 info  AutomationCodeReviewService: Successfully handled pull request for PR#1502
+  LOG 03:43:47.601 pid=46953 debug DistributedLockService: Distributed lock released
+## worker m15b-orgB
+  EV {"ts": "2026-11-25T03:43:38.279Z", "realTs": "2026-11-25T03:43:38.279Z", "event": "boot", "platform": "github", "org": "22222222-2222-4222-8222-222222222222", "repo": "repo-orgB-1", "pr": 1502, "clockOffsetMin": 0}
+  EV {"ts": "2026-11-25T03:43:38.378Z", "realTs": "2026-11-25T03:43:38.378Z", "event": "seeded-pr-doc"}
+  EV {"ts": "2026-11-25T03:43:38.439Z", "realTs": "2026-11-25T03:43:38.439Z", "event": "run-start", "origin": "automation"}
+  EV {"ts": "2026-11-25T03:43:38.464Z", "realTs": "2026-11-25T03:43:38.464Z", "event": "handler-start"}
+  EV {"ts": "2026-11-25T03:43:38.466Z", "realTs": "2026-11-25T03:43:38.466Z", "event": "model-start"}
+  EV {"ts": "2026-11-25T03:43:38.968Z", "realTs": "2026-11-25T03:43:38.968Z", "event": "model-end"}
+  EV {"ts": "2026-11-25T03:43:38.976Z", "realTs": "2026-11-25T03:43:38.976Z", "event": "stage-done", "stage": "AgentReviewStage", "validSuggestionsByPR": ["A[B]: qa2420/b-only.ts has no test file"], "validSuggestions": [["B[B]: console.log in source", "qa2420/b-only.ts", 90]]}
+  EV {"ts": "2026-11-25T03:43:39.023Z", "realTs": "2026-11-25T03:43:39.023Z", "event": "stage-done", "stage": "CreatePrLevelCommentsStage", "errors": []}
+  EV {"ts": "2026-11-25T03:43:42.065Z", "realTs": "2026-11-25T03:43:42.065Z", "event": "stage-done", "stage": "CreateFileCommentsStage", "lastAnalyzedCommit": {"sha": "headsha"}, "errors": []}
+  EV {"ts": "2026-11-25T03:43:42.077Z", "realTs": "2026-11-25T03:43:42.077Z", "event": "run-end", "returned": "Automation executed successfully"}
+  EV {"ts": "2026-11-25T03:43:42.080Z", "realTs": "2026-11-25T03:43:42.080Z", "event": "mongo-after", "prDocId": "6b06596a42942ac446b18749", "organizationId": "22222222-2222-4222-8222-222222222222", "repositoryId": "repo-orgB-1", "prLevelSuggestions": [{"id": "d79cb1d4-b6da-4301-9d05-43ef18436292", "summary": "A[B]: qa2420/b-only.ts has no test file", "deliveryStatus": "sent", "commentId": 1001, "brokenKodyRulesIds": ["rule-a-B"]}], "fileSuggestions": [{"path": "qa2420/b-only.ts", "summary": "B[B]: console.log in source", "start": 90, "deliveryStatus": "sent", "commentId": 1002}]}
+  EV {"ts": "2026-11-25T03:43:42.084Z", "realTs": "2026-11-25T03:43:42.084Z", "event": "pg-after", "executions": [{"uuid": "7a4816e1-2e37-4b28-8529-d773ce733317", "status": "success", "origin": "automation", "createdAt": "2026-11-25T03:43:38.451Z", "updatedAt": "2026-11-25T03:43:42.067Z", "errorMessage": null}]}
+  LOG 03:43:38.440 pid=46935 debug DistributedLockService: Distributed lock acquired
+  LOG 03:43:38.976 pid=46935 info  CreatePrLevelCommentsStage: Starting PR-level comments creation for PR#1502
+  LOG 03:43:38.976 pid=46935 info  CommentManagerService: Creating PR-level comments for PR#1502
+  LOG 03:43:39.012 pid=46935 info  CommentManagerService: Created PR-level comment for suggestion d79cb1d4-b6da-4301-9d05-43ef18436292
+  LOG 03:43:39.013 pid=46935 info  CreatePrLevelCommentsStage: Successfully created 1 PR-level comments for PR#1502
+  LOG 03:43:39.023 pid=46935 info  CreatePrLevelCommentsStage: Saved 1 PR level suggestions to database
+  LOG 03:43:42.016 pid=46935 info  GithubService: Created line comment for PR#1502
+  LOG 03:43:42.064 pid=46935 info  CreateFileCommentsStage: Successfully processed file comments for PR#1502
+  LOG 03:43:42.076 pid=46935 info  AutomationCodeReviewService: Successfully handled pull request for PR#1502
+  LOG 03:43:42.077 pid=46935 debug DistributedLockService: Distributed lock released
+## provider POSTs
+  03:43:39.006 gh-pr-level /api/v3/repos/qa-owner/codex-athena/issues/1502/comments status=201 auth=token tok-22222222 body='A[B]: qa2420/b-only.ts has no test file**' position=False
+  03:43:42.008 gh-inline   /api/v3/repos/qa-owner/codex-athena/pulls/1502/comments status=201 auth=token tok-22222222 body='B[B]: console.log in source**' position=False
+  03:43:44.537 gh-pr-level /api/v3/repos/qa-owner/codex-athena/issues/1502/comments status=201 auth=token tok-11111111 body='A[A]: qa2420/a-only.ts has no test file**' position=False
+  03:43:47.535 gh-inline   /api/v3/repos/qa-owner/codex-athena/pulls/1502/comments status=201 auth=token tok-11111111 body='B[A]: console.log in source**' position=False
