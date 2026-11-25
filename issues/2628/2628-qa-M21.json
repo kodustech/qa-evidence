@@ -1,0 +1,521 @@
+{
+ "item": "M21",
+ "execution": [
+  [
+   "d9df6d80-884f-4d0c-993c-41af20e29b68",
+   "success",
+   "command",
+   "2026-11-24 21:45:33.125053",
+   "2026-11-24 21:47:04.197301"
+  ]
+ ],
+ "stages": [
+  {
+   "stage": "Kody Review Started",
+   "status": "success",
+   "createdAt": "2026-11-24T21:45:33.131282",
+   "finishedAt": null,
+   "metadataKeys": [],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "ValidatePrerequisitesStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:45:33.559626",
+   "finishedAt": "2026-11-24T21:45:33.609",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "ValidateNewCommitsStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:45:33.619841",
+   "finishedAt": "2026-11-24T21:45:33.84",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "ResolveConfigStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:45:33.851001",
+   "finishedAt": "2026-11-24T21:45:34.117",
+   "metadataKeys": [
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "ValidateConfigStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:45:34.128832",
+   "finishedAt": "2026-11-24T21:45:34.149",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "AssessPrRiskStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:45:34.159741",
+   "finishedAt": "2026-11-24T21:45:34.165",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "FetchChangedFilesStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:45:34.176232",
+   "finishedAt": "2026-11-24T21:45:34.472",
+   "metadataKeys": [
+    "ignoredFiles",
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "LoadExternalContextStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:45:34.481958",
+   "finishedAt": "2026-11-24T21:45:34.51",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "LoadCiEvidenceStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:45:34.519903",
+   "finishedAt": "2026-11-24T21:45:34.524",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "InitialCommentStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:45:34.533371",
+   "finishedAt": "2026-11-24T21:45:37.106",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "BusinessLogicValidationStage",
+   "status": "skipped",
+   "createdAt": "2026-11-24T21:45:37.117176",
+   "finishedAt": "2026-11-24T21:45:37.223",
+   "metadataKeys": [
+    "businessLogicOutcome",
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "CreateSandboxStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:45:37.234165",
+   "finishedAt": "2026-11-24T21:45:41.237",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "RunAnalyzersStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:45:41.247406",
+   "finishedAt": "2026-11-24T21:45:41.281",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "AgentReviewStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:45:41.292363",
+   "finishedAt": "2026-11-24T21:46:57.12",
+   "metadataKeys": [
+    "dedupTrace",
+    "label",
+    "sandboxUsage",
+    "visibility"
+   ],
+   "sandboxUsage": {
+    "stopAt": "2026-11-24T21:47:24.400Z",
+    "consumer": "review",
+    "acquiredAt": "2026-11-24T21:45:41.234Z",
+    "lastUsedAt": "2026-11-24T21:46:31.616Z",
+    "releasedAt": "2026-11-24T21:46:54.384Z",
+    "firstUsedAt": "2026-11-24T21:45:41.300Z"
+   }
+  },
+  {
+   "stage": "AgentReview::custom-agent-qa-2628-capacity",
+   "status": "success",
+   "createdAt": "2026-11-24T21:45:48.539277",
+   "finishedAt": "2026-11-24T21:46:54.389",
+   "metadataKeys": [
+    "agentTrace",
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "CreatePrLevelCommentsStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:46:57.131515",
+   "finishedAt": "2026-11-24T21:46:57.141",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "ValidateSuggestionsStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:46:57.16206",
+   "finishedAt": "2026-11-24T21:46:59.525",
+   "metadataKeys": [
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "CreateFileCommentsStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:46:59.535583",
+   "finishedAt": "2026-11-24T21:47:01.172",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "AggregateResultsStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:47:01.182996",
+   "finishedAt": "2026-11-24T21:47:01.19",
+   "metadataKeys": [
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "UpdateCommentsAndGenerateSummaryStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:47:01.199482",
+   "finishedAt": "2026-11-24T21:47:02.32",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "DecidePrApprovalStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:47:02.32967",
+   "finishedAt": "2026-11-24T21:47:02.335",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "RequestChangesOrApproveStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:47:02.343813",
+   "finishedAt": "2026-11-24T21:47:02.349",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "Kody Review Finished",
+   "status": "success",
+   "createdAt": "2026-11-24T21:47:04.20119",
+   "finishedAt": null,
+   "metadataKeys": [],
+   "sandboxUsage": null
+  }
+ ],
+ "leaseLines": [
+  {
+   "t": "2026-11-24T21:45:37.247Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: acquire prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" consumer=\"review\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "consumer": "review",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:45:37.259Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" consumer=\"review\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "consumer": "review",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:45:41.234Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: sandbox READY prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" consumer=\"review\" leaseId=\"1ad83171-9b05-42a0-9593-790c55b7905e\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "consumer": "review",
+    "leaseId": "1ad83171-9b05-42a0-9593-790c55b7905e",
+    "sandboxId": "sbx#8",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:46:54.399Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: released leaseId=\"1ad83171-9b05-42a0-9593-790c55b7905e\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" leaseCount=0",
+   "a": {
+    "leaseId": "1ad83171-9b05-42a0-9593-790c55b7905e",
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "leaseCount": 0,
+    "consumer": "review",
+    "heldMs": 73150,
+    "acquireToFirstUseMs": 66,
+    "lastUseToReleaseMs": 22768,
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:46:54.404Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: scheduled idle-kill at 2026-11-24T21:47:24.400Z for sandboxId=\"sbx#8\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "sandboxId": "sbx#8",
+    "idleTimeoutMs": 30000,
+    "killAt": "2026-11-24T21:47:24.400Z",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:47:30.176Z",
+   "l": "info",
+   "c": "SandboxLeaseReaperService",
+   "m": "[SANDBOX-IDLE-KILL] Killed idle sandbox",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "sandboxId": "sbx#8",
+    "killAt": "2026-11-24T21:47:24.400Z",
+    "component": "SandboxLeaseReaperService",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:47:33.611Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: acquire prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" consumer=\"conversation\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "consumer": "conversation",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:47:33.620Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" consumer=\"conversation\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "consumer": "conversation",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:47:37.624Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: sandbox READY prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" consumer=\"conversation\" leaseId=\"9af5bb7b-beeb-40e6-b451-edf78335662c\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "consumer": "conversation",
+    "leaseId": "9af5bb7b-beeb-40e6-b451-edf78335662c",
+    "sandboxId": "sbx#9",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:47:42.825Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: released leaseId=\"9af5bb7b-beeb-40e6-b451-edf78335662c\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" leaseCount=0",
+   "a": {
+    "leaseId": "9af5bb7b-beeb-40e6-b451-edf78335662c",
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "leaseCount": 0,
+    "consumer": "conversation",
+    "heldMs": 5195,
+    "acquireToFirstUseMs": 1968,
+    "lastUseToReleaseMs": 3094,
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:47:42.831Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: scheduled idle-kill at 2026-11-24T21:52:42.825Z for sandboxId=\"sbx#9\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "sandboxId": "sbx#9",
+    "idleTimeoutMs": 300000,
+    "killAt": "2026-11-24T21:52:42.825Z",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:51:24.109Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: acquire prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" consumer=\"review\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "consumer": "review",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:51:24.131Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: connecting to existing sandbox sandboxId=\"sbx#9\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" consumer=\"review\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "consumer": "review",
+    "sandboxId": "sbx#9",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:51:26.023Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: connected to existing sandbox prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" consumer=\"review\" leaseId=\"b8b243ef-041a-4cc4-b382-7abe36f9d96f\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "consumer": "review",
+    "leaseId": "b8b243ef-041a-4cc4-b382-7abe36f9d96f",
+    "sandboxId": "sbx#9",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:52:46.657Z",
+   "l": "warn",
+   "c": "SandboxLeaseManager",
+   "m": "[SANDBOX-READ] Empty result for .gitmodules: exitCode=1 stderr=cat: /home/user/repo/.gitmodules: No such file or directory\n cmd=f='/home/user/repo/.gitmodules'; r=$(realpath '/home/user/repo') || exit 1; if [ \"$r\" != '/home/user/repo' ]; then echo \"Not a real directory: /home/user/repo\" >&2; exit 1;",
+   "a": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "path": ".gitmodules",
+    "exitCode": 1,
+    "stderr": "cat: /home/user/repo/.gitmodules: No such file or directory\n",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:52:53.611Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: released leaseId=\"b8b243ef-041a-4cc4-b382-7abe36f9d96f\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" leaseCount=0",
+   "a": {
+    "leaseId": "b8b243ef-041a-4cc4-b382-7abe36f9d96f",
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "leaseCount": 0,
+    "consumer": "review",
+    "heldMs": 87580,
+    "acquireToFirstUseMs": 27,
+    "lastUseToReleaseMs": 6947,
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:52:53.616Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: scheduled idle-kill at 2026-11-24T21:53:23.611Z for sandboxId=\"sbx#9\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "sandboxId": "sbx#9",
+    "idleTimeoutMs": 30000,
+    "killAt": "2026-11-24T21:53:23.611Z",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:53:30.125Z",
+   "l": "info",
+   "c": "SandboxLeaseReaperService",
+   "m": "[SANDBOX-IDLE-KILL] Killed idle sandbox",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "sandboxId": "sbx#9",
+    "killAt": "2026-11-24T21:53:23.611Z",
+    "component": "SandboxLeaseReaperService",
+    "originalCorrelationId": null
+   }
+  }
+ ]
+}
