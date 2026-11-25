@@ -1,0 +1,57 @@
+[
+ [
+  "BusinessLogicValidationStage",
+  "skipped",
+  "2026-11-25 02:40:48.946418",
+  "Skipped: no reference.",
+  ""
+ ],
+ [
+  "CreateSandboxStage",
+  "success",
+  "2026-11-25 02:40:48.978251",
+  "",
+  ""
+ ],
+ [
+  "AgentReviewStage",
+  "success",
+  "2026-11-25 02:40:53.910819",
+  "",
+  ""
+ ],
+ [
+  "AgentReview::generalist",
+  "success",
+  "2026-11-25 02:41:22.913361",
+  "Generalist Agent \u2014 10 findings in 221s",
+  ""
+ ],
+ [
+  "CreatePrLevelCommentsStage",
+  "success",
+  "2026-11-25 02:45:26.502088",
+  "",
+  ""
+ ],
+ [
+  "CreateFileCommentsStage",
+  "success",
+  "2026-11-25 02:45:26.53276",
+  "",
+  ""
+ ],
+ [
+  "UpdateCommentsAndGenerateSummaryStage",
+  "partial_error",
+  "2026-11-25 02:45:27.779062",
+  "The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan.",
+  "[{\"file\": \"unknown\", \"reason\": \"summary_generation_failed\", \"message\": \"Failed to generate summary\", \"isTimeout\": false}]"
+ ],
+ [
+  "Kody Review Finished",
+  "partial_error",
+  "2026-11-25 02:45:30.077157",
+  "Code review completed with issues: The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or ad"
+ ]
+]
