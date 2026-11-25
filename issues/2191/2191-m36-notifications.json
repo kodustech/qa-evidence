@@ -1,0 +1,7 @@
+{
+ "event": "byok.llm_errors_threshold",
+ "criticality": "critical",
+ "title": "BYOK LLM errors exceeded threshold",
+ "body": "Your openai_compatible model returned 5 errors in the recent window. Reviews may be impacted. Latest error: HTTP 530 \u2014 <none>.",
+ "createdAt": "2026-11-25T02:19:20.427Z"
+}
