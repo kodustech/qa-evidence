@@ -1,0 +1,153 @@
+{
+ "M5_PR13_f2807a8b": {
+  "sha": "f2807a8b9c1e63390c9ad223044eeb064b1e0179",
+  "codeberg_statuses_newest_first": [
+   {
+    "created_at": "2026-11-25T03:00:59+01:00",
+    "context": "Kodus Code Review",
+    "status": "failure",
+    "description": "Code Review Failed",
+    "target_url": "https://codeberg.org/kodus/claude-athena/commit/f2807a8b9c1e63390c9ad223044eeb064b1e0179"
+   },
+   {
+    "created_at": "2026-11-25T03:00:43+01:00",
+    "context": "Kodus Code Review",
+    "status": "pending",
+    "description": "Code Review Starting",
+    "target_url": "https://codeberg.org/kodus/claude-athena/commit/f2807a8b9c1e63390c9ad223044eeb064b1e0179"
+   }
+  ],
+  "automation_execution": [
+   [
+    "d75e003a-80a3-4050-bae4-859756d8048c",
+    "error",
+    "13",
+    "2026-11-25 02:00:43.262427",
+    "2026-11-25 02:01:00.414077",
+    "Code review failed: Unexpected error while running the code review (openai_compatible)."
+   ]
+  ]
+ },
+ "M7_PR11_fee28018": {
+  "sha": "fee28018df190857cb13cdc28f44d9eef7b5c005",
+  "codeberg_statuses_newest_first": [
+   {
+    "created_at": "2026-11-25T03:04:42+01:00",
+    "context": "Kodus Code Review",
+    "status": "success",
+    "description": "Code Review Complete",
+    "target_url": "https://codeberg.org/kodus/claude-athena/commit/fee28018df190857cb13cdc28f44d9eef7b5c005"
+   },
+   {
+    "created_at": "2026-11-25T03:01:36+01:00",
+    "context": "Kodus Code Review",
+    "status": "pending",
+    "description": "Code Review Starting",
+    "target_url": "https://codeberg.org/kodus/claude-athena/commit/fee28018df190857cb13cdc28f44d9eef7b5c005"
+   },
+   {
+    "created_at": "2026-11-25T02:56:21+01:00",
+    "context": "Kodus Code Review",
+    "status": "warning",
+    "description": "Code Review Skipped",
+    "target_url": "https://codeberg.org/kodus/claude-athena/commit/fee28018df190857cb13cdc28f44d9eef7b5c005"
+   },
+   {
+    "created_at": "2026-11-25T02:55:18+01:00",
+    "context": "Kodus Code Review",
+    "status": "pending",
+    "description": "Code Review Starting",
+    "target_url": "https://codeberg.org/kodus/claude-athena/commit/fee28018df190857cb13cdc28f44d9eef7b5c005"
+   }
+  ],
+  "automation_execution": [
+   [
+    "ad61cbc1-1c5c-43c0-a9eb-72bebff1fe8c",
+    "success",
+    "11",
+    "2026-11-25 02:01:35.939486",
+    "2026-11-25 02:04:43.737773"
+   ]
+  ],
+  "all_executions_on_sha": [
+   [
+    "c4aee9de-a26a-4e4f-a708-4817545a3cdc",
+    "error",
+    "2026-11-25 01:55:18.098062",
+    "2026-11-25 01:56:22.566008",
+    "Code review failed: The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+   ],
+   [
+    "ad61cbc1-1c5c-43c0-a9eb-72bebff1fe8c",
+    "success",
+    "2026-11-25 02:01:35.939486",
+    "2026-11-25 02:04:43.737773"
+   ]
+  ],
+  "comments_first_line": [
+   "## Code Review Could Not Complete \u26a0\ufe0f",
+   "@kody start-review",
+   "## Code Review Completed! \ud83d\udd25"
+  ]
+ },
+ "M8_PR16_3c308a8c": {
+  "sha": "3c308a8c6ce8c4286bb39bcc0cbcbdaa79aecdc4",
+  "codeberg_statuses_newest_first": [
+   {
+    "created_at": "2026-11-25T03:33:55+01:00",
+    "context": "Kodus Code Review",
+    "status": "success",
+    "description": "Code Review Complete",
+    "target_url": "https://codeberg.org/kodus/claude-athena/commit/3c308a8c6ce8c4286bb39bcc0cbcbdaa79aecdc4"
+   },
+   {
+    "created_at": "2026-11-25T03:32:06+01:00",
+    "context": "Kodus Code Review",
+    "status": "pending",
+    "description": "Code Review Starting",
+    "target_url": "https://codeberg.org/kodus/claude-athena/commit/3c308a8c6ce8c4286bb39bcc0cbcbdaa79aecdc4"
+   }
+  ],
+  "automation_execution": [
+   [
+    "2ccb4c14-fb0b-438b-9ccb-48eefdfdae43",
+    "success",
+    "16",
+    "2026-11-25 02:32:06.247104",
+    "2026-11-25 02:33:56.403418"
+   ]
+  ],
+  "comments_first_line": [
+   "# Kody Review Complete"
+  ]
+ },
+ "M9_PR15_0001732b": {
+  "sha": "0001732b48ae878f25c213261fdf77ae09e0f4ea",
+  "codeberg_statuses_newest_first": [
+   {
+    "created_at": "2026-11-25T03:30:43+01:00",
+    "context": "Kodus Code Review",
+    "status": "warning",
+    "description": "Code Review Completed with Warnings",
+    "target_url": "https://codeberg.org/kodus/claude-athena/commit/0001732b48ae878f25c213261fdf77ae09e0f4ea"
+   },
+   {
+    "created_at": "2026-11-25T03:30:21+01:00",
+    "context": "Kodus Code Review",
+    "status": "pending",
+    "description": "Code Review Starting",
+    "target_url": "https://codeberg.org/kodus/claude-athena/commit/0001732b48ae878f25c213261fdf77ae09e0f4ea"
+   }
+  ],
+  "automation_execution": [
+   [
+    "41f4aeb9-2afa-4d75-b7d7-02e422231a37",
+    "error",
+    "15",
+    "2026-11-25 02:30:21.039248",
+    "2026-11-25 02:30:44.520979",
+    "Code review failed: The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+   ]
+  ]
+ }
+}
