@@ -1,0 +1,308 @@
+{
+  "M": [
+    {
+      "tree": "M",
+      "scenario": "X2-L1",
+      "case": "outside-pr-lineless",
+      "input": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/enrollment-fee.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)"
+        }
+      ],
+      "inline": [],
+      "discarded": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "status": "discarded-by-code-diff"
+        }
+      ],
+      "logs": [],
+      "modelCalls": 2
+    },
+    {
+      "tree": "M",
+      "scenario": "X2-L1",
+      "case": "outside-pr-120-180-enclosing",
+      "input": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/enrollment-fee.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)"
+        }
+      ],
+      "inline": [],
+      "discarded": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "status": "discarded-by-code-diff"
+        }
+      ],
+      "logs": [],
+      "modelCalls": 2
+    },
+    {
+      "tree": "M",
+      "scenario": "X2-L1",
+      "case": "outside-pr-34-34-diff-only",
+      "input": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "start": 34,
+          "end": 34,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/enrollment-fee.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "start": 34,
+          "end": 34,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "start": 34,
+          "end": 34,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)"
+        }
+      ],
+      "inline": [],
+      "discarded": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "start": 34,
+          "end": 34,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "status": "discarded-by-code-diff"
+        }
+      ],
+      "logs": [],
+      "modelCalls": 2
+    }
+  ],
+  "P": [
+    {
+      "tree": "P",
+      "scenario": "X2-L1",
+      "case": "outside-pr-lineless",
+      "input": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)"
+        }
+      ],
+      "inline": [],
+      "discarded": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "status": "discarded-by-code-diff"
+        }
+      ],
+      "logs": [],
+      "modelCalls": 2
+    },
+    {
+      "tree": "P",
+      "scenario": "X2-L1",
+      "case": "outside-pr-120-180-enclosing",
+      "input": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)"
+        }
+      ],
+      "inline": [],
+      "discarded": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "status": "discarded-by-code-diff"
+        }
+      ],
+      "logs": [],
+      "modelCalls": 2
+    },
+    {
+      "tree": "P",
+      "scenario": "X2-L1",
+      "case": "outside-pr-34-34-diff-only",
+      "input": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "start": 34,
+          "end": 34,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "start": 34,
+          "end": 34,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "start": 34,
+          "end": 34,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)"
+        }
+      ],
+      "inline": [],
+      "discarded": [
+        {
+          "file": "qa2420/not-in-pr.ts",
+          "start": 34,
+          "end": 34,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "status": "discarded-by-code-diff"
+        }
+      ],
+      "logs": [],
+      "modelCalls": 2
+    }
+  ]
+}
