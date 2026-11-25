@@ -1,0 +1,6 @@
+{"rev":"ctrl","role":"e2b-kill-after-stage","pid":58736,"event":"sandbox","at":"2026-11-25T01:09:34.416Z","type":"e2b","sandboxId":"sbx#3","lease":{"leaseCount":1,"killAt":null,"sandboxId":"sbx#3","state":"READY"}}
+{"rev":"ctrl","role":"e2b-kill-after-stage","pid":58736,"event":"orchestrator-start","at":"2026-11-25T01:09:34.420Z"}
+{"rev":"ctrl","role":"e2b-kill-after-stage","pid":58736,"event":"orchestrator-returned","at":"2026-11-25T01:11:35.458Z"}
+{"rev":"ctrl","role":"e2b-kill-after-stage","pid":58736,"event":"stage-done","at":"2026-11-25T01:11:47.001Z","ms":139475,"lease":{"leaseCount":1,"killAt":null,"sandboxId":"sbx#3","state":"READY"},"usage":null,"suggestions":3,"files":["qa2628/enrollment/capacity.ts:11","qa2628/enrollment/enrollment.service.ts:16","qa2628/enrollment/waitlist.ts:10"],"errors":[]}
+{"rev":"ctrl","role":"e2b-kill-after-stage","pid":58736,"event":"publishing","at":"2026-11-25T01:11:47.001Z"}
+{"rev": "ctrl", "role": "e2b-kill-after-stage", "driver": true, "event": "SIGKILL", "at": "2026-11-25T01:11:47Z"}
