@@ -1,0 +1,39 @@
+import sys, re
+name, root = sys.argv[1], sys.argv[2]
+S = root + '/libs/code-review/pipeline/stages/agent-review.stage.ts'
+MG = root + '/libs/code-review/infrastructure/agents/engine/kody-rules-merge.ts'
+SV = root + '/libs/code-review/infrastructure/adapters/services/suggestion.service.ts'
+def sub(path, old, new):
+    s = open(path).read()
+    assert s.count(old) == 1, (name, path, s.count(old))
+    open(path, 'w').write(s.replace(old, new))
+if name == 'anchor-return':
+    sub(S, """                if (
+                    s.label === 'kody_rules' &&
+                    !s.relevantLinesStart &&
+                    prChangedFileNames.has(s.relevantFile)
+                ) {
+                    return s;
+                }
+""", "")
+elif name == 'writer-noline':
+    sub(MG, """            if (!start) {
+                return null;
+            }
+            return `${s.relevantFile}""", """            return `${s.relevantFile}""")
+elif name == 'scope':
+    sub(MG, "scope: keptLocation ? 'file' : 'pr',", "scope: 'file',")
+elif name == 'render-unknown':
+    sub(MG, "!location.endsWith(':?-?') && !own.has(location)", "!own.has(location)")
+elif name == 'render-self':
+    sub(MG, """        ...(start != null
+            ? [`${suggestion.relevantFile}:${start}-${start}`]
+            : []),
+""", "")
+elif name == 'service-skip':
+    sub(SV, "suggestion.relevantFile && !lineLessRule", "suggestion.relevantFile")
+elif name == 'guard-2571':
+    sub(MG, "            if (!dup.relevantFile) continue;\n", "")
+else:
+    raise SystemExit('unknown ' + name)
+print('reverted', name)
