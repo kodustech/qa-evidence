@@ -1,0 +1,471 @@
+[
+  {
+    "scenario": "M16",
+    "case": "start=omit lone",
+    "result": {
+      "skipped": "NO_RELEVANT_CHANGES",
+      "checked": 1,
+      "persisted": [],
+      "decided": 0,
+      "unmeasured": []
+    },
+    "aiCalls": 0,
+    "askedIds": [],
+    "slotResolutions": 0,
+    "updateCalls": [],
+    "fixtureUnchanged": true
+  },
+  {
+    "scenario": "M16",
+    "case": "start=omit alsoFoundIn",
+    "result": {
+      "skipped": "NO_RELEVANT_CHANGES",
+      "checked": 1,
+      "persisted": [],
+      "decided": 0,
+      "unmeasured": []
+    },
+    "aiCalls": 0,
+    "askedIds": [],
+    "slotResolutions": 0,
+    "updateCalls": [],
+    "fixtureUnchanged": true
+  },
+  {
+    "scenario": "M16",
+    "case": "start=omit kodyRuleOtherLocations",
+    "result": {
+      "skipped": "NO_RELEVANT_CHANGES",
+      "checked": 1,
+      "persisted": [],
+      "decided": 0,
+      "unmeasured": []
+    },
+    "aiCalls": 0,
+    "askedIds": [],
+    "slotResolutions": 0,
+    "updateCalls": [],
+    "fixtureUnchanged": true
+  },
+  {
+    "scenario": "M16",
+    "case": "start=omit secondary file removed",
+    "result": {
+      "skipped": "NO_RELEVANT_CHANGES",
+      "checked": 1,
+      "persisted": [],
+      "decided": 0,
+      "unmeasured": []
+    },
+    "aiCalls": 0,
+    "askedIds": [],
+    "slotResolutions": 0,
+    "updateCalls": [],
+    "fixtureUnchanged": true
+  },
+  {
+    "scenario": "M16",
+    "case": "start=omit stored implementedLocations",
+    "result": {
+      "skipped": "NO_RELEVANT_CHANGES",
+      "checked": 1,
+      "persisted": [],
+      "decided": 0,
+      "unmeasured": []
+    },
+    "aiCalls": 0,
+    "askedIds": [],
+    "slotResolutions": 0,
+    "updateCalls": [],
+    "fixtureUnchanged": true
+  },
+  {
+    "scenario": "M16",
+    "case": "start=null lone",
+    "result": {
+      "skipped": "NO_RELEVANT_CHANGES",
+      "checked": 1,
+      "persisted": [],
+      "decided": 0,
+      "unmeasured": []
+    },
+    "aiCalls": 0,
+    "askedIds": [],
+    "slotResolutions": 0,
+    "updateCalls": [],
+    "fixtureUnchanged": true
+  },
+  {
+    "scenario": "M16",
+    "case": "start=null alsoFoundIn",
+    "result": {
+      "skipped": "NO_RELEVANT_CHANGES",
+      "checked": 1,
+      "persisted": [],
+      "decided": 0,
+      "unmeasured": []
+    },
+    "aiCalls": 0,
+    "askedIds": [],
+    "slotResolutions": 0,
+    "updateCalls": [],
+    "fixtureUnchanged": true
+  },
+  {
+    "scenario": "M16",
+    "case": "start=null kodyRuleOtherLocations",
+    "result": {
+      "skipped": "NO_RELEVANT_CHANGES",
+      "checked": 1,
+      "persisted": [],
+      "decided": 0,
+      "unmeasured": []
+    },
+    "aiCalls": 0,
+    "askedIds": [],
+    "slotResolutions": 0,
+    "updateCalls": [],
+    "fixtureUnchanged": true
+  },
+  {
+    "scenario": "M16",
+    "case": "start=null secondary file removed",
+    "result": {
+      "skipped": "NO_RELEVANT_CHANGES",
+      "checked": 1,
+      "persisted": [],
+      "decided": 0,
+      "unmeasured": []
+    },
+    "aiCalls": 0,
+    "askedIds": [],
+    "slotResolutions": 0,
+    "updateCalls": [],
+    "fixtureUnchanged": true
+  },
+  {
+    "scenario": "M16",
+    "case": "start=null stored implementedLocations",
+    "result": {
+      "skipped": "NO_RELEVANT_CHANGES",
+      "checked": 1,
+      "persisted": [],
+      "decided": 0,
+      "unmeasured": []
+    },
+    "aiCalls": 0,
+    "askedIds": [],
+    "slotResolutions": 0,
+    "updateCalls": [],
+    "fixtureUnchanged": true
+  },
+  {
+    "scenario": "M16",
+    "case": "start=0 lone",
+    "result": {
+      "skipped": "NO_RELEVANT_CHANGES",
+      "checked": 1,
+      "persisted": [],
+      "decided": 0,
+      "unmeasured": []
+    },
+    "aiCalls": 0,
+    "askedIds": [],
+    "slotResolutions": 0,
+    "updateCalls": [],
+    "fixtureUnchanged": true
+  },
+  {
+    "scenario": "M16",
+    "case": "start=0 alsoFoundIn",
+    "result": {
+      "skipped": "NO_RELEVANT_CHANGES",
+      "checked": 1,
+      "persisted": [],
+      "decided": 0,
+      "unmeasured": []
+    },
+    "aiCalls": 0,
+    "askedIds": [],
+    "slotResolutions": 0,
+    "updateCalls": [],
+    "fixtureUnchanged": true
+  },
+  {
+    "scenario": "M16",
+    "case": "start=0 kodyRuleOtherLocations",
+    "result": {
+      "skipped": "NO_RELEVANT_CHANGES",
+      "checked": 1,
+      "persisted": [],
+      "decided": 0,
+      "unmeasured": []
+    },
+    "aiCalls": 0,
+    "askedIds": [],
+    "slotResolutions": 0,
+    "updateCalls": [],
+    "fixtureUnchanged": true
+  },
+  {
+    "scenario": "M16",
+    "case": "start=0 secondary file removed",
+    "result": {
+      "skipped": "NO_RELEVANT_CHANGES",
+      "checked": 1,
+      "persisted": [],
+      "decided": 0,
+      "unmeasured": []
+    },
+    "aiCalls": 0,
+    "askedIds": [],
+    "slotResolutions": 0,
+    "updateCalls": [],
+    "fixtureUnchanged": true
+  },
+  {
+    "scenario": "M16",
+    "case": "start=0 stored implementedLocations",
+    "result": {
+      "skipped": "NO_RELEVANT_CHANGES",
+      "checked": 1,
+      "persisted": [],
+      "decided": 0,
+      "unmeasured": []
+    },
+    "aiCalls": 0,
+    "askedIds": [],
+    "slotResolutions": 0,
+    "updateCalls": [],
+    "fixtureUnchanged": true
+  },
+  {
+    "scenario": "M17",
+    "push": 1,
+    "result": {
+      "checked": 3,
+      "decided": 2,
+      "persisted": [
+        {
+          "id": "BUG",
+          "implementationStatus": "implemented"
+        },
+        {
+          "id": "F",
+          "implementationStatus": "partially_implemented"
+        }
+      ],
+      "unmeasured": []
+    },
+    "asked": [
+      {
+        "file": "qa2420/a.ts",
+        "ids": [
+          "F"
+        ],
+        "org": {
+          "organizationId": "org-qa",
+          "teamId": "team-qa"
+        }
+      },
+      {
+        "file": "qa2420/b.ts",
+        "ids": [
+          "F#1"
+        ],
+        "org": {
+          "organizationId": "org-qa",
+          "teamId": "team-qa"
+        }
+      },
+      {
+        "file": "qa2420/c.ts",
+        "ids": [
+          "BUG"
+        ],
+        "org": {
+          "organizationId": "org-qa",
+          "teamId": "team-qa"
+        }
+      }
+    ],
+    "writes": [
+      {
+        "id": "F",
+        "data": {},
+        "org": {
+          "organizationId": "org-qa",
+          "teamId": "team-qa"
+        },
+        "opt": {
+          "pullRequestId": "pr-doc-qa",
+          "addToSet": {
+            "implementationCheck.implementedLocations": [
+              "qa2420/a.ts:1-2"
+            ]
+          },
+          "projection": [
+            "files.suggestions.id",
+            "files.suggestions.implementationCheck.implementedLocations"
+          ]
+        }
+      },
+      {
+        "id": "BUG",
+        "data": {
+          "implementationStatus": "implemented",
+          "implementationCheck": {
+            "checkedAt": "2026-11-25T03:15:19.157Z",
+            "outcome": "decided",
+            "verdict": "implemented"
+          },
+          "updatedAt": "2026-11-25T03:15:19.157Z"
+        },
+        "org": {
+          "organizationId": "org-qa",
+          "teamId": "team-qa"
+        },
+        "opt": {
+          "implementationStatusNotIn": [
+            "implemented"
+          ],
+          "returnDocument": false,
+          "pullRequestId": "pr-doc-qa"
+        }
+      },
+      {
+        "id": "F",
+        "data": {
+          "implementationCheck.checkedAt": "2026-11-25T03:15:19.157Z",
+          "implementationCheck.outcome": "decided",
+          "implementationCheck.verdict": "partially_implemented",
+          "implementationStatus": "partially_implemented",
+          "updatedAt": "2026-11-25T03:15:19.157Z"
+        },
+        "org": {
+          "organizationId": "org-qa",
+          "teamId": "team-qa"
+        },
+        "opt": {
+          "implementationStatusNotIn": [
+            "partially_implemented",
+            "implemented"
+          ],
+          "unset": [
+            "implementationCheck.reason"
+          ],
+          "returnDocument": false,
+          "pullRequestId": "pr-doc-qa"
+        }
+      }
+    ],
+    "store": {
+      "F": [
+        "qa2420/a.ts:1-2"
+      ],
+      "BUG": []
+    }
+  },
+  {
+    "scenario": "M17",
+    "push": 2,
+    "storedProgressIn": {
+      "implementedLocations": [
+        "qa2420/a.ts:1-2"
+      ]
+    },
+    "result": {
+      "checked": 2,
+      "decided": 1,
+      "persisted": [
+        {
+          "id": "F",
+          "implementationStatus": "implemented"
+        }
+      ],
+      "unmeasured": []
+    },
+    "asked": [
+      {
+        "file": "qa2420/b.ts",
+        "ids": [
+          "F#1"
+        ]
+      }
+    ],
+    "writes": [
+      {
+        "id": "F",
+        "data": {},
+        "opt": {
+          "pullRequestId": "pr-doc-qa",
+          "addToSet": {
+            "implementationCheck.implementedLocations": [
+              "qa2420/b.ts:10-12"
+            ]
+          },
+          "projection": [
+            "files.suggestions.id",
+            "files.suggestions.implementationCheck.implementedLocations"
+          ]
+        }
+      },
+      {
+        "id": "F",
+        "data": {
+          "implementationCheck.checkedAt": "2026-11-25T03:15:19.158Z",
+          "implementationCheck.outcome": "decided",
+          "implementationCheck.verdict": "implemented",
+          "implementationStatus": "implemented",
+          "updatedAt": "2026-11-25T03:15:19.158Z"
+        },
+        "opt": {
+          "implementationStatusNotIn": [
+            "implemented"
+          ],
+          "unset": [
+            "implementationCheck.reason"
+          ],
+          "returnDocument": false,
+          "pullRequestId": "pr-doc-qa"
+        }
+      }
+    ]
+  },
+  {
+    "scenario": "M17",
+    "case": "malformed control",
+    "result": {
+      "checked": 1,
+      "decided": 1,
+      "persisted": [
+        {
+          "id": "F",
+          "implementationStatus": "implemented"
+        }
+      ],
+      "unmeasured": []
+    },
+    "aiCalls": 1,
+    "writes": [
+      {
+        "id": "F",
+        "data": {
+          "implementationStatus": "implemented",
+          "implementationCheck": {
+            "checkedAt": "2026-11-25T03:15:19.158Z",
+            "outcome": "decided",
+            "verdict": "implemented"
+          },
+          "updatedAt": "2026-11-25T03:15:19.158Z"
+        },
+        "opt": {
+          "implementationStatusNotIn": [
+            "implemented"
+          ],
+          "returnDocument": false
+        }
+      }
+    ]
+  }
+]
