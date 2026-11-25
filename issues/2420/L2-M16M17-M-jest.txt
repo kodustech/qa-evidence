@@ -1,0 +1,8 @@
+npm warn Unknown project config "node-linker". This will stop working in the next major version of npm.
+(node:18036) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Test Suites: 1 passed, 1 total
+Tests:       17 passed, 17 total
+Snapshots:   0 total
+Time:        0.788 s
+Ran all test suites matching libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts.
