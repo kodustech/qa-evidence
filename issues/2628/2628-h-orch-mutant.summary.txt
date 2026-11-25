@@ -1,0 +1,4 @@
+  ● H orch @mutant › O1 M5/M6: real orchestrator; last sandbox read -> orchestrator return -> release -> post-processing
+    Expected: < 5
+    Received:   9
+Tests:       1 failed, 5 passed, 6 total
