@@ -1,0 +1,5 @@
+{"rev":"cand","role":"null","pid":57323,"event":"sandbox","at":"2026-11-25T01:03:34.980Z","type":"null","sandboxId":"","lease":{"leaseCount":1,"killAt":null,"sandboxId":"","state":"READY"}}
+{"rev":"cand","role":"null","pid":57323,"event":"orchestrator-start","at":"2026-11-25T01:03:34.982Z"}
+{"rev":"cand","role":"null","pid":57323,"event":"orchestrator-returned","at":"2026-11-25T01:04:46.682Z"}
+{"rev":"cand","role":"null","pid":57323,"event":"stage-done","at":"2026-11-25T01:04:49.663Z","ms":74737,"lease":{"leaseCount":0,"killAt":null,"sandboxId":"","state":"READY"},"usage":null,"suggestions":4,"files":["qa2628/enrollment/capacity.ts:10","qa2628/enrollment/enrollment.service.ts:16","qa2628/enrollment/enrollment.service.ts:14","qa2628/enrollment/waitlist.ts:8"],"errors":[]}
+{"rev":"cand","role":"null","pid":57323,"event":"pipeline-finished","at":"2026-11-25T01:04:51.172Z","lease":{"leaseCount":0,"killAt":null,"sandboxId":"","state":"READY"},"usage":null}
