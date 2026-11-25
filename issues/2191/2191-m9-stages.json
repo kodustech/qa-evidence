@@ -1,0 +1,31 @@
+[
+ [
+  "BusinessLogicValidationStage",
+  "skipped",
+  "Skipped: no reference.",
+  ""
+ ],
+ [
+  "AgentReviewStage",
+  "error",
+  "The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan. (+1 more issue)",
+  "[{\"file\": \"agent:generalist\", \"message\": \"Insufficient balance\", \"category\": \"generalist\", \"prNumber\": 15, \"agentName\": \"generalist\", \"isTimeout\": false, \"orgOwnedKey\": true, \"errorCategory\": \"QUOTA_EXCEEDED\"}, {\"file\": \"agent:kody-rules\", \"message\": \"Kody Rules could not be evaluated: all 1 rule check(s) failed to run. Your Kody Rules were not applied to this PR.\", \"category\": \"kody-rules\", \"prNumber\": 15, \"agentName\": \"kody-rules\", \"isTimeout\": false, \"orgOwnedKey\": true, \"errorCategory\": \"UNKNOWN\"}]"
+ ],
+ [
+  "AgentReview::generalist",
+  "error",
+  "Generalist Agent \u2014 failed in 2s \u2014 The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the pl",
+  ""
+ ],
+ [
+  "UpdateCommentsAndGenerateSummaryStage",
+  "partial_error",
+  "The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan.",
+  "[{\"file\": \"unknown\", \"reason\": \"summary_generation_failed\", \"message\": \"Failed to generate summary\", \"isTimeout\": false}]"
+ ],
+ [
+  "Kody Review Finished",
+  "error",
+  "Code review failed: The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+ ]
+]
