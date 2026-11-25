@@ -1,0 +1,276 @@
+{
+ "note": "M6: R1-R5 reviews (21:46-21:53 UTC); review release + scheduled idle-kill (+30 s) and DB-baseline graph context",
+ "filter": "only lines naming a jr-claude-* org id, a slot-a repo uuid or a sandbox id created by this run; GraphContextService Step 3/4 lines only when they follow a Step 3 line for a slot-a repo within 2 s; other orgs removed",
+ "lines": [
+  {
+   "t": "2026-11-24T21:46:35.217Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: acquire prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:1468014267:20\" consumer=\"review\""
+  },
+  {
+   "t": "2026-11-24T21:46:35.226Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:1468014267:20\" consumer=\"review\""
+  },
+  {
+   "t": "2026-11-24T21:46:40.423Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: sandbox READY prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:1468014267:20\" consumer=\"review\" leaseId=\"f0675906-eeec-4de8-8814-4b12d369b919\""
+  },
+  {
+   "t": "2026-11-24T21:46:41.555Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: acquire prKey=\"4c73f172-aa70-4ad5-87a3-819a915c23e2:89319162:17\" consumer=\"review\""
+  },
+  {
+   "t": "2026-11-24T21:46:41.562Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"4c73f172-aa70-4ad5-87a3-819a915c23e2:89319162:17\" consumer=\"review\""
+  },
+  {
+   "t": "2026-11-24T21:46:47.594Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: sandbox READY prKey=\"4c73f172-aa70-4ad5-87a3-819a915c23e2:89319162:17\" consumer=\"review\" leaseId=\"5941d7ba-779a-4617-894b-db42e599a742\""
+  },
+  {
+   "t": "2026-11-24T21:46:55.312Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Step 3/4: Exporting subgraph from DB for repo a847a63e-9e59-414c-a568-0c8b65cd6e90..."
+  },
+  {
+   "t": "2026-11-24T21:46:55.762Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Diff written to sandbox: 1350 chars, 3 files"
+  },
+  {
+   "t": "2026-11-24T21:46:55.763Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Step 4/4: Generating prompt context with base graph..."
+  },
+  {
+   "t": "2026-11-24T21:46:56.073Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Context generated with DB baseline: 3153 chars"
+  },
+  {
+   "t": "2026-11-24T21:46:54.664Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Step 3/4: Exporting subgraph from DB for repo b8e6e249-2988-45d5-aa73-71716bd9b0ab..."
+  },
+  {
+   "t": "2026-11-24T21:46:54.931Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Diff written to sandbox: 1350 chars, 3 files"
+  },
+  {
+   "t": "2026-11-24T21:46:54.932Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Step 4/4: Generating prompt context with base graph..."
+  },
+  {
+   "t": "2026-11-24T21:46:55.260Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Context generated with DB baseline: 3153 chars"
+  },
+  {
+   "t": "2026-11-24T21:46:58.648Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: acquire prKey=\"2b4fdd21-4a09-4464-80bd-f4417ec8843a:3ac23d16-5601-42e4-91b0-f71b5724c441:11\" consumer=\"review\""
+  },
+  {
+   "t": "2026-11-24T21:46:58.656Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"2b4fdd21-4a09-4464-80bd-f4417ec8843a:3ac23d16-5601-42e4-91b0-f71b5724c441:11\" consumer=\"review\""
+  },
+  {
+   "t": "2026-11-24T21:47:03.156Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: sandbox READY prKey=\"2b4fdd21-4a09-4464-80bd-f4417ec8843a:3ac23d16-5601-42e4-91b0-f71b5724c441:11\" consumer=\"review\" leaseId=\"1a8173ef-fac5-48a9-be65-1000251835bc\""
+  },
+  {
+   "t": "2026-11-24T21:47:10.285Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Step 3/4: Exporting subgraph from DB for repo 522d4f46-7315-47c7-80ca-15c5c1333fa1..."
+  },
+  {
+   "t": "2026-11-24T21:47:10.778Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Diff written to sandbox: 1350 chars, 3 files"
+  },
+  {
+   "t": "2026-11-24T21:47:10.778Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Step 4/4: Generating prompt context with base graph..."
+  },
+  {
+   "t": "2026-11-24T21:47:11.076Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Context generated with DB baseline: 3153 chars"
+  },
+  {
+   "t": "2026-11-24T21:47:30.817Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: acquire prKey=\"a570f880-a17c-46d5-8ffd-7955455f20aa:72cb04d0-2e4d-4306-b514-5071fb24177a:216\" consumer=\"review\""
+  },
+  {
+   "t": "2026-11-24T21:47:30.825Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"a570f880-a17c-46d5-8ffd-7955455f20aa:72cb04d0-2e4d-4306-b514-5071fb24177a:216\" consumer=\"review\""
+  },
+  {
+   "t": "2026-11-24T21:47:34.472Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: sandbox READY prKey=\"a570f880-a17c-46d5-8ffd-7955455f20aa:72cb04d0-2e4d-4306-b514-5071fb24177a:216\" consumer=\"review\" leaseId=\"7108e246-eb37-4429-a18e-20a60af7109b\""
+  },
+  {
+   "t": "2026-11-24T21:47:41.279Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: acquire prKey=\"d1be5448-1918-44e7-8a52-363ad1ec07ed:2929808:9\" consumer=\"review\""
+  },
+  {
+   "t": "2026-11-24T21:47:41.288Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"d1be5448-1918-44e7-8a52-363ad1ec07ed:2929808:9\" consumer=\"review\""
+  },
+  {
+   "t": "2026-11-24T21:47:41.411Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Step 3/4: Exporting subgraph from DB for repo 149cbc06-617c-4e49-a760-f1ef98014571..."
+  },
+  {
+   "t": "2026-11-24T21:47:41.844Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Diff written to sandbox: 2079 chars, 3 files"
+  },
+  {
+   "t": "2026-11-24T21:47:41.844Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Step 4/4: Generating prompt context with base graph..."
+  },
+  {
+   "t": "2026-11-24T21:47:42.101Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Context generated with DB baseline: 495 chars"
+  },
+  {
+   "t": "2026-11-24T21:47:46.314Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: sandbox READY prKey=\"d1be5448-1918-44e7-8a52-363ad1ec07ed:2929808:9\" consumer=\"review\" leaseId=\"47ea02ef-729b-4c4a-aab2-7b8f486ceaf2\""
+  },
+  {
+   "t": "2026-11-24T21:47:54.827Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Step 3/4: Exporting subgraph from DB for repo cda0f034-676a-42e3-9196-b4bfda2d8497..."
+  },
+  {
+   "t": "2026-11-24T21:47:55.105Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Diff written to sandbox: 1588 chars, 4 files"
+  },
+  {
+   "t": "2026-11-24T21:47:55.105Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Step 4/4: Generating prompt context with base graph..."
+  },
+  {
+   "t": "2026-11-24T21:47:55.376Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Context generated with DB baseline: 3153 chars"
+  },
+  {
+   "t": "2026-11-24T21:49:24.217Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: released leaseId=\"f0675906-eeec-4de8-8814-4b12d369b919\" prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:1468014267:20\" leaseCount=0"
+  },
+  {
+   "t": "2026-11-24T21:49:24.227Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-24T21:49:54.217Z for sandboxId=\"i3r2cqr63htb67sxe6pul\""
+  },
+  {
+   "t": "2026-11-24T21:49:39.945Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: released leaseId=\"5941d7ba-779a-4617-894b-db42e599a742\" prKey=\"4c73f172-aa70-4ad5-87a3-819a915c23e2:89319162:17\" leaseCount=0"
+  },
+  {
+   "t": "2026-11-24T21:49:39.950Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-24T21:50:09.946Z for sandboxId=\"ipp3pxb9orm6bl2zvdaxu\""
+  },
+  {
+   "t": "2026-11-24T21:51:01.504Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: released leaseId=\"47ea02ef-729b-4c4a-aab2-7b8f486ceaf2\" prKey=\"d1be5448-1918-44e7-8a52-363ad1ec07ed:2929808:9\" leaseCount=0"
+  },
+  {
+   "t": "2026-11-24T21:51:01.510Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-24T21:51:31.504Z for sandboxId=\"ia9ebpx7osmgi6mxsc0p3\""
+  },
+  {
+   "t": "2026-11-24T21:51:03.389Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: released leaseId=\"1a8173ef-fac5-48a9-be65-1000251835bc\" prKey=\"2b4fdd21-4a09-4464-80bd-f4417ec8843a:3ac23d16-5601-42e4-91b0-f71b5724c441:11\" leaseCount=0"
+  },
+  {
+   "t": "2026-11-24T21:51:03.394Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-24T21:51:33.389Z for sandboxId=\"ipbcmzbu0b1viy7ewysrx\""
+  },
+  {
+   "t": "2026-11-24T21:52:02.842Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: released leaseId=\"7108e246-eb37-4429-a18e-20a60af7109b\" prKey=\"a570f880-a17c-46d5-8ffd-7955455f20aa:72cb04d0-2e4d-4306-b514-5071fb24177a:216\" leaseCount=0"
+  },
+  {
+   "t": "2026-11-24T21:52:02.847Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-24T21:52:32.842Z for sandboxId=\"iz25oqvumlfdqubv4luyc\""
+  }
+ ]
+}
