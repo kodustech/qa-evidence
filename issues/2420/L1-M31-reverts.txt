@@ -1,0 +1,34 @@
+# M31: one revert per fresh copy of wt-M (cp -R, revert via harness/m31.py, jest on 3 changed specs + L1 harness, copy deleted)
+reverted anchor-return
+[anchor-return]   ● a kody_rules finding with a line but no file goes PR-level, not discarded › keeps a line-less finding on a file with a real patch at PR level instead of snapping it to the first hunk
+[anchor-return]   ● a kody_rules finding with a line but no file goes PR-level, not discarded › routes a line-less finding from a context-needing rule to PR level, not to the first hunk
+[anchor-return] Tests:       2 failed, 154 passed, 156 total
+reverted writer-noline
+[writer-noline]   ● mergeKodyRuleFindings › does not carry a location with no known line into the merged list
+[writer-noline]   ● mergeKodyRuleFindings › reports the scope of the kept finding, not of the group
+[writer-noline] Tests:       2 failed, 154 passed, 156 total
+reverted scope
+[scope]   ● mergeKodyRuleFindings › reports the scope of the kept finding, not of the group
+[scope] Tests:       1 failed, 155 passed, 156 total
+reverted render-unknown
+[render-unknown]   ● otherLocationsToRender › drops an unresolved location on another file instead of rendering ?-?
+[render-unknown] Tests:       1 failed, 155 passed, 156 total
+reverted render-self
+[render-self]   ● otherLocationsToRender › recognises a start-only range as the comment itself
+[render-self] Tests:       1 failed, 155 passed, 156 total
+reverted service-skip
+[service-skip]   ● SuggestionService.checkImplementedSuggestions › a suggestion that groups several locations › does not measure a line-less Kody Rule against a file diff (line 0, #2420)
+[service-skip]   ● SuggestionService.checkImplementedSuggestions › a suggestion that groups several locations › does not measure a line-less Kody Rule against a file diff (no line, #2420)
+[service-skip] Tests:       2 failed, 154 passed, 156 total
+reverted guard-2571
+[guard-2571]   ● mergeKodyRuleFindings › does not carry a location with no known line into the merged list
+[guard-2571] Tests:       1 failed, 155 passed, 156 total
+
+# L1 harness records that change vs unreverted M (M29/merge-1000 differs on timing only)
+anchor-return: 19 -> M2/start-undefined, M2/start-null, M2/start-zero, M4/T-plus-ordinary-bug-same-file, M5/no-start-enclosing-scope, M5/no-start-diff-only, M5/no-start-absent-need, M7/stage-G1-kept-lineless-plus-lined-dups, M7/stage-G2-kept-lined-plus-lineless-dup, M7/stage-G4-all-lineless-file, M8/stage-lineless-own-all-unknown, M22/unique-exact, M22/unique-backslash, M22/unique-leading-slash, M22/unique-unique-basename, M22/unique-unique-tail, M23/stage-undefined-15, M23/stage-null-15, M23/stage-zero-15
+writer-noline: 10 -> M7/direct-G1-kept-lineless-plus-lined-dups, M7/direct-G2-kept-lined-plus-lineless-dup, M7/direct-G4-all-lineless-file, M7/stage-G1-kept-lineless-plus-lined-dups, M7/stage-G2-kept-lined-plus-lineless-dup, M7/stage-G4-all-lineless-file, M23/merge-undefined-15, M23/merge-null-15, M23/merge-zero-15, M29/merge-1000
+scope: 8 -> M7/direct-G1-kept-lineless-plus-lined-dups, M7/direct-G4-all-lineless-file, M7/stage-G1-kept-lineless-plus-lined-dups, M7/stage-G4-all-lineless-file, M23/merge-undefined-15, M23/merge-null-15, M23/merge-zero-15, M29/merge-1000
+render-unknown: 4 -> M8/direct-start-only-own-plus-both-lists, M8/direct-no-own-start-all-unknown, M8/stage-start-only-own, M8/stage-lineless-own-all-unknown
+render-self: 1 -> M8/direct-start-only-own-plus-both-lists
+service-skip: 3 -> M23/service-undefined-15, M23/service-null-15, M23/service-zero-15
+guard-2571: 2 -> M7/direct-G1-kept-lineless-plus-lined-dups, M7/stage-G1-kept-lineless-plus-lined-dups
