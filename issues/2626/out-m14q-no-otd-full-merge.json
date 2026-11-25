@@ -1,0 +1,25 @@
+{
+ "rev": "merge",
+ "variant": "no-otd",
+ "type": "full",
+ "jobId": "ceeeebcc-89d6-42da-b751-c8f71758d898",
+ "messageId": "4e195522-692c-4863-a5b4-edb6c5c8b02a",
+ "seconds": 27.4,
+ "cron_ticks": 0,
+ "job_row": "FAILED\t0\tPERMANENT\tInvalid prKey: first segment must be a UUID organizationId or 'trial', got \"undefined\"",
+ "inbox_rows": "workflow-job-consumer.ast_graph_build\tPROCESSED\t\t\t1",
+ "provider": {},
+ "timeline": [
+  "2026-11-25T00:04:17.671Z pid=15764 C \u00a7 ready {\"actor\": \"C\"}",
+  "2026-11-25T00:04:20.390Z pid=15765 W1 \u00a7 ready {\"actor\": \"W1\"}",
+  "2026-11-25T00:04:20.391Z pid=15765 W1 \u00a7 amqp.delivery {\"actor\": \"W1\", \"messageId\": \"4e195522-692c-4863-a5b4-edb6c5c8b02a\", \"retry\": 0, \"redelivered\": false}",
+  "2026-11-25T00:04:20.403Z pid=15765 W1 info [AST-GRAPH-JOB] Starting build for org/athena",
+  "2026-11-25T00:04:20.409Z pid=15765 W1 info [AST-GRAPH-JOB] Auth resolved for org/athena (0ms)",
+  "2026-11-25T00:04:20.415Z pid=15765 W1 error [AST-GRAPH-JOB] Build FAILED for org/athena after 12ms \u2014 Invalid prKey: first segment must be a UUID organizationId or 'trial', got \"undefined\"",
+  "2026-11-25T00:04:20.418Z pid=15765 W1 \u00a7 repo.status {\"status\": \"failed\"}",
+  "2026-11-25T00:04:20.427Z pid=15765 W1 \u00a7 amqp.acked {\"actor\": \"W1\", \"ms\": 36}",
+  "2026-11-25T00:04:20.431Z pid=15765 W1 \u00a7 consumer.cancelled {\"actor\": \"W1\"}",
+  "2026-11-25T00:04:20.431Z pid=15765 W1 \u00a7 worker.exit {\"actor\": \"W1\"}",
+  "2026-11-25T00:04:24.158Z pid=15784 W2 \u00a7 ready {\"actor\": \"W2\"}"
+ ]
+}
