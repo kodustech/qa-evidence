@@ -1,0 +1,36 @@
+[
+ [
+  "BusinessLogicValidationStage",
+  "skipped",
+  "2026-11-25 02:00:45.520565",
+  "Skipped: no reference.",
+  ""
+ ],
+ [
+  "AgentReviewStage",
+  "error",
+  "2026-11-25 02:00:50.932115",
+  "Method Not Allowed",
+  "[{\"file\": \"agent:generalist\", \"message\": \"Method Not Allowed\", \"category\": \"generalist\", \"prNumber\": 13, \"agentName\": \"generalist\", \"isTimeout\": false, \"orgOwnedKey\": true, \"errorCategory\": \"UNKNOWN\"}]"
+ ],
+ [
+  "AgentReview::generalist",
+  "error",
+  "2026-11-25 02:00:58.470422",
+  "Generalist Agent \u2014 failed in 0s \u2014 Unexpected error while running the code review (openai_compatible).",
+  ""
+ ],
+ [
+  "UpdateCommentsAndGenerateSummaryStage",
+  "partial_error",
+  "2026-11-25 02:00:58.666624",
+  "Method Not Allowed",
+  "[{\"file\": \"unknown\", \"reason\": \"summary_generation_failed\", \"message\": \"Failed to generate summary\", \"isTimeout\": false}]"
+ ],
+ [
+  "Kody Review Finished",
+  "error",
+  "2026-11-25 02:01:00.420148",
+  "Code review failed: Unexpected error while running the code review (openai_compatible)."
+ ]
+]
