@@ -1,9 +1,9 @@
 // Read-only E2B inspection of sandbox ids recorded by this run. Never lists, never connects.
 const fs = require('fs');
 const path = require('path');
-const envTxt = fs.readFileSync('~/Projects/Kody/kodus-ai/.env', 'utf8');
-const m = envTxt.match(/^API_E2B_KEY=(.*)$/m);
-const apiKey = m[1].trim().replace(/^['"]|['"]$/g, '');
+// The key is handed over by h.py, which reads it through scripts/qa.py (qa.env); never read from a file here.
+const apiKey = process.env.QA_E2B_KEY;
+if (!apiKey) throw new Error('QA_E2B_KEY not provided');
 const { Sandbox } = require('~/Projects/Kody/kodus-ai/node_modules/e2b');
 const allowed = new Set(fs.readFileSync(path.join(__dirname, 'own-sandboxes.txt'), 'utf8').split(/\s+/).filter(Boolean));
 (async () => {
