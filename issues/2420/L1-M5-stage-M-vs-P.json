@@ -1,0 +1,858 @@
+{
+  "M": [
+    {
+      "tree": "M",
+      "scenario": "M5",
+      "case": "no-start-enclosing-scope",
+      "input": [
+        {
+          "file": "qa2420/user.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/user.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/user.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [
+        {
+          "content": "`qa2420/user.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "fullExplanation": "`qa2420/user.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "prompt": "PR title does not start with [qa2420]\n\n`qa2420/user.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "label": "kody_rules",
+          "rule": "qa2420-C"
+        }
+      ],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2
+    },
+    {
+      "tree": "M",
+      "scenario": "M5",
+      "case": "out-of-hunk-120-180-enclosing-scope",
+      "input": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "This function is far too long."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/user.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "fileAnchored": true,
+          "content": "This function is far too long."
+        }
+      ],
+      "byPR": [
+        {
+          "content": "`qa2420/user.ts:120` — This function is far too long.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "fullExplanation": "`qa2420/user.ts:120` — This function is far too long.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "prompt": "PR title does not start with [qa2420]\n\n`qa2420/user.ts:120` — This function is far too long.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "label": "kody_rules",
+          "rule": "qa2420-C"
+        }
+      ],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] File-anchored finding for qa2420/user.ts: lines 120-180 sit outside every hunk, but the rule declared it needs context beyond the diff — delivering it as a PR-level comment"
+      ],
+      "modelCalls": 2
+    },
+    {
+      "tree": "M",
+      "scenario": "M5",
+      "case": "in-hunk-10-11-enclosing-scope",
+      "input": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "This function is far too long."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/user.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "This function is far too long."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "This function is far too long.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "fullExplanation": "This function is far too long.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "This function is far too long.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "fullExplanation": "This function is far too long.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "commentStartLine": 10,
+          "commentLine": 11
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2
+    },
+    {
+      "tree": "M",
+      "scenario": "M5",
+      "case": "no-start-diff-only",
+      "input": [
+        {
+          "file": "qa2420/user.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/user.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/user.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [
+        {
+          "content": "`qa2420/user.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "fullExplanation": "`qa2420/user.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "prompt": "PR title does not start with [qa2420]\n\n`qa2420/user.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "label": "kody_rules",
+          "rule": "qa2420-A"
+        }
+      ],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2
+    },
+    {
+      "tree": "M",
+      "scenario": "M5",
+      "case": "out-of-hunk-120-180-diff-only",
+      "input": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "This function is far too long."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/user.ts"
+      ],
+      "anchorOut": [],
+      "byPR": [],
+      "valid": [],
+      "inline": [],
+      "discarded": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "status": "discarded-by-code-diff"
+        }
+      ],
+      "logs": [
+        "log: [AGENT] Dropped out-of-diff suggestion for qa2420/user.ts: lines 120-180 do not overlap any changed hunk"
+      ],
+      "modelCalls": 1
+    },
+    {
+      "tree": "M",
+      "scenario": "M5",
+      "case": "in-hunk-10-11-diff-only",
+      "input": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "This function is far too long."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/user.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "This function is far too long."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "This function is far too long.\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "fullExplanation": "This function is far too long.\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "This function is far too long.\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "fullExplanation": "This function is far too long.\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "commentStartLine": 10,
+          "commentLine": 11
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2
+    },
+    {
+      "tree": "M",
+      "scenario": "M5",
+      "case": "no-start-absent-need",
+      "input": [
+        {
+          "file": "qa2420/user.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-N",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/user.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/user.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-N",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [
+        {
+          "content": "`qa2420/user.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 no declared need](/settings/code-review/global/kody-rules/qa2420-N?teamId=team-qa)",
+          "fullExplanation": "`qa2420/user.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 no declared need](/settings/code-review/global/kody-rules/qa2420-N?teamId=team-qa)",
+          "prompt": "PR title does not start with [qa2420]\n\n`qa2420/user.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 no declared need](/settings/code-review/global/kody-rules/qa2420-N?teamId=team-qa)",
+          "label": "kody_rules",
+          "rule": "qa2420-N"
+        }
+      ],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2
+    },
+    {
+      "tree": "M",
+      "scenario": "M5",
+      "case": "out-of-hunk-120-180-absent-need",
+      "input": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-N",
+          "content": "This function is far too long."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/user.ts"
+      ],
+      "anchorOut": [],
+      "byPR": [],
+      "valid": [],
+      "inline": [],
+      "discarded": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-N",
+          "status": "discarded-by-code-diff"
+        }
+      ],
+      "logs": [
+        "log: [AGENT] Dropped out-of-diff suggestion for qa2420/user.ts: lines 120-180 do not overlap any changed hunk"
+      ],
+      "modelCalls": 1
+    },
+    {
+      "tree": "M",
+      "scenario": "M5",
+      "case": "in-hunk-10-11-absent-need",
+      "input": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-N",
+          "content": "This function is far too long."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/user.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-N",
+          "content": "This function is far too long."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-N",
+          "content": "This function is far too long.\n\nKody rule violation: [QA2420 no declared need](/settings/code-review/global/kody-rules/qa2420-N?teamId=team-qa)",
+          "fullExplanation": "This function is far too long.\n\nKody rule violation: [QA2420 no declared need](/settings/code-review/global/kody-rules/qa2420-N?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-N",
+          "content": "This function is far too long.\n\nKody rule violation: [QA2420 no declared need](/settings/code-review/global/kody-rules/qa2420-N?teamId=team-qa)",
+          "fullExplanation": "This function is far too long.\n\nKody rule violation: [QA2420 no declared need](/settings/code-review/global/kody-rules/qa2420-N?teamId=team-qa)",
+          "commentStartLine": 10,
+          "commentLine": 11
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2
+    }
+  ],
+  "P": [
+    {
+      "tree": "P",
+      "scenario": "M5",
+      "case": "no-start-enclosing-scope",
+      "input": [
+        {
+          "file": "qa2420/user.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 12,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 12,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 12,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "commentStartLine": 10,
+          "commentLine": 12
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/user.ts: undefined-undefined → 10-12"
+      ],
+      "modelCalls": 2
+    },
+    {
+      "tree": "P",
+      "scenario": "M5",
+      "case": "out-of-hunk-120-180-enclosing-scope",
+      "input": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "This function is far too long."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "fileAnchored": true,
+          "content": "This function is far too long."
+        }
+      ],
+      "byPR": [
+        {
+          "content": "`qa2420/user.ts:120` — This function is far too long.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "fullExplanation": "`qa2420/user.ts:120` — This function is far too long.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "prompt": "PR title does not start with [qa2420]\n\n`qa2420/user.ts:120` — This function is far too long.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "label": "kody_rules",
+          "rule": "qa2420-C"
+        }
+      ],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] File-anchored finding for qa2420/user.ts: lines 120-180 sit outside every hunk, but the rule declared it needs context beyond the diff — delivering it as a PR-level comment"
+      ],
+      "modelCalls": 2
+    },
+    {
+      "tree": "P",
+      "scenario": "M5",
+      "case": "in-hunk-10-11-enclosing-scope",
+      "input": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "This function is far too long."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "This function is far too long."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "This function is far too long.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "fullExplanation": "This function is far too long.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "This function is far too long.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "fullExplanation": "This function is far too long.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "commentStartLine": 10,
+          "commentLine": 11
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2
+    },
+    {
+      "tree": "P",
+      "scenario": "M5",
+      "case": "no-start-diff-only",
+      "input": [
+        {
+          "file": "qa2420/user.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 12,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 12,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 12,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "commentStartLine": 10,
+          "commentLine": 12
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/user.ts: undefined-undefined → 10-12"
+      ],
+      "modelCalls": 2
+    },
+    {
+      "tree": "P",
+      "scenario": "M5",
+      "case": "out-of-hunk-120-180-diff-only",
+      "input": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "This function is far too long."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [],
+      "byPR": [],
+      "valid": [],
+      "inline": [],
+      "discarded": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "status": "discarded-by-code-diff"
+        }
+      ],
+      "logs": [
+        "log: [AGENT] Dropped out-of-diff suggestion for qa2420/user.ts: lines 120-180 do not overlap any changed hunk"
+      ],
+      "modelCalls": 1
+    },
+    {
+      "tree": "P",
+      "scenario": "M5",
+      "case": "in-hunk-10-11-diff-only",
+      "input": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "This function is far too long."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "This function is far too long."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "This function is far too long.\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "fullExplanation": "This function is far too long.\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "This function is far too long.\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "fullExplanation": "This function is far too long.\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "commentStartLine": 10,
+          "commentLine": 11
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2
+    },
+    {
+      "tree": "P",
+      "scenario": "M5",
+      "case": "no-start-absent-need",
+      "input": [
+        {
+          "file": "qa2420/user.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-N",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 12,
+          "label": "kody_rules",
+          "rule": "qa2420-N",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 12,
+          "label": "kody_rules",
+          "rule": "qa2420-N",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 no declared need](/settings/code-review/global/kody-rules/qa2420-N?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 no declared need](/settings/code-review/global/kody-rules/qa2420-N?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 12,
+          "label": "kody_rules",
+          "rule": "qa2420-N",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 no declared need](/settings/code-review/global/kody-rules/qa2420-N?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 no declared need](/settings/code-review/global/kody-rules/qa2420-N?teamId=team-qa)",
+          "commentStartLine": 10,
+          "commentLine": 12
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/user.ts: undefined-undefined → 10-12"
+      ],
+      "modelCalls": 2
+    },
+    {
+      "tree": "P",
+      "scenario": "M5",
+      "case": "out-of-hunk-120-180-absent-need",
+      "input": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-N",
+          "content": "This function is far too long."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [],
+      "byPR": [],
+      "valid": [],
+      "inline": [],
+      "discarded": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 120,
+          "end": 180,
+          "label": "kody_rules",
+          "rule": "qa2420-N",
+          "status": "discarded-by-code-diff"
+        }
+      ],
+      "logs": [
+        "log: [AGENT] Dropped out-of-diff suggestion for qa2420/user.ts: lines 120-180 do not overlap any changed hunk"
+      ],
+      "modelCalls": 1
+    },
+    {
+      "tree": "P",
+      "scenario": "M5",
+      "case": "in-hunk-10-11-absent-need",
+      "input": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-N",
+          "content": "This function is far too long."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-N",
+          "content": "This function is far too long."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-N",
+          "content": "This function is far too long.\n\nKody rule violation: [QA2420 no declared need](/settings/code-review/global/kody-rules/qa2420-N?teamId=team-qa)",
+          "fullExplanation": "This function is far too long.\n\nKody rule violation: [QA2420 no declared need](/settings/code-review/global/kody-rules/qa2420-N?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/user.ts",
+          "start": 10,
+          "end": 11,
+          "label": "kody_rules",
+          "rule": "qa2420-N",
+          "content": "This function is far too long.\n\nKody rule violation: [QA2420 no declared need](/settings/code-review/global/kody-rules/qa2420-N?teamId=team-qa)",
+          "fullExplanation": "This function is far too long.\n\nKody rule violation: [QA2420 no declared need](/settings/code-review/global/kody-rules/qa2420-N?teamId=team-qa)",
+          "commentStartLine": 10,
+          "commentLine": 11
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2
+    }
+  ]
+}
