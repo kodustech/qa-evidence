@@ -1,0 +1,280 @@
+// QA #2420 harness M16/M17: real SuggestionService.checkImplementedSuggestions,
+// only the external model (aiAnalysisService), slot resolution and the
+// repository write are stubs. Copied into a tree as a throwaway spec.
+import * as fs from 'fs';
+import { SuggestionService } from '@libs/code-review/infrastructure/adapters/services/suggestion.service';
+import { DeliveryStatus } from '@libs/platformData/domain/pullRequests/enums/deliveryStatus.enum';
+import { ImplementationStatus } from '@libs/platformData/domain/pullRequests/enums/implementationStatus.enum';
+
+const OUT = process.env.QA_OUT || '/dev/null';
+const log: any[] = [];
+const record = (entry: any) => log.push(entry);
+afterAll(() => fs.writeFileSync(OUT, JSON.stringify(log, null, 2)));
+
+const org = { organizationId: 'org-qa', teamId: 'team-qa' };
+const fileA = { filename: 'qa2420/a.ts', patch: '@@ -1,2 +1,3 @@\n+x' };
+const fileB = { filename: 'qa2420/b.ts', patch: '@@ -10,2 +10,3 @@\n+y' };
+const fileC = { filename: 'qa2420/c.ts', patch: '@@ -5,2 +5,3 @@\n+z' };
+
+const sent = (id: string, relevantFile: string, extra: any = {}) => ({
+    id,
+    relevantFile,
+    deliveryStatus: DeliveryStatus.SENT,
+    implementationStatus: ImplementationStatus.NOT_IMPLEMENTED,
+    ...extra,
+});
+
+function build() {
+    const ai = {
+        checkSuggestionImplementation: jest.fn(async ({ suggestions }) => ({
+            verdicts: suggestions.map((s) => ({
+                id: s.id,
+                status: ImplementationStatus.IMPLEMENTED,
+            })),
+            unmeasured: [],
+        })),
+    };
+    const store: Record<string, string[]> = {};
+    const prs = {
+        updateSuggestion: jest.fn(async (id, data, _org, options) => {
+            const added =
+                options?.addToSet?.['implementationCheck.implementedLocations'] ?? [];
+            store[id] = [...new Set([...(store[id] ?? []), ...added])];
+            return {
+                files: [
+                    {
+                        suggestions: [
+                            {
+                                id,
+                                implementationCheck: {
+                                    implementedLocations: [...store[id]],
+                                },
+                            },
+                        ],
+                    },
+                ],
+            };
+        }),
+    };
+    const perm = {
+        resolveTaskSlot: jest
+            .fn()
+            .mockResolvedValue({ provider: 'openai', model: 'scripted' }),
+    };
+    const service = new SuggestionService(
+        ai as any,
+        prs as any,
+        {} as any,
+        {} as any,
+        {} as any,
+        perm as any,
+    );
+    return { ai, prs, perm, service, store };
+}
+
+const lineLess = (start: any, where: string, extra: any = {}) =>
+    sent(`T-${where}-${String(start)}`, 'qa2420/a.ts', {
+        label: 'kody_rules',
+        ...(start === 'omit' ? {} : { relevantLinesStart: start, relevantLinesEnd: start }),
+        suggestionContent:
+            'Rule A: file has no test.\n\n**Also found in:**\n- `qa2420/b.ts`\n- `qa2420/b.ts:10-12`',
+        ...extra,
+    });
+
+describe('M16 line-less kody_rules records skip the implementation check', () => {
+    const cases: [string, any, any, string[]][] = [];
+    for (const start of ['omit', null, 0]) {
+        cases.push([`start=${String(start)} lone`, start, {}, []]);
+        cases.push([
+            `start=${String(start)} alsoFoundIn`,
+            start,
+            { alsoFoundIn: ['qa2420/b.ts:10-12'] },
+            [],
+        ]);
+        cases.push([
+            `start=${String(start)} kodyRuleOtherLocations`,
+            start,
+            { kodyRuleOtherLocations: ['qa2420/b.ts:10-12'] },
+            [],
+        ]);
+        cases.push([
+            `start=${String(start)} secondary file removed`,
+            start,
+            { alsoFoundIn: ['qa2420/b.ts:10-12'] },
+            ['qa2420/b.ts'],
+        ]);
+        cases.push([
+            `start=${String(start)} stored implementedLocations`,
+            start,
+            {
+                alsoFoundIn: ['qa2420/b.ts:10-12'],
+                implementationCheck: {
+                    implementedLocations: ['qa2420/b.ts:10-12'],
+                },
+            },
+            [],
+        ]);
+    }
+    it.each(cases)('%s', async (name, start, extra, removed) => {
+        const h = build();
+        const s = lineLess(start, name.replace(/\W+/g, '_'), extra);
+        const before = JSON.stringify(s);
+        const result = await h.service.checkImplementedSuggestions({
+            organizationAndTeamData: org,
+            prNumber: 2420,
+            changedFiles: [fileA, fileB] as any,
+            savedSuggestions: [s] as any,
+            diffSource: 'incremental' as any,
+            removedFiles: removed,
+        });
+        const entry = {
+            scenario: 'M16',
+            case: name,
+            result,
+            aiCalls: h.ai.checkSuggestionImplementation.mock.calls.length,
+            askedIds: h.ai.checkSuggestionImplementation.mock.calls.flatMap(
+                ([p]) => p.suggestions.map((x) => x.id),
+            ),
+            slotResolutions: h.perm.resolveTaskSlot.mock.calls.length,
+            updateCalls: h.prs.updateSuggestion.mock.calls.map(([id, data, , opt]) => ({
+                id,
+                data,
+                addToSet: opt?.addToSet,
+            })),
+            fixtureUnchanged: JSON.stringify(s) === before,
+        };
+        record(entry);
+        expect(result.skipped).toBe('NO_RELEVANT_CHANGES');
+        expect(entry.aiCalls).toBe(0);
+        expect(entry.slotResolutions).toBe(0);
+        expect(entry.updateCalls).toEqual([]);
+        expect(entry.fixtureUnchanged).toBe(true);
+    });
+});
+
+describe('M17 mixed records: line-less skipped, lineful measured, progress kept', () => {
+    const T = () =>
+        sent('T', 'qa2420/a.ts', {
+            label: 'kody_rules',
+            suggestionContent: 'PR title must start with [qa2420]',
+        });
+    const F = (extra: any = {}) =>
+        sent('F', 'qa2420/a.ts', {
+            label: 'kody_rules',
+            relevantLinesStart: 1,
+            relevantLinesEnd: 2,
+            suggestionContent:
+                'console.log in source\n\n**Also found in:**\n- `qa2420/b.ts:10-12`',
+            alsoFoundIn: ['qa2420/b.ts:10-12'],
+            ...extra,
+        });
+    const BUG = () =>
+        sent('BUG', 'qa2420/c.ts', {
+            label: 'bug',
+            relevantLinesStart: 5,
+            relevantLinesEnd: 6,
+        });
+    const UNSENT = () =>
+        sent('UNSENT', 'qa2420/a.ts', {
+            deliveryStatus: DeliveryStatus.NOT_SENT,
+            relevantLinesStart: 1,
+            relevantLinesEnd: 1,
+        });
+    const DONE = () =>
+        sent('DONE', 'qa2420/b.ts', {
+            implementationStatus: ImplementationStatus.IMPLEMENTED,
+            relevantLinesStart: 10,
+            relevantLinesEnd: 11,
+        });
+
+    it('two pushes: F partial then implemented; T/unsent/done untouched', async () => {
+        const h = build();
+        // push 1: a.ts and c.ts fixed, b.ts still broken
+        h.ai.checkSuggestionImplementation.mockImplementation(
+            async ({ file, suggestions }) => ({
+                verdicts: suggestions.map((s) => ({
+                    id: s.id,
+                    status:
+                        file.filename === 'qa2420/b.ts'
+                            ? ImplementationStatus.NOT_IMPLEMENTED
+                            : ImplementationStatus.IMPLEMENTED,
+                })),
+                unmeasured: [],
+            }),
+        );
+        const r1 = await h.service.checkImplementedSuggestions({
+            organizationAndTeamData: org,
+            prNumber: 2420,
+            changedFiles: [fileA, fileB, fileC] as any,
+            savedSuggestions: [T(), F(), BUG(), UNSENT(), DONE()] as any,
+            pullRequestId: 'pr-doc-qa',
+        });
+        const asked1 = h.ai.checkSuggestionImplementation.mock.calls.map(
+            ([p]) => ({ file: p.file.filename, ids: p.suggestions.map((x) => x.id), org: p.organizationAndTeamData }),
+        );
+        const writes1 = h.prs.updateSuggestion.mock.calls.map(([id, data, o, opt]) => ({
+            id,
+            data,
+            org: o,
+            opt,
+        }));
+        record({ scenario: 'M17', push: 1, result: r1, asked: asked1, writes: writes1, store: { ...h.store } });
+
+        expect(asked1.flatMap((a) => a.ids).some((id) => id.startsWith('T'))).toBe(false);
+        expect(writes1.some((w) => ['T', 'UNSENT', 'DONE'].includes(w.id))).toBe(false);
+        const fStatus1 = writes1
+            .filter((w) => w.id === 'F')
+            .map((w) => w.data?.implementationStatus)
+            .filter(Boolean);
+        expect(fStatus1).toEqual([ImplementationStatus.PARTIALLY_IMPLEMENTED]);
+        expect(
+            writes1.filter((w) => w.id === 'BUG').map((w) => w.data?.implementationStatus).filter(Boolean),
+        ).toEqual([ImplementationStatus.IMPLEMENTED]);
+
+        // push 2: only b.ts changes, now fixed
+        h.ai.checkSuggestionImplementation.mockClear();
+        h.prs.updateSuggestion.mockClear();
+        h.ai.checkSuggestionImplementation.mockImplementation(async ({ suggestions }) => ({
+            verdicts: suggestions.map((s) => ({ id: s.id, status: ImplementationStatus.IMPLEMENTED })),
+            unmeasured: [],
+        }));
+        const stored = F({
+            implementationStatus: ImplementationStatus.PARTIALLY_IMPLEMENTED,
+            implementationCheck: { implementedLocations: [...(h.store['F'] ?? [])] },
+        });
+        const r2 = await h.service.checkImplementedSuggestions({
+            organizationAndTeamData: org,
+            prNumber: 2420,
+            changedFiles: [fileB] as any,
+            savedSuggestions: [T(), stored, UNSENT(), DONE()] as any,
+            pullRequestId: 'pr-doc-qa',
+        });
+        const asked2 = h.ai.checkSuggestionImplementation.mock.calls.map(([p]) => ({
+            file: p.file.filename,
+            ids: p.suggestions.map((x) => x.id),
+        }));
+        const writes2 = h.prs.updateSuggestion.mock.calls.map(([id, data, , opt]) => ({ id, data, opt }));
+        record({ scenario: 'M17', push: 2, storedProgressIn: stored.implementationCheck, result: r2, asked: asked2, writes: writes2 });
+        expect(asked2.flatMap((a) => a.ids).some((id) => id.startsWith('T'))).toBe(false);
+        expect(
+            writes2.filter((w) => w.id === 'F').map((w) => w.data?.implementationStatus).filter(Boolean),
+        ).toEqual([ImplementationStatus.IMPLEMENTED]);
+    });
+
+    it('malformed location control: an unparsable listed location does not make a group', async () => {
+        const h = build();
+        const r = await h.service.checkImplementedSuggestions({
+            organizationAndTeamData: org,
+            prNumber: 2420,
+            changedFiles: [fileA] as any,
+            savedSuggestions: [
+                F({ alsoFoundIn: ['undefined:?-?'], suggestionContent: 'console.log in source' }),
+            ] as any,
+        });
+        const writes = h.prs.updateSuggestion.mock.calls.map(([id, data, , opt]) => ({ id, data, opt }));
+        record({ scenario: 'M17', case: 'malformed control', result: r, aiCalls: h.ai.checkSuggestionImplementation.mock.calls.length, writes });
+        expect(writes.filter((w) => w.id === 'F').map((w) => w.data?.implementationStatus).filter(Boolean)).toEqual([
+            ImplementationStatus.IMPLEMENTED,
+        ]);
+    });
+});
