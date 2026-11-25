@@ -1,0 +1,582 @@
+{
+  "M": [
+    {
+      "tree": "M",
+      "scenario": "M8",
+      "case": "direct-start-only-own-plus-both-lists",
+      "input": {
+        "relevantFile": "qa2420/a.ts",
+        "relevantLinesStart": 7,
+        "kodyRuleOtherLocations": [
+          "qa2420/a.ts:7-7",
+          "qa2420/b.ts:1-2",
+          "src/void.ts:?-?"
+        ],
+        "alsoFoundIn": [
+          "qa2420/b.ts:1-2",
+          "qa2420/a.ts:7-?",
+          "src/other.ts:?-?"
+        ]
+      },
+      "rendered": [
+        "qa2420/b.ts:1-2"
+      ]
+    },
+    {
+      "tree": "M",
+      "scenario": "M8",
+      "case": "direct-no-own-start-all-unknown",
+      "input": {
+        "relevantFile": "qa2420/a.ts",
+        "kodyRuleOtherLocations": [
+          "qa2420/b.ts:?-?",
+          "src/void.ts:?-?"
+        ],
+        "alsoFoundIn": [
+          "qa2420/c.ts:?-?"
+        ]
+      },
+      "rendered": []
+    },
+    {
+      "tree": "M",
+      "scenario": "M8",
+      "case": "direct-empty-lists",
+      "input": {
+        "relevantFile": "qa2420/a.ts",
+        "relevantLinesStart": 7,
+        "relevantLinesEnd": 7
+      },
+      "rendered": []
+    },
+    {
+      "tree": "M",
+      "scenario": "M8",
+      "case": "stage-start-only-own",
+      "input": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 7,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "Do not call console.log.",
+          "kodyRuleOtherLocations": [
+            "qa2420/a.ts:7-7",
+            "qa2420/b.ts:1-2",
+            "src/void.ts:?-?"
+          ]
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/a.ts",
+        "qa2420/b.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 1,
+          "end": 6,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "Do not call console.log.",
+          "kodyRuleOtherLocations": [
+            "qa2420/a.ts:7-7",
+            "qa2420/b.ts:1-2",
+            "src/void.ts:?-?"
+          ]
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 1,
+          "end": 6,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "Do not call console.log.\n\n**Also found in:**\n- `qa2420/b.ts:1-2`\n- `qa2420/a.ts:7-?`\n- `qa2420/a.ts:7-7`\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)",
+          "fullExplanation": "Do not call console.log.\n\n**Also found in:**\n- `qa2420/b.ts:1-2`\n- `qa2420/a.ts:7-?`\n- `qa2420/a.ts:7-7`\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)",
+          "kodyRuleOtherLocations": [
+            "qa2420/a.ts:7-7",
+            "qa2420/b.ts:1-2",
+            "src/void.ts:?-?"
+          ]
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 1,
+          "end": 6,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "Do not call console.log.\n\n**Also found in:**\n- `qa2420/b.ts:1-2`\n- `qa2420/a.ts:7-?`\n- `qa2420/a.ts:7-7`\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)",
+          "fullExplanation": "Do not call console.log.\n\n**Also found in:**\n- `qa2420/b.ts:1-2`\n- `qa2420/a.ts:7-?`\n- `qa2420/a.ts:7-7`\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)",
+          "kodyRuleOtherLocations": [
+            "qa2420/a.ts:7-7",
+            "qa2420/b.ts:1-2",
+            "src/void.ts:?-?"
+          ],
+          "commentStartLine": 1,
+          "commentLine": 6
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/a.ts: 7-undefined → 1-6",
+        "log: [AGENT] Rendered merged finding locations"
+      ],
+      "modelCalls": 2
+    },
+    {
+      "tree": "M",
+      "scenario": "M8",
+      "case": "stage-production-order-start-only-file-anchored",
+      "input": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 120,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "This function is far too long, the longest description of the three."
+        },
+        {
+          "file": "qa2420/a.ts",
+          "start": 120,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "Too long."
+        },
+        {
+          "file": "qa2420/b.ts",
+          "start": 1,
+          "end": 2,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "Too long b."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/a.ts",
+        "qa2420/b.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 1,
+          "end": 6,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "This function is far too long, the longest description of the three."
+        },
+        {
+          "file": "qa2420/a.ts",
+          "start": 1,
+          "end": 6,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "Too long."
+        },
+        {
+          "file": "qa2420/b.ts",
+          "start": 1,
+          "end": 2,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "Too long b."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 1,
+          "end": 6,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "This function is far too long, the longest description of the three.\n\n**Also found in:**\n- `qa2420/b.ts:1-2`\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "fullExplanation": "This function is far too long, the longest description of the three.\n\n**Also found in:**\n- `qa2420/b.ts:1-2`\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "kodyRuleOtherLocations": [
+            "qa2420/b.ts:1-2"
+          ]
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 1,
+          "end": 6,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "This function is far too long, the longest description of the three.\n\n**Also found in:**\n- `qa2420/b.ts:1-2`\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "fullExplanation": "This function is far too long, the longest description of the three.\n\n**Also found in:**\n- `qa2420/b.ts:1-2`\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "kodyRuleOtherLocations": [
+            "qa2420/b.ts:1-2"
+          ],
+          "commentStartLine": 1,
+          "commentLine": 6
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/a.ts: 120-undefined → 1-6",
+        "log: [AGENT] Snapped lines for qa2420/a.ts: 120-undefined → 1-6",
+        "log: [KODY-DEDUP] PR#2420 rule=qa2420-C (file-level) collapsed 3 findings → 1 with 1 extra locations",
+        "log: [AGENT] Rendered merged finding locations"
+      ],
+      "modelCalls": 2
+    },
+    {
+      "tree": "M",
+      "scenario": "M8",
+      "case": "stage-lineless-own-all-unknown",
+      "input": [
+        {
+          "file": "qa2420/a.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "This file has no test.",
+          "kodyRuleOtherLocations": [
+            "qa2420/b.ts:?-?",
+            "src/void.ts:?-?"
+          ]
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/a.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/a.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "This file has no test.",
+          "kodyRuleOtherLocations": [
+            "qa2420/b.ts:?-?",
+            "src/void.ts:?-?"
+          ]
+        }
+      ],
+      "byPR": [
+        {
+          "content": "`qa2420/a.ts` — This file has no test.\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "fullExplanation": "`qa2420/a.ts` — This file has no test.\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "prompt": "PR title does not start with [qa2420]\n\n`qa2420/a.ts` — This file has no test.\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "label": "kody_rules",
+          "rule": "qa2420-A"
+        }
+      ],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2
+    }
+  ],
+  "P": [
+    {
+      "tree": "P",
+      "scenario": "M8",
+      "case": "direct-start-only-own-plus-both-lists",
+      "input": {
+        "relevantFile": "qa2420/a.ts",
+        "relevantLinesStart": 7,
+        "kodyRuleOtherLocations": [
+          "qa2420/a.ts:7-7",
+          "qa2420/b.ts:1-2",
+          "src/void.ts:?-?"
+        ],
+        "alsoFoundIn": [
+          "qa2420/b.ts:1-2",
+          "qa2420/a.ts:7-?",
+          "src/other.ts:?-?"
+        ]
+      },
+      "rendered": [
+        "qa2420/b.ts:1-2",
+        "src/other.ts:?-?",
+        "qa2420/a.ts:7-7",
+        "src/void.ts:?-?"
+      ]
+    },
+    {
+      "tree": "P",
+      "scenario": "M8",
+      "case": "direct-no-own-start-all-unknown",
+      "input": {
+        "relevantFile": "qa2420/a.ts",
+        "kodyRuleOtherLocations": [
+          "qa2420/b.ts:?-?",
+          "src/void.ts:?-?"
+        ],
+        "alsoFoundIn": [
+          "qa2420/c.ts:?-?"
+        ]
+      },
+      "rendered": [
+        "qa2420/c.ts:?-?",
+        "qa2420/b.ts:?-?",
+        "src/void.ts:?-?"
+      ]
+    },
+    {
+      "tree": "P",
+      "scenario": "M8",
+      "case": "direct-empty-lists",
+      "input": {
+        "relevantFile": "qa2420/a.ts",
+        "relevantLinesStart": 7,
+        "relevantLinesEnd": 7
+      },
+      "rendered": []
+    },
+    {
+      "tree": "P",
+      "scenario": "M8",
+      "case": "stage-start-only-own",
+      "input": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 7,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "Do not call console.log.",
+          "kodyRuleOtherLocations": [
+            "qa2420/a.ts:7-7",
+            "qa2420/b.ts:1-2",
+            "src/void.ts:?-?"
+          ]
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 1,
+          "end": 6,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "Do not call console.log.",
+          "kodyRuleOtherLocations": [
+            "qa2420/a.ts:7-7",
+            "qa2420/b.ts:1-2",
+            "src/void.ts:?-?"
+          ]
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 1,
+          "end": 6,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "Do not call console.log.\n\n**Also found in:**\n- `qa2420/b.ts:1-2`\n- `qa2420/a.ts:7-?`\n- `src/other.ts:?-?`\n- `qa2420/a.ts:7-7`\n- `src/void.ts:?-?`\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)",
+          "fullExplanation": "Do not call console.log.\n\n**Also found in:**\n- `qa2420/b.ts:1-2`\n- `qa2420/a.ts:7-?`\n- `src/other.ts:?-?`\n- `qa2420/a.ts:7-7`\n- `src/void.ts:?-?`\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)",
+          "kodyRuleOtherLocations": [
+            "qa2420/a.ts:7-7",
+            "qa2420/b.ts:1-2",
+            "src/void.ts:?-?"
+          ]
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 1,
+          "end": 6,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "Do not call console.log.\n\n**Also found in:**\n- `qa2420/b.ts:1-2`\n- `qa2420/a.ts:7-?`\n- `src/other.ts:?-?`\n- `qa2420/a.ts:7-7`\n- `src/void.ts:?-?`\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)",
+          "fullExplanation": "Do not call console.log.\n\n**Also found in:**\n- `qa2420/b.ts:1-2`\n- `qa2420/a.ts:7-?`\n- `src/other.ts:?-?`\n- `qa2420/a.ts:7-7`\n- `src/void.ts:?-?`\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)",
+          "kodyRuleOtherLocations": [
+            "qa2420/a.ts:7-7",
+            "qa2420/b.ts:1-2",
+            "src/void.ts:?-?"
+          ],
+          "commentStartLine": 1,
+          "commentLine": 6
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/a.ts: 7-undefined → 1-6",
+        "log: [AGENT] Rendered merged finding locations"
+      ],
+      "modelCalls": 2
+    },
+    {
+      "tree": "P",
+      "scenario": "M8",
+      "case": "stage-production-order-start-only-file-anchored",
+      "input": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 120,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "This function is far too long, the longest description of the three."
+        },
+        {
+          "file": "qa2420/a.ts",
+          "start": 120,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "Too long."
+        },
+        {
+          "file": "qa2420/b.ts",
+          "start": 1,
+          "end": 2,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "Too long b."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 1,
+          "end": 6,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "This function is far too long, the longest description of the three."
+        },
+        {
+          "file": "qa2420/a.ts",
+          "start": 1,
+          "end": 6,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "Too long."
+        },
+        {
+          "file": "qa2420/b.ts",
+          "start": 1,
+          "end": 2,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "Too long b."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 1,
+          "end": 6,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "This function is far too long, the longest description of the three.\n\n**Also found in:**\n- `qa2420/b.ts:1-2`\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "fullExplanation": "This function is far too long, the longest description of the three.\n\n**Also found in:**\n- `qa2420/b.ts:1-2`\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "kodyRuleOtherLocations": [
+            "qa2420/b.ts:1-2"
+          ]
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 1,
+          "end": 6,
+          "label": "kody_rules",
+          "rule": "qa2420-C",
+          "content": "This function is far too long, the longest description of the three.\n\n**Also found in:**\n- `qa2420/b.ts:1-2`\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "fullExplanation": "This function is far too long, the longest description of the three.\n\n**Also found in:**\n- `qa2420/b.ts:1-2`\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=team-qa)",
+          "kodyRuleOtherLocations": [
+            "qa2420/b.ts:1-2"
+          ],
+          "commentStartLine": 1,
+          "commentLine": 6
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/a.ts: 120-undefined → 1-6",
+        "log: [AGENT] Snapped lines for qa2420/a.ts: 120-undefined → 1-6",
+        "log: [KODY-DEDUP] PR#2420 rule=qa2420-C (file-level) collapsed 3 findings → 1 with 1 extra locations",
+        "log: [AGENT] Rendered merged finding locations"
+      ],
+      "modelCalls": 2
+    },
+    {
+      "tree": "P",
+      "scenario": "M8",
+      "case": "stage-lineless-own-all-unknown",
+      "input": [
+        {
+          "file": "qa2420/a.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "This file has no test.",
+          "kodyRuleOtherLocations": [
+            "qa2420/b.ts:?-?",
+            "src/void.ts:?-?"
+          ]
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 1,
+          "end": 6,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "This file has no test.",
+          "kodyRuleOtherLocations": [
+            "qa2420/b.ts:?-?",
+            "src/void.ts:?-?"
+          ]
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 1,
+          "end": 6,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "This file has no test.\n\n**Also found in:**\n- `qa2420/c.ts:?-?`\n- `qa2420/b.ts:?-?`\n- `src/void.ts:?-?`\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "fullExplanation": "This file has no test.\n\n**Also found in:**\n- `qa2420/c.ts:?-?`\n- `qa2420/b.ts:?-?`\n- `src/void.ts:?-?`\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "kodyRuleOtherLocations": [
+            "qa2420/b.ts:?-?",
+            "src/void.ts:?-?"
+          ]
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/a.ts",
+          "start": 1,
+          "end": 6,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "This file has no test.\n\n**Also found in:**\n- `qa2420/c.ts:?-?`\n- `qa2420/b.ts:?-?`\n- `src/void.ts:?-?`\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "fullExplanation": "This file has no test.\n\n**Also found in:**\n- `qa2420/c.ts:?-?`\n- `qa2420/b.ts:?-?`\n- `src/void.ts:?-?`\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "kodyRuleOtherLocations": [
+            "qa2420/b.ts:?-?",
+            "src/void.ts:?-?"
+          ],
+          "commentStartLine": 1,
+          "commentLine": 6
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/a.ts: undefined-undefined → 1-6",
+        "log: [AGENT] Rendered merged finding locations"
+      ],
+      "modelCalls": 2
+    }
+  ]
+}
