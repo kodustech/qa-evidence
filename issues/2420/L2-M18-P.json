@@ -1,0 +1,173 @@
+{
+  "stageOrder": [
+    "PrepareCliFilesStage",
+    "CreateSandboxStage",
+    "AgentReviewStage",
+    "AggregateResultsStage",
+    "FormatCliOutputStage"
+  ],
+  "stages": {
+    "PrepareCliFilesStage": {
+      "validSuggestions": [],
+      "fileAnalysisResults": [],
+      "prAnalysisResults_validSuggestionsByPR": [],
+      "validSuggestionsByPR": [],
+      "errors": []
+    },
+    "AgentReviewStage": {
+      "validSuggestions": [
+        {
+          "tag": "A",
+          "file": "qa2420/attendance-report.ts",
+          "start": 33,
+          "end": 35
+        },
+        {
+          "tag": "B",
+          "file": "qa2420/attendance-report.ts",
+          "start": 90,
+          "end": 90
+        },
+        {
+          "tag": "BUG",
+          "file": "qa2420/fees.ts",
+          "start": 2,
+          "end": 2
+        }
+      ],
+      "fileAnalysisResults": [
+        {
+          "tag": "A",
+          "file": "qa2420/attendance-report.ts",
+          "start": 33
+        },
+        {
+          "tag": "B",
+          "file": "qa2420/attendance-report.ts",
+          "start": 90
+        },
+        {
+          "tag": "BUG",
+          "file": "qa2420/fees.ts",
+          "start": 2
+        }
+      ],
+      "prAnalysisResults_validSuggestionsByPR": [],
+      "validSuggestionsByPR": [],
+      "errors": []
+    },
+    "AggregateResultsStage": {
+      "validSuggestions": [
+        {
+          "tag": "A",
+          "file": "qa2420/attendance-report.ts",
+          "start": 33,
+          "end": 35
+        },
+        {
+          "tag": "B",
+          "file": "qa2420/attendance-report.ts",
+          "start": 90,
+          "end": 90
+        },
+        {
+          "tag": "BUG",
+          "file": "qa2420/fees.ts",
+          "start": 2,
+          "end": 2
+        }
+      ],
+      "fileAnalysisResults": [
+        {
+          "tag": "A",
+          "file": "qa2420/attendance-report.ts",
+          "start": 33
+        },
+        {
+          "tag": "B",
+          "file": "qa2420/attendance-report.ts",
+          "start": 90
+        },
+        {
+          "tag": "BUG",
+          "file": "qa2420/fees.ts",
+          "start": 2
+        }
+      ],
+      "prAnalysisResults_validSuggestionsByPR": [],
+      "validSuggestionsByPR": [],
+      "errors": []
+    },
+    "FormatCliOutputStage": {
+      "validSuggestions": [
+        {
+          "tag": "A",
+          "file": "qa2420/attendance-report.ts",
+          "start": 33,
+          "end": 35
+        },
+        {
+          "tag": "B",
+          "file": "qa2420/attendance-report.ts",
+          "start": 90,
+          "end": 90
+        },
+        {
+          "tag": "BUG",
+          "file": "qa2420/fees.ts",
+          "start": 2,
+          "end": 2
+        }
+      ],
+      "fileAnalysisResults": [
+        {
+          "tag": "A",
+          "file": "qa2420/attendance-report.ts",
+          "start": 33
+        },
+        {
+          "tag": "B",
+          "file": "qa2420/attendance-report.ts",
+          "start": 90
+        },
+        {
+          "tag": "BUG",
+          "file": "qa2420/fees.ts",
+          "start": 2
+        }
+      ],
+      "prAnalysisResults_validSuggestionsByPR": [],
+      "validSuggestionsByPR": [],
+      "errors": []
+    }
+  },
+  "cliResponse": {
+    "summary": "Found 3 issues in 2 files",
+    "filesAnalyzed": 2,
+    "issues": [
+      {
+        "tag": "A",
+        "file": "qa2420/attendance-report.ts",
+        "line": 33,
+        "endLine": 35,
+        "category": "kody_rules",
+        "ruleId": "qa2420-rule-a-file-without-test"
+      },
+      {
+        "tag": "B",
+        "file": "qa2420/attendance-report.ts",
+        "line": 90,
+        "endLine": 90,
+        "category": "kody_rules",
+        "ruleId": "qa2420-rule-b-console-log"
+      },
+      {
+        "tag": "BUG",
+        "file": "qa2420/fees.ts",
+        "line": 2,
+        "endLine": 2,
+        "category": "bug"
+      }
+    ]
+  }
+}
