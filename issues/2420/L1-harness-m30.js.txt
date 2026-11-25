@@ -1,0 +1,83 @@
+// QA #2420 M30: run evals/funnel/anchoring/run.js's real apply callback in plain
+// node with the eval's own TS loader, the real mapper, the real stage built by
+// evals/shared/review-stage.js and its real observer wrap (observeTheReview).
+// Replaced: `main` (runner loop) and `prepareReview` (PR fetch/checkout).
+// usage: node m30.js <tree> <caller.js> <label>
+const path = require('path');
+const [tree, callerRel, label] = process.argv.slice(2);
+const T = path.resolve(tree);
+process.chdir(T);
+require(path.join(T, 'evals/shared/eval-kit.js')).registerTs();
+
+// Replace the runner loop: capture the stage config instead of running it.
+const stageRunPath = require.resolve(path.join(T, 'evals/funnel/stage-run.js'));
+let cfg;
+require.cache[stageRunPath] = { id: stageRunPath, filename: stageRunPath, loaded: true, exports: { main: (c) => (cfg = c) } };
+
+const FILE = 'qa2420/enrollment-fee.ts';
+const PATCH = ['@@ -33,2 +33,3 @@', ' const fee = 1;', '+console.log(fee);', ' const b = 2;'].join('\n');
+const rs = require(path.join(T, 'evals/shared/review-stage.js'));
+rs.prepareReview = async () => ({ context: { changedFiles: [{ filename: FILE, patch: PATCH }] }, codeManagement: {}, cleanup: async () => {} });
+
+const { LLM } = require(path.join(T, 'libs/llm/llm.ts'));
+let modelCalls = 0;
+LLM.run = async () => {
+    modelCalls++;
+    throw new Error('no model call allowed');
+};
+
+// Inner recorder under the observer: sees exactly what the observer forwards.
+const { AgentReviewStage } = require(path.join(T, 'libs/code-review/pipeline/stages/agent-review.stage.ts'));
+const original = AgentReviewStage.prototype.anchorSuggestionsToDiff;
+const calls = [];
+AgentReviewStage.prototype.anchorSuggestionsToDiff = function inner(...args) {
+    const out = original.apply(this, args);
+    calls.push({ args, out });
+    return out;
+};
+rs.observeTheReview();
+
+require(path.resolve(T, callerRel));
+
+const rule = { uuid: 'qa2420-T', title: 'QA2420 PR title prefix', rule: 'PR title must start with [qa2420]', severity: 'high' };
+const frozen = {
+    kodyRules: [rule],
+    agents: [
+        {
+            params: { kodyRules: [rule], prNumber: 1, isKodyRules: true, identityName: 'kody-rules', labelPolicy: { categoryLabel: 'kody_rules', allowedLabels: ['kody_rules'], supportsMixed: false } },
+            candidates: [
+                { finding: { ruleUuid: 'qa2420-T', relevantFile: FILE, suggestionContent: 'The PR title must start with [qa2420].', oneSentenceSummary: 'PR title prefix' } },
+                { finding: { ruleUuid: 'qa2420-T', relevantFile: FILE, relevantLinesStart: 34, relevantLinesEnd: 34, suggestionContent: 'console.log on the fee.', oneSentenceSummary: 'console' } },
+            ],
+        },
+    ],
+};
+
+(async () => {
+    const steps = {};
+    const kept = await rs.observedLoops.run({ loops: [], steps }, () => cfg.apply({ permissionService: {} }, frozen));
+    const c = calls[0] || { args: [], out: [] };
+    const loc = (s) => `${s.relevantFile}:${s.relevantLinesStart}-${s.relevantLinesEnd}`;
+    console.log(
+        JSON.stringify(
+            {
+                label,
+                caller: callerRel,
+                argCount: c.args.length,
+                sixthArgIsSet: c.args[5] instanceof Set,
+                sixthArg: c.args[5] instanceof Set ? [...c.args[5]] : String(c.args[5]),
+                anchorIn: (c.args[0] || []).map(loc),
+                anchorOut: c.out.map((s) => `${loc(s)} evalIndex=${s.evalIndex}`),
+                observerRecordedOut: (steps.anchorSuggestionsToDiff?.out || []).map(loc),
+                keptEvalIndexes: [...kept],
+                mapperObserved: (steps.mapper || []).length,
+                modelCalls,
+            },
+            null,
+            2,
+        ),
+    );
+})().catch((e) => {
+    console.error('ERR', e && e.stack);
+    process.exit(1);
+});
