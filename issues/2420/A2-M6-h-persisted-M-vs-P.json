@@ -1,0 +1,490 @@
+{
+  "M": [
+    {
+      "tree": "M",
+      "scenario": "M6-h",
+      "case": "R8: D1 line-less CheckinReport (long) + D2 AverageDues:1-1",
+      "stageOut": {
+        "byPR": [
+          {
+            "content": "`qa2420/CheckinReport.cs` \u2014 Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+            "keys": [
+              "id",
+              "suggestionContent",
+              "oneSentenceSummary",
+              "fullExplanation",
+              "label",
+              "severity",
+              "brokenKodyRulesIds",
+              "deliveryStatus"
+            ]
+          }
+        ],
+        "inline": [],
+        "logs": [
+          "log: [KODY-DEDUP] PR#2 rule=qa2420-D (PR-level) collapsed 2 findings \u2192 1",
+          "log: [AGENT] Rendered merged finding locations"
+        ]
+      },
+      "persisted": {
+        "files": [],
+        "prLevelSuggestions": [
+          {
+            "id": "d84451ae-5930-4014-87fb-aa8272ff61ea",
+            "suggestionContent": "`qa2420/CheckinReport.cs` \u2014 Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+            "fullExplanation": "`qa2420/CheckinReport.cs` \u2014 Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix. Rename it (and its namespace/type references) to something like qa2420_CheckinReport.cs.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+            "oneSentenceSummary": "Added file name CheckinReport.cs lacks the qa2420_ prefix",
+            "label": "kody_rules",
+            "severity": "high",
+            "brokenKodyRulesIds": [
+              "qa2420-D"
+            ],
+            "deliveryStatus": "sent",
+            "comment": {
+              "id": 4317603269,
+              "pullRequestReviewId": null
+            },
+            "createdAt": "2026-11-25T03:44:00.000Z"
+          }
+        ]
+      },
+      "history": [
+        {
+          "suggestionId": "pr-comment-4317603269",
+          "suggestionContent": "`qa2420/CheckinReport.cs` \u2014 Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix. Rename it (and its namespace/type references) to something like qa2420_CheckinReport.cs.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+          "label": "kody_rules",
+          "brokenKodyRulesIds": [
+            "qa2420-D"
+          ],
+          "outcome": "pending",
+          "decidedAt": "2026-11-25T03:44:00.000Z"
+        }
+      ],
+      "lineLocationStructured": {
+        "AverageDues": false,
+        "MembershipBilling": false
+      },
+      "lineLocationOnlyInText": {
+        "AverageDues": true,
+        "MembershipBilling": false
+      }
+    },
+    {
+      "tree": "M",
+      "scenario": "M6-h",
+      "case": "variant: D1 line-less (long) + D2 AverageDues:1-1 + D3 MembershipBilling:1-1",
+      "stageOut": {
+        "byPR": [
+          {
+            "content": "`qa2420/CheckinReport.cs` \u2014 Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix.\n\n**Also found in:**\n- `qa2420/MembershipBilling.cs:1-1`\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+            "keys": [
+              "id",
+              "suggestionContent",
+              "oneSentenceSummary",
+              "fullExplanation",
+              "label",
+              "severity",
+              "brokenKodyRulesIds",
+              "deliveryStatus"
+            ]
+          }
+        ],
+        "inline": [],
+        "logs": [
+          "log: [KODY-DEDUP] PR#2 rule=qa2420-D (PR-level) collapsed 3 findings \u2192 1",
+          "log: [AGENT] Rendered merged finding locations"
+        ]
+      },
+      "persisted": {
+        "files": [],
+        "prLevelSuggestions": [
+          {
+            "id": "5ec98878-2a30-4a2c-bbb4-de4cc6d4a49c",
+            "suggestionContent": "`qa2420/CheckinReport.cs` \u2014 Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix.\n\n**Also found in:**\n- `qa2420/MembershipBilling.cs:1-1`\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+            "fullExplanation": "`qa2420/CheckinReport.cs` \u2014 Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix. Rename it (and its namespace/type references) to something like qa2420_CheckinReport.cs.\n\n**Also found in:**\n- `qa2420/MembershipBilling.cs:1-1`\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+            "oneSentenceSummary": "Added file name CheckinReport.cs lacks the qa2420_ prefix",
+            "label": "kody_rules",
+            "severity": "high",
+            "brokenKodyRulesIds": [
+              "qa2420-D"
+            ],
+            "deliveryStatus": "sent",
+            "comment": {
+              "id": 4317603269,
+              "pullRequestReviewId": null
+            },
+            "createdAt": "2026-11-25T03:44:00.000Z"
+          }
+        ]
+      },
+      "history": [
+        {
+          "suggestionId": "pr-comment-4317603269",
+          "suggestionContent": "`qa2420/CheckinReport.cs` \u2014 Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix. Rename it (and its namespace/type references) to something like qa2420_CheckinReport.cs.\n\n**Also found in:**\n- `qa2420/MembershipBilling.cs:1-1`\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+          "label": "kody_rules",
+          "brokenKodyRulesIds": [
+            "qa2420-D"
+          ],
+          "outcome": "pending",
+          "decidedAt": "2026-11-25T03:44:00.000Z"
+        }
+      ],
+      "lineLocationStructured": {
+        "AverageDues": false,
+        "MembershipBilling": false
+      },
+      "lineLocationOnlyInText": {
+        "AverageDues": true,
+        "MembershipBilling": true
+      }
+    },
+    {
+      "tree": "M",
+      "scenario": "M6-h",
+      "case": "control: D2 + D3 only (all lined)",
+      "stageOut": {
+        "byPR": [],
+        "inline": [
+          {
+            "file": "qa2420/MembershipBilling.cs",
+            "start": 1,
+            "end": 1,
+            "rule": "qa2420-D",
+            "content": "MembershipBilling.cs lacks the qa2420_ prefix.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+            "existingCode": "using System;",
+            "kodyRuleOtherLocations": [
+              "qa2420/AverageDues.cs:1-1"
+            ]
+          }
+        ],
+        "logs": [
+          "log: [KODY-DEDUP] PR#2 rule=qa2420-D (file-level) collapsed 2 findings \u2192 1 with 1 extra locations",
+          "log: [AGENT] Rendered merged finding locations"
+        ]
+      },
+      "persisted": {
+        "files": [
+          {
+            "filename": "qa2420/MembershipBilling.cs",
+            "path": "qa2420/MembershipBilling.cs",
+            "suggestions": [
+              {
+                "label": "kody_rules",
+                "severity": "high",
+                "brokenKodyRulesIds": [
+                  "qa2420-D"
+                ],
+                "improvedCode": "",
+                "language": "csharp",
+                "relevantFile": "qa2420/MembershipBilling.cs",
+                "relevantLinesStart": 1,
+                "relevantLinesEnd": 1,
+                "suggestionContent": "MembershipBilling.cs lacks the qa2420_ prefix.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+                "oneSentenceSummary": "MembershipBilling.cs lacks the qa2420_ prefix",
+                "existingCode": "using System;",
+                "kodyRuleOtherLocations": [
+                  "qa2420/AverageDues.cs:1-1"
+                ],
+                "fullExplanation": "MembershipBilling.cs lacks the qa2420_ prefix.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+                "llmPrompt": "MembershipBilling.cs lacks the qa2420_ prefix\n\nMembershipBilling.cs lacks the qa2420_ prefix.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+                "id": "file-sugg-1",
+                "deliveryStatus": "sent",
+                "comment": {
+                  "id": 900001,
+                  "pullRequestReviewId": null
+                },
+                "createdAt": "2026-11-25T03:44:00.000Z"
+              }
+            ]
+          }
+        ],
+        "prLevelSuggestions": []
+      },
+      "history": [
+        {
+          "suggestionId": "file-sugg-1",
+          "relevantFile": "qa2420/MembershipBilling.cs",
+          "relevantLinesStart": 1,
+          "relevantLinesEnd": 1,
+          "suggestionContent": "MembershipBilling.cs lacks the qa2420_ prefix.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+          "label": "kody_rules",
+          "brokenKodyRulesIds": [
+            "qa2420-D"
+          ],
+          "existingCode": "using System;",
+          "outcome": "pending",
+          "decidedAt": "2026-11-25T03:44:00.000Z"
+        }
+      ],
+      "lineLocationStructured": {
+        "AverageDues": true,
+        "MembershipBilling": true
+      },
+      "lineLocationOnlyInText": {
+        "AverageDues": true,
+        "MembershipBilling": false
+      }
+    }
+  ],
+  "P": [
+    {
+      "tree": "P",
+      "scenario": "M6-h",
+      "case": "R8: D1 line-less CheckinReport (long) + D2 AverageDues:1-1",
+      "stageOut": {
+        "byPR": [],
+        "inline": [
+          {
+            "file": "qa2420/CheckinReport.cs",
+            "start": 1,
+            "end": 6,
+            "rule": "qa2420-D",
+            "content": "Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+            "kodyRuleOtherLocations": [
+              "qa2420/AverageDues.cs:1-1"
+            ]
+          }
+        ],
+        "logs": [
+          "log: [AGENT] Snapped lines for qa2420/CheckinReport.cs: null-null \u2192 1-6",
+          "log: [KODY-DEDUP] PR#2 rule=qa2420-D (file-level) collapsed 2 findings \u2192 1 with 1 extra locations",
+          "log: [AGENT] Rendered merged finding locations"
+        ]
+      },
+      "persisted": {
+        "files": [
+          {
+            "filename": "qa2420/CheckinReport.cs",
+            "path": "qa2420/CheckinReport.cs",
+            "suggestions": [
+              {
+                "label": "kody_rules",
+                "severity": "high",
+                "brokenKodyRulesIds": [
+                  "qa2420-D"
+                ],
+                "improvedCode": "",
+                "language": "csharp",
+                "relevantFile": "qa2420/CheckinReport.cs",
+                "relevantLinesStart": 1,
+                "relevantLinesEnd": 6,
+                "suggestionContent": "Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+                "oneSentenceSummary": "Added file name CheckinReport.cs lacks the qa2420_ prefix",
+                "kodyRuleOtherLocations": [
+                  "qa2420/AverageDues.cs:1-1"
+                ],
+                "fullExplanation": "Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix. Rename it (and its namespace/type references) to something like qa2420_CheckinReport.cs.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+                "llmPrompt": "Added file name CheckinReport.cs lacks the qa2420_ prefix\n\nEvery file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix. Rename it (and its namespace/type references) to something like qa2420_CheckinReport.cs.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+                "id": "file-sugg-1",
+                "deliveryStatus": "sent",
+                "comment": {
+                  "id": 900001,
+                  "pullRequestReviewId": null
+                },
+                "createdAt": "2026-11-25T03:44:00.000Z"
+              }
+            ]
+          }
+        ],
+        "prLevelSuggestions": []
+      },
+      "history": [
+        {
+          "suggestionId": "file-sugg-1",
+          "relevantFile": "qa2420/CheckinReport.cs",
+          "relevantLinesStart": 1,
+          "relevantLinesEnd": 6,
+          "suggestionContent": "Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix. Rename it (and its namespace/type references) to something like qa2420_CheckinReport.cs.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+          "label": "kody_rules",
+          "brokenKodyRulesIds": [
+            "qa2420-D"
+          ],
+          "outcome": "pending",
+          "decidedAt": "2026-11-25T03:44:00.000Z"
+        }
+      ],
+      "lineLocationStructured": {
+        "AverageDues": true,
+        "MembershipBilling": false
+      },
+      "lineLocationOnlyInText": {
+        "AverageDues": true,
+        "MembershipBilling": false
+      }
+    },
+    {
+      "tree": "P",
+      "scenario": "M6-h",
+      "case": "variant: D1 line-less (long) + D2 AverageDues:1-1 + D3 MembershipBilling:1-1",
+      "stageOut": {
+        "byPR": [],
+        "inline": [
+          {
+            "file": "qa2420/CheckinReport.cs",
+            "start": 1,
+            "end": 6,
+            "rule": "qa2420-D",
+            "content": "Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix.\n\n**Also found in:**\n- `qa2420/MembershipBilling.cs:1-1`\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+            "kodyRuleOtherLocations": [
+              "qa2420/MembershipBilling.cs:1-1",
+              "qa2420/AverageDues.cs:1-1"
+            ]
+          }
+        ],
+        "logs": [
+          "log: [AGENT] Snapped lines for qa2420/CheckinReport.cs: null-null \u2192 1-6",
+          "log: [KODY-DEDUP] PR#2 rule=qa2420-D (file-level) collapsed 3 findings \u2192 1 with 2 extra locations",
+          "log: [AGENT] Rendered merged finding locations"
+        ]
+      },
+      "persisted": {
+        "files": [
+          {
+            "filename": "qa2420/CheckinReport.cs",
+            "path": "qa2420/CheckinReport.cs",
+            "suggestions": [
+              {
+                "label": "kody_rules",
+                "severity": "high",
+                "brokenKodyRulesIds": [
+                  "qa2420-D"
+                ],
+                "improvedCode": "",
+                "language": "csharp",
+                "relevantFile": "qa2420/CheckinReport.cs",
+                "relevantLinesStart": 1,
+                "relevantLinesEnd": 6,
+                "suggestionContent": "Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix.\n\n**Also found in:**\n- `qa2420/MembershipBilling.cs:1-1`\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+                "oneSentenceSummary": "Added file name CheckinReport.cs lacks the qa2420_ prefix",
+                "kodyRuleOtherLocations": [
+                  "qa2420/MembershipBilling.cs:1-1",
+                  "qa2420/AverageDues.cs:1-1"
+                ],
+                "fullExplanation": "Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix. Rename it (and its namespace/type references) to something like qa2420_CheckinReport.cs.\n\n**Also found in:**\n- `qa2420/MembershipBilling.cs:1-1`\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+                "llmPrompt": "Added file name CheckinReport.cs lacks the qa2420_ prefix\n\nEvery file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix. Rename it (and its namespace/type references) to something like qa2420_CheckinReport.cs.\n\n**Also found in:**\n- `qa2420/MembershipBilling.cs:1-1`\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+                "id": "file-sugg-1",
+                "deliveryStatus": "sent",
+                "comment": {
+                  "id": 900001,
+                  "pullRequestReviewId": null
+                },
+                "createdAt": "2026-11-25T03:44:00.000Z"
+              }
+            ]
+          }
+        ],
+        "prLevelSuggestions": []
+      },
+      "history": [
+        {
+          "suggestionId": "file-sugg-1",
+          "relevantFile": "qa2420/CheckinReport.cs",
+          "relevantLinesStart": 1,
+          "relevantLinesEnd": 6,
+          "suggestionContent": "Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix. Rename it (and its namespace/type references) to something like qa2420_CheckinReport.cs.\n\n**Also found in:**\n- `qa2420/MembershipBilling.cs:1-1`\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+          "label": "kody_rules",
+          "brokenKodyRulesIds": [
+            "qa2420-D"
+          ],
+          "outcome": "pending",
+          "decidedAt": "2026-11-25T03:44:00.000Z"
+        }
+      ],
+      "lineLocationStructured": {
+        "AverageDues": true,
+        "MembershipBilling": true
+      },
+      "lineLocationOnlyInText": {
+        "AverageDues": true,
+        "MembershipBilling": true
+      }
+    },
+    {
+      "tree": "P",
+      "scenario": "M6-h",
+      "case": "control: D2 + D3 only (all lined)",
+      "stageOut": {
+        "byPR": [],
+        "inline": [
+          {
+            "file": "qa2420/MembershipBilling.cs",
+            "start": 1,
+            "end": 1,
+            "rule": "qa2420-D",
+            "content": "MembershipBilling.cs lacks the qa2420_ prefix.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+            "existingCode": "using System;",
+            "kodyRuleOtherLocations": [
+              "qa2420/AverageDues.cs:1-1"
+            ]
+          }
+        ],
+        "logs": [
+          "log: [KODY-DEDUP] PR#2 rule=qa2420-D (file-level) collapsed 2 findings \u2192 1 with 1 extra locations",
+          "log: [AGENT] Rendered merged finding locations"
+        ]
+      },
+      "persisted": {
+        "files": [
+          {
+            "filename": "qa2420/MembershipBilling.cs",
+            "path": "qa2420/MembershipBilling.cs",
+            "suggestions": [
+              {
+                "label": "kody_rules",
+                "severity": "high",
+                "brokenKodyRulesIds": [
+                  "qa2420-D"
+                ],
+                "improvedCode": "",
+                "language": "csharp",
+                "relevantFile": "qa2420/MembershipBilling.cs",
+                "relevantLinesStart": 1,
+                "relevantLinesEnd": 1,
+                "suggestionContent": "MembershipBilling.cs lacks the qa2420_ prefix.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+                "oneSentenceSummary": "MembershipBilling.cs lacks the qa2420_ prefix",
+                "existingCode": "using System;",
+                "kodyRuleOtherLocations": [
+                  "qa2420/AverageDues.cs:1-1"
+                ],
+                "fullExplanation": "MembershipBilling.cs lacks the qa2420_ prefix.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+                "llmPrompt": "MembershipBilling.cs lacks the qa2420_ prefix\n\nMembershipBilling.cs lacks the qa2420_ prefix.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+                "id": "file-sugg-1",
+                "deliveryStatus": "sent",
+                "comment": {
+                  "id": 900001,
+                  "pullRequestReviewId": null
+                },
+                "createdAt": "2026-11-25T03:44:00.000Z"
+              }
+            ]
+          }
+        ],
+        "prLevelSuggestions": []
+      },
+      "history": [
+        {
+          "suggestionId": "file-sugg-1",
+          "relevantFile": "qa2420/MembershipBilling.cs",
+          "relevantLinesStart": 1,
+          "relevantLinesEnd": 1,
+          "suggestionContent": "MembershipBilling.cs lacks the qa2420_ prefix.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+          "label": "kody_rules",
+          "brokenKodyRulesIds": [
+            "qa2420-D"
+          ],
+          "existingCode": "using System;",
+          "outcome": "pending",
+          "decidedAt": "2026-11-25T03:44:00.000Z"
+        }
+      ],
+      "lineLocationStructured": {
+        "AverageDues": true,
+        "MembershipBilling": true
+      },
+      "lineLocationOnlyInText": {
+        "AverageDues": true,
+        "MembershipBilling": false
+      }
+    }
+  ]
+}
