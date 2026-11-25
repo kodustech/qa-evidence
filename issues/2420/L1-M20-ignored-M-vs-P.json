@@ -1,0 +1,252 @@
+{
+  "M": [
+    {
+      "tree": "M",
+      "scenario": "M20",
+      "case": "custom-agent-kody_rules-label-lineless-ignored",
+      "input": [
+        {
+          "file": "qa2420/ignored/gen.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/user.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/ignored/gen.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/ignored/gen.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/ignored/gen.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "commentStartLine": 33,
+          "commentLine": 35
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/ignored/gen.ts: undefined-undefined → 33-35"
+      ],
+      "modelCalls": 2
+    },
+    {
+      "tree": "M",
+      "scenario": "M20",
+      "case": "custom-agent-custom_agent-label-lineless-ignored",
+      "input": [
+        {
+          "file": "qa2420/ignored/gen.ts",
+          "label": "custom_agent",
+          "content": "Generated file reformat."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/user.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/ignored/gen.ts",
+          "start": 33,
+          "end": 35,
+          "label": "custom_agent",
+          "content": "Generated file reformat."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/ignored/gen.ts",
+          "start": 33,
+          "end": 35,
+          "label": "custom_agent",
+          "content": "Generated file reformat.",
+          "fullExplanation": "Generated file reformat."
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/ignored/gen.ts",
+          "start": 33,
+          "end": 35,
+          "label": "custom_agent",
+          "content": "Generated file reformat.",
+          "fullExplanation": "Generated file reformat.",
+          "commentStartLine": 33,
+          "commentLine": 35
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/ignored/gen.ts: undefined-undefined → 33-35"
+      ],
+      "modelCalls": 2
+    },
+    {
+      "tree": "M",
+      "scenario": "M20",
+      "case": "anchor-helper-ignored",
+      "anchorOut": [
+        {
+          "file": "qa2420/ignored/gen.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ]
+    }
+  ],
+  "P": [
+    {
+      "tree": "P",
+      "scenario": "M20",
+      "case": "custom-agent-kody_rules-label-lineless-ignored",
+      "input": [
+        {
+          "file": "qa2420/ignored/gen.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/ignored/gen.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/ignored/gen.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/ignored/gen.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-A",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 file without test](/settings/code-review/global/kody-rules/qa2420-A?teamId=team-qa)",
+          "commentStartLine": 33,
+          "commentLine": 35
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/ignored/gen.ts: undefined-undefined → 33-35"
+      ],
+      "modelCalls": 2
+    },
+    {
+      "tree": "P",
+      "scenario": "M20",
+      "case": "custom-agent-custom_agent-label-lineless-ignored",
+      "input": [
+        {
+          "file": "qa2420/ignored/gen.ts",
+          "label": "custom_agent",
+          "content": "Generated file reformat."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/ignored/gen.ts",
+          "start": 33,
+          "end": 35,
+          "label": "custom_agent",
+          "content": "Generated file reformat."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/ignored/gen.ts",
+          "start": 33,
+          "end": 35,
+          "label": "custom_agent",
+          "content": "Generated file reformat.",
+          "fullExplanation": "Generated file reformat."
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/ignored/gen.ts",
+          "start": 33,
+          "end": 35,
+          "label": "custom_agent",
+          "content": "Generated file reformat.",
+          "fullExplanation": "Generated file reformat.",
+          "commentStartLine": 33,
+          "commentLine": 35
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/ignored/gen.ts: undefined-undefined → 33-35"
+      ],
+      "modelCalls": 2
+    },
+    {
+      "tree": "P",
+      "scenario": "M20",
+      "case": "anchor-helper-ignored",
+      "anchorOut": [
+        {
+          "file": "qa2420/ignored/gen.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ]
+    }
+  ]
+}
