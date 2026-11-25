@@ -1,0 +1,4 @@
+  ● H lease harness @ctrl › M27 decrement rejected / applied-but-lost / setKillAt rejected, with a co-holder
+    Expected: "rejected:mongo down"
+    Received: "ok"
+Tests:       1 failed, 12 skipped, 1 passed, 14 total
