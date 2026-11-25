@@ -32,6 +32,7 @@ const e2b = {
     connect: jest.fn(async (id: string) => fakeE2B(id)),
 };
 jest.mock('e2b', () => ({
+    ...jest.requireActual('e2b'),
     Sandbox: {
         setTimeout: (...a: any[]) => (e2b.setTimeout as any)(...a),
         kill: (...a: any[]) => (e2b.kill as any)(...a),
@@ -166,8 +167,17 @@ describe(`H lease harness @${REV}`, () => {
         let err: any;
         try { await failMgr.acquire(k2, 'review', undefined, { cloneUrl: 'x' } as any); } catch (e) { err = e; }
         ev(T, 'failed-acquire', { error: String(err?.message), useMapSize: (failMgr as any).leaseIdToUse?.size ?? null, doc: await doc(k2) });
-        expect(err).toBeDefined();
+        expect(String(err?.message)).toContain('create failed');
         expect((failMgr as any).leaseIdToUse?.size ?? 0).toBe(0);
+        const { RateLimitError } = jest.requireActual('e2b');
+        const rlMgr = manager({ isAvailable: () => true, createSandboxWithRepo: jest.fn(async () => { throw new RateLimitError('429 concurrent sandboxes'); }) });
+        const k4 = key();
+        let err4: any;
+        const createCalls = () => (rlMgr as any).sandboxProvider.createSandboxWithRepo.mock.calls.length;
+        try { await rlMgr.acquire(k4, 'review', undefined, { cloneUrl: 'x' } as any, { signal: AbortSignal.timeout(3000) }); } catch (e) { err4 = e; }
+        ev(T, 'rate-limited-acquire', { errorName: err4?.constructor?.name, error: String(err4?.message), typeErrors: LOGS.filter((l) => /instanceof|TypeError/.test(l.message ?? '')).length, useMapSize: (rlMgr as any).leaseIdToUse?.size ?? null, createAttempts: createCalls(), doc: await doc(k4), circuit: (rlMgr as any).createCircuit?.state ?? (rlMgr as any).createCircuit?.snapshot?.() ?? null });
+        expect(String(err4?.message)).not.toMatch(/instanceof/);
+        expect((rlMgr as any).leaseIdToUse?.size ?? 0).toBe(0);
 
         const partial = manager({ isAvailable: () => true, createSandboxWithRepo: jest.fn(async () => { const { inst } = makeInstance('sbx-partial-' + ++seq); delete inst.run; delete inst.writeFile; return inst; }) });
         const k3 = key();
@@ -231,23 +241,23 @@ describe(`H lease harness @${REV}`, () => {
     it('M27 decrement rejected / applied-but-lost / setKillAt rejected, with a co-holder', async () => {
         const T = 'M27';
         const res: any = {};
-        // (a) decrement rejected before apply
+        // (a) decrement rejected before apply, through the real CreateSandboxStage closure
         {
             const mgr = manager();
             const k = key();
-            const a = await mgr.acquire(k, 'review', undefined, { cloneUrl: 'x' } as any);
-            const b = await mgr.acquire(k, 'conversation');
-            const stage = new CreateSandboxStage(mgr as any, {} as any);
-            jest.spyOn(repo, 'decrementLease').mockRejectedValueOnce(new Error('mongo down'));
-            const handle: any = { ...a.sandbox };
-            let release: Promise<void> | undefined;
-            handle.cleanup = () => (release ??= mgr.release(a.leaseId, { idleMs: 30_000 }));
+            const b = await mgr.acquire(k, 'conversation', undefined, { cloneUrl: 'x' } as any);
+            const stage = new CreateSandboxStage(mgr as any, { resolve: jest.fn(async () => ({ url: 'https://example/repo', authToken: 't', platform: 'github', branch: 'b', prNumber: 1 })) } as any);
+            const ctx: any = { organizationAndTeamData: { organizationId: k.split(':')[0], teamId: 't' }, repository: { id: k.split(':')[1] }, pullRequest: { number: Number(k.split(':')[2]) }, changedFiles: [{ filename: 'a.ts' }], codeReviewConfig: {} };
+            const out = await (stage as any).executeStage(ctx);
+            const handle = out.sandboxHandle;
+            const mid = await doc(k);
+            const dec = jest.spyOn(repo, 'decrementLease').mockRejectedValueOnce(new Error('mongo down'));
             const r1 = await handle.cleanup().then(() => 'ok', (e: any) => 'rejected:' + e.message);
             const r2 = await handle.cleanup().then(() => 'ok', (e: any) => 'rejected:' + e.message);
             const d = await doc(k);
-            res.a = { r1, r2, leaseCount: d.leaseCount, usage: (a.sandbox as any).usage?.(), unknownLease: logs(/unknown leaseId/).length };
+            res.a = { viaRealStageClosure: true, countBefore: mid.leaseCount, r1, r2, decrementCalls: dec.mock.calls.length, leaseCount: d.leaseCount, usage: handle.usage?.(), unknownLease: logs(/unknown leaseId/).length };
+            dec.mockRestore();
             await b.sandbox.cleanup();
-            void stage;
         }
         // (b) applied, response lost
         {
@@ -277,6 +287,7 @@ describe(`H lease harness @${REV}`, () => {
         expect(res.a.r1).toMatch(/rejected/);
         expect(res.a.r2).toBe(res.a.r1);
         expect(res.a.leaseCount).toBe(2);
+        expect(res.a.decrementCalls).toBe(1);
         expect(res.b.coHolderIntact).toBe(true);
         expect(res.c.r1).toMatch(/rejected/);
     });
