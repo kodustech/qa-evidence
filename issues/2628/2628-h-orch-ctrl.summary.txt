@@ -1,0 +1,7 @@
+  ● H orch @ctrl › O1 M5/M6: real orchestrator; last sandbox read -> orchestrator return -> release -> post-processing
+    Expected: < 5
+    Received:   9
+  ● H orch @ctrl › O5 M3 local: the AgentReviewStage stage log keeps prior metadata next to sandboxUsage
+    Expected: "review"
+    Received: undefined
+Tests:       2 failed, 5 passed, 7 total
