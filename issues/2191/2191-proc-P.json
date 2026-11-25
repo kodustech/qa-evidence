@@ -1,0 +1,124 @@
+{
+ "r1_B_first": {
+  "procs": [
+   {
+    "kind": "owned",
+    "sha": "91a06fdd623685aa7824ab293da8180559a498e7",
+    "pid": 98676,
+    "events": [
+     {
+      "at": "2026-11-25T02:35:45.040Z",
+      "ev": "start"
+     },
+     {
+      "at": "2026-11-25T02:35:45.934Z",
+      "ev": "started",
+      "checkRunId": "sha:91a06fdd623685aa7824ab293da8180559a498e7"
+     },
+     {
+      "at": "2026-11-25T02:35:53.941Z",
+      "ev": "llm-402"
+     },
+     {
+      "at": "2026-11-25T02:35:53.962Z",
+      "ev": "finalize",
+      "conclusion": "FAILURE",
+      "stage": "_pipelineEndFailure"
+     },
+     {
+      "at": "2026-11-25T02:35:54.921Z",
+      "ev": "finished",
+      "checkRunIdAfter": null
+     }
+    ],
+    "errors": [
+     {
+      "substage": "agent:generalist"
+     }
+    ]
+   },
+   {
+    "kind": "funded",
+    "sha": "a8f9298310446ce20daeb861d57c9b8f1ea4d911",
+    "pid": 98681,
+    "events": [
+     {
+      "at": "2026-11-25T02:35:45.040Z",
+      "ev": "start"
+     },
+     {
+      "at": "2026-11-25T02:35:45.934Z",
+      "ev": "started",
+      "checkRunId": "sha:a8f9298310446ce20daeb861d57c9b8f1ea4d911"
+     },
+     {
+      "at": "2026-11-25T02:35:47.942Z",
+      "ev": "llm-402"
+     },
+     {
+      "at": "2026-11-25T02:35:47.963Z",
+      "ev": "finalize",
+      "conclusion": "FAILURE",
+      "stage": "_pipelineEndFailure"
+     },
+     {
+      "at": "2026-11-25T02:35:48.297Z",
+      "ev": "finished",
+      "checkRunIdAfter": null
+     }
+    ],
+    "errors": [
+     {
+      "substage": "agent:generalist"
+     }
+    ]
+   }
+  ],
+  "codeberg_statuses_newest_first": {
+   "91a06fdd": [
+    [
+     "2026-11-25T03:35:54+01:00",
+     "failure",
+     "Code Review Failed"
+    ],
+    [
+     "2026-11-25T03:35:45+01:00",
+     "pending",
+     "Code Review Starting"
+    ],
+    [
+     "2026-11-25T03:35:28+01:00",
+     "warning",
+     "Code Review Skipped"
+    ],
+    [
+     "2026-11-25T03:35:17+01:00",
+     "pending",
+     "Code Review Starting"
+    ]
+   ],
+   "a8f92983": [
+    [
+     "2026-11-25T03:35:48+01:00",
+     "failure",
+     "Code Review Failed"
+    ],
+    [
+     "2026-11-25T03:35:45+01:00",
+     "pending",
+     "Code Review Starting"
+    ],
+    [
+     "2026-11-25T03:35:20+01:00",
+     "failure",
+     "Code Review Failed"
+    ],
+    [
+     "2026-11-25T03:35:17+01:00",
+     "pending",
+     "Code Review Starting"
+    ]
+   ]
+  }
+ }
+}
