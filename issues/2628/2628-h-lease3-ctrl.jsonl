@@ -1,0 +1,6 @@
+{"rev":"ctrl","test":"M17","event":"null-acquire","at":"2026-11-24T23:47:32.494Z","type":"null","hasUsage":"undefined"}
+{"rev":"ctrl","test":"M17","event":"null-release","at":"2026-11-24T23:47:32.496Z","leaseCount":0}
+{"rev":"ctrl","test":"M17","event":"failed-acquire","at":"2026-11-24T23:47:42.515Z","error":"create failed","useMapSize":null,"doc":null}
+{"rev":"ctrl","test":"M17","event":"rate-limited-acquire","at":"2026-11-24T23:47:45.519Z","errorName":"SandboxWaitAbortedError","error":"SandboxLeaseManager: stopped waiting for room in the E2B plan after 2994ms prKey=\"11111111-2628-4aaa-8aaa-000000000001:r1:3\" (wait aborted)","typeErrors":0,"useMapSize":null,"createAttempts":1,"doc":null,"circuit":"CLOSED"}
+{"rev":"ctrl","test":"M17","event":"partial-capabilities","at":"2026-11-24T23:47:45.523Z","hasRun":false,"hasWrite":false,"nonFunctionKept":42}
+{"rev":"ctrl","test":"M27","event":"result","at":"2026-11-24T23:47:45.543Z","a":{"viaRealStageClosure":true,"countBefore":2,"r1":"rejected:mongo down","r2":"ok","decrementCalls":2,"leaseCount":1,"unknownLease":0},"b":{"r1":"rejected:socket closed after write","leaseCountAfter":1,"coHolderIntact":true,"final":0},"c":{"r1":"rejected:mongo blip","leaseCount":0,"killAt":null,"expiresAt":"2026-11-25T00:17:45.539Z","setTimeoutCalls":2}}
