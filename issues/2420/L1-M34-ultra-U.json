@@ -1,0 +1,312 @@
+{
+  "U_e80175e": [
+    {
+      "tree": "U",
+      "mode": "balanced",
+      "orchestratorCalls": [
+        {
+          "agentScope": "all",
+          "kodyRules": 2
+        }
+      ],
+      "anchorCalls": [
+        {
+          "argCount": 6,
+          "set": [
+            "qa2420/enrollment-fee.ts"
+          ],
+          "in": [
+            "qa2420/enrollment-fee.ts:92-93[bug]",
+            "qa2420/enrollment-fee.ts:undefined-undefined[kody_rules]",
+            "qa2420/enrollment-fee.ts:34-34[kody_rules]"
+          ],
+          "out": [
+            "qa2420/enrollment-fee.ts:92-93[bug]",
+            "qa2420/enrollment-fee.ts:undefined-undefined[kody_rules]",
+            "qa2420/enrollment-fee.ts:34-34[kody_rules]"
+          ]
+        }
+      ],
+      "byPR": [
+        {
+          "rule": "qa2420-T",
+          "label": "kody_rules",
+          "content": "`qa2420/enrollment-fee.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "prompt": "PR title does not start with [qa2420]\n\n`qa2420/enrollment-fee.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)"
+        }
+      ],
+      "valid": [
+        "qa2420/enrollment-fee.ts:34-34[kody_rules:qa2420-B]",
+        "qa2420/enrollment-fee.ts:92-93[bug]"
+      ],
+      "inline": [
+        "qa2420/enrollment-fee.ts:34-34[kody_rules] comment undefined/34",
+        "qa2420/enrollment-fee.ts:92-93[bug] comment 92/93"
+      ],
+      "logs": [],
+      "errors": [],
+      "modelCalls": 1
+    },
+    {
+      "tree": "U",
+      "mode": "ultra",
+      "orchestratorCalls": [
+        {
+          "agentScope": "native",
+          "forcedModel": "m-b",
+          "kodyRules": 0
+        },
+        {
+          "agentScope": "native",
+          "forcedModel": "m-a",
+          "kodyRules": 0
+        },
+        {
+          "agentScope": "native",
+          "forcedModel": "m-c",
+          "kodyRules": 0
+        },
+        {
+          "agentScope": "auxiliary",
+          "kodyRules": 2
+        }
+      ],
+      "anchorCalls": [
+        {
+          "argCount": 6,
+          "set": [
+            "qa2420/enrollment-fee.ts"
+          ],
+          "in": [
+            "qa2420/enrollment-fee.ts:92-93[bug]"
+          ],
+          "out": [
+            "qa2420/enrollment-fee.ts:92-93[bug]"
+          ]
+        },
+        {
+          "argCount": 6,
+          "set": [
+            "qa2420/enrollment-fee.ts"
+          ],
+          "in": [
+            "qa2420/enrollment-fee.ts:92-93[bug]"
+          ],
+          "out": [
+            "qa2420/enrollment-fee.ts:92-93[bug]"
+          ]
+        },
+        {
+          "argCount": 6,
+          "set": [
+            "qa2420/enrollment-fee.ts"
+          ],
+          "in": [
+            "qa2420/enrollment-fee.ts:92-93[bug]"
+          ],
+          "out": [
+            "qa2420/enrollment-fee.ts:92-93[bug]"
+          ]
+        },
+        {
+          "argCount": 6,
+          "set": [
+            "qa2420/enrollment-fee.ts"
+          ],
+          "in": [
+            "qa2420/enrollment-fee.ts:undefined-undefined[kody_rules]",
+            "qa2420/enrollment-fee.ts:34-34[kody_rules]"
+          ],
+          "out": [
+            "qa2420/enrollment-fee.ts:undefined-undefined[kody_rules]",
+            "qa2420/enrollment-fee.ts:34-34[kody_rules]"
+          ]
+        }
+      ],
+      "byPR": [
+        {
+          "rule": "qa2420-T",
+          "label": "kody_rules",
+          "content": "`qa2420/enrollment-fee.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "prompt": "PR title does not start with [qa2420]\n\n`qa2420/enrollment-fee.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)"
+        }
+      ],
+      "valid": [
+        "qa2420/enrollment-fee.ts:34-34[kody_rules:qa2420-B]",
+        "qa2420/enrollment-fee.ts:92-93[bug]",
+        "qa2420/enrollment-fee.ts:92-93[bug]",
+        "qa2420/enrollment-fee.ts:92-93[bug]"
+      ],
+      "inline": [
+        "qa2420/enrollment-fee.ts:34-34[kody_rules] comment undefined/34",
+        "qa2420/enrollment-fee.ts:92-93[bug] comment 92/93",
+        "qa2420/enrollment-fee.ts:92-93[bug] comment 92/93",
+        "qa2420/enrollment-fee.ts:92-93[bug] comment 92/93"
+      ],
+      "ultra": {
+        "outcome": "success",
+        "runs": [
+          "openai:m-a:completed",
+          "openai:m-b:completed",
+          "openai:m-c:completed"
+        ],
+        "merge": "success 3->3"
+      },
+      "logs": [],
+      "errors": [],
+      "modelCalls": 4
+    }
+  ],
+  "U_with_anchor_return_reverted": [
+    {
+      "tree": "U-anchor-return-reverted",
+      "mode": "balanced",
+      "orchestratorCalls": [
+        {
+          "agentScope": "all",
+          "kodyRules": 2
+        }
+      ],
+      "anchorCalls": [
+        {
+          "argCount": 6,
+          "set": [
+            "qa2420/enrollment-fee.ts"
+          ],
+          "in": [
+            "qa2420/enrollment-fee.ts:92-93[bug]",
+            "qa2420/enrollment-fee.ts:undefined-undefined[kody_rules]",
+            "qa2420/enrollment-fee.ts:34-34[kody_rules]"
+          ],
+          "out": [
+            "qa2420/enrollment-fee.ts:92-93[bug]",
+            "qa2420/enrollment-fee.ts:33-35[kody_rules]",
+            "qa2420/enrollment-fee.ts:34-34[kody_rules]"
+          ]
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        "qa2420/enrollment-fee.ts:33-35[kody_rules:qa2420-T]",
+        "qa2420/enrollment-fee.ts:34-34[kody_rules:qa2420-B]",
+        "qa2420/enrollment-fee.ts:92-93[bug]"
+      ],
+      "inline": [
+        "qa2420/enrollment-fee.ts:33-35[kody_rules] comment 33/35",
+        "qa2420/enrollment-fee.ts:34-34[kody_rules] comment undefined/34",
+        "qa2420/enrollment-fee.ts:92-93[bug] comment 92/93"
+      ],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/enrollment-fee.ts: undefined-undefined → 33-35"
+      ],
+      "errors": [],
+      "modelCalls": 1
+    },
+    {
+      "tree": "U-anchor-return-reverted",
+      "mode": "ultra",
+      "orchestratorCalls": [
+        {
+          "agentScope": "native",
+          "forcedModel": "m-b",
+          "kodyRules": 0
+        },
+        {
+          "agentScope": "native",
+          "forcedModel": "m-a",
+          "kodyRules": 0
+        },
+        {
+          "agentScope": "native",
+          "forcedModel": "m-c",
+          "kodyRules": 0
+        },
+        {
+          "agentScope": "auxiliary",
+          "kodyRules": 2
+        }
+      ],
+      "anchorCalls": [
+        {
+          "argCount": 6,
+          "set": [
+            "qa2420/enrollment-fee.ts"
+          ],
+          "in": [
+            "qa2420/enrollment-fee.ts:92-93[bug]"
+          ],
+          "out": [
+            "qa2420/enrollment-fee.ts:92-93[bug]"
+          ]
+        },
+        {
+          "argCount": 6,
+          "set": [
+            "qa2420/enrollment-fee.ts"
+          ],
+          "in": [
+            "qa2420/enrollment-fee.ts:92-93[bug]"
+          ],
+          "out": [
+            "qa2420/enrollment-fee.ts:92-93[bug]"
+          ]
+        },
+        {
+          "argCount": 6,
+          "set": [
+            "qa2420/enrollment-fee.ts"
+          ],
+          "in": [
+            "qa2420/enrollment-fee.ts:92-93[bug]"
+          ],
+          "out": [
+            "qa2420/enrollment-fee.ts:92-93[bug]"
+          ]
+        },
+        {
+          "argCount": 6,
+          "set": [
+            "qa2420/enrollment-fee.ts"
+          ],
+          "in": [
+            "qa2420/enrollment-fee.ts:undefined-undefined[kody_rules]",
+            "qa2420/enrollment-fee.ts:34-34[kody_rules]"
+          ],
+          "out": [
+            "qa2420/enrollment-fee.ts:33-35[kody_rules]",
+            "qa2420/enrollment-fee.ts:34-34[kody_rules]"
+          ]
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        "qa2420/enrollment-fee.ts:33-35[kody_rules:qa2420-T]",
+        "qa2420/enrollment-fee.ts:34-34[kody_rules:qa2420-B]",
+        "qa2420/enrollment-fee.ts:92-93[bug]",
+        "qa2420/enrollment-fee.ts:92-93[bug]",
+        "qa2420/enrollment-fee.ts:92-93[bug]"
+      ],
+      "inline": [
+        "qa2420/enrollment-fee.ts:33-35[kody_rules] comment 33/35",
+        "qa2420/enrollment-fee.ts:34-34[kody_rules] comment undefined/34",
+        "qa2420/enrollment-fee.ts:92-93[bug] comment 92/93",
+        "qa2420/enrollment-fee.ts:92-93[bug] comment 92/93",
+        "qa2420/enrollment-fee.ts:92-93[bug] comment 92/93"
+      ],
+      "ultra": {
+        "outcome": "success",
+        "runs": [
+          "openai:m-a:completed",
+          "openai:m-b:completed",
+          "openai:m-c:completed"
+        ],
+        "merge": "success 3->3"
+      },
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/enrollment-fee.ts: undefined-undefined → 33-35"
+      ],
+      "errors": [],
+      "modelCalls": 4
+    }
+  ]
+}
