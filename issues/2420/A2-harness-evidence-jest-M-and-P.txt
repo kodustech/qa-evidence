@@ -1,0 +1,13 @@
+== M ==
+Test Suites: 1 passed, 1 total
+Tests:       5 passed, 5 total
+Snapshots:   0 total
+Time:        0.708 s, estimated 1 s
+Ran all test suites matching libs/code-review/infrastructure/agents/collaborators/a2-evidence.qa2420.spec.ts.
+== P ==
+Test Suites: 1 passed, 1 total
+Tests:       5 passed, 5 total
+Snapshots:   0 total
+Time:        0.67 s, estimated 1 s
+Ran all test suites matching libs/code-review/infrastructure/agents/collaborators/a2-evidence.qa2420.spec.ts.
+Rerun: both trees run twice, JSON byte-identical.
