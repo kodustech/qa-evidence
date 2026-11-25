@@ -1,0 +1,79 @@
+[
+  {
+    "label": "M-caller-on-M-stage",
+    "caller": "evals/funnel/anchoring/run.js",
+    "argCount": 6,
+    "sixthArgIsSet": true,
+    "sixthArg": [
+      "qa2420/enrollment-fee.ts"
+    ],
+    "anchorIn": [
+      "qa2420/enrollment-fee.ts:undefined-undefined",
+      "qa2420/enrollment-fee.ts:34-34"
+    ],
+    "anchorOut": [
+      "qa2420/enrollment-fee.ts:undefined-undefined evalIndex=0",
+      "qa2420/enrollment-fee.ts:34-34 evalIndex=1"
+    ],
+    "observerRecordedOut": [
+      "qa2420/enrollment-fee.ts:undefined-undefined",
+      "qa2420/enrollment-fee.ts:34-34"
+    ],
+    "keptEvalIndexes": [
+      0,
+      1
+    ],
+    "mapperObserved": 0,
+    "modelCalls": 0
+  },
+  {
+    "label": "P-caller-on-M-stage",
+    "caller": "evals/funnel/anchoring/run.P.qa2420.js",
+    "argCount": 4,
+    "sixthArgIsSet": false,
+    "sixthArg": "undefined",
+    "anchorIn": [
+      "qa2420/enrollment-fee.ts:undefined-undefined",
+      "qa2420/enrollment-fee.ts:34-34"
+    ],
+    "anchorOut": [
+      "qa2420/enrollment-fee.ts:33-35 evalIndex=0",
+      "qa2420/enrollment-fee.ts:34-34 evalIndex=1"
+    ],
+    "observerRecordedOut": [
+      "qa2420/enrollment-fee.ts:33-35",
+      "qa2420/enrollment-fee.ts:34-34"
+    ],
+    "keptEvalIndexes": [
+      0,
+      1
+    ],
+    "mapperObserved": 0,
+    "modelCalls": 0
+  },
+  {
+    "label": "P-caller-on-P-stage",
+    "caller": "evals/funnel/anchoring/run.js",
+    "argCount": 4,
+    "sixthArgIsSet": false,
+    "sixthArg": "undefined",
+    "anchorIn": [
+      "qa2420/enrollment-fee.ts:undefined-undefined",
+      "qa2420/enrollment-fee.ts:34-34"
+    ],
+    "anchorOut": [
+      "qa2420/enrollment-fee.ts:33-35 evalIndex=0",
+      "qa2420/enrollment-fee.ts:34-34 evalIndex=1"
+    ],
+    "observerRecordedOut": [
+      "qa2420/enrollment-fee.ts:33-35",
+      "qa2420/enrollment-fee.ts:34-34"
+    ],
+    "keptEvalIndexes": [
+      0,
+      1
+    ],
+    "mapperObserved": 0,
+    "modelCalls": 0
+  }
+]
