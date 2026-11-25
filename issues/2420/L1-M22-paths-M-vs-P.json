@@ -1,0 +1,757 @@
+{
+  "M": [
+    {
+      "tree": "M",
+      "scenario": "M22",
+      "case": "unique-exact",
+      "input": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/école/StudentService.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [
+        {
+          "content": "`qa2420/école/StudentService.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "`qa2420/école/StudentService.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "prompt": "PR title prefix\n\n`qa2420/école/StudentService.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "label": "kody_rules",
+          "rule": "qa2420-T"
+        }
+      ],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2,
+      "mapper": {
+        "emitted": "qa2420/école/StudentService.ts",
+        "kept": [
+          {
+            "file": "qa2420/école/StudentService.ts",
+            "label": "kody_rules",
+            "rule": "qa2420-T",
+            "content": "The PR title must start with [qa2420]."
+          }
+        ],
+        "droppedForPath": 0,
+        "logs": []
+      }
+    },
+    {
+      "tree": "M",
+      "scenario": "M22",
+      "case": "unique-backslash",
+      "input": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/école/StudentService.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [
+        {
+          "content": "`qa2420/école/StudentService.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "`qa2420/école/StudentService.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "prompt": "PR title prefix\n\n`qa2420/école/StudentService.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "label": "kody_rules",
+          "rule": "qa2420-T"
+        }
+      ],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2,
+      "mapper": {
+        "emitted": "qa2420\\école\\StudentService.ts",
+        "kept": [
+          {
+            "file": "qa2420/école/StudentService.ts",
+            "label": "kody_rules",
+            "rule": "qa2420-T",
+            "content": "The PR title must start with [qa2420]."
+          }
+        ],
+        "droppedForPath": 0,
+        "logs": []
+      }
+    },
+    {
+      "tree": "M",
+      "scenario": "M22",
+      "case": "unique-leading-slash",
+      "input": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/école/StudentService.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [
+        {
+          "content": "`qa2420/école/StudentService.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "`qa2420/école/StudentService.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "prompt": "PR title prefix\n\n`qa2420/école/StudentService.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "label": "kody_rules",
+          "rule": "qa2420-T"
+        }
+      ],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2,
+      "mapper": {
+        "emitted": "/qa2420/école/StudentService.ts",
+        "kept": [
+          {
+            "file": "qa2420/école/StudentService.ts",
+            "label": "kody_rules",
+            "rule": "qa2420-T",
+            "content": "The PR title must start with [qa2420]."
+          }
+        ],
+        "droppedForPath": 0,
+        "logs": []
+      }
+    },
+    {
+      "tree": "M",
+      "scenario": "M22",
+      "case": "unique-leading-dot",
+      "input": [],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/école/StudentService.ts"
+      ],
+      "anchorOut": [],
+      "byPR": [],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 1,
+      "mapper": {
+        "emitted": "./qa2420/école/StudentService.ts",
+        "kept": [],
+        "droppedForPath": 1,
+        "logs": [
+          "warn: @@PATH_MISMATCH@@ Dropping kody_rules suggestion — relevantFile not in changedFiles after normalization {\"relevantFile\":\"./qa2420/école/StudentService.ts\"}"
+        ]
+      }
+    },
+    {
+      "tree": "M",
+      "scenario": "M22",
+      "case": "unique-unique-basename",
+      "input": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/école/StudentService.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [
+        {
+          "content": "`qa2420/école/StudentService.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "`qa2420/école/StudentService.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "prompt": "PR title prefix\n\n`qa2420/école/StudentService.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "label": "kody_rules",
+          "rule": "qa2420-T"
+        }
+      ],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2,
+      "mapper": {
+        "emitted": "StudentService.ts",
+        "kept": [
+          {
+            "file": "qa2420/école/StudentService.ts",
+            "label": "kody_rules",
+            "rule": "qa2420-T",
+            "content": "The PR title must start with [qa2420]."
+          }
+        ],
+        "droppedForPath": 0,
+        "logs": [
+          "log: [AGENT] Completed partial relevantFile \"StudentService.ts\" → \"qa2420/école/StudentService.ts\""
+        ]
+      }
+    },
+    {
+      "tree": "M",
+      "scenario": "M22",
+      "case": "unique-unique-tail",
+      "input": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/école/StudentService.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [
+        {
+          "content": "`qa2420/école/StudentService.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "`qa2420/école/StudentService.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "prompt": "PR title prefix\n\n`qa2420/école/StudentService.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "label": "kody_rules",
+          "rule": "qa2420-T"
+        }
+      ],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2,
+      "mapper": {
+        "emitted": "école/StudentService.ts",
+        "kept": [
+          {
+            "file": "qa2420/école/StudentService.ts",
+            "label": "kody_rules",
+            "rule": "qa2420-T",
+            "content": "The PR title must start with [qa2420]."
+          }
+        ],
+        "droppedForPath": 0,
+        "logs": [
+          "log: [AGENT] Completed partial relevantFile \"école/StudentService.ts\" → \"qa2420/école/StudentService.ts\""
+        ]
+      }
+    },
+    {
+      "tree": "M",
+      "scenario": "M22",
+      "case": "unique-nfd-unicode",
+      "input": [],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/école/StudentService.ts"
+      ],
+      "anchorOut": [],
+      "byPR": [],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 1,
+      "mapper": {
+        "emitted": "qa2420/école/StudentService.ts",
+        "kept": [],
+        "droppedForPath": 1,
+        "logs": [
+          "warn: @@PATH_MISMATCH@@ Dropping kody_rules suggestion — relevantFile not in changedFiles after normalization {\"relevantFile\":\"qa2420/école/StudentService.ts\"}"
+        ]
+      }
+    },
+    {
+      "tree": "M",
+      "scenario": "M22",
+      "case": "ambiguous-basename",
+      "input": [],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/école/StudentService.ts",
+        "qa2420/other/StudentService.ts"
+      ],
+      "anchorOut": [],
+      "byPR": [],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 1,
+      "mapper": {
+        "kept": [],
+        "droppedForPath": 1,
+        "logs": [
+          "warn: @@PATH_MISMATCH@@ Dropping kody_rules suggestion — relevantFile not in changedFiles after normalization {\"relevantFile\":\"StudentService.ts\"}"
+        ]
+      }
+    }
+  ],
+  "P": [
+    {
+      "tree": "P",
+      "scenario": "M22",
+      "case": "unique-exact",
+      "input": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "commentStartLine": 33,
+          "commentLine": 35
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/école/StudentService.ts: undefined-undefined → 33-35"
+      ],
+      "modelCalls": 2,
+      "mapper": {
+        "emitted": "qa2420/école/StudentService.ts",
+        "kept": [
+          {
+            "file": "qa2420/école/StudentService.ts",
+            "label": "kody_rules",
+            "rule": "qa2420-T",
+            "content": "The PR title must start with [qa2420]."
+          }
+        ],
+        "droppedForPath": 0,
+        "logs": []
+      }
+    },
+    {
+      "tree": "P",
+      "scenario": "M22",
+      "case": "unique-backslash",
+      "input": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "commentStartLine": 33,
+          "commentLine": 35
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/école/StudentService.ts: undefined-undefined → 33-35"
+      ],
+      "modelCalls": 2,
+      "mapper": {
+        "emitted": "qa2420\\école\\StudentService.ts",
+        "kept": [
+          {
+            "file": "qa2420/école/StudentService.ts",
+            "label": "kody_rules",
+            "rule": "qa2420-T",
+            "content": "The PR title must start with [qa2420]."
+          }
+        ],
+        "droppedForPath": 0,
+        "logs": []
+      }
+    },
+    {
+      "tree": "P",
+      "scenario": "M22",
+      "case": "unique-leading-slash",
+      "input": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "commentStartLine": 33,
+          "commentLine": 35
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/école/StudentService.ts: undefined-undefined → 33-35"
+      ],
+      "modelCalls": 2,
+      "mapper": {
+        "emitted": "/qa2420/école/StudentService.ts",
+        "kept": [
+          {
+            "file": "qa2420/école/StudentService.ts",
+            "label": "kody_rules",
+            "rule": "qa2420-T",
+            "content": "The PR title must start with [qa2420]."
+          }
+        ],
+        "droppedForPath": 0,
+        "logs": []
+      }
+    },
+    {
+      "tree": "P",
+      "scenario": "M22",
+      "case": "unique-leading-dot",
+      "input": [],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [],
+      "byPR": [],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 1,
+      "mapper": {
+        "emitted": "./qa2420/école/StudentService.ts",
+        "kept": [],
+        "droppedForPath": 1,
+        "logs": [
+          "warn: @@PATH_MISMATCH@@ Dropping kody_rules suggestion — relevantFile not in changedFiles after normalization {\"relevantFile\":\"./qa2420/école/StudentService.ts\"}"
+        ]
+      }
+    },
+    {
+      "tree": "P",
+      "scenario": "M22",
+      "case": "unique-unique-basename",
+      "input": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "commentStartLine": 33,
+          "commentLine": 35
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/école/StudentService.ts: undefined-undefined → 33-35"
+      ],
+      "modelCalls": 2,
+      "mapper": {
+        "emitted": "StudentService.ts",
+        "kept": [
+          {
+            "file": "qa2420/école/StudentService.ts",
+            "label": "kody_rules",
+            "rule": "qa2420-T",
+            "content": "The PR title must start with [qa2420]."
+          }
+        ],
+        "droppedForPath": 0,
+        "logs": [
+          "log: [AGENT] Completed partial relevantFile \"StudentService.ts\" → \"qa2420/école/StudentService.ts\""
+        ]
+      }
+    },
+    {
+      "tree": "P",
+      "scenario": "M22",
+      "case": "unique-unique-tail",
+      "input": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/école/StudentService.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "commentStartLine": 33,
+          "commentLine": 35
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/école/StudentService.ts: undefined-undefined → 33-35"
+      ],
+      "modelCalls": 2,
+      "mapper": {
+        "emitted": "école/StudentService.ts",
+        "kept": [
+          {
+            "file": "qa2420/école/StudentService.ts",
+            "label": "kody_rules",
+            "rule": "qa2420-T",
+            "content": "The PR title must start with [qa2420]."
+          }
+        ],
+        "droppedForPath": 0,
+        "logs": [
+          "log: [AGENT] Completed partial relevantFile \"école/StudentService.ts\" → \"qa2420/école/StudentService.ts\""
+        ]
+      }
+    },
+    {
+      "tree": "P",
+      "scenario": "M22",
+      "case": "unique-nfd-unicode",
+      "input": [],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [],
+      "byPR": [],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 1,
+      "mapper": {
+        "emitted": "qa2420/école/StudentService.ts",
+        "kept": [],
+        "droppedForPath": 1,
+        "logs": [
+          "warn: @@PATH_MISMATCH@@ Dropping kody_rules suggestion — relevantFile not in changedFiles after normalization {\"relevantFile\":\"qa2420/école/StudentService.ts\"}"
+        ]
+      }
+    },
+    {
+      "tree": "P",
+      "scenario": "M22",
+      "case": "ambiguous-basename",
+      "input": [],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [],
+      "byPR": [],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 1,
+      "mapper": {
+        "kept": [],
+        "droppedForPath": 1,
+        "logs": [
+          "warn: @@PATH_MISMATCH@@ Dropping kody_rules suggestion — relevantFile not in changedFiles after normalization {\"relevantFile\":\"StudentService.ts\"}"
+        ]
+      }
+    }
+  ]
+}
