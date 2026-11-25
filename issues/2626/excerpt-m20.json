@@ -1,0 +1,138 @@
+{
+ "note": "M20 first run (22:00-22:05 UTC): review on #21 overlapping a forced full build",
+ "filter": "only lines naming a jr-claude-* org id, a slot-a repo uuid or a sandbox id created by this run; GraphContextService Step 3/4 lines only when they follow a Step 3 line for a slot-a repo within 2 s; other orgs removed",
+ "lines": [
+  {
+   "t": "2026-11-24T22:00:38.789Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: acquire prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:1468014267:21\" consumer=\"review\""
+  },
+  {
+   "t": "2026-11-24T22:00:38.796Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:1468014267:21\" consumer=\"review\""
+  },
+  {
+   "t": "2026-11-24T22:00:40.286Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: acquire prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:79eb3cad-c42f-41d4-b367-23ff7b71fc04:graph:223e0169-9147-4b2b-a687-8f418eef8187\" consumer=\"graph-build\""
+  },
+  {
+   "t": "2026-11-24T22:00:40.293Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:79eb3cad-c42f-41d4-b367-23ff7b71fc04:graph:223e0169-9147-4b2b-a687-8f418eef8187\" consumer=\"graph-build\""
+  },
+  {
+   "t": "2026-11-24T22:00:40.326Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: acquire prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:a847a63e-9e59-414c-a568-0c8b65cd6e90:graph:11352106-4ed0-4d1b-80dd-81a1eaa8a18b\" consumer=\"graph-build\""
+  },
+  {
+   "t": "2026-11-24T22:00:40.334Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:a847a63e-9e59-414c-a568-0c8b65cd6e90:graph:11352106-4ed0-4d1b-80dd-81a1eaa8a18b\" consumer=\"graph-build\""
+  },
+  {
+   "t": "2026-11-24T22:00:43.184Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: sandbox READY prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:a847a63e-9e59-414c-a568-0c8b65cd6e90:graph:11352106-4ed0-4d1b-80dd-81a1eaa8a18b\" consumer=\"graph-build\" leaseId=\"336112bd-08cc-44e4-88dd-8058d14b3762\""
+  },
+  {
+   "t": "2026-11-24T22:00:43.537Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: sandbox READY prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:79eb3cad-c42f-41d4-b367-23ff7b71fc04:graph:223e0169-9147-4b2b-a687-8f418eef8187\" consumer=\"graph-build\" leaseId=\"fe819486-5573-4a9b-96aa-f3f4cd1a17fd\""
+  },
+  {
+   "t": "2026-11-24T22:00:44.127Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: sandbox READY prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:1468014267:21\" consumer=\"review\" leaseId=\"a69c9f55-feb5-4290-bd63-c67fb8c5daff\""
+  },
+  {
+   "t": "2026-11-24T22:00:50.827Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: released leaseId=\"fe819486-5573-4a9b-96aa-f3f4cd1a17fd\" prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:79eb3cad-c42f-41d4-b367-23ff7b71fc04:graph:223e0169-9147-4b2b-a687-8f418eef8187\" leaseCount=0"
+  },
+  {
+   "t": "2026-11-24T22:00:50.949Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: killed single-use sandbox immediately sandboxId=\"iy5ykgki8cw2xynez7maw\" prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:79eb3cad-c42f-41d4-b367-23ff7b71fc04:graph:223e0169-9147-4b2b-a687-8f418eef8187\""
+  },
+  {
+   "t": "2026-11-24T22:00:55.805Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: released leaseId=\"336112bd-08cc-44e4-88dd-8058d14b3762\" prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:a847a63e-9e59-414c-a568-0c8b65cd6e90:graph:11352106-4ed0-4d1b-80dd-81a1eaa8a18b\" leaseCount=0"
+  },
+  {
+   "t": "2026-11-24T22:00:55.930Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: killed single-use sandbox immediately sandboxId=\"iftfrc9m3r5hwb3dmj76v\" prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:a847a63e-9e59-414c-a568-0c8b65cd6e90:graph:11352106-4ed0-4d1b-80dd-81a1eaa8a18b\""
+  },
+  {
+   "t": "2026-11-24T22:03:30.129Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: released leaseId=\"a69c9f55-feb5-4290-bd63-c67fb8c5daff\" prKey=\"1376936a-961c-4267-862b-cbc19d309ce4:1468014267:21\" leaseCount=0"
+  },
+  {
+   "t": "2026-11-24T22:03:30.140Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-24T22:04:00.130Z for sandboxId=\"ij21dmvary4asyyziq0p6\""
+  },
+  {
+   "t": "2026-11-24T22:04:11.545Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: acquire prKey=\"2b4fdd21-4a09-4464-80bd-f4417ec8843a:3ac23d16-5601-42e4-91b0-f71b5724c441:12\" consumer=\"review\""
+  },
+  {
+   "t": "2026-11-24T22:04:11.555Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"2b4fdd21-4a09-4464-80bd-f4417ec8843a:3ac23d16-5601-42e4-91b0-f71b5724c441:12\" consumer=\"review\""
+  },
+  {
+   "t": "2026-11-24T22:04:16.038Z",
+   "level": "info",
+   "component": "SandboxLeaseManager",
+   "message": "SandboxLeaseManager: sandbox READY prKey=\"2b4fdd21-4a09-4464-80bd-f4417ec8843a:3ac23d16-5601-42e4-91b0-f71b5724c441:12\" consumer=\"review\" leaseId=\"68fa7789-2aab-4206-9872-4acd8ac8870b\""
+  },
+  {
+   "t": "2026-11-24T22:04:23.075Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Step 3/4: Exporting subgraph from DB for repo 522d4f46-7315-47c7-80ca-15c5c1333fa1..."
+  },
+  {
+   "t": "2026-11-24T22:04:23.351Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Diff written to sandbox: 276 chars, 1 files"
+  },
+  {
+   "t": "2026-11-24T22:04:23.351Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Step 4/4: Generating prompt context with base graph..."
+  },
+  {
+   "t": "2026-11-24T22:04:23.635Z",
+   "level": "info",
+   "component": "GraphContextService",
+   "message": "[KODUS-GRAPH] Context generated with DB baseline: 831 chars"
+  }
+ ]
+}
