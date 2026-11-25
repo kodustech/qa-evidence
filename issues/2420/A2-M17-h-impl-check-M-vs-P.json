@@ -1,0 +1,559 @@
+{
+  "M": [
+    {
+      "tree": "M",
+      "scenario": "M17-h",
+      "case": "R8 group D1+D2 / AverageDues.cs line 1 edited",
+      "savedSuggestionsFromFiles": [],
+      "prLevelNeverPassed": [
+        {
+          "id": "c16ac190-740c-4d8e-aa5b-5b5f100d6f1f",
+          "head": "`qa2420/CheckinReport.cs` \u2014 Every file added under qa2420/ m",
+          "fields": [
+            "id",
+            "suggestionContent",
+            "fullExplanation",
+            "oneSentenceSummary",
+            "label",
+            "severity",
+            "brokenKodyRulesIds",
+            "deliveryStatus",
+            "comment",
+            "createdAt"
+          ]
+        }
+      ],
+      "result": {
+        "skipped": "NO_SUGGESTIONS",
+        "checked": 0,
+        "persisted": [],
+        "decided": 0,
+        "unmeasured": []
+      },
+      "aiCalls": 0,
+      "asked": [],
+      "writes": [],
+      "averageDuesMeasured": false
+    },
+    {
+      "tree": "M",
+      "scenario": "M17-h",
+      "case": "R8 group D1+D2 / AverageDues.cs renamed to qa2420_AverageDues.cs (old path removed)",
+      "savedSuggestionsFromFiles": [],
+      "prLevelNeverPassed": [
+        {
+          "id": "53350347-d8bd-4729-9aea-dabe7ca3ef31",
+          "head": "`qa2420/CheckinReport.cs` \u2014 Every file added under qa2420/ m",
+          "fields": [
+            "id",
+            "suggestionContent",
+            "fullExplanation",
+            "oneSentenceSummary",
+            "label",
+            "severity",
+            "brokenKodyRulesIds",
+            "deliveryStatus",
+            "comment",
+            "createdAt"
+          ]
+        }
+      ],
+      "result": {
+        "skipped": "NO_SUGGESTIONS",
+        "checked": 0,
+        "persisted": [],
+        "decided": 0,
+        "unmeasured": []
+      },
+      "aiCalls": 0,
+      "asked": [],
+      "writes": [],
+      "averageDuesMeasured": false
+    },
+    {
+      "tree": "M",
+      "scenario": "M17-h",
+      "case": "R8 group D1+D2 / both files renamed (CheckinReport + AverageDues removed)",
+      "savedSuggestionsFromFiles": [],
+      "prLevelNeverPassed": [
+        {
+          "id": "176a6875-6c2f-456d-bd1b-0f6a9a507bfd",
+          "head": "`qa2420/CheckinReport.cs` \u2014 Every file added under qa2420/ m",
+          "fields": [
+            "id",
+            "suggestionContent",
+            "fullExplanation",
+            "oneSentenceSummary",
+            "label",
+            "severity",
+            "brokenKodyRulesIds",
+            "deliveryStatus",
+            "comment",
+            "createdAt"
+          ]
+        }
+      ],
+      "result": {
+        "skipped": "NO_SUGGESTIONS",
+        "checked": 0,
+        "persisted": [],
+        "decided": 0,
+        "unmeasured": []
+      },
+      "aiCalls": 0,
+      "asked": [],
+      "writes": [],
+      "averageDuesMeasured": false
+    },
+    {
+      "tree": "M",
+      "scenario": "M17-h",
+      "case": "variant D1+D2+D3 / AverageDues.cs line 1 edited",
+      "savedSuggestionsFromFiles": [],
+      "prLevelNeverPassed": [
+        {
+          "id": "e30d8266-0940-49a5-9ca2-64c6b8f962ad",
+          "head": "`qa2420/CheckinReport.cs` \u2014 Every file added under qa2420/ m",
+          "fields": [
+            "id",
+            "suggestionContent",
+            "fullExplanation",
+            "oneSentenceSummary",
+            "label",
+            "severity",
+            "brokenKodyRulesIds",
+            "deliveryStatus",
+            "comment",
+            "createdAt"
+          ]
+        }
+      ],
+      "result": {
+        "skipped": "NO_SUGGESTIONS",
+        "checked": 0,
+        "persisted": [],
+        "decided": 0,
+        "unmeasured": []
+      },
+      "aiCalls": 0,
+      "asked": [],
+      "writes": [],
+      "averageDuesMeasured": false
+    },
+    {
+      "tree": "M",
+      "scenario": "M17-h",
+      "case": "variant D1+D2+D3 / AverageDues.cs renamed to qa2420_AverageDues.cs (old path removed)",
+      "savedSuggestionsFromFiles": [],
+      "prLevelNeverPassed": [
+        {
+          "id": "c5374c82-3314-43e9-a679-6fe62016867f",
+          "head": "`qa2420/CheckinReport.cs` \u2014 Every file added under qa2420/ m",
+          "fields": [
+            "id",
+            "suggestionContent",
+            "fullExplanation",
+            "oneSentenceSummary",
+            "label",
+            "severity",
+            "brokenKodyRulesIds",
+            "deliveryStatus",
+            "comment",
+            "createdAt"
+          ]
+        }
+      ],
+      "result": {
+        "skipped": "NO_SUGGESTIONS",
+        "checked": 0,
+        "persisted": [],
+        "decided": 0,
+        "unmeasured": []
+      },
+      "aiCalls": 0,
+      "asked": [],
+      "writes": [],
+      "averageDuesMeasured": false
+    },
+    {
+      "tree": "M",
+      "scenario": "M17-h",
+      "case": "variant D1+D2+D3 / both files renamed (CheckinReport + AverageDues removed)",
+      "savedSuggestionsFromFiles": [],
+      "prLevelNeverPassed": [
+        {
+          "id": "1f4f4f71-1306-49c8-8af7-b1b938b1e8dd",
+          "head": "`qa2420/CheckinReport.cs` \u2014 Every file added under qa2420/ m",
+          "fields": [
+            "id",
+            "suggestionContent",
+            "fullExplanation",
+            "oneSentenceSummary",
+            "label",
+            "severity",
+            "brokenKodyRulesIds",
+            "deliveryStatus",
+            "comment",
+            "createdAt"
+          ]
+        }
+      ],
+      "result": {
+        "skipped": "NO_SUGGESTIONS",
+        "checked": 0,
+        "persisted": [],
+        "decided": 0,
+        "unmeasured": []
+      },
+      "aiCalls": 0,
+      "asked": [],
+      "writes": [],
+      "averageDuesMeasured": false
+    }
+  ],
+  "P": [
+    {
+      "tree": "P",
+      "scenario": "M17-h",
+      "case": "R8 group D1+D2 / AverageDues.cs line 1 edited",
+      "savedSuggestionsFromFiles": [
+        {
+          "file": "qa2420/CheckinReport.cs",
+          "start": 1,
+          "end": 6,
+          "rule": "qa2420-D",
+          "content": "Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+          "kodyRuleOtherLocations": [
+            "qa2420/AverageDues.cs:1-1"
+          ]
+        }
+      ],
+      "prLevelNeverPassed": [],
+      "result": {
+        "checked": 1,
+        "decided": 1,
+        "persisted": [
+          {
+            "id": "file-sugg-1",
+            "implementationStatus": "partially_implemented"
+          }
+        ],
+        "unmeasured": []
+      },
+      "aiCalls": 1,
+      "asked": [
+        {
+          "file": "qa2420/AverageDues.cs",
+          "ids": [
+            "file-sugg-1#1"
+          ],
+          "lines": [
+            "1-1"
+          ]
+        }
+      ],
+      "writes": [
+        {
+          "id": "file-sugg-1",
+          "data": {},
+          "addToSet": {
+            "implementationCheck.implementedLocations": [
+              "qa2420/AverageDues.cs:1-1"
+            ]
+          }
+        },
+        {
+          "id": "file-sugg-1",
+          "data": {
+            "implementationCheck.checkedAt": "2026-11-25T04:17:52.317Z",
+            "implementationCheck.outcome": "decided",
+            "implementationCheck.verdict": "partially_implemented",
+            "implementationStatus": "partially_implemented",
+            "updatedAt": "2026-11-25T04:17:52.317Z"
+          }
+        }
+      ],
+      "averageDuesMeasured": true
+    },
+    {
+      "tree": "P",
+      "scenario": "M17-h",
+      "case": "R8 group D1+D2 / AverageDues.cs renamed to qa2420_AverageDues.cs (old path removed)",
+      "savedSuggestionsFromFiles": [
+        {
+          "file": "qa2420/CheckinReport.cs",
+          "start": 1,
+          "end": 6,
+          "rule": "qa2420-D",
+          "content": "Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+          "kodyRuleOtherLocations": [
+            "qa2420/AverageDues.cs:1-1"
+          ]
+        }
+      ],
+      "prLevelNeverPassed": [],
+      "result": {
+        "checked": 1,
+        "decided": 1,
+        "persisted": [
+          {
+            "id": "file-sugg-1",
+            "implementationStatus": "partially_implemented"
+          }
+        ],
+        "unmeasured": []
+      },
+      "aiCalls": 0,
+      "asked": [],
+      "writes": [
+        {
+          "id": "file-sugg-1",
+          "data": {},
+          "addToSet": {
+            "implementationCheck.implementedLocations": [
+              "qa2420/AverageDues.cs:1-1"
+            ]
+          }
+        },
+        {
+          "id": "file-sugg-1",
+          "data": {
+            "implementationCheck.checkedAt": "2026-11-25T04:17:52.318Z",
+            "implementationCheck.outcome": "decided",
+            "implementationCheck.verdict": "partially_implemented",
+            "implementationStatus": "partially_implemented",
+            "updatedAt": "2026-11-25T04:17:52.318Z"
+          }
+        }
+      ],
+      "averageDuesMeasured": true
+    },
+    {
+      "tree": "P",
+      "scenario": "M17-h",
+      "case": "R8 group D1+D2 / both files renamed (CheckinReport + AverageDues removed)",
+      "savedSuggestionsFromFiles": [
+        {
+          "file": "qa2420/CheckinReport.cs",
+          "start": 1,
+          "end": 6,
+          "rule": "qa2420-D",
+          "content": "Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+          "kodyRuleOtherLocations": [
+            "qa2420/AverageDues.cs:1-1"
+          ]
+        }
+      ],
+      "prLevelNeverPassed": [],
+      "result": {
+        "checked": 1,
+        "decided": 1,
+        "persisted": [
+          {
+            "id": "file-sugg-1",
+            "implementationStatus": "implemented"
+          }
+        ],
+        "unmeasured": []
+      },
+      "aiCalls": 0,
+      "asked": [],
+      "writes": [
+        {
+          "id": "file-sugg-1",
+          "data": {},
+          "addToSet": {
+            "implementationCheck.implementedLocations": [
+              "qa2420/CheckinReport.cs:1-6",
+              "qa2420/AverageDues.cs:1-1"
+            ]
+          }
+        },
+        {
+          "id": "file-sugg-1",
+          "data": {
+            "implementationCheck.checkedAt": "2026-11-25T04:17:52.319Z",
+            "implementationCheck.outcome": "decided",
+            "implementationCheck.verdict": "implemented",
+            "implementationStatus": "implemented",
+            "updatedAt": "2026-11-25T04:17:52.319Z"
+          }
+        }
+      ],
+      "averageDuesMeasured": true
+    },
+    {
+      "tree": "P",
+      "scenario": "M17-h",
+      "case": "variant D1+D2+D3 / AverageDues.cs line 1 edited",
+      "savedSuggestionsFromFiles": [
+        {
+          "file": "qa2420/CheckinReport.cs",
+          "start": 1,
+          "end": 6,
+          "rule": "qa2420-D",
+          "content": "Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix.\n\n**Also found in:**\n- `qa2420/MembershipBilling.cs:1-1`\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+          "kodyRuleOtherLocations": [
+            "qa2420/MembershipBilling.cs:1-1",
+            "qa2420/AverageDues.cs:1-1"
+          ]
+        }
+      ],
+      "prLevelNeverPassed": [],
+      "result": {
+        "checked": 1,
+        "decided": 1,
+        "persisted": [
+          {
+            "id": "file-sugg-1",
+            "implementationStatus": "partially_implemented"
+          }
+        ],
+        "unmeasured": []
+      },
+      "aiCalls": 1,
+      "asked": [
+        {
+          "file": "qa2420/AverageDues.cs",
+          "ids": [
+            "file-sugg-1#2"
+          ],
+          "lines": [
+            "1-1"
+          ]
+        }
+      ],
+      "writes": [
+        {
+          "id": "file-sugg-1",
+          "data": {},
+          "addToSet": {
+            "implementationCheck.implementedLocations": [
+              "qa2420/AverageDues.cs:1-1"
+            ]
+          }
+        },
+        {
+          "id": "file-sugg-1",
+          "data": {
+            "implementationCheck.checkedAt": "2026-11-25T04:17:52.319Z",
+            "implementationCheck.outcome": "decided",
+            "implementationCheck.verdict": "partially_implemented",
+            "implementationStatus": "partially_implemented",
+            "updatedAt": "2026-11-25T04:17:52.319Z"
+          }
+        }
+      ],
+      "averageDuesMeasured": true
+    },
+    {
+      "tree": "P",
+      "scenario": "M17-h",
+      "case": "variant D1+D2+D3 / AverageDues.cs renamed to qa2420_AverageDues.cs (old path removed)",
+      "savedSuggestionsFromFiles": [
+        {
+          "file": "qa2420/CheckinReport.cs",
+          "start": 1,
+          "end": 6,
+          "rule": "qa2420-D",
+          "content": "Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix.\n\n**Also found in:**\n- `qa2420/MembershipBilling.cs:1-1`\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+          "kodyRuleOtherLocations": [
+            "qa2420/MembershipBilling.cs:1-1",
+            "qa2420/AverageDues.cs:1-1"
+          ]
+        }
+      ],
+      "prLevelNeverPassed": [],
+      "result": {
+        "checked": 1,
+        "decided": 1,
+        "persisted": [
+          {
+            "id": "file-sugg-1",
+            "implementationStatus": "partially_implemented"
+          }
+        ],
+        "unmeasured": []
+      },
+      "aiCalls": 0,
+      "asked": [],
+      "writes": [
+        {
+          "id": "file-sugg-1",
+          "data": {},
+          "addToSet": {
+            "implementationCheck.implementedLocations": [
+              "qa2420/AverageDues.cs:1-1"
+            ]
+          }
+        },
+        {
+          "id": "file-sugg-1",
+          "data": {
+            "implementationCheck.checkedAt": "2026-11-25T04:17:52.320Z",
+            "implementationCheck.outcome": "decided",
+            "implementationCheck.verdict": "partially_implemented",
+            "implementationStatus": "partially_implemented",
+            "updatedAt": "2026-11-25T04:17:52.320Z"
+          }
+        }
+      ],
+      "averageDuesMeasured": true
+    },
+    {
+      "tree": "P",
+      "scenario": "M17-h",
+      "case": "variant D1+D2+D3 / both files renamed (CheckinReport + AverageDues removed)",
+      "savedSuggestionsFromFiles": [
+        {
+          "file": "qa2420/CheckinReport.cs",
+          "start": 1,
+          "end": 6,
+          "rule": "qa2420-D",
+          "content": "Every file added under qa2420/ must have a file name starting with the prefix qa2420_. The added file is named CheckinReport.cs, which lacks the prefix.\n\n**Also found in:**\n- `qa2420/MembershipBilling.cs:1-1`\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)",
+          "kodyRuleOtherLocations": [
+            "qa2420/MembershipBilling.cs:1-1",
+            "qa2420/AverageDues.cs:1-1"
+          ]
+        }
+      ],
+      "prLevelNeverPassed": [],
+      "result": {
+        "checked": 1,
+        "decided": 1,
+        "persisted": [
+          {
+            "id": "file-sugg-1",
+            "implementationStatus": "partially_implemented"
+          }
+        ],
+        "unmeasured": []
+      },
+      "aiCalls": 0,
+      "asked": [],
+      "writes": [
+        {
+          "id": "file-sugg-1",
+          "data": {},
+          "addToSet": {
+            "implementationCheck.implementedLocations": [
+              "qa2420/CheckinReport.cs:1-6",
+              "qa2420/AverageDues.cs:1-1"
+            ]
+          }
+        },
+        {
+          "id": "file-sugg-1",
+          "data": {
+            "implementationCheck.checkedAt": "2026-11-25T04:17:52.320Z",
+            "implementationCheck.outcome": "decided",
+            "implementationCheck.verdict": "partially_implemented",
+            "implementationStatus": "partially_implemented",
+            "updatedAt": "2026-11-25T04:17:52.320Z"
+          }
+        }
+      ],
+      "averageDuesMeasured": true
+    }
+  ]
+}
