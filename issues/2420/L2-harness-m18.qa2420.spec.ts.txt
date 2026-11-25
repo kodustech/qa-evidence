@@ -1,0 +1,197 @@
+// QA #2420 M18: CLI chain (PrepareCliFiles -> AgentReview -> AggregateResults
+// -> FormatCliOutput, the order of CliReviewPipelineStrategy minus the sandbox
+// stage) with the agent orchestrator response scripted. Real stages and the
+// real CliInputConverter. Throwaway spec, copied into a tree.
+import * as fs from 'fs';
+import { frozenContext } from '../../../../test/fixtures/frozen-pipeline-context';
+import { AgentReviewStage } from '@libs/code-review/pipeline/stages/agent-review.stage';
+import { AggregateResultsStage } from '@libs/code-review/pipeline/stages/aggregate-result.stage';
+import { PrepareCliFilesStage } from '@libs/cli-review/pipeline/stages/prepare-cli-files.stage';
+import { FormatCliOutputStage } from '@libs/cli-review/pipeline/stages/format-cli-output.stage';
+import { CliInputConverter } from '@libs/cli-review/infrastructure/converters/cli-input.converter';
+import { CliReviewPipelineStrategy } from '@libs/cli-review/pipeline/strategy/cli-review-pipeline.strategy';
+import { LLM } from '@libs/llm/llm';
+import { PlatformType } from '@libs/core/domain/enums';
+
+jest.mock(
+    '@libs/code-review/infrastructure/agents/engine/classify-severity',
+    () => ({ classifySeverity: jest.fn().mockResolvedValue(new Map()) }),
+);
+jest.mock(
+    '@libs/code-review/infrastructure/agents/engine/format-suggestion-content',
+    () => ({ formatSuggestionContent: jest.fn().mockResolvedValue(new Map()) }),
+);
+jest.mock('@libs/llm/managed-slot', () => {
+    const actual = jest.requireActual('@libs/llm/managed-slot');
+    return { ...actual, hasManagedModelKey: jest.fn(() => false) };
+});
+
+const OUT = process.env.QA_OUT || '/dev/null';
+const RULE_A = 'qa2420-rule-a-file-without-test';
+const RULE_B = 'qa2420-rule-b-console-log';
+const FILE = 'qa2420/attendance-report.ts';
+const FILE2 = 'qa2420/fees.ts';
+// Two hunks: new-file lines 33-35 and 90-93.
+const PATCH = [
+    '@@ -33,2 +33,3 @@',
+    ' const a = 1;',
+    '+const header = "x";',
+    ' const b = 2;',
+    '@@ -88,2 +89,4 @@',
+    ' export function report() {',
+    '+  console.log("report");',
+    '+  return 1;',
+    ' }',
+].join('\n');
+const PATCH2 = ['@@ -0,0 +1,4 @@', '+export function avg(t: number, n: number[]) {', '+  return t / n.length;', '+}', '+'].join('\n');
+
+const scripted = [
+    {
+        // A: known file, no start line (line-less rule finding)
+        relevantFile: FILE,
+        label: 'kody_rules',
+        severity: 'high',
+        brokenKodyRulesIds: [RULE_A],
+        oneSentenceSummary: 'A: qa2420/attendance-report.ts has no test file',
+        suggestionContent: 'A: qa2420/attendance-report.ts has no test file',
+        existingCode: '',
+        improvedCode: '',
+    },
+    {
+        // B: lineful rule finding on a changed line
+        relevantFile: FILE,
+        relevantLinesStart: 90,
+        relevantLinesEnd: 90,
+        label: 'kody_rules',
+        severity: 'high',
+        brokenKodyRulesIds: [RULE_B],
+        oneSentenceSummary: 'B: console.log in source',
+        suggestionContent: 'B: console.log in source',
+        existingCode: 'console.log("report");',
+        improvedCode: '',
+    },
+    {
+        // BUG: ordinary lineful bug
+        relevantFile: FILE2,
+        relevantLinesStart: 2,
+        relevantLinesEnd: 2,
+        label: 'bug',
+        severity: 'high',
+        oneSentenceSummary: 'BUG: divide by empty list',
+        suggestionContent: 'BUG: divide by empty list',
+        existingCode: 'return t / n.length;',
+        improvedCode: '',
+    },
+];
+
+const tag = (s: any) =>
+    String(s?.oneSentenceSummary || s?.title || s?.suggestionContent || s?.message || '').split(':')[0];
+
+describe('M18 CLI chain', () => {
+    let runSpy: jest.SpyInstance;
+    beforeEach(() => {
+        runSpy = jest
+            .spyOn(LLM, 'run')
+            .mockImplementation(async () => ({ groups: [], unique: [0, 1, 2] }) as any);
+    });
+    afterEach(() => runSpy.mockRestore());
+
+    it('replays A (no start) + B + BUG through the CLI stages', async () => {
+        const reviewOrchestrator = {
+            execute: jest.fn().mockResolvedValue({
+                suggestions: scripted,
+                agentResults: [],
+                failures: [],
+                incomplete: [],
+                warnings: [],
+            }),
+        };
+        const agentReview = new AgentReviewStage(
+            { findLatestStageLog: jest.fn(), updateCodeReview: jest.fn(), updateStageLog: jest.fn() } as any,
+            { findByExternalId: jest.fn().mockResolvedValue(null) } as any,
+            reviewOrchestrator as any,
+            { runLLMInSpan: jest.fn(async ({ runFn }: any) => runFn?.()) } as any,
+            { generateContext: jest.fn(), generateContextLegacy: jest.fn() } as any,
+            { isEnabled: jest.fn().mockResolvedValue(false) } as any,
+            { getReleaseTrack: jest.fn().mockResolvedValue('stable') } as any,
+            { getRepositories: jest.fn().mockResolvedValue([]), getCloneParams: jest.fn().mockResolvedValue(null) } as any,
+        );
+        const prepare = new PrepareCliFilesStage();
+        const aggregate = new AggregateResultsStage();
+        const format = new FormatCliOutputStage(new CliInputConverter());
+        // stage order as configured by the real strategy (sandbox stage stubbed out)
+        const strategy = new CliReviewPipelineStrategy(
+            { stageName: 'CreateSandboxStage' } as any,
+            agentReview,
+            aggregate,
+            prepare,
+            format,
+        );
+        const order = strategy.configureStages().map((s: any) => s.stageName);
+
+        let ctx: any = frozenContext({
+            isFastMode: false,
+            isTrialMode: false,
+            startTime: Date.now(),
+            correlationId: 'corr_qa2420',
+            organizationAndTeamData: { organizationId: 'org-qa', teamId: 'team-qa' },
+            repository: { id: 'repo-qa', name: 'codex-athena', fullName: 'cli/codex-athena', language: 'ts' },
+            branch: 'cli',
+            pullRequest: {
+                number: 0,
+                title: 'CLI Review',
+                base: { repo: { fullName: 'cli/cli-review' }, ref: 'main' },
+                head: { sha: 'cli-head' },
+                stats: { total_files: 2 },
+            },
+            teamAutomationId: 'cli-automation',
+            origin: 'cli',
+            action: 'review',
+            platformType: PlatformType.GITHUB,
+            changedFiles: [
+                { filename: FILE, patch: PATCH },
+                { filename: FILE2, patch: PATCH2 },
+            ],
+            prAllCommits: [],
+            codeReviewConfig: {
+                reviewOptions: {},
+                resolvedModelSlot: { provider: 'openai', model: 'scripted' },
+                kodyRules: [
+                    { uuid: RULE_A, title: 'Every source file has a test', rule: 'Each new file under qa2420 has a test file.', severity: 'high' },
+                    { uuid: RULE_B, title: 'No console.log', rule: 'Do not call console.log.', severity: 'high' },
+                ],
+            },
+            validSuggestions: [],
+            discardedSuggestions: [],
+            preparedFileContexts: [],
+            errors: [],
+            pipelineVersion: '1.0',
+        });
+
+        const snap: any = { stageOrder: order, stages: {} };
+        const snapshot = (name: string, c: any) => {
+            snap.stages[name] = {
+                validSuggestions: (c.validSuggestions ?? []).map((s: any) => ({ tag: tag(s), file: s.relevantFile, start: s.relevantLinesStart, end: s.relevantLinesEnd })),
+                fileAnalysisResults: (c.fileAnalysisResults ?? []).flatMap((r: any) => (r.validSuggestionsToAnalyze ?? []).map((s: any) => ({ tag: tag(s), file: s.relevantFile, start: s.relevantLinesStart }))),
+                prAnalysisResults_validSuggestionsByPR: (c.prAnalysisResults?.validSuggestionsByPR ?? []).map((s: any) => ({ tag: tag(s), file: s.relevantFile, start: s.relevantLinesStart })),
+                validSuggestionsByPR: (c.validSuggestionsByPR ?? []).map((s: any) => ({ tag: tag(s), file: s.relevantFile, start: s.relevantLinesStart })),
+                errors: c.errors,
+            };
+        };
+        ctx = await (prepare as any).executeStage(ctx);
+        snapshot('PrepareCliFilesStage', ctx);
+        ctx = await (agentReview as any).executeStage(ctx);
+        snapshot('AgentReviewStage', ctx);
+        ctx = await (aggregate as any).executeStage(ctx);
+        snapshot('AggregateResultsStage', ctx);
+        ctx = await (format as any).executeStage(ctx);
+        snapshot('FormatCliOutputStage', ctx);
+        snap.cliResponse = {
+            summary: ctx.cliResponse.summary,
+            filesAnalyzed: ctx.cliResponse.filesAnalyzed,
+            issues: ctx.cliResponse.issues.map((i: any) => ({ tag: tag(i), file: i.file, line: i.line, endLine: i.endLine, category: i.category, ruleId: i.ruleId })),
+        };
+        fs.writeFileSync(OUT, JSON.stringify(snap, null, 2));
+        expect(ctx.cliResponse).toBeDefined();
+    });
+});
