@@ -1,0 +1,97 @@
+{
+ "item": "M18",
+ "execution": [
+  [
+   "34481690-c9cd-4817-b6c4-c4f918c91067",
+   "skipped",
+   "System",
+   "2026-11-24 21:34:44.339358",
+   "2026-11-24 21:34:48.021332"
+  ]
+ ],
+ "stages": [
+  {
+   "stage": "Kody Review Started",
+   "status": "success",
+   "createdAt": "2026-11-24T21:34:44.344513",
+   "finishedAt": null,
+   "metadataKeys": [],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "ValidatePrerequisitesStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:34:44.899286",
+   "finishedAt": "2026-11-24T21:34:44.944",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "ValidateNewCommitsStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:34:44.954948",
+   "finishedAt": "2026-11-24T21:34:45.282",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "ResolveConfigStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:34:45.29364",
+   "finishedAt": "2026-11-24T21:34:46.052",
+   "metadataKeys": [
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "ValidateConfigStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:34:46.064037",
+   "finishedAt": "2026-11-24T21:34:46.075",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "AssessPrRiskStage",
+   "status": "success",
+   "createdAt": "2026-11-24T21:34:46.085089",
+   "finishedAt": "2026-11-24T21:34:46.09",
+   "metadataKeys": [
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "FetchChangedFilesStage",
+   "status": "skipped",
+   "createdAt": "2026-11-24T21:34:46.10118",
+   "finishedAt": "2026-11-24T21:34:46.11",
+   "metadataKeys": [
+    "ignoredFiles",
+    "label",
+    "visibility"
+   ],
+   "sandboxUsage": null
+  },
+  {
+   "stage": "Kody Review Finished",
+   "status": "skipped",
+   "createdAt": "2026-11-24T21:34:48.025933",
+   "finishedAt": null,
+   "metadataKeys": [],
+   "sandboxUsage": null
+  }
+ ],
+ "leaseLines": []
+}
