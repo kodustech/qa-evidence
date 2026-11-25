@@ -1,0 +1,380 @@
+{
+ "r1_B_first": {
+  "procs": [
+   {
+    "kind": "owned",
+    "sha": "91a06fdd623685aa7824ab293da8180559a498e7",
+    "pid": 97125,
+    "events": [
+     {
+      "at": "2026-11-25T02:33:59.828Z",
+      "ev": "start"
+     },
+     {
+      "at": "2026-11-25T02:34:00.893Z",
+      "ev": "started",
+      "checkRunId": "sha:91a06fdd623685aa7824ab293da8180559a498e7"
+     },
+     {
+      "at": "2026-11-25T02:34:08.901Z",
+      "ev": "llm-402"
+     },
+     {
+      "at": "2026-11-25T02:34:08.926Z",
+      "ev": "finalize",
+      "conclusion": "SKIPPED",
+      "stage": "_pipelineEndSkipped"
+     },
+     {
+      "at": "2026-11-25T02:34:20.371Z",
+      "ev": "finished",
+      "checkRunIdAfter": null
+     }
+    ],
+    "errors": [
+     {
+      "substage": "agent:generalist",
+      "errorCategory": "QUOTA_EXCEEDED",
+      "orgOwnedKey": true
+     }
+    ]
+   },
+   {
+    "kind": "funded",
+    "sha": "a8f9298310446ce20daeb861d57c9b8f1ea4d911",
+    "pid": 97127,
+    "events": [
+     {
+      "at": "2026-11-25T02:33:59.828Z",
+      "ev": "start"
+     },
+     {
+      "at": "2026-11-25T02:34:00.887Z",
+      "ev": "started",
+      "checkRunId": "sha:a8f9298310446ce20daeb861d57c9b8f1ea4d911"
+     },
+     {
+      "at": "2026-11-25T02:34:02.895Z",
+      "ev": "llm-402"
+     },
+     {
+      "at": "2026-11-25T02:34:02.919Z",
+      "ev": "finalize",
+      "conclusion": "FAILURE",
+      "stage": "_pipelineEndFailure"
+     },
+     {
+      "at": "2026-11-25T02:34:03.353Z",
+      "ev": "finished",
+      "checkRunIdAfter": null
+     }
+    ],
+    "errors": [
+     {
+      "substage": "agent:generalist",
+      "errorCategory": "QUOTA_EXCEEDED",
+      "orgOwnedKey": false
+     }
+    ]
+   }
+  ],
+  "codeberg_statuses_newest_first": {
+   "a8f92983": [
+    [
+     "2026-11-25T03:34:03+01:00",
+     "failure",
+     "Code Review Failed"
+    ],
+    [
+     "2026-11-25T03:34:00+01:00",
+     "pending",
+     "Code Review Starting"
+    ],
+    [
+     "2026-11-25T03:33:45+01:00",
+     "pending",
+     "Code Review Starting"
+    ],
+    [
+     "2026-11-25T03:33:38+01:00",
+     "warning",
+     "Code Review Skipped"
+    ]
+   ],
+   "91a06fdd": [
+    [
+     "2026-11-25T03:34:00+01:00",
+     "pending",
+     "Code Review Starting"
+    ],
+    [
+     "2026-11-25T03:33:45+01:00",
+     "pending",
+     "Code Review Starting"
+    ],
+    [
+     "2026-11-25T03:33:36+01:00",
+     "pending",
+     "Code Review Starting"
+    ],
+    [
+     "2026-11-25T03:33:27+01:00",
+     "pending",
+     "Code Review Starting"
+    ]
+   ]
+  }
+ },
+ "r2_A_first": {
+  "procs": [
+   {
+    "kind": "owned",
+    "sha": "a8f9298310446ce20daeb861d57c9b8f1ea4d911",
+    "pid": 97354,
+    "events": [
+     {
+      "at": "2026-11-25T02:34:33.263Z",
+      "ev": "start"
+     },
+     {
+      "at": "2026-11-25T02:34:34.276Z",
+      "ev": "started",
+      "checkRunId": "sha:a8f9298310446ce20daeb861d57c9b8f1ea4d911"
+     },
+     {
+      "at": "2026-11-25T02:34:36.285Z",
+      "ev": "llm-402"
+     },
+     {
+      "at": "2026-11-25T02:34:36.308Z",
+      "ev": "finalize",
+      "conclusion": "SKIPPED",
+      "stage": "_pipelineEndSkipped"
+     },
+     {
+      "at": "2026-11-25T02:34:39.751Z",
+      "ev": "finished",
+      "checkRunIdAfter": null
+     }
+    ],
+    "errors": [
+     {
+      "substage": "agent:generalist",
+      "errorCategory": "QUOTA_EXCEEDED",
+      "orgOwnedKey": true
+     }
+    ]
+   },
+   {
+    "kind": "funded",
+    "sha": "91a06fdd623685aa7824ab293da8180559a498e7",
+    "pid": 97353,
+    "events": [
+     {
+      "at": "2026-11-25T02:34:33.263Z",
+      "ev": "start"
+     },
+     {
+      "at": "2026-11-25T02:34:34.139Z",
+      "ev": "started",
+      "checkRunId": "sha:91a06fdd623685aa7824ab293da8180559a498e7"
+     },
+     {
+      "at": "2026-11-25T02:34:42.147Z",
+      "ev": "llm-402"
+     },
+     {
+      "at": "2026-11-25T02:34:42.170Z",
+      "ev": "finalize",
+      "conclusion": "FAILURE",
+      "stage": "_pipelineEndFailure"
+     },
+     {
+      "at": "2026-11-25T02:34:43.171Z",
+      "ev": "finished",
+      "checkRunIdAfter": null
+     }
+    ],
+    "errors": [
+     {
+      "substage": "agent:generalist",
+      "errorCategory": "QUOTA_EXCEEDED",
+      "orgOwnedKey": false
+     }
+    ]
+   }
+  ],
+  "codeberg_statuses_newest_first": {
+   "91a06fdd": [
+    [
+     "2026-11-25T03:34:42+01:00",
+     "failure",
+     "Code Review Failed"
+    ],
+    [
+     "2026-11-25T03:34:33+01:00",
+     "pending",
+     "Code Review Starting"
+    ],
+    [
+     "2026-11-25T03:34:00+01:00",
+     "pending",
+     "Code Review Starting"
+    ],
+    [
+     "2026-11-25T03:33:45+01:00",
+     "pending",
+     "Code Review Starting"
+    ]
+   ],
+   "a8f92983": [
+    [
+     "2026-11-25T03:34:36+01:00",
+     "warning",
+     "Code Review Skipped"
+    ],
+    [
+     "2026-11-25T03:34:34+01:00",
+     "pending",
+     "Code Review Starting"
+    ],
+    [
+     "2026-11-25T03:34:03+01:00",
+     "failure",
+     "Code Review Failed"
+    ],
+    [
+     "2026-11-25T03:34:00+01:00",
+     "pending",
+     "Code Review Starting"
+    ]
+   ]
+  }
+ },
+ "r3_two_shas_A": {
+  "procs": [
+   {
+    "kind": "owned",
+    "sha": "91a06fdd623685aa7824ab293da8180559a498e7",
+    "pid": 97539,
+    "events": [
+     {
+      "at": "2026-11-25T02:34:47.911Z",
+      "ev": "start"
+     },
+     {
+      "at": "2026-11-25T02:34:48.797Z",
+      "ev": "started",
+      "checkRunId": "sha:91a06fdd623685aa7824ab293da8180559a498e7"
+     },
+     {
+      "at": "2026-11-25T02:34:55.808Z",
+      "ev": "llm-402"
+     },
+     {
+      "at": "2026-11-25T02:34:55.831Z",
+      "ev": "finalize",
+      "conclusion": "SKIPPED",
+      "stage": "_pipelineEndSkipped"
+     },
+     {
+      "at": "2026-11-25T02:34:56.962Z",
+      "ev": "finished",
+      "checkRunIdAfter": null
+     }
+    ],
+    "errors": [
+     {
+      "substage": "agent:generalist",
+      "errorCategory": "QUOTA_EXCEEDED",
+      "orgOwnedKey": true
+     }
+    ]
+   },
+   {
+    "kind": "owned",
+    "sha": "a8f9298310446ce20daeb861d57c9b8f1ea4d911",
+    "pid": 97540,
+    "events": [
+     {
+      "at": "2026-11-25T02:34:47.911Z",
+      "ev": "start"
+     },
+     {
+      "at": "2026-11-25T02:34:48.797Z",
+      "ev": "started",
+      "checkRunId": "sha:a8f9298310446ce20daeb861d57c9b8f1ea4d911"
+     },
+     {
+      "at": "2026-11-25T02:34:51.807Z",
+      "ev": "llm-402"
+     },
+     {
+      "at": "2026-11-25T02:34:51.825Z",
+      "ev": "finalize",
+      "conclusion": "SKIPPED",
+      "stage": "_pipelineEndSkipped"
+     },
+     {
+      "at": "2026-11-25T02:34:52.160Z",
+      "ev": "finished",
+      "checkRunIdAfter": null
+     }
+    ],
+    "errors": [
+     {
+      "substage": "agent:generalist",
+      "errorCategory": "QUOTA_EXCEEDED",
+      "orgOwnedKey": true
+     }
+    ]
+   }
+  ],
+  "codeberg_statuses_newest_first": {
+   "a8f92983": [
+    [
+     "2026-11-25T03:34:52+01:00",
+     "warning",
+     "Code Review Skipped"
+    ],
+    [
+     "2026-11-25T03:34:48+01:00",
+     "pending",
+     "Code Review Starting"
+    ],
+    [
+     "2026-11-25T03:34:36+01:00",
+     "warning",
+     "Code Review Skipped"
+    ],
+    [
+     "2026-11-25T03:34:34+01:00",
+     "pending",
+     "Code Review Starting"
+    ]
+   ],
+   "91a06fdd": [
+    [
+     "2026-11-25T03:34:56+01:00",
+     "warning",
+     "Code Review Skipped"
+    ],
+    [
+     "2026-11-25T03:34:48+01:00",
+     "pending",
+     "Code Review Starting"
+    ],
+    [
+     "2026-11-25T03:34:42+01:00",
+     "failure",
+     "Code Review Failed"
+    ],
+    [
+     "2026-11-25T03:34:33+01:00",
+     "pending",
+     "Code Review Starting"
+    ]
+   ]
+  }
+ }
+}
