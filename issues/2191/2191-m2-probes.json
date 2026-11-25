@@ -1,0 +1,60 @@
+{
+ "quota": [
+  201,
+  {
+   "data": {
+    "ok": true,
+    "code": "ok",
+    "latencyMs": 306,
+    "verifiedBy": "catalog"
+   },
+   "statusCode": 201,
+   "type": "Object"
+  }
+ ],
+ "static": [
+  201,
+  {
+   "data": {
+    "ok": false,
+    "code": "unknown",
+    "latencyMs": 47,
+    "httpStatus": 405,
+    "providerMessage": "<html>\n<head><title>405 Not Allowed</title></head>\n<body bgcolor=\"white\">\n<center><h1>405 Not Allowed</h1></center>\n</body>\n</html>",
+    "message": "The provider returned HTTP 405 and Kodus couldn't classify the error. See the provider message below for details."
+   },
+   "statusCode": 201,
+   "type": "Object"
+  }
+ ],
+ "401": [
+  201,
+  {
+   "data": {
+    "ok": false,
+    "code": "auth",
+    "latencyMs": 45,
+    "httpStatus": 401,
+    "providerMessage": "{\"error\":{\"message\":\"The API key you provided is invalid.\",\"param\":null,\"code\":\"UNAUTHORIZED\",\"type\":\"error\"},\"request_id\":\"chatcmpl-e68450541022445ba4ff18b0a1433da3\"}",
+    "message": "The provider rejected this API key. Double-check it was copied in full, billing is active, and the key matches the endpoint you selected."
+   },
+   "statusCode": 201,
+   "type": "Object"
+  }
+ ],
+ "quota_connection": [
+  201,
+  {
+   "data": {
+    "ok": false,
+    "code": "payment",
+    "latencyMs": 231,
+    "httpStatus": 402,
+    "providerMessage": "{\"error\": {\"message\": \"Insufficient balance\", \"type\": \"insufficient_quota\", \"code\": \"insufficient_balance\"}}",
+    "message": "The provider account has insufficient credits or a blocked billing status. Top up on the provider dashboard and retry."
+   },
+   "statusCode": 201,
+   "type": "Object"
+  }
+ ]
+}
