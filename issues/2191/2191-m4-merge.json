@@ -1,5 +1,5 @@
 {
- "merge_status": 200,
+ "merge_status": 405,
  "merge_body": {
   "message": "not allowed to merge [reason: Not all required status checks successful]",
   "url": "https://codeberg.org/api/swagger"
@@ -18,5 +18,6 @@
   null
  ],
  "pr11_merged": true,
- "protection_removed": 204
+ "protection_removed": 204,
+ "note": "Corrected in the audit round: the original script overwrote merge_status with the status of the follow-up GET /pulls/12 (200). The merge call itself returned 405 with the body below, as printed in the run."
 }
