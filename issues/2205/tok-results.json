@@ -1,0 +1,182 @@
+{
+ "merge-CAL_M24-b1": {
+  "sysChars": 2371,
+  "userChars": 5799,
+  "promptTokens": 2091,
+  "diffChars": 3071,
+  "diffTokens": 905,
+  "charsPerTokDiff": 3.39,
+  "window": 24000,
+  "files": 3
+ },
+ "parent-A1_20000-b1": {
+  "sysChars": 2371,
+  "userChars": 2978,
+  "promptTokens": 1276,
+  "diffChars": 331,
+  "diffTokens": 120,
+  "charsPerTokDiff": 2.76,
+  "window": 20000,
+  "files": 1
+ },
+ "merge-A1_24000-b1": {
+  "sysChars": 2371,
+  "userChars": 2978,
+  "promptTokens": 1276,
+  "diffChars": 331,
+  "diffTokens": 120,
+  "charsPerTokDiff": 2.76,
+  "window": 24000,
+  "files": 1
+ },
+ "merge-A2_gh5-b1": {
+  "sysChars": 2371,
+  "userChars": 70348,
+  "promptTokens": 23854,
+  "diffChars": 66963,
+  "diffTokens": 22371,
+  "charsPerTokDiff": 2.99,
+  "window": 64000,
+  "files": 6
+ },
+ "merge-A2_gh5-b2": {
+  "sysChars": 2371,
+  "userChars": 47703,
+  "promptTokens": 17955,
+  "diffChars": 44379,
+  "diffTokens": 16485,
+  "charsPerTokDiff": 2.69,
+  "window": 64000,
+  "files": 4
+ },
+ "merge-A2_gl3-b1": {
+  "sysChars": 2371,
+  "userChars": 70396,
+  "promptTokens": 23872,
+  "diffChars": 67011,
+  "diffTokens": 22390,
+  "charsPerTokDiff": 2.99,
+  "window": 64000,
+  "files": 6
+ },
+ "merge-A2_gl3-b2": {
+  "sysChars": 2371,
+  "userChars": 47735,
+  "promptTokens": 17967,
+  "diffChars": 44411,
+  "diffTokens": 16498,
+  "charsPerTokDiff": 2.69,
+  "window": 64000,
+  "files": 4
+ },
+ "parent-A2_gh5-b1": {
+  "sysChars": 2371,
+  "userChars": 115013,
+  "promptTokens": 40435,
+  "diffChars": 111343,
+  "diffTokens": 38857,
+  "charsPerTokDiff": 2.87,
+  "window": 64000,
+  "files": 10
+ },
+ "merge-A3_cli_64000-b1": {
+  "sysChars": 2371,
+  "userChars": 71311,
+  "promptTokens": 24077,
+  "diffChars": 68427,
+  "diffTokens": 22846,
+  "charsPerTokDiff": 3.0,
+  "window": 64000,
+  "files": 6
+ },
+ "merge-A3_cli_64000-b2": {
+  "sysChars": 2371,
+  "userChars": 48333,
+  "promptTokens": 18086,
+  "diffChars": 45510,
+  "diffTokens": 16867,
+  "charsPerTokDiff": 2.7,
+  "window": 64000,
+  "files": 4
+ },
+ "merge-A3_cli_16000-b1": {
+  "sysChars": 2371,
+  "userChars": 14257,
+  "promptTokens": 4195,
+  "diffChars": 11662,
+  "diffTokens": 3054,
+  "charsPerTokDiff": 3.82,
+  "window": 16000,
+  "files": 1
+ },
+ "merge-A3_cli_small_20000-b1": {
+  "sysChars": 2371,
+  "userChars": 3695,
+  "promptTokens": 1541,
+  "diffChars": 1062,
+  "diffTokens": 382,
+  "charsPerTokDiff": 2.78,
+  "window": 20000,
+  "files": 2
+ },
+ "merge-A4_azure-b1": {
+  "sysChars": 2371,
+  "userChars": 71402,
+  "promptTokens": 23983,
+  "diffChars": 68457,
+  "diffTokens": 22738,
+  "charsPerTokDiff": 3.01,
+  "window": 64000,
+  "files": 6
+ },
+ "merge-A4_azure-b2": {
+  "sysChars": 2371,
+  "userChars": 48482,
+  "promptTokens": 18064,
+  "diffChars": 45598,
+  "diffTokens": 16832,
+  "charsPerTokDiff": 2.71,
+  "window": 64000,
+  "files": 4
+ },
+ "merge-A4_bitbucket-b1": {
+  "sysChars": 2371,
+  "userChars": 69908,
+  "promptTokens": 23617,
+  "diffChars": 66963,
+  "diffTokens": 22371,
+  "charsPerTokDiff": 2.99,
+  "window": 64000,
+  "files": 6
+ },
+ "merge-A4_bitbucket-b2": {
+  "sysChars": 2371,
+  "userChars": 47263,
+  "promptTokens": 17718,
+  "diffChars": 44379,
+  "diffTokens": 16485,
+  "charsPerTokDiff": 2.69,
+  "window": 64000,
+  "files": 4
+ },
+ "merge-A2_xl128k-b1": {
+  "sysChars": 2371,
+  "userChars": 216770,
+  "promptTokens": 76719,
+  "diffChars": 212808,
+  "diffTokens": 75117,
+  "charsPerTokDiff": 2.83,
+  "window": 128000,
+  "files": 19
+ },
+ "merge-A2_xl200k-b1": {
+  "sysChars": 2371,
+  "userChars": 371854,
+  "promptTokens": 127185,
+  "diffChars": 366929,
+  "diffTokens": 125255,
+  "charsPerTokDiff": 2.93,
+  "window": 200000,
+  "files": 33
+ }
+}
