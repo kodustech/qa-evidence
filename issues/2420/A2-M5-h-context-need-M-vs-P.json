@@ -1,0 +1,606 @@
+{
+  "M": [
+    {
+      "tree": "M",
+      "scenario": "M5-h",
+      "case": "full-file (compiled API rule C) / no start",
+      "route": "PR-level: `qa2420/Member.cs`",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": null,
+          "end": null,
+          "rule": "qa2420-C",
+          "content": "qa2420-C violated here."
+        }
+      ],
+      "byPR": [
+        "`qa2420/Member.cs` \u2014 qa2420-C violated here.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=22222222-2222-4222-8222-222222222222)"
+      ],
+      "inline": [],
+      "discarded": [],
+      "logs": []
+    },
+    {
+      "tree": "M",
+      "scenario": "M5-h",
+      "case": "full-file (compiled API rule C) / explicit out-of-hunk 120-180",
+      "route": "PR-level: `qa2420/Member.cs:120`",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 120,
+          "end": 180,
+          "rule": "qa2420-C",
+          "fileAnchored": true,
+          "content": "qa2420-C violated here."
+        }
+      ],
+      "byPR": [
+        "`qa2420/Member.cs:120` \u2014 qa2420-C violated here.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=22222222-2222-4222-8222-222222222222)"
+      ],
+      "inline": [],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] File-anchored finding for qa2420/Member.cs: lines 120-180 sit outside every hunk, but the rule declared it needs context beyond the diff \u2014 delivering it as a PR-level comment"
+      ]
+    },
+    {
+      "tree": "M",
+      "scenario": "M5-h",
+      "case": "full-file (compiled API rule C) / in-hunk 10-11",
+      "route": "inline 10-11",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 11,
+          "rule": "qa2420-C",
+          "content": "qa2420-C violated here."
+        }
+      ],
+      "byPR": [],
+      "inline": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 11,
+          "rule": "qa2420-C",
+          "content": "qa2420-C violated here.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=22222222-2222-4222-8222-222222222222)"
+        }
+      ],
+      "discarded": [],
+      "logs": []
+    },
+    {
+      "tree": "M",
+      "scenario": "M5-h",
+      "case": "sibling-file (rule S) / no start",
+      "route": "PR-level: `qa2420/Member.cs`",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": null,
+          "end": null,
+          "rule": "qa2420-S",
+          "content": "qa2420-S violated here."
+        }
+      ],
+      "byPR": [
+        "`qa2420/Member.cs` \u2014 qa2420-S violated here.\n\nKody rule violation: [QA2420 sibling rule](/settings/code-review/global/kody-rules/qa2420-S?teamId=22222222-2222-4222-8222-222222222222)"
+      ],
+      "inline": [],
+      "discarded": [],
+      "logs": []
+    },
+    {
+      "tree": "M",
+      "scenario": "M5-h",
+      "case": "sibling-file (rule S) / explicit out-of-hunk 120-180",
+      "route": "PR-level: `qa2420/Member.cs:120`",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 120,
+          "end": 180,
+          "rule": "qa2420-S",
+          "fileAnchored": true,
+          "content": "qa2420-S violated here."
+        }
+      ],
+      "byPR": [
+        "`qa2420/Member.cs:120` \u2014 qa2420-S violated here.\n\nKody rule violation: [QA2420 sibling rule](/settings/code-review/global/kody-rules/qa2420-S?teamId=22222222-2222-4222-8222-222222222222)"
+      ],
+      "inline": [],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] File-anchored finding for qa2420/Member.cs: lines 120-180 sit outside every hunk, but the rule declared it needs context beyond the diff \u2014 delivering it as a PR-level comment"
+      ]
+    },
+    {
+      "tree": "M",
+      "scenario": "M5-h",
+      "case": "sibling-file (rule S) / in-hunk 10-11",
+      "route": "inline 10-11",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 11,
+          "rule": "qa2420-S",
+          "content": "qa2420-S violated here."
+        }
+      ],
+      "byPR": [],
+      "inline": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 11,
+          "rule": "qa2420-S",
+          "content": "qa2420-S violated here.\n\nKody rule violation: [QA2420 sibling rule](/settings/code-review/global/kody-rules/qa2420-S?teamId=22222222-2222-4222-8222-222222222222)"
+        }
+      ],
+      "discarded": [],
+      "logs": []
+    },
+    {
+      "tree": "M",
+      "scenario": "M5-h",
+      "case": "null (synced rule D) / no start",
+      "route": "PR-level: `qa2420/Member.cs`",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": null,
+          "end": null,
+          "rule": "qa2420-D",
+          "content": "qa2420-D violated here."
+        }
+      ],
+      "byPR": [
+        "`qa2420/Member.cs` \u2014 qa2420-D violated here.\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)"
+      ],
+      "inline": [],
+      "discarded": [],
+      "logs": []
+    },
+    {
+      "tree": "M",
+      "scenario": "M5-h",
+      "case": "null (synced rule D) / explicit out-of-hunk 120-180",
+      "route": "discarded discarded-by-code-diff",
+      "anchored": [],
+      "byPR": [],
+      "inline": [],
+      "discarded": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 120,
+          "end": 180,
+          "rule": "qa2420-D",
+          "content": "qa2420-D violated here.",
+          "status": "discarded-by-code-diff"
+        }
+      ],
+      "logs": [
+        "log: [AGENT] Dropped out-of-diff suggestion for qa2420/Member.cs: lines 120-180 do not overlap any changed hunk"
+      ]
+    },
+    {
+      "tree": "M",
+      "scenario": "M5-h",
+      "case": "null (synced rule D) / in-hunk 10-11",
+      "route": "inline 10-11",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 11,
+          "rule": "qa2420-D",
+          "content": "qa2420-D violated here."
+        }
+      ],
+      "byPR": [],
+      "inline": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 11,
+          "rule": "qa2420-D",
+          "content": "qa2420-D violated here.\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)"
+        }
+      ],
+      "discarded": [],
+      "logs": []
+    },
+    {
+      "tree": "M",
+      "scenario": "M5-h",
+      "case": "absent field (rule X) / no start",
+      "route": "PR-level: `qa2420/Member.cs`",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": null,
+          "end": null,
+          "rule": "qa2420-X",
+          "content": "qa2420-X violated here."
+        }
+      ],
+      "byPR": [
+        "`qa2420/Member.cs` \u2014 qa2420-X violated here.\n\nKody rule violation: [QA2420 rule without contextNeed field](/settings/code-review/global/kody-rules/qa2420-X?teamId=22222222-2222-4222-8222-222222222222)"
+      ],
+      "inline": [],
+      "discarded": [],
+      "logs": []
+    },
+    {
+      "tree": "M",
+      "scenario": "M5-h",
+      "case": "absent field (rule X) / explicit out-of-hunk 120-180",
+      "route": "discarded discarded-by-code-diff",
+      "anchored": [],
+      "byPR": [],
+      "inline": [],
+      "discarded": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 120,
+          "end": 180,
+          "rule": "qa2420-X",
+          "content": "qa2420-X violated here.",
+          "status": "discarded-by-code-diff"
+        }
+      ],
+      "logs": [
+        "log: [AGENT] Dropped out-of-diff suggestion for qa2420/Member.cs: lines 120-180 do not overlap any changed hunk"
+      ]
+    },
+    {
+      "tree": "M",
+      "scenario": "M5-h",
+      "case": "absent field (rule X) / in-hunk 10-11",
+      "route": "inline 10-11",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 11,
+          "rule": "qa2420-X",
+          "content": "qa2420-X violated here."
+        }
+      ],
+      "byPR": [],
+      "inline": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 11,
+          "rule": "qa2420-X",
+          "content": "qa2420-X violated here.\n\nKody rule violation: [QA2420 rule without contextNeed field](/settings/code-review/global/kody-rules/qa2420-X?teamId=22222222-2222-4222-8222-222222222222)"
+        }
+      ],
+      "discarded": [],
+      "logs": []
+    }
+  ],
+  "P": [
+    {
+      "tree": "P",
+      "scenario": "M5-h",
+      "case": "full-file (compiled API rule C) / no start",
+      "route": "inline 10-12",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 12,
+          "rule": "qa2420-C",
+          "content": "qa2420-C violated here."
+        }
+      ],
+      "byPR": [],
+      "inline": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 12,
+          "rule": "qa2420-C",
+          "content": "qa2420-C violated here.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=22222222-2222-4222-8222-222222222222)"
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/Member.cs: null-null \u2192 10-12"
+      ]
+    },
+    {
+      "tree": "P",
+      "scenario": "M5-h",
+      "case": "full-file (compiled API rule C) / explicit out-of-hunk 120-180",
+      "route": "PR-level: `qa2420/Member.cs:120`",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 120,
+          "end": 180,
+          "rule": "qa2420-C",
+          "fileAnchored": true,
+          "content": "qa2420-C violated here."
+        }
+      ],
+      "byPR": [
+        "`qa2420/Member.cs:120` \u2014 qa2420-C violated here.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=22222222-2222-4222-8222-222222222222)"
+      ],
+      "inline": [],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] File-anchored finding for qa2420/Member.cs: lines 120-180 sit outside every hunk, but the rule declared it needs context beyond the diff \u2014 delivering it as a PR-level comment"
+      ]
+    },
+    {
+      "tree": "P",
+      "scenario": "M5-h",
+      "case": "full-file (compiled API rule C) / in-hunk 10-11",
+      "route": "inline 10-11",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 11,
+          "rule": "qa2420-C",
+          "content": "qa2420-C violated here."
+        }
+      ],
+      "byPR": [],
+      "inline": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 11,
+          "rule": "qa2420-C",
+          "content": "qa2420-C violated here.\n\nKody rule violation: [QA2420 function length](/settings/code-review/global/kody-rules/qa2420-C?teamId=22222222-2222-4222-8222-222222222222)"
+        }
+      ],
+      "discarded": [],
+      "logs": []
+    },
+    {
+      "tree": "P",
+      "scenario": "M5-h",
+      "case": "sibling-file (rule S) / no start",
+      "route": "inline 10-12",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 12,
+          "rule": "qa2420-S",
+          "content": "qa2420-S violated here."
+        }
+      ],
+      "byPR": [],
+      "inline": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 12,
+          "rule": "qa2420-S",
+          "content": "qa2420-S violated here.\n\nKody rule violation: [QA2420 sibling rule](/settings/code-review/global/kody-rules/qa2420-S?teamId=22222222-2222-4222-8222-222222222222)"
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/Member.cs: null-null \u2192 10-12"
+      ]
+    },
+    {
+      "tree": "P",
+      "scenario": "M5-h",
+      "case": "sibling-file (rule S) / explicit out-of-hunk 120-180",
+      "route": "PR-level: `qa2420/Member.cs:120`",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 120,
+          "end": 180,
+          "rule": "qa2420-S",
+          "fileAnchored": true,
+          "content": "qa2420-S violated here."
+        }
+      ],
+      "byPR": [
+        "`qa2420/Member.cs:120` \u2014 qa2420-S violated here.\n\nKody rule violation: [QA2420 sibling rule](/settings/code-review/global/kody-rules/qa2420-S?teamId=22222222-2222-4222-8222-222222222222)"
+      ],
+      "inline": [],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] File-anchored finding for qa2420/Member.cs: lines 120-180 sit outside every hunk, but the rule declared it needs context beyond the diff \u2014 delivering it as a PR-level comment"
+      ]
+    },
+    {
+      "tree": "P",
+      "scenario": "M5-h",
+      "case": "sibling-file (rule S) / in-hunk 10-11",
+      "route": "inline 10-11",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 11,
+          "rule": "qa2420-S",
+          "content": "qa2420-S violated here."
+        }
+      ],
+      "byPR": [],
+      "inline": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 11,
+          "rule": "qa2420-S",
+          "content": "qa2420-S violated here.\n\nKody rule violation: [QA2420 sibling rule](/settings/code-review/global/kody-rules/qa2420-S?teamId=22222222-2222-4222-8222-222222222222)"
+        }
+      ],
+      "discarded": [],
+      "logs": []
+    },
+    {
+      "tree": "P",
+      "scenario": "M5-h",
+      "case": "null (synced rule D) / no start",
+      "route": "inline 10-12",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 12,
+          "rule": "qa2420-D",
+          "content": "qa2420-D violated here."
+        }
+      ],
+      "byPR": [],
+      "inline": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 12,
+          "rule": "qa2420-D",
+          "content": "qa2420-D violated here.\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)"
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/Member.cs: null-null \u2192 10-12"
+      ]
+    },
+    {
+      "tree": "P",
+      "scenario": "M5-h",
+      "case": "null (synced rule D) / explicit out-of-hunk 120-180",
+      "route": "discarded discarded-by-code-diff",
+      "anchored": [],
+      "byPR": [],
+      "inline": [],
+      "discarded": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 120,
+          "end": 180,
+          "rule": "qa2420-D",
+          "content": "qa2420-D violated here.",
+          "status": "discarded-by-code-diff"
+        }
+      ],
+      "logs": [
+        "log: [AGENT] Dropped out-of-diff suggestion for qa2420/Member.cs: lines 120-180 do not overlap any changed hunk"
+      ]
+    },
+    {
+      "tree": "P",
+      "scenario": "M5-h",
+      "case": "null (synced rule D) / in-hunk 10-11",
+      "route": "inline 10-11",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 11,
+          "rule": "qa2420-D",
+          "content": "qa2420-D violated here."
+        }
+      ],
+      "byPR": [],
+      "inline": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 11,
+          "rule": "qa2420-D",
+          "content": "qa2420-D violated here.\n\nKody rule violation: [QA2420 file name prefix](/settings/code-review/global/kody-rules/qa2420-D?teamId=22222222-2222-4222-8222-222222222222)"
+        }
+      ],
+      "discarded": [],
+      "logs": []
+    },
+    {
+      "tree": "P",
+      "scenario": "M5-h",
+      "case": "absent field (rule X) / no start",
+      "route": "inline 10-12",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 12,
+          "rule": "qa2420-X",
+          "content": "qa2420-X violated here."
+        }
+      ],
+      "byPR": [],
+      "inline": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 12,
+          "rule": "qa2420-X",
+          "content": "qa2420-X violated here.\n\nKody rule violation: [QA2420 rule without contextNeed field](/settings/code-review/global/kody-rules/qa2420-X?teamId=22222222-2222-4222-8222-222222222222)"
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/Member.cs: null-null \u2192 10-12"
+      ]
+    },
+    {
+      "tree": "P",
+      "scenario": "M5-h",
+      "case": "absent field (rule X) / explicit out-of-hunk 120-180",
+      "route": "discarded discarded-by-code-diff",
+      "anchored": [],
+      "byPR": [],
+      "inline": [],
+      "discarded": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 120,
+          "end": 180,
+          "rule": "qa2420-X",
+          "content": "qa2420-X violated here.",
+          "status": "discarded-by-code-diff"
+        }
+      ],
+      "logs": [
+        "log: [AGENT] Dropped out-of-diff suggestion for qa2420/Member.cs: lines 120-180 do not overlap any changed hunk"
+      ]
+    },
+    {
+      "tree": "P",
+      "scenario": "M5-h",
+      "case": "absent field (rule X) / in-hunk 10-11",
+      "route": "inline 10-11",
+      "anchored": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 11,
+          "rule": "qa2420-X",
+          "content": "qa2420-X violated here."
+        }
+      ],
+      "byPR": [],
+      "inline": [
+        {
+          "file": "qa2420/Member.cs",
+          "start": 10,
+          "end": 11,
+          "rule": "qa2420-X",
+          "content": "qa2420-X violated here.\n\nKody rule violation: [QA2420 rule without contextNeed field](/settings/code-review/global/kody-rules/qa2420-X?teamId=22222222-2222-4222-8222-222222222222)"
+        }
+      ],
+      "discarded": [],
+      "logs": []
+    }
+  ]
+}
