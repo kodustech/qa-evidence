@@ -1,0 +1,25 @@
+{
+  "commit": "78998e1d5c551bc2d0948e375f860aa43c484c95",
+  "Backend: QA GitOps Deploy": {
+    "conclusion": "success",
+    "createdAt": "2026-11-24T22:29:27Z",
+    "headSha": "2e48e741aff1c3a59af20579bc86b9dd54248b89",
+    "status": "completed",
+    "url": "https://github.com/kodustech/kodus-ai/actions/runs/45501404507"
+  },
+  "Web: QA Deploy": {
+    "conclusion": "success",
+    "createdAt": "2026-11-24T01:36:31Z",
+    "headSha": "637a3cbfd94090ff8f0dd87ac8af4186340a1729",
+    "status": "completed",
+    "url": "https://github.com/kodustech/kodus-ai/actions/runs/45306291559"
+  },
+  "restarts": [
+    "2026-11-24T22:58:05.646Z",
+    "2026-11-24T22:57:53.562Z",
+    "2026-11-24T22:11:50.123Z",
+    "2026-11-24T22:11:40.980Z",
+    "2026-11-24T21:18:17.799Z",
+    "2026-11-24T21:18:08.272Z"
+  ]
+}
