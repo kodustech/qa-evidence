@@ -1,0 +1,4 @@
+{"rev":"cand","role":"e2b-kill-during-orchestrator","pid":59551,"event":"sandbox","at":"2026-11-25T01:12:44.158Z","type":"e2b","sandboxId":"sbx#4","lease":{"leaseCount":1,"killAt":null,"sandboxId":"sbx#4","state":"READY"}}
+{"rev":"cand","role":"e2b-kill-during-orchestrator","pid":59551,"event":"orchestrator-start","at":"2026-11-25T01:12:44.160Z"}
+{"rev":"cand","role":"e2b-kill-during-orchestrator","pid":59551,"event":"ready-to-kill-during-orchestrator","at":"2026-11-25T01:12:59.161Z"}
+{"rev": "cand", "role": "e2b-kill-during-orchestrator", "driver": true, "event": "SIGKILL", "at": "2026-11-25T01:12:59Z"}
