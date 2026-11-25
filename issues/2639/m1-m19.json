@@ -1,0 +1,126 @@
+{
+ "M1": {
+  "filter": "component ^(BitbucketCloudService|AzureReposService|Bitbucket|Forgejo), attributes.params.organizationAndTeamData.organizationId exists; grouped by metadata.organizationId=='unknown', level, metadata org == params org",
+  "before_2026-11-23T08:30_14:30": [
+   {
+    "_id": {
+     "unknown": true,
+     "level": "info",
+     "matchesParams": false
+    },
+    "n": 27,
+    "sample": "6b042f594414808e89239976"
+   },
+   {
+    "_id": {
+     "unknown": true,
+     "level": "error",
+     "matchesParams": false
+    },
+    "n": 1,
+    "sample": "6b04309a4414808e89239ad5"
+   }
+  ],
+  "after_2026-11-23T18:13_2026-11-24T00:13": [
+   {
+    "_id": {
+     "unknown": false,
+     "level": "info",
+     "matchesParams": true
+    },
+    "n": 34,
+    "sample": "6b0491629d2f0f515957a148"
+   }
+  ]
+ },
+ "M19": {
+  "window": [
+   "2026-11-24T06:00:00Z",
+   "2026-11-24T12:00:00Z"
+  ],
+  "error_rows_unknown_vs_set": [
+   {
+    "_id": true,
+    "n": 19
+   },
+   {
+    "_id": false,
+    "n": 253
+   }
+  ],
+  "unknown_error_groups": [
+   {
+    "component": "KodusApp",
+    "message": "Error processing message on handler [handleSyncCodeReviewReactions]",
+    "n": 6,
+    "paramsPair": 0,
+    "topPair": 0,
+    "paramsOrg": 0,
+    "payloadOrg": 0,
+    "dataOrg": 0,
+    "metadataPair": 0,
+    "ctxPair": 0
+   },
+   {
+    "component": "SaveCodeReviewFeedbackUseCase",
+    "message": "Error save code review feedback",
+    "n": 6,
+    "paramsPair": 0,
+    "topPair": 0,
+    "paramsOrg": 0,
+    "payloadOrg": 6,
+    "dataOrg": 0,
+    "metadataPair": 0,
+    "ctxPair": 0
+   },
+   {
+    "component": "KodusApp",
+    "message": "Reaction sync aborted after 12 rate-limited PRs",
+    "n": 2,
+    "paramsPair": 0,
+    "topPair": 0,
+    "paramsOrg": 0,
+    "payloadOrg": 0,
+    "dataOrg": 0,
+    "metadataPair": 0,
+    "ctxPair": 0
+   },
+   {
+    "component": "ExceptionsFilter",
+    "message": "[500] Internal Server Error: An unexpected error occurred",
+    "n": 2,
+    "paramsPair": 0,
+    "topPair": 0,
+    "paramsOrg": 0,
+    "payloadOrg": 0,
+    "dataOrg": 0,
+    "metadataPair": 0,
+    "ctxPair": 0
+   },
+   {
+    "component": "KodusApp",
+    "message": "Reaction sync aborted after 11 rate-limited PRs",
+    "n": 2,
+    "paramsPair": 0,
+    "topPair": 0,
+    "paramsOrg": 0,
+    "payloadOrg": 0,
+    "dataOrg": 0,
+    "metadataPair": 0,
+    "ctxPair": 0
+   },
+   {
+    "component": "RabbitMQErrorHandler",
+    "message": "Max retries exceeded, sending to DLQ",
+    "n": 1,
+    "paramsPair": 0,
+    "topPair": 0,
+    "paramsOrg": 0,
+    "payloadOrg": 0,
+    "dataOrg": 0,
+    "metadataPair": 0,
+    "ctxPair": 0
+   }
+  ]
+ }
+}
