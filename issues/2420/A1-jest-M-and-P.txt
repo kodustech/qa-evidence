@@ -1,0 +1,32 @@
+== M
+      at log (../../../../Projects/Kody/kodus-ai/node_modules/bitbucket/src/plugins/notice/index.ts:11:11)
+          at Array.forEach (<anonymous>)
+      at log (../../../../Projects/Kody/kodus-ai/node_modules/bitbucket/src/plugins/notice/index.ts:11:11)
+          at Array.forEach (<anonymous>)
+      at log (../../../../Projects/Kody/kodus-ai/node_modules/bitbucket/src/plugins/notice/index.ts:11:11)
+          at Array.forEach (<anonymous>)
+      at log (../../../../Projects/Kody/kodus-ai/node_modules/bitbucket/src/plugins/notice/index.ts:11:11)
+          at Array.forEach (<anonymous>)
+      at log (../../../../Projects/Kody/kodus-ai/node_modules/bitbucket/src/plugins/notice/index.ts:11:11)
+          at Array.forEach (<anonymous>)
+Test Suites: 1 passed, 1 total
+Tests:       5 passed, 5 total
+Snapshots:   0 total
+Time:        5.711 s, estimated 6 s
+Ran all test suites matching libs/code-review/pipeline/stages/a1-2420.qa2420.spec.ts.
+== P
+      at log (../../../../Projects/Kody/kodus-ai/node_modules/bitbucket/src/plugins/notice/index.ts:11:11)
+          at Array.forEach (<anonymous>)
+      at log (../../../../Projects/Kody/kodus-ai/node_modules/bitbucket/src/plugins/notice/index.ts:11:11)
+          at Array.forEach (<anonymous>)
+      at log (../../../../Projects/Kody/kodus-ai/node_modules/bitbucket/src/plugins/notice/index.ts:11:11)
+          at Array.forEach (<anonymous>)
+      at log (../../../../Projects/Kody/kodus-ai/node_modules/bitbucket/src/plugins/notice/index.ts:11:11)
+          at Array.forEach (<anonymous>)
+      at log (../../../../Projects/Kody/kodus-ai/node_modules/bitbucket/src/plugins/notice/index.ts:11:11)
+          at Array.forEach (<anonymous>)
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        7.618 s, estimated 10 s
+Ran all test suites matching libs/code-review/pipeline/stages/a1-2420.qa2420.spec.ts.
