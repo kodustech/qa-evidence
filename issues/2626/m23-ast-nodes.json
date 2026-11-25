@@ -1,0 +1,30 @@
+{
+ "at": "2026-11-25T01:01:14.082265Z",
+ "query": "select kind, qualified_name, file_path, line_start, line_end from ast_nodes where repo_id='a847a63e-...' (kodus-olimpo/claude-athena) and (qualified_name like '%lateFee%' or '%tuitionReport%')",
+ "rows": [
+  [
+   "Function",
+   "src/qa2626/late-fee.ts::lateFee",
+   "src/qa2626/late-fee.ts",
+   "2",
+   "7"
+  ],
+  [
+   "Function",
+   "src/qa2626/report.ts::tuitionReport",
+   "src/qa2626/report.ts",
+   "2",
+   "5"
+  ]
+ ],
+ "repo_now": [
+  [
+   "ready",
+   "050b00d64856eea0ab651c8812bec3e4f3bd7e25",
+   "19",
+   "33",
+   "2026-11-25 01:01:11.454"
+  ]
+ ],
+ "note": "read after M23; the repo has since had a restore full build at abaf2278 (23:30) and later incrementals"
+}
