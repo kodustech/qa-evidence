@@ -1,0 +1,6 @@
+{"rev":"cand","role":"e2b-kill-after-stage","pid":58323,"event":"sandbox","at":"2026-11-25T01:07:21.618Z","type":"e2b","sandboxId":"sbx#2","lease":{"leaseCount":1,"killAt":null,"sandboxId":"sbx#2","state":"READY"}}
+{"rev":"cand","role":"e2b-kill-after-stage","pid":58323,"event":"orchestrator-start","at":"2026-11-25T01:07:21.623Z"}
+{"rev":"cand","role":"e2b-kill-after-stage","pid":58323,"event":"orchestrator-returned","at":"2026-11-25T01:09:12.454Z"}
+{"rev":"cand","role":"e2b-kill-after-stage","pid":58323,"event":"stage-done","at":"2026-11-25T01:09:13.978Z","ms":120223,"lease":{"leaseCount":0,"killAt":"2026-11-25T01:09:42.510Z","sandboxId":"sbx#2","state":"READY"},"usage":{"consumer":"review","acquiredAt":"2026-11-25T01:07:21.614Z","firstUsedAt":"2026-11-25T01:07:24.107Z","lastUsedAt":"2026-11-25T01:09:10.029Z","releasedAt":"2026-11-25T01:09:12.456Z","stopAt":"2026-11-25T01:09:42.510Z"},"suggestions":5,"files":["qa2628/enrollment/capacity.ts:11","qa2628/enrollment/enrollment.service.ts:16","qa2628/enrollment/waitlist.ts:10","qa2628/enrollment/capacity.ts:11","qa2628/enrollment/enrollment.service.ts:16"],"errors":[]}
+{"rev":"cand","role":"e2b-kill-after-stage","pid":58323,"event":"publishing","at":"2026-11-25T01:09:13.978Z"}
+{"rev": "cand", "role": "e2b-kill-after-stage", "driver": true, "event": "SIGKILL", "at": "2026-11-25T01:09:13Z"}
