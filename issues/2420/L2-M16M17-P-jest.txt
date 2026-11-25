@@ -1,0 +1,201 @@
+npm warn Unknown project config "node-linker". This will stop working in the next major version of npm.
+(node:18129) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+FAIL libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts
+  ● M16 line-less kody_rules records skip the implementation check › start=omit lone
+    expect(received).toBe(expected) // Object.is equality
+    Expected: "NO_RELEVANT_CHANGES"
+    Received: undefined
+      145 |         };
+      146 |         record(entry);
+    > 147 |         expect(result.skipped).toBe('NO_RELEVANT_CHANGES');
+          |                                ^
+      148 |         expect(entry.aiCalls).toBe(0);
+      149 |         expect(entry.slotResolutions).toBe(0);
+      150 |         expect(entry.updateCalls).toEqual([]);
+      at toBe (libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts:147:32)
+  ● M16 line-less kody_rules records skip the implementation check › start=omit alsoFoundIn
+    expect(received).toBe(expected) // Object.is equality
+    Expected: "NO_RELEVANT_CHANGES"
+    Received: undefined
+      145 |         };
+      146 |         record(entry);
+    > 147 |         expect(result.skipped).toBe('NO_RELEVANT_CHANGES');
+          |                                ^
+      148 |         expect(entry.aiCalls).toBe(0);
+      149 |         expect(entry.slotResolutions).toBe(0);
+      150 |         expect(entry.updateCalls).toEqual([]);
+      at toBe (libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts:147:32)
+  ● M16 line-less kody_rules records skip the implementation check › start=omit kodyRuleOtherLocations
+    expect(received).toBe(expected) // Object.is equality
+    Expected: "NO_RELEVANT_CHANGES"
+    Received: undefined
+      145 |         };
+      146 |         record(entry);
+    > 147 |         expect(result.skipped).toBe('NO_RELEVANT_CHANGES');
+          |                                ^
+      148 |         expect(entry.aiCalls).toBe(0);
+      149 |         expect(entry.slotResolutions).toBe(0);
+      150 |         expect(entry.updateCalls).toEqual([]);
+      at toBe (libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts:147:32)
+  ● M16 line-less kody_rules records skip the implementation check › start=omit secondary file removed
+    expect(received).toBe(expected) // Object.is equality
+    Expected: "NO_RELEVANT_CHANGES"
+    Received: undefined
+      145 |         };
+      146 |         record(entry);
+    > 147 |         expect(result.skipped).toBe('NO_RELEVANT_CHANGES');
+          |                                ^
+      148 |         expect(entry.aiCalls).toBe(0);
+      149 |         expect(entry.slotResolutions).toBe(0);
+      150 |         expect(entry.updateCalls).toEqual([]);
+      at toBe (libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts:147:32)
+  ● M16 line-less kody_rules records skip the implementation check › start=omit stored implementedLocations
+    expect(received).toBe(expected) // Object.is equality
+    Expected: "NO_RELEVANT_CHANGES"
+    Received: undefined
+      145 |         };
+      146 |         record(entry);
+    > 147 |         expect(result.skipped).toBe('NO_RELEVANT_CHANGES');
+          |                                ^
+      148 |         expect(entry.aiCalls).toBe(0);
+      149 |         expect(entry.slotResolutions).toBe(0);
+      150 |         expect(entry.updateCalls).toEqual([]);
+      at toBe (libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts:147:32)
+  ● M16 line-less kody_rules records skip the implementation check › start=null lone
+    expect(received).toBe(expected) // Object.is equality
+    Expected: "NO_RELEVANT_CHANGES"
+    Received: undefined
+      145 |         };
+      146 |         record(entry);
+    > 147 |         expect(result.skipped).toBe('NO_RELEVANT_CHANGES');
+          |                                ^
+      148 |         expect(entry.aiCalls).toBe(0);
+      149 |         expect(entry.slotResolutions).toBe(0);
+      150 |         expect(entry.updateCalls).toEqual([]);
+      at toBe (libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts:147:32)
+  ● M16 line-less kody_rules records skip the implementation check › start=null alsoFoundIn
+    expect(received).toBe(expected) // Object.is equality
+    Expected: "NO_RELEVANT_CHANGES"
+    Received: undefined
+      145 |         };
+      146 |         record(entry);
+    > 147 |         expect(result.skipped).toBe('NO_RELEVANT_CHANGES');
+          |                                ^
+      148 |         expect(entry.aiCalls).toBe(0);
+      149 |         expect(entry.slotResolutions).toBe(0);
+      150 |         expect(entry.updateCalls).toEqual([]);
+      at toBe (libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts:147:32)
+  ● M16 line-less kody_rules records skip the implementation check › start=null kodyRuleOtherLocations
+    expect(received).toBe(expected) // Object.is equality
+    Expected: "NO_RELEVANT_CHANGES"
+    Received: undefined
+      145 |         };
+      146 |         record(entry);
+    > 147 |         expect(result.skipped).toBe('NO_RELEVANT_CHANGES');
+          |                                ^
+      148 |         expect(entry.aiCalls).toBe(0);
+      149 |         expect(entry.slotResolutions).toBe(0);
+      150 |         expect(entry.updateCalls).toEqual([]);
+      at toBe (libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts:147:32)
+  ● M16 line-less kody_rules records skip the implementation check › start=null secondary file removed
+    expect(received).toBe(expected) // Object.is equality
+    Expected: "NO_RELEVANT_CHANGES"
+    Received: undefined
+      145 |         };
+      146 |         record(entry);
+    > 147 |         expect(result.skipped).toBe('NO_RELEVANT_CHANGES');
+          |                                ^
+      148 |         expect(entry.aiCalls).toBe(0);
+      149 |         expect(entry.slotResolutions).toBe(0);
+      150 |         expect(entry.updateCalls).toEqual([]);
+      at toBe (libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts:147:32)
+  ● M16 line-less kody_rules records skip the implementation check › start=null stored implementedLocations
+    expect(received).toBe(expected) // Object.is equality
+    Expected: "NO_RELEVANT_CHANGES"
+    Received: undefined
+      145 |         };
+      146 |         record(entry);
+    > 147 |         expect(result.skipped).toBe('NO_RELEVANT_CHANGES');
+          |                                ^
+      148 |         expect(entry.aiCalls).toBe(0);
+      149 |         expect(entry.slotResolutions).toBe(0);
+      150 |         expect(entry.updateCalls).toEqual([]);
+      at toBe (libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts:147:32)
+  ● M16 line-less kody_rules records skip the implementation check › start=0 lone
+    expect(received).toBe(expected) // Object.is equality
+    Expected: "NO_RELEVANT_CHANGES"
+    Received: undefined
+      145 |         };
+      146 |         record(entry);
+    > 147 |         expect(result.skipped).toBe('NO_RELEVANT_CHANGES');
+          |                                ^
+      148 |         expect(entry.aiCalls).toBe(0);
+      149 |         expect(entry.slotResolutions).toBe(0);
+      150 |         expect(entry.updateCalls).toEqual([]);
+      at toBe (libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts:147:32)
+  ● M16 line-less kody_rules records skip the implementation check › start=0 alsoFoundIn
+    expect(received).toBe(expected) // Object.is equality
+    Expected: "NO_RELEVANT_CHANGES"
+    Received: undefined
+      145 |         };
+      146 |         record(entry);
+    > 147 |         expect(result.skipped).toBe('NO_RELEVANT_CHANGES');
+          |                                ^
+      148 |         expect(entry.aiCalls).toBe(0);
+      149 |         expect(entry.slotResolutions).toBe(0);
+      150 |         expect(entry.updateCalls).toEqual([]);
+      at toBe (libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts:147:32)
+  ● M16 line-less kody_rules records skip the implementation check › start=0 kodyRuleOtherLocations
+    expect(received).toBe(expected) // Object.is equality
+    Expected: "NO_RELEVANT_CHANGES"
+    Received: undefined
+      145 |         };
+      146 |         record(entry);
+    > 147 |         expect(result.skipped).toBe('NO_RELEVANT_CHANGES');
+          |                                ^
+      148 |         expect(entry.aiCalls).toBe(0);
+      149 |         expect(entry.slotResolutions).toBe(0);
+      150 |         expect(entry.updateCalls).toEqual([]);
+      at toBe (libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts:147:32)
+  ● M16 line-less kody_rules records skip the implementation check › start=0 secondary file removed
+    expect(received).toBe(expected) // Object.is equality
+    Expected: "NO_RELEVANT_CHANGES"
+    Received: undefined
+      145 |         };
+      146 |         record(entry);
+    > 147 |         expect(result.skipped).toBe('NO_RELEVANT_CHANGES');
+          |                                ^
+      148 |         expect(entry.aiCalls).toBe(0);
+      149 |         expect(entry.slotResolutions).toBe(0);
+      150 |         expect(entry.updateCalls).toEqual([]);
+      at toBe (libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts:147:32)
+  ● M16 line-less kody_rules records skip the implementation check › start=0 stored implementedLocations
+    expect(received).toBe(expected) // Object.is equality
+    Expected: "NO_RELEVANT_CHANGES"
+    Received: undefined
+      145 |         };
+      146 |         record(entry);
+    > 147 |         expect(result.skipped).toBe('NO_RELEVANT_CHANGES');
+          |                                ^
+      148 |         expect(entry.aiCalls).toBe(0);
+      149 |         expect(entry.slotResolutions).toBe(0);
+      150 |         expect(entry.updateCalls).toEqual([]);
+      at toBe (libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts:147:32)
+  ● M17 mixed records: line-less skipped, lineful measured, progress kept › two pushes: F partial then implemented; T/unsent/done untouched
+    expect(received).toBe(expected) // Object.is equality
+    Expected: false
+    Received: true
+      221 |         record({ scenario: 'M17', push: 1, result: r1, asked: asked1, writes: writes1, store: { ...h.store } });
+      222 |
+    > 223 |         expect(asked1.flatMap((a) => a.ids).some((id) => id.startsWith('T'))).toBe(false);
+          |                                                                               ^
+      224 |         expect(writes1.some((w) => ['T', 'UNSENT', 'DONE'].includes(w.id))).toBe(false);
+      225 |         const fStatus1 = writes1
+      226 |             .filter((w) => w.id === 'F')
+      at Object.toBe (libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts:223:79)
+Test Suites: 1 failed, 1 total
+Tests:       16 failed, 1 passed, 17 total
+Snapshots:   0 total
+Time:        1.507 s
+Ran all test suites matching libs/code-review/infrastructure/adapters/services/m16m17.qa2420.spec.ts.
