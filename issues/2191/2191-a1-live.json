@@ -1,0 +1,141 @@
+{
+ "execution": [
+  [
+   "3a8e87b8-97a2-4b93-8e57-936434c8d809",
+   "error",
+   "2026-11-25 02:57:53.294553",
+   "2026-11-25 03:00:57.826311",
+   "Code review failed: The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  ]
+ ],
+ "stages": [
+  [
+   "BusinessLogicValidationStage",
+   "skipped",
+   "Skipped: no reference.",
+   ""
+  ],
+  [
+   "CreateSandboxStage",
+   "success",
+   "",
+   ""
+  ],
+  [
+   "AgentReviewStage",
+   "error",
+   "The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan.",
+   "[{\"file\": \"agent:security\", \"message\": \"Insufficient balance\", \"category\": \"security\", \"prNumber\": 19, \"agentName\": \"security\", \"isTimeout\": false, \"orgOwnedKey\": true, \"errorCategory\": \"QUOTA_EXCEEDED\"}]"
+  ],
+  [
+   "AgentReview::performance",
+   "success",
+   "Performance Agent \u2014 1 findings in 36s",
+   ""
+  ],
+  [
+   "AgentReview::bug",
+   "success",
+   "Bug Agent \u2014 4 findings in 114s",
+   ""
+  ],
+  [
+   "AgentReview::security",
+   "error",
+   "Security Agent \u2014 failed in 1s \u2014 The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan.",
+   ""
+  ],
+  [
+   "CreatePrLevelCommentsStage",
+   "success",
+   "",
+   ""
+  ],
+  [
+   "CreateFileCommentsStage",
+   "success",
+   "",
+   ""
+  ],
+  [
+   "Kody Review Finished",
+   "error",
+   "Code review failed: The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  ]
+ ],
+ "sha": "e9fd511442777374131a73d67f037a99035e5db6",
+ "statuses": [
+  {
+   "created_at": "2026-11-25T04:00:56+01:00",
+   "context": "Kodus Code Review",
+   "status": "warning",
+   "description": "Code Review Skipped"
+  },
+  {
+   "created_at": "2026-11-25T03:57:53+01:00",
+   "context": "Kodus Code Review",
+   "status": "pending",
+   "description": "Code Review Starting"
+  }
+ ],
+ "issue_comments_first_line": [
+  "## Code Review Could Not Complete \u26a0\ufe0f"
+ ],
+ "reviews": [
+  {
+   "state": "COMMENT",
+   "submitted_at": "2026-11-25T04:00:48+01:00",
+   "comments": [
+    {
+     "path": "qa2191/term-averages.ts",
+     "line": 10,
+     "body_first_line": "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Bug](https://img.shields.io/badge/Bug-B71C1C) ![medium]"
+    }
+   ]
+  },
+  {
+   "state": "COMMENT",
+   "submitted_at": "2026-11-25T04:00:49+01:00",
+   "comments": [
+    {
+     "path": "qa2191/term-averages.ts",
+     "line": 23,
+     "body_first_line": "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Bug](https://img.shields.io/badge/Bug-B71C1C) ![medium]"
+    }
+   ]
+  },
+  {
+   "state": "COMMENT",
+   "submitted_at": "2026-11-25T04:00:49+01:00",
+   "comments": [
+    {
+     "path": "qa2191/term-averages.ts",
+     "line": 19,
+     "body_first_line": "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Bug](https://img.shields.io/badge/Bug-B71C1C) ![medium]"
+    }
+   ]
+  },
+  {
+   "state": "COMMENT",
+   "submitted_at": "2026-11-25T04:00:50+01:00",
+   "comments": [
+    {
+     "path": "qa2191/term-averages.ts",
+     "line": 19,
+     "body_first_line": "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Bug](https://img.shields.io/badge/Bug-B71C1C) ![medium]"
+    }
+   ]
+  },
+  {
+   "state": "COMMENT",
+   "submitted_at": "2026-11-25T04:00:51+01:00",
+   "comments": [
+    {
+     "path": "qa2191/term-averages.ts",
+     "line": 22,
+     "body_first_line": "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Performance](https://img.shields.io/badge/Performance-F"
+    }
+   ]
+  }
+ ]
+}
