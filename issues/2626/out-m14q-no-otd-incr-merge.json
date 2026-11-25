@@ -1,0 +1,25 @@
+{
+ "rev": "merge",
+ "variant": "no-otd",
+ "type": "incr",
+ "jobId": "d924e7d4-c15c-45e4-82ec-6f88761268c4",
+ "messageId": "b239b031-8028-4634-b37d-d60ba3aa2373",
+ "seconds": 27.3,
+ "cron_ticks": 0,
+ "job_row": "FAILED\t0\tPERMANENT\tInvalid prKey: first segment must be a UUID organizationId or 'trial', got \"undefined\"",
+ "inbox_rows": "workflow-job-consumer.ast_graph_incremental\tPROCESSED\t\t\t1",
+ "provider": {},
+ "timeline": [
+  "2026-11-25T00:04:53.215Z pid=16039 C \u00a7 ready {\"actor\": \"C\"}",
+  "2026-11-25T00:04:55.640Z pid=16043 W1 \u00a7 ready {\"actor\": \"W1\"}",
+  "2026-11-25T00:04:55.641Z pid=16043 W1 \u00a7 amqp.delivery {\"actor\": \"W1\", \"messageId\": \"b239b031-8028-4634-b37d-d60ba3aa2373\", \"retry\": 0, \"redelivered\": false}",
+  "2026-11-25T00:04:55.653Z pid=16043 W1 info [AST-GRAPH-INCR] Starting incremental update for org/athena",
+  "2026-11-25T00:04:55.658Z pid=16043 W1 info [AST-GRAPH-INCR] Auth resolved for org/athena (0ms)",
+  "2026-11-25T00:04:55.664Z pid=16043 W1 error [AST-GRAPH-INCR] Incremental update FAILED for org/athena after 11ms \u2014 Invalid prKey: first segment must be a UUID organizationId or 'trial', got \"undefined\"",
+  "2026-11-25T00:04:55.670Z pid=16043 W1 \u00a7 repo.status {\"status\": \"ready\"}",
+  "2026-11-25T00:04:55.673Z pid=16043 W1 \u00a7 amqp.acked {\"actor\": \"W1\", \"ms\": 32}",
+  "2026-11-25T00:04:55.675Z pid=16043 W1 \u00a7 consumer.cancelled {\"actor\": \"W1\"}",
+  "2026-11-25T00:04:55.675Z pid=16043 W1 \u00a7 worker.exit {\"actor\": \"W1\"}",
+  "2026-11-25T00:04:59.717Z pid=16054 W2 \u00a7 ready {\"actor\": \"W2\"}"
+ ]
+}
