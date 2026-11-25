@@ -19,6 +19,7 @@ import {
     runWithModelFailover,
 } from '@libs/llm/model-failover';
 import { environment } from '@libs/ee/configs/environment';
+import { routeCodeReviewModel } from './route-code-review-model';
 import { AutomationStatus } from '@libs/automation/domain/automation/enum/automation-status';
 import { SUMMARY_GENERATION_FAILED_REASON } from '@libs/code-review/pipeline/constants/error-reasons';
 
@@ -453,6 +454,75 @@ describe('qa2191 harness', () => {
             await stageCase(`M8h.${label}`, { out: { suggestions: [...suggestions] }, ctx: { codeReviewConfig: { reviewOptions: {}, resolvedModelSlot: byokA } }, statusInfo: { status: AutomationStatus.SUCCESS } });
             OUT[`M8h.${label}`].failoverAttempts = seen;
             OUT[`M8h.${label}`].failoverValue = value;
+        }
+    });
+
+
+    it('A1: findings posted beside one owned-quota core agent', async () => {
+        const finding = (id: string, cat: string) => ({ id, relevantFile: 'src/user.ts', relevantLinesStart: 3, relevantLinesEnd: 4, suggestionContent: `finding ${id}`, oneSentenceSummary: `finding ${id}`, label: cat, severity: 'high', language: 'typescript' });
+        await stageCase('A1.generalist_finding_plus_security_Q', { failures: [{ agentName: 'security', error: q402() }], out: { suggestions: [finding('s1', 'bug')] }, statusInfo: { status: AutomationStatus.ERROR } });
+        await stageCase('A1.deep_bug_perf_findings_security_Q', { failures: [{ agentName: 'security', error: q402() }], out: { suggestions: [finding('b1', 'bug'), finding('p1', 'performance')], agentResults: [] }, statusInfo: { status: AutomationStatus.ERROR } });
+        for (const k of ['A1.generalist_finding_plus_security_Q', 'A1.deep_bug_perf_findings_security_Q']) {
+            OUT[k].note = 'suggestions are passed in orchestrator output; see validSuggestionsCount';
+        }
+        const { stage } = makeStage({ out: orchOut({ suggestions: [finding('b1', 'bug')], failures: [{ agentName: 'security', category: 'security', error: q402() }] }) });
+        const r = await (stage as any).executeStage(makeContext());
+        OUT['A1.suggestions_kept_in_context'] = { validSuggestions: (r.validSuggestions ?? []).length, validSuggestionsByPR: (r.validSuggestionsByPR ?? []).length, discarded: (r.discardedSuggestions ?? []).length };
+    });
+
+    it('A9/A8: real router + real failover', async () => {
+        const cred = (id: string, provider: string, extra: Record<string, unknown> = {}) => ({ id, provider, apiKey: 'ciphertext-placeholder', settings: { baseURL: 'https://llm.example.com/v1' }, ...extra });
+        const model = (id: string, credentialId: string, name: string) => ({ id, credentialId, model: name });
+        const base = (models: any[], creds: any[], routing: any) => ({ version: 2, credentials: creds, models, routing });
+        const configs: Record<string, any> = {
+            byok_default_byok_fallback: base([model('mA', 'cA', 'a'), model('mB', 'cB', 'b')], [cred('cA', 'openai_compatible'), cred('cB', 'openai_compatible')], { defaultModelId: 'mA', fallbackModelId: 'mB' }),
+            byok_default_managed_fallback: base([model('mA', 'cA', 'a'), model('mM', 'cM', 'gpt-4o-mini')], [cred('cA', 'openai_compatible'), { id: 'cM', provider: 'openai', managed: true }], { defaultModelId: 'mA', fallbackModelId: 'mM' }),
+            byok_default_kodus_fallback: base([model('mA', 'cA', 'a'), model('mK', 'cK', 'kodus-default')], [cred('cA', 'openai_compatible'), { id: 'cK', provider: 'kodus' }], { defaultModelId: 'mA', fallbackModelId: 'mK' }),
+            managed_default_only: base([model('mM', 'cM', 'gpt-4o-mini')], [{ id: 'cM', provider: 'openai', managed: true }], { defaultModelId: 'mM' }),
+            heavy_override_to_managed: base([model('mA', 'cA', 'a'), model('mM', 'cM', 'gpt-4o-mini')], [cred('cA', 'openai_compatible'), { id: 'cM', provider: 'openai', managed: true }], { defaultModelId: 'mA', taskOverrides: { codeReviewHeavy: 'mM' } }),
+            heavy_override_to_byok: base([model('mA', 'cA', 'a'), model('mH', 'cH', 'h')], [cred('cA', 'openai_compatible'), cred('cH', 'anthropic')], { defaultModelId: 'mA', taskOverrides: { codeReviewHeavy: 'mH' } }),
+        };
+        const crs: Array<[string, string, any, boolean]> = [
+            ['byok_default_byok_fallback', 'plain', {}, false],
+            ['byok_default_managed_fallback', 'plain', {}, false],
+            ['byok_default_kodus_fallback', 'plain', {}, false],
+            ['managed_default_only', 'plain', {}, false],
+            ['heavy_override_to_managed', 'risk_reroute_heavy', {}, true],
+            ['heavy_override_to_byok', 'risk_reroute_heavy', {}, true],
+            ['byok_default_byok_fallback', 'web_byokModelId_mB', { byokModelId: 'mB' }, false],
+            ['byok_default_byok_fallback', 'legacy_byokModel_name_b', { byokModel: 'b' }, false],
+            ['byok_default_byok_fallback', 'yaml_unknown_model_id', { byokModelId: 'does-not-exist' }, false],
+        ];
+        for (const [cfgName, label, crc, heavy] of crs) {
+            let routed: any;
+            try { routed = routeCodeReviewModel(configs[cfgName], crc, heavy); } catch (e: any) { routed = { threw: e?.message }; }
+            const slot = routed?.resolvedModelSlot;
+            const attempts = [slot, slot?.fallback];
+            let failed: any = null; let tried: any[] = [];
+            try {
+                await runWithModelFailover(attempts, async (s: any) => { tried.push(s ? { provider: s.provider, model: s.model, credentialId: s.credentialId ?? null } : null); throw q402(); }, { runName: 'qa2191-router', organizationId: 'org-1' });
+            } catch (e) { failed = e; }
+            const key = `A9.${cfgName}.${label}`;
+            await stageCase(key, { failures: [{ agentName: 'generalist', error: failed }], ctx: { codeReviewConfig: { reviewOptions: {}, resolvedModelSlot: slot } } });
+            OUT[key].routed = { blocked: routed?.blocked, reason: routed?.reason, threw: routed?.threw, slot: slot ? { provider: slot.provider, model: slot.model, credentialId: slot.credentialId ?? null, fallback: slot.fallback ? { provider: slot.fallback.provider, model: slot.fallback.model, credentialId: slot.fallback.credentialId ?? null } : null } : null };
+            OUT[key].attemptsTried = tried;
+        }
+        // Direct M16 audit input: BYOK primary, then a stamped managed-default attempt under another provider, no credentialId.
+        const managedLike = { provider: 'fireworks', model: 'managed-default' } as any;
+        let e2: any = null;
+        try { await runWithModelFailover([{ provider: 'openai_compatible', model: 'a', credentialId: 'cA', byokModelId: 'mA' } as any, managedLike], async () => { throw q402(); }, { runName: 'qa2191-m16b', organizationId: 'org-1' }); } catch (e) { e2 = e; }
+        await stageCase('A9.M16b_byok_then_managed_fireworks_both_402', { failures: [{ agentName: 'generalist', error: e2 }], ctx: { codeReviewConfig: { reviewOptions: {}, resolvedModelSlot: { provider: 'openai_compatible', model: 'a', credentialId: 'cA' } } } });
+        await stageCase('A9.M16b_catch_path', { throws: e2, ctx: { codeReviewConfig: { reviewOptions: {}, resolvedModelSlot: { provider: 'openai_compatible', model: 'a', credentialId: 'cA' } } } });
+    });
+
+    it('A10: throw before orchestration', async () => {
+        for (const m of ['resolveRepoInstructions', 'resolveCustomAgents', 'resolveReviewKnowledge']) {
+            const { stage, reviewOrchestrator } = makeStage({ out: orchOut() });
+            if (typeof (stage as any)[m] !== 'function') { OUT[`A10.${m}`] = { missing: true }; continue; }
+            jest.spyOn(stage as any, m).mockRejectedValue(q402());
+            const result = await (stage as any).executeStage(makeContext());
+            const obs = await conclude(result);
+            OUT[`A10.${m}`] = { errors: summarizeErrors(result.errors ?? []), conclusion: obs.finalize.map((f) => f.conclusion), orchestratorCalls: reviewOrchestrator.execute.mock.calls.length };
         }
     });
 
