@@ -1,0 +1,9 @@
+(node:18222) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:18223) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Test Suites: 3 passed, 3 total
+Tests:       63 passed, 63 total
+Snapshots:   0 total
+Time:        1.425 s
+Ran all test suites matching libs/code-review/pipeline/stages/agent-review.stage.file-anchor.spec.ts|libs/code-review/infrastructure/agents/engine/kody-rules-merge.spec.ts|libs/code-review/infrastructure/adapters/services/suggestion.service.implementation-check.spec.ts.
