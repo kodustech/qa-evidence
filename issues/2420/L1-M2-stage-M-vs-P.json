@@ -1,0 +1,330 @@
+{
+  "M": [
+    {
+      "tree": "M",
+      "scenario": "M2",
+      "case": "start-undefined",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/enrollment-fee.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [
+        {
+          "content": "`qa2420/enrollment-fee.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "`qa2420/enrollment-fee.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "prompt": "PR title does not start with [qa2420]\n\n`qa2420/enrollment-fee.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "label": "kody_rules",
+          "rule": "qa2420-T"
+        }
+      ],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2
+    },
+    {
+      "tree": "M",
+      "scenario": "M2",
+      "case": "start-null",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": null,
+          "end": null,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/enrollment-fee.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": null,
+          "end": null,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [
+        {
+          "content": "`qa2420/enrollment-fee.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "`qa2420/enrollment-fee.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "prompt": "PR title does not start with [qa2420]\n\n`qa2420/enrollment-fee.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "label": "kody_rules",
+          "rule": "qa2420-T"
+        }
+      ],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2
+    },
+    {
+      "tree": "M",
+      "scenario": "M2",
+      "case": "start-zero",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 0,
+          "end": 0,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/enrollment-fee.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 0,
+          "end": 0,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [
+        {
+          "content": "`qa2420/enrollment-fee.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "`qa2420/enrollment-fee.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "prompt": "PR title does not start with [qa2420]\n\n`qa2420/enrollment-fee.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "label": "kody_rules",
+          "rule": "qa2420-T"
+        }
+      ],
+      "valid": [],
+      "inline": [],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2
+    },
+    {
+      "tree": "M",
+      "scenario": "M2",
+      "case": "fixture-ranges",
+      "ranges": [
+        [
+          33,
+          35
+        ],
+        [
+          91,
+          94
+        ]
+      ]
+    }
+  ],
+  "P": [
+    {
+      "tree": "P",
+      "scenario": "M2",
+      "case": "start-undefined",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "commentStartLine": 33,
+          "commentLine": 35
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/enrollment-fee.ts: undefined-undefined → 33-35"
+      ],
+      "modelCalls": 2
+    },
+    {
+      "tree": "P",
+      "scenario": "M2",
+      "case": "start-null",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": null,
+          "end": null,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "commentStartLine": 33,
+          "commentLine": 35
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/enrollment-fee.ts: null-null → 33-35"
+      ],
+      "modelCalls": 2
+    },
+    {
+      "tree": "P",
+      "scenario": "M2",
+      "case": "start-zero",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 0,
+          "end": 0,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "commentStartLine": 33,
+          "commentLine": 35
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/enrollment-fee.ts: 0-0 → 33-35"
+      ],
+      "modelCalls": 2
+    },
+    {
+      "tree": "P",
+      "scenario": "M2",
+      "case": "fixture-ranges",
+      "ranges": [
+        [
+          33,
+          35
+        ],
+        [
+          91,
+          94
+        ]
+      ]
+    }
+  ]
+}
