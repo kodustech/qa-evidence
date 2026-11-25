@@ -1,0 +1,606 @@
+/* QA #2420 L1 harness: real AgentReviewStage.executeStage, real mapper, merge,
+ * renderer and SuggestionService. Only external boundaries are stubbed: the
+ * review orchestrator (model output), LLM.run (dedup model), severity and
+ * formatter model calls, persistence. Records every case to QA_OUT (JSON). */
+import * as fs from 'fs';
+import { frozenContext } from '../../../../test/fixtures/frozen-pipeline-context';
+import {
+    AgentReviewStage,
+    extractValidDiffLines,
+} from './agent-review.stage';
+import { resolveAgentPrompt } from '@libs/common/utils/codeManagement/suggestion-comment-blocks';
+import {
+    calculateCommentEndLine,
+    calculateCommentStartLine,
+} from '@libs/common/utils/comment-builder.utils';
+import { LLM } from '@libs/llm/llm';
+import { hasManagedModelKey } from '@libs/llm/managed-slot';
+import { classifySeverity } from '@libs/code-review/infrastructure/agents/engine/classify-severity';
+import { formatSuggestionContent } from '@libs/code-review/infrastructure/agents/engine/format-suggestion-content';
+import { mapAgentFindings } from '@libs/code-review/infrastructure/agents/collaborators/finding-mapper';
+import {
+    mergeKodyRuleFindings,
+    otherLocationsToRender,
+} from '@libs/code-review/infrastructure/agents/engine/kody-rules-merge';
+import { SuggestionService } from '@libs/code-review/infrastructure/adapters/services/suggestion.service';
+import { DeliveryStatus } from '@libs/platformData/domain/pullRequests/enums/deliveryStatus.enum';
+import { ImplementationStatus } from '@libs/platformData/domain/pullRequests/enums/implementationStatus.enum';
+
+jest.mock(
+    '@libs/code-review/infrastructure/agents/engine/classify-severity',
+    () => ({ classifySeverity: jest.fn().mockResolvedValue(new Map()) }),
+);
+jest.mock(
+    '@libs/code-review/infrastructure/agents/engine/format-suggestion-content',
+    () => ({ formatSuggestionContent: jest.fn().mockResolvedValue(new Map()) }),
+);
+jest.mock('@libs/llm/managed-slot', () => {
+    const actual = jest.requireActual('@libs/llm/managed-slot');
+    return { ...actual, hasManagedModelKey: jest.fn(() => false) };
+});
+
+const TREE = process.env.QA_TREE || '?';
+const OUT = process.env.QA_OUT;
+const records: any[] = [];
+const rec = (r: any) => {
+    const o = { tree: TREE, ...r };
+    records.push(o);
+    return o;
+};
+afterAll(() => {
+    if (OUT) fs.writeFileSync(OUT, JSON.stringify(records, null, 2));
+});
+
+// ── fixtures ───────────────────────────────────────────────────────────────
+const need = (n: string) => ({
+    need: n,
+    sourceHash: 'h',
+    source: 'compiler',
+    inferredAt: new Date(0),
+});
+const RULES = [
+    { uuid: 'qa2420-T', title: 'QA2420 PR title prefix', rule: 'The PR title must start with [qa2420].', severity: 'high', scope: 'pull-request' },
+    { uuid: 'qa2420-A', title: 'QA2420 file without test', rule: 'Every source file must have a test.', severity: 'high', scope: 'file', contextNeed: need('diff-only') },
+    { uuid: 'qa2420-B', title: 'QA2420 no console logging', rule: 'Do not call console.log.', severity: 'high', scope: 'file', contextNeed: need('diff-only') },
+    { uuid: 'qa2420-C', title: 'QA2420 function length', rule: 'Functions must not exceed 15 lines.', severity: 'high', scope: 'file', contextNeed: need('enclosing-scope') },
+    { uuid: 'qa2420-N', title: 'QA2420 no declared need', rule: 'Rule never inferred.', severity: 'high', scope: 'file' },
+];
+// Two hunks: new-file lines 33-35 and 91-94.
+const TWO_HUNKS = [
+    '@@ -33,2 +33,3 @@',
+    ' const fee = 1;',
+    '+console.log(fee);',
+    ' const b = 2;',
+    '@@ -90,2 +91,4 @@',
+    ' function enroll() {',
+    '+  const x = 1;',
+    '+  return x;',
+    ' }',
+].join('\n');
+// One hunk: new-file lines 10-12.
+const ONE_HUNK = ['@@ -10,2 +10,3 @@', ' const a = 1;', '+const b = 2;', ' const c = 3;'].join('\n');
+// Lines 1-10 added.
+const ADDED_1_10 = ['@@ -0,0 +1,10 @@', ...Array.from({ length: 10 }, (_, i) => `+l${i + 1}`)].join('\n');
+
+const F1 = 'qa2420/enrollment-fee.ts';
+const FU = 'qa2420/user.ts';
+
+const finding = (over: Record<string, unknown> = {}) => ({
+    relevantFile: F1,
+    relevantLinesStart: undefined,
+    relevantLinesEnd: undefined,
+    label: 'kody_rules',
+    severity: 'high',
+    oneSentenceSummary: 'PR title does not start with [qa2420]',
+    suggestionContent: 'The PR title must start with [qa2420].',
+    improvedCode: '',
+    brokenKodyRulesIds: ['qa2420-T'],
+    ...over,
+});
+
+// ── stage harness ──────────────────────────────────────────────────────────
+const makeStage = (gateEnabled = false) => {
+    const reviewOrchestrator = { execute: jest.fn() };
+    const stage = new AgentReviewStage(
+        { findLatestStageLog: jest.fn(), updateCodeReview: jest.fn(), updateStageLog: jest.fn() } as any,
+        { findByExternalId: jest.fn().mockResolvedValue(null) } as any,
+        reviewOrchestrator as any,
+        { runLLMInSpan: jest.fn(async ({ runFn }: any) => runFn?.()) } as any,
+        { generateContext: jest.fn(), generateContextLegacy: jest.fn().mockResolvedValue('') } as any,
+        { isEnabled: jest.fn().mockResolvedValue(gateEnabled) } as any,
+        { getReleaseTrack: jest.fn().mockResolvedValue('stable') } as any,
+        {
+            getRepositories: jest.fn().mockResolvedValue([]),
+            getCloneParams: jest.fn().mockResolvedValue(null),
+            getRepositoryContentFile: jest.fn().mockResolvedValue(null),
+            getRepositoryAllFiles: jest.fn().mockResolvedValue([]),
+        } as any,
+    );
+    const logs: string[] = [];
+    const sink = (level: string) => (e: any) => logs.push(`${level}: ${e?.message}`);
+    (stage as any).logger = { log: sink('log'), warn: sink('warn'), error: sink('error'), debug: () => {}, verbose: () => {} };
+    return { stage, reviewOrchestrator, logs };
+};
+
+const makeContext = (over: Record<string, unknown> = {}, cfgOver: Record<string, unknown> = {}) =>
+    frozenContext({
+        organizationAndTeamData: { organizationId: 'org-qa', teamId: 'team-qa' },
+        repository: { id: 'repo-qa', name: 'codex-athena' },
+        pullRequest: { number: 2420, title: 'update' },
+        platformType: 'GITHUB',
+        changedFiles: [{ filename: F1, patch: TWO_HUNKS }],
+        codeReviewConfig: {
+            reviewOptions: {},
+            resolvedModelSlot: { provider: 'openai', model: 'gpt-4o-mini' },
+            kodyRules: RULES,
+            ...cfgOver,
+        },
+        validSuggestions: [],
+        discardedSuggestions: [],
+        errors: [],
+        ...over,
+    }) as any;
+
+const pick = (s: any) =>
+    s && {
+        file: s.relevantFile,
+        start: s.relevantLinesStart,
+        end: s.relevantLinesEnd,
+        label: s.label,
+        rule: s.brokenKodyRulesIds?.[0],
+        fileAnchored: s.fileAnchored,
+        content: s.suggestionContent,
+        fullExplanation: s.fullExplanation,
+        kodyRuleOtherLocations: s.kodyRuleOtherLocations,
+        priorityStatus: s.priorityStatus,
+    };
+
+const summarize = (result: any, logs: string[], llmCalls: number) => ({
+    byPR: (result.validSuggestionsByPR ?? []).map((s: any) => ({
+        content: s.suggestionContent,
+        fullExplanation: s.fullExplanation,
+        prompt: resolveAgentPrompt(s),
+        label: s.label,
+        rule: s.brokenKodyRulesIds?.[0],
+    })),
+    valid: (result.validSuggestions ?? []).map(pick),
+    inline: (result.fileAnalysisResults ?? []).flatMap((f: any) =>
+        (f.validSuggestionsToAnalyze ?? []).map((s: any) => ({
+            ...pick(s),
+            commentStartLine: calculateCommentStartLine(s),
+            commentLine: calculateCommentEndLine(s),
+        })),
+    ),
+    discarded: (result.discardedSuggestions ?? []).map((s: any) => ({
+        file: s.relevantFile,
+        start: s.relevantLinesStart,
+        end: s.relevantLinesEnd,
+        label: s.label,
+        rule: s.brokenKodyRulesIds?.[0],
+        status: s.priorityStatus,
+    })),
+    logs: logs.filter((l) => /Snapped|File-anchored|Dropped|KODY-DEDUP|Rendered merged|PARSE-SCHEMA|PATH_MISMATCH|Completed partial|not changed/.test(l)),
+    modelCalls: llmCalls,
+});
+
+let llmSpy: jest.SpyInstance;
+beforeEach(() => {
+    llmSpy = jest.spyOn(LLM, 'run').mockResolvedValue({ groups: [], unique: Array.from({ length: 60 }, (_, i) => i) } as any);
+});
+afterEach(() => {
+    llmSpy?.mockRestore();
+    jest.clearAllMocks();
+    (hasManagedModelKey as jest.Mock).mockReturnValue(false);
+});
+
+const modelCallCount = () =>
+    llmSpy.mock.calls.length +
+    (classifySeverity as jest.Mock).mock.calls.length +
+    (formatSuggestionContent as jest.Mock).mock.calls.length;
+
+const runStage = async (
+    scenario: string,
+    name: string,
+    suggestions: any[],
+    ctxOver: Record<string, unknown> = {},
+    opts: { gate?: boolean; cfgOver?: Record<string, unknown>; extraOut?: any } = {},
+) => {
+    const { stage, reviewOrchestrator, logs } = makeStage(opts.gate);
+    const anchorSpy = jest.spyOn(stage as any, 'anchorSuggestionsToDiff');
+    reviewOrchestrator.execute.mockResolvedValue({
+        suggestions,
+        agentResults: [],
+        failures: [],
+        incomplete: [],
+        unverified: [],
+        warnings: [],
+        ...(opts.extraOut ?? {}),
+    });
+    const ctx = makeContext(ctxOver, opts.cfgOver);
+    const result = await (stage as any).executeStage(ctx);
+    const anchorCall = anchorSpy.mock.calls[0];
+    const out = {
+        scenario,
+        case: name,
+        input: suggestions.map(pick),
+        anchorArgCount: anchorCall?.length,
+        anchorSetArg: anchorCall?.[5] instanceof Set ? [...anchorCall[5]] : String(anchorCall?.[5]),
+        anchorOut: (anchorSpy.mock.results[0]?.value ?? []).map(pick),
+        ...summarize(result, logs, modelCallCount()),
+    };
+    return rec(out);
+};
+
+// ── M2 ─────────────────────────────────────────────────────────────────────
+describe('M2 line-less kody_rules on a two-hunk changed file', () => {
+    it.each([
+        ['undefined', undefined, undefined],
+        ['null', null, null],
+        ['zero', 0, 0],
+    ])('start %s', async (name, start, end) => {
+        await runStage('M2', `start-${name}`, [finding({ relevantLinesStart: start, relevantLinesEnd: end })]);
+    });
+    it('valid diff ranges of the fixture', () => {
+        rec({ scenario: 'M2', case: 'fixture-ranges', ranges: extractValidDiffLines(TWO_HUNKS) });
+    });
+});
+
+// ── M4 local ───────────────────────────────────────────────────────────────
+describe('M4 non-rule labels and line-less non-rule keep the old behaviour', () => {
+    const labels = ['bug', 'security', 'performance', 'potential_issues', 'maintainability'];
+    it.each(labels)('in-hunk %s finding stays inline', async (label) => {
+        await runStage('M4', `in-hunk-${label}`, [
+            finding({ label, brokenKodyRulesIds: undefined, relevantLinesStart: 34, relevantLinesEnd: 34, suggestionContent: `${label}: console.log leaks the fee`, oneSentenceSummary: 'leak', language: 'typescript' }),
+        ]);
+    });
+    it('in-hunk lineful kody_rules B stays inline', async () => {
+        await runStage('M4', 'in-hunk-rule-B', [
+            finding({ brokenKodyRulesIds: ['qa2420-B'], relevantLinesStart: 34, relevantLinesEnd: 34, suggestionContent: 'Do not call console.log here.' }),
+        ]);
+    });
+    it('line-less finder bug (through stage)', async () => {
+        await runStage('M4', 'lineless-finder-bug-stage', [
+            finding({ label: 'bug', brokenKodyRulesIds: undefined, suggestionContent: 'Division by an empty list.', oneSentenceSummary: 'div by zero' }),
+        ]);
+    });
+    it('line-less custom-agent finding (non-rule label, through stage)', async () => {
+        await runStage(
+            'M4',
+            'lineless-custom-agent-stage',
+            [
+                finding({ label: 'custom_agent', brokenKodyRulesIds: undefined, suggestionContent: 'Custom agent: missing guard.', oneSentenceSummary: 'guard', customAgent: { id: 'agent-qa', name: 'QA agent', color: '#000' } }),
+            ],
+            {},
+            {
+                gate: true,
+                cfgOver: { customAgents: [{ id: 'agent-qa', name: 'QA agent', enabled: true, instructions: 'x', scope: { include: ['qa2420/**'] } }] },
+                extraOut: { customAgentRuns: [{ id: 'agent-qa', name: 'QA agent', slug: 'qa-agent', status: 'ran' }] },
+            },
+        );
+    });
+    it.each(['bug', 'security', 'performance', 'general'])('line-less %s through the anchor helper (6 args)', async (label) => {
+        const { stage } = makeStage();
+        const discarded: any[] = [];
+        const out = (stage as any).anchorSuggestionsToDiff(
+            [finding({ label, brokenKodyRulesIds: undefined })],
+            [{ filename: F1, patch: TWO_HUNKS }],
+            RULES,
+            discarded,
+            {},
+            new Set([F1]),
+        );
+        rec({ scenario: 'M4', case: `lineless-${label}-anchor-helper`, anchorOut: out.map(pick), discarded: discarded.map(pick), modelCalls: modelCallCount() });
+    });
+    it('T line-less plus an ordinary bug on the same file', async () => {
+        await runStage('M4', 'T-plus-ordinary-bug-same-file', [
+            finding(),
+            finding({ label: 'bug', brokenKodyRulesIds: undefined, relevantLinesStart: 92, relevantLinesEnd: 93, suggestionContent: 'Division by enrolled count without an empty check.', oneSentenceSummary: 'div by zero', language: 'typescript' }),
+        ]);
+    });
+});
+
+// ── M5 local ───────────────────────────────────────────────────────────────
+describe('M5 contextNeed variants (one hunk 10-12)', () => {
+    const ctx = { changedFiles: [{ filename: FU, patch: ONE_HUNK }] };
+    const rules: Array<[string, string]> = [
+        ['enclosing-scope', 'qa2420-C'],
+        ['diff-only', 'qa2420-A'],
+        ['absent-need', 'qa2420-N'],
+    ];
+    for (const [needName, uuid] of rules) {
+        it(`no-start ${needName}`, async () => {
+            await runStage('M5', `no-start-${needName}`, [finding({ relevantFile: FU, brokenKodyRulesIds: [uuid] })], ctx);
+        });
+        it(`out-of-hunk 120-180 ${needName}`, async () => {
+            await runStage('M5', `out-of-hunk-120-180-${needName}`, [finding({ relevantFile: FU, relevantLinesStart: 120, relevantLinesEnd: 180, brokenKodyRulesIds: [uuid], suggestionContent: 'This function is far too long.' })], ctx);
+        });
+        it(`in-hunk 10-11 ${needName}`, async () => {
+            await runStage('M5', `in-hunk-10-11-${needName}`, [finding({ relevantFile: FU, relevantLinesStart: 10, relevantLinesEnd: 11, brokenKodyRulesIds: [uuid], suggestionContent: 'This function is far too long.' })], ctx);
+        });
+    }
+});
+
+// ── M7 merge ───────────────────────────────────────────────────────────────
+const mf = (file: string | undefined, start: any, end: any, content: string, rule = 'qa2420-A') =>
+    ({ relevantFile: file, relevantLinesStart: start, relevantLinesEnd: end, suggestionContent: content, brokenKodyRulesIds: rule ? [rule] : undefined, label: 'kody_rules' }) as any;
+const GROUPS: Record<string, any[]> = {
+    'G1-kept-lineless-plus-lined-dups': [
+        mf('qa2420/a.ts', 1, 2, 'short a'),
+        mf('qa2420/b.ts', undefined, undefined, 'the longest description of the violation in b'),
+        mf('qa2420/c.ts', 5, 6, 'short c'),
+        mf(undefined, 3, 3, 'no-file dup'),
+        mf('qa2420/c.ts', 5, 6, 'short c again'),
+    ],
+    'G2-kept-lined-plus-lineless-dup': [
+        mf('qa2420/a.ts', 1, 2, 'the longest description of the violation in a'),
+        mf('qa2420/b.ts', undefined, undefined, 'b lineless'),
+        mf('qa2420/c.ts', 5, 6, 'short c'),
+    ],
+    'G3-all-no-file': [mf(undefined, undefined, undefined, 'pr one'), mf(undefined, undefined, undefined, 'pr two longer')],
+    'G4-all-lineless-file': [mf('qa2420/a.ts', undefined, undefined, 'a lineless longer text'), mf('qa2420/b.ts', undefined, undefined, 'b lineless')],
+    'G5-singleton': [mf('qa2420/a.ts', undefined, undefined, 'only one')],
+    'G6-no-rule-passthrough': [mf('qa2420/a.ts', 1, 2, 'no rule a', ''), mf('qa2420/b.ts', 1, 2, 'no rule b', '')],
+    'G7-distinct-uuids': [mf('qa2420/a.ts', 1, 2, 'rule A at a'), mf('qa2420/b.ts', undefined, undefined, 'rule B at b', 'qa2420-B')],
+};
+describe('M7 mergeKodyRuleFindings direct', () => {
+    it.each(Object.keys(GROUPS))('%s', (g) => {
+        const merges: any[] = [];
+        const out = mergeKodyRuleFindings(GROUPS[g].map((x) => ({ ...x })), (m) => merges.push(m));
+        rec({ scenario: 'M7', case: `direct-${g}`, out: out.map(pick), merges, rendered: out.map((s: any) => otherLocationsToRender(s)) });
+    });
+});
+describe('M7 merge through the stage', () => {
+    const files = ['qa2420/a.ts', 'qa2420/b.ts', 'qa2420/c.ts'].map((filename) => ({ filename, patch: ADDED_1_10 }));
+    it.each(['G1-kept-lineless-plus-lined-dups', 'G2-kept-lined-plus-lineless-dup', 'G4-all-lineless-file'])('%s', async (g) => {
+        await runStage('M7', `stage-${g}`, GROUPS[g].map((x) => ({ ...x, oneSentenceSummary: 'rule A', severity: 'high' })), { changedFiles: files });
+    });
+});
+
+// ── M8 renderer ────────────────────────────────────────────────────────────
+describe('M8 otherLocationsToRender', () => {
+    const cases: Record<string, any> = {
+        'start-only-own-plus-both-lists': {
+            relevantFile: 'qa2420/a.ts', relevantLinesStart: 7, relevantLinesEnd: undefined,
+            kodyRuleOtherLocations: ['qa2420/a.ts:7-7', 'qa2420/b.ts:1-2', 'src/void.ts:?-?'],
+            alsoFoundIn: ['qa2420/b.ts:1-2', 'qa2420/a.ts:7-?', 'src/other.ts:?-?'],
+        },
+        'no-own-start-all-unknown': {
+            relevantFile: 'qa2420/a.ts', relevantLinesStart: undefined, relevantLinesEnd: undefined,
+            kodyRuleOtherLocations: ['qa2420/b.ts:?-?', 'src/void.ts:?-?'],
+            alsoFoundIn: ['qa2420/c.ts:?-?'],
+        },
+        'empty-lists': { relevantFile: 'qa2420/a.ts', relevantLinesStart: 7, relevantLinesEnd: 7 },
+    };
+    it.each(Object.keys(cases))('direct %s', (c) => {
+        rec({ scenario: 'M8', case: `direct-${c}`, input: cases[c], rendered: otherLocationsToRender(cases[c]) });
+    });
+    it('through the stage: start-only own location (singleton rule with stored lists)', async () => {
+        await runStage('M8', 'stage-start-only-own', [
+            finding({
+                relevantFile: 'qa2420/a.ts', relevantLinesStart: 7, relevantLinesEnd: undefined, brokenKodyRulesIds: ['qa2420-B'],
+                suggestionContent: 'Do not call console.log.',
+                kodyRuleOtherLocations: cases['start-only-own-plus-both-lists'].kodyRuleOtherLocations,
+                alsoFoundIn: cases['start-only-own-plus-both-lists'].alsoFoundIn,
+            }),
+        ], { changedFiles: [{ filename: 'qa2420/a.ts', patch: ADDED_1_10 }, { filename: 'qa2420/b.ts', patch: ADDED_1_10 }] });
+    });
+    it('through the stage: production order, file-anchored start-only kept + same-location dup + b.ts:1-2 dup', async () => {
+        await runStage('M8', 'stage-production-order-start-only-file-anchored', [
+            finding({ relevantFile: 'qa2420/a.ts', relevantLinesStart: 120, relevantLinesEnd: undefined, brokenKodyRulesIds: ['qa2420-C'], suggestionContent: 'This function is far too long, the longest description of the three.' }),
+            finding({ relevantFile: 'qa2420/a.ts', relevantLinesStart: 120, relevantLinesEnd: undefined, brokenKodyRulesIds: ['qa2420-C'], suggestionContent: 'Too long.' }),
+            finding({ relevantFile: 'qa2420/b.ts', relevantLinesStart: 1, relevantLinesEnd: 2, brokenKodyRulesIds: ['qa2420-C'], suggestionContent: 'Too long b.' }),
+        ], { changedFiles: [{ filename: 'qa2420/a.ts', patch: ADDED_1_10 }, { filename: 'qa2420/b.ts', patch: ADDED_1_10 }] });
+    });
+    it('through the stage: line-less own, all-unknown lists', async () => {
+        await runStage('M8', 'stage-lineless-own-all-unknown', [
+            finding({
+                relevantFile: 'qa2420/a.ts', brokenKodyRulesIds: ['qa2420-A'],
+                suggestionContent: 'This file has no test.',
+                kodyRuleOtherLocations: cases['no-own-start-all-unknown'].kodyRuleOtherLocations,
+                alsoFoundIn: cases['no-own-start-all-unknown'].alsoFoundIn,
+            }),
+        ], { changedFiles: [{ filename: 'qa2420/a.ts', patch: ADDED_1_10 }] });
+    });
+});
+
+// ── M20 ignored file ───────────────────────────────────────────────────────
+describe('M20 ignored changed file keeps the snap', () => {
+    const IGN = 'qa2420/ignored/gen.ts';
+    const ctx = { changedFiles: [{ filename: FU, patch: ONE_HUNK }], ignoredFileChanges: [{ filename: IGN, status: 'modified', patch: TWO_HUNKS }] };
+    const opts = {
+        gate: true,
+        cfgOver: { customAgents: [{ id: 'agent-qa', name: 'QA agent', enabled: true, instructions: 'x', scope: { include: ['qa2420/**', IGN] } }] },
+        extraOut: { customAgentRuns: [{ id: 'agent-qa', name: 'QA agent', slug: 'qa-agent', status: 'ran' }] },
+    };
+    const optsUnnamed = {
+        ...opts,
+        cfgOver: { customAgents: [{ id: 'agent-qa', name: 'QA agent', enabled: true, instructions: 'x', scope: { include: ['qa2420/**'] } }] },
+    };
+    it('X1-L1 kody_rules line-less on an ignored file no agent names', async () => {
+        await runStage('X1-L1', 'kody_rules-lineless-ignored-not-named', [finding({ relevantFile: IGN, brokenKodyRulesIds: ['qa2420-A'] })], ctx, optsUnnamed);
+    });
+    it('X1-L1 kody_rules lineful 34-34 on an ignored file no agent names', async () => {
+        await runStage('X1-L1', 'kody_rules-lineful-ignored-not-named', [finding({ relevantFile: IGN, brokenKodyRulesIds: ['qa2420-A'], relevantLinesStart: 34, relevantLinesEnd: 34 })], ctx, optsUnnamed);
+    });
+    const ca = { customAgent: { id: 'agent-qa', name: 'QA agent', color: '#000' } };
+    it('custom-agent kody_rules-shaped line-less finding on ignored file', async () => {
+        await runStage('M20', 'custom-agent-kody_rules-label-lineless-ignored', [finding({ relevantFile: IGN, brokenKodyRulesIds: ['qa2420-A'], ...ca })], ctx, opts);
+    });
+    it('custom-agent non-rule line-less finding on ignored file', async () => {
+        await runStage('M20', 'custom-agent-custom_agent-label-lineless-ignored', [finding({ relevantFile: IGN, label: 'custom_agent', brokenKodyRulesIds: undefined, suggestionContent: 'Generated file reformat.', ...ca })], ctx, opts);
+    });
+    it('anchor helper direct: kody_rules line-less on ignored file, set without it', () => {
+        const { stage } = makeStage();
+        const out = (stage as any).anchorSuggestionsToDiff([finding({ relevantFile: IGN })], [{ filename: FU, patch: ONE_HUNK }, { filename: IGN, patch: TWO_HUNKS }], RULES, [], {}, new Set([FU]));
+        rec({ scenario: 'M20', case: 'anchor-helper-ignored', anchorOut: out.map(pick) });
+    });
+});
+
+// ── M21 mapper + stage ─────────────────────────────────────────────────────
+const mapperCtx = (changedFiles: any[], logs: string[]) => ({
+    changedFiles,
+    kodyRules: RULES as any,
+    prNumber: 2420,
+    isKodyRules: true,
+    identityName: 'kody-rules',
+    labelPolicy: { categoryLabel: 'kody_rules', allowedLabels: ['kody_rules'], supportsMixed: false } as any,
+    logger: { warn: (e: any) => logs.push(`warn: ${e.message} ${JSON.stringify({ relevantFile: e.metadata?.relevantFile })}`), log: (e: any) => logs.push(`log: ${e.message}`) },
+});
+const rawRule = (over: Record<string, unknown>) => ({ ruleUuid: 'qa2420-T', suggestionContent: 'The PR title must start with [qa2420].', oneSentenceSummary: 'PR title prefix', ...over });
+describe('M21 mapper then stage', () => {
+    const cf = [{ filename: F1, patch: TWO_HUNKS }];
+    const shapes: Record<string, any> = {
+        'no-file-positive-lines': rawRule({ relevantLinesStart: 34, relevantLinesEnd: 34 }),
+        'no-file-no-lines': rawRule({}),
+        'outside-pr-file-no-start': rawRule({ relevantFile: 'qa2420/not-in-pr.ts' }),
+    };
+    it.each(Object.keys(shapes))('%s', async (k) => {
+        const mlogs: string[] = [];
+        const mapped = mapAgentFindings({ findings: { suggestions: [shapes[k]] } }, mapperCtx(cf, mlogs));
+        const out = await runStage('M21', `mapper+stage-${k}`, mapped.suggestions);
+        out.mapper = { kept: mapped.suggestions.map(pick), droppedForPath: mapped.droppedForPath, logs: mlogs };
+    });
+    it('outside-PR no-start fed directly to the stage', async () => {
+        await runStage('M21', 'direct-stage-outside-pr-no-start', [finding({ relevantFile: 'qa2420/not-in-pr.ts' })]);
+    });
+});
+
+describe('X2-L1 out-of-PR kody_rules reaching the stage', () => {
+    it('line-less', async () => {
+        await runStage('X2-L1', 'outside-pr-lineless', [finding({ relevantFile: 'qa2420/not-in-pr.ts' })]);
+    });
+    it('lineful 120-180 enclosing-scope (KRC-20 shape)', async () => {
+        await runStage('X2-L1', 'outside-pr-120-180-enclosing', [finding({ relevantFile: 'qa2420/not-in-pr.ts', relevantLinesStart: 120, relevantLinesEnd: 180, brokenKodyRulesIds: ['qa2420-C'] })]);
+    });
+    it('lineful 34-34 diff-only', async () => {
+        await runStage('X2-L1', 'outside-pr-34-34-diff-only', [finding({ relevantFile: 'qa2420/not-in-pr.ts', relevantLinesStart: 34, relevantLinesEnd: 34, brokenKodyRulesIds: ['qa2420-B'] })]);
+    });
+});
+
+// ── M22 path variants ──────────────────────────────────────────────────────
+describe('M22 path canonicalization', () => {
+    const UNI = 'qa2420/école/StudentService.ts';
+    const variants: Record<string, string> = {
+        exact: UNI,
+        backslash: 'qa2420\\école\\StudentService.ts',
+        'leading-slash': '/qa2420/école/StudentService.ts',
+        'leading-dot': './qa2420/école/StudentService.ts',
+        'unique-basename': 'StudentService.ts',
+        'unique-tail': 'école/StudentService.ts',
+        'nfd-unicode': UNI.normalize('NFD'),
+    };
+    it.each(Object.keys(variants))('unique %s', async (k) => {
+        const cf = [{ filename: UNI, patch: TWO_HUNKS }];
+        const mlogs: string[] = [];
+        const mapped = mapAgentFindings({ findings: { suggestions: [rawRule({ relevantFile: variants[k] })] } }, mapperCtx(cf, mlogs));
+        const out = await runStage('M22', `unique-${k}`, mapped.suggestions, { changedFiles: cf });
+        out.mapper = { emitted: variants[k], kept: mapped.suggestions.map(pick), droppedForPath: mapped.droppedForPath, logs: mlogs };
+    });
+    it('ambiguous basename', async () => {
+        const cf = [{ filename: UNI, patch: TWO_HUNKS }, { filename: 'qa2420/other/StudentService.ts', patch: TWO_HUNKS }];
+        const mlogs: string[] = [];
+        const mapped = mapAgentFindings({ findings: { suggestions: [rawRule({ relevantFile: 'StudentService.ts' })] } }, mapperCtx(cf, mlogs));
+        const out = await runStage('M22', 'ambiguous-basename', mapped.suggestions, { changedFiles: cf });
+        out.mapper = { kept: mapped.suggestions.map(pick), droppedForPath: mapped.droppedForPath, logs: mlogs };
+    });
+});
+
+// ── M23 falsy start + positive end across stage, merge, service ───────────
+describe('M23 falsy start with positive end', () => {
+    const shapes: Array<[string, any, any]> = [
+        ['undefined-15', undefined, 15],
+        ['null-15', null, 15],
+        ['zero-15', 0, 15],
+        ['start-only-34', 34, undefined],
+        ['second-hunk-92-93', 92, 93],
+    ];
+    it.each(shapes)('stage %s', async (name, start, end) => {
+        await runStage('M23', `stage-${name}`, [finding({ relevantLinesStart: start, relevantLinesEnd: end })]);
+    });
+    it.each(shapes)('merge %s (with a lined dup on another file)', (name, start, end) => {
+        const merges: any[] = [];
+        const out = mergeKodyRuleFindings(
+            [mf(F1, start, end, 'the longest description of the kept finding'), mf('qa2420/other.ts', 3, 4, 'dup')],
+            (m) => merges.push(m),
+        );
+        rec({ scenario: 'M23', case: `merge-${name}`, out: out.map(pick), merges, rendered: out.map((s: any) => otherLocationsToRender(s)) });
+    });
+    it.each(shapes)('service %s', async (name, start, end) => {
+        const ai = { checkSuggestionImplementation: jest.fn(async ({ suggestions }: any) => ({ verdicts: suggestions.map((s: any) => ({ id: s.id, status: ImplementationStatus.IMPLEMENTED })), unmeasured: [] })) };
+        const prs = { updateSuggestion: jest.fn().mockResolvedValue({}) };
+        const perm = { resolveTaskSlot: jest.fn().mockResolvedValue({ provider: 'openai', model: 'gpt-x' }) };
+        const service = new SuggestionService(ai as any, prs as any, {} as any, {} as any, {} as any, perm as any);
+        const result = await service.checkImplementedSuggestions({
+            organizationAndTeamData: { organizationId: 'org-qa', teamId: 'team-qa' },
+            prNumber: 2420,
+            changedFiles: [{ filename: F1, patch: TWO_HUNKS }] as any,
+            savedSuggestions: [
+                { id: 's-1', relevantFile: F1, label: 'kody_rules', relevantLinesStart: start, relevantLinesEnd: end, suggestionContent: 'The PR title must start with [qa2420].', deliveryStatus: DeliveryStatus.SENT, implementationStatus: ImplementationStatus.NOT_IMPLEMENTED },
+            ] as any,
+        });
+        rec({ scenario: 'M23', case: `service-${name}`, result, aiCalls: ai.checkSuggestionImplementation.mock.calls.length, slotResolutions: perm.resolveTaskSlot.mock.calls.length, updates: prs.updateSuggestion.mock.calls.length });
+    });
+});
+
+// ── M24 empty / no-patch / rename / ignored ────────────────────────────────
+describe('M24 empty and patchless inputs', () => {
+    it('no suggestions', async () => {
+        await runStage('M24', 'no-suggestions', []);
+    });
+    it('empty-patch changed file, no-start rule', async () => {
+        await runStage('M24', 'empty-patch-no-start', [finding({ relevantFile: 'qa2420/empty.ts' })], { changedFiles: [{ filename: F1, patch: TWO_HUNKS }, { filename: 'qa2420/empty.ts', patch: '' }] });
+    });
+    it('rename-only changed file, no-start rule', async () => {
+        await runStage('M24', 'rename-only-no-start', [finding({ relevantFile: 'qa2420/renamed.ts' })], { changedFiles: [{ filename: F1, patch: TWO_HUNKS }, { filename: 'qa2420/renamed.ts', previous_filename: 'qa2420/old.ts', status: 'renamed' }] });
+    });
+    it('rename-only changed file, lined rule', async () => {
+        await runStage('M24', 'rename-only-lined', [finding({ relevantFile: 'qa2420/renamed.ts', relevantLinesStart: 19, relevantLinesEnd: 20 })], { changedFiles: [{ filename: F1, patch: TWO_HUNKS }, { filename: 'qa2420/renamed.ts', previous_filename: 'qa2420/old.ts', status: 'renamed' }] });
+    });
+    it('ignored file with real patch, no-start rule (no custom agent)', async () => {
+        await runStage('M24', 'ignored-real-patch-no-start', [finding({ relevantFile: 'qa2420/ignored/gen.ts' })], { ignoredFileChanges: [{ filename: 'qa2420/ignored/gen.ts', status: 'modified', patch: TWO_HUNKS }] });
+    });
+    it('normal complete in-hunk rule (control)', async () => {
+        await runStage('M24', 'control-in-hunk', [finding({ brokenKodyRulesIds: ['qa2420-B'], relevantLinesStart: 34, relevantLinesEnd: 34 })]);
+    });
+});
+
+// ── M29 local: zero model calls in anchor/merge, bounded 1,000 merge ───────
+describe('M29 cost', () => {
+    it('anchor helper and merge make zero model calls', () => {
+        const { stage } = makeStage();
+        const before = modelCallCount();
+        (stage as any).anchorSuggestionsToDiff(
+            [finding(), finding({ relevantLinesStart: 0 }), finding({ relevantLinesStart: 34, relevantLinesEnd: 34 })],
+            [{ filename: F1, patch: TWO_HUNKS }], RULES, [], {}, new Set([F1]),
+        );
+        mergeKodyRuleFindings(GROUPS['G1-kept-lineless-plus-lined-dups'].map((x) => ({ ...x })));
+        rec({ scenario: 'M29', case: 'zero-model-calls', modelCallsDuringAnchorAndMerge: modelCallCount() - before });
+    });
+    it('1,000-occurrence merge', () => {
+        const files = Array.from({ length: 50 }, (_, i) => `qa2420/f${i}.ts`);
+        const input: any[] = [];
+        for (let i = 0; i < 1000; i++) {
+            const rule = `rule-${i % 10}`;
+            const file = files[i % 50];
+            const kind = i % 4; // 0 lined, 1 lineless-file, 2 no-file, 3 start-only
+            input.push(mf(kind === 2 ? undefined : file, kind === 1 || kind === 2 ? undefined : (i % 97) + 1, kind === 0 ? (i % 97) + 2 : undefined, `finding ${i} ${'x'.repeat(i % 13)}`, rule));
+        }
+        const merges: any[] = [];
+        const t0 = process.hrtime.bigint();
+        const before = modelCallCount();
+        const out = mergeKodyRuleFindings(input, (m) => merges.push(m));
+        const ms = Number(process.hrtime.bigint() - t0) / 1e6;
+        const validLocs = new Set(input.filter((s) => s.relevantFile && s.relevantLinesStart).map((s) => `${s.relevantFile}:${s.relevantLinesStart}-${s.relevantLinesEnd ?? s.relevantLinesStart}`));
+        const allOther = out.flatMap((s: any) => s.kodyRuleOtherLocations ?? []);
+        const invented = allOther.filter((l: string) => !validLocs.has(l));
+        const rendered = out.flatMap((s: any) => otherLocationsToRender(s));
+        rec({
+            scenario: 'M29', case: 'merge-1000', ms, outCount: out.length, merges: merges.length,
+            scopes: merges.reduce((a: any, m) => ((a[m.scope] = (a[m.scope] || 0) + 1), a), {}),
+            otherLocationsTotal: allOther.length,
+            invented: invented.length, inventedSample: invented.slice(0, 5),
+            placeholderRendered: rendered.filter((l: string) => /\?|undefined|null/.test(l)).length,
+            modelCalls: modelCallCount() - before,
+        });
+    });
+});
