@@ -1,0 +1,414 @@
+/**
+ * QA #2420 worker-process harness (one OS process per worker, run with
+ * `jest -i`). REAL: AutomationCodeReviewService.run (pg advisory lock,
+ * IN_PROGRESS gate, heartbeat, completion write) on the real
+ * AutomationExecutionService/Repository against a disposable, migrated
+ * Postgres; AgentReviewStage -> CreatePrLevelCommentsStage ->
+ * CreateFileCommentsStage; CommentManagerService; CodeManagementService +
+ * PlatformIntegrationFactory; GithubService / GitlabService adapters (octokit /
+ * gitbeaker) talking HTTP to a fake provider server; SuggestionService;
+ * PullRequestsService + PullRequestsRepository on a disposable MongoDB;
+ * StaleReviewWatchdogCronProvider (QA_MODE=watchdog).
+ * STUBBED: the review orchestrator's model output (scripted findings), the
+ * LLM dedup/severity/format helpers, integration/auth config lookups (return
+ * a token record pointing at the fake provider), organization lookup,
+ * enqueue of the implementation check, and the pipeline executor: a minimal
+ * handler runs the three tail stages instead of the full CodeReviewHandler
+ * pipeline (no fetch/config/history stages).
+ */
+const OFFSET_MS = Number(process.env.QA_CLOCK_OFFSET_MIN || 0) * 60_000;
+const RealDate = Date;
+if (OFFSET_MS) {
+    // Only Date.now is shifted: replacing the Date class breaks TypeORM's
+    // column type checks. The gates under test read Date.now() for their
+    // heartbeat cutoffs (automationCodeReview.ts, staleReviewWatchdog.cron.ts).
+    const realNow = RealDate.now.bind(RealDate);
+    RealDate.now = () => realNow() + OFFSET_MS;
+}
+
+jest.mock('@libs/core/log/logger', () => {
+    const fs = require('fs');
+    const safe = (v: any) => {
+        try {
+            return JSON.parse(
+                JSON.stringify(v, (k, x) =>
+                    k === 'body' && typeof x === 'string' ? x.slice(0, 80) : x,
+                ),
+            );
+        } catch {
+            return String(v);
+        }
+    };
+    const write = (level: string, component: string, arg: any) => {
+        const a = typeof arg === 'string' ? { message: arg } : arg || {};
+        fs.appendFileSync(
+            process.env.QA_LOG,
+            JSON.stringify({
+                ts: new RealDate(Date.now()).toISOString(),
+                realTs: new RealDate().toISOString(),
+                pid: process.pid,
+                worker: process.env.QA_WORKER_ID,
+                level,
+                component,
+                message: a.message,
+                metadata: safe(a.metadata),
+                error: a.error ? String(a.error?.message ?? a.error) : undefined,
+            }) + '\n',
+        );
+    };
+    const RealDate = (global as any).Date;
+    return {
+        createLogger: (component: string) => ({
+            log: (a: any) => write('info', component, a),
+            info: (a: any) => write('info', component, a),
+            warn: (a: any) => write('warn', component, a),
+            error: (a: any) => write('error', component, a),
+            debug: (a: any) => write('debug', component, a),
+        }),
+    };
+});
+jest.mock(
+    '@libs/code-review/infrastructure/agents/engine/classify-severity',
+    () => ({ classifySeverity: jest.fn().mockResolvedValue(new Map()) }),
+);
+jest.mock(
+    '@libs/code-review/infrastructure/agents/engine/format-suggestion-content',
+    () => ({ formatSuggestionContent: jest.fn().mockResolvedValue(new Map()) }),
+);
+jest.mock('@libs/llm/managed-slot', () => {
+    const actual = jest.requireActual('@libs/llm/managed-slot');
+    return { ...actual, hasManagedModelKey: jest.fn(() => false) };
+});
+
+import * as fs from 'fs';
+import mongoose from 'mongoose';
+import { DataSource } from 'typeorm';
+import { EventEmitter2 } from '@nestjs/event-emitter';
+import { ENTITIES } from '@libs/core/infrastructure/database/typeorm/entities';
+import { AutomationExecutionModel } from '@libs/automation/infrastructure/adapters/repositories/schemas/automationExecution.model';
+import { CodeReviewExecutionModel } from '@libs/automation/infrastructure/adapters/repositories/schemas/codeReviewExecution.model';
+import { AutomationExecutionRepository } from '@libs/automation/infrastructure/adapters/repositories/automationExecution.repository';
+import { CodeReviewExecutionRepository } from '@libs/automation/infrastructure/adapters/repositories/codeReviewExecution.repository';
+import { CodeReviewExecutionService } from '@libs/automation/infrastructure/adapters/services/codeReviewExecution.service';
+import { AutomationExecutionService } from '@libs/automation/infrastructure/adapters/services/automationExecution.service';
+import { AutomationCodeReviewService } from '@libs/automation/infrastructure/adapters/services/processAutomation/strategies/automationCodeReview';
+import { DistributedLockService } from '@libs/core/workflow/infrastructure/distributed-lock.service';
+import { AgentReviewStage } from '@libs/code-review/pipeline/stages/agent-review.stage';
+import { CreatePrLevelCommentsStage } from '@libs/code-review/pipeline/stages/create-pr-level-comments.stage';
+import { CreateFileCommentsStage } from '@libs/code-review/pipeline/stages/create-file-comments.stage';
+import { CommentManagerService } from '@libs/code-review/infrastructure/adapters/services/commentManager.service';
+import { MessageTemplateProcessor } from '@libs/code-review/infrastructure/adapters/services/messageTemplateProcessor.service';
+import { SuggestionService } from '@libs/code-review/infrastructure/adapters/services/suggestion.service';
+import { CodeManagementService } from '@libs/platform/infrastructure/adapters/services/codeManagement.service';
+import { PlatformIntegrationFactory } from '@libs/platform/infrastructure/adapters/services/platformIntegration.factory';
+import { GithubService } from '@libs/platform/infrastructure/adapters/services/github/github.service';
+import { GitlabService } from '@libs/platform/infrastructure/adapters/services/gitlab.service';
+import { PullRequestsService } from '@libs/platformData/infrastructure/adapters/services/pullRequests.service';
+import { PullRequestsRepository } from '@libs/platformData/infrastructure/adapters/repositories/pullRequests.repository';
+import {
+    PullRequestsModel,
+    PullRequestsSchema,
+} from '@libs/platformData/infrastructure/adapters/repositories/schemas/pullRequests.model';
+import { CacheService } from '@libs/core/cache/cache.service';
+import { LLM } from '@libs/llm/llm';
+import { PlatformType } from '@libs/core/domain/enums';
+import { encrypt } from '@libs/common/utils/crypto';
+import { StaleReviewWatchdogCronProvider } from '../apps/api/src/cron/staleReviewWatchdog.cron';
+import { produce } from 'immer';
+
+jest.setTimeout(30 * 60_000);
+
+const E = process.env;
+const OUT = E.QA_OUT!;
+const emit = (obj: any) =>
+    fs.appendFileSync(
+        OUT,
+        JSON.stringify({
+            ts: new RealDate(Date.now()).toISOString(),
+            realTs: new RealDate().toISOString(),
+            worker: E.QA_WORKER_ID,
+            pid: process.pid,
+            ...obj,
+        }) + '\n',
+    );
+
+const platform = (E.QA_PLATFORM || 'github') as 'github' | 'gitlab';
+const org = { organizationId: E.QA_ORG!, teamId: E.QA_TEAM! };
+const repo = { id: E.QA_REPO_ID!, name: E.QA_REPO_NAME!, language: 'ts' };
+const PR = Number(E.QA_PR);
+const FILE = E.QA_FILE || 'qa2420/attendance-report.ts';
+const RULE_A = E.QA_RULE_A!;
+const RULE_B = E.QA_RULE_B!;
+const PATCH = [
+    '@@ -33,2 +33,3 @@',
+    ' const a = 1;',
+    '+const header = "x";',
+    ' const b = 2;',
+    '@@ -88,2 +89,4 @@',
+    ' export function report() {',
+    '+  console.log("report");',
+    '+  return 1;',
+    ' }',
+].join('\n');
+
+async function waitBarrier(name: string) {
+    if (!name) return;
+    for (;;) {
+        const r = await fetch(`${E.QA_PROVIDER_URL}/__barrier?name=${name}&worker=${E.QA_WORKER_ID}`);
+        if ((await r.text()) === 'go') return;
+        await new Promise((res) => setTimeout(res, 50));
+    }
+}
+
+it('worker', async () => {
+    emit({ event: 'boot', mode: E.QA_MODE, platform, org: org.organizationId, repo: repo.id, pr: PR, clockOffsetMin: OFFSET_MS / 60000 });
+
+    const ds = new DataSource({ type: 'postgres', url: E.QA_PG_URL, entities: ENTITIES, logging: false });
+    await ds.initialize();
+    const automationExecutionService = new AutomationExecutionService(
+        new AutomationExecutionRepository(ds.getRepository(AutomationExecutionModel)) as any,
+        new CodeReviewExecutionService(
+            new CodeReviewExecutionRepository(ds.getRepository(CodeReviewExecutionModel)) as any,
+        ) as any,
+        new EventEmitter2(),
+    );
+    const lockService = new DistributedLockService(ds);
+
+    if (E.QA_MODE === 'watchdog') {
+        const wd = new StaleReviewWatchdogCronProvider(
+            automationExecutionService as any,
+            { getAdapter: () => null } as any,
+            lockService,
+        );
+        await (wd as any).handleCron();
+        emit({ event: 'watchdog-done' });
+        await ds.destroy();
+        return;
+    }
+
+    const conn = await mongoose
+        .createConnection(E.QA_MONGO_URL!, { dbName: E.QA_MONGO_DB || 'qa2420', serverSelectionTimeoutMS: 3000 })
+        .asPromise();
+    const prModel = conn.model<PullRequestsModel>(PullRequestsModel.name, PullRequestsSchema);
+    const prRepository = new PullRequestsRepository(prModel as any);
+
+    // --- config lookups (stubbed): token records pointing at the fake provider
+    const token = `tok-${org.organizationId.slice(0, 8)}`;
+    const integrationService = {
+        getPlatformAuthDetails: async (_o: any, type: string) =>
+            type === PlatformType.GITHUB
+                ? { authMode: 'token', authToken: encrypt(token), host: E.QA_PROVIDER_URL, org: 'qa-owner' }
+                : { authMode: 'oauth', accessToken: token, host: E.QA_PROVIDER_URL },
+        findOne: async () => ({ uuid: 'integration-qa', platform: platform === 'github' ? PlatformType.GITHUB : PlatformType.GITLAB }),
+    };
+    const integrationConfigService = {
+        findOne: async () => ({
+            configValue: [{ id: repo.id, name: repo.name, organizationName: 'qa-owner', fullName: `qa-owner/${repo.name}` }],
+        }),
+    };
+    const cacheService = new CacheService({ get: async () => undefined, set: async () => undefined, del: async () => undefined } as any);
+    const configService = { get: (k: string) => process.env[k] };
+    const github = new GithubService(integrationService as any, {} as any, integrationConfigService as any, cacheService, configService as any);
+    const gitlab = new GitlabService(integrationService as any, integrationConfigService as any, {} as any, configService as any, cacheService);
+    const factory = new PlatformIntegrationFactory();
+    factory.registerCodeManagementService(PlatformType.GITHUB, github as any);
+    factory.registerCodeManagementService(PlatformType.GITLAB, gitlab as any);
+    const codeManagement = new CodeManagementService(integrationService as any, factory);
+    const pullRequestsService = new PullRequestsService(prRepository as any, codeManagement);
+
+    if (E.QA_MONGO_FAIL === 'throw-on-append') {
+        // the store rejects the write (as a Mongo network error would)
+        (prRepository as any).appendPrLevelSuggestions = async () => {
+            const e: any = new Error('connection <monitor> to 127.0.0.1:57017 closed');
+            e.name = 'MongoNetworkError';
+            throw e;
+        };
+    }
+
+    const permissionValidationService = { resolveTaskSlot: async () => ({ provider: 'openai', model: 'scripted' }) };
+    const commentManager = new CommentManagerService(
+        { findByKey: async () => null } as any,
+        new MessageTemplateProcessor(),
+        { runLLMInSpan: async ({ runFn }: any) => runFn?.() } as any,
+        permissionValidationService as any,
+        codeManagement,
+        pullRequestsService as any,
+    );
+    const suggestionService = new SuggestionService(
+        { checkSuggestionImplementation: async () => ({ verdicts: [], unmeasured: [] }) } as any,
+        pullRequestsService as any,
+        commentManager as any,
+        codeManagement,
+        cacheService,
+        permissionValidationService as any,
+    );
+
+    const findings = [
+        {
+            relevantFile: FILE,
+            label: 'kody_rules',
+            severity: 'high',
+            brokenKodyRulesIds: [RULE_A],
+            oneSentenceSummary: `A[${E.QA_TAG}]: ${FILE} has no test file`,
+            suggestionContent: `A[${E.QA_TAG}]: ${FILE} has no test file`,
+            existingCode: '',
+            improvedCode: '',
+        },
+        {
+            relevantFile: FILE,
+            relevantLinesStart: 90,
+            relevantLinesEnd: 90,
+            label: 'kody_rules',
+            severity: 'high',
+            brokenKodyRulesIds: [RULE_B],
+            oneSentenceSummary: `B[${E.QA_TAG}]: console.log in source`,
+            suggestionContent: `B[${E.QA_TAG}]: console.log in source`,
+            existingCode: 'console.log("report");',
+            improvedCode: '',
+        },
+    ];
+    const orchestrator = {
+        execute: async () => {
+            emit({ event: 'model-start' });
+            await new Promise((r) => setTimeout(r, Number(E.QA_MODEL_DELAY_MS || 0)));
+            emit({ event: 'model-end' });
+            return { suggestions: findings, agentResults: [], failures: [], incomplete: [], warnings: [] };
+        },
+    };
+    jest.spyOn(LLM, 'run').mockImplementation(async () => ({ groups: [], unique: [0, 1] }) as any);
+
+    const agentReview = new AgentReviewStage(
+        { findLatestStageLog: async () => null, updateCodeReview: async () => null, updateStageLog: async () => null } as any,
+        { findByExternalId: async () => null } as any,
+        orchestrator as any,
+        { runLLMInSpan: async ({ runFn }: any) => runFn?.() } as any,
+        { generateContext: async () => null, generateContextLegacy: async () => null } as any,
+        { isEnabled: async () => false } as any,
+        { getReleaseTrack: async () => 'stable' } as any,
+        codeManagement as any,
+    );
+    const prLevelStage = new CreatePrLevelCommentsStage(commentManager as any, suggestionService as any, pullRequestsService as any);
+    const fileStage = new CreateFileCommentsStage(commentManager as any, pullRequestsService as any, suggestionService as any);
+
+    const stageResults: any = {};
+    const handler = {
+        handlePullRequest: async (orgData: any, repository: any, _branch: any, pullRequest: any, platformType: any) => {
+            emit({ event: 'handler-start' });
+            let ctx: any = produce(
+                {
+                    organizationAndTeamData: org,
+                    repository: { ...repository, fullName: `qa-owner/${repository.name}` },
+                    pullRequest: { number: pullRequest.number, title: 'update', head: { sha: 'headsha' }, base: { ref: 'main', repo: { fullName: `qa-owner/${repository.name}` } } },
+                    platformType,
+                    origin: E.QA_ORIGIN,
+                    changedFiles: [{ filename: FILE, patch: PATCH }],
+                    prAllCommits: [{ sha: 'headsha' }],
+                    codeReviewConfig: {
+                        reviewOptions: {},
+                        languageResultPrompt: 'en-US',
+                        resolvedModelSlot: { provider: 'openai', model: 'scripted' },
+                        kodyRules: [
+                            { uuid: RULE_A, title: 'Every source file has a test', rule: 'Each file under qa2420 has a test.', severity: 'high' },
+                            { uuid: RULE_B, title: 'No console.log', rule: 'Do not call console.log.', severity: 'high' },
+                        ],
+                    },
+                    validSuggestions: [],
+                    discardedSuggestions: [],
+                    errors: [],
+                },
+                () => {},
+            );
+            ctx = await (agentReview as any).executeStage(ctx);
+            emit({ event: 'stage-done', stage: 'AgentReviewStage', validSuggestionsByPR: (ctx.validSuggestionsByPR ?? []).map((s: any) => s.oneSentenceSummary), validSuggestions: (ctx.validSuggestions ?? []).map((s: any) => [s.oneSentenceSummary, s.relevantFile, s.relevantLinesStart]) });
+            ctx = await (prLevelStage as any).executeStage(ctx);
+            emit({ event: 'stage-done', stage: 'CreatePrLevelCommentsStage', errors: ctx.errors });
+            ctx = await (fileStage as any).executeStage(ctx);
+            emit({ event: 'stage-done', stage: 'CreateFileCommentsStage', lastAnalyzedCommit: ctx.lastAnalyzedCommit, errors: ctx.errors });
+            stageResults.ctxErrors = ctx.errors;
+            return { lastAnalyzedCommit: ctx.lastAnalyzedCommit, statusInfo: ctx.statusInfo, commentResults: [] };
+        },
+    };
+
+    const automation = new AutomationCodeReviewService(
+        {} as any,
+        {} as any,
+        automationExecutionService as any,
+        { findOne: async () => ({ uuid: org.organizationId, name: 'qa-org' }) } as any,
+        handler as any,
+        lockService,
+        { execute: async () => undefined } as any,
+    );
+
+    const inspect = async () => {
+        const doc: any = await prModel
+            .findOne({ number: PR, 'repository.id': repo.id, organizationId: org.organizationId })
+            .lean();
+        emit({
+            event: 'mongo-after',
+            prDocId: doc?._id,
+            organizationId: doc?.organizationId,
+            repositoryId: doc?.repository?.id,
+            prLevelSuggestions: (doc?.prLevelSuggestions ?? []).map((s: any) => ({ id: s.id, summary: s.oneSentenceSummary, deliveryStatus: s.deliveryStatus, commentId: s.comment?.id, brokenKodyRulesIds: s.brokenKodyRulesIds })),
+            fileSuggestions: (doc?.files ?? []).flatMap((f: any) => (f.suggestions ?? []).map((s: any) => ({ path: f.path, summary: s.oneSentenceSummary, start: s.relevantLinesStart, deliveryStatus: s.deliveryStatus, commentId: s.comment?.id }))),
+        });
+        const rows = await automationExecutionService.find({ pullRequestNumber: PR, repositoryId: repo.id } as any);
+        emit({ event: 'pg-after', executions: (rows ?? []).map((r: any) => ({ uuid: r.uuid, status: r.status, origin: r.origin, createdAt: r.createdAt, updatedAt: r.updatedAt, errorMessage: r.errorMessage })) });
+
+    };
+    if (E.QA_MODE === 'inspect') {
+        await inspect();
+        await conn.close();
+        await ds.destroy();
+        return;
+    }
+    if (E.QA_SEED_PR === '1') {
+        const existing = await prModel.findOne({ number: PR, 'repository.id': repo.id, organizationId: org.organizationId });
+        if (!existing) {
+            try { await pullRequestsService.create({
+                organizationId: org.organizationId,
+                number: PR,
+                title: 'update',
+                status: 'open',
+                provider: platform === 'github' ? 'GITHUB' : 'GITLAB',
+                repository: { id: repo.id, name: repo.name, fullName: `qa-owner/${repo.name}` },
+                files: [],
+                prLevelSuggestions: [],
+            } as any);
+            emit({ event: 'seeded-pr-doc' });
+            } catch (error: any) {
+                // the other worker of the same PR seeded it first (unique index)
+                if (error?.code !== 11000) throw error;
+                emit({ event: 'seed-already-present' });
+            }
+        }
+    }
+
+    await waitBarrier(E.QA_BARRIER || '');
+    await new Promise((r) => setTimeout(r, Number(E.QA_START_DELAY_MS || 0)));
+    emit({ event: 'run-start', origin: E.QA_ORIGIN });
+    let ret: any;
+    try {
+        ret = await automation.run!({
+            organizationAndTeamData: org,
+            repository: repo,
+            branch: 'qa2420',
+            pullRequest: { number: PR, title: 'update' },
+            platformType: platform === 'github' ? PlatformType.GITHUB : PlatformType.GITLAB,
+            teamAutomationId: E.QA_TEAM_AUTOMATION,
+            origin: E.QA_ORIGIN,
+            action: 'opened',
+            triggerCommentId: E.QA_ORIGIN?.startsWith('command') ? 777 : undefined,
+        });
+    } catch (error: any) {
+        ret = { thrown: error?.name, message: error?.message };
+    }
+    emit({ event: 'run-end', returned: ret });
+
+    try {
+        await inspect();
+    } catch (error: any) {
+        emit({ event: 'inspect-failed', error: String(error?.message ?? error) });
+    }
+    await conn.close();
+    await ds.destroy();
+});
