@@ -1,0 +1,6 @@
+{"leaseIds": 13, "sandboxIds": 10}
+{"pattern": "sandbox used after release", "component": "SandboxLeaseManager", "total_all_orgs": 0, "levels_all_orgs": {}, "mine": []}
+{"pattern": "release called with unknown leaseId", "component": "SandboxLeaseManager", "total_all_orgs": 0, "levels_all_orgs": {}, "mine": []}
+{"pattern": "failed to set E2B-side idle timeout", "component": "SandboxLeaseManager", "total_all_orgs": 0, "levels_all_orgs": {}, "mine": []}
+{"pattern": "Could not release the sandbox", "component": "AgentReviewStage", "total_all_orgs": 0, "levels_all_orgs": {}, "mine": []}
+{"pattern": "Sandbox cleanup failed on pipeline finish", "component": "CodeReviewPipelineObserver", "total_all_orgs": 0, "levels_all_orgs": {}, "mine": [], "unattributable_hits": []}
