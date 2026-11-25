@@ -1,0 +1,25 @@
+import json, sys, os, glob
+d = sys.argv[1]
+def jl(p):
+    return [json.loads(l) for l in open(p)] if os.path.exists(p) else []
+orch = jl(f'{d}/orchestrator.jsonl')
+prov = jl(f'{d}/provider-requests.jsonl')
+print('## orchestrator')
+for o in orch:
+    o2 = {k: v for k, v in o.items() if k != 'env'}
+    print(' ', json.dumps(o2)[:260])
+workers = [o['worker'] for o in orch if o.get('event') == 'spawn']
+KEYS = ['PR-level', 'Saved', 'Error saving', 'Failed to add', 'PR not found', 'Error creating', 'lock', 'already', 'Successfully', 'Created line', 'failed to deliver', 'Reaped', 'stale', 'Duplicate', 'heartbeat']
+for w in workers:
+    print(f'## worker {w}')
+    for e in jl(f'{d}/worker-{w}.jsonl'):
+        e2 = {k: v for k, v in e.items() if k not in ('pid', 'worker')}
+        print('  EV', json.dumps(e2)[:700])
+    for e in jl(f'{d}/worker-{w}.log.jsonl'):
+        m = e.get('message') or ''
+        if e['level'] in ('warn', 'error') or any(k in m for k in KEYS):
+            print(f"  LOG {e['realTs'][11:23]} pid={e['pid']} {e['level']:5} {e['component']}: {m[:150]}" + (f" | err={e['error'][:160]}" if e.get('error') else ''))
+print('## provider POSTs')
+for p in prov:
+    if p['method'] == 'POST':
+        print(f"  {p['ts'][11:23]} {p['kind']:11} {p['path']} status={p.get('status')} auth={p['auth']} body={p['bodyFirstLine'][:70]!r} position={p.get('hasPosition')}")
