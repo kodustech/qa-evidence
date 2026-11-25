@@ -7,7 +7,7 @@ QA web (build containing 84cb66c5). The form column's Radix ScrollArea (`type="a
 | 375x812 Chromium | 1 | no | none | none |
 | 375x812 Chromium | 2 | yes (883 > 764) | 341-351 | heading, name, password (+ eye button edge), rules row, confirm, Sign up button, "Terms of Service" text |
 | 320x568 Chromium | 1 and 2 | yes | 286-296 | heading, OAuth buttons, email, Continue, invalid-email message; step 2 all fields, Sign up, "Terms" text |
-| 390x844 Chromium | 1 and 2 | step 2 yes | 356-366 | step 2 heading, fields, Sign up |
+| 390x844 Chromium | 1 and 2 | yes | 356-366 | step 1 heading, OAuth buttons, email, Continue; step 2 heading, fields, Sign up |
 | 390x664 WebKit (iPhone 13) | 1 and 2 | yes | 356-366 | step 1 heading, GitHub/GitLab buttons, email, Continue; step 2 fields, Sign up |
 | 767x900, 768-1920 desktop | 1 and 2 | - | - | none (form is max-w-96 centered, away from the scrollbar) |
 | 812x375 landscape (md, two columns) | 1 and 2 | yes | 778-788 | heading/OAuth/fields: same on production (pre-fix), so pre-existing for the desktop layout |
