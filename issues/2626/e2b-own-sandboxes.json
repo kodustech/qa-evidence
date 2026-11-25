@@ -1,5 +1,4 @@
 {
- "note": "E2B lifecycle events (GET /events/sandboxes/{id}) read only for sandbox ids created by this QA run; read at 2026-11-24T23:32:06.698Z",
  "sandboxes": [
   {
    "sandboxId": "i1rpql0j5ta4ez3hw4jq9",
@@ -662,6 +661,22 @@
     }
    ],
    "getInfo_now": "SandboxNotFoundError: Sandbox i3pb6d1xu4zf9av5j3nyn not found"
+  },
+  {
+   "sandboxId": "ij2z7p1bn7088q8e8szzw",
+   "events": [
+    {
+     "type": "created",
+     "ts": "2026-11-25T01:01:01.493948371Z",
+     "kill_reason": null
+    },
+    {
+     "type": "killed",
+     "ts": "2026-11-25T01:01:11.540931464Z",
+     "kill_reason": "request"
+    }
+   ]
   }
- ]
+ ],
+ "note": "E2B lifecycle events (GET /events/sandboxes/{id}) read only for sandbox ids created by this QA run; key read through scripts/qa.py"
 }
