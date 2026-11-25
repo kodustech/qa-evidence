@@ -1,0 +1,372 @@
+{
+ "c4aee9de-a26a-4e4f-a708-4817545a3cdc": [
+  [
+   "Kody Review Started",
+   "success",
+   "2026-11-25 01:55:18.103646",
+   "",
+   "",
+   ""
+  ],
+  [
+   "ValidatePrerequisitesStage",
+   "success",
+   "2026-11-25 01:55:18.46761",
+   "2026-11-25 01:55:18.585",
+   "",
+   ""
+  ],
+  [
+   "ValidateNewCommitsStage",
+   "success",
+   "2026-11-25 01:55:18.59554",
+   "2026-11-25 01:55:18.831",
+   "",
+   ""
+  ],
+  [
+   "ResolveConfigStage",
+   "success",
+   "2026-11-25 01:55:18.840861",
+   "2026-11-25 01:55:19.356",
+   "",
+   ""
+  ],
+  [
+   "ValidateConfigStage",
+   "success",
+   "2026-11-25 01:55:19.366289",
+   "2026-11-25 01:55:19.376",
+   "",
+   ""
+  ],
+  [
+   "AssessPrRiskStage",
+   "success",
+   "2026-11-25 01:55:19.384454",
+   "2026-11-25 01:55:19.389",
+   "",
+   ""
+  ],
+  [
+   "FetchChangedFilesStage",
+   "success",
+   "2026-11-25 01:55:19.397945",
+   "2026-11-25 01:55:19.628",
+   "",
+   ""
+  ],
+  [
+   "LoadExternalContextStage",
+   "success",
+   "2026-11-25 01:55:19.63686",
+   "2026-11-25 01:55:19.661",
+   "",
+   ""
+  ],
+  [
+   "LoadCiEvidenceStage",
+   "success",
+   "2026-11-25 01:55:19.669525",
+   "2026-11-25 01:55:19.674",
+   "",
+   ""
+  ],
+  [
+   "InitialCommentStage",
+   "success",
+   "2026-11-25 01:55:19.682614",
+   "2026-11-25 01:55:20.032",
+   "",
+   ""
+  ],
+  [
+   "BusinessLogicValidationStage",
+   "skipped",
+   "2026-11-25 01:55:20.041426",
+   "2026-11-25 01:55:20.065",
+   "Skipped: no reference.",
+   ""
+  ],
+  [
+   "CreateSandboxStage",
+   "success",
+   "2026-11-25 01:55:20.074055",
+   "2026-11-25 01:55:25.139",
+   "",
+   ""
+  ],
+  [
+   "RunAnalyzersStage",
+   "success",
+   "2026-11-25 01:55:25.148053",
+   "2026-11-25 01:55:25.183",
+   "",
+   ""
+  ],
+  [
+   "AgentReviewStage",
+   "error",
+   "2026-11-25 01:55:25.192284",
+   "2026-11-25 01:56:20.366",
+   "The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan.",
+   "[{\"file\": \"agent:generalist\", \"message\": \"Insufficient balance\", \"category\": \"generalist\", \"prNumber\": 11, \"agentName\": \"generalist\", \"isTimeout\": false, \"orgOwnedKey\": true, \"errorCategory\": \"QUOTA_EXCEEDED\"}]"
+  ],
+  [
+   "AgentReview::generalist",
+   "error",
+   "2026-11-25 01:56:19.803148",
+   "2026-11-25 01:56:20.365",
+   "Generalist Agent \u2014 failed in 1s \u2014 The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan.",
+   ""
+  ],
+  [
+   "CreatePrLevelCommentsStage",
+   "success",
+   "2026-11-25 01:56:20.378615",
+   "2026-11-25 01:56:20.386",
+   "",
+   ""
+  ],
+  [
+   "ValidateSuggestionsStage",
+   "success",
+   "2026-11-25 01:56:20.39392",
+   "2026-11-25 01:56:20.399",
+   "",
+   ""
+  ],
+  [
+   "CreateFileCommentsStage",
+   "success",
+   "2026-11-25 01:56:20.406362",
+   "2026-11-25 01:56:20.436",
+   "",
+   ""
+  ],
+  [
+   "AggregateResultsStage",
+   "success",
+   "2026-11-25 01:56:20.444803",
+   "2026-11-25 01:56:20.45",
+   "",
+   ""
+  ],
+  [
+   "UpdateCommentsAndGenerateSummaryStage",
+   "partial_error",
+   "2026-11-25 01:56:20.458546",
+   "2026-11-25 01:56:21.642",
+   "The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan.",
+   "[{\"file\": \"unknown\", \"reason\": \"summary_generation_failed\", \"message\": \"Failed to generate summary\", \"isTimeout\": false}]"
+  ],
+  [
+   "DecidePrApprovalStage",
+   "success",
+   "2026-11-25 01:56:21.651285",
+   "2026-11-25 01:56:21.656",
+   "",
+   ""
+  ],
+  [
+   "RequestChangesOrApproveStage",
+   "success",
+   "2026-11-25 01:56:21.664265",
+   "2026-11-25 01:56:21.67",
+   "",
+   ""
+  ],
+  [
+   "Kody Review Finished",
+   "error",
+   "2026-11-25 01:56:22.570271",
+   "",
+   "Code review failed: The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  ]
+ ],
+ "890e01bf-50ab-4682-81c4-ea2bcf56ce58": [
+  [
+   "Kody Review Started",
+   "success",
+   "2026-11-25 01:55:18.92877",
+   "",
+   "",
+   ""
+  ],
+  [
+   "ValidatePrerequisitesStage",
+   "success",
+   "2026-11-25 01:55:19.514014",
+   "2026-11-25 01:55:19.581",
+   "",
+   ""
+  ],
+  [
+   "ValidateNewCommitsStage",
+   "success",
+   "2026-11-25 01:55:19.589132",
+   "2026-11-25 01:55:19.824",
+   "",
+   ""
+  ],
+  [
+   "ResolveConfigStage",
+   "success",
+   "2026-11-25 01:55:19.832977",
+   "2026-11-25 01:55:20.528",
+   "",
+   ""
+  ],
+  [
+   "ValidateConfigStage",
+   "success",
+   "2026-11-25 01:55:20.53805",
+   "2026-11-25 01:55:20.548",
+   "",
+   ""
+  ],
+  [
+   "AssessPrRiskStage",
+   "success",
+   "2026-11-25 01:55:20.557257",
+   "2026-11-25 01:55:20.562",
+   "",
+   ""
+  ],
+  [
+   "FetchChangedFilesStage",
+   "success",
+   "2026-11-25 01:55:20.571652",
+   "2026-11-25 01:55:20.784",
+   "",
+   ""
+  ],
+  [
+   "LoadExternalContextStage",
+   "success",
+   "2026-11-25 01:55:20.793147",
+   "2026-11-25 01:55:20.813",
+   "",
+   ""
+  ],
+  [
+   "LoadCiEvidenceStage",
+   "success",
+   "2026-11-25 01:55:20.822398",
+   "2026-11-25 01:55:20.827",
+   "",
+   ""
+  ],
+  [
+   "InitialCommentStage",
+   "success",
+   "2026-11-25 01:55:20.836664",
+   "2026-11-25 01:55:21.198",
+   "",
+   ""
+  ],
+  [
+   "BusinessLogicValidationStage",
+   "skipped",
+   "2026-11-25 01:55:21.20724",
+   "2026-11-25 01:55:21.228",
+   "Skipped: no reference.",
+   ""
+  ],
+  [
+   "CreateSandboxStage",
+   "success",
+   "2026-11-25 01:55:21.237111",
+   "2026-11-25 01:55:26.218",
+   "",
+   ""
+  ],
+  [
+   "RunAnalyzersStage",
+   "success",
+   "2026-11-25 01:55:26.227827",
+   "2026-11-25 01:55:26.259",
+   "",
+   ""
+  ],
+  [
+   "AgentReviewStage",
+   "error",
+   "2026-11-25 01:55:26.267817",
+   "2026-11-25 01:55:40.53",
+   "The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan.",
+   "[{\"file\": \"agent:generalist\", \"message\": \"Insufficient balance\", \"category\": \"generalist\", \"prNumber\": 12, \"agentName\": \"generalist\", \"isTimeout\": false, \"orgOwnedKey\": true, \"errorCategory\": \"QUOTA_EXCEEDED\"}]"
+  ],
+  [
+   "AgentReview::generalist",
+   "error",
+   "2026-11-25 01:55:39.667417",
+   "2026-11-25 01:55:40.527",
+   "Generalist Agent \u2014 failed in 1s \u2014 The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan.",
+   ""
+  ],
+  [
+   "CreatePrLevelCommentsStage",
+   "success",
+   "2026-11-25 01:55:40.543716",
+   "2026-11-25 01:55:40.551",
+   "",
+   ""
+  ],
+  [
+   "ValidateSuggestionsStage",
+   "success",
+   "2026-11-25 01:55:40.561365",
+   "2026-11-25 01:55:40.567",
+   "",
+   ""
+  ],
+  [
+   "CreateFileCommentsStage",
+   "success",
+   "2026-11-25 01:55:40.576656",
+   "2026-11-25 01:55:40.608",
+   "",
+   ""
+  ],
+  [
+   "AggregateResultsStage",
+   "success",
+   "2026-11-25 01:55:40.616548",
+   "2026-11-25 01:55:40.622",
+   "",
+   ""
+  ],
+  [
+   "UpdateCommentsAndGenerateSummaryStage",
+   "partial_error",
+   "2026-11-25 01:55:40.630625",
+   "2026-11-25 01:55:41.802",
+   "The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan.",
+   "[{\"file\": \"unknown\", \"reason\": \"summary_generation_failed\", \"message\": \"Failed to generate summary\", \"isTimeout\": false}]"
+  ],
+  [
+   "DecidePrApprovalStage",
+   "success",
+   "2026-11-25 01:55:41.810459",
+   "2026-11-25 01:55:41.815",
+   "",
+   ""
+  ],
+  [
+   "RequestChangesOrApproveStage",
+   "success",
+   "2026-11-25 01:55:41.823587",
+   "2026-11-25 01:55:41.829",
+   "",
+   ""
+  ],
+  [
+   "Kody Review Finished",
+   "error",
+   "2026-11-25 01:55:42.758129",
+   "",
+   "Code review failed: The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  ]
+ ]
+}
