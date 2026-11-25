@@ -1,0 +1,132 @@
+/* QA #2420 M34: an Ultra review (#2583) through the real AgentReviewStage at
+ * e80175e: executeStage → executeUltraReview → reviewPass (auxiliary + three
+ * native passes) → cross-model merge → publishFindings. Stubbed: the review
+ * orchestrator (scripted passes), LLM.run, severity/formatter model calls,
+ * persistence. Same findings run once as a balanced review for comparison. */
+import * as fs from 'fs';
+import { frozenContext } from '../../../../test/fixtures/frozen-pipeline-context';
+import { AgentReviewStage } from './agent-review.stage';
+import { resolveAgentPrompt } from '@libs/common/utils/codeManagement/suggestion-comment-blocks';
+import {
+    calculateCommentEndLine,
+    calculateCommentStartLine,
+} from '@libs/common/utils/comment-builder.utils';
+import { LLM } from '@libs/llm/llm';
+
+jest.mock(
+    '@libs/code-review/infrastructure/agents/engine/classify-severity',
+    () => ({ classifySeverity: jest.fn().mockResolvedValue(new Map()) }),
+);
+jest.mock(
+    '@libs/code-review/infrastructure/agents/engine/format-suggestion-content',
+    () => ({ formatSuggestionContent: jest.fn().mockResolvedValue(new Map()) }),
+);
+jest.mock('@libs/llm/managed-slot', () => {
+    const actual = jest.requireActual('@libs/llm/managed-slot');
+    return { ...actual, hasManagedModelKey: jest.fn(() => false) };
+});
+
+const TREE = process.env.QA_TREE || '?';
+const OUT = process.env.QA_OUT;
+const records: any[] = [];
+afterAll(() => {
+    if (OUT) fs.writeFileSync(OUT, JSON.stringify(records, null, 2));
+});
+
+const F1 = 'qa2420/enrollment-fee.ts';
+const TWO_HUNKS = ['@@ -33,2 +33,3 @@', ' const fee = 1;', '+console.log(fee);', ' const b = 2;', '@@ -90,2 +91,4 @@', ' function enroll() {', '+  const x = 1;', '+  return x;', ' }'].join('\n');
+const need = (n: string) => ({ need: n, sourceHash: 'h', source: 'compiler', inferredAt: new Date(0) });
+const RULES = [
+    { uuid: 'qa2420-T', title: 'QA2420 PR title prefix', rule: 'The PR title must start with [qa2420].', severity: 'high', scope: 'pull-request' },
+    { uuid: 'qa2420-B', title: 'QA2420 no console logging', rule: 'Do not call console.log.', severity: 'high', scope: 'file', contextNeed: need('diff-only') },
+];
+const ruleT = { relevantFile: F1, label: 'kody_rules', severity: 'high', oneSentenceSummary: 'PR title does not start with [qa2420]', suggestionContent: 'The PR title must start with [qa2420].', improvedCode: '', brokenKodyRulesIds: ['qa2420-T'] };
+const ruleB = { relevantFile: F1, relevantLinesStart: 34, relevantLinesEnd: 34, label: 'kody_rules', severity: 'high', oneSentenceSummary: 'console.log', suggestionContent: 'Do not call console.log here.', improvedCode: '', brokenKodyRulesIds: ['qa2420-B'] };
+const bug = (model: string) => ({ relevantFile: F1, relevantLinesStart: 92, relevantLinesEnd: 93, label: 'bug', severity: 'high', oneSentenceSummary: 'division by zero', suggestionContent: `Division by the enrolled count without an empty check (${model}).`, language: 'typescript' });
+
+const model = (position: any, id: string) => ({ position, modelId: id, modelName: `openai:${id}`, slot: { provider: 'openai', apiKey: 'x', model: id } });
+
+const makeStage = (orchestratorCalls: any[]) => {
+    const reviewOrchestrator = {
+        execute: jest.fn(async (input: any) => {
+            orchestratorCalls.push({ agentScope: input.agentScope, forcedModel: input.forcedModel?.model, kodyRules: (input.kodyRules ?? []).length });
+            const base = { agentResults: [], failures: [], incomplete: [], unverified: [], warnings: [] };
+            if (input.agentScope === 'auxiliary') return { ...base, suggestions: [{ ...ruleT }, { ...ruleB }] };
+            if (input.agentScope === 'native') return { ...base, suggestions: [bug(input.forcedModel?.model ?? '?')] };
+            return { ...base, suggestions: [{ ...ruleT }, { ...ruleB }, bug('balanced')] };
+        }),
+    };
+    const stage = new AgentReviewStage(
+        { findLatestStageLog: jest.fn(), updateCodeReview: jest.fn().mockResolvedValue(null), updateStageLog: jest.fn() } as any,
+        { findByExternalId: jest.fn().mockResolvedValue(null) } as any,
+        reviewOrchestrator as any,
+        { runLLMInSpan: jest.fn(async ({ runFn }: any) => runFn?.()) } as any,
+        { generateContext: jest.fn(), generateContextLegacy: jest.fn().mockResolvedValue('') } as any,
+        { isEnabled: jest.fn().mockResolvedValue(false) } as any,
+        { getReleaseTrack: jest.fn().mockResolvedValue('stable') } as any,
+        { getRepositories: jest.fn().mockResolvedValue([]), getCloneParams: jest.fn().mockResolvedValue(null), getRepositoryContentFile: jest.fn().mockResolvedValue(null), getRepositoryAllFiles: jest.fn().mockResolvedValue([]) } as any,
+    );
+    const logs: string[] = [];
+    const sink = (level: string) => (e: any) => logs.push(`${level}: ${e?.message}`);
+    (stage as any).logger = { log: sink('log'), warn: sink('warn'), error: sink('error'), debug: () => {}, verbose: () => {} };
+    return { stage, logs };
+};
+
+const context = (ultra: boolean) =>
+    frozenContext({
+        organizationAndTeamData: { organizationId: 'org-qa', teamId: 'team-qa' },
+        repository: { id: 'repo-qa', name: 'codex-athena' },
+        pullRequest: { number: 2420, title: 'update' },
+        platformType: 'GITHUB',
+        changedFiles: [{ filename: F1, patch: TWO_HUNKS }],
+        codeReviewConfig: { reviewOptions: {}, resolvedModelSlot: { provider: 'openai', model: 'gpt-4o-mini' }, kodyRules: RULES },
+        validSuggestions: [],
+        discardedSuggestions: [],
+        errors: [],
+        pipelineMetadata: { pipelineId: 'qa-2420' },
+        pipelineStartedAt: Date.now(),
+        ...(ultra && {
+            ultra: { models: [model(1, 'm-a'), model(2, 'm-b'), model(3, 'm-c')], mergeModel: model(2, 'm-b') },
+        }),
+    }) as any;
+
+const summarize = (result: any) => ({
+    byPR: (result.validSuggestionsByPR ?? []).map((s: any) => ({ rule: s.brokenKodyRulesIds?.[0], label: s.label, content: s.suggestionContent, prompt: resolveAgentPrompt(s) })),
+    valid: (result.validSuggestions ?? []).map((s: any) => `${s.relevantFile}:${s.relevantLinesStart}-${s.relevantLinesEnd}[${s.label}${s.brokenKodyRulesIds ? ':' + s.brokenKodyRulesIds[0] : ''}]`),
+    inline: (result.fileAnalysisResults ?? []).flatMap((f: any) => (f.validSuggestionsToAnalyze ?? []).map((s: any) => `${s.relevantFile}:${s.relevantLinesStart}-${s.relevantLinesEnd}[${s.label}] comment ${calculateCommentStartLine(s)}/${calculateCommentEndLine(s)}`)),
+    ultra: result.ultra && { outcome: result.ultra.outcome, runs: (result.ultra.runs ?? []).map((r: any) => `${r.modelName}:${r.status}`), merge: result.ultra.merge && `${result.ultra.merge.status} ${result.ultra.merge.inputCount}->${result.ultra.merge.outputCount}` },
+});
+
+let llmSpy: jest.SpyInstance;
+beforeEach(() => {
+    llmSpy = jest.spyOn(LLM, 'run').mockResolvedValue({ groups: [], unique: Array.from({ length: 60 }, (_, i) => i) } as any);
+});
+afterEach(() => {
+    llmSpy?.mockRestore();
+    jest.clearAllMocks();
+});
+
+it.each([
+    ['balanced', false],
+    ['ultra', true],
+])('M34 %s', async (mode, ultra) => {
+    const orchestratorCalls: any[] = [];
+    const { stage, logs } = makeStage(orchestratorCalls);
+    const anchorSpy = jest.spyOn(stage as any, 'anchorSuggestionsToDiff');
+    const result = await (stage as any).executeStage(context(ultra as boolean));
+    records.push({
+        tree: TREE,
+        mode,
+        orchestratorCalls,
+        anchorCalls: anchorSpy.mock.calls.map((c: any[], i: number) => ({
+            argCount: c.length,
+            set: c[5] instanceof Set ? [...c[5]] : String(c[5]),
+            in: c[0].map((s: any) => `${s.relevantFile}:${s.relevantLinesStart}-${s.relevantLinesEnd}[${s.label}]`),
+            out: (anchorSpy.mock.results[i]?.value ?? []).map((s: any) => `${s.relevantFile}:${s.relevantLinesStart}-${s.relevantLinesEnd}[${s.label}]`),
+        })),
+        ...summarize(result),
+        logs: logs.filter((l) => /ULTRA|Snapped|KODY-DEDUP|PR-level|error/i.test(l)),
+        errors: (result.errors ?? []).map((e: any) => `${e.substage ?? ''} ${e.severity ?? ''} ${e.error?.message ?? e.message ?? ''}`),
+        modelCalls: llmSpy.mock.calls.length,
+    });
+});
