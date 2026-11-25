@@ -1,0 +1,5 @@
+{"ts": "2026-11-25T03:05:08.153Z", "method": "POST", "path": "/q/v1/chat/completions", "status": 402, "bytes": 2, "sha256": "44136fa355b3678a", "model": null, "auth_header": false}
+{"ts": "2026-11-25T03:06:16.498Z", "method": "POST", "path": "/q/v1/chat/completions", "status": 402, "bytes": 41146, "sha256": "1a4b1feb8c81e5a2", "model": "qa2191-quota-model", "auth_header": true}
+{"ts": "2026-11-25T03:06:16.797Z", "method": "POST", "path": "/q/v1/chat/completions", "status": 402, "bytes": 41657, "sha256": "3b4c1691a080c523", "model": "qa2191-quota-model", "auth_header": true}
+{"ts": "2026-11-25T03:06:17.571Z", "method": "POST", "path": "/q/v1/chat/completions", "status": 402, "bytes": 2600, "sha256": "5c6d9abca4a7dba1", "model": "qa2191-quota-model", "auth_header": true}
+{"ts": "2026-11-25T03:06:17.766Z", "method": "POST", "path": "/q/v1/chat/completions", "status": 402, "bytes": 2600, "sha256": "5c6d9abca4a7dba1", "model": "qa2191-quota-model", "auth_header": true}
