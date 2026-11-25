@@ -1,0 +1,303 @@
+{
+ "query": "X-S14: find {timestamp window, 'attributes.params.organizationAndTeamData.organizationId': <slot org>, 'attributes.organizationAndTeamData': {$exists:false}}, then requery {window, 'metadata.organizationId': <slot org>, params pair exists, no top-level pair}; consistent = metadata org/team/tenant, top-level tenantId and attributes.organizationId/teamId all equal the params pair",
+ "M4_bitbucket_broken_credential_PR13": {
+  "nestedOnlyMatches": 5,
+  "errorRows": 5,
+  "byMetadataFilter": 5,
+  "sameIds": true,
+  "mismatches": 0,
+  "rows": [
+   {
+    "_id": "6b0637475af3c2292bc75185",
+    "t": "2026-11-25T01:17:57.920Z",
+    "level": "error",
+    "component": "BitbucketCloudService getFilesByPullRequestId",
+    "message": "Error to get files by pull request id: 13",
+    "metadata.organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "metadata.teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "metadata.tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "attributes.organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "attributes.teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "params.pair": {
+     "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+     "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056"
+    },
+    "consistent": true
+   },
+   {
+    "_id": "6b0637475af3c2292bc75186",
+    "t": "2026-11-25T01:17:58.296Z",
+    "level": "error",
+    "component": "BitbucketCloudService getCommitsForPullRequestForCodeReview",
+    "message": "Error to get commits for pull request for code review",
+    "metadata.organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "metadata.teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "metadata.tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "attributes.organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "attributes.teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "params.pair": {
+     "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+     "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056"
+    },
+    "consistent": true
+   },
+   {
+    "_id": "6b063749a9ff8e9c2681237a",
+    "t": "2026-11-25T01:17:58.631Z",
+    "level": "error",
+    "component": "BitbucketCloudService getLanguageRepository",
+    "message": "Error to get language repository",
+    "metadata.organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "metadata.teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "metadata.tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "attributes.organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "attributes.teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "params.pair": {
+     "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+     "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a"
+    },
+    "consistent": true
+   },
+   {
+    "_id": "6b063749a9ff8e9c2681237f",
+    "t": "2026-11-25T01:17:59.006Z",
+    "level": "error",
+    "component": "BitbucketCloudService getCommitsForPullRequestForCodeReview",
+    "message": "Error to get commits for pull request for code review",
+    "metadata.organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "metadata.teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "metadata.tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "attributes.organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "attributes.teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "params.pair": {
+     "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+     "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+     "organizationName": "jr-claude-bitbucket"
+    },
+    "consistent": true
+   },
+   {
+    "_id": "6b063749a9ff8e9c26812385",
+    "t": "2026-11-25T01:17:59.404Z",
+    "level": "error",
+    "component": "BitbucketCloudService createIssueComment",
+    "message": "Error to create issue comment",
+    "metadata.organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "metadata.teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "metadata.tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "attributes.organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "attributes.teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "params.pair": {
+     "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+     "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+     "organizationName": "jr-claude-bitbucket"
+    },
+    "consistent": true
+   }
+  ]
+ },
+ "M5_azure_broken_credential_PR217": {
+  "nestedOnlyMatches": 5,
+  "errorRows": 5,
+  "byMetadataFilter": 5,
+  "sameIds": true,
+  "mismatches": 0,
+  "rows": [
+   {
+    "_id": "6b06378ba9ff8e9c26812444",
+    "t": "2026-11-25T01:19:06.819Z",
+    "level": "error",
+    "component": "AzureReposService",
+    "message": "Failed to get language repository",
+    "metadata.organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "metadata.teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "metadata.tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "attributes.organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "attributes.teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "params.pair": {
+     "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+     "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa"
+    },
+    "consistent": true
+   },
+   {
+    "_id": "6b06378ba9ff8e9c26812449",
+    "t": "2026-11-25T01:19:07.011Z",
+    "level": "error",
+    "component": "AzureReposService",
+    "message": "Error to get commits for pull request for code review",
+    "metadata.organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "metadata.teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "metadata.tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "attributes.organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "attributes.teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "params.pair": {
+     "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+     "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+     "organizationName": "jr-claude-azure"
+    },
+    "consistent": true
+   },
+   {
+    "_id": "6b06378ba9ff8e9c2681244f",
+    "t": "2026-11-25T01:19:07.051Z",
+    "level": "error",
+    "component": "AzureReposService",
+    "message": "Error to create issue comment",
+    "metadata.organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "metadata.teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "metadata.tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "attributes.organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "attributes.teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "params.pair": {
+     "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+     "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+     "organizationName": "jr-claude-azure"
+    },
+    "consistent": true
+   },
+   {
+    "_id": "6b06378c5af3c2292bc7529f",
+    "t": "2026-11-25T01:19:06.545Z",
+    "level": "error",
+    "component": "AzureReposService",
+    "message": "Failed to get files for Azure Repos PR #217 in repo claude-athena",
+    "metadata.organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "metadata.teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "metadata.tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "attributes.organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "attributes.teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "params.pair": {
+     "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+     "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0"
+    },
+    "consistent": true
+   },
+   {
+    "_id": "6b06378c5af3c2292bc752a0",
+    "t": "2026-11-25T01:19:06.577Z",
+    "level": "error",
+    "component": "AzureReposService",
+    "message": "Error to get commits for pull request for code review",
+    "metadata.organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "metadata.teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "metadata.tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "attributes.organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "attributes.teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "params.pair": {
+     "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+     "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0"
+    },
+    "consistent": true
+   }
+  ]
+ },
+ "M9_bitbucket_healthy_PR14": {
+  "nestedOnlyMatches": 2,
+  "errorRows": 0,
+  "byMetadataFilter": 2,
+  "sameIds": true,
+  "mismatches": 0,
+  "rows": [
+   {
+    "_id": "6b063a01a9ff8e9c268125a8",
+    "t": "2026-11-25T01:29:36.466Z",
+    "level": "info",
+    "component": "BitbucketCloudService createIssueComment",
+    "message": "Created issue comment for PR#14",
+    "metadata.organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "metadata.teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "metadata.tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "attributes.organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "attributes.teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "params.pair": {
+     "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+     "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+     "organizationName": "jr-claude-bitbucket"
+    },
+    "consistent": true
+   },
+   {
+    "_id": "6b063a3da9ff8e9c2681262f",
+    "t": "2026-11-25T01:30:36.210Z",
+    "level": "info",
+    "component": "BitbucketCloudService updateIssueComment",
+    "message": "Updated issue comment for PR#14",
+    "metadata.organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "metadata.teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "metadata.tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "attributes.organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "attributes.teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "params.pair": {
+     "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+     "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+     "organizationName": "jr-claude-bitbucket"
+    },
+    "consistent": true
+   }
+  ]
+ },
+ "M9_azure_healthy_PR218": {
+  "nestedOnlyMatches": 1,
+  "errorRows": 0,
+  "byMetadataFilter": 1,
+  "sameIds": true,
+  "mismatches": 0,
+  "rows": [
+   {
+    "_id": "6b063a0e5af3c2292bc75480",
+    "t": "2026-11-25T01:29:47.952Z",
+    "level": "info",
+    "component": "AzureReposService",
+    "message": "Created issue comment for PR#218",
+    "metadata.organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "metadata.teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "metadata.tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "attributes.organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "attributes.teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "params.pair": {
+     "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+     "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+     "organizationName": "jr-claude-azure"
+    },
+    "consistent": true
+   }
+  ]
+ },
+ "M6_M7_M8_nested_only": {
+  "github": {
+   "nestedOnlyMatches": 0,
+   "errorRows": 0,
+   "byMetadataFilter": 0,
+   "sameIds": true,
+   "mismatches": 0
+  },
+  "gitlab": {
+   "nestedOnlyMatches": 0,
+   "errorRows": 0,
+   "byMetadataFilter": 0,
+   "sameIds": true,
+   "mismatches": 0
+  },
+  "forgejo": {
+   "nestedOnlyMatches": 0,
+   "errorRows": 0,
+   "byMetadataFilter": 0,
+   "sameIds": true,
+   "mismatches": 0
+  }
+ }
+}
