@@ -1,0 +1,15 @@
+== M (f5f987da9) ==
+Test Suites: 1 passed, 1 total
+Tests:       45 passed, 45 total
+Snapshots:   0 total
+Time:        1.681 s, estimated 2 s
+Ran all test suites matching libs/code-review/pipeline/stages/a2-stage.qa2420.spec.ts.
+
+== P (4fcd899f8) ==
+Test Suites: 1 passed, 1 total
+Tests:       45 passed, 45 total
+Snapshots:   0 total
+Time:        1.253 s, estimated 2 s
+Ran all test suites matching libs/code-review/pipeline/stages/a2-stage.qa2420.spec.ts.
+
+Rerun: both trees run twice; outputs identical after normalizing UUIDs and implementationCheck timestamps.
