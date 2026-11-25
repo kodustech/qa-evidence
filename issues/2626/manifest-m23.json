@@ -45,17 +45,26 @@
   "t_release": "2026-11-24T23:19:53.889Z",
   "t_kill_log": "2026-11-24T23:19:54.019Z",
   "kill_idleMs": null,
-  "t_provider_kill": null,
-  "kill_reason": null,
+  "t_provider_kill": "2026-11-24T23:19:53.962476627Z",
+  "kill_reason": "request",
   "paused": false,
   "d_release_killlog": 0.13,
-  "d_release_provider": null,
+  "d_release_provider": 0.073,
   "scheduled_idle_kill": 0,
   "other": [],
   "lease_doc_after": 0,
   "getInfo": "SandboxNotFoundError: Sandbox i6ko3hm4glos3b6wzpzd5 not found",
-  "stage": null,
-  "deployment": null,
-  "events": []
+  "stage": "graph-incremental",
+  "deployment": "homolog",
+  "events": [
+   [
+    "created",
+    "2026-11-24T23:19:43.126776448Z"
+   ],
+   [
+    "killed",
+    "2026-11-24T23:19:53.962476627Z"
+   ]
+  ]
  }
 ]
