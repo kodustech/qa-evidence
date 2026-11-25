@@ -1,0 +1,1078 @@
+{
+  "M": [
+    {
+      "tree": "M",
+      "scenario": "M4",
+      "case": "in-hunk-bug",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "bug",
+          "content": "bug: console.log leaks the fee"
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/enrollment-fee.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "bug",
+          "content": "bug: console.log leaks the fee"
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "bug",
+          "content": "bug: console.log leaks the fee",
+          "fullExplanation": "bug: console.log leaks the fee"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "bug",
+          "content": "bug: console.log leaks the fee",
+          "fullExplanation": "bug: console.log leaks the fee",
+          "commentLine": 34
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 3
+    },
+    {
+      "tree": "M",
+      "scenario": "M4",
+      "case": "in-hunk-security",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "security",
+          "content": "security: console.log leaks the fee"
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/enrollment-fee.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "security",
+          "content": "security: console.log leaks the fee"
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "security",
+          "content": "security: console.log leaks the fee",
+          "fullExplanation": "security: console.log leaks the fee"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "security",
+          "content": "security: console.log leaks the fee",
+          "fullExplanation": "security: console.log leaks the fee",
+          "commentLine": 34
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 3
+    },
+    {
+      "tree": "M",
+      "scenario": "M4",
+      "case": "in-hunk-performance",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "performance",
+          "content": "performance: console.log leaks the fee"
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/enrollment-fee.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "performance",
+          "content": "performance: console.log leaks the fee"
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "performance",
+          "content": "performance: console.log leaks the fee",
+          "fullExplanation": "performance: console.log leaks the fee"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "performance",
+          "content": "performance: console.log leaks the fee",
+          "fullExplanation": "performance: console.log leaks the fee",
+          "commentLine": 34
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 3
+    },
+    {
+      "tree": "M",
+      "scenario": "M4",
+      "case": "in-hunk-potential_issues",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "potential_issues",
+          "content": "potential_issues: console.log leaks the fee"
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/enrollment-fee.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "potential_issues",
+          "content": "potential_issues: console.log leaks the fee"
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "bug",
+          "content": "potential_issues: console.log leaks the fee",
+          "fullExplanation": "potential_issues: console.log leaks the fee"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "bug",
+          "content": "potential_issues: console.log leaks the fee",
+          "fullExplanation": "potential_issues: console.log leaks the fee",
+          "commentLine": 34
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 3
+    },
+    {
+      "tree": "M",
+      "scenario": "M4",
+      "case": "in-hunk-maintainability",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "maintainability",
+          "content": "maintainability: console.log leaks the fee"
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/enrollment-fee.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "maintainability",
+          "content": "maintainability: console.log leaks the fee"
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "bug",
+          "content": "maintainability: console.log leaks the fee",
+          "fullExplanation": "maintainability: console.log leaks the fee"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "bug",
+          "content": "maintainability: console.log leaks the fee",
+          "fullExplanation": "maintainability: console.log leaks the fee",
+          "commentLine": 34
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 3
+    },
+    {
+      "tree": "M",
+      "scenario": "M4",
+      "case": "in-hunk-rule-B",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "Do not call console.log here."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/enrollment-fee.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "Do not call console.log here."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "Do not call console.log here.\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)",
+          "fullExplanation": "Do not call console.log here.\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "Do not call console.log here.\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)",
+          "fullExplanation": "Do not call console.log here.\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)",
+          "commentLine": 34
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2
+    },
+    {
+      "tree": "M",
+      "scenario": "M4",
+      "case": "lineless-finder-bug-stage",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "label": "bug",
+          "content": "Division by an empty list."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/enrollment-fee.ts"
+      ],
+      "anchorOut": [],
+      "byPR": [],
+      "valid": [],
+      "inline": [],
+      "discarded": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "label": "bug",
+          "status": "discarded-by-schema"
+        }
+      ],
+      "logs": [
+        "warn: [PARSE-SCHEMA] PR#2420: discarded 1 finder suggestions missing lean fields"
+      ],
+      "modelCalls": 1
+    },
+    {
+      "tree": "M",
+      "scenario": "M4",
+      "case": "lineless-custom-agent-stage",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "label": "custom_agent",
+          "content": "Custom agent: missing guard."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/enrollment-fee.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "custom_agent",
+          "content": "Custom agent: missing guard."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "custom_agent",
+          "content": "Custom agent: missing guard.",
+          "fullExplanation": "Custom agent: missing guard."
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "custom_agent",
+          "content": "Custom agent: missing guard.",
+          "fullExplanation": "Custom agent: missing guard.",
+          "commentStartLine": 33,
+          "commentLine": 35
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/enrollment-fee.ts: undefined-undefined → 33-35"
+      ],
+      "modelCalls": 2
+    },
+    {
+      "tree": "M",
+      "scenario": "M4",
+      "case": "lineless-bug-anchor-helper",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "bug",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "discarded": [],
+      "modelCalls": 0
+    },
+    {
+      "tree": "M",
+      "scenario": "M4",
+      "case": "lineless-security-anchor-helper",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "security",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "discarded": [],
+      "modelCalls": 0
+    },
+    {
+      "tree": "M",
+      "scenario": "M4",
+      "case": "lineless-performance-anchor-helper",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "performance",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "discarded": [],
+      "modelCalls": 0
+    },
+    {
+      "tree": "M",
+      "scenario": "M4",
+      "case": "lineless-general-anchor-helper",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "general",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "discarded": [],
+      "modelCalls": 0
+    },
+    {
+      "tree": "M",
+      "scenario": "M4",
+      "case": "T-plus-ordinary-bug-same-file",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        },
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 92,
+          "end": 93,
+          "label": "bug",
+          "content": "Division by enrolled count without an empty check."
+        }
+      ],
+      "anchorArgCount": 6,
+      "anchorSetArg": [
+        "qa2420/enrollment-fee.ts"
+      ],
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 92,
+          "end": 93,
+          "label": "bug",
+          "content": "Division by enrolled count without an empty check."
+        },
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [
+        {
+          "content": "`qa2420/enrollment-fee.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "`qa2420/enrollment-fee.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "prompt": "PR title does not start with [qa2420]\n\n`qa2420/enrollment-fee.ts` — The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "label": "kody_rules",
+          "rule": "qa2420-T"
+        }
+      ],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 92,
+          "end": 93,
+          "label": "bug",
+          "content": "Division by enrolled count without an empty check.",
+          "fullExplanation": "Division by enrolled count without an empty check."
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 92,
+          "end": 93,
+          "label": "bug",
+          "content": "Division by enrolled count without an empty check.",
+          "fullExplanation": "Division by enrolled count without an empty check.",
+          "commentStartLine": 92,
+          "commentLine": 93
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 3
+    }
+  ],
+  "P": [
+    {
+      "tree": "P",
+      "scenario": "M4",
+      "case": "in-hunk-bug",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "bug",
+          "content": "bug: console.log leaks the fee"
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "bug",
+          "content": "bug: console.log leaks the fee"
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "bug",
+          "content": "bug: console.log leaks the fee",
+          "fullExplanation": "bug: console.log leaks the fee"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "bug",
+          "content": "bug: console.log leaks the fee",
+          "fullExplanation": "bug: console.log leaks the fee",
+          "commentLine": 34
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 3
+    },
+    {
+      "tree": "P",
+      "scenario": "M4",
+      "case": "in-hunk-security",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "security",
+          "content": "security: console.log leaks the fee"
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "security",
+          "content": "security: console.log leaks the fee"
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "security",
+          "content": "security: console.log leaks the fee",
+          "fullExplanation": "security: console.log leaks the fee"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "security",
+          "content": "security: console.log leaks the fee",
+          "fullExplanation": "security: console.log leaks the fee",
+          "commentLine": 34
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 3
+    },
+    {
+      "tree": "P",
+      "scenario": "M4",
+      "case": "in-hunk-performance",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "performance",
+          "content": "performance: console.log leaks the fee"
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "performance",
+          "content": "performance: console.log leaks the fee"
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "performance",
+          "content": "performance: console.log leaks the fee",
+          "fullExplanation": "performance: console.log leaks the fee"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "performance",
+          "content": "performance: console.log leaks the fee",
+          "fullExplanation": "performance: console.log leaks the fee",
+          "commentLine": 34
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 3
+    },
+    {
+      "tree": "P",
+      "scenario": "M4",
+      "case": "in-hunk-potential_issues",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "potential_issues",
+          "content": "potential_issues: console.log leaks the fee"
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "potential_issues",
+          "content": "potential_issues: console.log leaks the fee"
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "bug",
+          "content": "potential_issues: console.log leaks the fee",
+          "fullExplanation": "potential_issues: console.log leaks the fee"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "bug",
+          "content": "potential_issues: console.log leaks the fee",
+          "fullExplanation": "potential_issues: console.log leaks the fee",
+          "commentLine": 34
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 3
+    },
+    {
+      "tree": "P",
+      "scenario": "M4",
+      "case": "in-hunk-maintainability",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "maintainability",
+          "content": "maintainability: console.log leaks the fee"
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "maintainability",
+          "content": "maintainability: console.log leaks the fee"
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "bug",
+          "content": "maintainability: console.log leaks the fee",
+          "fullExplanation": "maintainability: console.log leaks the fee"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "bug",
+          "content": "maintainability: console.log leaks the fee",
+          "fullExplanation": "maintainability: console.log leaks the fee",
+          "commentLine": 34
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 3
+    },
+    {
+      "tree": "P",
+      "scenario": "M4",
+      "case": "in-hunk-rule-B",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "Do not call console.log here."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "Do not call console.log here."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "Do not call console.log here.\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)",
+          "fullExplanation": "Do not call console.log here.\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)"
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 34,
+          "end": 34,
+          "label": "kody_rules",
+          "rule": "qa2420-B",
+          "content": "Do not call console.log here.\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)",
+          "fullExplanation": "Do not call console.log here.\n\nKody rule violation: [QA2420 no console logging](/settings/code-review/global/kody-rules/qa2420-B?teamId=team-qa)",
+          "commentLine": 34
+        }
+      ],
+      "discarded": [],
+      "logs": [],
+      "modelCalls": 2
+    },
+    {
+      "tree": "P",
+      "scenario": "M4",
+      "case": "lineless-finder-bug-stage",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "label": "bug",
+          "content": "Division by an empty list."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [],
+      "byPR": [],
+      "valid": [],
+      "inline": [],
+      "discarded": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "label": "bug",
+          "status": "discarded-by-schema"
+        }
+      ],
+      "logs": [
+        "warn: [PARSE-SCHEMA] PR#2420: discarded 1 finder suggestions missing lean fields"
+      ],
+      "modelCalls": 1
+    },
+    {
+      "tree": "P",
+      "scenario": "M4",
+      "case": "lineless-custom-agent-stage",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "label": "custom_agent",
+          "content": "Custom agent: missing guard."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "custom_agent",
+          "content": "Custom agent: missing guard."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "custom_agent",
+          "content": "Custom agent: missing guard.",
+          "fullExplanation": "Custom agent: missing guard."
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "custom_agent",
+          "content": "Custom agent: missing guard.",
+          "fullExplanation": "Custom agent: missing guard.",
+          "commentStartLine": 33,
+          "commentLine": 35
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/enrollment-fee.ts: undefined-undefined → 33-35"
+      ],
+      "modelCalls": 2
+    },
+    {
+      "tree": "P",
+      "scenario": "M4",
+      "case": "lineless-bug-anchor-helper",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "bug",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "discarded": [],
+      "modelCalls": 0
+    },
+    {
+      "tree": "P",
+      "scenario": "M4",
+      "case": "lineless-security-anchor-helper",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "security",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "discarded": [],
+      "modelCalls": 0
+    },
+    {
+      "tree": "P",
+      "scenario": "M4",
+      "case": "lineless-performance-anchor-helper",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "performance",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "discarded": [],
+      "modelCalls": 0
+    },
+    {
+      "tree": "P",
+      "scenario": "M4",
+      "case": "lineless-general-anchor-helper",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "general",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "discarded": [],
+      "modelCalls": 0
+    },
+    {
+      "tree": "P",
+      "scenario": "M4",
+      "case": "T-plus-ordinary-bug-same-file",
+      "input": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        },
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 92,
+          "end": 93,
+          "label": "bug",
+          "content": "Division by enrolled count without an empty check."
+        }
+      ],
+      "anchorArgCount": 5,
+      "anchorSetArg": "undefined",
+      "anchorOut": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 92,
+          "end": 93,
+          "label": "bug",
+          "content": "Division by enrolled count without an empty check."
+        },
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420]."
+        }
+      ],
+      "byPR": [],
+      "valid": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)"
+        },
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 92,
+          "end": 93,
+          "label": "bug",
+          "content": "Division by enrolled count without an empty check.",
+          "fullExplanation": "Division by enrolled count without an empty check."
+        }
+      ],
+      "inline": [
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 33,
+          "end": 35,
+          "label": "kody_rules",
+          "rule": "qa2420-T",
+          "content": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "fullExplanation": "The PR title must start with [qa2420].\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=team-qa)",
+          "commentStartLine": 33,
+          "commentLine": 35
+        },
+        {
+          "file": "qa2420/enrollment-fee.ts",
+          "start": 92,
+          "end": 93,
+          "label": "bug",
+          "content": "Division by enrolled count without an empty check.",
+          "fullExplanation": "Division by enrolled count without an empty check.",
+          "commentStartLine": 92,
+          "commentLine": 93
+        }
+      ],
+      "discarded": [],
+      "logs": [
+        "log: [AGENT] Snapped lines for qa2420/enrollment-fee.ts: undefined-undefined → 33-35"
+      ],
+      "modelCalls": 3
+    }
+  ]
+}
