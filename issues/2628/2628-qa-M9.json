@@ -1,0 +1,87 @@
+{
+ "item": "M9",
+ "leaseLines": [
+  {
+   "t": "2026-11-24T21:38:26.975Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: acquire prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" consumer=\"conversation\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "consumer": "conversation",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:38:26.993Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" consumer=\"conversation\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "consumer": "conversation",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:38:31.610Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: sandbox READY prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" consumer=\"conversation\" leaseId=\"9470d673-9913-472e-b25c-990f95ceb3fe\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "consumer": "conversation",
+    "leaseId": "9470d673-9913-472e-b25c-990f95ceb3fe",
+    "sandboxId": "sbx#13",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:38:38.262Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: released leaseId=\"9470d673-9913-472e-b25c-990f95ceb3fe\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2\" leaseCount=0",
+   "a": {
+    "leaseId": "9470d673-9913-472e-b25c-990f95ceb3fe",
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "leaseCount": 0,
+    "consumer": "conversation",
+    "heldMs": 6642,
+    "acquireToFirstUseMs": null,
+    "lastUseToReleaseMs": null,
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:38:38.268Z",
+   "l": "info",
+   "c": "SandboxLeaseManager",
+   "m": "SandboxLeaseManager: scheduled idle-kill at 2026-11-24T21:43:38.263Z for sandboxId=\"sbx#13\"",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "sandboxId": "sbx#13",
+    "idleTimeoutMs": 300000,
+    "killAt": "2026-11-24T21:43:38.263Z",
+    "component": "SandboxLeaseManager",
+    "originalCorrelationId": null
+   }
+  },
+  {
+   "t": "2026-11-24T21:44:00.251Z",
+   "l": "info",
+   "c": "SandboxLeaseReaperService",
+   "m": "[SANDBOX-IDLE-KILL] Killed idle sandbox",
+   "a": {
+    "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:2",
+    "sandboxId": "sbx#13",
+    "killAt": "2026-11-24T21:43:38.263Z",
+    "component": "SandboxLeaseReaperService",
+    "originalCorrelationId": null
+   }
+  }
+ ]
+}
