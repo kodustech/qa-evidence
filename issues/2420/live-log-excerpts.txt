@@ -1,0 +1,439 @@
+# Live log excerpts (observability_logs_ts), filtered to the slot-b orgs; component-only lines (org "unknown") kept only when they name this PR
+
+## R1 GitHub PR#11
+2026-11-25T03:19:18.240Z info GitHubPullRequestHandler slot-b Code review job enqueued for asynchronous processing
+2026-11-25T03:19:19.269Z info RunCodeReviewAutomationUseCase slot-b RunCodeReviewAutomationUseCase PR#11
+2026-11-25T03:19:19.872Z info PipelineExecutor slot-b Starting pipeline: CodeReviewPipeline (ID: 2f67f555-69ef-42af-b364-bc5b61756480)
+2026-11-25T03:19:19.956Z info PipelineExecutor slot-b Stage 'ValidatePrerequisitesStage' completed in 75ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:19:19.966Z info ValidateNewCommitsStage slot-b No last analyzed commit found, analyzing all commits
+2026-11-25T03:19:20.236Z info ValidateNewCommitsStage slot-b Processing 1 new commits for PR#11 (1 total)
+2026-11-25T03:19:20.245Z info PipelineExecutor slot-b Stage 'ValidateNewCommitsStage' completed in 287ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:19:20.508Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Validating resource limits
+2026-11-25T03:19:20.517Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Resource limits validated
+2026-11-25T03:19:20.530Z info PipelineExecutor slot-b Stage 'ResolveConfigStage' completed in 285ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:19:20.543Z info ValidateConfigStage slot-b Branch Review Validation
+2026-11-25T03:19:20.548Z info PipelineExecutor slot-b Stage 'ValidateConfigStage' completed in 17ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:19:20.560Z info PipelineExecutor slot-b Stage 'AssessPrRiskStage' completed in 12ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:19:20.561Z info PipelineExecutor slot-b Stage 'ResolveRiskRoutingStage' completed in 1ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:19:20.569Z info FetchChangedFilesStage slot-b Found 3 files to analyze for PR#11 (3 total, 0 ignored)
+2026-11-25T03:19:20.866Z info GithubService slot-b [GRAPHQL_BATCH_COST] files=3 cost=1 remaining=4989 limit=5000 resetAt=2026-11-25T03:39:46Z
+2026-11-25T03:19:20.873Z info PipelineExecutor slot-b Stage 'FetchChangedFilesStage' completed in 311ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:19:20.901Z info PipelineExecutor slot-b Stage 'LoadExternalContextStage' completed in 27ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:19:20.912Z info PipelineExecutor slot-b Stage 'LoadCiEvidenceStage' completed in 11ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:19:22.186Z info PipelineExecutor slot-b Stage 'InitialCommentStage' completed in 1274ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:19:22.195Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Validating resource limits
+2026-11-25T03:19:22.204Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Resource limits validated
+2026-11-25T03:19:22.347Z info BusinessValidationService slot-b Business validation skipped (no_tracker)
+2026-11-25T03:19:22.358Z info BusinessLogicValidationStage slot-b [BUSINESS-LOGIC] Skipped (no_tracker): no tracker.
+2026-11-25T03:19:22.365Z info PipelineExecutor slot-b Stage 'BusinessLogicValidationStage' completed in 177ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:19:28.019Z info PipelineExecutor slot-b Stage 'CreateSandboxStage' completed in 5653ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:19:28.062Z info PipelineExecutor slot-b Stage 'RunAnalyzersStage' completed in 42ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:19:35.780Z info ReviewOrchestratorService unknown [AGENT] Dispatching 2 agents in parallel for PR#11: generalist, kody-rules
+2026-11-25T03:19:35.787Z info GeneralistAgentProvider slot-b [AGENT] Generalist finder settings for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash: family=deepseek, maxSteps=20, synthesisRescue=true
+2026-11-25T03:19:35.788Z info CodeReviewAgent slot-b [AGENT] kodus-generalist-review-agent context window: 1048576 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash
+2026-11-25T03:19:45.634Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence
+2026-11-25T03:19:50.355Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence
+2026-11-25T03:19:52.642Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence
+2026-11-25T03:20:02.539Z info CheckIfPRCanBeApprovedCronProvider slot-b Open pull requests found
+2026-11-25T03:20:06.717Z info KodyRulesShardedAgent slot-b [kody-rules-shard] prompt cache: 3 file shard(s) in 1 head group(s), 1 shared; 0 of 2 sibling(s) ran after their group's first shard
+2026-11-25T03:20:06.720Z info KodyRulesShardedAgent slot-b [AGENT] kodus-rules-review-agent (sharded) done for PR#11: 4 suggestions (4 confirmed across 4 shards; 0 detector candidate(s) offered; lookup 0 grep / 0 read / 0 exists) in 30937ms
+2026-11-25T03:21:08.223Z info finder slot-b [DONE-TOOL] prose recovery returned 0 finding(s)
+2026-11-25T03:21:16.685Z info CodeReviewAgent slot-b [AGENT] kodus-generalist-review-agent context window: 1048576 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash
+2026-11-25T03:21:21.945Z info VerifierAgent slot-b verifier verdict recovered from text (keep=true)
+2026-11-25T03:21:21.946Z info review-funnel slot-b review recall funnel (verify gate)
+2026-11-25T03:21:21.947Z info ReviewOrchestratorService slot-b [AGENT] generalist returned 2 suggestions in 106166ms
+2026-11-25T03:21:21.948Z info ReviewOrchestratorService slot-b [AGENT] kody-rules returned 4 suggestions in 30937ms
+2026-11-25T03:21:21.948Z info ReviewOrchestratorService unknown [AGENT] Orchestrator completed for PR#11: 6 suggestions, 0 failures, 0 incomplete in 106168ms
+2026-11-25T03:21:21.950Z info AgentReviewStage unknown [KODY-DEDUP] PR#11 rule=eab35a75-e042-4a63-a2d3-4e3b46a0a105 (file-level) collapsed 2 findings → 1 with 1 extra locations
+2026-11-25T03:21:22.786Z info AgentReviewStage unknown [DEDUP-DEBUG] PR#11: input=2, groups=0, unique=2
+2026-11-25T03:21:46.136Z info CodeReviewAgent slot-b [AGENT] kodus-generalist-review-agent context window: 1048576 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash
+2026-11-25T03:21:48.924Z info CodeReviewAgent slot-b [AGENT] kodus-generalist-review-agent context window: 1048576 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash
+2026-11-25T03:21:58.452Z info AgentReviewStage slot-b [AGENT] Reclassified severity for 5 suggestions (0 left unclassified, default kept)
+2026-11-25T03:22:33.965Z info AgentReviewStage slot-b [ENRICH] PR#11: enriched 2, failed 0, skipped 3
+2026-11-25T03:22:33.966Z info AgentReviewStage slot-b [AGENT] Titled 5 suggestions (from summary 5, from body 0, over the ceiling 0, empty 0)
+2026-11-25T03:22:35.883Z info AgentReviewStage slot-b [AGENT] Formatted 5/5 suggestion contents
+2026-11-25T03:22:35.883Z info AgentReviewStage slot-b [AGENT] Shaped 5 suggestion bodies (fences removed 0, title repeat dropped 0, capped 0, titles rewritten 0, titles cut 0)
+2026-11-25T03:22:35.887Z info AgentReviewStage slot-b [AGENT] Downgraded 1 suggestion(s) with unusable improvedCode to plain comments
+2026-11-25T03:22:35.888Z info AgentReviewStage slot-b [AGENT] Rendered merged finding locations
+2026-11-25T03:22:35.899Z info PipelineExecutor slot-b Stage 'AgentReviewStage' completed in 187836ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:22:35.909Z info CreatePrLevelCommentsStage slot-b Starting PR-level comments creation for PR#11
+2026-11-25T03:22:35.910Z info CommentManagerService slot-b Creating PR-level comments for PR#11
+2026-11-25T03:22:36.814Z info CreatePrLevelCommentsStage slot-b Successfully created 1 PR-level comments for PR#11
+2026-11-25T03:22:36.824Z info CreatePrLevelCommentsStage slot-b Saved 1 PR level suggestions to database
+2026-11-25T03:22:36.831Z info PipelineExecutor slot-b Stage 'CreatePrLevelCommentsStage' completed in 932ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:22:40.273Z info ReviewOrchestratorService slot-b [AGENT] generalist returned 1 suggestions in 51354ms
+2026-11-25T03:22:40.273Z info ReviewOrchestratorService slot-b [AGENT] kody-rules returned 4 suggestions in 32814ms
+2026-11-25T03:22:40.550Z info ValidateSuggestionsStage slot-b No patched files generated for validation
+2026-11-25T03:22:40.557Z info PipelineExecutor slot-b Stage 'ValidateSuggestionsStage' completed in 3725ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:22:40.570Z info CreateFileCommentsStage slot-b Starting file comments creation for PR#11
+2026-11-25T03:22:40.913Z info CommentManagerService slot-b Create Line Comments PR#11
+2026-11-25T03:22:41.996Z info GithubService slot-b Created line comment for PR#11
+2026-11-25T03:22:44.769Z info GithubService slot-b Created line comment for PR#11
+2026-11-25T03:22:47.961Z info GithubService slot-b Created line comment for PR#11
+2026-11-25T03:22:50.868Z info GithubService slot-b Created line comment for PR#11
+2026-11-25T03:22:50.896Z info CreateFileCommentsStage slot-b Successfully processed file comments for PR#11
+2026-11-25T03:22:50.903Z info PipelineExecutor slot-b Stage 'CreateFileCommentsStage' completed in 10345ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:22:50.911Z info AggregateResultsStage slot-b Aggregated 4 valid suggestions, 0 discarded suggestions
+2026-11-25T03:22:50.912Z warn AggregateResultsStage slot-b No valid suggestions to aggregate for PR#11
+2026-11-25T03:22:50.917Z info PipelineExecutor slot-b Stage 'AggregateResultsStage' completed in 14ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:22:50.926Z info UpdateCommentsAndGenerateSummaryStage slot-b Generating summary for PR#11
+2026-11-25T03:22:51.292Z info CommentManagerService slot-b GenerateSummaryPR: Start PR#11. After get PR data
+2026-11-25T03:22:52.928Z info AgentReviewStage slot-b [AGENT] Reclassified severity for 4 suggestions (0 left unclassified, default kept)
+2026-11-25T03:22:54.444Z info AgentReviewStage slot-b [ENRICH] PR#2: enriched 1, failed 0, skipped 3
+2026-11-25T03:22:54.444Z info AgentReviewStage slot-b [AGENT] Titled 4 suggestions (from summary 4, from body 0, over the ceiling 0, empty 0)
+2026-11-25T03:22:55.880Z info AgentReviewStage slot-b [AGENT] Formatted 4/4 suggestion contents
+2026-11-25T03:22:55.880Z info AgentReviewStage slot-b [AGENT] Shaped 4 suggestion bodies (fences removed 0, title repeat dropped 0, capped 0, titles rewritten 0, titles cut 0)
+2026-11-25T03:22:55.881Z info AgentReviewStage slot-b [AGENT] Downgraded 2 suggestion(s) with unusable improvedCode to plain comments
+2026-11-25T03:22:55.881Z info AgentReviewStage slot-b [AGENT] Rendered merged finding locations
+2026-11-25T03:22:56.238Z info CommentManagerService slot-b GenerateSummaryPR: End PR#11. After concatenate
+2026-11-25T03:22:58.253Z info PipelineExecutor slot-b Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 7335ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:22:58.270Z info PipelineExecutor slot-b Stage 'DecidePrApprovalStage' completed in 17ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:22:58.295Z info RequestChangesOrApproveStage slot-b Finished processing PR#11
+2026-11-25T03:22:58.301Z info PipelineExecutor slot-b Stage 'RequestChangesOrApproveStage' completed in 30ms: 2f67f555-69ef-42af-b364-bc5b61756480
+2026-11-25T03:22:58.301Z info PipelineExecutor slot-b Finished pipeline: CodeReviewPipeline (ID: 2f67f555-69ef-42af-b364-bc5b61756480)
+2026-11-25T03:23:00.244Z info AutomationCodeReviewService slot-b Successfully handled pull request for PR#11
+
+## R6 GitHub PR#11 push U
+2026-11-25T03:28:21.945Z info GitHubPullRequestHandler slot-b Code review job enqueued for asynchronous processing
+2026-11-25T03:28:22.911Z info RunCodeReviewAutomationUseCase slot-b RunCodeReviewAutomationUseCase PR#11
+2026-11-25T03:28:23.552Z info PipelineExecutor slot-b Starting pipeline: CodeReviewPipeline (ID: f6a469a4-4f51-4658-ae59-702a76f438c9)
+2026-11-25T03:28:23.610Z info PipelineExecutor slot-b Stage 'ValidatePrerequisitesStage' completed in 48ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:28:23.621Z info ValidateNewCommitsStage slot-b Found last analyzed commit: {"sha":"0b8fe4a90541c900202dc572d44ea95578e4d329"}
+2026-11-25T03:28:23.970Z info ValidateNewCommitsStage slot-b Processing 1 new commits for PR#11 (2 total)
+2026-11-25T03:28:23.977Z info PipelineExecutor slot-b Stage 'ValidateNewCommitsStage' completed in 365ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:28:24.986Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Validating resource limits
+2026-11-25T03:28:24.995Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Resource limits validated
+2026-11-25T03:28:25.010Z info PipelineExecutor slot-b Stage 'ResolveConfigStage' completed in 1031ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:28:25.023Z info ValidateConfigStage slot-b Branch Review Validation
+2026-11-25T03:28:25.031Z info PipelineExecutor slot-b Stage 'ValidateConfigStage' completed in 20ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:28:25.046Z info PipelineExecutor slot-b Stage 'AssessPrRiskStage' completed in 14ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:28:25.047Z info PipelineExecutor slot-b Stage 'ResolveRiskRoutingStage' completed in 0ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:28:25.056Z info FetchChangedFilesStage slot-b Found 1 files to analyze for PR#11 (1 total, 0 ignored)
+2026-11-25T03:28:25.420Z info PipelineExecutor slot-b Stage 'FetchChangedFilesStage' completed in 372ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:28:25.446Z info LoadExternalContextStage slot-b Loaded 5 previous review decisions for PR#11
+2026-11-25T03:28:25.453Z info PipelineExecutor slot-b Stage 'LoadExternalContextStage' completed in 32ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:28:25.466Z info PipelineExecutor slot-b Stage 'LoadCiEvidenceStage' completed in 12ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:28:25.473Z info InitialCommentStage slot-b Minimizing previous review comment for subsequent review on PR#11
+2026-11-25T03:28:26.651Z info GithubService slot-b Successfully minimized comment IC_kwDOV4AiVc8AAAABqkfiHw OUTDATED
+2026-11-25T03:28:26.652Z info CommentManagerService slot-b Successfully minimized previous review comment for PR#11
+2026-11-25T03:28:28.164Z info PipelineExecutor slot-b Stage 'InitialCommentStage' completed in 2696ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:28:28.179Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Validating resource limits
+2026-11-25T03:28:28.188Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Resource limits validated
+2026-11-25T03:28:28.259Z info BusinessValidationService slot-b Business validation skipped (no_tracker)
+2026-11-25T03:28:28.274Z info BusinessLogicValidationStage slot-b [BUSINESS-LOGIC] Skipped (no_tracker): no tracker. no_tracker
+2026-11-25T03:28:28.280Z info PipelineExecutor slot-b Stage 'BusinessLogicValidationStage' completed in 115ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:28:32.611Z info PipelineExecutor slot-b Stage 'CreateSandboxStage' completed in 4329ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:28:32.651Z info PipelineExecutor slot-b Stage 'RunAnalyzersStage' completed in 39ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:28:40.077Z info ReviewOrchestratorService unknown [AGENT] Dispatching 2 agents in parallel for PR#11: generalist, kody-rules
+2026-11-25T03:28:40.082Z info GeneralistAgentProvider slot-b [AGENT] Generalist finder settings for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash: family=deepseek, maxSteps=20, synthesisRescue=true
+2026-11-25T03:28:40.083Z info CodeReviewAgent slot-b [AGENT] kodus-generalist-review-agent context window: 1048576 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash
+2026-11-25T03:28:46.723Z info SuggestionService slot-b Implementation check for PR#11: 3 decided, 1 raised, 0 unmeasured
+2026-11-25T03:29:30.344Z info finder slot-b [DONE-TOOL] prose recovery returned 0 finding(s)
+2026-11-25T03:29:30.345Z info review-funnel slot-b review recall funnel (verify gate)
+2026-11-25T03:30:37.074Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence 24bb263a-7adb-485d-be76-92b594b2df62 qa2420/enrollment-fee.ts insufficient_evidence
+2026-11-25T03:30:54.979Z info KodyRulesShardedAgent slot-b [kody-rules-shard] prompt cache: 1 file shard(s) in 1 head group(s), 0 shared; 0 of 0 sibling(s) ran after their group's first shard
+2026-11-25T03:30:54.980Z info KodyRulesShardedAgent slot-b [AGENT] kodus-rules-review-agent (sharded) done for PR#11: 2 suggestions (2 confirmed across 2 shards; 0 detector candidate(s) offered; lookup 0 grep / 1 read / 4 exists) in 134902ms
+2026-11-25T03:30:54.983Z info ReviewOrchestratorService slot-b [AGENT] generalist returned 0 suggestions in 50269ms
+2026-11-25T03:30:54.983Z info ReviewOrchestratorService slot-b [AGENT] kody-rules returned 2 suggestions in 134902ms
+2026-11-25T03:30:54.984Z info AgentReviewStage slot-b [AGENT] Snapped lines for qa2420/enrollment-fee.ts: 16-36 → 27-32
+2026-11-25T03:30:54.984Z info ReviewOrchestratorService unknown [AGENT] Orchestrator completed for PR#11: 2 suggestions, 0 failures, 0 incomplete in 134907ms
+2026-11-25T03:30:56.561Z info AgentReviewStage slot-b [REPEAT-CHECK] PR#11: 2 repeats, 0 withheld without a verdict, 0 kept, 0 linked revisions (history 5, model ok)
+2026-11-25T03:30:56.562Z info AgentReviewStage slot-b [AGENT] Reclassified severity for 0 suggestions (0 left unclassified, default kept)
+2026-11-25T03:30:56.562Z info AgentReviewStage slot-b [ENRICH] PR#11: enriched 0, failed 0, skipped 0
+2026-11-25T03:30:56.563Z info AgentReviewStage slot-b [AGENT] Titled 0 suggestions (from summary 0, from body 0, over the ceiling 0, empty 0)
+2026-11-25T03:30:56.563Z info AgentReviewStage slot-b [AGENT] Formatted 0/0 suggestion contents
+2026-11-25T03:30:56.565Z info AgentReviewStage slot-b [AGENT] Shaped 0 suggestion bodies (fences removed 0, title repeat dropped 0, capped 0, titles rewritten 0, titles cut 0)
+2026-11-25T03:30:56.575Z info PipelineExecutor slot-b Stage 'AgentReviewStage' completed in 143923ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:30:56.586Z info CreatePrLevelCommentsStage slot-b No PR-level suggestions to process for PR#11
+2026-11-25T03:30:56.593Z info PipelineExecutor slot-b Stage 'CreatePrLevelCommentsStage' completed in 16ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:30:56.602Z info ValidateSuggestionsStage slot-b No valid suggestions or changed files to validate
+2026-11-25T03:30:56.608Z info PipelineExecutor slot-b Stage 'ValidateSuggestionsStage' completed in 14ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:30:56.622Z info CreateFileCommentsStage slot-b No file-level suggestions to process for PR#11
+2026-11-25T03:30:56.649Z info CreateFileCommentsStage slot-b Saved PR#11 with 1 files and 2 discarded suggestions
+2026-11-25T03:30:56.656Z info PipelineExecutor slot-b Stage 'CreateFileCommentsStage' completed in 47ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:30:56.665Z info AggregateResultsStage slot-b Aggregated 0 valid suggestions, 1 discarded suggestions
+2026-11-25T03:30:56.666Z warn AggregateResultsStage slot-b No valid suggestions to aggregate for PR#11
+2026-11-25T03:30:56.672Z info PipelineExecutor slot-b Stage 'AggregateResultsStage' completed in 15ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:30:57.989Z info PipelineExecutor slot-b Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 1315ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:30:58.004Z info PipelineExecutor slot-b Stage 'DecidePrApprovalStage' completed in 14ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:30:58.014Z info RequestChangesOrApproveStage slot-b Finished processing PR#11
+2026-11-25T03:30:58.022Z info PipelineExecutor slot-b Stage 'RequestChangesOrApproveStage' completed in 16ms: f6a469a4-4f51-4658-ae59-702a76f438c9
+2026-11-25T03:30:58.023Z info PipelineExecutor slot-b Finished pipeline: CodeReviewPipeline (ID: f6a469a4-4f51-4658-ae59-702a76f438c9)
+2026-11-25T03:31:01.037Z info AutomationCodeReviewService slot-b Successfully handled pull request for PR#11
+
+## R7 GitHub PR#12 (Y)
+2026-11-25T03:35:18.389Z info RunCodeReviewAutomationUseCase slot-b RunCodeReviewAutomationUseCase PR#12
+2026-11-25T03:35:18.884Z info PipelineExecutor slot-b Starting pipeline: CodeReviewPipeline (ID: 82052609-8663-4676-b97f-545daedc3933)
+2026-11-25T03:35:19.016Z info PipelineExecutor slot-b Stage 'ValidatePrerequisitesStage' completed in 124ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:35:19.027Z info ValidateNewCommitsStage slot-b No last analyzed commit found, analyzing all commits
+2026-11-25T03:35:19.237Z info ValidateNewCommitsStage slot-b Processing 1 new commits for PR#12 (1 total)
+2026-11-25T03:35:19.244Z info PipelineExecutor slot-b Stage 'ValidateNewCommitsStage' completed in 228ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:35:19.851Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Validating resource limits
+2026-11-25T03:35:19.868Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Resource limits validated
+2026-11-25T03:35:19.881Z info PipelineExecutor slot-b Stage 'ResolveConfigStage' completed in 636ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:35:19.902Z info PipelineExecutor slot-b Stage 'ValidateConfigStage' completed in 20ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:35:19.916Z info PipelineExecutor slot-b Stage 'AssessPrRiskStage' completed in 13ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:35:19.917Z info PipelineExecutor slot-b Stage 'ResolveRiskRoutingStage' completed in 0ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:35:19.926Z info FetchChangedFilesStage slot-b Found 3 files to analyze for PR#12 (4 total, 1 ignored)
+2026-11-25T03:35:19.940Z info PipelineExecutor slot-b Stage 'FetchChangedFilesStage' completed in 22ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:35:19.969Z info PipelineExecutor slot-b Stage 'LoadExternalContextStage' completed in 28ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:35:19.982Z info PipelineExecutor slot-b Stage 'LoadCiEvidenceStage' completed in 13ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:35:20.951Z info PipelineExecutor slot-b Stage 'InitialCommentStage' completed in 968ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:35:20.960Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Validating resource limits
+2026-11-25T03:35:20.976Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Resource limits validated
+2026-11-25T03:35:21.100Z info BusinessValidationService slot-b Business validation skipped (no_tracker)
+2026-11-25T03:35:21.114Z info BusinessLogicValidationStage slot-b [BUSINESS-LOGIC] Skipped (no_tracker): no tracker. no_tracker
+2026-11-25T03:35:21.121Z info PipelineExecutor slot-b Stage 'BusinessLogicValidationStage' completed in 169ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:35:25.235Z info PipelineExecutor slot-b Stage 'CreateSandboxStage' completed in 4114ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:35:25.276Z info PipelineExecutor slot-b Stage 'RunAnalyzersStage' completed in 40ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:35:32.230Z info ReviewOrchestratorService unknown [AGENT] Dispatching 2 agents in parallel for PR#12: generalist, kody-rules
+2026-11-25T03:35:32.235Z info GeneralistAgentProvider slot-b [AGENT] Generalist finder settings for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash: family=deepseek, maxSteps=20, synthesisRescue=true
+2026-11-25T03:35:32.236Z info CodeReviewAgent slot-b [AGENT] kodus-generalist-review-agent context window: 1048576 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash
+2026-11-25T03:35:49.228Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence d3a90c05-5c1c-4d6b-9683-e69baac9367f qa2420/attendance-report.ts unsupported_citation
+2026-11-25T03:35:50.720Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence 24bb263a-7adb-485d-be76-92b594b2df62 qa2420/tuition-average.ts unsupported_citation
+2026-11-25T03:35:57.819Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence 24bb263a-7adb-485d-be76-92b594b2df62 qa2420/enrollment-fee.ts unsupported_citation
+2026-11-25T03:36:01.775Z info CheckIfPRCanBeApprovedCronProvider slot-b Open pull requests found
+2026-11-25T03:36:02.420Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Validating resource limits
+2026-11-25T03:36:02.442Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Resource limits validated
+2026-11-25T03:36:06.570Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence 24bb263a-7adb-485d-be76-92b594b2df62 qa2420/attendance-report.ts unsupported_citation
+2026-11-25T03:36:09.970Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence d3a90c05-5c1c-4d6b-9683-e69baac9367f qa2420/enrollment-fee.ts unsupported_citation
+2026-11-25T03:36:22.374Z info KodyRulesShardedAgent slot-b [kody-rules-shard] prompt cache: 3 file shard(s) in 1 head group(s), 1 shared; 0 of 2 sibling(s) ran after their group's first shard
+2026-11-25T03:36:22.375Z info KodyRulesShardedAgent slot-b [AGENT] kodus-rules-review-agent (sharded) done for PR#12: 5 suggestions (5 confirmed across 4 shards; 0 detector candidate(s) offered; lookup 0 grep / 0 read / 0 exists) in 50143ms
+2026-11-25T03:36:44.659Z info finder slot-b [DONE-TOOL] prose recovery returned 0 finding(s)
+2026-11-25T03:36:52.060Z info VerifierAgent slot-b verifier verdict recovered from text (keep=true)
+2026-11-25T03:36:52.077Z info VerifierAgent slot-b verifier verdict recovered from text (keep=true)
+2026-11-25T03:36:52.078Z info review-funnel slot-b review recall funnel (verify gate)
+2026-11-25T03:36:52.080Z info ReviewOrchestratorService slot-b [AGENT] generalist returned 2 suggestions in 79848ms
+2026-11-25T03:36:52.080Z info ReviewOrchestratorService slot-b [AGENT] kody-rules returned 5 suggestions in 50143ms
+2026-11-25T03:36:52.080Z info ReviewOrchestratorService unknown [AGENT] Orchestrator completed for PR#12: 7 suggestions, 0 failures, 0 incomplete in 79851ms
+2026-11-25T03:36:52.082Z info AgentReviewStage unknown [KODY-DEDUP] PR#12 rule=eab35a75-e042-4a63-a2d3-4e3b46a0a105 (file-level) collapsed 2 findings → 1 with 1 extra locations
+2026-11-25T03:36:53.121Z info AgentReviewStage unknown [DEDUP-DEBUG] PR#12: input=2, groups=0, unique=2
+2026-11-25T03:37:08.866Z info AgentReviewStage slot-b [AGENT] Reclassified severity for 6 suggestions (0 left unclassified, default kept)
+2026-11-25T03:37:27.688Z info AgentReviewStage slot-b [ENRICH] PR#12: enriched 2, failed 0, skipped 4
+2026-11-25T03:37:27.690Z info AgentReviewStage slot-b [AGENT] Titled 6 suggestions (from summary 6, from body 0, over the ceiling 0, empty 0)
+2026-11-25T03:37:30.404Z info AgentReviewStage slot-b [AGENT] Formatted 6/6 suggestion contents
+2026-11-25T03:37:30.405Z info AgentReviewStage slot-b [AGENT] Shaped 6 suggestion bodies (fences removed 0, title repeat dropped 0, capped 0, titles rewritten 0, titles cut 0)
+2026-11-25T03:37:30.406Z info AgentReviewStage slot-b [AGENT] Rendered merged finding locations
+2026-11-25T03:37:30.418Z info PipelineExecutor slot-b Stage 'AgentReviewStage' completed in 125139ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:37:30.429Z info CreatePrLevelCommentsStage slot-b Starting PR-level comments creation for PR#12
+2026-11-25T03:37:30.430Z info CommentManagerService slot-b Creating PR-level comments for PR#12
+2026-11-25T03:37:31.324Z info CreatePrLevelCommentsStage slot-b Successfully created 1 PR-level comments for PR#12
+2026-11-25T03:37:31.335Z info CreatePrLevelCommentsStage slot-b Saved 1 PR level suggestions to database
+2026-11-25T03:37:31.341Z info PipelineExecutor slot-b Stage 'CreatePrLevelCommentsStage' completed in 922ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:37:35.354Z info ValidateSuggestionsStage slot-b No patched files generated for validation
+2026-11-25T03:37:35.361Z info PipelineExecutor slot-b Stage 'ValidateSuggestionsStage' completed in 4019ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:37:35.372Z info CreateFileCommentsStage slot-b Starting file comments creation for PR#12
+2026-11-25T03:37:35.643Z info CommentManagerService slot-b Create Line Comments PR#12
+2026-11-25T03:37:36.654Z info GithubService slot-b Created line comment for PR#12
+2026-11-25T03:37:39.504Z info GithubService slot-b Created line comment for PR#12
+2026-11-25T03:37:42.481Z info GithubService slot-b Created line comment for PR#12
+2026-11-25T03:37:45.613Z info GithubService slot-b Created line comment for PR#12
+2026-11-25T03:37:48.576Z info GithubService slot-b Created line comment for PR#12
+2026-11-25T03:37:48.596Z info CreateFileCommentsStage slot-b Successfully processed file comments for PR#12
+2026-11-25T03:37:48.604Z info PipelineExecutor slot-b Stage 'CreateFileCommentsStage' completed in 13242ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:37:48.612Z info AggregateResultsStage slot-b Aggregated 5 valid suggestions, 0 discarded suggestions
+2026-11-25T03:37:48.613Z warn AggregateResultsStage slot-b No valid suggestions to aggregate for PR#12
+2026-11-25T03:37:48.618Z info PipelineExecutor slot-b Stage 'AggregateResultsStage' completed in 14ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:37:48.627Z info UpdateCommentsAndGenerateSummaryStage slot-b Generating summary for PR#12
+2026-11-25T03:37:48.935Z info CommentManagerService slot-b GenerateSummaryPR: Start PR#12. After get PR data
+2026-11-25T03:37:53.896Z info CommentManagerService slot-b GenerateSummaryPR: End PR#12. After concatenate
+2026-11-25T03:37:55.796Z info PipelineExecutor slot-b Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 7177ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:37:55.808Z info PipelineExecutor slot-b Stage 'DecidePrApprovalStage' completed in 12ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:37:55.816Z info RequestChangesOrApproveStage slot-b Finished processing PR#12
+2026-11-25T03:37:55.821Z info PipelineExecutor slot-b Stage 'RequestChangesOrApproveStage' completed in 12ms: 82052609-8663-4676-b97f-545daedc3933
+2026-11-25T03:37:55.821Z info PipelineExecutor slot-b Finished pipeline: CodeReviewPipeline (ID: 82052609-8663-4676-b97f-545daedc3933)
+2026-11-25T03:37:57.476Z info AutomationCodeReviewService slot-b Successfully handled pull request for PR#12
+
+## R8 GitLab MR!2 (spare)
+2026-11-25T03:41:24.400Z info SavePullRequestUseCase slot-b GitLab webhook actor replaced by resolved MR author
+2026-11-25T03:41:25.466Z info RunCodeReviewAutomationUseCase slot-b GitLab webhook actor replaced by resolved MR author
+2026-11-25T03:41:25.630Z info RunCodeReviewAutomationUseCase slot-b RunCodeReviewAutomationUseCase PR#2
+2026-11-25T03:41:25.796Z info PipelineExecutor slot-b Starting pipeline: CodeReviewPipeline (ID: a21188e8-48bb-46e1-84ab-632074c90f6e)
+2026-11-25T03:41:25.849Z info PipelineExecutor slot-b Stage 'ValidatePrerequisitesStage' completed in 52ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:41:25.859Z info ValidateNewCommitsStage slot-b No last analyzed commit found, analyzing all commits
+2026-11-25T03:41:26.030Z info ValidateNewCommitsStage slot-b Processing 1 new commits for PR#2 (1 total)
+2026-11-25T03:41:26.039Z info PipelineExecutor slot-b Stage 'ValidateNewCommitsStage' completed in 190ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:41:26.656Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Validating resource limits
+2026-11-25T03:41:26.671Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Resource limits validated
+2026-11-25T03:41:26.682Z info PipelineExecutor slot-b Stage 'ResolveConfigStage' completed in 643ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:41:26.694Z info ValidateConfigStage slot-b Branch Review Validation
+2026-11-25T03:41:26.701Z info PipelineExecutor slot-b Stage 'ValidateConfigStage' completed in 17ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:41:26.715Z info PipelineExecutor slot-b Stage 'AssessPrRiskStage' completed in 14ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:41:26.716Z info PipelineExecutor slot-b Stage 'ResolveRiskRoutingStage' completed in 1ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:41:26.725Z info FetchChangedFilesStage slot-b Found 3 files to analyze for PR#2 (3 total, 0 ignored)
+2026-11-25T03:41:26.985Z info PipelineExecutor slot-b Stage 'FetchChangedFilesStage' completed in 269ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:41:27.022Z info PipelineExecutor slot-b Stage 'LoadExternalContextStage' completed in 36ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:41:27.036Z info PipelineExecutor slot-b Stage 'LoadCiEvidenceStage' completed in 14ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:41:27.453Z info PipelineExecutor slot-b Stage 'InitialCommentStage' completed in 416ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:41:27.464Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Validating resource limits
+2026-11-25T03:41:27.480Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Resource limits validated
+2026-11-25T03:41:27.522Z info BusinessValidationService slot-b Business validation skipped (no_tracker)
+2026-11-25T03:41:27.535Z info BusinessLogicValidationStage slot-b [BUSINESS-LOGIC] Skipped (no_tracker): no tracker. no_tracker
+2026-11-25T03:41:27.541Z info PipelineExecutor slot-b Stage 'BusinessLogicValidationStage' completed in 87ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:41:34.400Z info PipelineExecutor slot-b Stage 'CreateSandboxStage' completed in 6859ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:41:34.440Z info PipelineExecutor slot-b Stage 'RunAnalyzersStage' completed in 40ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:41:41.524Z info ReviewOrchestratorService unknown [AGENT] Dispatching 2 agents in parallel for PR#2: generalist, kody-rules
+2026-11-25T03:41:41.531Z info GeneralistAgentProvider slot-b [AGENT] Generalist finder settings for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash: family=deepseek, maxSteps=20, synthesisRescue=true
+2026-11-25T03:41:41.531Z info CodeReviewAgent slot-b [AGENT] kodus-generalist-review-agent context window: 1048576 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash
+2026-11-25T03:42:04.051Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence 407227db-4130-41e1-830b-01071c411187 qa2420/AverageDues.cs unsupported_citation
+2026-11-25T03:42:06.126Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence 74fd6195-fd85-4e66-a1db-e10f744ded0a qa2420/AverageDues.cs unsupported_citation
+2026-11-25T03:42:07.387Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence 407227db-4130-41e1-830b-01071c411187 qa2420/MembershipBilling.cs insufficient_evidence
+2026-11-25T03:42:17.416Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence af79896f-4e07-4968-ba4a-1484d3fd9b79 qa2420/MembershipBilling.cs unsupported_citation
+2026-11-25T03:42:19.093Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence 407227db-4130-41e1-830b-01071c411187 qa2420/CheckinReport.cs unsupported_citation
+2026-11-25T03:42:20.555Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence 74fd6195-fd85-4e66-a1db-e10f744ded0a qa2420/MembershipBilling.cs unsupported_citation
+2026-11-25T03:42:25.977Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence 74fd6195-fd85-4e66-a1db-e10f744ded0a qa2420/CheckinReport.cs unsupported_citation
+2026-11-25T03:42:41.020Z info KodyRulesShardedAgent slot-b [kody-rules-shard] prompt cache: 3 file shard(s) in 1 head group(s), 1 shared; 0 of 2 sibling(s) ran after their group's first shard
+2026-11-25T03:42:41.021Z info KodyRulesShardedAgent slot-b [kody-rules-shard] printed 16 reference file(s) across 4 shard(s); per-rule inlining would have printed 16
+2026-11-25T03:42:41.023Z info KodyRulesShardedAgent slot-b [AGENT] kodus-rules-review-agent (sharded) done for PR#2: 6 suggestions (6 confirmed across 4 shards; 0 detector candidate(s) offered; lookup 0 grep / 0 read / 0 exists) in 59497ms
+2026-11-25T03:44:02.168Z info CheckIfPRCanBeApprovedCronProvider slot-b Open pull requests found
+2026-11-25T03:44:02.472Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Validating resource limits
+2026-11-25T03:44:02.595Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Resource limits validated
+2026-11-25T03:44:22.910Z info VerifierAgent slot-b verifier verdict recovered from text (keep=true)
+2026-11-25T03:44:22.911Z info review-funnel slot-b review recall funnel (verify gate)
+2026-11-25T03:44:22.913Z info ReviewOrchestratorService slot-b [AGENT] generalist returned 2 suggestions in 161387ms
+2026-11-25T03:44:22.913Z info ReviewOrchestratorService slot-b [AGENT] kody-rules returned 6 suggestions in 59497ms
+2026-11-25T03:44:22.915Z info AgentReviewStage unknown [KODY-DEDUP] PR#2 rule=af79896f-4e07-4968-ba4a-1484d3fd9b79 (PR-level) collapsed 2 findings → 1
+2026-11-25T03:44:22.915Z info AgentReviewStage unknown [KODY-DEDUP] PR#2 rule=3aac7a48-3cf6-4073-8b89-df199f02a8a4 (file-level) collapsed 2 findings → 1 with 1 extra locations
+2026-11-25T03:44:59.820Z info AgentReviewStage slot-b [AGENT] Reclassified severity for 6 suggestions (0 left unclassified, default kept)
+2026-11-25T03:45:01.088Z info AgentReviewStage slot-b [ENRICH] PR#2: enriched 2, failed 0, skipped 4
+2026-11-25T03:45:01.088Z info AgentReviewStage slot-b [AGENT] Titled 6 suggestions (from summary 6, from body 0, over the ceiling 0, empty 0)
+2026-11-25T03:45:03.316Z info AgentReviewStage slot-b [AGENT] Formatted 6/6 suggestion contents
+2026-11-25T03:45:03.317Z info AgentReviewStage slot-b [AGENT] Shaped 6 suggestion bodies (fences removed 0, title repeat dropped 1, capped 0, titles rewritten 0, titles cut 0)
+2026-11-25T03:45:03.319Z info AgentReviewStage slot-b [AGENT] Rendered merged finding locations
+2026-11-25T03:45:03.319Z info AgentReviewStage slot-b [AGENT] Rendered merged finding locations
+2026-11-25T03:45:03.330Z info PipelineExecutor slot-b Stage 'AgentReviewStage' completed in 208889ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:45:03.340Z info CreatePrLevelCommentsStage slot-b Starting PR-level comments creation for PR#2
+2026-11-25T03:45:03.341Z info CommentManagerService slot-b Creating PR-level comments for PR#2
+2026-11-25T03:45:03.983Z info CreatePrLevelCommentsStage slot-b Successfully created 2 PR-level comments for PR#2
+2026-11-25T03:45:03.994Z info CreatePrLevelCommentsStage slot-b Saved 2 PR level suggestions to database
+2026-11-25T03:45:04.002Z info PipelineExecutor slot-b Stage 'CreatePrLevelCommentsStage' completed in 672ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:45:04.015Z info ValidateSuggestionsStage slot-b Skipping validation stage for non-GitHub platform
+2026-11-25T03:45:04.023Z info PipelineExecutor slot-b Stage 'ValidateSuggestionsStage' completed in 20ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:45:04.036Z info CreateFileCommentsStage slot-b Starting file comments creation for PR#2
+2026-11-25T03:45:04.218Z info CommentManagerService slot-b Create Line Comments PR#2
+2026-11-25T03:45:04.818Z info GitlabService slot-b Created line comment for PR#2
+2026-11-25T03:45:05.480Z info GitlabService slot-b Created line comment for PR#2
+2026-11-25T03:45:06.345Z info GitlabService slot-b Created line comment for PR#2
+2026-11-25T03:45:07.024Z info GitlabService slot-b Created line comment for PR#2
+2026-11-25T03:45:07.252Z info CreateFileCommentsStage slot-b Successfully processed file comments for PR#2
+2026-11-25T03:45:07.259Z info PipelineExecutor slot-b Stage 'CreateFileCommentsStage' completed in 3235ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:45:07.267Z info AggregateResultsStage slot-b Aggregated 4 valid suggestions, 0 discarded suggestions
+2026-11-25T03:45:07.268Z warn AggregateResultsStage slot-b No valid suggestions to aggregate for PR#2
+2026-11-25T03:45:07.273Z info PipelineExecutor slot-b Stage 'AggregateResultsStage' completed in 14ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:45:07.282Z info UpdateCommentsAndGenerateSummaryStage slot-b Generating summary for PR#2
+2026-11-25T03:45:07.529Z info CommentManagerService slot-b GenerateSummaryPR: Start PR#2. After get PR data
+2026-11-25T03:45:13.806Z info CommentManagerService slot-b GenerateSummaryPR: End PR#2. After concatenate
+2026-11-25T03:45:15.084Z info PipelineExecutor slot-b Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 7811ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:45:15.097Z info PipelineExecutor slot-b Stage 'DecidePrApprovalStage' completed in 12ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:45:15.104Z info RequestChangesOrApproveStage slot-b Finished processing PR#2
+2026-11-25T03:45:15.109Z info PipelineExecutor slot-b Stage 'RequestChangesOrApproveStage' completed in 12ms: a21188e8-48bb-46e1-84ab-632074c90f6e
+2026-11-25T03:45:15.110Z info PipelineExecutor slot-b Finished pipeline: CodeReviewPipeline (ID: a21188e8-48bb-46e1-84ab-632074c90f6e)
+2026-11-25T03:45:15.729Z info AutomationCodeReviewService slot-b Successfully handled pull request for PR#2
+2026-11-25T03:45:16.861Z info SavePullRequestUseCase slot-b GitLab webhook actor replaced by resolved MR author
+
+## R10 GitLab MR!3 (V)
+2026-11-25T03:49:07.626Z info SavePullRequestUseCase slot-b GitLab webhook actor replaced by resolved MR author
+2026-11-25T03:49:09.138Z info RunCodeReviewAutomationUseCase slot-b GitLab webhook actor replaced by resolved MR author
+2026-11-25T03:49:09.264Z info RunCodeReviewAutomationUseCase slot-b RunCodeReviewAutomationUseCase PR#3
+2026-11-25T03:49:09.480Z info PipelineExecutor slot-b Starting pipeline: CodeReviewPipeline (ID: 58049654-fd92-4d80-889c-b85a76435f25)
+2026-11-25T03:49:09.524Z info PipelineExecutor slot-b Stage 'ValidatePrerequisitesStage' completed in 43ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:49:09.532Z info ValidateNewCommitsStage slot-b No last analyzed commit found, analyzing all commits
+2026-11-25T03:49:09.735Z info ValidateNewCommitsStage slot-b Processing 1 new commits for PR#3 (1 total)
+2026-11-25T03:49:09.743Z info PipelineExecutor slot-b Stage 'ValidateNewCommitsStage' completed in 218ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:49:10.382Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Validating resource limits
+2026-11-25T03:49:10.397Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Resource limits validated
+2026-11-25T03:49:10.407Z info PipelineExecutor slot-b Stage 'ResolveConfigStage' completed in 664ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:49:10.426Z info PipelineExecutor slot-b Stage 'ValidateConfigStage' completed in 19ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:49:10.438Z info PipelineExecutor slot-b Stage 'AssessPrRiskStage' completed in 12ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:49:10.439Z info PipelineExecutor slot-b Stage 'ResolveRiskRoutingStage' completed in 1ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:49:10.447Z info FetchChangedFilesStage slot-b Found 3 files to analyze for PR#3 (3 total, 0 ignored)
+2026-11-25T03:49:10.656Z info PipelineExecutor slot-b Stage 'FetchChangedFilesStage' completed in 217ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:49:10.682Z info PipelineExecutor slot-b Stage 'LoadExternalContextStage' completed in 25ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:49:10.693Z info PipelineExecutor slot-b Stage 'LoadCiEvidenceStage' completed in 10ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:49:10.936Z info PipelineExecutor slot-b Stage 'InitialCommentStage' completed in 243ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:49:10.944Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Validating resource limits
+2026-11-25T03:49:10.952Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Resource limits validated
+2026-11-25T03:49:11.014Z info BusinessValidationService slot-b Business validation skipped (no_tracker)
+2026-11-25T03:49:11.028Z info BusinessLogicValidationStage slot-b [BUSINESS-LOGIC] Skipped (no_tracker): no tracker. no_tracker
+2026-11-25T03:49:11.034Z info PipelineExecutor slot-b Stage 'BusinessLogicValidationStage' completed in 98ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:49:15.631Z info PipelineExecutor slot-b Stage 'CreateSandboxStage' completed in 4597ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:49:15.677Z info PipelineExecutor slot-b Stage 'RunAnalyzersStage' completed in 45ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:49:22.777Z info ReviewOrchestratorService unknown [AGENT] Dispatching 2 agents in parallel for PR#3: generalist, kody-rules
+2026-11-25T03:49:22.782Z info GeneralistAgentProvider slot-b [AGENT] Generalist finder settings for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash: family=deepseek, maxSteps=20, synthesisRescue=true
+2026-11-25T03:49:22.783Z info CodeReviewAgent slot-b [AGENT] kodus-generalist-review-agent context window: 1048576 tokens for openai_compatible:accounts/fireworks/models/deepseek-v4p1-flash
+2026-11-25T03:49:48.865Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence 407227db-4130-41e1-830b-01071c411187 qa2420/MembershipBilling.cs unsupported_citation
+2026-11-25T03:49:49.029Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence af79896f-4e07-4968-ba4a-1484d3fd9b79 qa2420/MembershipBilling.cs unsupported_citation
+2026-11-25T03:49:54.660Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence 74fd6195-fd85-4e66-a1db-e10f744ded0a qa2420/MembershipBilling.cs unsupported_citation
+2026-11-25T03:49:56.652Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence 407227db-4130-41e1-830b-01071c411187 qa2420/CheckinReport.cs unsupported_citation
+2026-11-25T03:49:57.767Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence af79896f-4e07-4968-ba4a-1484d3fd9b79 qa2420/CheckinReport.cs unsupported_citation
+2026-11-25T03:50:04.439Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence 74fd6195-fd85-4e66-a1db-e10f744ded0a qa2420/CheckinReport.cs unsupported_citation
+2026-11-25T03:50:14.799Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence 407227db-4130-41e1-830b-01071c411187 qa2420/AverageDues.cs unsupported_citation
+2026-11-25T03:50:17.184Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence af79896f-4e07-4968-ba4a-1484d3fd9b79 qa2420/AverageDues.cs unsupported_citation
+2026-11-25T03:50:17.305Z info KodyRulesShardedAgent slot-b Kody Rule candidate withheld without verified evidence 74fd6195-fd85-4e66-a1db-e10f744ded0a qa2420/AverageDues.cs unsupported_citation
+2026-11-25T03:50:20.190Z info KodyRulesShardedAgent slot-b [kody-rules-shard] prompt cache: 3 file shard(s) in 1 head group(s), 1 shared; 0 of 2 sibling(s) ran after their group's first shard
+2026-11-25T03:50:20.190Z info KodyRulesShardedAgent slot-b [kody-rules-shard] printed 16 reference file(s) across 4 shard(s); per-rule inlining would have printed 16
+2026-11-25T03:50:20.192Z info KodyRulesShardedAgent slot-b [AGENT] kodus-rules-review-agent (sharded) done for PR#3: 3 suggestions (3 confirmed across 4 shards; 0 detector candidate(s) offered; lookup 0 grep / 0 read / 0 exists) in 57413ms
+2026-11-25T03:51:59.967Z info VerifierAgent slot-b verifier verdict recovered from text (keep=true)
+2026-11-25T03:52:02.025Z info CheckIfPRCanBeApprovedCronProvider slot-b Open pull requests found
+2026-11-25T03:52:02.466Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Validating resource limits
+2026-11-25T03:52:02.496Z info PermissionValidationService slot-b @@VALID PERMISSION@@ - Resource limits validated
+2026-11-25T03:52:24.700Z info VerifierAgent slot-b verifier verdict recovered from text (keep=false)
+2026-11-25T03:52:33.320Z info VerifierAgent slot-b verifier verdict recovered from text (keep=true)
+2026-11-25T03:52:34.674Z info VerifierAgent slot-b verifier verdict recovered from text (keep=true)
+2026-11-25T03:52:35.858Z info VerifierAgent slot-b verifier verdict recovered from text (keep=true)
+2026-11-25T03:52:40.869Z info VerifierAgent slot-b verifier verdict recovered from text (keep=true)
+2026-11-25T03:52:49.914Z info VerifierAgent slot-b verifier verdict recovered from text (keep=false)
+2026-11-25T03:52:53.860Z info review-funnel slot-b review recall funnel (verify gate)
+2026-11-25T03:52:53.862Z info ReviewOrchestratorService slot-b [AGENT] generalist returned 7 suggestions in 211083ms
+2026-11-25T03:52:53.862Z info ReviewOrchestratorService slot-b [AGENT] kody-rules returned 3 suggestions in 57413ms
+2026-11-25T03:52:53.864Z info AgentReviewStage unknown [KODY-DEDUP] PR#3 rule=3aac7a48-3cf6-4073-8b89-df199f02a8a4 (file-level) collapsed 2 findings → 1 with 1 extra locations
+2026-11-25T03:53:19.067Z info AgentReviewStage slot-b [AGENT] Reclassified severity for 5 suggestions (0 left unclassified, default kept)
+2026-11-25T03:53:20.730Z info AgentReviewStage slot-b [ENRICH] PR#3: enriched 2, failed 0, skipped 2
+2026-11-25T03:53:20.732Z info AgentReviewStage slot-b [AGENT] Titled 4 suggestions (from summary 4, from body 0, over the ceiling 0, empty 0)
+2026-11-25T03:53:22.226Z info AgentReviewStage slot-b [AGENT] Formatted 4/4 suggestion contents
+2026-11-25T03:53:22.226Z info AgentReviewStage slot-b [AGENT] Shaped 4 suggestion bodies (fences removed 0, title repeat dropped 0, capped 0, titles rewritten 0, titles cut 0)
+2026-11-25T03:53:22.227Z info AgentReviewStage slot-b [AGENT] Rendered merged finding locations
+2026-11-25T03:53:22.229Z info AgentReviewStage slot-b [AGENT] Rendered merged finding locations
+2026-11-25T03:53:22.238Z info PipelineExecutor slot-b Stage 'AgentReviewStage' completed in 246560ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:53:22.247Z info CreatePrLevelCommentsStage slot-b No PR-level suggestions to process for PR#3
+2026-11-25T03:53:22.254Z info PipelineExecutor slot-b Stage 'CreatePrLevelCommentsStage' completed in 14ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:53:22.261Z info ValidateSuggestionsStage slot-b Skipping validation stage for non-GitHub platform
+2026-11-25T03:53:22.267Z info PipelineExecutor slot-b Stage 'ValidateSuggestionsStage' completed in 12ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:53:22.278Z info CreateFileCommentsStage slot-b Starting file comments creation for PR#3
+2026-11-25T03:53:22.930Z info CommentManagerService slot-b Create Line Comments PR#3
+2026-11-25T03:53:23.716Z info GitlabService slot-b Created line comment for PR#3
+2026-11-25T03:53:24.521Z info GitlabService slot-b Created line comment for PR#3
+2026-11-25T03:53:25.189Z info GitlabService slot-b Created line comment for PR#3
+2026-11-25T03:53:26.016Z info GitlabService slot-b Created line comment for PR#3
+2026-11-25T03:53:26.234Z info CreateFileCommentsStage slot-b Successfully processed file comments for PR#3
+2026-11-25T03:53:26.242Z info PipelineExecutor slot-b Stage 'CreateFileCommentsStage' completed in 3974ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:53:26.251Z info AggregateResultsStage slot-b Aggregated 4 valid suggestions, 4 discarded suggestions
+2026-11-25T03:53:26.251Z warn AggregateResultsStage slot-b No valid suggestions to aggregate for PR#3
+2026-11-25T03:53:26.257Z info PipelineExecutor slot-b Stage 'AggregateResultsStage' completed in 14ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:53:26.265Z info UpdateCommentsAndGenerateSummaryStage slot-b Generating summary for PR#3
+2026-11-25T03:53:26.523Z info CommentManagerService slot-b GenerateSummaryPR: Start PR#3. After get PR data
+2026-11-25T03:53:31.381Z info CommentManagerService slot-b GenerateSummaryPR: End PR#3. After concatenate
+2026-11-25T03:53:32.462Z info PipelineExecutor slot-b Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 6205ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:53:32.475Z info PipelineExecutor slot-b Stage 'DecidePrApprovalStage' completed in 11ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:53:32.482Z info RequestChangesOrApproveStage slot-b Finished processing PR#3
+2026-11-25T03:53:32.488Z info PipelineExecutor slot-b Stage 'RequestChangesOrApproveStage' completed in 12ms: 58049654-fd92-4d80-889c-b85a76435f25
+2026-11-25T03:53:32.488Z info PipelineExecutor slot-b Finished pipeline: CodeReviewPipeline (ID: 58049654-fd92-4d80-889c-b85a76435f25)
+2026-11-25T03:53:32.587Z info SavePullRequestUseCase slot-b GitLab webhook actor replaced by resolved MR author
+2026-11-25T03:53:33.125Z info AutomationCodeReviewService slot-b Successfully handled pull request for PR#3
+
+## Evidence gate, R1-R5 (rule A, every file)
+2026-11-25T03:21:29.913Z jr-codex-gitlab 1 407227db qa2420/AverageDues.cs None unsupported_citation
+2026-11-25T03:21:34.389Z jr-codex-gitlab 1 407227db qa2420/MembershipBilling.cs None unsupported_citation
+2026-11-25T03:21:40.072Z jr-codex-gitlab 1 407227db qa2420/CheckinReport.cs None unsupported_citation
+2026-11-25T03:19:45.634Z jr-codex-github 11 24bb263a qa2420/tuition-average.ts None unsupported_citation
+2026-11-25T03:19:50.355Z jr-codex-github 11 24bb263a qa2420/attendance-report.ts None unsupported_citation
+2026-11-25T03:19:52.642Z jr-codex-github 11 24bb263a qa2420/enrollment-fee.ts None unsupported_citation
+2026-11-25T03:24:33.786Z jr-codex-azure 219 02e9d35c /qa2420/AverageDues.cs None unsupported_citation
+2026-11-25T03:24:36.102Z jr-codex-azure 219 02e9d35c /qa2420/CheckinReport.cs None unsupported_citation
+2026-11-25T03:24:43.209Z jr-codex-azure 219 02e9d35c /qa2420/MembershipBilling.cs None unsupported_citation
+2026-11-25T03:21:57.180Z jr-codex-forgejo 1 3431cdc6 qa2420/tuition-average.ts None unsupported_citation
+2026-11-25T03:22:01.756Z jr-codex-forgejo 1 3431cdc6 qa2420/attendance-report.ts None unsupported_citation
+2026-11-25T03:22:04.573Z jr-codex-forgejo 1 3431cdc6 qa2420/enrollment-fee.ts None unsupported_citation
+2026-11-25T03:22:04.876Z jr-codex-bitbucket 2 64271a85 qa2420/tuition-average.ts None unsupported_citation
+2026-11-25T03:22:05.113Z jr-codex-bitbucket 2 64271a85 qa2420/attendance-report.ts None unsupported_citation
+2026-11-25T03:22:06.181Z jr-codex-bitbucket 2 64271a85 qa2420/enrollment-fee.ts None unsupported_citation
