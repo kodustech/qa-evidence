@@ -1,0 +1,39 @@
+// QA #2420 harness: build the disposable Postgres schema with the repo's real
+// migrations, then seed org/team/automation rows through TypeORM repositories.
+import * as fs from 'fs';
+import * as path from 'path';
+import { DataSource } from 'typeorm';
+import { ENTITIES } from '@libs/core/infrastructure/database/typeorm/entities';
+
+jest.setTimeout(300000);
+
+it('migrates and seeds', async () => {
+    const dir = path.join(__dirname, '../libs/core/infrastructure/database/typeorm/migrations');
+    const migrations: any[] = [];
+    for (const f of fs.readdirSync(dir).filter((f) => f.endsWith('.ts')).sort()) {
+        const mod = require(path.join(dir, f));
+        for (const v of Object.values(mod)) if (typeof v === 'function') migrations.push(v);
+    }
+    const ds = new DataSource({
+        type: 'postgres',
+        url: process.env.QA_PG_URL,
+        entities: ENTITIES,
+        migrations,
+        migrationsTransactionMode: 'each',
+        logging: false,
+    });
+    await ds.initialize();
+    const ran = await ds.runMigrations();
+    console.log(`QA-SETUP migrations ran: ${ran.length} of ${migrations.length}`);
+    const seed = JSON.parse(process.env.QA_SEED || '[]');
+    for (const s of seed) {
+        await ds.query(`SELECT 1`);
+        await ds.getRepository('OrganizationModel').save({ uuid: s.org, name: s.orgName, status: true } as any);
+        await ds.getRepository('TeamModel').save({ uuid: s.team, name: 'qa-team', organization: { uuid: s.org }, status: 'active' } as any);
+        let automation: any = await ds.getRepository('AutomationModel').findOne({ where: { automationType: 'AutomationCodeReview' } as any });
+        if (!automation) automation = await ds.getRepository('AutomationModel').save({ name: 'code review', description: 'qa', status: true, automationType: 'AutomationCodeReview', tags: [], antiPatterns: [] } as any);
+        await ds.getRepository('TeamAutomationModel').save({ uuid: s.teamAutomation, status: true, team: { uuid: s.team }, automation: { uuid: automation.uuid } } as any);
+        console.log(`QA-SETUP seeded org ${s.org} teamAutomation ${s.teamAutomation}`);
+    }
+    await ds.destroy();
+});
