@@ -1,0 +1,37 @@
+[
+ {
+  "_id": "6b0648bfa9ff8e9c26812b2c",
+  "timestamp": "2026-11-25T02:32:30.152Z",
+  "level": "warn",
+  "message": "[LLM-ERROR] [model-failover] code-review-generalist: \"qa2191-quota-model\" failed (QUOTA_EXCEEDED); cascading to fallback \"accounts/fireworks/models/deepseek-v4p1-flash\"",
+  "component": "ModelFailover"
+ },
+ {
+  "_id": "6b0648d7a9ff8e9c26812b46",
+  "timestamp": "2026-11-25T02:32:53.681Z",
+  "level": "warn",
+  "message": "[LLM-ERROR] [model-failover] code-review-generalist-recovery: \"qa2191-quota-model\" failed (QUOTA_EXCEEDED); cascading to fallback \"accounts/fireworks/models/deepseek-v4p1-flash\"",
+  "component": "ModelFailover"
+ },
+ {
+  "_id": "6b0648d7a9ff8e9c26812b47",
+  "timestamp": "2026-11-25T02:32:54.600Z",
+  "level": "warn",
+  "message": "[LLM-ERROR] [model-failover] code-review-generalist: \"qa2191-quota-model\" failed (QUOTA_EXCEEDED); cascading to fallback \"accounts/fireworks/models/deepseek-v4p1-flash\"",
+  "component": "ModelFailover"
+ },
+ {
+  "_id": "6b064910a9ff8e9c26812b73",
+  "timestamp": "2026-11-25T02:33:50.895Z",
+  "level": "warn",
+  "message": "[LLM-ERROR] [model-failover] code-review-generalist-recovery: \"qa2191-quota-model\" failed (QUOTA_EXCEEDED); cascading to fallback \"accounts/fireworks/models/deepseek-v4p1-flash\"",
+  "component": "ModelFailover"
+ },
+ {
+  "_id": "6b064910a9ff8e9c26812b75",
+  "timestamp": "2026-11-25T02:33:52.131Z",
+  "level": "warn",
+  "message": "[LLM-ERROR] [model-failover] generateSummaryPR: \"qa2191-quota-model\" failed (QUOTA_EXCEEDED); cascading to fallback \"accounts/fireworks/models/deepseek-v4p1-flash\"",
+  "component": "ModelFailover"
+ }
+]
