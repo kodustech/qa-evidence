@@ -1,0 +1,2593 @@
+{
+  "scenario": "M11-id",
+  "note": {
+    "harness": "evidence/A1-harness.qa2420.spec.ts.txt",
+    "real": "mapAgentFindings, AgentReviewStage.executeStage, CreatePrLevelCommentsStage, CreateFileCommentsStage, CommentManagerService, SuggestionService, PullRequestsService, CodeManagementService, provider adapters (BitbucketService->BitbucketCloudService/bitbucket SDK, AzureReposService->AzureReposRequestHelper/axios, ForgejoService/forgejo client), BuildPreviousReviewDecisionsUseCase, PrDecisionStoreService, checkRepeats, applyRevisionLinks",
+    "stubbed": "model output (scripted findings), LLM.run (dedup default; repeat-check verdict scripted), integration config lookups, pull-requests repository (in-memory), HTTP transport redirected to an in-process fake provider (fetch for Bitbucket, axios.create interceptor for Azure, Forgejo host)",
+    "ids": "synthetic org/team/repo ids"
+  },
+  "scripts": {
+    "correct": "model answers same_occurrence for every finding with the first <Earlier> id offered to it",
+    "fail": "repeat-check LLM.run throws",
+    "caused": "model answers caused_by_earlier for rule D findings, same_occurrence for T"
+  },
+  "M": {
+    "azure": {
+      "storedPrLevel": [
+        {
+          "id": "21927192-1a65-4aa7-8dfa-73aa1800f465",
+          "brokenKodyRulesIds": [
+            "qa2420-T"
+          ],
+          "comment": {
+            "id": 1,
+            "pullRequestReviewId": null
+          },
+          "deliveryStatus": "sent",
+          "createdAt": "2026-11-25T11:19:06.866Z"
+        },
+        {
+          "id": "61c18c4d-bcff-4fde-9257-e87b6aeea7dd",
+          "brokenKodyRulesIds": [
+            "qa2420-D"
+          ],
+          "comment": {
+            "id": 1,
+            "pullRequestReviewId": null
+          },
+          "deliveryStatus": "sent",
+          "createdAt": "2026-11-25T11:19:06.866Z"
+        }
+      ],
+      "history": [
+        {
+          "suggestionId": "pr-comment-1",
+          "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+          "label": "kody_rules",
+          "brokenKodyRulesIds": [
+            "qa2420-T"
+          ],
+          "outcome": "pending",
+          "decidedAt": "2026-11-25T11:19:06.866Z"
+        },
+        {
+          "suggestionId": "pr-comment-1",
+          "suggestionContent": "`/qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+          "label": "kody_rules",
+          "brokenKodyRulesIds": [
+            "qa2420-D"
+          ],
+          "outcome": "pending",
+          "decidedAt": "2026-11-25T11:19:06.866Z"
+        }
+      ],
+      "historyIdCollision": true,
+      "round2": {
+        "correct": {
+          "repeatPrompts": [
+            "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: the pull request as a whole\nKind: Kody Rule \"QA2420 PR title prefix\"\nFinding: The PR title must start with [qa2420]; it is \"update\".\n  <Earlier id=\"pr-comment-1\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 PR title prefix\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"1\">\nWhere: /qa2420/CheckinReport.cs\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n  <Earlier id=\"pr-comment-1\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: `/qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"2\">\nWhere: /qa2420/AverageDues.cs:1-1\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: AverageDues.cs is misnamed.\n  <Earlier id=\"pr-comment-1\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: `/qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+          ],
+          "checkRepeats": {
+            "model": "ok",
+            "repeats": [
+              {
+                "finding": {
+                  "rules": [
+                    "qa2420-T"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "pr-comment-1",
+                  "rules": [
+                    "qa2420-T"
+                  ],
+                  "contentHead": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA"
+                }
+              },
+              {
+                "finding": {
+                  "file": "/qa2420/CheckinReport.cs",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "pr-comment-1",
+                  "rules": [
+                    "qa2420-D"
+                  ],
+                  "contentHead": "`/qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file "
+                }
+              },
+              {
+                "finding": {
+                  "file": "/qa2420/AverageDues.cs",
+                  "start": 1,
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "pr-comment-1",
+                  "rules": [
+                    "qa2420-D"
+                  ],
+                  "contentHead": "`/qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file "
+                }
+              }
+            ],
+            "withheld": [],
+            "kept": [],
+            "revisions": []
+          },
+          "stageLogs": [
+            {
+              "level": "log",
+              "message": "[REPEAT-CHECK] PR#2420: 3 repeats, 0 withheld without a verdict, 0 kept, 0 linked revisions (history 2, model ok)",
+              "metadata": {
+                "organizationId": "11111111-1111-4111-8111-111111111111",
+                "prNumber": 2420,
+                "teamId": "11111111-1111-4111-8111-aaaaaaaaaaaa",
+                "withheld": [],
+                "repeats": [
+                  {
+                    "label": "kody_rules",
+                    "earlierId": "pr-comment-1",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  },
+                  {
+                    "file": "/qa2420/CheckinReport.cs",
+                    "label": "kody_rules",
+                    "earlierId": "pr-comment-1",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  },
+                  {
+                    "file": "/qa2420/AverageDues.cs",
+                    "line": 1,
+                    "label": "kody_rules",
+                    "earlierId": "pr-comment-1",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  }
+                ]
+              }
+            }
+          ],
+          "validSuggestionsByPR": [],
+          "validSuggestions": [],
+          "discarded": [
+            {
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-T"
+              ],
+              "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".",
+              "priorityStatus": "discarded-by-repeat"
+            },
+            {
+              "file": "/qa2420/CheckinReport.cs",
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.",
+              "priorityStatus": "discarded-by-repeat"
+            },
+            {
+              "file": "/qa2420/AverageDues.cs",
+              "start": 1,
+              "end": 1,
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "AverageDues.cs is misnamed.",
+              "priorityStatus": "discarded-by-repeat"
+            }
+          ],
+          "posted": []
+        },
+        "fail": {
+          "repeatPrompts": [
+            "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: the pull request as a whole\nKind: Kody Rule \"QA2420 PR title prefix\"\nFinding: The PR title must start with [qa2420]; it is \"update\".\n  <Earlier id=\"pr-comment-1\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 PR title prefix\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"1\">\nWhere: /qa2420/CheckinReport.cs\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n  <Earlier id=\"pr-comment-1\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: `/qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"2\">\nWhere: /qa2420/AverageDues.cs:1-1\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: AverageDues.cs is misnamed.\n  <Earlier id=\"pr-comment-1\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: `/qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+          ],
+          "checkRepeats": {
+            "model": "failed",
+            "repeats": [],
+            "withheld": [],
+            "kept": [
+              {
+                "rules": [
+                  "qa2420-T"
+                ]
+              },
+              {
+                "file": "/qa2420/CheckinReport.cs",
+                "rules": [
+                  "qa2420-D"
+                ]
+              },
+              {
+                "file": "/qa2420/AverageDues.cs",
+                "start": 1,
+                "rules": [
+                  "qa2420-D"
+                ]
+              }
+            ],
+            "revisions": []
+          },
+          "stageLogs": [
+            {
+              "level": "log",
+              "message": "[REPEAT-CHECK] PR#2420: 0 repeats, 0 withheld without a verdict, 3 kept, 0 linked revisions (history 2, model failed)",
+              "metadata": {
+                "organizationId": "11111111-1111-4111-8111-111111111111",
+                "prNumber": 2420,
+                "teamId": "11111111-1111-4111-8111-aaaaaaaaaaaa",
+                "withheld": [],
+                "repeats": []
+              }
+            }
+          ],
+          "validSuggestionsByPR": [
+            {
+              "id": "a36c8219-ae87-4e3c-9318-dc8a6269b4d3",
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-T"
+              ],
+              "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "fullExplanation": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            },
+            {
+              "id": "a643ec9e-a038-4aa9-84ac-e6c6ea75400a",
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "`/qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "fullExplanation": "`/qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            }
+          ],
+          "validSuggestions": [],
+          "discarded": [],
+          "posted": [
+            {
+              "stage": "CreatePrLevelCommentsStage",
+              "provider": "az",
+              "path": "/az/qa-az-org/proj-qa/_apis/git/repositories/repo-qa2420/pullRequests/2420/threads",
+              "isReply": false,
+              "textHead": "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Kody Rules](https://img.shields.io/badge/Kody_Rules-4527A0) ![high](https://img.shields.io/badge/severity_level-high-6B6B92)\n\n**PR title lacks the [qa2420] prefix**\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rul"
+            },
+            {
+              "stage": "CreatePrLevelCommentsStage",
+              "provider": "az",
+              "path": "/az/qa-az-org/proj-qa/_apis/git/repositories/repo-qa2420/pullRequests/2420/threads",
+              "isReply": false,
+              "textHead": "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Kody Rules](https://img.shields.io/badge/Kody_Rules-4527A0) ![high](https://img.shields.io/badge/severity_level-high-6B6B92)\n\n**Report file is not named *ReportService.cs**\n\n`/qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report"
+            }
+          ]
+        },
+        "caused": {
+          "repeatPrompts": [
+            "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: the pull request as a whole\nKind: Kody Rule \"QA2420 PR title prefix\"\nFinding: The PR title must start with [qa2420]; it is \"update\".\n  <Earlier id=\"pr-comment-1\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 PR title prefix\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"1\">\nWhere: /qa2420/CheckinReport.cs\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n  <Earlier id=\"pr-comment-1\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: `/qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"2\">\nWhere: /qa2420/AverageDues.cs:1-1\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: AverageDues.cs is misnamed.\n  <Earlier id=\"pr-comment-1\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: `/qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+          ],
+          "checkRepeats": {
+            "model": "ok",
+            "repeats": [
+              {
+                "finding": {
+                  "rules": [
+                    "qa2420-T"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "pr-comment-1",
+                  "rules": [
+                    "qa2420-T"
+                  ],
+                  "contentHead": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA"
+                }
+              }
+            ],
+            "withheld": [],
+            "kept": [
+              {
+                "file": "/qa2420/CheckinReport.cs",
+                "rules": [
+                  "qa2420-D"
+                ]
+              },
+              {
+                "file": "/qa2420/AverageDues.cs",
+                "start": 1,
+                "rules": [
+                  "qa2420-D"
+                ]
+              }
+            ],
+            "revisions": [
+              {
+                "finding": {
+                  "file": "/qa2420/CheckinReport.cs",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "earlier": {
+                  "suggestionId": "pr-comment-1",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                }
+              },
+              {
+                "finding": {
+                  "file": "/qa2420/AverageDues.cs",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "earlier": {
+                  "suggestionId": "pr-comment-1",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                }
+              }
+            ]
+          },
+          "stageLogs": [
+            {
+              "level": "log",
+              "message": "[REPEAT-CHECK] PR#2420: 1 repeats, 0 withheld without a verdict, 2 kept, 2 linked revisions (history 2, model ok)",
+              "metadata": {
+                "organizationId": "11111111-1111-4111-8111-111111111111",
+                "prNumber": 2420,
+                "teamId": "11111111-1111-4111-8111-aaaaaaaaaaaa",
+                "withheld": [],
+                "repeats": [
+                  {
+                    "label": "kody_rules",
+                    "earlierId": "pr-comment-1",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  }
+                ]
+              }
+            }
+          ],
+          "validSuggestionsByPR": [
+            {
+              "id": "e8d20b22-1e89-49cb-9682-788dfcbea0ff",
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "`/qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "fullExplanation": "`/qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            }
+          ],
+          "validSuggestions": [],
+          "discarded": [
+            {
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-T"
+              ],
+              "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".",
+              "priorityStatus": "discarded-by-repeat"
+            }
+          ],
+          "posted": [
+            {
+              "stage": "CreatePrLevelCommentsStage",
+              "provider": "az",
+              "path": "/az/qa-az-org/proj-qa/_apis/git/repositories/repo-qa2420/pullRequests/2420/threads",
+              "isReply": false,
+              "textHead": "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Kody Rules](https://img.shields.io/badge/Kody_Rules-4527A0) ![high](https://img.shields.io/badge/severity_level-high-6B6B92)\n\n**Report file is not named *ReportService.cs**\n\n`/qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report"
+            }
+          ]
+        }
+      }
+    },
+    "forgejo": {
+      "storedPrLevel": [
+        {
+          "id": "0ba683c3-7260-41e7-a683-d13609a43b4a",
+          "brokenKodyRulesIds": [
+            "qa2420-T"
+          ],
+          "comment": {
+            "id": 5011,
+            "pullRequestReviewId": null
+          },
+          "deliveryStatus": "sent",
+          "createdAt": "2026-11-25T11:19:06.880Z"
+        },
+        {
+          "id": "5d92de42-1acc-4da6-a37e-f111a98eb7c7",
+          "brokenKodyRulesIds": [
+            "qa2420-D"
+          ],
+          "comment": {
+            "id": 5012,
+            "pullRequestReviewId": null
+          },
+          "deliveryStatus": "sent",
+          "createdAt": "2026-11-25T11:19:06.880Z"
+        }
+      ],
+      "history": [
+        {
+          "suggestionId": "pr-comment-5011",
+          "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+          "label": "kody_rules",
+          "brokenKodyRulesIds": [
+            "qa2420-T"
+          ],
+          "outcome": "pending",
+          "decidedAt": "2026-11-25T11:19:06.880Z"
+        },
+        {
+          "suggestionId": "pr-comment-5012",
+          "suggestionContent": "`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+          "label": "kody_rules",
+          "brokenKodyRulesIds": [
+            "qa2420-D"
+          ],
+          "outcome": "pending",
+          "decidedAt": "2026-11-25T11:19:06.880Z"
+        }
+      ],
+      "historyIdCollision": false,
+      "round2": {
+        "correct": {
+          "repeatPrompts": [
+            "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: the pull request as a whole\nKind: Kody Rule \"QA2420 PR title prefix\"\nFinding: The PR title must start with [qa2420]; it is \"update\".\n  <Earlier id=\"pr-comment-5011\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 PR title prefix\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"1\">\nWhere: qa2420/CheckinReport.cs\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n  <Earlier id=\"pr-comment-5012\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: `qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"2\">\nWhere: qa2420/AverageDues.cs:1-1\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: AverageDues.cs is misnamed.\n  <Earlier id=\"pr-comment-5012\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: `qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+          ],
+          "checkRepeats": {
+            "model": "ok",
+            "repeats": [
+              {
+                "finding": {
+                  "rules": [
+                    "qa2420-T"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "pr-comment-5011",
+                  "rules": [
+                    "qa2420-T"
+                  ],
+                  "contentHead": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA"
+                }
+              },
+              {
+                "finding": {
+                  "file": "qa2420/CheckinReport.cs",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "pr-comment-5012",
+                  "rules": [
+                    "qa2420-D"
+                  ],
+                  "contentHead": "`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file i"
+                }
+              },
+              {
+                "finding": {
+                  "file": "qa2420/AverageDues.cs",
+                  "start": 1,
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "pr-comment-5012",
+                  "rules": [
+                    "qa2420-D"
+                  ],
+                  "contentHead": "`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file i"
+                }
+              }
+            ],
+            "withheld": [],
+            "kept": [],
+            "revisions": []
+          },
+          "stageLogs": [
+            {
+              "level": "log",
+              "message": "[REPEAT-CHECK] PR#2420: 3 repeats, 0 withheld without a verdict, 0 kept, 0 linked revisions (history 2, model ok)",
+              "metadata": {
+                "organizationId": "11111111-1111-4111-8111-111111111111",
+                "prNumber": 2420,
+                "teamId": "11111111-1111-4111-8111-aaaaaaaaaaaa",
+                "withheld": [],
+                "repeats": [
+                  {
+                    "label": "kody_rules",
+                    "earlierId": "pr-comment-5011",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  },
+                  {
+                    "file": "qa2420/CheckinReport.cs",
+                    "label": "kody_rules",
+                    "earlierId": "pr-comment-5012",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  },
+                  {
+                    "file": "qa2420/AverageDues.cs",
+                    "line": 1,
+                    "label": "kody_rules",
+                    "earlierId": "pr-comment-5012",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  }
+                ]
+              }
+            }
+          ],
+          "validSuggestionsByPR": [],
+          "validSuggestions": [],
+          "discarded": [
+            {
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-T"
+              ],
+              "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".",
+              "priorityStatus": "discarded-by-repeat"
+            },
+            {
+              "file": "qa2420/CheckinReport.cs",
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.",
+              "priorityStatus": "discarded-by-repeat"
+            },
+            {
+              "file": "qa2420/AverageDues.cs",
+              "start": 1,
+              "end": 1,
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "AverageDues.cs is misnamed.",
+              "priorityStatus": "discarded-by-repeat"
+            }
+          ],
+          "posted": []
+        },
+        "fail": {
+          "repeatPrompts": [
+            "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: the pull request as a whole\nKind: Kody Rule \"QA2420 PR title prefix\"\nFinding: The PR title must start with [qa2420]; it is \"update\".\n  <Earlier id=\"pr-comment-5011\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 PR title prefix\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"1\">\nWhere: qa2420/CheckinReport.cs\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n  <Earlier id=\"pr-comment-5012\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: `qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"2\">\nWhere: qa2420/AverageDues.cs:1-1\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: AverageDues.cs is misnamed.\n  <Earlier id=\"pr-comment-5012\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: `qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+          ],
+          "checkRepeats": {
+            "model": "failed",
+            "repeats": [],
+            "withheld": [],
+            "kept": [
+              {
+                "rules": [
+                  "qa2420-T"
+                ]
+              },
+              {
+                "file": "qa2420/CheckinReport.cs",
+                "rules": [
+                  "qa2420-D"
+                ]
+              },
+              {
+                "file": "qa2420/AverageDues.cs",
+                "start": 1,
+                "rules": [
+                  "qa2420-D"
+                ]
+              }
+            ],
+            "revisions": []
+          },
+          "stageLogs": [
+            {
+              "level": "log",
+              "message": "[REPEAT-CHECK] PR#2420: 0 repeats, 0 withheld without a verdict, 3 kept, 0 linked revisions (history 2, model failed)",
+              "metadata": {
+                "organizationId": "11111111-1111-4111-8111-111111111111",
+                "prNumber": 2420,
+                "teamId": "11111111-1111-4111-8111-aaaaaaaaaaaa",
+                "withheld": [],
+                "repeats": []
+              }
+            }
+          ],
+          "validSuggestionsByPR": [
+            {
+              "id": "2bf18793-d25c-4d4b-a8b7-41b1eb75515f",
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-T"
+              ],
+              "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "fullExplanation": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            },
+            {
+              "id": "d3790abf-47a4-4385-aead-95dd3ef8e16d",
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "fullExplanation": "`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            }
+          ],
+          "validSuggestions": [],
+          "discarded": [],
+          "posted": [
+            {
+              "stage": "CreatePrLevelCommentsStage",
+              "provider": "fj",
+              "path": "/fj/api/v1/repos/qa-owner/qa-repo/issues/2420/comments",
+              "isReply": false,
+              "textHead": "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Kody Rules](https://img.shields.io/badge/Kody_Rules-4527A0) ![high](https://img.shields.io/badge/severity_level-high-6B6B92)\n\n\n**PR title lacks the [qa2420] prefix**\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-ru"
+            },
+            {
+              "stage": "CreatePrLevelCommentsStage",
+              "provider": "fj",
+              "path": "/fj/api/v1/repos/qa-owner/qa-repo/issues/2420/comments",
+              "isReply": false,
+              "textHead": "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Kody Rules](https://img.shields.io/badge/Kody_Rules-4527A0) ![high](https://img.shields.io/badge/severity_level-high-6B6B92)\n\n\n**Report file is not named *ReportService.cs**\n\n`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report"
+            }
+          ]
+        },
+        "caused": {
+          "repeatPrompts": [
+            "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: the pull request as a whole\nKind: Kody Rule \"QA2420 PR title prefix\"\nFinding: The PR title must start with [qa2420]; it is \"update\".\n  <Earlier id=\"pr-comment-5011\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 PR title prefix\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"1\">\nWhere: qa2420/CheckinReport.cs\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n  <Earlier id=\"pr-comment-5012\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: `qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"2\">\nWhere: qa2420/AverageDues.cs:1-1\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: AverageDues.cs is misnamed.\n  <Earlier id=\"pr-comment-5012\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: `qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+          ],
+          "checkRepeats": {
+            "model": "ok",
+            "repeats": [
+              {
+                "finding": {
+                  "rules": [
+                    "qa2420-T"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "pr-comment-5011",
+                  "rules": [
+                    "qa2420-T"
+                  ],
+                  "contentHead": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA"
+                }
+              }
+            ],
+            "withheld": [],
+            "kept": [
+              {
+                "file": "qa2420/CheckinReport.cs",
+                "rules": [
+                  "qa2420-D"
+                ]
+              },
+              {
+                "file": "qa2420/AverageDues.cs",
+                "start": 1,
+                "rules": [
+                  "qa2420-D"
+                ]
+              }
+            ],
+            "revisions": [
+              {
+                "finding": {
+                  "file": "qa2420/CheckinReport.cs",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "earlier": {
+                  "suggestionId": "pr-comment-5012",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                }
+              },
+              {
+                "finding": {
+                  "file": "qa2420/AverageDues.cs",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "earlier": {
+                  "suggestionId": "pr-comment-5012",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                }
+              }
+            ]
+          },
+          "stageLogs": [
+            {
+              "level": "log",
+              "message": "[REPEAT-CHECK] PR#2420: 1 repeats, 0 withheld without a verdict, 2 kept, 2 linked revisions (history 2, model ok)",
+              "metadata": {
+                "organizationId": "11111111-1111-4111-8111-111111111111",
+                "prNumber": 2420,
+                "teamId": "11111111-1111-4111-8111-aaaaaaaaaaaa",
+                "withheld": [],
+                "repeats": [
+                  {
+                    "label": "kody_rules",
+                    "earlierId": "pr-comment-5011",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  }
+                ]
+              }
+            }
+          ],
+          "validSuggestionsByPR": [
+            {
+              "id": "b9492ceb-c6ce-4d6b-b401-34bbc044ba98",
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "`qa2420/CheckinReport.cs` — **Revises an earlier Kody suggestion** on this pull request (2026-11-25 11:19 UTC).\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "fullExplanation": "`qa2420/CheckinReport.cs` — **Revises an earlier Kody suggestion** on this pull request (2026-11-25 11:19 UTC).\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            }
+          ],
+          "validSuggestions": [],
+          "discarded": [
+            {
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-T"
+              ],
+              "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".",
+              "priorityStatus": "discarded-by-repeat"
+            }
+          ],
+          "posted": [
+            {
+              "stage": "CreatePrLevelCommentsStage",
+              "provider": "fj",
+              "path": "/fj/api/v1/repos/qa-owner/qa-repo/issues/2420/comments",
+              "isReply": false,
+              "textHead": "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Kody Rules](https://img.shields.io/badge/Kody_Rules-4527A0) ![high](https://img.shields.io/badge/severity_level-high-6B6B92)\n\n\n**Report file is not named *ReportService.cs**\n\n`qa2420/CheckinReport.cs` — **Revises an earlier Kody suggestion** on this pull request (2026-11-25 11:19 UTC).\n\nCheckinReport.cs "
+            }
+          ]
+        }
+      }
+    },
+    "bitbucket": {
+      "storedPrLevel": [
+        {
+          "id": "73af6ec8-96ed-44ad-b226-33ad30c6b925",
+          "brokenKodyRulesIds": [
+            "qa2420-T"
+          ],
+          "comment": {
+            "id": 5001,
+            "pullRequestReviewId": null
+          },
+          "deliveryStatus": "sent",
+          "createdAt": "2026-11-25T11:19:04.441Z"
+        },
+        {
+          "id": "b89dfb08-37bd-463c-bdf8-bee19ac2aa4b",
+          "brokenKodyRulesIds": [
+            "qa2420-D"
+          ],
+          "comment": {
+            "id": 5003,
+            "pullRequestReviewId": null
+          },
+          "deliveryStatus": "sent",
+          "createdAt": "2026-11-25T11:19:04.441Z"
+        }
+      ],
+      "history": [
+        {
+          "suggestionId": "pr-comment-5001",
+          "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+          "label": "kody_rules",
+          "brokenKodyRulesIds": [
+            "qa2420-T"
+          ],
+          "outcome": "pending",
+          "decidedAt": "2026-11-25T11:19:04.441Z"
+        },
+        {
+          "suggestionId": "pr-comment-5003",
+          "suggestionContent": "`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+          "label": "kody_rules",
+          "brokenKodyRulesIds": [
+            "qa2420-D"
+          ],
+          "outcome": "pending",
+          "decidedAt": "2026-11-25T11:19:04.441Z"
+        }
+      ],
+      "historyIdCollision": false,
+      "round2": {
+        "correct": {
+          "repeatPrompts": [
+            "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: the pull request as a whole\nKind: Kody Rule \"QA2420 PR title prefix\"\nFinding: The PR title must start with [qa2420]; it is \"update\".\n  <Earlier id=\"pr-comment-5001\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 PR title prefix\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"1\">\nWhere: qa2420/CheckinReport.cs\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n  <Earlier id=\"pr-comment-5003\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: `qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"2\">\nWhere: qa2420/AverageDues.cs:1-1\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: AverageDues.cs is misnamed.\n  <Earlier id=\"pr-comment-5003\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: `qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+          ],
+          "checkRepeats": {
+            "model": "ok",
+            "repeats": [
+              {
+                "finding": {
+                  "rules": [
+                    "qa2420-T"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "pr-comment-5001",
+                  "rules": [
+                    "qa2420-T"
+                  ],
+                  "contentHead": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA"
+                }
+              },
+              {
+                "finding": {
+                  "file": "qa2420/CheckinReport.cs",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "pr-comment-5003",
+                  "rules": [
+                    "qa2420-D"
+                  ],
+                  "contentHead": "`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file i"
+                }
+              },
+              {
+                "finding": {
+                  "file": "qa2420/AverageDues.cs",
+                  "start": 1,
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "pr-comment-5003",
+                  "rules": [
+                    "qa2420-D"
+                  ],
+                  "contentHead": "`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file i"
+                }
+              }
+            ],
+            "withheld": [],
+            "kept": [],
+            "revisions": []
+          },
+          "stageLogs": [
+            {
+              "level": "log",
+              "message": "[REPEAT-CHECK] PR#2420: 3 repeats, 0 withheld without a verdict, 0 kept, 0 linked revisions (history 2, model ok)",
+              "metadata": {
+                "organizationId": "11111111-1111-4111-8111-111111111111",
+                "prNumber": 2420,
+                "teamId": "11111111-1111-4111-8111-aaaaaaaaaaaa",
+                "withheld": [],
+                "repeats": [
+                  {
+                    "label": "kody_rules",
+                    "earlierId": "pr-comment-5001",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  },
+                  {
+                    "file": "qa2420/CheckinReport.cs",
+                    "label": "kody_rules",
+                    "earlierId": "pr-comment-5003",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  },
+                  {
+                    "file": "qa2420/AverageDues.cs",
+                    "line": 1,
+                    "label": "kody_rules",
+                    "earlierId": "pr-comment-5003",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  }
+                ]
+              }
+            }
+          ],
+          "validSuggestionsByPR": [],
+          "validSuggestions": [],
+          "discarded": [
+            {
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-T"
+              ],
+              "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".",
+              "priorityStatus": "discarded-by-repeat"
+            },
+            {
+              "file": "qa2420/CheckinReport.cs",
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.",
+              "priorityStatus": "discarded-by-repeat"
+            },
+            {
+              "file": "qa2420/AverageDues.cs",
+              "start": 1,
+              "end": 1,
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "AverageDues.cs is misnamed.",
+              "priorityStatus": "discarded-by-repeat"
+            }
+          ],
+          "posted": []
+        },
+        "fail": {
+          "repeatPrompts": [
+            "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: the pull request as a whole\nKind: Kody Rule \"QA2420 PR title prefix\"\nFinding: The PR title must start with [qa2420]; it is \"update\".\n  <Earlier id=\"pr-comment-5001\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 PR title prefix\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"1\">\nWhere: qa2420/CheckinReport.cs\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n  <Earlier id=\"pr-comment-5003\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: `qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"2\">\nWhere: qa2420/AverageDues.cs:1-1\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: AverageDues.cs is misnamed.\n  <Earlier id=\"pr-comment-5003\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: `qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+          ],
+          "checkRepeats": {
+            "model": "failed",
+            "repeats": [],
+            "withheld": [],
+            "kept": [
+              {
+                "rules": [
+                  "qa2420-T"
+                ]
+              },
+              {
+                "file": "qa2420/CheckinReport.cs",
+                "rules": [
+                  "qa2420-D"
+                ]
+              },
+              {
+                "file": "qa2420/AverageDues.cs",
+                "start": 1,
+                "rules": [
+                  "qa2420-D"
+                ]
+              }
+            ],
+            "revisions": []
+          },
+          "stageLogs": [
+            {
+              "level": "log",
+              "message": "[REPEAT-CHECK] PR#2420: 0 repeats, 0 withheld without a verdict, 3 kept, 0 linked revisions (history 2, model failed)",
+              "metadata": {
+                "organizationId": "11111111-1111-4111-8111-111111111111",
+                "prNumber": 2420,
+                "teamId": "11111111-1111-4111-8111-aaaaaaaaaaaa",
+                "withheld": [],
+                "repeats": []
+              }
+            }
+          ],
+          "validSuggestionsByPR": [
+            {
+              "id": "52a8863e-4259-4429-b9b8-59a5ac5a3c97",
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-T"
+              ],
+              "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "fullExplanation": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            },
+            {
+              "id": "49228680-4a5e-4a9a-bbc7-da61fa57381f",
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "fullExplanation": "`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            }
+          ],
+          "validSuggestions": [],
+          "discarded": [],
+          "posted": [
+            {
+              "stage": "CreatePrLevelCommentsStage",
+              "provider": "bb",
+              "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+              "isReply": false,
+              "textHead": "`kody|code-review` `kody_rules` `severity-level|high`\n\n**PR title lacks the [qa2420] prefix**\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            },
+            {
+              "stage": "CreatePrLevelCommentsStage",
+              "provider": "bb",
+              "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+              "isReply": true,
+              "textHead": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nPR title lacks the [qa2420] prefix\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n```"
+            },
+            {
+              "stage": "CreatePrLevelCommentsStage",
+              "provider": "bb",
+              "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+              "isReply": false,
+              "textHead": "`kody|code-review` `kody_rules` `severity-level|high`\n\n**Report file is not named *ReportService.cs**\n\n`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/c"
+            },
+            {
+              "stage": "CreatePrLevelCommentsStage",
+              "provider": "bb",
+              "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+              "isReply": true,
+              "textHead": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nReport file is not named *ReportService.cs\n\n`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file na"
+            }
+          ]
+        },
+        "caused": {
+          "repeatPrompts": [
+            "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: the pull request as a whole\nKind: Kody Rule \"QA2420 PR title prefix\"\nFinding: The PR title must start with [qa2420]; it is \"update\".\n  <Earlier id=\"pr-comment-5001\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 PR title prefix\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"1\">\nWhere: qa2420/CheckinReport.cs\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n  <Earlier id=\"pr-comment-5003\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: `qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"2\">\nWhere: qa2420/AverageDues.cs:1-1\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: AverageDues.cs is misnamed.\n  <Earlier id=\"pr-comment-5003\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: `qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+          ],
+          "checkRepeats": {
+            "model": "ok",
+            "repeats": [
+              {
+                "finding": {
+                  "rules": [
+                    "qa2420-T"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "pr-comment-5001",
+                  "rules": [
+                    "qa2420-T"
+                  ],
+                  "contentHead": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA"
+                }
+              }
+            ],
+            "withheld": [],
+            "kept": [
+              {
+                "file": "qa2420/CheckinReport.cs",
+                "rules": [
+                  "qa2420-D"
+                ]
+              },
+              {
+                "file": "qa2420/AverageDues.cs",
+                "start": 1,
+                "rules": [
+                  "qa2420-D"
+                ]
+              }
+            ],
+            "revisions": [
+              {
+                "finding": {
+                  "file": "qa2420/CheckinReport.cs",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "earlier": {
+                  "suggestionId": "pr-comment-5003",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                }
+              },
+              {
+                "finding": {
+                  "file": "qa2420/AverageDues.cs",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "earlier": {
+                  "suggestionId": "pr-comment-5003",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                }
+              }
+            ]
+          },
+          "stageLogs": [
+            {
+              "level": "log",
+              "message": "[REPEAT-CHECK] PR#2420: 1 repeats, 0 withheld without a verdict, 2 kept, 2 linked revisions (history 2, model ok)",
+              "metadata": {
+                "organizationId": "11111111-1111-4111-8111-111111111111",
+                "prNumber": 2420,
+                "teamId": "11111111-1111-4111-8111-aaaaaaaaaaaa",
+                "withheld": [],
+                "repeats": [
+                  {
+                    "label": "kody_rules",
+                    "earlierId": "pr-comment-5001",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  }
+                ]
+              }
+            }
+          ],
+          "validSuggestionsByPR": [
+            {
+              "id": "62c73389-73d6-4734-86c6-c69b170d8245",
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "`qa2420/CheckinReport.cs` — **Revises an earlier Kody suggestion** on this pull request (2026-11-25 11:19 UTC).\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "fullExplanation": "`qa2420/CheckinReport.cs` — **Revises an earlier Kody suggestion** on this pull request (2026-11-25 11:19 UTC).\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            }
+          ],
+          "validSuggestions": [],
+          "discarded": [
+            {
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-T"
+              ],
+              "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".",
+              "priorityStatus": "discarded-by-repeat"
+            }
+          ],
+          "posted": [
+            {
+              "stage": "CreatePrLevelCommentsStage",
+              "provider": "bb",
+              "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+              "isReply": false,
+              "textHead": "`kody|code-review` `kody_rules` `severity-level|high`\n\n**Report file is not named *ReportService.cs**\n\n`qa2420/CheckinReport.cs` — **Revises an earlier Kody suggestion** on this pull request (2026-11-25 11:19 UTC).\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2"
+            },
+            {
+              "stage": "CreatePrLevelCommentsStage",
+              "provider": "bb",
+              "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+              "isReply": true,
+              "textHead": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nReport file is not named *ReportService.cs\n\n`qa2420/CheckinReport.cs` — **Revises an earlier Kody suggestion** on this pull request (2026-11-25 11:19 UTC).\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also f"
+            }
+          ]
+        }
+      }
+    },
+    "direct": {
+      "azure": {
+        "tree": "M",
+        "provider": "azure",
+        "history": [
+          {
+            "suggestionId": "pr-comment-1",
+            "rules": [
+              "qa2420-T"
+            ],
+            "decidedAt": "2026-11-25T11:19:06.866Z"
+          },
+          {
+            "suggestionId": "pr-comment-1",
+            "rules": [
+              "qa2420-D"
+            ],
+            "decidedAt": "2026-11-25T11:19:06.866Z"
+          }
+        ],
+        "candidatesForBug": [
+          {
+            "suggestionId": "pr-comment-1",
+            "rules": [
+              "qa2420-D"
+            ]
+          },
+          {
+            "suggestionId": "pr-comment-1",
+            "rules": [
+              "qa2420-T"
+            ]
+          }
+        ],
+        "candidatesForBugLinkedToD": [],
+        "sameOccurrence": {
+          "modelAnsweredId": "pr-comment-1",
+          "model": "ok",
+          "matchedEarlier": [
+            {
+              "suggestionId": "pr-comment-1",
+              "rules": [
+                "qa2420-D"
+              ],
+              "contentHead": "`/qa2420/CheckinReport.cs` — CheckinReport.cs holds a report"
+            }
+          ],
+          "kept": 0
+        },
+        "causedByEarlier": {
+          "revisions": [
+            {
+              "suggestionId": "pr-comment-1",
+              "rules": [
+                "qa2420-D"
+              ]
+            }
+          ]
+        },
+        "prompts": [
+          "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: /qa2420/CheckinReport.cs:3-3\nKind: general review (maintainability)\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs as required for every report class; the PR title must start with [qa2420].\n  <Earlier id=\"pr-comment-1\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"qa2420-D\"\n  Comment: `/qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n  <Earlier id=\"pr-comment-1\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"qa2420-T\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+        ]
+      },
+      "forgejo": {
+        "tree": "M",
+        "provider": "forgejo",
+        "history": [
+          {
+            "suggestionId": "pr-comment-5011",
+            "rules": [
+              "qa2420-T"
+            ],
+            "decidedAt": "2026-11-25T11:19:06.880Z"
+          },
+          {
+            "suggestionId": "pr-comment-5012",
+            "rules": [
+              "qa2420-D"
+            ],
+            "decidedAt": "2026-11-25T11:19:06.880Z"
+          }
+        ],
+        "candidatesForBug": [
+          {
+            "suggestionId": "pr-comment-5012",
+            "rules": [
+              "qa2420-D"
+            ]
+          },
+          {
+            "suggestionId": "pr-comment-5011",
+            "rules": [
+              "qa2420-T"
+            ]
+          }
+        ],
+        "candidatesForBugLinkedToD": [
+          {
+            "suggestionId": "pr-comment-5011",
+            "rules": [
+              "qa2420-T"
+            ]
+          }
+        ],
+        "sameOccurrence": {
+          "modelAnsweredId": "pr-comment-5012",
+          "model": "ok",
+          "matchedEarlier": [
+            {
+              "suggestionId": "pr-comment-5012",
+              "rules": [
+                "qa2420-D"
+              ],
+              "contentHead": "`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report "
+            }
+          ],
+          "kept": 0
+        },
+        "causedByEarlier": {
+          "revisions": [
+            {
+              "suggestionId": "pr-comment-5012",
+              "rules": [
+                "qa2420-D"
+              ]
+            }
+          ]
+        },
+        "prompts": [
+          "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: qa2420/CheckinReport.cs:3-3\nKind: general review (maintainability)\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs as required for every report class; the PR title must start with [qa2420].\n  <Earlier id=\"pr-comment-5012\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"qa2420-D\"\n  Comment: `qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n  <Earlier id=\"pr-comment-5011\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"qa2420-T\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+        ]
+      }
+    }
+  },
+  "P": {
+    "azure": {
+      "storedPrLevel": [
+        {
+          "id": "3b71b627-1748-4193-bc06-0f35256e090d",
+          "brokenKodyRulesIds": [
+            "qa2420-T"
+          ],
+          "comment": {
+            "id": 1,
+            "pullRequestReviewId": null
+          },
+          "deliveryStatus": "sent",
+          "createdAt": "2026-11-25T11:18:18.062Z"
+        }
+      ],
+      "history": [
+        {
+          "suggestionId": "file-suggestion-72",
+          "relevantFile": "/qa2420/CheckinReport.cs",
+          "relevantLinesStart": 1,
+          "relevantLinesEnd": 6,
+          "suggestionContent": "CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+          "label": "kody_rules",
+          "brokenKodyRulesIds": [
+            "qa2420-D"
+          ],
+          "outcome": "pending",
+          "decidedAt": "2026-11-25T11:18:19.011Z"
+        },
+        {
+          "suggestionId": "pr-comment-1",
+          "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+          "label": "kody_rules",
+          "brokenKodyRulesIds": [
+            "qa2420-T"
+          ],
+          "outcome": "pending",
+          "decidedAt": "2026-11-25T11:18:18.062Z"
+        }
+      ],
+      "historyIdCollision": false,
+      "round2": {
+        "correct": {
+          "repeatPrompts": [
+            "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: the pull request as a whole\nKind: Kody Rule \"QA2420 PR title prefix\"\nFinding: The PR title must start with [qa2420]; it is \"update\".\n  <Earlier id=\"pr-comment-1\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 PR title prefix\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"1\">\nWhere: /qa2420/CheckinReport.cs:1-6\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n  <Earlier id=\"file-suggestion-72\">\n  Where: /qa2420/CheckinReport.cs:1-6\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"2\">\nWhere: /qa2420/AverageDues.cs:1-1\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: AverageDues.cs is misnamed.\n  <Earlier id=\"file-suggestion-72\">\n  Where: /qa2420/CheckinReport.cs:1-6\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+          ],
+          "checkRepeats": {
+            "model": "ok",
+            "repeats": [
+              {
+                "finding": {
+                  "rules": [
+                    "qa2420-T"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "pr-comment-1",
+                  "rules": [
+                    "qa2420-T"
+                  ],
+                  "contentHead": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA"
+                }
+              },
+              {
+                "finding": {
+                  "file": "/qa2420/CheckinReport.cs",
+                  "start": 1,
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "file-suggestion-72",
+                  "rules": [
+                    "qa2420-D"
+                  ],
+                  "relevantFile": "/qa2420/CheckinReport.cs",
+                  "contentHead": "CheckinReport.cs holds a report class but the file is not named CheckinReportSer"
+                }
+              },
+              {
+                "finding": {
+                  "file": "/qa2420/AverageDues.cs",
+                  "start": 1,
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "file-suggestion-72",
+                  "rules": [
+                    "qa2420-D"
+                  ],
+                  "relevantFile": "/qa2420/CheckinReport.cs",
+                  "contentHead": "CheckinReport.cs holds a report class but the file is not named CheckinReportSer"
+                }
+              }
+            ],
+            "withheld": [],
+            "kept": [],
+            "revisions": []
+          },
+          "stageLogs": [
+            {
+              "level": "log",
+              "message": "[REPEAT-CHECK] PR#2420: 3 repeats, 0 withheld without a verdict, 0 kept, 0 linked revisions (history 2, model ok)",
+              "metadata": {
+                "organizationId": "11111111-1111-4111-8111-111111111111",
+                "prNumber": 2420,
+                "teamId": "11111111-1111-4111-8111-aaaaaaaaaaaa",
+                "withheld": [],
+                "repeats": [
+                  {
+                    "label": "kody_rules",
+                    "earlierId": "pr-comment-1",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  },
+                  {
+                    "file": "/qa2420/CheckinReport.cs",
+                    "line": 1,
+                    "label": "kody_rules",
+                    "earlierId": "file-suggestion-72",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  },
+                  {
+                    "file": "/qa2420/AverageDues.cs",
+                    "line": 1,
+                    "label": "kody_rules",
+                    "earlierId": "file-suggestion-72",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  }
+                ]
+              }
+            }
+          ],
+          "validSuggestionsByPR": [],
+          "validSuggestions": [],
+          "discarded": [
+            {
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-T"
+              ],
+              "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".",
+              "priorityStatus": "discarded-by-repeat"
+            },
+            {
+              "file": "/qa2420/CheckinReport.cs",
+              "start": 1,
+              "end": 6,
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.",
+              "priorityStatus": "discarded-by-repeat"
+            },
+            {
+              "file": "/qa2420/AverageDues.cs",
+              "start": 1,
+              "end": 1,
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "AverageDues.cs is misnamed.",
+              "priorityStatus": "discarded-by-repeat"
+            }
+          ],
+          "posted": []
+        },
+        "fail": {
+          "repeatPrompts": [
+            "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: the pull request as a whole\nKind: Kody Rule \"QA2420 PR title prefix\"\nFinding: The PR title must start with [qa2420]; it is \"update\".\n  <Earlier id=\"pr-comment-1\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 PR title prefix\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"1\">\nWhere: /qa2420/CheckinReport.cs:1-6\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n  <Earlier id=\"file-suggestion-72\">\n  Where: /qa2420/CheckinReport.cs:1-6\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"2\">\nWhere: /qa2420/AverageDues.cs:1-1\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: AverageDues.cs is misnamed.\n  <Earlier id=\"file-suggestion-72\">\n  Where: /qa2420/CheckinReport.cs:1-6\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+          ],
+          "checkRepeats": {
+            "model": "failed",
+            "repeats": [],
+            "withheld": [
+              {
+                "file": "/qa2420/CheckinReport.cs",
+                "start": 1,
+                "rules": [
+                  "qa2420-D"
+                ]
+              }
+            ],
+            "kept": [
+              {
+                "rules": [
+                  "qa2420-T"
+                ]
+              },
+              {
+                "file": "/qa2420/AverageDues.cs",
+                "start": 1,
+                "rules": [
+                  "qa2420-D"
+                ]
+              }
+            ],
+            "revisions": []
+          },
+          "stageLogs": [
+            {
+              "level": "log",
+              "message": "[REPEAT-CHECK] PR#2420: 0 repeats, 1 withheld without a verdict, 2 kept, 0 linked revisions (history 2, model failed)",
+              "metadata": {
+                "organizationId": "11111111-1111-4111-8111-111111111111",
+                "prNumber": 2420,
+                "teamId": "11111111-1111-4111-8111-aaaaaaaaaaaa",
+                "withheld": [
+                  {
+                    "file": "/qa2420/CheckinReport.cs",
+                    "line": 1,
+                    "ruleIds": [
+                      "qa2420-D"
+                    ]
+                  }
+                ],
+                "repeats": []
+              }
+            }
+          ],
+          "validSuggestionsByPR": [
+            {
+              "id": "7d8d715a-1bdd-4e5c-9656-0c1734c22227",
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-T"
+              ],
+              "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "fullExplanation": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            }
+          ],
+          "validSuggestions": [
+            {
+              "file": "/qa2420/AverageDues.cs",
+              "start": 1,
+              "end": 1,
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "AverageDues.cs is misnamed.\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "fullExplanation": "AverageDues.cs is misnamed.\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            }
+          ],
+          "discarded": [
+            {
+              "file": "/qa2420/CheckinReport.cs",
+              "start": 1,
+              "end": 6,
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.",
+              "priorityStatus": "withheld-by-repeat-check"
+            }
+          ],
+          "posted": [
+            {
+              "stage": "CreatePrLevelCommentsStage",
+              "provider": "az",
+              "path": "/az/qa-az-org/proj-qa/_apis/git/repositories/repo-qa2420/pullRequests/2420/threads",
+              "isReply": false,
+              "textHead": "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Kody Rules](https://img.shields.io/badge/Kody_Rules-4527A0) ![high](https://img.shields.io/badge/severity_level-high-6B6B92)\n\n**PR title lacks the [qa2420] prefix**\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rul"
+            },
+            {
+              "stage": "CreateFileCommentsStage",
+              "provider": "az",
+              "path": "/az/qa-az-org/proj-qa/_apis/git/repositories/repo-qa2420/pullRequests/2420/threads",
+              "isReply": false,
+              "textHead": "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Kody Rules](https://img.shields.io/badge/Kody_Rules-4527A0) ![high](https://img.shields.io/badge/severity_level-high-6B6B92)\n\n\n**Report file is not named *ReportService.cs**\n\nAverageDues.cs is misnamed.\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?tea"
+            }
+          ]
+        },
+        "caused": {
+          "repeatPrompts": [
+            "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: the pull request as a whole\nKind: Kody Rule \"QA2420 PR title prefix\"\nFinding: The PR title must start with [qa2420]; it is \"update\".\n  <Earlier id=\"pr-comment-1\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 PR title prefix\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"1\">\nWhere: /qa2420/CheckinReport.cs:1-6\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n  <Earlier id=\"file-suggestion-72\">\n  Where: /qa2420/CheckinReport.cs:1-6\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"2\">\nWhere: /qa2420/AverageDues.cs:1-1\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: AverageDues.cs is misnamed.\n  <Earlier id=\"file-suggestion-72\">\n  Where: /qa2420/CheckinReport.cs:1-6\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+          ],
+          "checkRepeats": {
+            "model": "ok",
+            "repeats": [
+              {
+                "finding": {
+                  "rules": [
+                    "qa2420-T"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "pr-comment-1",
+                  "rules": [
+                    "qa2420-T"
+                  ],
+                  "contentHead": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA"
+                }
+              }
+            ],
+            "withheld": [],
+            "kept": [
+              {
+                "file": "/qa2420/CheckinReport.cs",
+                "start": 1,
+                "rules": [
+                  "qa2420-D"
+                ]
+              },
+              {
+                "file": "/qa2420/AverageDues.cs",
+                "start": 1,
+                "rules": [
+                  "qa2420-D"
+                ]
+              }
+            ],
+            "revisions": [
+              {
+                "finding": {
+                  "file": "/qa2420/CheckinReport.cs",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "earlier": {
+                  "suggestionId": "file-suggestion-72",
+                  "rules": [
+                    "qa2420-D"
+                  ],
+                  "relevantFile": "/qa2420/CheckinReport.cs"
+                }
+              },
+              {
+                "finding": {
+                  "file": "/qa2420/AverageDues.cs",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "earlier": {
+                  "suggestionId": "file-suggestion-72",
+                  "rules": [
+                    "qa2420-D"
+                  ],
+                  "relevantFile": "/qa2420/CheckinReport.cs"
+                }
+              }
+            ]
+          },
+          "stageLogs": [
+            {
+              "level": "log",
+              "message": "[REPEAT-CHECK] PR#2420: 1 repeats, 0 withheld without a verdict, 2 kept, 2 linked revisions (history 2, model ok)",
+              "metadata": {
+                "organizationId": "11111111-1111-4111-8111-111111111111",
+                "prNumber": 2420,
+                "teamId": "11111111-1111-4111-8111-aaaaaaaaaaaa",
+                "withheld": [],
+                "repeats": [
+                  {
+                    "label": "kody_rules",
+                    "earlierId": "pr-comment-1",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  }
+                ]
+              }
+            }
+          ],
+          "validSuggestionsByPR": [],
+          "validSuggestions": [
+            {
+              "file": "/qa2420/CheckinReport.cs",
+              "start": 1,
+              "end": 6,
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "**Revises an earlier Kody suggestion** on `/qa2420/CheckinReport.cs:1` (2026-11-25 11:18 UTC).\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "fullExplanation": "**Revises an earlier Kody suggestion** on `/qa2420/CheckinReport.cs:1` (2026-11-25 11:18 UTC).\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `/qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "revisesSuggestionId": "file-suggestion-72"
+            }
+          ],
+          "discarded": [
+            {
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-T"
+              ],
+              "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".",
+              "priorityStatus": "discarded-by-repeat"
+            }
+          ],
+          "posted": [
+            {
+              "stage": "CreateFileCommentsStage",
+              "provider": "az",
+              "path": "/az/qa-az-org/proj-qa/_apis/git/repositories/repo-qa2420/pullRequests/2420/threads",
+              "isReply": false,
+              "textHead": "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Kody Rules](https://img.shields.io/badge/Kody_Rules-4527A0) ![high](https://img.shields.io/badge/severity_level-high-6B6B92)\n\n\n**Report file is not named *ReportService.cs**\n\n**Revises an earlier Kody suggestion** on `/qa2420/CheckinReport.cs:1` (2026-11-25 11:18 UTC).\n\nCheckinReport.cs holds a report cl"
+            }
+          ]
+        }
+      }
+    },
+    "forgejo": {
+      "storedPrLevel": [
+        {
+          "id": "7f14a6bc-e00d-49a3-a2e2-aa9e8bfd5c6e",
+          "brokenKodyRulesIds": [
+            "qa2420-T"
+          ],
+          "comment": {
+            "id": 5011,
+            "pullRequestReviewId": null
+          },
+          "deliveryStatus": "sent",
+          "createdAt": "2026-11-25T11:18:19.366Z"
+        }
+      ],
+      "history": [
+        {
+          "suggestionId": "file-suggestion-5012",
+          "relevantFile": "qa2420/CheckinReport.cs",
+          "relevantLinesStart": 1,
+          "relevantLinesEnd": 6,
+          "suggestionContent": "CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+          "label": "kody_rules",
+          "brokenKodyRulesIds": [
+            "qa2420-D"
+          ],
+          "outcome": "pending",
+          "decidedAt": "2026-11-25T11:18:19.374Z"
+        },
+        {
+          "suggestionId": "pr-comment-5011",
+          "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+          "label": "kody_rules",
+          "brokenKodyRulesIds": [
+            "qa2420-T"
+          ],
+          "outcome": "pending",
+          "decidedAt": "2026-11-25T11:18:19.366Z"
+        }
+      ],
+      "historyIdCollision": false,
+      "round2": {
+        "correct": {
+          "repeatPrompts": [
+            "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: the pull request as a whole\nKind: Kody Rule \"QA2420 PR title prefix\"\nFinding: The PR title must start with [qa2420]; it is \"update\".\n  <Earlier id=\"pr-comment-5011\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 PR title prefix\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"1\">\nWhere: qa2420/CheckinReport.cs:1-6\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n  <Earlier id=\"file-suggestion-5012\">\n  Where: qa2420/CheckinReport.cs:1-6\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"2\">\nWhere: qa2420/AverageDues.cs:1-1\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: AverageDues.cs is misnamed.\n  <Earlier id=\"file-suggestion-5012\">\n  Where: qa2420/CheckinReport.cs:1-6\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+          ],
+          "checkRepeats": {
+            "model": "ok",
+            "repeats": [
+              {
+                "finding": {
+                  "rules": [
+                    "qa2420-T"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "pr-comment-5011",
+                  "rules": [
+                    "qa2420-T"
+                  ],
+                  "contentHead": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA"
+                }
+              },
+              {
+                "finding": {
+                  "file": "qa2420/CheckinReport.cs",
+                  "start": 1,
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "file-suggestion-5012",
+                  "rules": [
+                    "qa2420-D"
+                  ],
+                  "relevantFile": "qa2420/CheckinReport.cs",
+                  "contentHead": "CheckinReport.cs holds a report class but the file is not named CheckinReportSer"
+                }
+              },
+              {
+                "finding": {
+                  "file": "qa2420/AverageDues.cs",
+                  "start": 1,
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "file-suggestion-5012",
+                  "rules": [
+                    "qa2420-D"
+                  ],
+                  "relevantFile": "qa2420/CheckinReport.cs",
+                  "contentHead": "CheckinReport.cs holds a report class but the file is not named CheckinReportSer"
+                }
+              }
+            ],
+            "withheld": [],
+            "kept": [],
+            "revisions": []
+          },
+          "stageLogs": [
+            {
+              "level": "log",
+              "message": "[REPEAT-CHECK] PR#2420: 3 repeats, 0 withheld without a verdict, 0 kept, 0 linked revisions (history 2, model ok)",
+              "metadata": {
+                "organizationId": "11111111-1111-4111-8111-111111111111",
+                "prNumber": 2420,
+                "teamId": "11111111-1111-4111-8111-aaaaaaaaaaaa",
+                "withheld": [],
+                "repeats": [
+                  {
+                    "label": "kody_rules",
+                    "earlierId": "pr-comment-5011",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  },
+                  {
+                    "file": "qa2420/CheckinReport.cs",
+                    "line": 1,
+                    "label": "kody_rules",
+                    "earlierId": "file-suggestion-5012",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  },
+                  {
+                    "file": "qa2420/AverageDues.cs",
+                    "line": 1,
+                    "label": "kody_rules",
+                    "earlierId": "file-suggestion-5012",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  }
+                ]
+              }
+            }
+          ],
+          "validSuggestionsByPR": [],
+          "validSuggestions": [],
+          "discarded": [
+            {
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-T"
+              ],
+              "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".",
+              "priorityStatus": "discarded-by-repeat"
+            },
+            {
+              "file": "qa2420/CheckinReport.cs",
+              "start": 1,
+              "end": 6,
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.",
+              "priorityStatus": "discarded-by-repeat"
+            },
+            {
+              "file": "qa2420/AverageDues.cs",
+              "start": 1,
+              "end": 1,
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "AverageDues.cs is misnamed.",
+              "priorityStatus": "discarded-by-repeat"
+            }
+          ],
+          "posted": []
+        },
+        "fail": {
+          "repeatPrompts": [
+            "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: the pull request as a whole\nKind: Kody Rule \"QA2420 PR title prefix\"\nFinding: The PR title must start with [qa2420]; it is \"update\".\n  <Earlier id=\"pr-comment-5011\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 PR title prefix\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"1\">\nWhere: qa2420/CheckinReport.cs:1-6\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n  <Earlier id=\"file-suggestion-5012\">\n  Where: qa2420/CheckinReport.cs:1-6\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"2\">\nWhere: qa2420/AverageDues.cs:1-1\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: AverageDues.cs is misnamed.\n  <Earlier id=\"file-suggestion-5012\">\n  Where: qa2420/CheckinReport.cs:1-6\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+          ],
+          "checkRepeats": {
+            "model": "failed",
+            "repeats": [],
+            "withheld": [
+              {
+                "file": "qa2420/CheckinReport.cs",
+                "start": 1,
+                "rules": [
+                  "qa2420-D"
+                ]
+              }
+            ],
+            "kept": [
+              {
+                "rules": [
+                  "qa2420-T"
+                ]
+              },
+              {
+                "file": "qa2420/AverageDues.cs",
+                "start": 1,
+                "rules": [
+                  "qa2420-D"
+                ]
+              }
+            ],
+            "revisions": []
+          },
+          "stageLogs": [
+            {
+              "level": "log",
+              "message": "[REPEAT-CHECK] PR#2420: 0 repeats, 1 withheld without a verdict, 2 kept, 0 linked revisions (history 2, model failed)",
+              "metadata": {
+                "organizationId": "11111111-1111-4111-8111-111111111111",
+                "prNumber": 2420,
+                "teamId": "11111111-1111-4111-8111-aaaaaaaaaaaa",
+                "withheld": [
+                  {
+                    "file": "qa2420/CheckinReport.cs",
+                    "line": 1,
+                    "ruleIds": [
+                      "qa2420-D"
+                    ]
+                  }
+                ],
+                "repeats": []
+              }
+            }
+          ],
+          "validSuggestionsByPR": [
+            {
+              "id": "ea44b217-1f00-4887-80e8-b300f1f4d4d3",
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-T"
+              ],
+              "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "fullExplanation": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            }
+          ],
+          "validSuggestions": [
+            {
+              "file": "qa2420/AverageDues.cs",
+              "start": 1,
+              "end": 1,
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "AverageDues.cs is misnamed.\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "fullExplanation": "AverageDues.cs is misnamed.\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            }
+          ],
+          "discarded": [
+            {
+              "file": "qa2420/CheckinReport.cs",
+              "start": 1,
+              "end": 6,
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.",
+              "priorityStatus": "withheld-by-repeat-check"
+            }
+          ],
+          "posted": [
+            {
+              "stage": "CreatePrLevelCommentsStage",
+              "provider": "fj",
+              "path": "/fj/api/v1/repos/qa-owner/qa-repo/issues/2420/comments",
+              "isReply": false,
+              "textHead": "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Kody Rules](https://img.shields.io/badge/Kody_Rules-4527A0) ![high](https://img.shields.io/badge/severity_level-high-6B6B92)\n\n\n**PR title lacks the [qa2420] prefix**\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-ru"
+            },
+            {
+              "stage": "CreateFileCommentsStage",
+              "provider": "fj",
+              "path": "/fj/api/v1/repos/qa-owner/qa-repo/pulls/2420/reviews",
+              "isReply": false,
+              "textHead": ""
+            }
+          ]
+        },
+        "caused": {
+          "repeatPrompts": [
+            "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: the pull request as a whole\nKind: Kody Rule \"QA2420 PR title prefix\"\nFinding: The PR title must start with [qa2420]; it is \"update\".\n  <Earlier id=\"pr-comment-5011\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 PR title prefix\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"1\">\nWhere: qa2420/CheckinReport.cs:1-6\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n  <Earlier id=\"file-suggestion-5012\">\n  Where: qa2420/CheckinReport.cs:1-6\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"2\">\nWhere: qa2420/AverageDues.cs:1-1\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: AverageDues.cs is misnamed.\n  <Earlier id=\"file-suggestion-5012\">\n  Where: qa2420/CheckinReport.cs:1-6\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+          ],
+          "checkRepeats": {
+            "model": "ok",
+            "repeats": [
+              {
+                "finding": {
+                  "rules": [
+                    "qa2420-T"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "pr-comment-5011",
+                  "rules": [
+                    "qa2420-T"
+                  ],
+                  "contentHead": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA"
+                }
+              }
+            ],
+            "withheld": [],
+            "kept": [
+              {
+                "file": "qa2420/CheckinReport.cs",
+                "start": 1,
+                "rules": [
+                  "qa2420-D"
+                ]
+              },
+              {
+                "file": "qa2420/AverageDues.cs",
+                "start": 1,
+                "rules": [
+                  "qa2420-D"
+                ]
+              }
+            ],
+            "revisions": [
+              {
+                "finding": {
+                  "file": "qa2420/CheckinReport.cs",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "earlier": {
+                  "suggestionId": "file-suggestion-5012",
+                  "rules": [
+                    "qa2420-D"
+                  ],
+                  "relevantFile": "qa2420/CheckinReport.cs"
+                }
+              },
+              {
+                "finding": {
+                  "file": "qa2420/AverageDues.cs",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "earlier": {
+                  "suggestionId": "file-suggestion-5012",
+                  "rules": [
+                    "qa2420-D"
+                  ],
+                  "relevantFile": "qa2420/CheckinReport.cs"
+                }
+              }
+            ]
+          },
+          "stageLogs": [
+            {
+              "level": "log",
+              "message": "[REPEAT-CHECK] PR#2420: 1 repeats, 0 withheld without a verdict, 2 kept, 2 linked revisions (history 2, model ok)",
+              "metadata": {
+                "organizationId": "11111111-1111-4111-8111-111111111111",
+                "prNumber": 2420,
+                "teamId": "11111111-1111-4111-8111-aaaaaaaaaaaa",
+                "withheld": [],
+                "repeats": [
+                  {
+                    "label": "kody_rules",
+                    "earlierId": "pr-comment-5011",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  }
+                ]
+              }
+            }
+          ],
+          "validSuggestionsByPR": [],
+          "validSuggestions": [
+            {
+              "file": "qa2420/CheckinReport.cs",
+              "start": 1,
+              "end": 6,
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "**Revises an earlier Kody suggestion** on `qa2420/CheckinReport.cs:1` (2026-11-25 11:18 UTC).\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "fullExplanation": "**Revises an earlier Kody suggestion** on `qa2420/CheckinReport.cs:1` (2026-11-25 11:18 UTC).\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "revisesSuggestionId": "file-suggestion-5012"
+            }
+          ],
+          "discarded": [
+            {
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-T"
+              ],
+              "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".",
+              "priorityStatus": "discarded-by-repeat"
+            }
+          ],
+          "posted": [
+            {
+              "stage": "CreateFileCommentsStage",
+              "provider": "fj",
+              "path": "/fj/api/v1/repos/qa-owner/qa-repo/pulls/2420/reviews",
+              "isReply": false,
+              "textHead": ""
+            }
+          ]
+        }
+      }
+    },
+    "bitbucket": {
+      "storedPrLevel": [
+        {
+          "id": "c836de65-5da6-470a-ad36-121844a7413b",
+          "brokenKodyRulesIds": [
+            "qa2420-T"
+          ],
+          "comment": {
+            "id": 5001,
+            "pullRequestReviewId": null
+          },
+          "deliveryStatus": "sent",
+          "createdAt": "2026-11-25T11:18:13.628Z"
+        }
+      ],
+      "history": [
+        {
+          "suggestionId": "file-suggestion-5003",
+          "relevantFile": "qa2420/CheckinReport.cs",
+          "relevantLinesStart": 1,
+          "relevantLinesEnd": 6,
+          "suggestionContent": "CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+          "label": "kody_rules",
+          "brokenKodyRulesIds": [
+            "qa2420-D"
+          ],
+          "outcome": "pending",
+          "decidedAt": "2026-11-25T11:18:14.834Z"
+        },
+        {
+          "suggestionId": "pr-comment-5001",
+          "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+          "label": "kody_rules",
+          "brokenKodyRulesIds": [
+            "qa2420-T"
+          ],
+          "outcome": "pending",
+          "decidedAt": "2026-11-25T11:18:13.628Z"
+        }
+      ],
+      "historyIdCollision": false,
+      "round2": {
+        "correct": {
+          "repeatPrompts": [
+            "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: the pull request as a whole\nKind: Kody Rule \"QA2420 PR title prefix\"\nFinding: The PR title must start with [qa2420]; it is \"update\".\n  <Earlier id=\"pr-comment-5001\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 PR title prefix\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"1\">\nWhere: qa2420/CheckinReport.cs:1-6\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n  <Earlier id=\"file-suggestion-5003\">\n  Where: qa2420/CheckinReport.cs:1-6\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"2\">\nWhere: qa2420/AverageDues.cs:1-1\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: AverageDues.cs is misnamed.\n  <Earlier id=\"file-suggestion-5003\">\n  Where: qa2420/CheckinReport.cs:1-6\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+          ],
+          "checkRepeats": {
+            "model": "ok",
+            "repeats": [
+              {
+                "finding": {
+                  "rules": [
+                    "qa2420-T"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "pr-comment-5001",
+                  "rules": [
+                    "qa2420-T"
+                  ],
+                  "contentHead": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA"
+                }
+              },
+              {
+                "finding": {
+                  "file": "qa2420/CheckinReport.cs",
+                  "start": 1,
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "file-suggestion-5003",
+                  "rules": [
+                    "qa2420-D"
+                  ],
+                  "relevantFile": "qa2420/CheckinReport.cs",
+                  "contentHead": "CheckinReport.cs holds a report class but the file is not named CheckinReportSer"
+                }
+              },
+              {
+                "finding": {
+                  "file": "qa2420/AverageDues.cs",
+                  "start": 1,
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "file-suggestion-5003",
+                  "rules": [
+                    "qa2420-D"
+                  ],
+                  "relevantFile": "qa2420/CheckinReport.cs",
+                  "contentHead": "CheckinReport.cs holds a report class but the file is not named CheckinReportSer"
+                }
+              }
+            ],
+            "withheld": [],
+            "kept": [],
+            "revisions": []
+          },
+          "stageLogs": [
+            {
+              "level": "log",
+              "message": "[REPEAT-CHECK] PR#2420: 3 repeats, 0 withheld without a verdict, 0 kept, 0 linked revisions (history 2, model ok)",
+              "metadata": {
+                "organizationId": "11111111-1111-4111-8111-111111111111",
+                "prNumber": 2420,
+                "teamId": "11111111-1111-4111-8111-aaaaaaaaaaaa",
+                "withheld": [],
+                "repeats": [
+                  {
+                    "label": "kody_rules",
+                    "earlierId": "pr-comment-5001",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  },
+                  {
+                    "file": "qa2420/CheckinReport.cs",
+                    "line": 1,
+                    "label": "kody_rules",
+                    "earlierId": "file-suggestion-5003",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  },
+                  {
+                    "file": "qa2420/AverageDues.cs",
+                    "line": 1,
+                    "label": "kody_rules",
+                    "earlierId": "file-suggestion-5003",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  }
+                ]
+              }
+            }
+          ],
+          "validSuggestionsByPR": [],
+          "validSuggestions": [],
+          "discarded": [
+            {
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-T"
+              ],
+              "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".",
+              "priorityStatus": "discarded-by-repeat"
+            },
+            {
+              "file": "qa2420/CheckinReport.cs",
+              "start": 1,
+              "end": 6,
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.",
+              "priorityStatus": "discarded-by-repeat"
+            },
+            {
+              "file": "qa2420/AverageDues.cs",
+              "start": 1,
+              "end": 1,
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "AverageDues.cs is misnamed.",
+              "priorityStatus": "discarded-by-repeat"
+            }
+          ],
+          "posted": []
+        },
+        "fail": {
+          "repeatPrompts": [
+            "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: the pull request as a whole\nKind: Kody Rule \"QA2420 PR title prefix\"\nFinding: The PR title must start with [qa2420]; it is \"update\".\n  <Earlier id=\"pr-comment-5001\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 PR title prefix\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"1\">\nWhere: qa2420/CheckinReport.cs:1-6\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n  <Earlier id=\"file-suggestion-5003\">\n  Where: qa2420/CheckinReport.cs:1-6\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"2\">\nWhere: qa2420/AverageDues.cs:1-1\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: AverageDues.cs is misnamed.\n  <Earlier id=\"file-suggestion-5003\">\n  Where: qa2420/CheckinReport.cs:1-6\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+          ],
+          "checkRepeats": {
+            "model": "failed",
+            "repeats": [],
+            "withheld": [
+              {
+                "file": "qa2420/CheckinReport.cs",
+                "start": 1,
+                "rules": [
+                  "qa2420-D"
+                ]
+              }
+            ],
+            "kept": [
+              {
+                "rules": [
+                  "qa2420-T"
+                ]
+              },
+              {
+                "file": "qa2420/AverageDues.cs",
+                "start": 1,
+                "rules": [
+                  "qa2420-D"
+                ]
+              }
+            ],
+            "revisions": []
+          },
+          "stageLogs": [
+            {
+              "level": "log",
+              "message": "[REPEAT-CHECK] PR#2420: 0 repeats, 1 withheld without a verdict, 2 kept, 0 linked revisions (history 2, model failed)",
+              "metadata": {
+                "organizationId": "11111111-1111-4111-8111-111111111111",
+                "prNumber": 2420,
+                "teamId": "11111111-1111-4111-8111-aaaaaaaaaaaa",
+                "withheld": [
+                  {
+                    "file": "qa2420/CheckinReport.cs",
+                    "line": 1,
+                    "ruleIds": [
+                      "qa2420-D"
+                    ]
+                  }
+                ],
+                "repeats": []
+              }
+            }
+          ],
+          "validSuggestionsByPR": [
+            {
+              "id": "017776a7-a357-4e09-a47c-77da3668c646",
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-T"
+              ],
+              "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "fullExplanation": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            }
+          ],
+          "validSuggestions": [
+            {
+              "file": "qa2420/AverageDues.cs",
+              "start": 1,
+              "end": 1,
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "AverageDues.cs is misnamed.\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "fullExplanation": "AverageDues.cs is misnamed.\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            }
+          ],
+          "discarded": [
+            {
+              "file": "qa2420/CheckinReport.cs",
+              "start": 1,
+              "end": 6,
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.",
+              "priorityStatus": "withheld-by-repeat-check"
+            }
+          ],
+          "posted": [
+            {
+              "stage": "CreatePrLevelCommentsStage",
+              "provider": "bb",
+              "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+              "isReply": false,
+              "textHead": "`kody|code-review` `kody_rules` `severity-level|high`\n\n**PR title lacks the [qa2420] prefix**\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            },
+            {
+              "stage": "CreatePrLevelCommentsStage",
+              "provider": "bb",
+              "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+              "isReply": true,
+              "textHead": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nPR title lacks the [qa2420] prefix\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n```"
+            },
+            {
+              "stage": "CreateFileCommentsStage",
+              "provider": "bb",
+              "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+              "isReply": false,
+              "textHead": "`kody|code-review` `kody_rules` `severity-level|high`\n\n**Report file is not named *ReportService.cs**\n\nAverageDues.cs is misnamed.\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n\nWas this suggestion helpful? Reply with 👍 or 👎 to help Kody learn from this interaction.\n\n```\n👍\n```\n\n```\n👎\n```"
+            },
+            {
+              "stage": "CreateFileCommentsStage",
+              "provider": "bb",
+              "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+              "isReply": true,
+              "textHead": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nFile qa2420/AverageDues.cs, line 1:\n\nReport file is not named *ReportService.cs\n\nAverageDues.cs is misnamed.\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n```"
+            }
+          ]
+        },
+        "caused": {
+          "repeatPrompts": [
+            "A code review produced new findings on a pull request. Kody already posted comments on this pull request in earlier review rounds. For each finding you get the earlier comments that could be about the same thing.\n\nGive every finding one verdict:\n- same_occurrence: it raises the problem an earlier comment raised, in the same piece of code. Also when that code was edited, reformatted or moved to another file, when the finding words it differently or proposes another fix, and when the developer tried to fix it and the problem is still there. Give that comment's id.\n- new_place: the same kind of problem, or the same rule, in a different piece of code: another function, call, component or message, or another file where the earlier code is still in place. Give the comment's id.\n- caused_by_earlier: a new problem that exists because the change an earlier comment asked for was made, or a finding that asks to undo that change. Give the comment's id.\n- different_problem: anything else. earlierId is null.\n\nCompare the failure each comment describes. If the earlier fix worked but now causes a different failure in a consumer, use caused_by_earlier even when both comments point to the same line. Compare the code each one points at. A finding about different code is never the same occurrence, however alike the words.\nFor PR-level comments, compare the behavior, resource or change each comment asks about. A shared rule is not enough; the comments must raise the same problem about the same subject.\n\n<Finding n=\"0\">\nWhere: the pull request as a whole\nKind: Kody Rule \"QA2420 PR title prefix\"\nFinding: The PR title must start with [qa2420]; it is \"update\".\n  <Earlier id=\"pr-comment-5001\">\n  Where: the pull request as a whole\n  Kind: Kody Rule \"QA2420 PR title prefix\"\n  Comment: The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"1\">\nWhere: qa2420/CheckinReport.cs:1-6\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n  <Earlier id=\"file-suggestion-5003\">\n  Where: qa2420/CheckinReport.cs:1-6\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>\n\n<Finding n=\"2\">\nWhere: qa2420/AverageDues.cs:1-1\nKind: Kody Rule \"QA2420 report file naming\"\nFinding: AverageDues.cs is misnamed.\n  <Earlier id=\"file-suggestion-5003\">\n  Where: qa2420/CheckinReport.cs:1-6\n  Kind: Kody Rule \"QA2420 report file naming\"\n  Comment: CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n  </Earlier>\n</Finding>"
+          ],
+          "checkRepeats": {
+            "model": "ok",
+            "repeats": [
+              {
+                "finding": {
+                  "rules": [
+                    "qa2420-T"
+                  ]
+                },
+                "by": "model",
+                "earlier": {
+                  "suggestionId": "pr-comment-5001",
+                  "rules": [
+                    "qa2420-T"
+                  ],
+                  "contentHead": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA"
+                }
+              }
+            ],
+            "withheld": [],
+            "kept": [
+              {
+                "file": "qa2420/CheckinReport.cs",
+                "start": 1,
+                "rules": [
+                  "qa2420-D"
+                ]
+              },
+              {
+                "file": "qa2420/AverageDues.cs",
+                "start": 1,
+                "rules": [
+                  "qa2420-D"
+                ]
+              }
+            ],
+            "revisions": [
+              {
+                "finding": {
+                  "file": "qa2420/CheckinReport.cs",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "earlier": {
+                  "suggestionId": "file-suggestion-5003",
+                  "rules": [
+                    "qa2420-D"
+                  ],
+                  "relevantFile": "qa2420/CheckinReport.cs"
+                }
+              },
+              {
+                "finding": {
+                  "file": "qa2420/AverageDues.cs",
+                  "rules": [
+                    "qa2420-D"
+                  ]
+                },
+                "earlier": {
+                  "suggestionId": "file-suggestion-5003",
+                  "rules": [
+                    "qa2420-D"
+                  ],
+                  "relevantFile": "qa2420/CheckinReport.cs"
+                }
+              }
+            ]
+          },
+          "stageLogs": [
+            {
+              "level": "log",
+              "message": "[REPEAT-CHECK] PR#2420: 1 repeats, 0 withheld without a verdict, 2 kept, 2 linked revisions (history 2, model ok)",
+              "metadata": {
+                "organizationId": "11111111-1111-4111-8111-111111111111",
+                "prNumber": 2420,
+                "teamId": "11111111-1111-4111-8111-aaaaaaaaaaaa",
+                "withheld": [],
+                "repeats": [
+                  {
+                    "label": "kody_rules",
+                    "earlierId": "pr-comment-5001",
+                    "earlierOutcome": "pending",
+                    "by": "model"
+                  }
+                ]
+              }
+            }
+          ],
+          "validSuggestionsByPR": [],
+          "validSuggestions": [
+            {
+              "file": "qa2420/CheckinReport.cs",
+              "start": 1,
+              "end": 6,
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-D"
+              ],
+              "suggestionContent": "**Revises an earlier Kody suggestion** on `qa2420/CheckinReport.cs:1` (2026-11-25 11:18 UTC).\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "fullExplanation": "**Revises an earlier Kody suggestion** on `qa2420/CheckinReport.cs:1` (2026-11-25 11:18 UTC).\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+              "revisesSuggestionId": "file-suggestion-5003"
+            }
+          ],
+          "discarded": [
+            {
+              "label": "kody_rules",
+              "rules": [
+                "qa2420-T"
+              ],
+              "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".",
+              "priorityStatus": "discarded-by-repeat"
+            }
+          ],
+          "posted": [
+            {
+              "stage": "CreateFileCommentsStage",
+              "provider": "bb",
+              "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+              "isReply": false,
+              "textHead": "`kody|code-review` `kody_rules` `severity-level|high`\n\n**Report file is not named *ReportService.cs**\n\n**Revises an earlier Kody suggestion** on `qa2420/CheckinReport.cs:1` (2026-11-25 11:18 UTC).\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs"
+            },
+            {
+              "stage": "CreateFileCommentsStage",
+              "provider": "bb",
+              "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+              "isReply": true,
+              "textHead": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nFile qa2420/CheckinReport.cs, lines 1-6:\n\n**Revises an earlier Kody suggestion** on `qa2420/CheckinReport.cs:1` (2026-11-25 11:18 UTC).\n\nReport file is not named *ReportService.cs\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report cl"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
