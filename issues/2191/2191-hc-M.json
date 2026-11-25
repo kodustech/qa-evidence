@@ -1,0 +1,81 @@
+{
+ "M29.github_oauth": {
+  "octokitUpdateCalls": [
+   {
+    "conclusion": "skipped",
+    "status": "completed",
+    "title": "Code Review Skipped",
+    "summary": "- The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+   }
+  ],
+  "octokitAcquired": 1,
+  "checkRunIdAfter": null
+ },
+ "M29.github_token": {
+  "octokitUpdateCalls": [],
+  "octokitAcquired": 0,
+  "checkRunIdAfter": null
+ },
+ "M29.github_app_missing_check_id": {
+  "octokitUpdateCalls": 0
+ },
+ "M30.forgejo": [
+  {
+   "state": "warning",
+   "context": "Kodus Code Review",
+   "description": "Code Review Skipped"
+  }
+ ],
+ "M30.GITLAB": {
+  "nullAdapterUpdateCalls": [
+   "SKIPPED"
+  ],
+  "octokitUpdates": 0,
+  "threw": null
+ },
+ "M30.BITBUCKET": {
+  "nullAdapterUpdateCalls": [
+   "SKIPPED"
+  ],
+  "octokitUpdates": 0,
+  "threw": null
+ },
+ "M30.AZURE_REPOS": {
+  "nullAdapterUpdateCalls": [
+   "SKIPPED"
+  ],
+  "octokitUpdates": 0,
+  "threw": null
+ },
+ "M42.cli_quota": {
+  "octokitUpdates": 0,
+  "nullAdapterCalls": 0,
+  "forgejoCalls": 0,
+  "threw": null
+ },
+ "M42.cli_success": {
+  "octokitUpdates": 0,
+  "nullAdapterCalls": 0,
+  "forgejoCalls": 0,
+  "threw": null
+ },
+ "M32.reject_then_next": {
+  "firstRunThrew": null,
+  "firstRunCheckRunIdAfter": null,
+  "calls": [
+   {
+    "id": 1,
+    "conclusion": "skipped"
+   },
+   {
+    "id": 2,
+    "conclusion": "skipped"
+   }
+  ],
+  "secondRunCheckRunIdAfter": null
+ },
+ "M32.adapter_returns_false_token": {
+  "checkRunIdAfter": null,
+  "note": "finalizeCheck ignores the false return and clears the id"
+ }
+}
