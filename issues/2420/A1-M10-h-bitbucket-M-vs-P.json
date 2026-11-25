@@ -1,0 +1,506 @@
+{
+  "scenario": "M10-h",
+  "provider": "bitbucket",
+  "note": {
+    "harness": "evidence/A1-harness.qa2420.spec.ts.txt",
+    "real": "mapAgentFindings, AgentReviewStage.executeStage, CreatePrLevelCommentsStage, CreateFileCommentsStage, CommentManagerService, SuggestionService, PullRequestsService, CodeManagementService, provider adapters (BitbucketService->BitbucketCloudService/bitbucket SDK, AzureReposService->AzureReposRequestHelper/axios, ForgejoService/forgejo client), BuildPreviousReviewDecisionsUseCase, PrDecisionStoreService, checkRepeats, applyRevisionLinks",
+    "stubbed": "model output (scripted findings), LLM.run (dedup default; repeat-check verdict scripted), integration config lookups, pull-requests repository (in-memory), HTTP transport redirected to an in-process fake provider (fetch for Bitbucket, axios.create interceptor for Azure, Forgejo host)",
+    "ids": "synthetic org/team/repo ids"
+  },
+  "M": {
+    "changedFileNames": [
+      "qa2420/CheckinReport.cs",
+      "qa2420/AverageDues.cs"
+    ],
+    "mapper": {
+      "kept": [
+        {
+          "label": "kody_rules",
+          "rules": [
+            "qa2420-T"
+          ],
+          "suggestionContent": "The PR title must start with [qa2420]; it is \"update\"."
+        },
+        {
+          "file": "qa2420/CheckinReport.cs",
+          "label": "kody_rules",
+          "rules": [
+            "qa2420-D"
+          ],
+          "suggestionContent": "CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420."
+        },
+        {
+          "file": "qa2420/AverageDues.cs",
+          "start": 1,
+          "end": 1,
+          "label": "kody_rules",
+          "rules": [
+            "qa2420-D"
+          ],
+          "suggestionContent": "AverageDues.cs is misnamed."
+        }
+      ],
+      "logs": [],
+      "droppedForPath": 0
+    },
+    "round1": {
+      "agentStage": {
+        "validSuggestionsByPR": [
+          {
+            "id": "73af6ec8-96ed-44ad-b226-33ad30c6b925",
+            "label": "kody_rules",
+            "rules": [
+              "qa2420-T"
+            ],
+            "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+            "fullExplanation": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+            "agentPrompt": "PR title lacks the [qa2420] prefix\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+          },
+          {
+            "id": "b89dfb08-37bd-463c-bdf8-bee19ac2aa4b",
+            "label": "kody_rules",
+            "rules": [
+              "qa2420-D"
+            ],
+            "suggestionContent": "`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+            "fullExplanation": "`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+            "agentPrompt": "Report file is not named *ReportService.cs\n\n`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+          }
+        ],
+        "validSuggestions": [],
+        "discarded": [],
+        "logs": [
+          {
+            "level": "log",
+            "message": "[KODY-DEDUP] PR#2420 rule=qa2420-D (PR-level) collapsed 2 findings → 1"
+          },
+          {
+            "level": "log",
+            "message": "[AGENT] Rendered merged finding locations"
+          }
+        ]
+      },
+      "formatReviewCommentBody": [
+        {
+          "rules": [
+            "qa2420-T"
+          ],
+          "body": "`kody|code-review` `kody_rules` `severity-level|high`\n\n**PR title lacks the [qa2420] prefix**\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+        },
+        {
+          "rules": [
+            "qa2420-D"
+          ],
+          "body": "`kody|code-review` `kody_rules` `severity-level|high`\n\n**Report file is not named *ReportService.cs**\n\n`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+        }
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "provider": "bb",
+          "method": "POST",
+          "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+          "body": {
+            "content": {
+              "raw": "`kody|code-review` `kody_rules` `severity-level|high`\n\n**PR title lacks the [qa2420] prefix**\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            }
+          },
+          "stage": "CreatePrLevelCommentsStage",
+          "text": "`kody|code-review` `kody_rules` `severity-level|high`\n\n**PR title lacks the [qa2420] prefix**\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+        },
+        {
+          "seq": 1,
+          "provider": "bb",
+          "method": "POST",
+          "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+          "body": {
+            "content": {
+              "raw": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nPR title lacks the [qa2420] prefix\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n```"
+            },
+            "parent": {
+              "id": 5001
+            }
+          },
+          "stage": "CreatePrLevelCommentsStage",
+          "text": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nPR title lacks the [qa2420] prefix\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n```"
+        },
+        {
+          "seq": 2,
+          "provider": "bb",
+          "method": "POST",
+          "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+          "body": {
+            "content": {
+              "raw": "`kody|code-review` `kody_rules` `severity-level|high`\n\n**Report file is not named *ReportService.cs**\n\n`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            }
+          },
+          "stage": "CreatePrLevelCommentsStage",
+          "text": "`kody|code-review` `kody_rules` `severity-level|high`\n\n**Report file is not named *ReportService.cs**\n\n`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+        },
+        {
+          "seq": 3,
+          "provider": "bb",
+          "method": "POST",
+          "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+          "body": {
+            "content": {
+              "raw": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nReport file is not named *ReportService.cs\n\n`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n```"
+            },
+            "parent": {
+              "id": 5003
+            }
+          },
+          "stage": "CreatePrLevelCommentsStage",
+          "text": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nReport file is not named *ReportService.cs\n\n`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n```"
+        }
+      ],
+      "bodyChecks": [
+        {
+          "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+          "general": true,
+          "hasCitation": true,
+          "hasCitationOtherSlashForm": false,
+          "hasAlsoFoundIn": true,
+          "hasAlsoFoundInOtherSlashForm": false,
+          "hasQmark": false,
+          "hasUndefined": false,
+          "hasNullWord": false,
+          "hasLiteralBackslashN": false
+        }
+      ],
+      "promptReplies": [
+        {
+          "parent": {
+            "id": 5001
+          },
+          "text": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nPR title lacks the [qa2420] prefix\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n```",
+          "hasCitation": false,
+          "hasCitationOtherSlashForm": false,
+          "hasAlsoFoundIn": false,
+          "hasAlsoFoundInOtherSlashForm": false,
+          "hasQmark": false,
+          "hasUndefined": false,
+          "hasNullWord": false,
+          "hasLiteralBackslashN": false
+        },
+        {
+          "parent": {
+            "id": 5003
+          },
+          "text": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nReport file is not named *ReportService.cs\n\n`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n```",
+          "hasCitation": true,
+          "hasCitationOtherSlashForm": false,
+          "hasAlsoFoundIn": true,
+          "hasAlsoFoundInOtherSlashForm": false,
+          "hasQmark": false,
+          "hasUndefined": false,
+          "hasNullWord": false,
+          "hasLiteralBackslashN": false
+        }
+      ],
+      "storedPrLevel": [
+        {
+          "id": "73af6ec8-96ed-44ad-b226-33ad30c6b925",
+          "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+          "fullExplanation": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+          "oneSentenceSummary": "PR title lacks the [qa2420] prefix",
+          "label": "kody_rules",
+          "severity": "high",
+          "brokenKodyRulesIds": [
+            "qa2420-T"
+          ],
+          "priorityStatus": "prioritized",
+          "deliveryStatus": "sent",
+          "comment": {
+            "id": 5001,
+            "pullRequestReviewId": null
+          },
+          "files": {
+            "violatedFileSha": [],
+            "relatedFileSha": []
+          },
+          "createdAt": "2026-11-25T11:19:04.441Z",
+          "updatedAt": "2026-11-25T11:19:04.441Z"
+        },
+        {
+          "id": "b89dfb08-37bd-463c-bdf8-bee19ac2aa4b",
+          "suggestionContent": "`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+          "fullExplanation": "`qa2420/CheckinReport.cs` — CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+          "oneSentenceSummary": "Report file is not named *ReportService.cs",
+          "label": "kody_rules",
+          "severity": "high",
+          "brokenKodyRulesIds": [
+            "qa2420-D"
+          ],
+          "priorityStatus": "prioritized",
+          "deliveryStatus": "sent",
+          "comment": {
+            "id": 5003,
+            "pullRequestReviewId": null
+          },
+          "files": {
+            "violatedFileSha": [],
+            "relatedFileSha": []
+          },
+          "createdAt": "2026-11-25T11:19:04.441Z",
+          "updatedAt": "2026-11-25T11:19:04.441Z"
+        }
+      ],
+      "lineCommentResults": null,
+      "ctxErrors": [],
+      "repoCalls": [
+        "findByNumberAndRepositoryId",
+        "appendPrLevelSuggestions",
+        "findByNumberAndRepositoryName",
+        "update",
+        "newSubDocumentId",
+        "bulkApplyFileChanges"
+      ]
+    }
+  },
+  "P": {
+    "changedFileNames": [
+      "qa2420/CheckinReport.cs",
+      "qa2420/AverageDues.cs"
+    ],
+    "mapper": {
+      "kept": [
+        {
+          "label": "kody_rules",
+          "rules": [
+            "qa2420-T"
+          ],
+          "suggestionContent": "The PR title must start with [qa2420]; it is \"update\"."
+        },
+        {
+          "file": "qa2420/CheckinReport.cs",
+          "label": "kody_rules",
+          "rules": [
+            "qa2420-D"
+          ],
+          "suggestionContent": "CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420."
+        },
+        {
+          "file": "qa2420/AverageDues.cs",
+          "start": 1,
+          "end": 1,
+          "label": "kody_rules",
+          "rules": [
+            "qa2420-D"
+          ],
+          "suggestionContent": "AverageDues.cs is misnamed."
+        }
+      ],
+      "logs": [],
+      "droppedForPath": 0
+    },
+    "round1": {
+      "agentStage": {
+        "validSuggestionsByPR": [
+          {
+            "id": "c836de65-5da6-470a-ad36-121844a7413b",
+            "label": "kody_rules",
+            "rules": [
+              "qa2420-T"
+            ],
+            "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+            "fullExplanation": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+            "agentPrompt": "PR title lacks the [qa2420] prefix\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+          }
+        ],
+        "validSuggestions": [
+          {
+            "file": "qa2420/CheckinReport.cs",
+            "start": 1,
+            "end": 6,
+            "label": "kody_rules",
+            "rules": [
+              "qa2420-D"
+            ],
+            "suggestionContent": "CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+            "fullExplanation": "CheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+          }
+        ],
+        "discarded": [],
+        "logs": [
+          {
+            "level": "log",
+            "message": "[AGENT] Snapped lines for qa2420/CheckinReport.cs: undefined-undefined → 1-6"
+          },
+          {
+            "level": "log",
+            "message": "[KODY-DEDUP] PR#2420 rule=qa2420-D (file-level) collapsed 2 findings → 1 with 1 extra locations"
+          },
+          {
+            "level": "log",
+            "message": "[AGENT] Rendered merged finding locations"
+          }
+        ]
+      },
+      "formatReviewCommentBody": [
+        {
+          "rules": [
+            "qa2420-T"
+          ],
+          "body": "`kody|code-review` `kody_rules` `severity-level|high`\n\n**PR title lacks the [qa2420] prefix**\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+        }
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "provider": "bb",
+          "method": "POST",
+          "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+          "body": {
+            "content": {
+              "raw": "`kody|code-review` `kody_rules` `severity-level|high`\n\n**PR title lacks the [qa2420] prefix**\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+            }
+          },
+          "stage": "CreatePrLevelCommentsStage",
+          "text": "`kody|code-review` `kody_rules` `severity-level|high`\n\n**PR title lacks the [qa2420] prefix**\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)"
+        },
+        {
+          "seq": 1,
+          "provider": "bb",
+          "method": "POST",
+          "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+          "body": {
+            "content": {
+              "raw": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nPR title lacks the [qa2420] prefix\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n```"
+            },
+            "parent": {
+              "id": 5001
+            }
+          },
+          "stage": "CreatePrLevelCommentsStage",
+          "text": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nPR title lacks the [qa2420] prefix\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n```"
+        },
+        {
+          "seq": 2,
+          "provider": "bb",
+          "method": "POST",
+          "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+          "body": {
+            "content": {
+              "raw": "`kody|code-review` `kody_rules` `severity-level|high`\n\n**Report file is not named *ReportService.cs**\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n\nWas this suggestion helpful? Reply with 👍 or 👎 to help Kody learn from this interaction.\n\n```\n👍\n```\n\n```\n👎\n```"
+            },
+            "inline": {
+              "path": "qa2420/CheckinReport.cs",
+              "to": 1
+            }
+          },
+          "stage": "CreateFileCommentsStage",
+          "text": "`kody|code-review` `kody_rules` `severity-level|high`\n\n**Report file is not named *ReportService.cs**\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n\nWas this suggestion helpful? Reply with 👍 or 👎 to help Kody learn from this interaction.\n\n```\n👍\n```\n\n```\n👎\n```"
+        },
+        {
+          "seq": 3,
+          "provider": "bb",
+          "method": "POST",
+          "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+          "body": {
+            "content": {
+              "raw": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nFile qa2420/CheckinReport.cs, lines 1-6:\n\nReport file is not named *ReportService.cs\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n```"
+            },
+            "parent": {
+              "id": 5003
+            }
+          },
+          "stage": "CreateFileCommentsStage",
+          "text": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nFile qa2420/CheckinReport.cs, lines 1-6:\n\nReport file is not named *ReportService.cs\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n```"
+        }
+      ],
+      "bodyChecks": [
+        {
+          "path": "/bb/2.0/repositories/%7Bws-qa%7D/%7Brepo-qa2420%7D/pullrequests/2420/comments",
+          "general": false,
+          "inlineFields": {
+            "path": "qa2420/CheckinReport.cs",
+            "to": 1
+          },
+          "hasCitation": false,
+          "hasCitationOtherSlashForm": false,
+          "hasAlsoFoundIn": true,
+          "hasAlsoFoundInOtherSlashForm": false,
+          "hasQmark": false,
+          "hasUndefined": false,
+          "hasNullWord": false,
+          "hasLiteralBackslashN": false
+        }
+      ],
+      "promptReplies": [
+        {
+          "parent": {
+            "id": 5001
+          },
+          "text": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nPR title lacks the [qa2420] prefix\n\nThe PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n```",
+          "hasCitation": false,
+          "hasCitationOtherSlashForm": false,
+          "hasAlsoFoundIn": false,
+          "hasAlsoFoundInOtherSlashForm": false,
+          "hasQmark": false,
+          "hasUndefined": false,
+          "hasNullWord": false,
+          "hasLiteralBackslashN": false
+        },
+        {
+          "parent": {
+            "id": 5003
+          },
+          "text": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nFile qa2420/CheckinReport.cs, lines 1-6:\n\nReport file is not named *ReportService.cs\n\nCheckinReport.cs holds a report class but the file is not named CheckinReportService.cs, as the report naming rule requires for every report class in qa2420.\n\n**Also found in:**\n- `qa2420/AverageDues.cs:1-1`\n\nKody rule violation: [QA2420 report file naming](/settings/code-review/global/kody-rules/qa2420-D?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)\n```",
+          "hasCitation": false,
+          "hasCitationOtherSlashForm": false,
+          "hasAlsoFoundIn": true,
+          "hasAlsoFoundInOtherSlashForm": false,
+          "hasQmark": false,
+          "hasUndefined": false,
+          "hasNullWord": false,
+          "hasLiteralBackslashN": false
+        }
+      ],
+      "storedPrLevel": [
+        {
+          "id": "c836de65-5da6-470a-ad36-121844a7413b",
+          "suggestionContent": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+          "fullExplanation": "The PR title must start with [qa2420]; it is \"update\".\n\nKody rule violation: [QA2420 PR title prefix](/settings/code-review/global/kody-rules/qa2420-T?teamId=11111111-1111-4111-8111-aaaaaaaaaaaa)",
+          "oneSentenceSummary": "PR title lacks the [qa2420] prefix",
+          "label": "kody_rules",
+          "severity": "high",
+          "brokenKodyRulesIds": [
+            "qa2420-T"
+          ],
+          "priorityStatus": "prioritized",
+          "deliveryStatus": "sent",
+          "comment": {
+            "id": 5001,
+            "pullRequestReviewId": null
+          },
+          "files": {
+            "violatedFileSha": [],
+            "relatedFileSha": []
+          },
+          "createdAt": "2026-11-25T11:18:13.628Z",
+          "updatedAt": "2026-11-25T11:18:13.628Z"
+        }
+      ],
+      "lineCommentResults": [
+        {
+          "deliveryStatus": "sent",
+          "commentId": 5003,
+          "path": "qa2420/CheckinReport.cs",
+          "line": 6,
+          "start_line": 1
+        }
+      ],
+      "ctxErrors": [],
+      "repoCalls": [
+        "findByNumberAndRepositoryId",
+        "appendPrLevelSuggestions",
+        "findByNumberAndRepositoryName",
+        "update",
+        "newSuggestionId",
+        "newSubDocumentId",
+        "bulkApplyFileChanges"
+      ]
+    }
+  }
+}
