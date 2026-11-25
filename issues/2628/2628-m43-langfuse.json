@@ -1,0 +1,50 @@
+{
+ "M2": {
+  "window": [
+   "2026-11-24T21:16:20Z",
+   "2026-11-24T21:20:03Z"
+  ],
+  "releasedAt": "2026-11-24T21:19:34.832Z",
+  "generations": 28,
+  "traces": 4,
+  "beforeRelease": 25,
+  "afterRelease": 3,
+  "inputTokens": 40971,
+  "outputTokens": 28596,
+  "cacheReadTokens": 141992,
+  "cacheReadMissing": 0,
+  "allObsInWindow": 43
+ },
+ "M21": {
+  "window": [
+   "2026-11-24T21:45:30Z",
+   "2026-11-24T21:47:05Z"
+  ],
+  "releasedAt": "2026-11-24T21:46:54.384Z",
+  "generations": 12,
+  "traces": 1,
+  "beforeRelease": 12,
+  "afterRelease": 0,
+  "inputTokens": 25098,
+  "outputTokens": 9219,
+  "cacheReadTokens": 44134,
+  "cacheReadMissing": 0,
+  "allObsInWindow": 24
+ },
+ "M20": {
+  "window": [
+   "2026-11-24T22:11:50Z",
+   "2026-11-24T22:13:28Z"
+  ],
+  "releasedAt": "2026-11-24T22:13:08.790Z",
+  "generations": 28,
+  "traces": 6,
+  "beforeRelease": 23,
+  "afterRelease": 5,
+  "inputTokens": 31903,
+  "outputTokens": 12461,
+  "cacheReadTokens": 91622,
+  "cacheReadMissing": 0,
+  "allObsInWindow": 29
+ }
+}
