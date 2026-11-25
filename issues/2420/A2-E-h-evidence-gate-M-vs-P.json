@@ -1,0 +1,200 @@
+{
+  "M": [
+    {
+      "case": "file shard (rule scope file), collector read nothing, judge cites \"PR title\":0",
+      "shardFilename": "qa2420/CheckinReport.cs",
+      "metadataAllowed": false,
+      "judgeVerdict": {
+        "rationale": "Title is \"update\".",
+        "regressionCoverageClaim": false,
+        "existingRegressionPath": "",
+        "existingRegressionLine": 0,
+        "verdict": "violated",
+        "path": "PR title",
+        "line": 0
+      },
+      "reason": "no_excerpts",
+      "judgeCalls": 0,
+      "hasRuleEvidenceDirect": false
+    },
+    {
+      "case": "file shard (rule scope file), collector read the file, judge cites \"PR title\":0 (live R8/R10 shape)",
+      "shardFilename": "qa2420/CheckinReport.cs",
+      "metadataAllowed": false,
+      "judgeVerdict": {
+        "rationale": "Title is \"update\".",
+        "regressionCoverageClaim": false,
+        "existingRegressionPath": "",
+        "existingRegressionLine": 0,
+        "verdict": "violated",
+        "path": "PR title",
+        "line": 0
+      },
+      "reason": "unsupported_citation",
+      "judgeCalls": 1,
+      "judgeSawTitle": "update",
+      "judgeLocation": {
+        "file": "qa2420/CheckinReport.cs",
+        "line": null
+      },
+      "hasRuleEvidenceDirect": false
+    },
+    {
+      "case": "PR shard (rule scope pull-request), judge cites \"PR title\":0",
+      "shardFilename": null,
+      "metadataAllowed": true,
+      "judgeVerdict": {
+        "rationale": "Title is \"update\".",
+        "regressionCoverageClaim": false,
+        "existingRegressionPath": "",
+        "existingRegressionLine": 0,
+        "verdict": "violated",
+        "path": "PR title",
+        "line": 0
+      },
+      "reason": "verified",
+      "judgeCalls": 1,
+      "judgeSawTitle": "update",
+      "judgeLocation": "PR-level",
+      "hasRuleEvidenceDirect": true
+    },
+    {
+      "case": "file shard, judge cites the file line it read (CheckinReport.cs:1)",
+      "shardFilename": "qa2420/CheckinReport.cs",
+      "metadataAllowed": false,
+      "judgeVerdict": {
+        "rationale": "Title is \"update\".",
+        "regressionCoverageClaim": false,
+        "existingRegressionPath": "",
+        "existingRegressionLine": 0,
+        "verdict": "violated",
+        "path": "qa2420/CheckinReport.cs",
+        "line": 1
+      },
+      "reason": "verified",
+      "judgeCalls": 1,
+      "judgeSawTitle": "update",
+      "judgeLocation": {
+        "file": "qa2420/CheckinReport.cs",
+        "line": null
+      },
+      "hasRuleEvidenceDirect": true
+    },
+    {
+      "case": "file shard, judge cites \"PR title\":0, sandbox unavailable",
+      "shardFilename": "qa2420/CheckinReport.cs",
+      "metadataAllowed": false,
+      "judgeVerdict": {
+        "rationale": "Title is \"update\".",
+        "regressionCoverageClaim": false,
+        "existingRegressionPath": "",
+        "existingRegressionLine": 0,
+        "verdict": "violated",
+        "path": "PR title",
+        "line": 0
+      },
+      "reason": "sandbox_unavailable",
+      "judgeCalls": 0,
+      "hasRuleEvidenceDirect": false
+    }
+  ],
+  "P": [
+    {
+      "case": "file shard (rule scope file), collector read nothing, judge cites \"PR title\":0",
+      "shardFilename": "qa2420/CheckinReport.cs",
+      "metadataAllowed": false,
+      "judgeVerdict": {
+        "rationale": "Title is \"update\".",
+        "regressionCoverageClaim": false,
+        "existingRegressionPath": "",
+        "existingRegressionLine": 0,
+        "verdict": "violated",
+        "path": "PR title",
+        "line": 0
+      },
+      "reason": "no_excerpts",
+      "judgeCalls": 0,
+      "hasRuleEvidenceDirect": false
+    },
+    {
+      "case": "file shard (rule scope file), collector read the file, judge cites \"PR title\":0 (live R8/R10 shape)",
+      "shardFilename": "qa2420/CheckinReport.cs",
+      "metadataAllowed": false,
+      "judgeVerdict": {
+        "rationale": "Title is \"update\".",
+        "regressionCoverageClaim": false,
+        "existingRegressionPath": "",
+        "existingRegressionLine": 0,
+        "verdict": "violated",
+        "path": "PR title",
+        "line": 0
+      },
+      "reason": "unsupported_citation",
+      "judgeCalls": 1,
+      "judgeSawTitle": "update",
+      "judgeLocation": {
+        "file": "qa2420/CheckinReport.cs",
+        "line": null
+      },
+      "hasRuleEvidenceDirect": false
+    },
+    {
+      "case": "PR shard (rule scope pull-request), judge cites \"PR title\":0",
+      "shardFilename": null,
+      "metadataAllowed": true,
+      "judgeVerdict": {
+        "rationale": "Title is \"update\".",
+        "regressionCoverageClaim": false,
+        "existingRegressionPath": "",
+        "existingRegressionLine": 0,
+        "verdict": "violated",
+        "path": "PR title",
+        "line": 0
+      },
+      "reason": "verified",
+      "judgeCalls": 1,
+      "judgeSawTitle": "update",
+      "judgeLocation": "PR-level",
+      "hasRuleEvidenceDirect": true
+    },
+    {
+      "case": "file shard, judge cites the file line it read (CheckinReport.cs:1)",
+      "shardFilename": "qa2420/CheckinReport.cs",
+      "metadataAllowed": false,
+      "judgeVerdict": {
+        "rationale": "Title is \"update\".",
+        "regressionCoverageClaim": false,
+        "existingRegressionPath": "",
+        "existingRegressionLine": 0,
+        "verdict": "violated",
+        "path": "qa2420/CheckinReport.cs",
+        "line": 1
+      },
+      "reason": "verified",
+      "judgeCalls": 1,
+      "judgeSawTitle": "update",
+      "judgeLocation": {
+        "file": "qa2420/CheckinReport.cs",
+        "line": null
+      },
+      "hasRuleEvidenceDirect": true
+    },
+    {
+      "case": "file shard, judge cites \"PR title\":0, sandbox unavailable",
+      "shardFilename": "qa2420/CheckinReport.cs",
+      "metadataAllowed": false,
+      "judgeVerdict": {
+        "rationale": "Title is \"update\".",
+        "regressionCoverageClaim": false,
+        "existingRegressionPath": "",
+        "existingRegressionLine": 0,
+        "verdict": "violated",
+        "path": "PR title",
+        "line": 0
+      },
+      "reason": "sandbox_unavailable",
+      "judgeCalls": 0,
+      "hasRuleEvidenceDirect": false
+    }
+  ]
+}
