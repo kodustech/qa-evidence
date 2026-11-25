@@ -1,0 +1,19 @@
+  ● M16 line-less kody_rules records skip the implementation check › start=0 alsoFoundIn
+  ● M16 line-less kody_rules records skip the implementation check › start=0 kodyRuleOtherLocations
+  ● M16 line-less kody_rules records skip the implementation check › start=0 lone
+  ● M16 line-less kody_rules records skip the implementation check › start=0 secondary file removed
+  ● M16 line-less kody_rules records skip the implementation check › start=0 stored implementedLocations
+  ● M16 line-less kody_rules records skip the implementation check › start=null alsoFoundIn
+  ● M16 line-less kody_rules records skip the implementation check › start=null kodyRuleOtherLocations
+  ● M16 line-less kody_rules records skip the implementation check › start=null lone
+  ● M16 line-less kody_rules records skip the implementation check › start=null secondary file removed
+  ● M16 line-less kody_rules records skip the implementation check › start=null stored implementedLocations
+  ● M16 line-less kody_rules records skip the implementation check › start=omit alsoFoundIn
+  ● M16 line-less kody_rules records skip the implementation check › start=omit kodyRuleOtherLocations
+  ● M16 line-less kody_rules records skip the implementation check › start=omit lone
+  ● M16 line-less kody_rules records skip the implementation check › start=omit secondary file removed
+  ● M16 line-less kody_rules records skip the implementation check › start=omit stored implementedLocations
+  ● M17 mixed records: line-less skipped, lineful measured, progress kept › two pushes: F partial then implemented; T/unsent/done untouched
+  ● SuggestionService.checkImplementedSuggestions › a suggestion that groups several locations › does not measure a line-less Kody Rule against a file diff (line 0, #2420)
+  ● SuggestionService.checkImplementedSuggestions › a suggestion that groups several locations › does not measure a line-less Kody Rule against a file diff (no line, #2420)
+Tests:       18 failed, 43 passed, 61 total
