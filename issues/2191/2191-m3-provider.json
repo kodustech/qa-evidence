@@ -1,0 +1,58 @@
+{
+ "11": {
+  "statuses": [
+   {
+    "created_at": "2026-11-25T02:56:21+01:00",
+    "context": "Kodus Code Review",
+    "status": "warning",
+    "description": "Code Review Skipped",
+    "target_url": "https://codeberg.org/kodus/claude-athena/commit/fee28018df190857cb13cdc28f44d9eef7b5c005"
+   },
+   {
+    "created_at": "2026-11-25T02:55:18+01:00",
+    "context": "Kodus Code Review",
+    "status": "pending",
+    "description": "Code Review Starting",
+    "target_url": "https://codeberg.org/kodus/claude-athena/commit/fee28018df190857cb13cdc28f44d9eef7b5c005"
+   }
+  ],
+  "comments": [
+   {
+    "created_at": "2026-11-25T02:55:19+01:00",
+    "body": "## Code Review Could Not Complete \u26a0\ufe0f\n\nThe review failed before suggestions could be generated.\n\n**Reason:** The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan.\n\nopenai_compatible \u00b7 qa2191-quota-model \u00b7 HTTP 402 \u00b7 generalist\n\nProvider said: Insufficient balance\n\nAfter fixing the issue, comment `@kody review` on this PR to re-run the review.\n\n\n\n<details>\n<summary>Kody Guide: Usage and Configuration</summary>\n\n<details>\n<summary>Interacting with Kody</summary>\n\n- **Request a Review:** Ask Kody to review your PR manually by adding a comment with the `@kody start-review` command at the root of your PR.\n\n- **Validate Business Logic:** Ask Kody to validate your code against business rules by adding a comment with the `@kody -v business-logic` command.\n\n- **Provide Feedback:** Help Kody learn and improve by reacting to its comments with a \ud83d\udc4d for helpful suggestions or a \ud83d\udc4e if improvements are needed.\n\n</details>\n\n<details>\n<summary>Current Kody Configuration</summary>\n\n<details>\n<summary>Review Options</summary>\n\nThe following review options are enabled or disabled:\n\n| Options                        | Enabled |\n|-------------------------------|---------|\n| **Bug** | \u2705 |\n| **Performance** | \u2705 |\n| **Security** | \u2705 |\n| **Business Logic** | \u2705 |\n\n</details>\n\n**[Access your configuration settings here.](https://qa.web.kodus.io/settings/code-review/global/general)**\n\n</details>\n</details>\n\n<!-- kody-codereview-completed-1795571781359-hc0p48iaxcs -->\n<!-- kody-codereview -->\n&#8203;"
+   }
+  ],
+  "reactions": [
+   "confused"
+  ],
+  "mergeable": true
+ },
+ "12": {
+  "statuses": [
+   {
+    "created_at": "2026-11-25T02:55:41+01:00",
+    "context": "Kodus Code Review",
+    "status": "warning",
+    "description": "Code Review Skipped",
+    "target_url": "https://codeberg.org/kodus/claude-athena/commit/8cf15f79a9cb46ffedcb21652cbe72084488f389"
+   },
+   {
+    "created_at": "2026-11-25T02:55:19+01:00",
+    "context": "Kodus Code Review",
+    "status": "pending",
+    "description": "Code Review Starting",
+    "target_url": "https://codeberg.org/kodus/claude-athena/commit/8cf15f79a9cb46ffedcb21652cbe72084488f389"
+   }
+  ],
+  "comments": [
+   {
+    "created_at": "2026-11-25T02:55:20+01:00",
+    "body": "## Code Review Could Not Complete \u26a0\ufe0f\n\nThe review failed before suggestions could be generated.\n\n**Reason:** The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan.\n\nopenai_compatible \u00b7 qa2191-quota-model \u00b7 HTTP 402 \u00b7 generalist\n\nProvider said: Insufficient balance\n\nAfter fixing the issue, comment `@kody review` on this PR to re-run the review.\n\n\n\n<details>\n<summary>Kody Guide: Usage and Configuration</summary>\n\n<details>\n<summary>Interacting with Kody</summary>\n\n- **Request a Review:** Ask Kody to review your PR manually by adding a comment with the `@kody start-review` command at the root of your PR.\n\n- **Validate Business Logic:** Ask Kody to validate your code against business rules by adding a comment with the `@kody -v business-logic` command.\n\n- **Provide Feedback:** Help Kody learn and improve by reacting to its comments with a \ud83d\udc4d for helpful suggestions or a \ud83d\udc4e if improvements are needed.\n\n</details>\n\n<details>\n<summary>Current Kody Configuration</summary>\n\n<details>\n<summary>Review Options</summary>\n\nThe following review options are enabled or disabled:\n\n| Options                        | Enabled |\n|-------------------------------|---------|\n| **Bug** | \u2705 |\n| **Performance** | \u2705 |\n| **Security** | \u2705 |\n| **Business Logic** | \u2705 |\n\n</details>\n\n**[Access your configuration settings here.](https://qa.web.kodus.io/settings/code-review/global/general)**\n\n</details>\n</details>\n\n<!-- kody-codereview-completed-1795571741509-okr1svf1xwp -->\n<!-- kody-codereview -->\n&#8203;"
+   }
+  ],
+  "reactions": [
+   "confused"
+  ],
+  "mergeable": true
+ }
+}
