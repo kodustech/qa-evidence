@@ -1,0 +1,9 @@
+Postgres automation_execution rows (read-only query, 2026-11-27)
+SQL: select uuid,"createdAt","updatedAt",status,"pullRequestNumber","repositoryId",coalesce("errorMessage",'') from automation_execution where uuid in ('c4378b59-12ff-49dc-a753-72317c5d49c2','8c6d9bff-a00a-4db4-8453-0ea6ca5e4740','ae0a729b-34bb-4584-bfe6-bdd203d6b3e2','5c04a9cc-38d0-4273-b306-c43b01c42173','ec1b9d33-63cc-41eb-abff-d1174048d21a','2f2f9cd3-14ea-440c-8275-d7580c0291fe','944d083e-27f8-4fbf-8878-52fc9465befb') order by "createdAt"
+S50 GitHub claude-athena#33 | c4378b59-12ff-49dc-a753-72317c5d49c2 | 2026-11-27 20:28:35.57719 | 2026-11-27 20:30:37.378216 | success | 33 | 1468014267 | 
+S11 Bitbucket claude-athena PR 20 | 8c6d9bff-a00a-4db4-8453-0ea6ca5e4740 | 2026-11-27 20:29:33.019397 | 2026-11-27 20:30:27.538477 | error | 20 | 3ac23d16-5601-42e4-91b0-f71b5724c441 | Code review failed: Rate limit reached on the provider (google_gemini). Try again in a few minutes.
+S10 run1 GitHub claude-athena#34 | ae0a729b-34bb-4584-bfe6-bdd203d6b3e2 | 2026-11-27 20:40:18.705704 | 2026-11-27 20:41:52.252404 | partial_error | 34 | 1468014267 | 
+S14 Bitbucket claude-ares PR 1 | ec1b9d33-63cc-41eb-abff-d1174048d21a | 2026-11-27 20:40:41.821543 | 2026-11-27 20:43:42.99889 | success | 1 | 94f1ecda-4b46-489f-9123-f29a4e0a46e2 | 
+S10 run2 GitHub claude-athena#34 | 5c04a9cc-38d0-4273-b306-c43b01c42173 | 2026-11-27 20:42:46.616211 | 2026-11-27 20:43:57.431011 | partial_error | 34 | 1468014267 | 
+S30 GitHub claude-athena#35 | 2f2f9cd3-14ea-440c-8275-d7580c0291fe | 2026-11-27 21:46:31.487081 | 2026-11-27 21:47:40.999133 | success | 35 | 1468014267 | 
+S33 GitHub claude-ares#9 | 944d083e-27f8-4fbf-8878-52fc9465befb | 2026-11-27 21:48:34.567378 | 2026-11-27 21:49:26.448091 | error | 9 | 1468014677 | Code review failed: Couldn't connect to the provider (openai_compatible): ENOTFOUND kodus-qa-2700-unreachable.invalid. If it keeps failing, check the base URL.
