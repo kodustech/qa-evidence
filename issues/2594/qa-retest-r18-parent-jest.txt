@@ -1,0 +1,143 @@
+npm warn Unknown project config "node-linker". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+FAIL libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts
+  ● ValidatePrerequisitesStage › no-license notice › reacts and posts the notice on the first skip, recording when
+
+    TypeError: (0 , _validateprerequisitesstage.licenseNoticeBody) is not a function
+
+      1090 |                 expect.objectContaining({
+      1091 |                     prNumber: 42,
+    > 1092 |                     body: licenseNoticeBody(PlatformType.GITHUB),
+           |                                            ^
+      1093 |                 }),
+      1094 |             );
+      1095 |             expect(result.statusInfo?.status).toBe(AutomationStatus.SKIPPED);
+
+      at Object.<anonymous> (libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts:1092:44)
+
+  ● ValidatePrerequisitesStage › no-license notice › posts only the notice on AZURE_REPOS, without the old reaction comment
+
+    TypeError: (0 , _validateprerequisitesstage.licenseNoticeBody) is not a function
+
+      1138 |                 ).toHaveBeenCalledWith(
+      1139 |                     expect.objectContaining({
+    > 1140 |                         body: licenseNoticeBody(platformType),
+           |                                                ^
+      1141 |                     }),
+      1142 |                 );
+      1143 |                 expect(
+
+      at libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts:1140:48
+
+  ● ValidatePrerequisitesStage › no-license notice › posts only the notice on BITBUCKET, without the old reaction comment
+
+    TypeError: (0 , _validateprerequisitesstage.licenseNoticeBody) is not a function
+
+      1138 |                 ).toHaveBeenCalledWith(
+      1139 |                     expect.objectContaining({
+    > 1140 |                         body: licenseNoticeBody(platformType),
+           |                                                ^
+      1141 |                     }),
+      1142 |                 );
+      1143 |                 expect(
+
+      at libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts:1140:48
+
+  ● ValidatePrerequisitesStage › no-license notice › answers a Bitbucket command in its thread
+
+    TypeError: (0 , _validateprerequisitesstage.licenseNoticeBody) is not a function
+
+      1166 |                 expect.objectContaining({
+      1167 |                     inReplyToId: 77,
+    > 1168 |                     body: licenseNoticeBody(PlatformType.BITBUCKET),
+           |                                            ^
+      1169 |                 }),
+      1170 |             );
+      1171 |             expect(
+
+      at Object.<anonymous> (libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts:1168:44)
+
+  ● ValidatePrerequisitesStage › no-license notice › still posts the notice when the earlier-notice lookup fails
+
+    TypeError: (0 , _validateprerequisitesstage.licenseNoticeBody) is not a function
+
+      1204 |             ).toHaveBeenCalledWith(
+      1205 |                 expect.objectContaining({
+    > 1206 |                     body: licenseNoticeBody(PlatformType.GITHUB),
+           |                                            ^
+      1207 |                 }),
+      1208 |             );
+      1209 |             expect(result.licenseNoticePostedAt).toEqual(expect.any(String));
+
+      at Object.<anonymous> (libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts:1206:44)
+
+  ● ValidatePrerequisitesStage › no-license notice › marks the notice with the HTML comment off Bitbucket and the chip on it
+
+    TypeError: (0 , _validateprerequisitesstage.licenseNoticeBody) is not a function
+
+      1260 |                 PlatformType.FORGEJO,
+      1261 |             ]) {
+    > 1262 |                 const body = licenseNoticeBody(platformType);
+           |                                               ^
+      1263 |                 expect(body.endsWith('<!-- kody-codereview -->')).toBe(true);
+      1264 |                 expect(isKodyAuthoredBody(body)).toBe(true);
+      1265 |             }
+
+      at Object.<anonymous> (libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts:1262:47)
+
+  ● ValidatePrerequisitesStage › no-license notice › showStatusFeedback in kodus-config.yml › silences the reaction and the notice when the file turns it off
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    Expected: ObjectContaining {"overrideConfig": true, "repository": {"id": "repo-1", "name": "repo-1"}, "tolerateReviewSettingsErrors": true}
+
+    Number of calls: 0
+
+      1307 |                 expect(
+      1308 |                     mockCodeBaseConfigService.getKodusConfigFile,
+    > 1309 |                 ).toHaveBeenCalledWith(
+           |                   ^
+      1310 |                     expect.objectContaining({
+      1311 |                         repository: { id: 'repo-1', name: 'repo-1' },
+      1312 |                         overrideConfig: true,
+
+      at Object.toHaveBeenCalledWith (libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts:1309:19)
+
+  ● ValidatePrerequisitesStage › no-license notice › showStatusFeedback in kodus-config.yml › posts when the file turns it on over web settings that have it off
+
+    expect(jest.fn()).toHaveBeenCalled()
+
+    Expected number of calls: >= 1
+    Received number of calls:    0
+
+      1341 |                 expect(
+      1342 |                     mockCodeManagementService.addReactionToPR,
+    > 1343 |                 ).toHaveBeenCalled();
+           |                   ^
+      1344 |                 expect(
+      1345 |                     mockCodeManagementService.createIssueComment,
+      1346 |                 ).toHaveBeenCalledTimes(1);
+
+      at Object.toHaveBeenCalled (libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts:1343:19)
+
+  ● ValidatePrerequisitesStage › no-license notice › showStatusFeedback in kodus-config.yml › leaves the web settings in charge when the file has no value or cannot be read
+
+    expect(jest.fn()).toHaveBeenCalledTimes(expected)
+
+    Expected number of calls: 2
+    Received number of calls: 0
+
+      1393 |                 expect(
+      1394 |                     mockCodeBaseConfigService.getKodusConfigFile,
+    > 1395 |                 ).toHaveBeenCalledTimes(2);
+           |                   ^
+      1396 |                 expect(
+      1397 |                     mockCodeManagementService.createIssueComment,
+      1398 |                 ).toHaveBeenCalledTimes(2);
+
+      at Object.toHaveBeenCalledTimes (libs/code-review/pipeline/stages/validate-prerequisites.stage.spec.ts:1395:19)
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       9 failed, 50 passed, 59 total
+Snapshots:   0 total
+Time:        0.877 s, estimated 1 s
+Ran all test suites matching libs/code-review/pipeline/stages/validate-prerequisites.stage.
