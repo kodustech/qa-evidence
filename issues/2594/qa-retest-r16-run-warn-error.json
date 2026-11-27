@@ -1,0 +1,17 @@
+{
+ "total_lines": 58,
+ "warn_error": [
+  {
+   "t": "2026-11-27T18:57:17.669Z",
+   "level": "warn",
+   "component": "BitbucketCloudService getRepositoryContentFile",
+   "message": "Repository content file not found"
+  },
+  {
+   "t": "2026-11-27T18:58:16.174Z",
+   "level": "warn",
+   "component": "AggregateResultsStage",
+   "message": "No valid suggestions to aggregate for PR#16"
+  }
+ ]
+}
