@@ -31,6 +31,15 @@
     "",
     "  Object {"
    ],
+   "R6b": "failed",
+   "R6b_msg": [
+    "Error: expect(received).toMatchObject(expected)",
+    "",
+    "- Expected  - 1",
+    "+ Received  + 1",
+    "",
+    "  Object {"
+   ],
    "R13": "passed"
   }
  },
@@ -58,13 +67,22 @@
     "",
     "  Object {"
    ],
+   "R6b": "failed",
+   "R6b_msg": [
+    "Error: expect(received).toMatchObject(expected)",
+    "",
+    "- Expected  - 1",
+    "+ Received  + 1",
+    "",
+    "  Object {"
+   ],
    "R13": "failed",
    "R13_msg": [
     "Error: expect(received).toBe(expected) // Object.is equality",
     "",
     "Expected: \"qa2639r-org-2\"",
     "Received: \"unknown\"",
-    "    at Object.toBe (<run>/wt-merge/apps/api/src/cron/__tests__/qa2639r.spec.ts:242:43)",
+    "    at Object.toBe (<run>/wt-merge/apps/api/src/cron/__tests__/qa2639r.spec.ts:268:43)",
     "    at processTicksAndRejections (node:internal/process/task_queues:104:5)"
    ]
   }
@@ -82,6 +100,27 @@
     "",
     "- Expected  - 2",
     "+ Received  + 2",
+    "",
+    "  Object {"
+   ],
+   "R6b": "passed",
+   "R13": "passed"
+  }
+ },
+ "ME": {
+  "diff": "diff --git a/libs/core/observability/exporters/mongodb-exporter.ts b/libs/core/observability/exporters/mongodb-exporter.ts\nindex c5259b1da..ab42777f6 100644\n--- a/libs/core/observability/exporters/mongodb-exporter.ts\n+++ b/libs/core/observability/exporters/mongodb-exporter.ts\n@@ -1097 +1097 @@ export class MongoDBExporter implements LogProcessor, ObservabilityExporter {\n-            ) ?? candidates.find((candidate) => carries(candidate, 'teamId'))\n+            )\n",
+  "results": {
+   "R1": "passed",
+   "R1b": "passed",
+   "R2": "passed",
+   "R3": "passed",
+   "R6": "passed",
+   "R6b": "failed",
+   "R6b_msg": [
+    "Error: expect(received).toMatchObject(expected)",
+    "",
+    "- Expected  - 1",
+    "+ Received  + 1",
     "",
     "  Object {"
    ],
@@ -104,6 +143,7 @@
     "",
     "  Object {"
    ],
+   "R6b": "passed",
    "R13": "passed"
   }
  }
