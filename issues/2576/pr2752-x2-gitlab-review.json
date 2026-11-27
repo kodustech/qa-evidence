@@ -1,0 +1,300 @@
+[
+ {
+  "t": "2026-11-27T17:39:03.188Z",
+  "level": "info",
+  "component": "SavePullRequestUseCase",
+  "message": "GitLab webhook actor replaced by resolved MR author"
+ },
+ {
+  "t": "2026-11-27T17:39:03.410Z",
+  "level": "error",
+  "component": "SavePullRequestUseCase",
+  "message": "Failed to save pull request data for PR#4",
+  "error": {
+   "name": "TypeError",
+   "message": "files.map is not a function",
+   "at": "    at GitlabService.getFilesByPullRequestId (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:2555:22)"
+  }
+ },
+ {
+  "t": "2026-11-27T17:39:03.646Z",
+  "level": "info",
+  "component": "RunCodeReviewAutomationUseCase",
+  "message": "GitLab webhook actor replaced by resolved MR author"
+ },
+ {
+  "t": "2026-11-27T17:39:03.874Z",
+  "level": "info",
+  "component": "RunCodeReviewAutomationUseCase",
+  "message": "RunCodeReviewAutomationUseCase PR#4"
+ },
+ {
+  "t": "2026-11-27T17:39:04.114Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Starting pipeline: CodeReviewPipeline (ID: a3ab38df-f1b7-44e8-a54a-7ac0501feb04)"
+ },
+ {
+  "t": "2026-11-27T17:39:04.261Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Stage 'ValidatePrerequisitesStage' completed in 145ms: a3ab38df-f1b7-44e8-a54a-7ac0501feb04"
+ },
+ {
+  "t": "2026-11-27T17:39:04.271Z",
+  "level": "info",
+  "component": "ValidateNewCommitsStage",
+  "message": "No last analyzed commit found, analyzing all commits"
+ },
+ {
+  "t": "2026-11-27T17:39:04.484Z",
+  "level": "error",
+  "component": "GitlabService getCommitsForPullRequestForCodeReview",
+  "message": "Error fetching commits for PR #4",
+  "error": {
+   "name": "TypeError",
+   "message": "commits is not iterable",
+   "at": "    at GitlabService.getCommitsForPullRequestForCodeReview (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:3368:34)"
+  }
+ },
+ {
+  "t": "2026-11-27T17:39:04.485Z",
+  "level": "error",
+  "component": "PullRequestHandlerService",
+  "message": "Error fetching new commits since last execution",
+  "error": {
+   "name": "TypeError",
+   "message": "commits is not iterable",
+   "at": "    at GitlabService.getCommitsForPullRequestForCodeReview (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:3368:34)"
+  }
+ },
+ {
+  "t": "2026-11-27T17:39:04.492Z",
+  "level": "error",
+  "component": "PipelineExecutor",
+  "message": "Stage 'ValidateNewCommitsStage' failed: commits is not iterable",
+  "error": {
+   "name": "TypeError",
+   "message": "commits is not iterable",
+   "at": "    at GitlabService.getCommitsForPullRequestForCodeReview (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:3368:34)"
+  }
+ },
+ {
+  "t": "2026-11-27T17:39:04.494Z",
+  "level": "warn",
+  "component": "PipelineExecutor",
+  "message": "Pipeline 'CodeReviewPipeline:a3ab38df-f1b7-44e8-a54a-7ac0501feb04' continuing despite error in stage 'ValidateNewCommitsStage'"
+ },
+ {
+  "t": "2026-11-27T17:39:04.956Z",
+  "level": "error",
+  "component": "PullRequestHandlerService",
+  "message": "Error fetching changed files metadata",
+  "error": {
+   "name": "TypeError",
+   "message": "files.map is not a function",
+   "at": "    at GitlabService.getFilesByPullRequestId (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:2555:22)"
+  }
+ },
+ {
+  "t": "2026-11-27T17:39:04.957Z",
+  "level": "error",
+  "component": "ResolveConfigStage",
+  "message": "Error in ResolveConfigStage for PR#4",
+  "error": {
+   "name": "TypeError",
+   "message": "files.map is not a function",
+   "at": "    at GitlabService.getFilesByPullRequestId (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:2555:22)"
+  }
+ },
+ {
+  "t": "2026-11-27T17:39:04.966Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Stage 'ResolveConfigStage' completed in 471ms: a3ab38df-f1b7-44e8-a54a-7ac0501feb04"
+ },
+ {
+  "t": "2026-11-27T17:39:04.967Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Pipeline 'CodeReviewPipeline' skipped due to SKIP status a3ab38df-f1b7-44e8-a54a-7ac0501feb04"
+ },
+ {
+  "t": "2026-11-27T17:39:04.967Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Finished pipeline: CodeReviewPipeline (ID: a3ab38df-f1b7-44e8-a54a-7ac0501feb04)"
+ },
+ {
+  "t": "2026-11-27T17:39:05.126Z",
+  "level": "error",
+  "component": "GitlabService",
+  "message": "Error removing reactions from MR#4",
+  "error": {
+   "name": "TypeError",
+   "message": "awards.filter is not a function",
+   "at": "    at GitlabService.removeReactionsFromPR (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:4369:43)"
+  }
+ },
+ {
+  "t": "2026-11-27T17:39:05.313Z",
+  "level": "info",
+  "component": "CodeReviewHandlerService",
+  "message": "Review skipped for PR#4 - adding skip reaction"
+ },
+ {
+  "t": "2026-11-27T17:39:05.322Z",
+  "level": "info",
+  "component": "AutomationCodeReviewService",
+  "message": "Successfully handled pull request for PR#4"
+ },
+ {
+  "t": "2026-11-27T18:11:26.899Z",
+  "level": "info",
+  "component": "SavePullRequestUseCase",
+  "message": "GitLab webhook actor replaced by resolved MR author"
+ },
+ {
+  "t": "2026-11-27T18:11:27.185Z",
+  "level": "error",
+  "component": "SavePullRequestUseCase",
+  "message": "Failed to save pull request data for PR#4",
+  "error": {
+   "name": "TypeError",
+   "message": "files.map is not a function",
+   "at": "    at GitlabService.getFilesByPullRequestId (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:2555:22)"
+  }
+ },
+ {
+  "t": "2026-11-27T18:11:27.579Z",
+  "level": "info",
+  "component": "RunCodeReviewAutomationUseCase",
+  "message": "GitLab webhook actor replaced by resolved MR author"
+ },
+ {
+  "t": "2026-11-27T18:11:27.761Z",
+  "level": "info",
+  "component": "RunCodeReviewAutomationUseCase",
+  "message": "RunCodeReviewAutomationUseCase PR#4"
+ },
+ {
+  "t": "2026-11-27T18:11:27.977Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Starting pipeline: CodeReviewPipeline (ID: 9241e652-aa0f-4fb1-b45a-379244d51684)"
+ },
+ {
+  "t": "2026-11-27T18:11:28.061Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Stage 'ValidatePrerequisitesStage' completed in 83ms: 9241e652-aa0f-4fb1-b45a-379244d51684"
+ },
+ {
+  "t": "2026-11-27T18:11:28.072Z",
+  "level": "info",
+  "component": "ValidateNewCommitsStage",
+  "message": "No last analyzed commit found, analyzing all commits"
+ },
+ {
+  "t": "2026-11-27T18:11:28.268Z",
+  "level": "error",
+  "component": "GitlabService getCommitsForPullRequestForCodeReview",
+  "message": "Error fetching commits for PR #4",
+  "error": {
+   "name": "TypeError",
+   "message": "commits is not iterable",
+   "at": "    at GitlabService.getCommitsForPullRequestForCodeReview (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:3368:34)"
+  }
+ },
+ {
+  "t": "2026-11-27T18:11:28.269Z",
+  "level": "error",
+  "component": "PullRequestHandlerService",
+  "message": "Error fetching new commits since last execution",
+  "error": {
+   "name": "TypeError",
+   "message": "commits is not iterable",
+   "at": "    at GitlabService.getCommitsForPullRequestForCodeReview (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:3368:34)"
+  }
+ },
+ {
+  "t": "2026-11-27T18:11:28.277Z",
+  "level": "error",
+  "component": "PipelineExecutor",
+  "message": "Stage 'ValidateNewCommitsStage' failed: commits is not iterable",
+  "error": {
+   "name": "TypeError",
+   "message": "commits is not iterable",
+   "at": "    at GitlabService.getCommitsForPullRequestForCodeReview (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:3368:34)"
+  }
+ },
+ {
+  "t": "2026-11-27T18:11:28.278Z",
+  "level": "warn",
+  "component": "PipelineExecutor",
+  "message": "Pipeline 'CodeReviewPipeline:9241e652-aa0f-4fb1-b45a-379244d51684' continuing despite error in stage 'ValidateNewCommitsStage'"
+ },
+ {
+  "t": "2026-11-27T18:11:28.809Z",
+  "level": "error",
+  "component": "PullRequestHandlerService",
+  "message": "Error fetching changed files metadata",
+  "error": {
+   "name": "TypeError",
+   "message": "files.map is not a function",
+   "at": "    at GitlabService.getFilesByPullRequestId (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:2555:22)"
+  }
+ },
+ {
+  "t": "2026-11-27T18:11:28.810Z",
+  "level": "error",
+  "component": "ResolveConfigStage",
+  "message": "Error in ResolveConfigStage for PR#4",
+  "error": {
+   "name": "TypeError",
+   "message": "files.map is not a function",
+   "at": "    at GitlabService.getFilesByPullRequestId (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:2555:22)"
+  }
+ },
+ {
+  "t": "2026-11-27T18:11:28.817Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Stage 'ResolveConfigStage' completed in 538ms: 9241e652-aa0f-4fb1-b45a-379244d51684"
+ },
+ {
+  "t": "2026-11-27T18:11:28.818Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Pipeline 'CodeReviewPipeline' skipped due to SKIP status 9241e652-aa0f-4fb1-b45a-379244d51684"
+ },
+ {
+  "t": "2026-11-27T18:11:28.818Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Finished pipeline: CodeReviewPipeline (ID: 9241e652-aa0f-4fb1-b45a-379244d51684)"
+ },
+ {
+  "t": "2026-11-27T18:11:29.020Z",
+  "level": "error",
+  "component": "GitlabService",
+  "message": "Error removing reactions from note 4342331717",
+  "error": {
+   "name": "TypeError",
+   "message": "awards.filter is not a function",
+   "at": "    at GitlabService.removeReactionsFromComment (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:4426:43)"
+  }
+ },
+ {
+  "t": "2026-11-27T18:11:29.254Z",
+  "level": "info",
+  "component": "CodeReviewHandlerService",
+  "message": "Review skipped for PR#4 - adding skip reaction"
+ },
+ {
+  "t": "2026-11-27T18:11:29.265Z",
+  "level": "info",
+  "component": "AutomationCodeReviewService",
+  "message": "Successfully handled pull request for PR#4"
+ }
+]
