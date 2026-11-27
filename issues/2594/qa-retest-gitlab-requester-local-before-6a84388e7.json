@@ -1,0 +1,38 @@
+{
+ "custom requester (QA code) allDiffs": {
+  "isArray": true,
+  "type": "object",
+  "ctor": "Array",
+  "length": 1
+ },
+ "custom requester (QA code) allCommits": {
+  "isArray": true,
+  "type": "object",
+  "ctor": "Array",
+  "length": 1
+ },
+ "custom requester (QA code) awardEmoji": {
+  "isArray": true,
+  "type": "object",
+  "ctor": "Array",
+  "length": 2
+ },
+ "gitbeaker default requester allDiffs": {
+  "isArray": true,
+  "type": "object",
+  "ctor": "Array",
+  "length": 1
+ },
+ "gitbeaker default requester allCommits": {
+  "isArray": true,
+  "type": "object",
+  "ctor": "Array",
+  "length": 1
+ },
+ "gitbeaker default requester awardEmoji": {
+  "isArray": true,
+  "type": "object",
+  "ctor": "Array",
+  "length": 2
+ }
+}
