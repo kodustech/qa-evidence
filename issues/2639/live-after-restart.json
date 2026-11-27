@@ -1,0 +1,128 @@
+{
+ "rows": 6389,
+ "window": [
+  "2026-11-27T16:23:21.598Z",
+  "2026-11-27T19:00:34.877Z"
+ ],
+ "R9": {
+  "total": 13,
+  "unknown": 0,
+  "mismatch": [],
+  "byComponent": [
+   [
+    "BitbucketCloudService createIssueComment|info",
+    6
+   ],
+   [
+    "BitbucketCloudService createReviewComment|info",
+    4
+   ],
+   [
+    "BitbucketCloudService updateIssueComment|info",
+    2
+   ],
+   [
+    "AzureReposService|info",
+    1
+   ]
+  ],
+  "sample": [
+   {
+    "_id": "6b09c1afd142284d0aedc237",
+    "component": "BitbucketCloudService createIssueComment",
+    "message": "Created issue comment for PR#15",
+    "org": "uuid#87cb7838",
+    "paramsOrg": "uuid#87cb7838"
+   },
+   {
+    "_id": "6b09c269d142284d0aedc2c1",
+    "component": "BitbucketCloudService createReviewComment",
+    "message": "Created line comment for PR#15",
+    "org": "uuid#87cb7838",
+    "paramsOrg": "uuid#87cb7838"
+   },
+   {
+    "_id": "6b09c269d142284d0aedc2c3",
+    "component": "BitbucketCloudService createReviewComment",
+    "message": "Created line comment for PR#15",
+    "org": "uuid#87cb7838",
+    "paramsOrg": "uuid#87cb7838"
+   },
+   {
+    "_id": "6b09c26cd142284d0aedc2dc",
+    "component": "BitbucketCloudService createReviewComment",
+    "message": "Created line comment for PR#15",
+    "org": "uuid#87cb7838",
+    "paramsOrg": "uuid#87cb7838"
+   },
+   {
+    "_id": "6b09c26cd142284d0aedc2df",
+    "component": "BitbucketCloudService createReviewComment",
+    "message": "Created line comment for PR#15",
+    "org": "uuid#87cb7838",
+    "paramsOrg": "uuid#87cb7838"
+   }
+  ]
+ },
+ "topPair": {
+  "total": 2626,
+  "unknown": 0,
+  "mismatch": 0
+ },
+ "R10": {
+  "topScalarDiffers": [],
+  "topPairDiffers": []
+ },
+ "flatParamsPayload": {
+  "total": 0,
+  "unknown": [],
+  "mismatchVsExpected": [],
+  "byComponent": []
+ },
+ "R11": {
+  "errorRows": 131,
+  "unknownErrorRows": 2,
+  "orgBearingUnknown": [],
+  "residualGroups": [
+   [
+    "ChatWithKodyFromGitUseCase|Error while executing the git comment response agent",
+    2
+   ]
+  ]
+ },
+ "R12": [
+  [
+   "info|Flushed 1 critical LLM spans",
+   46
+  ],
+  [
+   "info|Performance indexes created successfully",
+   10
+  ],
+  [
+   "info|TTL not configured, skipping TTL setup",
+   10
+  ],
+  [
+   "info|MongoDB Exporter initialized",
+   10
+  ],
+  [
+   "info|Graceful shutdown initiated",
+   8
+  ],
+  [
+   "info|Flushed 2 critical LLM spans",
+   8
+  ],
+  [
+   "info|Flushed 3 critical LLM spans",
+   1
+  ]
+ ],
+ "targets": [],
+ "R13live": {
+  "flatRowsWalked": 0,
+  "unredactedSensitiveKeys": []
+ }
+}
