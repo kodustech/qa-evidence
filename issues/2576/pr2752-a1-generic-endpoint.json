@@ -1,0 +1,230 @@
+[
+ {
+  "label": "baseline stored false (typed endpoint)",
+  "t": "2026-11-27T18:50:23Z",
+  "endpoint": "/parameters/create-or-update-code-review",
+  "sent": {
+   "conversation": {
+    "implicitReplies": false
+   }
+  },
+  "status": 201,
+  "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "raw_after": {
+   "implicitReplies": false
+  },
+  "get_after": {
+   "implicitReplies": {
+    "value": false,
+    "level": "global",
+    "overriddenValue": true,
+    "overriddenLevel": "default"
+   }
+  }
+ },
+ {
+  "label": "generic implicitReplies=\"false\"",
+  "t": "2026-11-27T18:50:29Z",
+  "endpoint": "/parameters/create-or-update",
+  "sent": {
+   "conversation": {
+    "implicitReplies": "false"
+   }
+  },
+  "status": 201,
+  "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "raw_after": {
+   "implicitReplies": "false"
+  },
+  "get_after": {
+   "implicitReplies": {
+    "value": "false",
+    "level": "global",
+    "overriddenValue": true,
+    "overriddenLevel": "default"
+   }
+  }
+ },
+ {
+  "label": "baseline stored false (typed endpoint)",
+  "t": "2026-11-27T18:50:32Z",
+  "endpoint": "/parameters/create-or-update-code-review",
+  "sent": {
+   "conversation": {
+    "implicitReplies": false
+   }
+  },
+  "status": 201,
+  "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "raw_after": {
+   "implicitReplies": false
+  },
+  "get_after": {
+   "implicitReplies": {
+    "value": false,
+    "level": "global",
+    "overriddenValue": true,
+    "overriddenLevel": "default"
+   }
+  }
+ },
+ {
+  "label": "generic implicitReplies=null",
+  "t": "2026-11-27T18:50:35Z",
+  "endpoint": "/parameters/create-or-update",
+  "sent": {
+   "conversation": {
+    "implicitReplies": null
+   }
+  },
+  "status": 201,
+  "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "raw_after": {
+   "implicitReplies": false
+  },
+  "get_after": {
+   "implicitReplies": {
+    "value": false,
+    "level": "global",
+    "overriddenValue": true,
+    "overriddenLevel": "default"
+   }
+  }
+ },
+ {
+  "label": "baseline stored false (typed endpoint)",
+  "t": "2026-11-27T18:50:38Z",
+  "endpoint": "/parameters/create-or-update-code-review",
+  "sent": {
+   "conversation": {
+    "implicitReplies": false
+   }
+  },
+  "status": 201,
+  "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "raw_after": {
+   "implicitReplies": false
+  },
+  "get_after": {
+   "implicitReplies": {
+    "value": false,
+    "level": "global",
+    "overriddenValue": true,
+    "overriddenLevel": "default"
+   }
+  }
+ },
+ {
+  "label": "generic implicitReplies=[false]",
+  "t": "2026-11-27T18:50:40Z",
+  "endpoint": "/parameters/create-or-update",
+  "sent": {
+   "conversation": {
+    "implicitReplies": [
+     false
+    ]
+   }
+  },
+  "status": 201,
+  "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "raw_after": {
+   "implicitReplies": [
+    false
+   ]
+  },
+  "get_after": {
+   "implicitReplies": {
+    "value": [
+     false
+    ],
+    "level": "global",
+    "overriddenValue": true,
+    "overriddenLevel": "default"
+   }
+  }
+ },
+ {
+  "label": "baseline stored false (typed endpoint)",
+  "t": "2026-11-27T18:50:43Z",
+  "endpoint": "/parameters/create-or-update-code-review",
+  "sent": {
+   "conversation": {
+    "implicitReplies": false
+   }
+  },
+  "status": 201,
+  "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "raw_after": {
+   "implicitReplies": false
+  },
+  "get_after": {
+   "implicitReplies": {
+    "value": false,
+    "level": "global",
+    "overriddenValue": true,
+    "overriddenLevel": "default"
+   }
+  }
+ },
+ {
+  "label": "generic conversation=\"off\"",
+  "t": "2026-11-27T18:50:46Z",
+  "endpoint": "/parameters/create-or-update",
+  "sent": {
+   "conversation": "off"
+  },
+  "status": 201,
+  "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "raw_after": "off",
+  "get_after": {
+   "value": "off",
+   "level": "global"
+  }
+ },
+ {
+  "label": "rerun: baseline",
+  "t": "2026-11-27T18:50:49Z",
+  "endpoint": "/parameters/create-or-update-code-review",
+  "sent": {
+   "conversation": {
+    "implicitReplies": false
+   }
+  },
+  "status": 201,
+  "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "raw_after": {
+   "implicitReplies": false
+  },
+  "get_after": {
+   "implicitReplies": {
+    "value": false,
+    "level": "global",
+    "overriddenValue": true,
+    "overriddenLevel": "default"
+   }
+  }
+ },
+ {
+  "label": "rerun generic implicitReplies=\"false\"",
+  "t": "2026-11-27T18:50:52Z",
+  "endpoint": "/parameters/create-or-update",
+  "sent": {
+   "conversation": {
+    "implicitReplies": "false"
+   }
+  },
+  "status": 201,
+  "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "raw_after": {
+   "implicitReplies": "false"
+  },
+  "get_after": {
+   "implicitReplies": {
+    "value": "false",
+    "level": "global",
+    "overriddenValue": true,
+    "overriddenLevel": "default"
+   }
+  }
+ }
+]
