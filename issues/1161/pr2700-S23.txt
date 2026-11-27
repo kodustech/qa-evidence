@@ -1,0 +1,95 @@
+S23 — 2-turn tool loop via LLM.run({loop}) -> runAgentLoopCall -> managed env slot (resolveManagedSlot) -> real AI SDK provider; global fetch stubbed. Spec: harness/s2x-scripts/s23-tool-loop.spec.ts (copied to <tree>/qa-harness/ for the run, removed after).
+SDK versions (merge node_modules): @ai-sdk/openai-compatible 3.0.39, @ai-sdk/google 4.0.56. openai-compatible dist/index.js:268-272 writes tool_calls[].extra_content.google.thought_signature back; :641 reads it from responses.
+
+########## MERGE 41c2f8aa8
+  console.log
+    
+    ===== DECLARED google_gemini 
+    slot={"provider":"google_gemini","apiKey":"<fake>","model":"gemini-3.5-flash"}
+    result={"ok":true,"text":"FINAL: found foo.ts","steps":2}
+    -- request #1 https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent -> 200
+    {"generationConfig":{"thinkingConfig":{"thinkingLevel":"low"}},"contents":[{"role":"user","parts":[{"text":"find foo.ts"}]}],"systemInstruction":{"parts":[{"text":"You find files."}]},"tools":[{"functionDeclarations":[{"name":"findFile","description":"Find a file by name","parameters":{"required":["query"],"type":"object","properties":{"query":{"type":"string"}}}}]}],"toolConfig":{"functionCallingConfig":{"mode":"AUTO"}}}
+    -- request #2 https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent -> 200
+    {"generationConfig":{"thinkingConfig":{"thinkingLevel":"low"}},"contents":[{"role":"user","parts":[{"text":"find foo.ts"}]},{"role":"model","parts":[{"functionCall":{"id":"wxDeOmtb0n2A8K7A","name":"findFile","args":{"query":"foo.ts"}},"thoughtSignature":"sig-123"}]},{"role":"user","parts":[{"functionResponse":{"id":"wxDeOmtb0n2A8K7A","name":"findFile","response":{"name":"findFile","content":{"path":"src/foo.ts"}}}}]}],"systemInstruction":{"parts":[{"text":"You find files."}]},"tools":[{"functionDeclarations":[{"name":"findFile","description":"Find a file by name","parameters":{"required":["query"],"type":"object","properties":{"query":{"type":"string"}}}}]}],"toolConfig":{"functionCallingConfig":{"mode":"AUTO"}}}
+
+      at log (qa-harness/s23-tool-loop.spec.ts:116:13)
+
+  console.log
+    
+    ===== LEGACY trio via Gemini OpenAI endpoint 
+    slot={"inline":true,"kind":"inline"}
+    result={"ok":true,"text":"FINAL: found foo.ts","steps":2}
+    -- request #1 https://generativelanguage.googleapis.com/v1beta/openai/chat/completions -> 200
+    {"model":"gemini-3.5-flash","messages":[{"role":"system","content":"You find files."},{"role":"user","content":"find foo.ts"}],"tools":[{"type":"function","function":{"name":"findFile","description":"Find a file by name","parameters":{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"query":{"type":"string"}},"required":["query"],"additionalProperties":false}}}],"tool_choice":"auto"}
+    -- request #2 https://generativelanguage.googleapis.com/v1beta/openai/chat/completions -> 200
+    {"model":"gemini-3.5-flash","messages":[{"role":"system","content":"You find files."},{"role":"user","content":"find foo.ts"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_1","type":"function","function":{"name":"findFile","arguments":"{\"query\":\"foo.ts\"}"},"extra_content":{"google":{"thought_signature":"sig-123"}}}]},{"role":"tool","tool_call_id":"call_1","content":"{\"path\":\"src/foo.ts\"}"}],"tools":[{"type":"function","function":{"name":"findFile","description":"Find a file by name","parameters":{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"query":{"type":"string"}},"required":["query"],"additionalProperties":false}}}],"tool_choice":"auto"}
+
+      at log (qa-harness/s23-tool-loop.spec.ts:116:13)
+
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        0.704 s, estimated 2 s
+Ran all test suites matching qa-harness/s23.
+
+########## MERGE — MUTANT (stub turn-1 omits signature)
+  console.log
+    
+    ===== DECLARED google_gemini [MUTANT strip-sig]
+    slot={"provider":"google_gemini","apiKey":"<fake>","model":"gemini-3.5-flash"}
+    result={"ok":false,"error":"Function call is missing a thought_signature in functionCall parts. This is required for tools to work correctly, and missing thought_signature may lead to degraded model performance. Additional data, function call `default_api:findFile`, position 2. Please refer to https://ai.google.dev/gemini-api/","status":400}
+    -- request #1 https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent -> 200
+    {"generationConfig":{"thinkingConfig":{"thinkingLevel":"low"}},"contents":[{"role":"user","parts":[{"text":"find foo.ts"}]}],"systemInstruction":{"parts":[{"text":"You find files."}]},"tools":[{"functionDeclarations":[{"name":"findFile","description":"Find a file by name","parameters":{"required":["query"],"type":"object","properties":{"query":{"type":"string"}}}}]}],"toolConfig":{"functionCallingConfig":{"mode":"AUTO"}}}
+    -- request #2 https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent -> 400
+    {"generationConfig":{"thinkingConfig":{"thinkingLevel":"low"}},"contents":[{"role":"user","parts":[{"text":"find foo.ts"}]},{"role":"model","parts":[{"functionCall":{"id":"GMCzSPaLUnUWrmv4","name":"findFile","args":{"query":"foo.ts"}},"thoughtSignature":"skip_thought_signature_validator"}]},{"role":"user","parts":[{"functionResponse":{"id":"GMCzSPaLUnUWrmv4","name":"findFile","response":{"name":"findFile","content":{"path":"src/foo.ts"}}}}]}],"systemInstruction":{"parts":[{"text":"You find files."}]},"tools":[{"functionDeclarations":[{"name":"findFile","description":"Find a file by name","parameters":{"required":["query"],"type":"object","properties":{"query":{"type":"string"}}}}]}],"toolConfig":{"functionCallingConfig":{"mode":"AUTO"}}}
+
+      at log (qa-harness/s23-tool-loop.spec.ts:116:13)
+
+  console.log
+    
+    ===== LEGACY trio via Gemini OpenAI endpoint [MUTANT strip-sig]
+    slot={"inline":true,"kind":"inline"}
+    result={"ok":false,"error":"","status":400}
+    -- request #1 https://generativelanguage.googleapis.com/v1beta/openai/chat/completions -> 200
+    {"model":"gemini-3.5-flash","messages":[{"role":"system","content":"You find files."},{"role":"user","content":"find foo.ts"}],"tools":[{"type":"function","function":{"name":"findFile","description":"Find a file by name","parameters":{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"query":{"type":"string"}},"required":["query"],"additionalProperties":false}}}],"tool_choice":"auto"}
+    -- request #2 https://generativelanguage.googleapis.com/v1beta/openai/chat/completions -> 400
+    {"model":"gemini-3.5-flash","messages":[{"role":"system","content":"You find files."},{"role":"user","content":"find foo.ts"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_1","type":"function","function":{"name":"findFile","arguments":"{\"query\":\"foo.ts\"}"}}]},{"role":"tool","tool_call_id":"call_1","content":"{\"path\":\"src/foo.ts\"}"}],"tools":[{"type":"function","function":{"name":"findFile","description":"Find a file by name","parameters":{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"query":{"type":"string"}},"required":["query"],"additionalProperties":false}}}],"tool_choice":"auto"}
+
+      at log (qa-harness/s23-tool-loop.spec.ts:116:13)
+
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        1.461 s
+Ran all test suites matching qa-harness/s23.
+
+########## PARENT 000b7e23a
+  console.log
+    
+    ===== DECLARED google_gemini 
+    slot={"provider":"google_gemini","apiKey":"<fake>","model":"gemini-3.5-flash"}
+    result={"ok":true,"text":"FINAL: found foo.ts","steps":2}
+    -- request #1 https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent -> 200
+    {"generationConfig":{"thinkingConfig":{"thinkingLevel":"low"}},"contents":[{"role":"user","parts":[{"text":"find foo.ts"}]}],"systemInstruction":{"parts":[{"text":"You find files."}]},"tools":[{"functionDeclarations":[{"name":"findFile","description":"Find a file by name","parameters":{"required":["query"],"type":"object","properties":{"query":{"type":"string"}}}}]}],"toolConfig":{"functionCallingConfig":{"mode":"AUTO"}}}
+    -- request #2 https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent -> 200
+    {"generationConfig":{"thinkingConfig":{"thinkingLevel":"low"}},"contents":[{"role":"user","parts":[{"text":"find foo.ts"}]},{"role":"model","parts":[{"functionCall":{"id":"kWdZpsk4ACcQFB4v","name":"findFile","args":{"query":"foo.ts"}},"thoughtSignature":"sig-123"}]},{"role":"user","parts":[{"functionResponse":{"id":"kWdZpsk4ACcQFB4v","name":"findFile","response":{"name":"findFile","content":{"path":"src/foo.ts"}}}}]}],"systemInstruction":{"parts":[{"text":"You find files."}]},"tools":[{"functionDeclarations":[{"name":"findFile","description":"Find a file by name","parameters":{"required":["query"],"type":"object","properties":{"query":{"type":"string"}}}}]}],"toolConfig":{"functionCallingConfig":{"mode":"AUTO"}}}
+
+      at log (qa-harness/s23-tool-loop.spec.ts:116:13)
+
+  console.log
+    
+    ===== LEGACY trio via Gemini OpenAI endpoint 
+    slot={"inline":true,"kind":"inline"}
+    result={"ok":true,"text":"FINAL: found foo.ts","steps":2}
+    -- request #1 https://generativelanguage.googleapis.com/v1beta/openai/chat/completions -> 200
+    {"model":"gemini-3.5-flash","messages":[{"role":"system","content":"You find files."},{"role":"user","content":"find foo.ts"}],"tools":[{"type":"function","function":{"name":"findFile","description":"Find a file by name","parameters":{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"query":{"type":"string"}},"required":["query"],"additionalProperties":false}}}],"tool_choice":"auto"}
+    -- request #2 https://generativelanguage.googleapis.com/v1beta/openai/chat/completions -> 200
+    {"model":"gemini-3.5-flash","messages":[{"role":"system","content":"You find files."},{"role":"user","content":"find foo.ts"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_1","type":"function","function":{"name":"findFile","arguments":"{\"query\":\"foo.ts\"}"},"extra_content":{"google":{"thought_signature":"sig-123"}}}]},{"role":"tool","tool_call_id":"call_1","content":"{\"path\":\"src/foo.ts\"}"}],"tools":[{"type":"function","function":{"name":"findFile","description":"Find a file by name","parameters":{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"query":{"type":"string"}},"required":["query"],"additionalProperties":false}}}],"tool_choice":"auto"}
+
+      at log (qa-harness/s23-tool-loop.spec.ts:116:13)
+
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        1.33 s
+Ran all test suites matching qa-harness/s23.
