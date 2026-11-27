@@ -1,0 +1,13 @@
+== merge
+mongodb-exporter.spec.ts 19 / 19
+kodyLearning.cron.spec.ts 4 / 4
+== parent
+mongodb-exporter.spec.ts 14 / 19
+   FAIL: MongoDBExporter organization attribution reads flat ids from params, as the Kody Learning cron logs them
+   FAIL: MongoDBExporter organization attribution reads flat ids from payload, as the feedback sync logs them
+   FAIL: MongoDBExporter organization attribution reads a pair nested in payload
+   FAIL: MongoDBExporter organization attribution does not let a partial top-level pair hide a full one in params
+   FAIL: MongoDBExporter organization attribution still redacts credentials when the org comes from a flat payload
+kodyLearning.cron.spec.ts 2 / 4
+   FAIL: KodyLearningCronProvider — organization on error logs logs the organization when platform configs are missing
+   FAIL: KodyLearningCronProvider — organization on error logs logs the organization when a stuck team has exhausted retries
