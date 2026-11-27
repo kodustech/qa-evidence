@@ -1,0 +1,189 @@
+/* H3 harness: real ConversationAgentProvider.execute; stand-ins for parameters,
+ * permission validation (slot), MCP manager (points at a real local MCP server)
+ * and conversation store. Model = local fake server. */
+import { ConversationAgentProvider } from '@libs/agents/infrastructure/services/agents/conversation/conversationAgent';
+import { addLogProcessor } from '@libs/core/log/logger';
+import { encrypt } from '@libs/common/utils/crypto';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { openaiFake, anthropicFake, mcpFake } = require(process.env.SERVERS_JS as string);
+
+const logs: any[] = [];
+addLogProcessor((level: any, message: any, component: any, meta: any) => {
+    logs.push({ t: Date.now(), level, message, component, metadata: meta });
+});
+
+const D = 'kodusDecideAction';
+const decide = (input: any) => ({ name: D, input });
+const PROMPT_SAVE =
+    '@kody save as a memory: in qa2744 we always validate the class owner before writing grades';
+const PROMPT_FIXED = '@kody Fixed in 3f2a9c1';
+
+function isForce(body: any) {
+    return !body.tools || body.tools.length === 0;
+}
+
+const scripts: Record<string, { prompt: string; script: (n: number, b: any) => any; writeMode?: string }> = {
+    // S12: decision on every step, never an answer
+    S12: {
+        prompt: PROMPT_FIXED,
+        script: (n, b) =>
+            isForce(b) ? { text: 'Thanks — the fix in 3f2a9c1 looks right (minimal answer).' } : { toolCalls: [decide({ intent: 'answer', why: `step ${n}` })] },
+    },
+    // S13: decide(answer) x2, decide(act) -> write -> final text
+    S13: {
+        prompt: PROMPT_SAVE,
+        script: (n, b) => {
+            if (isForce(b)) return { text: 'FORCE' };
+            const k = b.messages.filter((m: any) => m.role === 'assistant').length + 1;
+            if (k <= 2) return { toolCalls: [decide({ intent: 'answer', why: `look ${k}` })] };
+            if (k === 3) return { toolCalls: [decide({ intent: 'act', tool: 'kodyMemoriesCreate', authorizingQuote: 'save as a memory' })] };
+            if (k === 4) return { toolCalls: [{ name: 'kodyMemoriesCreate', input: { content: 'validate class owner before writing grades' } }] };
+            return { text: 'Saved it as a memory: https://app.kodus.io/memories/mem-qa2744' };
+        },
+    },
+    // S14: (decide, read) x6 then text
+    S14: {
+        prompt: '@kody is there a memory about grade ownership?',
+        script: (n, b) => {
+            if (isForce(b)) return { text: 'FORCE ANSWER' };
+            const k = b.messages.filter((m: any) => m.role === 'assistant').length + 1;
+            if (k > 12) return { text: 'final' };
+            if (k <= 12 && k % 2 === 1) return { toolCalls: [decide({ intent: 'answer', why: `pair ${(k + 1) / 2}` })] };
+            return { toolCalls: [{ name: 'kodyMemoriesSearch', input: { query: `grade ${k}` } }] };
+        },
+    },
+    // S14b: (decide, read) x5 then text, fits in 12 steps
+    S14b: {
+        prompt: '@kody is there a memory about grade ownership?',
+        script: (n, b) => {
+            if (isForce(b)) return { text: 'FORCE ANSWER' };
+            const k = b.messages.filter((m: any) => m.role === 'assistant').length + 1;
+            if (k > 10) return { text: 'No memory covers grade ownership yet.' };
+            if (k % 2 === 1) return { toolCalls: [decide({ intent: 'answer', why: `pair ${(k + 1) / 2}` })] };
+            return { toolCalls: [{ name: 'kodyMemoriesSearch', input: { query: `grade ${k}` } }] };
+        },
+    },
+    // S16a: functions.-prefixed tool name in the decision, then the write
+    S16a: {
+        prompt: PROMPT_SAVE,
+        script: (n, b) => {
+            if (isForce(b)) return { text: 'FORCE' };
+            const k = b.messages.filter((m: any) => m.role === 'assistant').length + 1;
+            if (k === 1) return { toolCalls: [decide({ intent: 'act', tool: 'functions.kodyMemoriesCreate', authorizingQuote: 'save as a memory' })] };
+            if (k === 2) return { toolCalls: [{ name: 'kodyMemoriesCreate', input: { content: 'validate class owner' } }] };
+            return { text: 'Done! I saved it as a [memory](https://app.kodus.io/memories/made-up-link).' };
+        },
+    },
+    // S16b: write without any decision (gate refuses), model claims done
+    S16b: {
+        prompt: PROMPT_SAVE,
+        script: (n, b) => {
+            if (isForce(b)) return { text: 'FORCE' };
+            const k = b.messages.filter((m: any) => m.role === 'assistant').length + 1;
+            if (k === 1) return { toolCalls: [{ name: 'kodyMemoriesCreate', input: { content: 'validate class owner' } }] };
+            return { text: 'Done! I saved it as a [memory](https://app.kodus.io/memories/made-up-link).' };
+        },
+    },
+    // S16c: authorized write whose MCP call fails
+    S16c: {
+        prompt: PROMPT_SAVE,
+        writeMode: 'throw',
+        script: (n, b) => {
+            if (isForce(b)) return { text: 'FORCE' };
+            const k = b.messages.filter((m: any) => m.role === 'assistant').length + 1;
+            if (k === 1) return { toolCalls: [decide({ intent: 'act', tool: 'kodyMemoriesCreate', authorizingQuote: 'save as a memory' })] };
+            if (k === 2) return { toolCalls: [{ name: 'kodyMemoriesCreate', input: { content: 'validate class owner' } }] };
+            return { text: 'Done! I saved it as a [memory](https://app.kodus.io/memories/made-up-link).' };
+        },
+    },
+};
+
+async function runOne(name: string, provider: 'openai' | 'anthropic', parallel = 1) {
+    const sc = scripts[name];
+    const reqLog: any[] = [];
+    const state: any = { writeMode: sc.writeMode ?? 'ok', writeCalls: [], readCalls: [] };
+    const fake = provider === 'openai' ? await openaiFake(sc.script, reqLog) : await anthropicFake(sc.script, reqLog);
+    const mcp = await mcpFake(state);
+    process.env.API_ALLOWED_PRIVATE_HOSTS = `127.0.0.1`;
+    const slot: any =
+        provider === 'openai'
+            ? { provider: 'openai_compatible', apiKey: encrypt('fake-key-not-real'), model: 'deepseek-v4.1-flash', baseURL: `http://127.0.0.1:${fake.port}/v1`, reasoningEffort: 'low', maxInputTokens: 128000 }
+            : { provider: 'anthropic', apiKey: encrypt('fake-key-not-real'), model: 'claude-sonnet-4-5', baseURL: `http://127.0.0.1:${fake.port}/v1`, reasoningEffort: 'low', maxInputTokens: 200000 };
+    const store = new Map<string, any[]>();
+    const provider_ = new ConversationAgentProvider(
+        { findByKey: async () => null } as any,
+        { resolveTaskSlot: async () => slot } as any,
+        { getConnections: async () => [{ name: 'kodus-fake', type: 'http', url: `http://127.0.0.1:${mcp.port}/mcp`, integrationId: 'kodus-memories' }] } as any,
+        undefined,
+        { load: async (id: string) => store.get(id) ?? [], append: async (id: string, msgs: any[]) => { store.set(id, [...(store.get(id) ?? []), ...msgs]); } } as any,
+    );
+    const logStart = logs.length;
+    const t0 = Date.now();
+    const runs = Array.from({ length: parallel }, (_, i) =>
+        provider_
+            .execute(sc.prompt, {
+                organizationAndTeamData: { organizationId: 'org-qa2744', teamId: 'team-qa2744' } as any,
+                thread: { id: `thread-${name}-${i}` },
+                prepareContext: { repository: { id: 'repo-1', name: 'codex-athena' }, gitUser: { username: 'dev' } } as any,
+            })
+            .then((r) => ({ ok: true, reply: r, end: Date.now() }))
+            .catch((e) => ({ ok: false, error: String(e?.message ?? e), end: Date.now() })),
+    );
+    const results = await Promise.all(runs);
+    fake.server.close();
+    mcp.server.close();
+    const myLogs = logs.slice(logStart).filter((l) => /conversation|write tool|declared|SLOW|decision/i.test(l.message));
+    return { name, provider, t0, results, requests: reqLog, state, logs: myLogs };
+}
+
+function toolResultsSeen(req: any, provider: string) {
+    if (provider === 'openai') return req.body.messages.filter((m: any) => m.role === 'tool').map((m: any) => (typeof m.content === 'string' ? m.content : JSON.stringify(m.content)));
+    const out: string[] = [];
+    for (const m of req.body.messages) if (Array.isArray(m.content)) for (const p of m.content) if (p.type === 'tool_result') out.push(typeof p.content === 'string' ? p.content : JSON.stringify(p.content));
+    return out;
+}
+
+async function main() {
+    const which = process.argv[2];
+    const out: any = {};
+    const plan: Array<[string, 'openai' | 'anthropic', number]> =
+        which === 'S17'
+            ? [['S12', 'anthropic', 1], ['S12', 'anthropic', 2]]
+            : which === 'all'
+              ? [['S12', 'openai', 1], ['S13', 'openai', 1], ['S14', 'openai', 1], ['S14b', 'openai', 1], ['S16a', 'openai', 1], ['S16b', 'openai', 1], ['S16c', 'openai', 1]]
+              : [[which, 'openai', 1]];
+    for (const [name, prov, par] of plan) {
+        const r = await runOne(name, prov, par);
+        const key = `${name}/${prov}/x${par}`;
+        out[key] = {
+            results: r.results,
+            requestCount: r.requests.length,
+            forceAnswerRequests: r.requests.filter((q) => !q.body.tools || q.body.tools.length === 0).length,
+            finishSteps: r.logs.filter((l) => l.message === 'Finish conversation agent execution').map((l) => l.metadata?.steps),
+            writeCalls: r.state.writeCalls.length,
+            readCalls: r.state.readCalls.length,
+            logMessages: r.logs.map((l) => `${l.level} ${l.message}`),
+            perRequest: r.requests.map((q) => ({
+                n: q.n,
+                t: q.t,
+                force: !q.body.tools || q.body.tools.length === 0,
+                tools: (q.body.tools ?? []).map((t: any) => t.function?.name ?? t.name).sort(),
+                toolsHash: q.toolsHash,
+                rejected: q.rejected,
+                replayed: q.replayed,
+                toolResults: toolResultsSeen(q, prov).map((s) => s.slice(0, 160)),
+                lastMessage: JSON.stringify(q.body.messages.at(-1)).slice(0, 400),
+                messagesJson: JSON.stringify(q.body.messages),
+                system: typeof q.body.system === 'string' ? q.body.system.slice(0, 0) : undefined,
+            })),
+        };
+        process.stderr.write(`${key}: requests=${r.requests.length} steps=${out[key].finishSteps} replies=${JSON.stringify(r.results.map((x: any) => (x.reply ?? x.error ?? '').slice(0, 120)))}\n`);
+    }
+    require('fs').writeFileSync(process.env.OUT_JSON as string, JSON.stringify(out, null, 1));
+    process.exit(0);
+}
+main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+});
