@@ -1,0 +1,10 @@
+a-prose-example-then-fenced-answer | len=446 | opts={} | 1ms | violations=1 first={"ruleId":2,"relevantLinesStart":10,"relevantLinesEnd":12,"language":"typescript","existingCode":"const x = a == b;","improvedCode":"const x
+a2-prose-example-then-ts-quote-then-bare-answer | len=361 | opts={} | 1ms | undefined (=> caller re-asks)
+a3-same-as-a2-lastChance | len=361 | opts={"lastChance":true} | 0ms | undefined (=> caller re-asks)
+b-1M-open-braces | len=1000000 | opts={} | 220ms | undefined (=> caller re-asks)
+c-5.5M-chars-mixed | len=5580000 | opts={} | 20ms | undefined (=> caller re-asks)
+c2-5.2M-plain-prose-with-braces | len=5280000 | opts={} | 177ms | undefined (=> caller re-asks)
+d-string-field-contains-fence | len=310 | opts={} | 0ms | violations=1 first={"ruleId":2,"relevantLinesStart":10,"relevantLinesEnd":12,"language":"typescript","existingCode":"const x = a == b;","improvedCode":"const x
+d2-fenced-answer-whose-string-contains-fence | len=289 | opts={} | 0ms | violations=1 first={"ruleId":2,"relevantLinesStart":10,"relevantLinesEnd":12,"language":"typescript","existingCode":"const x = a == b;","improvedCode":"```ts\n
+e-truncated-mid-answer | len=180 | opts={} | 0ms | undefined (=> caller re-asks)
+endedOnItsOwn exported=true length=false stop=true other=false content-filter=false undefined=true
