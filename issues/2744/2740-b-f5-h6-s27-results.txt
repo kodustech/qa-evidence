@@ -1,0 +1,36 @@
+S27 classifyLLMError (real, bundled per side; mut = merge with the 'monthly spending cap' line removed)
+== m
+{"message":"Your project has exceeded its monthly spending cap. Please g","apiCallError":"QUOTA_EXCEEDED","plainStatus":"QUOTA_EXCEEDED"}
+{"message":"You (qa-user) have reached your weekly usage limit. It reset","apiCallError":"QUOTA_EXCEEDED","plainStatus":"QUOTA_EXCEEDED"}
+{"message":"Rate limit reached for requests","apiCallError":"RATE_LIMIT","plainStatus":"RATE_LIMIT"}
+{"message":"Rate limit exceeded: 60 requests per minute","apiCallError":"RATE_LIMIT","plainStatus":"RATE_LIMIT"}
+== p
+{"message":"Your project has exceeded its monthly spending cap. Please g","apiCallError":"RATE_LIMIT","plainStatus":"RATE_LIMIT"}
+{"message":"You (qa-user) have reached your weekly usage limit. It reset","apiCallError":"RATE_LIMIT","plainStatus":"RATE_LIMIT"}
+{"message":"Rate limit reached for requests","apiCallError":"RATE_LIMIT","plainStatus":"RATE_LIMIT"}
+{"message":"Rate limit exceeded: 60 requests per minute","apiCallError":"RATE_LIMIT","plainStatus":"RATE_LIMIT"}
+== mut
+{"message":"Your project has exceeded its monthly spending cap. Please g","apiCallError":"RATE_LIMIT","plainStatus":"RATE_LIMIT"}
+{"message":"You (qa-user) have reached your weekly usage limit. It reset","apiCallError":"QUOTA_EXCEEDED","plainStatus":"QUOTA_EXCEEDED"}
+{"message":"Rate limit reached for requests","apiCallError":"RATE_LIMIT","plainStatus":"RATE_LIMIT"}
+{"message":"Rate limit exceeded: 60 requests per minute","apiCallError":"RATE_LIMIT","plainStatus":"RATE_LIMIT"}
+
+S29 withoutSecretFileLines timings (real rg output over generated files; best of 2)
+{"side":"m","file":"rg-svg.txt","mb":43.6,"ms":330,"msPerMB":7.58,"outLen":43577903,"sameAsInput":true}
+{"side":"m","file":"rg-tc.txt","mb":57.6,"ms":273,"msPerMB":4.74,"outLen":57637785,"sameAsInput":true}
+{"side":"m","file":"rg-ts.txt","mb":86.1,"ms":143,"msPerMB":1.66,"outLen":86066675,"sameAsInput":true}
+{"side":"p","file":"rg-svg.txt","mb":43.6,"ms":517,"msPerMB":11.86,"outLen":43577903,"sameAsInput":true}
+{"side":"p","file":"rg-tc.txt","mb":57.6,"ms":244,"msPerMB":4.24,"outLen":57637785,"sameAsInput":true}
+{"side":"p","file":"rg-ts.txt","mb":86.1,"ms":151,"msPerMB":1.76,"outLen":86066675,"sameAsInput":true}
+{"side":"m","file":"rg2-svg.txt","mb":43.9,"ms":468,"msPerMB":10.68,"outLen":43854894,"sameAsInput":true}
+{"side":"m","file":"rg2-tc.txt","mb":60.7,"ms":327,"msPerMB":5.38,"outLen":60724894,"sameAsInput":true}
+{"side":"p","file":"rg2-svg.txt","mb":43.9,"ms":1421,"msPerMB":32.39,"outLen":43854894,"sameAsInput":true}
+{"side":"p","file":"rg2-tc.txt","mb":60.7,"ms":1346,"msPerMB":22.16,"outLen":60724894,"sameAsInput":true}
+{"side":"mut-oldscreen","file":"rg2-svg.txt","mb":43.9,"ms":1383,"msPerMB":31.54,"outLen":43854894,"sameAsInput":true}
+{"side":"mut-oldscreen","file":"rg2-tc.txt","mb":60.7,"ms":1347,"msPerMB":22.18,"outLen":60724894,"sameAsInput":true}
+
+S30 secret-name corpus (214,026 lines) outputs; merge vs parent byte-compare: IDENTICAL (cmp exit 0); mutant shortedge (NAME_EDGE 6) differs and lets e.g. `5\c\8\id_ed25519-427-...` through
+{"side":"m","inLines":214026,"outLines":102355,"dropped":111671,"sha":"40cede30a2390513"}
+{"side":"p","inLines":214026,"outLines":102355,"dropped":111671,"sha":"40cede30a2390513"}
+{"side":"mut-short","inLines":214026,"outLines":120784,"dropped":93242,"sha":"c38bd4a9528dbd03"}
+{"side":"mut-old","inLines":214026,"outLines":102355,"dropped":111671,"sha":"40cede30a2390513"}
