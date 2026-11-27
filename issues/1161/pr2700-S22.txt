@@ -1,0 +1,306 @@
+
+################ CASE a (merge, Enter at every prompt)
+--- config BEFORE
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+KODUS_INSTALLER_PATH=/nonexistent
+API_OPEN_AI_API_KEY=fake-gemini-legacy
+API_OPENAI_FORCE_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+--- run (m) setup.sh 
+DigitalOcean API token  (current: do…ke)
+LLM provider
+  [google_gemini] →   Provider guessed from your old API_OPENAI_FORCE_BASE_URL / model; it is now written as API_LLM_PROVIDER.
+LLM model
+  [gemini-3.5-flash] → 
+LLM API key (google_gemini)  (current: fake-g…gacy  (18 chars))
+OpenAI API key for embeddings (optional)
+  [/nonexistent] → [warn]   Directory /nonexistent does not exist yet. That's fine — provision.sh will complain if you try to provision before cloning.
+--- exit=0
+--- config AFTER
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+API_LLM_PROVIDER=google_gemini
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+API_LLM_API_KEY=fake-gemini-legacy
+API_LLM_BASE_URL=
+API_LLM_REASONING_EFFORT=
+API_OPEN_AI_API_KEY=
+KODUS_INSTALLER_PATH=/nonexistent
+
+################ CASE b (merge, Enter at every prompt)
+--- config BEFORE
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+KODUS_INSTALLER_PATH=/nonexistent
+API_OPEN_AI_API_KEY=fake-moonshot-legacy
+API_OPENAI_FORCE_BASE_URL=https://api.moonshot.ai/v1
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+--- run (m) setup.sh 
+DigitalOcean API token  (current: do…ke)
+LLM provider
+  [openai_compatible] →   Provider guessed from your old API_OPENAI_FORCE_BASE_URL / model; it is now written as API_LLM_PROVIDER.
+LLM model
+  [kimi-k2.6] → 
+LLM API key (openai_compatible)  (current: fake-m…gacy  (20 chars))
+LLM base URL (openai_compatible)
+  [https://api.moonshot.ai/v1] → 
+OpenAI API key for embeddings (optional)
+  [/nonexistent] → [warn]   Directory /nonexistent does not exist yet. That's fine — provision.sh will complain if you try to provision before cloning.
+--- exit=0
+--- config AFTER
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=fake-moonshot-legacy
+API_LLM_BASE_URL=https://api.moonshot.ai/v1
+API_LLM_REASONING_EFFORT=
+API_OPEN_AI_API_KEY=
+KODUS_INSTALLER_PATH=/nonexistent
+
+################ CASE c (merge, Enter at every prompt)
+--- config BEFORE
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+KODUS_INSTALLER_PATH=/nonexistent
+API_OPEN_AI_API_KEY=fake-openai-legacy
+API_LLM_PROVIDER_MODEL=gpt-5.4
+--- run (m) setup.sh 
+DigitalOcean API token  (current: do…ke)
+LLM provider
+  [openai] →   Provider guessed from your old API_OPENAI_FORCE_BASE_URL / model; it is now written as API_LLM_PROVIDER.
+LLM model
+  [gpt-5.4] → 
+LLM API key (openai)  (current: fake-o…gacy  (18 chars))
+LLM base URL (openai)
+OpenAI API key for embeddings (optional)  (current: fake-o…gacy  (18 chars))
+  [/nonexistent] → [warn]   Directory /nonexistent does not exist yet. That's fine — provision.sh will complain if you try to provision before cloning.
+--- exit=0
+--- config AFTER
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+API_LLM_PROVIDER=openai
+API_LLM_PROVIDER_MODEL=gpt-5.4
+API_LLM_API_KEY=fake-openai-legacy
+API_LLM_BASE_URL=
+API_LLM_REASONING_EFFORT=
+API_OPEN_AI_API_KEY=fake-openai-legacy
+KODUS_INSTALLER_PATH=/nonexistent
+
+################ CASE d (merge, Enter at every prompt)
+--- config BEFORE
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+KODUS_INSTALLER_PATH=/nonexistent
+API_OPEN_AI_API_KEY=fake-openai-emb
+API_OPENAI_FORCE_BASE_URL=https://api.moonshot.ai/v1
+API_LLM_PROVIDER_MODEL=auto
+--- run (m) setup.sh 
+DigitalOcean API token  (current: do…ke)
+LLM provider
+  [auto] → 
+OpenAI API key for embeddings (optional)  (current: fake-o…-emb  (15 chars))
+  [/nonexistent] → [warn]   Directory /nonexistent does not exist yet. That's fine — provision.sh will complain if you try to provision before cloning.
+--- exit=0
+--- config AFTER
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+API_LLM_PROVIDER=
+API_LLM_PROVIDER_MODEL=auto
+API_LLM_API_KEY=
+API_LLM_BASE_URL=
+API_LLM_REASONING_EFFORT=
+API_OPEN_AI_API_KEY=fake-openai-emb
+KODUS_INSTALLER_PATH=/nonexistent
+
+################ CASE e (merge, Enter at every prompt)
+--- config BEFORE
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+KODUS_INSTALLER_PATH=/nonexistent
+API_OPEN_AI_API_KEY=fake-anthropic-legacy
+API_OPENAI_FORCE_BASE_URL=https://api.anthropic.com/v1
+API_LLM_PROVIDER_MODEL=claude-sonnet-4-5
+--- run (m) setup.sh 
+DigitalOcean API token  (current: do…ke)
+LLM provider
+  [anthropic] →   Provider guessed from your old API_OPENAI_FORCE_BASE_URL / model; it is now written as API_LLM_PROVIDER.
+LLM model
+  [claude-sonnet-4-5] → 
+LLM API key (anthropic)  (current: fake-a…gacy  (21 chars))
+LLM base URL (anthropic)
+  [https://api.anthropic.com/v1] → 
+OpenAI API key for embeddings (optional)
+  [/nonexistent] → [warn]   Directory /nonexistent does not exist yet. That's fine — provision.sh will complain if you try to provision before cloning.
+--- exit=0
+--- config AFTER
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+API_LLM_PROVIDER=anthropic
+API_LLM_PROVIDER_MODEL=claude-sonnet-4-5
+API_LLM_API_KEY=fake-anthropic-legacy
+API_LLM_BASE_URL=https://api.anthropic.com/v1
+API_LLM_REASONING_EFFORT=
+API_OPEN_AI_API_KEY=
+KODUS_INSTALLER_PATH=/nonexistent
+
+################ SHOW (merge) over pre_a
+--- run (m) setup.sh --show
+[setup] Config: ~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/m-s22-show-a/.kodus-dev/config
+
+  DIGITALOCEAN_TOKEN          do…ke
+  SH_LICENSE_KEY              (not set)
+  GH_DEV_TOKEN                (not set)
+  API_LLM_PROVIDER            (not set)
+  API_LLM_PROVIDER_MODEL      gemini-3.5-flash
+  API_LLM_API_KEY             (not set)
+  API_LLM_BASE_URL            (not set)
+  API_OPEN_AI_API_KEY         fake-g…gacy  (18 chars)
+  API_OPENAI_FORCE_BASE_URL   https://generativelanguage.googleapis.com/v1beta/openai/  (legacy; re-run setup to move it)
+  KODUS_INSTALLER_PATH        /nonexistent
+
+--- exit=0
+--- config AFTER
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+KODUS_INSTALLER_PATH=/nonexistent
+API_OPEN_AI_API_KEY=fake-gemini-legacy
+API_OPENAI_FORCE_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+
+################ SHOW (merge) over pre_b
+--- run (m) setup.sh --show
+[setup] Config: ~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/m-s22-show-b/.kodus-dev/config
+
+  DIGITALOCEAN_TOKEN          do…ke
+  SH_LICENSE_KEY              (not set)
+  GH_DEV_TOKEN                (not set)
+  API_LLM_PROVIDER            (not set)
+  API_LLM_PROVIDER_MODEL      kimi-k2.6
+  API_LLM_API_KEY             (not set)
+  API_LLM_BASE_URL            (not set)
+  API_OPEN_AI_API_KEY         fake-m…gacy  (20 chars)
+  API_OPENAI_FORCE_BASE_URL   https://api.moonshot.ai/v1  (legacy; re-run setup to move it)
+  KODUS_INSTALLER_PATH        /nonexistent
+
+--- exit=0
+--- config AFTER
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+KODUS_INSTALLER_PATH=/nonexistent
+API_OPEN_AI_API_KEY=fake-moonshot-legacy
+API_OPENAI_FORCE_BASE_URL=https://api.moonshot.ai/v1
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+
+################ SHOW (merge) over pre_c
+--- run (m) setup.sh --show
+[setup] Config: ~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/m-s22-show-c/.kodus-dev/config
+
+  DIGITALOCEAN_TOKEN          do…ke
+  SH_LICENSE_KEY              (not set)
+  GH_DEV_TOKEN                (not set)
+  API_LLM_PROVIDER            (not set)
+  API_LLM_PROVIDER_MODEL      gpt-5.4
+  API_LLM_API_KEY             (not set)
+  API_LLM_BASE_URL            (not set)
+  API_OPEN_AI_API_KEY         fake-o…gacy  (18 chars)
+  KODUS_INSTALLER_PATH        /nonexistent
+
+--- exit=0
+--- config AFTER
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+KODUS_INSTALLER_PATH=/nonexistent
+API_OPEN_AI_API_KEY=fake-openai-legacy
+API_LLM_PROVIDER_MODEL=gpt-5.4
+
+################ SHOW (merge) over pre_d
+--- run (m) setup.sh --show
+[setup] Config: ~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/m-s22-show-d/.kodus-dev/config
+
+  DIGITALOCEAN_TOKEN          do…ke
+  SH_LICENSE_KEY              (not set)
+  GH_DEV_TOKEN                (not set)
+  API_LLM_PROVIDER            (not set)
+  API_LLM_PROVIDER_MODEL      auto
+  API_LLM_API_KEY             (not set)
+  API_LLM_BASE_URL            (not set)
+  API_OPEN_AI_API_KEY         fake-o…-emb  (15 chars)
+  API_OPENAI_FORCE_BASE_URL   https://api.moonshot.ai/v1  (legacy; re-run setup to move it)
+  KODUS_INSTALLER_PATH        /nonexistent
+
+--- exit=0
+--- config AFTER
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+KODUS_INSTALLER_PATH=/nonexistent
+API_OPEN_AI_API_KEY=fake-openai-emb
+API_OPENAI_FORCE_BASE_URL=https://api.moonshot.ai/v1
+API_LLM_PROVIDER_MODEL=auto
+
+################ SHOW (merge) over pre_e
+--- run (m) setup.sh --show
+[setup] Config: ~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/m-s22-show-e/.kodus-dev/config
+
+  DIGITALOCEAN_TOKEN          do…ke
+  SH_LICENSE_KEY              (not set)
+  GH_DEV_TOKEN                (not set)
+  API_LLM_PROVIDER            (not set)
+  API_LLM_PROVIDER_MODEL      claude-sonnet-4-5
+  API_LLM_API_KEY             (not set)
+  API_LLM_BASE_URL            (not set)
+  API_OPEN_AI_API_KEY         fake-a…gacy  (21 chars)
+  API_OPENAI_FORCE_BASE_URL   https://api.anthropic.com/v1  (legacy; re-run setup to move it)
+  KODUS_INSTALLER_PATH        /nonexistent
+
+--- exit=0
+--- config AFTER
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+KODUS_INSTALLER_PATH=/nonexistent
+API_OPEN_AI_API_KEY=fake-anthropic-legacy
+API_OPENAI_FORCE_BASE_URL=https://api.anthropic.com/v1
+API_LLM_PROVIDER_MODEL=claude-sonnet-4-5
+
+################ SHOW (merge) over a post-setup config (case a AFTER)
+--- run (m) setup.sh --show
+[setup] Config: ~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/m-s22-show-posta/.kodus-dev/config
+
+  DIGITALOCEAN_TOKEN          do…ke
+  SH_LICENSE_KEY              (not set)
+  GH_DEV_TOKEN                (not set)
+  API_LLM_PROVIDER            google_gemini
+  API_LLM_PROVIDER_MODEL      gemini-3.5-flash
+  API_LLM_API_KEY             fake-g…gacy  (18 chars)
+  API_LLM_BASE_URL            (not set)
+  API_OPEN_AI_API_KEY         (not set)
+  KODUS_INSTALLER_PATH        /nonexistent
+
+--- exit=0
+--- config AFTER
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+API_LLM_PROVIDER=google_gemini
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+API_LLM_API_KEY=fake-gemini-legacy
+API_LLM_BASE_URL=
+API_LLM_REASONING_EFFORT=
+API_OPEN_AI_API_KEY=
+KODUS_INSTALLER_PATH=/nonexistent
