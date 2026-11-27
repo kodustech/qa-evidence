@@ -1,0 +1,150 @@
+{
+ "automationExecution": "e252a3d5-7b5d-41a9-98c4-f5b327a1bfe6",
+ "stages": [
+  {
+   "s": "Kody Review Started",
+   "c": "2026-11-27T17:45:13.084061",
+   "f": null,
+   "m": null
+  },
+  {
+   "s": "ValidatePrerequisitesStage",
+   "c": "2026-11-27T17:45:13.100213",
+   "f": "2026-11-27T17:45:13.192",
+   "m": null
+  },
+  {
+   "s": "ValidateNewCommitsStage",
+   "c": "2026-11-27T17:45:13.20129",
+   "f": "2026-11-27T17:45:13.545",
+   "m": null
+  },
+  {
+   "s": "ResolveConfigStage",
+   "c": "2026-11-27T17:45:13.556532",
+   "f": "2026-11-27T17:45:15.17",
+   "m": null
+  },
+  {
+   "s": "ValidateConfigStage",
+   "c": "2026-11-27T17:45:15.180896",
+   "f": "2026-11-27T17:45:15.192",
+   "m": null
+  },
+  {
+   "s": "AssessPrRiskStage",
+   "c": "2026-11-27T17:45:15.201981",
+   "f": "2026-11-27T17:45:15.207",
+   "m": null
+  },
+  {
+   "s": "FetchChangedFilesStage",
+   "c": "2026-11-27T17:45:15.217527",
+   "f": "2026-11-27T17:45:16.733",
+   "m": null
+  },
+  {
+   "s": "LoadExternalContextStage",
+   "c": "2026-11-27T17:45:16.744033",
+   "f": "2026-11-27T17:45:16.768",
+   "m": null
+  },
+  {
+   "s": "LoadCiEvidenceStage",
+   "c": "2026-11-27T17:45:16.777607",
+   "f": "2026-11-27T17:45:16.782",
+   "m": null
+  },
+  {
+   "s": "InitialCommentStage",
+   "c": "2026-11-27T17:45:16.791037",
+   "f": "2026-11-27T17:45:17.494",
+   "m": null
+  },
+  {
+   "s": "BusinessLogicValidationStage",
+   "c": "2026-11-27T17:45:17.504117",
+   "f": "2026-11-27T17:45:17.536",
+   "m": null
+  },
+  {
+   "s": "CreateSandboxStage",
+   "c": "2026-11-27T17:45:17.545604",
+   "f": "2026-11-27T17:45:21.797",
+   "m": null
+  },
+  {
+   "s": "RunAnalyzersStage",
+   "c": "2026-11-27T17:45:21.805702",
+   "f": "2026-11-27T17:45:21.854",
+   "m": null
+  },
+  {
+   "s": "AgentReviewStage",
+   "c": "2026-11-27T17:45:21.862707",
+   "f": "2026-11-27T17:48:21.818",
+   "m": {
+    "stopAt": "2026-11-27T17:48:13.426Z",
+    "consumer": "review",
+    "acquiredAt": "2026-11-27T17:45:21.794Z",
+    "lastUsedAt": "2026-11-27T17:47:36.238Z",
+    "releasedAt": "2026-11-27T17:47:43.352Z",
+    "firstUsedAt": "2026-11-27T17:45:21.875Z"
+   }
+  },
+  {
+   "s": "AgentReview::generalist",
+   "c": "2026-11-27T17:45:52.850438",
+   "f": "2026-11-27T17:47:43.428",
+   "m": null
+  },
+  {
+   "s": "CreatePrLevelCommentsStage",
+   "c": "2026-11-27T17:48:21.829571",
+   "f": "2026-11-27T17:48:21.835",
+   "m": null
+  },
+  {
+   "s": "ValidateSuggestionsStage",
+   "c": "2026-11-27T17:48:21.844944",
+   "f": "2026-11-27T17:48:21.852",
+   "m": null
+  },
+  {
+   "s": "CreateFileCommentsStage",
+   "c": "2026-11-27T17:48:21.860286",
+   "f": "2026-11-27T17:48:27.242",
+   "m": null
+  },
+  {
+   "s": "AggregateResultsStage",
+   "c": "2026-11-27T17:48:27.251459",
+   "f": "2026-11-27T17:48:27.257",
+   "m": null
+  },
+  {
+   "s": "UpdateCommentsAndGenerateSummaryStage",
+   "c": "2026-11-27T17:48:27.265469",
+   "f": "2026-11-27T17:48:37.499",
+   "m": null
+  },
+  {
+   "s": "DecidePrApprovalStage",
+   "c": "2026-11-27T17:48:37.508782",
+   "f": "2026-11-27T17:48:37.515",
+   "m": null
+  },
+  {
+   "s": "RequestChangesOrApproveStage",
+   "c": "2026-11-27T17:48:37.523003",
+   "f": "2026-11-27T17:48:37.529",
+   "m": null
+  },
+  {
+   "s": "Kody Review Finished",
+   "c": "2026-11-27T17:48:37.573507",
+   "f": null,
+   "m": null
+  }
+ ]
+}
