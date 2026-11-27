@@ -1,0 +1,86 @@
+[
+ {
+  "t": "2026-11-27T21:46:51.093Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] kodus-rules-review-agent.shard: \"opencode_go/deepseek-v4.1-flash\" failed (TRANSIENT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T21:47:02.646Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] code-review-generalist: \"opencode_go/deepseek-v4.1-flash\" failed (TRANSIENT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T21:47:10.463Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] code-review-generalist-recovery: \"opencode_go/deepseek-v4.1-flash\" failed (TRANSIENT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T21:47:25.570Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] code-review-generalist: \"opencode_go/deepseek-v4.1-flash\" failed (TRANSIENT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T21:47:31.253Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] code-review-generalist-recovery: \"opencode_go/deepseek-v4.1-flash\" failed (TRANSIENT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T21:47:32.143Z",
+  "level": "info",
+  "component": "AgentReviewStage",
+  "message": "[AGENT] Titled 0 suggestions (from summary 0, from body 0, over the ceiling 0, empty 0)"
+ },
+ {
+  "t": "2026-11-27T21:47:32.291Z",
+  "level": "info",
+  "component": "UpdateCommentsAndGenerateSummaryStage",
+  "message": "Generating summary for PR#35"
+ },
+ {
+  "t": "2026-11-27T21:47:32.645Z",
+  "level": "info",
+  "component": "CommentManagerService",
+  "message": "GenerateSummaryPR: Start PR#35. After get PR data"
+ },
+ {
+  "t": "2026-11-27T21:47:32.944Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] generateSummaryPR: \"opencode_go/deepseek-v4.1-flash\" failed (TRANSIENT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T21:47:34.384Z",
+  "level": "info",
+  "component": "CommentManagerService",
+  "message": "GenerateSummaryPR: End PR#35. After concatenate"
+ },
+ {
+  "t": "2026-11-27T21:47:36.309Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 4029ms: a663b77f-fb4f-44f4-b368-e989501d54f2"
+ },
+ {
+  "t": "2026-11-27T21:47:36.325Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Stage 'DecidePrApprovalStage' completed in 14ms: a663b77f-fb4f-44f4-b368-e989501d54f2"
+ },
+ {
+  "t": "2026-11-27T21:47:38.906Z",
+  "level": "error",
+  "component": "GithubService approvePullRequest",
+  "message": "Error to approve pull request #35"
+ },
+ {
+  "t": "2026-11-27T21:47:38.917Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Stage 'RequestChangesOrApproveStage' completed in 2591ms: a663b77f-fb4f-44f4-b368-e989501d54f2"
+ }
+]
