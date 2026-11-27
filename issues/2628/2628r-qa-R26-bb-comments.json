@@ -1,0 +1,56 @@
+[
+ {
+  "user": "<token user>",
+  "body": "## Code Review Completed! \ud83d\udd25\n\nThe code review was successfully completed based on your current configurations.\n\n\n\n\nKody Guide: Usage and Configuration\n\n\nInteracting with Kody\n\n- **Request a Review:** Ask Kody to review your PR manually by adding a comment with the `@kody start-review` command at the root of your PR.\n\n- **Validate Business Logic:** Ask Kody to validate your code against business rules by adding a comment with the `@kody -v business-logic` command.\n\n- **Provide Feedback:** Help Kody learn and improve by reacting to its comments with a \ud83d\udc4d for helpful suggestions or a \ud83d\udc4e if improvements are needed.\n\n\n\n\nCurrent Kody Configuration\n\n\nReview Options\n\nThe following review options are enabled or disabled:\n\n| Options                        | Enabled |\n|-------------------------------|---------|\n| **Bug** | \u2705 |\n| **Performance** | \u2705 |\n| **Security** | \u2705 |\n| **Business Logic** | \u2705 |\n\n\n\n**[Access your configuration settings here.](https://qa.web.kodus.io/settings/code-review/global/general)**\n\n\n\n\n<!-- kody-codereview-completed-1795801717162-7rlf13e83t5 -->",
+  "path": null,
+  "line": null
+ },
+ {
+  "user": "<token user>",
+  "body": "`kody|code-review` `bug` `severity-level|medium`\n\n**Math.floor truncates attendance ratio before multiplying by 100**\n\nTruncating the ratio before multiplying by 100 returns 0 for any partial attendance, so every student fails the \u226475 check. Wrap the whole percentage in `Math.floor`, as in `Math.floor((a.present / a.total) * 100)`.\n\nWas this suggestion helpful? Reply with \ud83d\udc4d or \ud83d\udc4e to help Kody learn from this interaction.\n\n```\n\ud83d\udc4d\n```\n\n```\n\ud83d\udc4e\n```",
+  "path": "src/qa2628r/attendance-rate.ts",
+  "line": 5
+ },
+ {
+  "user": "<token user>",
+  "body": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nFile src/qa2628r/attendance-rate.ts, line 5:\n\nMath.floor truncates attendance ratio before multiplying by 100\n\n`Math.floor` is applied to `present / total` before multiplying by 100, so the ratio is truncated to 0 or 1 and the function returns 0 for any partial attendance (e.g. 90/100 \u2192 0). Every student then appears to fail the \u226475 check; the truncation must wrap the whole percentage: `Math.floor((a.present / a.total) * 100)`.\n\nSuggested code:\n\nreturn Math.floor((a.present / a.total) * 100);\n```",
+  "path": "src/qa2628r/attendance-rate.ts",
+  "line": 5
+ },
+ {
+  "user": "<token user>",
+  "body": "`kody|code-review` `bug` `severity-level|medium`\n\n**Division by zero in attendanceRate yields Infinity/NaN**\n\nA student with no recorded classes silently passes, because the undefined ratio propagates into `failsByAbsence`, where `NaN <= 75` is false. Guard the empty case in `attendanceRate` and return 0 before dividing.\n\nWas this suggestion helpful? Reply with \ud83d\udc4d or \ud83d\udc4e to help Kody learn from this interaction.\n\n```\n\ud83d\udc4d\n```\n\n```\n\ud83d\udc4e\n```",
+  "path": "src/qa2628r/attendance-rate.ts",
+  "line": 5
+ },
+ {
+  "user": "<token user>",
+  "body": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nFile src/qa2628r/attendance-rate.ts, line 5:\n\nDivision by zero in attendanceRate yields Infinity/NaN\n\n`a.total === 0` makes `a.present / a.total` produce `Infinity`/`NaN`, which propagates through `attendanceRate` into `failsByAbsence`, where `NaN <= 75` is `false` \u2014 a student with no recorded classes is silently treated as passing. Guard the empty case and return 0 before dividing.\n\nSuggested code:\n\nif (a.total === 0) return 0;\n  return Math.floor(a.present / a.total) * 100;\n```",
+  "path": "src/qa2628r/attendance-rate.ts",
+  "line": 5
+ },
+ {
+  "user": "<token user>",
+  "body": "`kody|code-review` `bug` `severity-level|high`\n\n**Loop condition `i <= own.length` reads past end and throws on empty grades**\n\nReading `own[own.length]` is `undefined`, so `own[i].score` throws on every call, and a student with no grades crashes immediately. Change the bound to `i < own.length`.\n\nWas this suggestion helpful? Reply with \ud83d\udc4d or \ud83d\udc4e to help Kody learn from this interaction.\n\n```\n\ud83d\udc4d\n```\n\n```\n\ud83d\udc4e\n```",
+  "path": "src/qa2628r/grade-book.ts",
+  "line": 7
+ },
+ {
+  "user": "<token user>",
+  "body": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nFile src/qa2628r/grade-book.ts, lines 7-8:\n\nLoop condition `i <= own.length` reads past end and throws on empty grades\n\nThe loop condition `i <= own.length` iterates once past the last element; `own[own.length]` is `undefined`, so `own[i].score` throws `TypeError` on every call. It also crashes immediately for a student with no grades (`own.length === 0`); the bound must be `i < own.length`.\n```",
+  "path": "src/qa2628r/grade-book.ts",
+  "line": 7
+ },
+ {
+  "user": "<token user>",
+  "body": "`kody|code-review` `bug` `severity-level|medium`\n\n**recoveryList returns students above passing mark instead of below**\n\nThe filter returns exactly the passing students and omits the ones needing recovery, contradicting the doc comment. Invert the comparison to `< passingMark`.\n\nWas this suggestion helpful? Reply with \ud83d\udc4d or \ud83d\udc4e to help Kody learn from this interaction.\n\n```\n\ud83d\udc4d\n```\n\n```\n\ud83d\udc4e\n```",
+  "path": "src/qa2628r/grade-book.ts",
+  "line": 16
+ },
+ {
+  "user": "<token user>",
+  "body": "`kody|code-review` **Prompt for LLM**: copy into your coding agent\n\n```text\nFile src/qa2628r/grade-book.ts, line 16:\n\nrecoveryList returns students above passing mark instead of below\n\nThe filter keeps students whose average is *greater* than `passingMark`, but the doc comment says students below the passing mark go to recovery, so the function returns exactly the passing students and omits the ones needing recovery. Invert the comparison to `< passingMark`.\n\nSuggested code:\n\nreturn ids.filter((id) => weightedAverage(grades, id) < passingMark);\n```",
+  "path": "src/qa2628r/grade-book.ts",
+  "line": 16
+ }
+]
