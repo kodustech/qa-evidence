@@ -1,0 +1,110 @@
+[
+ {
+  "case": "github_ok_yaml_false",
+  "platform": "GITHUB",
+  "noticePosted": 1,
+  "reaction": 1,
+  "licenseNoticePostedAt": "2026-11-27T19:13:54.299Z",
+  "status": "skipped",
+  "stageWarns": [
+   "User not licensed but company has licenses"
+  ],
+  "adapterLogs": []
+ },
+ {
+  "case": "github_502",
+  "platform": "GITHUB",
+  "noticePosted": 1,
+  "reaction": 1,
+  "licenseNoticePostedAt": "2026-11-27T19:13:54.302Z",
+  "status": "skipped",
+  "stageWarns": [
+   "User not licensed but company has licenses"
+  ],
+  "adapterLogs": []
+ },
+ {
+  "case": "github_rate_limit_403",
+  "platform": "GITHUB",
+  "noticePosted": 1,
+  "reaction": 1,
+  "licenseNoticePostedAt": "2026-11-27T19:13:54.304Z",
+  "status": "skipped",
+  "stageWarns": [
+   "User not licensed but company has licenses"
+  ],
+  "adapterLogs": []
+ },
+ {
+  "case": "github_429",
+  "platform": "GITHUB",
+  "noticePosted": 1,
+  "reaction": 1,
+  "licenseNoticePostedAt": "2026-11-27T19:13:54.305Z",
+  "status": "skipped",
+  "stageWarns": [
+   "User not licensed but company has licenses"
+  ],
+  "adapterLogs": []
+ },
+ {
+  "case": "github_404",
+  "platform": "GITHUB",
+  "noticePosted": 1,
+  "reaction": 1,
+  "licenseNoticePostedAt": "2026-11-27T19:13:54.307Z",
+  "status": "skipped",
+  "stageWarns": [
+   "User not licensed but company has licenses"
+  ],
+  "adapterLogs": []
+ },
+ {
+  "case": "bitbucket_ok_yaml_false",
+  "platform": "BITBUCKET",
+  "noticePosted": 1,
+  "reaction": 0,
+  "licenseNoticePostedAt": "2026-11-27T19:13:54.308Z",
+  "status": "skipped",
+  "stageWarns": [
+   "User not licensed but company has licenses"
+  ],
+  "adapterLogs": []
+ },
+ {
+  "case": "bitbucket_502",
+  "platform": "BITBUCKET",
+  "noticePosted": 1,
+  "reaction": 0,
+  "licenseNoticePostedAt": "2026-11-27T19:13:54.309Z",
+  "status": "skipped",
+  "stageWarns": [
+   "User not licensed but company has licenses"
+  ],
+  "adapterLogs": []
+ },
+ {
+  "case": "bitbucket_429",
+  "platform": "BITBUCKET",
+  "noticePosted": 1,
+  "reaction": 0,
+  "licenseNoticePostedAt": "2026-11-27T19:13:54.310Z",
+  "status": "skipped",
+  "stageWarns": [
+   "User not licensed but company has licenses"
+  ],
+  "adapterLogs": []
+ },
+ {
+  "case": "bitbucket_404",
+  "platform": "BITBUCKET",
+  "noticePosted": 1,
+  "reaction": 0,
+  "licenseNoticePostedAt": "2026-11-27T19:13:54.312Z",
+  "status": "skipped",
+  "stageWarns": [
+   "User not licensed but company has licenses"
+  ],
+  "adapterLogs": []
+ }
+]
