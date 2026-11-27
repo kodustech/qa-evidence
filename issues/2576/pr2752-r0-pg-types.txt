@@ -1,0 +1,7 @@
+R0 read-only, all QA orgs, active code_review_config rows, by (conversation type, implicitReplies type):
+global []
+repository []
+directory []
+slot b rows with any conversation key (global): [['0']]
+slot b rows with any conversation key (repo): [['0']]
+inactive rows mentioning implicitReplies: [['20']]
