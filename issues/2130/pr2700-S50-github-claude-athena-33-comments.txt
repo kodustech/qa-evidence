@@ -1,0 +1,191 @@
+GitHub kodus-olimpo/claude-athena#33: PR body + all issue comments + review comments, read via REST on 2026-11-27. Author logins omitted (comments are posted by the integration token user).
+
+=== PR description ===
+QA for kodustech/kodus-ai#2700
+
+<!-- kody-pr-summary:start -->
+## Summary
+
+Adds a new grades module (`qa2700/grades.ts`) that introduces grade recording, per-student average calculation, and honor-roll evaluation.
+
+## Changes
+
+- Defines `GradeRecord` and `GradeRepository` interfaces to represent a student grade and the persistence operations for saving and retrieving grades by student.
+- Adds `GradeService`, which:
+  - Records a grade for a student/course pair and persists it through the repository.
+  - Calculates a student's average by loading their grades and computing the mean.
+  - Determines honor-roll eligibility based on whether the student's average meets the 90-point threshold.
+
+## Review findings
+
+- Grade values are saved without validation against the expected 0–100 range.
+- The average loop uses `i <= grades.length`, which reads past the end of the array.
+- `isHonorRoll` compares an unawaited `Promise`, so it does not evaluate the actual average and always returns `false`.
+<!-- kody-pr-summary:end -->
+
+=== reviews: ['COMMENTED', 'COMMENTED', 'COMMENTED']
+
+=== issue comment 7227542995 created 2026-11-27T20:28:38Z updated 2026-11-27T20:30:34Z
+## Code Review Completed! 🔥
+
+The code review was successfully completed based on your current configurations.
+
+
+
+<details>
+<summary>Kody Guide: Usage and Configuration</summary>
+
+<details>
+<summary>Interacting with Kody</summary>
+
+- **Request a Review:** Ask Kody to review your PR manually by adding a comment with the `@kody start-review` command at the root of your PR.
+
+- **Validate Business Logic:** Ask Kody to validate your code against business rules by adding a comment with the `@kody -v business-logic` command.
+
+- **Provide Feedback:** Help Kody learn and improve by reacting to its comments with a 👍 for helpful suggestions or a 👎 if improvements are needed.
+
+</details>
+
+<details>
+<summary>Current Kody Configuration</summary>
+
+<details>
+<summary>Review Options</summary>
+
+The following review options are enabled or disabled:
+
+| Options                        | Enabled |
+|-------------------------------|---------|
+| **Bug** | ✅ |
+| **Performance** | ✅ |
+| **Security** | ✅ |
+| **Business Logic** | ✅ |
+
+</details>
+
+**[Access your configuration settings here.](https://qa.web.kodus.io/settings/code-review/global/general)**
+
+</details>
+</details>
+
+<!-- kody-codereview-completed-1795811434125-241w2od3ukc -->
+<!-- kody-codereview -->
+&#8203;
+
+=== review comment 4723425135 path=qa2700/grades.ts line=17 created 2026-11-27T20:30:20Z
+![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Kody Rules](https://img.shields.io/badge/Kody_Rules-4527A0) ![high](https://img.shields.io/badge/severity_level-high-6B6B92)
+
+
+**recordGrade saves unvalidated grade values outside 0-100**
+
+Without a bounds check, `recordGrade` stores out-of-range values like -5 or 250, violating rule QA2700MARK. Reject non-finite values outside 0-100 before `this.repo.save(record)` is reached.
+
+Kody rule violation: [qa2700 grade values must be validated QA2700MARK](https://qa.web.kodus.io/settings/code-review/global/kody-rules/de8fa2b7-c076-4847-988d-4b2e63bb4d80?teamId=8aecb3fa-b4e5-46e4-99ea-cdcf7007363d)
+
+
+
+<details>
+<summary>Prompt for LLM</summary>
+
+````text
+File qa2700/grades.ts, line 17:
+
+recordGrade saves unvalidated grade values outside 0-100
+
+recordGrade persists a student grade without any bounds check, so a caller can store values like -5 or 250. Rule QA2700MARK requires every qa2700 function that stores or updates a grade to reject values outside 0-100 before persisting. Validate the incoming value (including rejecting NaN/non-finite numbers) and throw before calling this.repo.save(record), so the repository is never reached with an out-of-range grade.
+
+Kody rule violation: [qa2700 grade values must be validated QA2700MARK](https://qa.web.kodus.io/settings/code-review/global/kody-rules/de8fa2b7-c076-4847-988d-4b2e63bb4d80?teamId=8aecb3fa-b4e5-46e4-99ea-cdcf7007363d)
+
+Suggested code:
+
+if (!Number.isFinite(value) || value < 0 || value > 100) {
+    throw new RangeError(`Grade value must be between 0 and 100, received ${value}`);
+}
+await this.repo.save(record);
+````
+
+</details>
+
+
+<sub>Talk to Kody by mentioning @kody</sub>
+
+
+<sub>Was this suggestion helpful? React with 👍 or 👎 to help Kody learn from this interaction.</sub>
+
+<!-- kody-codereview -->&#8203;
+&#8203;
+
+=== review comment 4723425430 path=qa2700/grades.ts line=26 created 2026-11-27T20:30:23Z
+![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Bug](https://img.shields.io/badge/Bug-B71C1C) ![high](https://img.shields.io/badge/severity_level-high-6B6B92)
+
+
+**Loop condition `i <= grades.length` reads past end of array**
+
+Use `i < grades.length`.
+
+
+
+<details>
+<summary>Prompt for LLM</summary>
+
+````text
+File qa2700/grades.ts, lines 24-26:
+
+Loop condition `i <= grades.length` reads past end of array
+
+The loop condition `i <= grades.length` reads one element past the end of the array, so `grades[i]` is `undefined` and `grades[i].value` throws a `TypeError` on every call to `averageFor` (including empty arrays, where `i = 0` already satisfies `0 <= 0`) — the method never returns a value. Use `i < grades.length`.
+
+Suggested code:
+
+for (let i = 0; i < grades.length; i++) {
+    total += grades[i].value;
+}
+````
+
+</details>
+
+
+<sub>Talk to Kody by mentioning @kody</sub>
+
+
+<sub>Was this suggestion helpful? React with 👍 or 👎 to help Kody learn from this interaction.</sub>
+
+<!-- kody-codereview -->&#8203;
+&#8203;
+
+=== review comment 4723425683 path=qa2700/grades.ts line=32 created 2026-11-27T20:30:26Z
+![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Bug](https://img.shields.io/badge/Bug-B71C1C) ![medium](https://img.shields.io/badge/severity_level-medium-1A7BBE)
+
+
+**isHonorRoll compares unawaited Promise, so it always returns false**
+
+Await the call and drop the cast.
+
+
+
+<details>
+<summary>Prompt for LLM</summary>
+
+````text
+File qa2700/grades.ts, lines 31-32:
+
+isHonorRoll compares unawaited Promise, so it always returns false
+
+`averageFor` returns a `Promise` that is never awaited, so `avg` is a Promise object and `avg >= 90` coerces to `NaN >= 90`, making `isHonorRoll` always return `false`; the `as unknown as number` cast hides the type error that would have caught this. Add `await` and remove the cast.
+
+Suggested code:
+
+const avg = await this.averageFor(studentId);
+return avg >= 90;
+````
+
+</details>
+
+
+<sub>Talk to Kody by mentioning @kody</sub>
+
+
+<sub>Was this suggestion helpful? React with 👍 or 👎 to help Kody learn from this interaction.</sub>
+
+<!-- kody-codereview -->&#8203;
+&#8203;
