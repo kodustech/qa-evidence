@@ -1,0 +1,184 @@
+[
+ {
+  "t": "2026-11-27T19:25:36.755Z",
+  "level": "info",
+  "component": "SavePullRequestUseCase",
+  "message": "GitLab webhook actor replaced by resolved MR author",
+  "error": null
+ },
+ {
+  "t": "2026-11-27T19:25:37.022Z",
+  "level": "error",
+  "component": "SavePullRequestUseCase",
+  "message": "Failed to save pull request data for PR#21",
+  "error": [
+   "TypeError",
+   "files.map is not a function",
+   [
+    "    at GitlabService.getFilesByPullRequestId (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:2599:22)"
+   ]
+  ]
+ },
+ {
+  "t": "2026-11-27T19:25:37.214Z",
+  "level": "info",
+  "component": "RunCodeReviewAutomationUseCase",
+  "message": "GitLab webhook actor replaced by resolved MR author",
+  "error": null
+ },
+ {
+  "t": "2026-11-27T19:25:37.354Z",
+  "level": "info",
+  "component": "RunCodeReviewAutomationUseCase",
+  "message": "RunCodeReviewAutomationUseCase PR#21",
+  "error": null
+ },
+ {
+  "t": "2026-11-27T19:25:37.628Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Starting pipeline: CodeReviewPipeline (ID: db9d5ae2-5093-4922-abfa-e300041cd1b5)",
+  "error": null
+ },
+ {
+  "t": "2026-11-27T19:25:37.713Z",
+  "level": "warn",
+  "component": "PermissionValidationService",
+  "message": "Plan requires licensed user, NOT_ERROR",
+  "error": null
+ },
+ {
+  "t": "2026-11-27T19:25:37.720Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Stage 'ValidatePrerequisitesStage' completed in 92ms: db9d5ae2-5093-4922-abfa-e300041cd1b5",
+  "error": null
+ },
+ {
+  "t": "2026-11-27T19:25:37.733Z",
+  "level": "info",
+  "component": "ValidateNewCommitsStage",
+  "message": "No last analyzed commit found, analyzing all commits",
+  "error": null
+ },
+ {
+  "t": "2026-11-27T19:25:37.960Z",
+  "level": "error",
+  "component": "GitlabService getCommitsForPullRequestForCodeReview",
+  "message": "Error fetching commits for PR #21",
+  "error": [
+   "TypeError",
+   "commits is not iterable",
+   [
+    "    at GitlabService.getCommitsForPullRequestForCodeReview (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:3412:34)"
+   ]
+  ]
+ },
+ {
+  "t": "2026-11-27T19:25:37.961Z",
+  "level": "error",
+  "component": "PullRequestHandlerService",
+  "message": "Error fetching new commits since last execution",
+  "error": [
+   "TypeError",
+   "commits is not iterable",
+   [
+    "    at GitlabService.getCommitsForPullRequestForCodeReview (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:3412:34)"
+   ]
+  ]
+ },
+ {
+  "t": "2026-11-27T19:25:37.968Z",
+  "level": "error",
+  "component": "PipelineExecutor",
+  "message": "Stage 'ValidateNewCommitsStage' failed: commits is not iterable",
+  "error": [
+   "TypeError",
+   "commits is not iterable",
+   [
+    "    at GitlabService.getCommitsForPullRequestForCodeReview (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:3412:34)"
+   ]
+  ]
+ },
+ {
+  "t": "2026-11-27T19:25:37.969Z",
+  "level": "warn",
+  "component": "PipelineExecutor",
+  "message": "Pipeline 'CodeReviewPipeline:db9d5ae2-5093-4922-abfa-e300041cd1b5' continuing despite error in stage 'ValidateNewCommitsStage'",
+  "error": null
+ },
+ {
+  "t": "2026-11-27T19:25:38.431Z",
+  "level": "error",
+  "component": "PullRequestHandlerService",
+  "message": "Error fetching changed files metadata",
+  "error": [
+   "TypeError",
+   "files.map is not a function",
+   [
+    "    at GitlabService.getFilesByPullRequestId (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:2599:22)"
+   ]
+  ]
+ },
+ {
+  "t": "2026-11-27T19:25:38.432Z",
+  "level": "error",
+  "component": "ResolveConfigStage",
+  "message": "Error in ResolveConfigStage for PR#21",
+  "error": [
+   "TypeError",
+   "files.map is not a function",
+   [
+    "    at GitlabService.getFilesByPullRequestId (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:2599:22)"
+   ]
+  ]
+ },
+ {
+  "t": "2026-11-27T19:25:38.439Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Stage 'ResolveConfigStage' completed in 468ms: db9d5ae2-5093-4922-abfa-e300041cd1b5",
+  "error": null
+ },
+ {
+  "t": "2026-11-27T19:25:38.440Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Pipeline 'CodeReviewPipeline' skipped due to SKIP status db9d5ae2-5093-4922-abfa-e300041cd1b5",
+  "error": null
+ },
+ {
+  "t": "2026-11-27T19:25:38.440Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Finished pipeline: CodeReviewPipeline (ID: db9d5ae2-5093-4922-abfa-e300041cd1b5)",
+  "error": null
+ },
+ {
+  "t": "2026-11-27T19:25:38.581Z",
+  "level": "error",
+  "component": "GitlabService",
+  "message": "Error removing reactions from MR#21",
+  "error": [
+   "TypeError",
+   "awards.filter is not a function",
+   [
+    "    at GitlabService.removeReactionsFromPR (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:4413:43)"
+   ]
+  ]
+ },
+ {
+  "t": "2026-11-27T19:25:38.831Z",
+  "level": "info",
+  "component": "CodeReviewHandlerService",
+  "message": "Review skipped for PR#21 - adding skip reaction",
+  "error": null
+ },
+ {
+  "t": "2026-11-27T19:25:38.843Z",
+  "level": "info",
+  "component": "AutomationCodeReviewService",
+  "message": "Successfully handled pull request for PR#21",
+  "error": null
+ }
+]
