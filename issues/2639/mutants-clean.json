@@ -1,0 +1,110 @@
+{
+ "MA": {
+  "diff": "diff --git a/libs/core/observability/exporters/mongodb-exporter.ts b/libs/core/observability/exporters/mongodb-exporter.ts\nindex c5259b1da..182ff0cf5 100644\n--- a/libs/core/observability/exporters/mongodb-exporter.ts\n+++ b/libs/core/observability/exporters/mongodb-exporter.ts\n@@ -1084 +1083,0 @@ export class MongoDBExporter implements LogProcessor, ObservabilityExporter {\n-            ctx?.params,\n",
+  "results": {
+   "R1": "failed",
+   "R1_msg": [
+    "Error: expect(received).toEqual(expected) // deep equality",
+    "",
+    "- Expected  - 4",
+    "+ Received  + 4",
+    "",
+    "  Array ["
+   ],
+   "R1b": "failed",
+   "R1b_msg": [
+    "Error: expect(received).toEqual(expected) // deep equality",
+    "",
+    "- Expected  - 4",
+    "+ Received  + 4",
+    "",
+    "  Array ["
+   ],
+   "R2": "passed",
+   "R3": "passed",
+   "R6": "failed",
+   "R6_msg": [
+    "Error: expect(received).toMatchObject(expected)",
+    "",
+    "- Expected  - 2",
+    "+ Received  + 2",
+    "",
+    "  Object {"
+   ],
+   "R13": "passed"
+  }
+ },
+ "MB": {
+  "diff": "diff --git a/libs/core/observability/exporters/mongodb-exporter.ts b/libs/core/observability/exporters/mongodb-exporter.ts\nindex c5259b1da..7788e1dc4 100644\n--- a/libs/core/observability/exporters/mongodb-exporter.ts\n+++ b/libs/core/observability/exporters/mongodb-exporter.ts\n@@ -1086 +1085,0 @@ export class MongoDBExporter implements LogProcessor, ObservabilityExporter {\n-            ctx?.payload,\n",
+  "results": {
+   "R1": "passed",
+   "R1b": "passed",
+   "R2": "failed",
+   "R2_msg": [
+    "Error: expect(received).toEqual(expected) // deep equality",
+    "",
+    "- Expected  - 4",
+    "+ Received  + 4",
+    "",
+    "  Array ["
+   ],
+   "R3": "passed",
+   "R6": "failed",
+   "R6_msg": [
+    "Error: expect(received).toMatchObject(expected)",
+    "",
+    "- Expected  - 2",
+    "+ Received  + 2",
+    "",
+    "  Object {"
+   ],
+   "R13": "failed",
+   "R13_msg": [
+    "Error: expect(received).toBe(expected) // Object.is equality",
+    "",
+    "Expected: \"qa2639r-org-2\"",
+    "Received: \"unknown\"",
+    "    at Object.toBe (<run>/wt-merge/apps/api/src/cron/__tests__/qa2639r.spec.ts:242:43)",
+    "    at processTicksAndRejections (node:internal/process/task_queues:104:5)"
+   ]
+  }
+ },
+ "MC": {
+  "diff": "diff --git a/libs/core/observability/exporters/mongodb-exporter.ts b/libs/core/observability/exporters/mongodb-exporter.ts\nindex c5259b1da..b2845332a 100644\n--- a/libs/core/observability/exporters/mongodb-exporter.ts\n+++ b/libs/core/observability/exporters/mongodb-exporter.ts\n@@ -1094,5 +1094 @@ export class MongoDBExporter implements LogProcessor, ObservabilityExporter {\n-        return (\n-            candidates.find((candidate) =>\n-                carries(candidate, 'organizationId'),\n-            ) ?? candidates.find((candidate) => carries(candidate, 'teamId'))\n-        );\n+        return candidates.find((candidate) => candidate && typeof candidate === 'object');\n",
+  "results": {
+   "R1": "passed",
+   "R1b": "passed",
+   "R2": "passed",
+   "R3": "passed",
+   "R6": "failed",
+   "R6_msg": [
+    "Error: expect(received).toMatchObject(expected)",
+    "",
+    "- Expected  - 2",
+    "+ Received  + 2",
+    "",
+    "  Object {"
+   ],
+   "R13": "passed"
+  }
+ },
+ "MD": {
+  "diff": "diff --git a/libs/core/observability/exporters/mongodb-exporter.ts b/libs/core/observability/exporters/mongodb-exporter.ts\nindex c5259b1da..5f409e293 100644\n--- a/libs/core/observability/exporters/mongodb-exporter.ts\n+++ b/libs/core/observability/exporters/mongodb-exporter.ts\n@@ -1081,0 +1082 @@ export class MongoDBExporter implements LogProcessor, ObservabilityExporter {\n+            ctx?.payload,\n@@ -1086 +1086,0 @@ export class MongoDBExporter implements LogProcessor, ObservabilityExporter {\n-            ctx?.payload,\n",
+  "results": {
+   "R1": "passed",
+   "R1b": "passed",
+   "R2": "passed",
+   "R3": "passed",
+   "R6": "failed",
+   "R6_msg": [
+    "Error: expect(received).toMatchObject(expected)",
+    "",
+    "- Expected  - 2",
+    "+ Received  + 2",
+    "",
+    "  Object {"
+   ],
+   "R13": "passed"
+  }
+ }
+}
