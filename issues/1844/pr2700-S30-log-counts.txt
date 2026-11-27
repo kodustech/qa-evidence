@@ -1,0 +1,23 @@
+S30 (GitHub claude-athena#35, main unreachable, fallback DeepSeek, approval on)
+Read-only queries on QA Mongo observability_logs_ts, 2026-11-27. org ids are the slot-a QA test orgs.
+
+## Skipping auto-approve (expected 0)
+query: org=1376936a-961c-4267-862b-cbc19d309ce4 window 2026-11-27T21:46:00Z..2026-11-27T21:52:00Z message =~ /Skipping auto-approve/
+result: {"total": 189, "hits": 0}
+
+## approval / failover / summary lines
+query: org=1376936a-961c-4267-862b-cbc19d309ce4 window 2026-11-27T21:46:00Z..2026-11-27T21:52:00Z message =~ /approv|failover|GenerateSummaryPR|Decide/
+result: {"total": 189, "hits": 13}
+  2026-11-27T21:46:51.093Z | warn | ModelFailover | [LLM-ERROR] [model-failover] kodus-rules-review-agent.shard: "opencode_go/deepseek-v4.1-flash" failed (TRANSIENT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+  2026-11-27T21:47:02.646Z | warn | ModelFailover | [LLM-ERROR] [model-failover] code-review-generalist: "opencode_go/deepseek-v4.1-flash" failed (TRANSIENT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+  2026-11-27T21:47:10.463Z | warn | ModelFailover | [LLM-ERROR] [model-failover] code-review-generalist-recovery: "opencode_go/deepseek-v4.1-flash" failed (TRANSIENT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+  2026-11-27T21:47:25.570Z | warn | ModelFailover | [LLM-ERROR] [model-failover] code-review-generalist: "opencode_go/deepseek-v4.1-flash" failed (TRANSIENT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+  2026-11-27T21:47:31.253Z | warn | ModelFailover | [LLM-ERROR] [model-failover] code-review-generalist-recovery: "opencode_go/deepseek-v4.1-flash" failed (TRANSIENT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+  2026-11-27T21:47:32.645Z | info | CommentManagerService | GenerateSummaryPR: Start PR#35. After get PR data
+  2026-11-27T21:47:32.944Z | warn | ModelFailover | [LLM-ERROR] [model-failover] generateSummaryPR: "opencode_go/deepseek-v4.1-flash" failed (TRANSIENT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+  2026-11-27T21:47:34.384Z | info | CommentManagerService | GenerateSummaryPR: End PR#35. After concatenate
+  2026-11-27T21:47:36.325Z | info | PipelineExecutor | Stage 'DecidePrApprovalStage' completed in 14ms: a663b77f-fb4f-44f4-b368-e989501d54f2
+  2026-11-27T21:47:38.906Z | error | GithubService approvePullRequest | Error to approve pull request #35
+  2026-11-27T21:49:22.778Z | info | CommentManagerService | GenerateSummaryPR: Start PR#9. After get PR data
+  2026-11-27T21:49:23.168Z | info | CommentManagerService | GenerateSummaryPR: Start PR#9. After get PR data
+  2026-11-27T21:49:24.680Z | info | PipelineExecutor | Stage 'DecidePrApprovalStage' completed in 13ms: 10a971a0-e45c-48b5-97ec-cbd13920cdf7
