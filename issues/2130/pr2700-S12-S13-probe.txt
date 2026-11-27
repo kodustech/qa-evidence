@@ -1,0 +1,3 @@
+perminute 201 {"ok": true, "code": "rate_limit", "httpStatus": 429, "message": "Rate-limited \u2014 the key works but the provider is throttling right now. Wait a moment and save again, or lower Max Concurrent Requests in Advanced settings."}
+billing 201 {"ok": true, "code": "rate_limit", "httpStatus": 429, "message": "Rate-limited \u2014 the key works but the provider is throttling right now. Wait a moment and save again, or lower Max Concurrent Requests in Advanced settings."}
+61s 201 {"ok": true, "code": "rate_limit", "httpStatus": 429, "message": "Rate-limited \u2014 the key works but the provider is throttling right now. Wait a moment and save again, or lower Max Concurrent Requests in Advanced settings."}
