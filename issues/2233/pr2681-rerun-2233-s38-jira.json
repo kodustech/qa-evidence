@@ -1,0 +1,102 @@
+{
+ "s38-jira-replies.json": {
+  "cmd": "@kody -v business-logic https://jira.internal.example/browse/QAS-60",
+  "cmd_id": 7229935556,
+  "cmd_at": "2026-11-27T23:10:47Z",
+  "replies": [
+   {
+    "id": 7229937143,
+    "user": "other",
+    "created": "2026-11-27T23:10:54Z",
+    "updated": "2026-11-27T23:10:54Z",
+    "body": "## ⚠️ Jira didn't answer\n\nI couldn't read the referenced task, so nothing was validated. This is not about the pull request; try `@kody -v business-logic` again later, or ask an admin to check the plugin connection."
+   }
+  ]
+ },
+ "s38-jira-replies-2.json": {
+  "cmd_id": 7230012378,
+  "cmd_at": "2026-11-27T23:16:28Z",
+  "replies": [
+   {
+    "id": 7230013723,
+    "created": "2026-11-27T23:16:34Z",
+    "updated": "2026-11-27T23:16:34Z",
+    "body": "No task-management MCP (Jira, Git Issues, Linear, Notion, ClickUp, etc.) is connected for this organization, so business rules validation has nothing to compare the PR against. Connect one in the Kodus settings to use this command."
+   }
+  ]
+ },
+ "s38-attempt1-runs-logs.json": {
+  "runs_query": "const r=db.businessValidationRuns.find({organizationId:'bd1ccc3d-d16c-404d-a3de-1a2c49b5caf0',repositoryName:'poison_store',pullRequestNumber:504}).sort({createdAt:1}).toArray().map(x=>({createdAt:x.createdAt,door:x.door,outcome:x.outcome,skipReason:x.skipReason,references:x.references,attempts:x.attempts,trackers:x.trackers,tasks:x.tasks.map(t=>({id:t.id,tracker:t.tracker}))}));print(JSON.stringify(r))",
+  "runs": [
+   {
+    "createdAt": "2026-11-27T23:10:53.926Z",
+    "door": "command",
+    "outcome": "skipped",
+    "skipReason": "tracker_unavailable",
+    "references": [
+     {
+      "kind": "key",
+      "id": "QAS-60",
+      "raw": "https://jira.internal.example/browse/QAS-60",
+      "source": "command",
+      "intent": "closes"
+     }
+    ],
+    "attempts": [
+     {
+      "reference": "QAS-60",
+      "tracker": "Jira",
+      "status": "error",
+      "message": "Failed to connect to any MCP server. Check MCP server health and credentials."
+     }
+    ],
+    "trackers": [
+     "Jira"
+    ],
+    "tasks": []
+   }
+  ],
+  "logs_query": "observability_logs_ts org PoisonIvy 23:10:40–23:12Z message~BUSINESS|Business|Jira|tracker|MCP|Atlassian",
+  "logs": [
+   {
+    "t": "2026-11-27T23:10:45.145Z",
+    "level": "info",
+    "component": "BusinessLogicValidationStage",
+    "message": "[BUSINESS-LOGIC] Skipped (option_off): Business logic validation is disabled in the code review configuration.",
+    "meta": {
+     "component": "BusinessLogicValidationStage",
+     "level": "info",
+     "organizationId": "bd1ccc3d-d16c-404d-a3de-1a2c49b5caf0",
+     "teamId": "unknown",
+     "tenantId": "bd1ccc3d-d16c-404d-a3de-1a2c49b5caf0"
+    }
+   },
+   {
+    "t": "2026-11-27T23:10:45.156Z",
+    "level": "info",
+    "component": "PipelineExecutor",
+    "message": "Stage 'BusinessLogicValidationStage' completed in 27ms: 3e3d0cba-0f27-4bec-b2eb-f34b788cc972",
+    "meta": {
+     "component": "PipelineExecutor",
+     "level": "info",
+     "organizationId": "bd1ccc3d-d16c-404d-a3de-1a2c49b5caf0",
+     "teamId": "2841743f-474a-42d1-b953-7469dcd52eb5",
+     "tenantId": "bd1ccc3d-d16c-404d-a3de-1a2c49b5caf0"
+    }
+   },
+   {
+    "t": "2026-11-27T23:10:53.508Z",
+    "level": "info",
+    "component": "BusinessValidationService",
+    "message": "Business validation skipped (tracker_unavailable)",
+    "meta": {
+     "component": "BusinessValidationService",
+     "level": "info",
+     "organizationId": "bd1ccc3d-d16c-404d-a3de-1a2c49b5caf0",
+     "teamId": "2841743f-474a-42d1-b953-7469dcd52eb5",
+     "tenantId": "bd1ccc3d-d16c-404d-a3de-1a2c49b5caf0"
+    }
+   }
+  ]
+ }
+}
