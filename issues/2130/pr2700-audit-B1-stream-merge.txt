@@ -1,0 +1,12 @@
+stream-json-tool-only | url=/model/minimax.minimax-m3.1/converse-stream | toolChoice={"any":{}}
+    parts=["stream-start","response-metadata","text-start","text-delta(\"{\\\"violations\\\":[{\\\"body\\\":\\\"bug\\\",\\\"line\\\":12}]}\")","text-end","finish({\"unified\":\"stop\",\"raw\":\"tool_use\"};fromTool=true)"]
+    joinedText="{\"violations\":[{\"body\":\"bug\",\"line\":12}]}"
+stream-prose-then-json-tool | url=/model/minimax.minimax-m3.1/converse-stream | toolChoice={"any":{}}
+    parts=["stream-start","response-metadata","text-start","text-delta(\"If nothing is wrong I would return {\\\"violations\\\":[]}.\")","text-end","text-start","text-delta(\"{\\\"violations\\\":[{\\\"body\\\":\\\"bug\\\",\\\"line\\\":12}]}\")","text-end","finish({\"unified\":\"stop\",\"raw\":\"tool_use\"};fromTool=true)"]
+    joinedText="If nothing is wrong I would return {\"violations\":[]}.{\"violations\":[{\"body\":\"bug\",\"line\":12}]}"
+stream-text-only-json-mode | url=/model/minimax.minimax-m3.1/converse-stream | toolChoice={"any":{}}
+    parts=["stream-start","response-metadata","text-start","text-delta(\"{\\\"violations\\\":\")","text-delta(\"[]}\")","text-end","finish({\"unified\":\"stop\",\"raw\":\"end_turn\"};fromTool=false)"]
+    joinedText="{\"violations\":[]}"
+stream-text-only-no-json-mode | url=/model/minimax.minimax-m3.1/converse-stream | toolChoice=undefined
+    parts=["stream-start","response-metadata","text-start","text-delta(\"{\\\"violations\\\":\")","text-delta(\"[]}\")","text-end","finish({\"unified\":\"stop\",\"raw\":\"end_turn\"};fromTool=false)"]
+    joinedText="{\"violations\":[]}"
