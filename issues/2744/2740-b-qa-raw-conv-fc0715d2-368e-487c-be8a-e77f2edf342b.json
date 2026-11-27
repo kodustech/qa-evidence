@@ -1,0 +1,116 @@
+[
+ {
+  "timestamp": "2026-11-27T21:52:35.753Z",
+  "level": "error",
+  "message": "Conversation agent declared an action it never performed",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "error",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+    "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa"
+   },
+   "threadId": "TR-cmc-1fxixl",
+   "intendedTool": "exec",
+   "authorizingQuote": "run `seq 1 3000000` and tell me the last number it printed",
+   "component": "ConversationAgentProvider",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:35.753Z",
+  "level": "info",
+  "message": "Finish conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+    "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa"
+   },
+   "thread": {
+    "id": "TR-cmc-1fxixl",
+    "metadata": {
+     "description": "Thread TR-cmc-1fxixl",
+     "type": "thread",
+     "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+     "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+     "repositoryId": "d7ecce61-5e9d-4e3d-b60a-67a295687125",
+     "userId": "3ea4cafe-5ea0-42ba-ab6c-153f2c1f46ea",
+     "suggestionCommentId": 913402498
+    }
+   },
+   "steps": 3,
+   "usage": {
+    "inputTokens": 32321,
+    "outputTokens": 533,
+    "totalTokens": 32854,
+    "reasoningTokens": 252,
+    "cacheReadTokens": 29824,
+    "cacheWriteTokens": null
+   },
+   "component": "ConversationAgentProvider",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:40.145Z",
+  "level": "info",
+  "message": "Finish conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+    "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa"
+   },
+   "thread": {
+    "id": "TR-cmc-malp72",
+    "metadata": {
+     "description": "Thread TR-cmc-malp72",
+     "type": "thread",
+     "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+     "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+     "repositoryId": "d7ecce61-5e9d-4e3d-b60a-67a295687125",
+     "userId": "3ea4cafe-5ea0-42ba-ab6c-153f2c1f46ea",
+     "suggestionCommentId": 913402527
+    }
+   },
+   "steps": 3,
+   "usage": {
+    "inputTokens": 32305,
+    "outputTokens": 834,
+    "totalTokens": 33139,
+    "reasoningTokens": 141,
+    "cacheReadTokens": 30080,
+    "cacheWriteTokens": null
+   },
+   "component": "ConversationAgentProvider",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "originalCorrelationId": null
+  }
+ }
+]
