@@ -1,0 +1,5 @@
+{"at":"2026-11-27T17:44:53.487Z","docs":[]}
+{"at":"2026-11-27T17:45:18.012Z","docs":[{"_id":"<org:jr-claude-bitbucket>:3ac23d16-5601-42e4-91b0-f71b5724c441:15","consumer":"review","expiresAt":"2026-11-27T18:15:17.562Z","killRetryCount":0,"leaseCount":1,"state":"CREATING"}]}
+{"at":"2026-11-27T17:45:22.286Z","docs":[{"_id":"<org:jr-claude-bitbucket>:3ac23d16-5601-42e4-91b0-f71b5724c441:15","consumer":"review","expiresAt":"2026-11-27T18:15:17.562Z","killRetryCount":0,"leaseCount":1,"state":"READY","sandboxId":"sbx-QA-BB"}]}
+{"at":"2026-11-27T17:47:43.660Z","docs":[{"_id":"<org:jr-claude-bitbucket>:3ac23d16-5601-42e4-91b0-f71b5724c441:15","consumer":"review","expiresAt":"2026-11-27T18:15:17.562Z","killRetryCount":0,"leaseCount":0,"state":"READY","sandboxId":"sbx-QA-BB","killAt":"2026-11-27T17:48:13.426Z"}]}
+{"at":"2026-11-27T17:48:30.656Z","docs":[]}
