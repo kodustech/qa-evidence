@@ -1,0 +1,39 @@
+observability_telemetry LLM spans (spans carrying attributes.tu = token usage) per run name, jr-claude-github org, claude-athena PRs. Read-only aggregate, 2026-11-27.
+PR 33 = S50 (after the 19:57Z deploy). PRs 26, 27, 32 = reviews on the same org before 19:57Z (same DeepSeek V4.1 Flash BYOK, different diffs).
+
+PR #26 window 2026-11-27T16:10:00Z..2026-11-27T16:40:00Z: 12 LLM spans, input tokens 89515
+  CommentManagerService::generateSummaryPR           calls=1   errors=0 input_tokens=633
+  SuggestionLLMValidator::checkSuggestionSimplicity  calls=2   errors=0 input_tokens=782
+  code-review-enrich                                 calls=2   errors=0 input_tokens=1722
+  code-review-generalist                             calls=2   errors=0 input_tokens=38198
+  code-review-generalist-verify                      calls=4   errors=0 input_tokens=47035
+  code-review::dedup                                 calls=1   errors=0 input_tokens=1145
+
+PR #27 window 2026-11-27T17:25:00Z..2026-11-27T18:00:00Z: 16 LLM spans, input tokens 96422
+  CommentManagerService::generateSummaryPR           calls=1   errors=0 input_tokens=982
+  KodyIssuesAnalysisService::resolveExistingIssues   calls=2   errors=0 input_tokens=4371
+  SuggestionLLMValidator::checkSuggestionSimplicity  calls=3   errors=0 input_tokens=1237
+  code-review-enrich                                 calls=3   errors=0 input_tokens=3406
+  code-review-generalist                             calls=2   errors=0 input_tokens=32002
+  code-review-generalist-verify                      calls=4   errors=0 input_tokens=53262
+  code-review::dedup                                 calls=1   errors=0 input_tokens=1162
+
+PR #32 window 2026-11-27T19:05:00Z..2026-11-27T19:40:00Z: 29 LLM spans, input tokens 210561
+  BusinessRulesValidation::businessRulesAnalyzer     calls=4   errors=0 input_tokens=22259
+  CommentManagerService::generateSummaryPR           calls=1   errors=0 input_tokens=1413
+  KodyIssuesAnalysisService::resolveExistingIssues   calls=3   errors=0 input_tokens=6922
+  SuggestionLLMValidator::checkSuggestionSimplicity  calls=6   errors=0 input_tokens=2543
+  code-review-enrich                                 calls=6   errors=0 input_tokens=7543
+  code-review-generalist                             calls=2   errors=0 input_tokens=70985
+  code-review-generalist-verify                      calls=6   errors=0 input_tokens=97321
+  code-review::dedup                                 calls=1   errors=0 input_tokens=1575
+
+PR #33 window 2026-11-27T20:28:00Z..2026-11-27T20:35:00Z: 14 LLM spans, input tokens 97415
+  CommentManagerService::generateSummaryPR           calls=1   errors=0 input_tokens=901
+  SuggestionLLMValidator::checkSuggestionSimplicity  calls=3   errors=0 input_tokens=1263
+  code-review-enrich                                 calls=2   errors=0 input_tokens=2750
+  code-review-generalist                             calls=2   errors=0 input_tokens=51391
+  code-review-generalist-verify                      calls=3   errors=0 input_tokens=36567
+  code-review-kody-rule-evidence-verdict             calls=1   errors=0 input_tokens=1714
+  code-review::dedup                                 calls=1   errors=0 input_tokens=1071
+  kodus-rules-review-agent.shard                     calls=1   errors=0 input_tokens=1758
