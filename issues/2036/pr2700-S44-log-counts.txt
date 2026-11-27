@@ -1,0 +1,5 @@
+S44 jr-codex-github org, window 22:30-22:35Z, observability_logs_ts read-only.
+query regex /structured-output|reroute|LLM-ERROR|2013|disabled/: {"total": 74, "structured": 0}
+2026-11-27T22:30:55.659Z | info | KodyRulesShardedAgent | [kody-rules-shard] prompt cache: 1 file shard(s) in 1 head group(s), 0 shared; 0 of 0 sibling(s) ran after their group's first shard
+2026-11-27T22:32:04.507Z | info | ReviewOrchestratorService | [AGENT] kody-rules returned 1 suggestions in 23020ms
+2026-11-27T22:33:22.200Z | info | AgentReviewStage | [ENRICH] PR#16: enriched 3, failed 0, skipped 1
