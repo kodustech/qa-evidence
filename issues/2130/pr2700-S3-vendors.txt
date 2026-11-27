@@ -1,0 +1,78 @@
+S3 vendor rows
+==============
+
+[S3 Fireworks 429 rate-limits link]
+  MERGE : RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S3 Azure 429 quota link]
+  MERGE : RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S3 OpenRouter 403 key limit monthly]
+  MERGE : QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S3 OpenCode Go weekly usage limit]
+  MERGE : QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S3 OpenCode Free usage limit reached]
+  MERGE : QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S3 Anthropic specified API usage limits]
+  MERGE : QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S3 MiniMax 2013 context window]
+  MERGE : CONTEXT_OVERFLOW | failover=false | hardTimeout=false | msg="This PR exceeded the maximum context size accepted by the configured model (google_gemini).\n\n**To resolve, choose one:**\n- **Switch to a recommended model**
+  PARENT: REQUEST_REJECTED | failover=false | hardTimeout=false | msg="The provider (google_gemini) refused the request for this model."
+
+[S3 Z.AI 1310 weekly/monthly limit]
+  MERGE : QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S34a RetryError(3) over status-less empty APICallError]
+  MERGE : UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+  PARENT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+
+[S34a RetryError(3) over APICallError "<none>"]
+  MERGE : UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+  PARENT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+
+[S34a plain Error "Failed after 3 attempts. Last error: AI_APICallError: <none>"]
+  MERGE : UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+  PARENT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+
+[S34b UND_ERR_CONNECT_TIMEOUT (SDK-wrapped)]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: TRANSIENT | failover=false | hardTimeout=true | msg="Transient error reaching the provider (google_gemini). Try again."
+
+[S34b UND_ERR_CONNECT_TIMEOUT RetryError(3)]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: TRANSIENT | failover=false | hardTimeout=true | msg="Transient error reaching the provider (google_gemini). Try again."
+
+[S34c AggregateError ETIMEDOUT empty (SDK-wrapped)]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+
+[S34c AggregateError ETIMEDOUT RetryError(3)]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+
+[S34d UND_ERR_HEADERS_TIMEOUT]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: TRANSIENT | failover=false | hardTimeout=true | msg="Transient error reaching the provider (google_gemini). Try again."
+
+[S34d UND_ERR_HEADERS_TIMEOUT RetryError(3)]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: TRANSIENT | failover=false | hardTimeout=true | msg="Transient error reaching the provider (google_gemini). Try again."
+
+[S36 [ETIMEDOUT,ETIMEDOUT,503]]
+  MERGE : TRANSIENT | failover=true | hardTimeout=false | msg="Transient error reaching the provider (google_gemini). Try again."
+  PARENT: TRANSIENT | failover=true | hardTimeout=false | msg="Transient error reaching the provider (google_gemini). Try again."
+
+[S36 [503,ETIMEDOUT]]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
