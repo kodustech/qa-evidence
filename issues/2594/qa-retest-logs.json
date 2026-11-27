@@ -1,0 +1,576 @@
+{
+ "github": [
+  {
+   "t": "2026-11-27T18:26:33.719Z",
+   "level": "warn",
+   "component": "PermissionValidationService",
+   "message": "User not licensed"
+  },
+  {
+   "t": "2026-11-27T18:26:34.406Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 28,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:26:34.595Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidatePrerequisitesStage' completed in 951ms: 15e2c7bf-8c5b-4102-8a23-fe4ab51f2073"
+  },
+  {
+   "t": "2026-11-27T18:28:31.226Z",
+   "level": "warn",
+   "component": "PermissionValidationService",
+   "message": "User not licensed"
+  },
+  {
+   "t": "2026-11-27T18:28:31.793Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 28,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:28:31.937Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidatePrerequisitesStage' completed in 792ms: 6cdba66e-8348-4811-a5eb-89691da9a3f4"
+  },
+  {
+   "t": "2026-11-27T18:31:04.801Z",
+   "level": "warn",
+   "component": "PermissionValidationService",
+   "message": "User not licensed"
+  },
+  {
+   "t": "2026-11-27T18:31:05.447Z",
+   "level": "warn",
+   "component": "GithubService",
+   "message": "Error getting file content from pull request"
+  },
+  {
+   "t": "2026-11-27T18:31:05.476Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 28,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:31:05.791Z",
+   "level": "warn",
+   "component": "GithubService",
+   "message": "Error getting file content from pull request"
+  },
+  {
+   "t": "2026-11-27T18:31:08.165Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidatePrerequisitesStage' completed in 3436ms: c7bf6cbe-1869-4966-9520-4a4ede2cc37b"
+  },
+  {
+   "t": "2026-11-27T18:31:51.790Z",
+   "level": "warn",
+   "component": "PermissionValidationService",
+   "message": "User not licensed"
+  },
+  {
+   "t": "2026-11-27T18:31:52.525Z",
+   "level": "error",
+   "component": "CodeBaseConfigService",
+   "message": "Error getting code review config parameters"
+  },
+  {
+   "t": "2026-11-27T18:31:52.538Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 7,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:31:52.686Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "Could not read kodus-config.yml for status feedback, the web settings apply",
+   "prNumber": 7
+  },
+  {
+   "t": "2026-11-27T18:31:54.587Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidatePrerequisitesStage' completed in 2904ms: d7453c90-57cc-4064-b205-1285b42e8cc2"
+  },
+  {
+   "t": "2026-11-27T18:33:04.345Z",
+   "level": "warn",
+   "component": "PermissionValidationService",
+   "message": "User not licensed"
+  },
+  {
+   "t": "2026-11-27T18:33:05.081Z",
+   "level": "warn",
+   "component": "GithubService",
+   "message": "Error getting file content from pull request"
+  },
+  {
+   "t": "2026-11-27T18:33:05.109Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 28,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:33:05.468Z",
+   "level": "warn",
+   "component": "GithubService",
+   "message": "Error getting file content from pull request"
+  },
+  {
+   "t": "2026-11-27T18:33:05.959Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidatePrerequisitesStage' completed in 1720ms: cfae3b88-efcc-426f-be26-9fe7e2aa6044"
+  },
+  {
+   "t": "2026-11-27T18:36:58.905Z",
+   "level": "warn",
+   "component": "PermissionValidationService",
+   "message": "User not licensed"
+  },
+  {
+   "t": "2026-11-27T18:36:59.631Z",
+   "level": "error",
+   "component": "CodeBaseConfigService",
+   "message": "Error getting code review config parameters"
+  },
+  {
+   "t": "2026-11-27T18:36:59.643Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 8,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:36:59.786Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "Could not read kodus-config.yml for status feedback, the web settings apply",
+   "prNumber": 8
+  },
+  {
+   "t": "2026-11-27T18:36:59.795Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidatePrerequisitesStage' completed in 937ms: 2e45b19f-6f77-4eb7-8494-aa2fda0a995e"
+  },
+  {
+   "t": "2026-11-27T18:38:52.451Z",
+   "level": "info",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User is ignored, skipping automation",
+   "prNumber": 29
+  },
+  {
+   "t": "2026-11-27T18:38:52.460Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidatePrerequisitesStage' completed in 58ms: 78c98633-de40-43d2-a7e3-69762d716248"
+  }
+ ],
+ "forgejo": [
+  {
+   "t": "2026-11-27T18:27:11.915Z",
+   "level": "warn",
+   "component": "PermissionValidationService",
+   "message": "User not licensed"
+  },
+  {
+   "t": "2026-11-27T18:27:12.617Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 21,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:27:12.975Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidatePrerequisitesStage' completed in 1123ms: 8ed650fd-db92-4147-b70e-d07e2c94c0c5"
+  },
+  {
+   "t": "2026-11-27T18:28:48.811Z",
+   "level": "warn",
+   "component": "PermissionValidationService",
+   "message": "User not licensed"
+  },
+  {
+   "t": "2026-11-27T18:28:49.518Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 21,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:28:50.362Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidatePrerequisitesStage' completed in 1674ms: 9e6912b5-376e-4a19-97e3-50764d18aa94"
+  }
+ ],
+ "bitbucket": [
+  {
+   "t": "2026-11-27T18:26:50.128Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 16,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:29:08.537Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 16,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:31:42.116Z",
+   "level": "info",
+   "component": "ValidatePrerequisitesStage",
+   "message": "Automated review is off for this repository, skipping without license auto-assign",
+   "prNumber": 17
+  },
+  {
+   "t": "2026-11-27T18:32:50.214Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 17,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:32:53.137Z",
+   "level": "info",
+   "component": "ChatWithKodyFromGitUseCase",
+   "message": "Unmentioned reply left unanswered: not_kody_thread"
+  },
+  {
+   "t": "2026-11-27T18:34:04.200Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 17,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:36:06.677Z",
+   "level": "info",
+   "component": "ConversationAgentProvider",
+   "message": "Starting conversation agent execution"
+  },
+  {
+   "t": "2026-11-27T18:36:08.009Z",
+   "level": "info",
+   "component": "ChatWithKodyFromGitUseCase",
+   "message": "Unmentioned reply left unanswered: kody_author"
+  },
+  {
+   "t": "2026-11-27T18:36:18.521Z",
+   "level": "info",
+   "component": "ConversationAgentProvider",
+   "message": "Finish conversation agent execution"
+  },
+  {
+   "t": "2026-11-27T18:36:18.912Z",
+   "level": "info",
+   "component": "ChatWithKodyFromGitUseCase",
+   "message": "Successfully executed conversation flow"
+  },
+  {
+   "t": "2026-11-27T18:37:16.602Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 18,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:38:40.707Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 18,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:40:01.779Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 18,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:41:30.795Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 19,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:42:16.102Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 19,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:43:01.372Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 19,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  }
+ ],
+ "azure": [
+  {
+   "t": "2026-11-27T18:27:11.312Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 220,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:29:25.110Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 220,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T18:34:19.409Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 220,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  }
+ ],
+ "gitlab (R7, blocked)": [
+  {
+   "t": "2026-11-27T18:26:51.736Z",
+   "level": "info",
+   "component": "SavePullRequestUseCase",
+   "message": "GitLab webhook actor replaced by resolved MR author"
+  },
+  {
+   "t": "2026-11-27T18:26:52.071Z",
+   "level": "error",
+   "component": "SavePullRequestUseCase",
+   "message": "Failed to save pull request data for PR#20"
+  },
+  {
+   "t": "2026-11-27T18:26:52.547Z",
+   "level": "info",
+   "component": "RunCodeReviewAutomationUseCase",
+   "message": "GitLab webhook actor replaced by resolved MR author"
+  },
+  {
+   "t": "2026-11-27T18:26:52.708Z",
+   "level": "info",
+   "component": "RunCodeReviewAutomationUseCase",
+   "message": "RunCodeReviewAutomationUseCase PR#20"
+  },
+  {
+   "t": "2026-11-27T18:26:52.938Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Starting pipeline: CodeReviewPipeline (ID: 9a47b322-4e46-455f-9413-7055945ef0e9)"
+  },
+  {
+   "t": "2026-11-27T18:26:52.986Z",
+   "level": "warn",
+   "component": "PermissionValidationService",
+   "message": "Plan requires licensed user, NOT_ERROR"
+  },
+  {
+   "t": "2026-11-27T18:26:52.994Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidatePrerequisitesStage' completed in 56ms: 9a47b322-4e46-455f-9413-7055945ef0e9"
+  },
+  {
+   "t": "2026-11-27T18:26:53.009Z",
+   "level": "info",
+   "component": "ValidateNewCommitsStage",
+   "message": "No last analyzed commit found, analyzing all commits"
+  },
+  {
+   "t": "2026-11-27T18:26:53.205Z",
+   "level": "error",
+   "component": "GitlabService getCommitsForPullRequestForCodeReview",
+   "message": "Error fetching commits for PR #20",
+   "prNumber": 20
+  },
+  {
+   "t": "2026-11-27T18:26:53.206Z",
+   "level": "error",
+   "component": "PullRequestHandlerService",
+   "message": "Error fetching new commits since last execution"
+  },
+  {
+   "t": "2026-11-27T18:26:53.213Z",
+   "level": "error",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidateNewCommitsStage' failed: commits is not iterable"
+  },
+  {
+   "t": "2026-11-27T18:26:53.215Z",
+   "level": "warn",
+   "component": "PipelineExecutor",
+   "message": "Pipeline 'CodeReviewPipeline:9a47b322-4e46-455f-9413-7055945ef0e9' continuing despite error in stage 'ValidateNewCommitsStage'"
+  },
+  {
+   "t": "2026-11-27T18:26:53.707Z",
+   "level": "error",
+   "component": "PullRequestHandlerService",
+   "message": "Error fetching changed files metadata",
+   "prNumber": 20
+  },
+  {
+   "t": "2026-11-27T18:26:53.708Z",
+   "level": "error",
+   "component": "ResolveConfigStage",
+   "message": "Error in ResolveConfigStage for PR#20",
+   "prNumber": 20
+  },
+  {
+   "t": "2026-11-27T18:26:53.716Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ResolveConfigStage' completed in 500ms: 9a47b322-4e46-455f-9413-7055945ef0e9"
+  },
+  {
+   "t": "2026-11-27T18:26:53.716Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Pipeline 'CodeReviewPipeline' skipped due to SKIP status 9a47b322-4e46-455f-9413-7055945ef0e9"
+  },
+  {
+   "t": "2026-11-27T18:26:53.717Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Finished pipeline: CodeReviewPipeline (ID: 9a47b322-4e46-455f-9413-7055945ef0e9)"
+  },
+  {
+   "t": "2026-11-27T18:26:53.855Z",
+   "level": "error",
+   "component": "GitlabService",
+   "message": "Error removing reactions from MR#20",
+   "prNumber": 20
+  },
+  {
+   "t": "2026-11-27T18:26:53.865Z",
+   "level": "info",
+   "component": "AutomationCodeReviewService",
+   "message": "Successfully handled pull request for PR#20"
+  },
+  {
+   "t": "2026-11-27T18:28:01.549Z",
+   "level": "info",
+   "component": "CheckIfPRCanBeApprovedCronProvider",
+   "message": "Open pull requests found"
+  }
+ ],
+ "github R10 warn and error, full documents": [
+  {
+   "_id": "6b09cc9ae5f572953d34808f",
+   "timestamp": "2026-11-27T18:31:52.525Z",
+   "level": "error",
+   "message": "Error getting code review config parameters",
+   "component": "CodeBaseConfigService",
+   "correlationId": "a4152a32-42b6-4c09-bdad-843fc565785c",
+   "correlationIdSynthetic": true,
+   "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4",
+   "executionId": null,
+   "sessionId": null,
+   "metadata": {
+    "component": "CodeBaseConfigService",
+    "level": "error",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   },
+   "attributes": {
+    "organizationAndTeamData": {
+     "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+     "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+     "organizationName": "jr-claude-github"
+    },
+    "component": "CodeBaseConfigService",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "originalCorrelationId": null
+   },
+   "error": {
+    "name": "YAMLException",
+    "message": "deficient indentation (3:1)\n\n 1 | version: \"1.3\"\n 2 | showStatusFeedback: [false\n 3 | \n-----^",
+    "stack": "YAMLException: deficient indentation (3:1)\n\n 1 | version: \"1.3\"\n 2 | showStatusFeedback: [false\n 3 | \n-----^\n    at Function.throwAt (/usr/src/app/node_modules/js-yaml/src/common/exception.ts:89:11)\n    at throwError (/usr/src/app/node_modules/js-yaml/src/parser/parser.ts:250:17)\n    at skipFlowSeparationSpace (/usr/src/app/node_modules/js-yaml/src/parser/parser.ts:896:5)\n    at readFlowCollection (/usr/src/app/node_modules/js-yaml/src/parser/parser.ts:946:5)\n    at parseNode (/usr/src/app/node_modules/js-yaml/src/parser/parser.ts:1278:11)\n    at readBlockMapping (/usr/src/app/node_modules/js-yaml/src/parser/parser.ts:1144:9)\n    at parseNode (/usr/src/app/node_modules/js-yaml/src/parser/parser.ts:1277:12)\n    at readDocument (/usr/src/app/node_modules/js-yaml/src/parser/parser.ts:1426:8)\n    at parseEvents (/usr/src/app/node_modules/js-yaml/src/parser/parser.ts:1486:5)\n    at loadDocuments (/usr/src/app/node_modules/js-yaml/src/load.ts:35:18)\n    at Module.yaml (/usr/src/app/node_modules/js-yaml/src/load.ts:106:21)\n    at CodeBaseConfigService.getKodusConfigFile (/usr/src/app/libs/ee/codeBase/codeBaseConfig.service.ts:876:30)\n    at CodeBaseConfigService.getMergedCodeReviewConfigs (/usr/src/app/libs/ee/codeBase/codeBaseConfig.service.ts:457:37)\n    at CodeBaseConfigService.getConfig (/usr/src/app/libs/ee/codeBase/codeBaseConfig.service.ts:161:35)\n    at ValidatePrerequisitesStage.isEffectiveAutomatedReviewActive (/usr/src/app/libs/code-review/pipeline/stages/validate-prerequisites.stage.ts:1289:28)\n    at ValidatePrerequisitesStage.executeStage (/usr/src/app/libs/code-review/pipeline/stages/validate-prerequisites.stage.ts:375:15)"
+   },
+   "createdAt": "2026-11-27T18:31:52.525Z"
+  },
+  {
+   "_id": "6b09cc9ae5f572953d348092",
+   "timestamp": "2026-11-27T18:31:52.686Z",
+   "level": "warn",
+   "message": "Could not read kodus-config.yml for status feedback, the web settings apply",
+   "component": "ValidatePrerequisitesStage",
+   "correlationId": "f55b5065-d35b-4259-9b90-9693f6bbcaf6",
+   "correlationIdSynthetic": true,
+   "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4",
+   "executionId": null,
+   "sessionId": null,
+   "metadata": {
+    "component": "ValidatePrerequisitesStage",
+    "level": "warn",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   },
+   "attributes": {
+    "organizationAndTeamData": {
+     "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+     "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+     "organizationName": "jr-claude-github"
+    },
+    "repositoryId": "1468014677",
+    "prNumber": 7,
+    "component": "ValidatePrerequisitesStage",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "originalCorrelationId": null
+   },
+   "error": {
+    "name": "YAMLException",
+    "message": "deficient indentation (3:1)\n\n 1 | version: \"1.3\"\n 2 | showStatusFeedback: [false\n 3 | \n-----^",
+    "stack": "YAMLException: deficient indentation (3:1)\n\n 1 | version: \"1.3\"\n 2 | showStatusFeedback: [false\n 3 | \n-----^\n    at Function.throwAt (/usr/src/app/node_modules/js-yaml/src/common/exception.ts:89:11)\n    at throwError (/usr/src/app/node_modules/js-yaml/src/parser/parser.ts:250:17)\n    at skipFlowSeparationSpace (/usr/src/app/node_modules/js-yaml/src/parser/parser.ts:896:5)\n    at readFlowCollection (/usr/src/app/node_modules/js-yaml/src/parser/parser.ts:946:5)\n    at parseNode (/usr/src/app/node_modules/js-yaml/src/parser/parser.ts:1278:11)\n    at readBlockMapping (/usr/src/app/node_modules/js-yaml/src/parser/parser.ts:1144:9)\n    at parseNode (/usr/src/app/node_modules/js-yaml/src/parser/parser.ts:1277:12)\n    at readDocument (/usr/src/app/node_modules/js-yaml/src/parser/parser.ts:1426:8)\n    at parseEvents (/usr/src/app/node_modules/js-yaml/src/parser/parser.ts:1486:5)\n    at loadDocuments (/usr/src/app/node_modules/js-yaml/src/load.ts:35:18)\n    at Module.yaml (/usr/src/app/node_modules/js-yaml/src/load.ts:106:21)\n    at CodeBaseConfigService.getKodusConfigFile (/usr/src/app/libs/ee/codeBase/codeBaseConfig.service.ts:876:30)\n    at ValidatePrerequisitesStage.configFileShowStatusFeedback (/usr/src/app/libs/code-review/pipeline/stages/validate-prerequisites.stage.ts:833:26)\n    at ValidatePrerequisitesStage.handleValidationFailure (/usr/src/app/libs/code-review/pipeline/stages/validate-prerequisites.stage.ts:604:17)\n    at ValidatePrerequisitesStage.executeStage (/usr/src/app/libs/code-review/pipeline/stages/validate-prerequisites.stage.ts:406:36)\n    at ValidatePrerequisitesStage.execute (/usr/src/app/libs/core/infrastructure/pipeline/abstracts/base-stage.abstract.ts:35:16)"
+   },
+   "createdAt": "2026-11-27T18:31:52.686Z"
+  }
+ ]
+}
