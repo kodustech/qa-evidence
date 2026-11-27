@@ -1,0 +1,40 @@
+const http = require('http'); const https = require('https'); const fs = require('fs');
+const { getEncoding } = require('/Users/juniorsartori/Projects/Kody/kodus-ai/node_modules/js-tiktoken');
+const enc = getEncoding('o200k_base');
+const UP = new URL(process.env.UPSTREAM); const KEY = process.env.UPKEY; delete process.env.UPKEY;
+const LOG = process.env.STUBLOG; const ALIAS = { 'local/qwen-coder': 'opencode_go/deepseek-v4.1-flash' };
+const FAIL = new Set((process.env.FAIL_MODELS || '').split(',').filter(Boolean));
+let seq = 0;
+const text = (c) => typeof c === 'string' ? c : Array.isArray(c) ? c.map(p => p.text || p.content || (p.type ? '' : JSON.stringify(p))).join('') : c == null ? '' : JSON.stringify(c);
+http.createServer((req, res) => {
+  const chunks = []; req.on('data', d => chunks.push(d)); req.on('end', () => {
+    let body = Buffer.concat(chunks); const id = ++seq; const t = new Date().toISOString();
+    let entry = { id, t, method: req.method, path: req.url };
+    if (req.method === 'POST' && body.length) {
+      try {
+        const j = JSON.parse(body.toString());
+        const modelIn = j.model; if (ALIAS[j.model]) j.model = ALIAS[j.model];
+        const msgs = j.messages || [];
+        const sys = msgs.filter(m => m.role === 'system').map(m => text(m.content)).join('\n');
+        const lastUser = [...msgs].reverse().find(m => m.role === 'user');
+        entry = { ...entry, modelIn, model: j.model, stream: !!j.stream, max_tokens: j.max_tokens ?? j.max_completion_tokens ?? null,
+          reasoning_effort: j.reasoning_effort ?? null, n_messages: msgs.length, n_tools: (j.tools || []).length, response_format: j.response_format ? (j.response_format.type || 'set') : null,
+          tokens_messages: enc.encode(msgs.map(m => (m.role||'') + text(m.content) + (m.tool_calls ? JSON.stringify(m.tool_calls) : '')).join('\n')).length,
+          tokens_tools: enc.encode(JSON.stringify(j.tools || [])).length,
+          system_head: sys.slice(0, 220), last_user_head: lastUser ? text(lastUser.content).slice(0, 160) : null, last_user_tail: lastUser ? text(lastUser.content).slice(-160) : null };
+        entry.tokens_total = entry.tokens_messages + entry.tokens_tools;
+        if (FAIL.has(modelIn)) { entry.injected = 500; fs.appendFileSync(LOG, JSON.stringify(entry) + '\n'); res.writeHead(500, {'content-type':'application/json'}); return res.end(JSON.stringify({error:{message:'stub injected failure',type:'server_error'}})); }
+        if (process.env.RAISE_CLASSIFIER && sys.startsWith('A pull request has a comment listing')) { entry.raised_max_tokens_from = j.max_tokens ?? j.max_completion_tokens; if (j.max_tokens) j.max_tokens = 3000; if (j.max_completion_tokens) j.max_completion_tokens = 3000; }
+        body = Buffer.from(JSON.stringify(j));
+      } catch (e) { entry.parseError = String(e).slice(0, 100); }
+    }
+    const opts = { method: req.method, hostname: UP.hostname, port: UP.port || 443, path: UP.pathname.replace(/\/$/, '') + req.url,
+      headers: { 'content-type': req.headers['content-type'] || 'application/json', 'authorization': 'Bearer ' + KEY, 'content-length': body.length, accept: req.headers['accept'] || '*/*' } };
+    for (const h of Object.keys(req.headers)) if (/^x-/i.test(h)) opts.headers[h] = req.headers[h];
+    const up = https.request(opts, (ur) => { entry.status = ur.statusCode;
+      const hh = { ...ur.headers }; delete hh['content-length']; res.writeHead(ur.statusCode, hh);
+      const rc = []; ur.on('data', d => { rc.push(d); res.write(d); }); ur.on('end', () => { res.end(); if (process.env.LOGRESP && (entry.n_tools <= 1)) { entry.response = Buffer.concat(rc).toString().slice(0, 2500); } fs.appendFileSync(LOG, JSON.stringify(entry) + '\n'); }); });
+    up.on('error', (e) => { entry.status = 'upstream_error'; entry.err = String(e).slice(0,100); fs.appendFileSync(LOG, JSON.stringify(entry) + '\n'); res.writeHead(502); res.end(); });
+    up.end(body);
+  });
+}).listen(8787, '127.0.0.1', () => console.log('stub on 8787'));
