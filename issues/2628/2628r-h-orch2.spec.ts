@@ -359,4 +359,42 @@ describe(`H orch @${REV}`, () => {
         expect(out.reads.every((x: any) => x.ok)).toBe(true);
         expect(out.result.isError).toBe(false);
     }, 30_000);
+
+    it('R30 X5 custom-agent astGrep: orchestrator gives up while the rule file is read from the target branch (>1 s, no sandbox command)', async () => {
+        const { buildAstGrepTool } = require('@libs/code-review/infrastructure/agents/adapters/ast-grep.tool');
+        const { sandboxFileWriter, sandboxDirRemover } = require('@libs/code-review/infrastructure/agents/adapters/custom-agent-tools');
+        const calls: any[] = [];
+        let t0 = 0;
+        agents.generalist = async (inp: any) => {
+            const h = (globalThis as any).__QA_HANDLE;
+            const write = sandboxFileWriter(h), remove = sandboxDirRemover(h);
+            const exec = inp.remoteCommands.exec ?? h.remoteCommands.exec;
+            const rec = (name: string, fn: any) => async (...a: any[]) => { const st = Date.now() - t0; const dirExists = fs.existsSync(h.sandboxId); try { const r = await fn(...a); calls.push({ name, arg: String(a[0]).slice(0, 60), st, end: Date.now() - t0, dirExistsAtStart: dirExists, ok: true, exit: r?.exitCode, err: r?.stderr ? String(r.stderr).slice(0, 80) : undefined }); return r; } catch (e: any) { calls.push({ name, arg: String(a[0]).slice(0, 60), st, end: Date.now() - t0, dirExistsAtStart: dirExists, ok: false, err: String(e?.message).slice(0, 100) }); throw e; } };
+            const astGrep = buildAstGrepTool({
+                exec: rec('exec', exec), writeFile: rec('writeFile', write), removeDir: rec('removeDir', remove),
+                changedFiles: ['a.ts'], rulesPath: '.kody/ast-grep.yml',
+                readTargetFile: rec('readTargetFile(knowledge reader, no sandbox)', async () => { await new Promise((r) => setTimeout(r, 6000)); return 'id: no-max\nlanguage: typescript\nrule:\n  pattern: Math.max($$$)\nmessage: no Math.max\nseverity: warning\n'; }),
+                logContext: {},
+            });
+            (globalThis as any).__QA_MODEL = scriptedModel([{ tool: 'astGrep', input: { useRules: true } }, { text: 'done' }], steps);
+            const tools: any = { astGrep: tool({ description: 'ast-grep', inputSchema: z.object({ useRules: z.boolean() }), execute: async (a: any) => { steps.push('tool-start:astGrep'); const r = await astGrep.execute(a, { runId: 'r30' }); steps.push(`tool-end:astGrep isError=${!!r.isError} out=${String(r.output).slice(0, 120)}`); return r.output; } }) };
+            await runAgentLoopCall({ messages: [{ role: 'user', content: 'scan' }], loop: { tools, maxSteps: 4 }, runName: 'qa2628-custom-agent', hardTimeoutMs: 100 });
+            return { agentName: 'generalist', suggestions: [], turnsUsed: 1, durationMs: 1 };
+        };
+        const ctx = await pipeline(5);
+        const dir = ctx.sandboxHandle.sandboxId;
+        const poll = pollDir(dir);
+        t0 = Date.now();
+        const r = await (stage as any).executeStage(ctx);
+        const stageMs = Date.now() - t0;
+        for (let i = 0; i < 100 && !steps.some((x) => x.startsWith('tool-end:astGrep')); i++) await new Promise((res) => setTimeout(res, 100));
+        await new Promise((res) => setTimeout(res, 300));
+        poll.stop();
+        const out = { stageMs, dirGoneMs: poll.goneAt && poll.goneAt - t0, toolEnd: T0.find((x) => String(x.s).startsWith('tool-end:astGrep'))?.s ?? null, calls, released: L(/released leaseId/).map((l) => ({ at: l.t - t0 })), waited: L(/release waited/).map((l) => ({ at: l.t - t0, md: l.metadata })), cleaned: L(/cleaned local sandbox/).map((l) => l.t - t0), errors: (r.errors ?? []).map((e: any) => String(e.error?.message ?? e.error).slice(0, 100)) };
+        ev('R30', 'result', out);
+        const late = calls.filter((c) => c.st > 5000 && c.name !== 'readTargetFile(knowledge reader, no sandbox)');
+        expect(late.length).toBeGreaterThan(0);
+        expect(late.every((c) => c.dirExistsAtStart)).toBe(true);
+    }, 60_000);
+
 });
