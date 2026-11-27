@@ -1,0 +1,90 @@
+[
+ {
+  "t": "2026-11-27T17:45:17.562Z",
+  "level": "info",
+  "component": "SandboxLeaseManager",
+  "message": "SandboxLeaseManager: acquire prKey=\"<org:jr-claude-bitbucket>:3ac23d16-5601-42e4-91b0-f71b5724c441:15\" consumer=\"review\"",
+  "org": "unknown",
+  "attributes": {
+   "prKey": "<org:jr-claude-bitbucket>:3ac23d16-5601-42e4-91b0-f71b5724c441:15",
+   "consumer": "review",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "t": "2026-11-27T17:45:17.571Z",
+  "level": "info",
+  "component": "SandboxLeaseManager",
+  "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"<org:jr-claude-bitbucket>:3ac23d16-5601-42e4-91b0-f71b5724c441:15\" consumer=\"review\"",
+  "org": "unknown",
+  "attributes": {
+   "prKey": "<org:jr-claude-bitbucket>:3ac23d16-5601-42e4-91b0-f71b5724c441:15",
+   "consumer": "review",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "t": "2026-11-27T17:45:21.793Z",
+  "level": "info",
+  "component": "SandboxLeaseManager",
+  "message": "SandboxLeaseManager: sandbox READY prKey=\"<org:jr-claude-bitbucket>:3ac23d16-5601-42e4-91b0-f71b5724c441:15\" consumer=\"review\" leaseId=\"0150e5d8-7cac-4fa2-9ba1-1398d2755c34\"",
+  "org": "unknown",
+  "attributes": {
+   "prKey": "<org:jr-claude-bitbucket>:3ac23d16-5601-42e4-91b0-f71b5724c441:15",
+   "consumer": "review",
+   "leaseId": "0150e5d8-7cac-4fa2-9ba1-1398d2755c34",
+   "sandboxId": "sbx-QA-BB",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "t": "2026-11-27T17:47:43.426Z",
+  "level": "info",
+  "component": "SandboxLeaseManager",
+  "message": "SandboxLeaseManager: released leaseId=\"0150e5d8-7cac-4fa2-9ba1-1398d2755c34\" prKey=\"<org:jr-claude-bitbucket>:3ac23d16-5601-42e4-91b0-f71b5724c441:15\" leaseCount=0",
+  "org": "unknown",
+  "attributes": {
+   "leaseId": "0150e5d8-7cac-4fa2-9ba1-1398d2755c34",
+   "prKey": "<org:jr-claude-bitbucket>:3ac23d16-5601-42e4-91b0-f71b5724c441:15",
+   "leaseCount": 0,
+   "consumer": "review",
+   "heldMs": 141558,
+   "acquireToFirstUseMs": 81,
+   "lastUseToReleaseMs": 7114,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "t": "2026-11-27T17:47:43.431Z",
+  "level": "info",
+  "component": "SandboxLeaseManager",
+  "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-27T17:48:13.426Z for sandboxId=\"sbx-QA-BB\"",
+  "org": "unknown",
+  "attributes": {
+   "prKey": "<org:jr-claude-bitbucket>:3ac23d16-5601-42e4-91b0-f71b5724c441:15",
+   "sandboxId": "sbx-QA-BB",
+   "idleTimeoutMs": 30000,
+   "killAt": "2026-11-27T17:48:13.426Z",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "t": "2026-11-27T17:48:30.247Z",
+  "level": "info",
+  "component": "SandboxLeaseReaperService",
+  "message": "[SANDBOX-IDLE-KILL] Killed idle sandbox",
+  "org": "unknown",
+  "attributes": {
+   "prKey": "<org:jr-claude-bitbucket>:3ac23d16-5601-42e4-91b0-f71b5724c441:15",
+   "sandboxId": "sbx-QA-BB",
+   "killAt": "2026-11-27T17:48:13.426Z",
+   "component": "SandboxLeaseReaperService",
+   "originalCorrelationId": null
+  }
+ }
+]
