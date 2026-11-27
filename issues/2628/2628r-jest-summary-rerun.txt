@@ -1,0 +1,18 @@
+== h-r30-cand
+  ● H orch @cand › R30 X5 custom-agent astGrep: orchestrator gives up while the rule file is read from the target branch (>1 s, no sandbox command)
+Tests:       1 failed, 3 skipped, 4 total
+== h-r30-ctrl
+  ● H orch @ctrl › R30 X5 custom-agent astGrep: orchestrator gives up while the rule file is read from the target branch (>1 s, no sandbox command)
+Tests:       1 failed, 3 skipped, 4 total
+== h-r31-cand
+  ● retest lease harness @cand › R31 X5 custom-agent astGrep on E2B (stub): release during the >1 s target-branch read
+Tests:       1 failed, 16 skipped, 17 total
+== h-r31-ctrl
+  ● retest lease harness @ctrl › R31 X5 custom-agent astGrep on E2B (stub): release during the >1 s target-branch read
+Tests:       1 failed, 16 skipped, 17 total
+== h-r32-cand
+  ● retest lease harness @cand › R32 double kill: a tick outlives the 25 s cron lock and the next worker tick kills the same sandbox
+Tests:       1 failed, 17 skipped, 18 total
+== h-r32-ctrl
+  ● retest lease harness @ctrl › R32 double kill: a tick outlives the 25 s cron lock and the next worker tick kills the same sandbox
+Tests:       1 failed, 17 skipped, 18 total
