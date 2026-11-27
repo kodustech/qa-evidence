@@ -1,0 +1,44 @@
+[
+ {
+  "t": "2026-11-27T20:30:11.086Z",
+  "level": "info",
+  "component": "AgentReviewStage",
+  "message": "[AGENT] Titled 3 suggestions (from summary 3, from body 0, over the ceiling 0, empty 0)"
+ },
+ {
+  "t": "2026-11-27T20:30:27.063Z",
+  "level": "info",
+  "component": "UpdateCommentsAndGenerateSummaryStage",
+  "message": "Generating summary for PR#33"
+ },
+ {
+  "t": "2026-11-27T20:30:27.536Z",
+  "level": "info",
+  "component": "CommentManagerService",
+  "message": "GenerateSummaryPR: Start PR#33. After get PR data"
+ },
+ {
+  "t": "2026-11-27T20:30:33.328Z",
+  "level": "info",
+  "component": "CommentManagerService",
+  "message": "GenerateSummaryPR: End PR#33. After concatenate"
+ },
+ {
+  "t": "2026-11-27T20:30:35.278Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 8225ms: 2f7a7e86-61da-4216-b81d-b31f5f8b76f1"
+ },
+ {
+  "t": "2026-11-27T20:30:35.297Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Stage 'DecidePrApprovalStage' completed in 19ms: 2f7a7e86-61da-4216-b81d-b31f5f8b76f1"
+ },
+ {
+  "t": "2026-11-27T20:30:35.315Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Stage 'RequestChangesOrApproveStage' completed in 18ms: 2f7a7e86-61da-4216-b81d-b31f5f8b76f1"
+ }
+]
