@@ -28,6 +28,7 @@ const plan = (i: number) => {
     const giveBack = busy ? aRelease + cmdMs + 1000 : aRelease; // expected give-back offset
     const align = r();
     const jitter = Math.floor(r() * 12) - 3;
+    if (process.env.H_M34 === '1') { const bAt = aRelease + 30 + Math.floor(r() * 90); return { aHold, busy: false, cmdMs: 0, aRelease, giveBack: aRelease, bAt, bHold: 400 + Math.floor(r() * 300) }; }
     const bAt = align < 0.45 ? giveBack + jitter : align < 0.8 ? giveBack + 300 + jitter : giveBack + Math.floor(r() * 500); // around the decrement, around killAt, random
     const bHold = 50 + Math.floor(r() * 250);
     return { aHold, busy, cmdMs, aRelease, giveBack, bAt, bHold };
@@ -45,7 +46,18 @@ const plan = (i: number) => {
     };
     out('ready');
     if (role === 'R1' || role === 'R2') {
-        const lock = { acquire: async () => ({ release: async () => undefined }) };
+        const locks = conn.connection.db!.collection('qa_locks');
+        const lock = process.env.H_LOCK === 'mongo'
+            ? { acquire: async (key: string, o: { ttl: number }) => {
+                  const now = Date.now(); const owner = `${process.pid}-${now}-${Math.random()}`;
+                  try {
+                      const r = await locks.findOneAndUpdate({ _id: key as any, $or: [{ expiresAt: { $lt: now } }, { expiresAt: { $exists: false } }] }, { $set: { owner, expiresAt: now + o.ttl } }, { upsert: true, returnDocument: 'after' });
+                      if ((r as any)?.owner !== owner && (r as any)?.value?.owner !== owner) return null;
+                  } catch (e: any) { if (e?.code === 11000) return null; throw e; }
+                  out('lock-acquired', { key });
+                  return { release: async () => { await locks.deleteOne({ _id: key as any, owner }); } };
+              } }
+            : { acquire: async () => ({ release: async () => undefined }) };
         const reaper = new SandboxLeaseReaperService(repo, lock as any, config);
         const end = T0 + N * STEP + 4000;
         const period = role === 'R1' ? 37 : 53;
@@ -58,6 +70,10 @@ const plan = (i: number) => {
             await sleep(period);
         }
         out('done'); await conn.disconnect(); process.exit(0);
+    }
+    if (process.env.H_M34 === '1' && role === 'A') {
+        const real = repo.setKillAt.bind(repo);
+        (repo as any).setKillAt = async (k: string, at: Date) => { out('setKillAt-delayed', { k }); await sleep(150); return real(k, at); };
     }
     const mgr = new SandboxLeaseManager(provider as any, repo, config);
     for (let i = 0; i < N; i++) {
