@@ -1,0 +1,93 @@
+[
+ {
+  "case": "throws_5xx",
+  "fileReadCalls": 0,
+  "status": "skipped",
+  "noticePosted": 1,
+  "reaction": 1,
+  "pipelineShowStatusFeedback": true,
+  "warns": [
+   "User not licensed but company has licenses"
+  ],
+  "errors": [],
+  "warnMetadata": []
+ },
+ {
+  "case": "timeout",
+  "fileReadCalls": 0,
+  "status": "skipped",
+  "noticePosted": 1,
+  "reaction": 1,
+  "pipelineShowStatusFeedback": true,
+  "warns": [
+   "User not licensed but company has licenses"
+  ],
+  "errors": [],
+  "warnMetadata": []
+ },
+ {
+  "case": "not_found_null",
+  "fileReadCalls": 0,
+  "status": "skipped",
+  "noticePosted": 1,
+  "reaction": 1,
+  "pipelineShowStatusFeedback": true,
+  "warns": [
+   "User not licensed but company has licenses"
+  ],
+  "errors": [],
+  "warnMetadata": []
+ },
+ {
+  "case": "not_found_empty",
+  "fileReadCalls": 0,
+  "status": "skipped",
+  "noticePosted": 1,
+  "reaction": 1,
+  "pipelineShowStatusFeedback": true,
+  "warns": [
+   "User not licensed but company has licenses"
+  ],
+  "errors": [],
+  "warnMetadata": []
+ },
+ {
+  "case": "yaml_false_base64",
+  "fileReadCalls": 0,
+  "status": "skipped",
+  "noticePosted": 1,
+  "reaction": 1,
+  "pipelineShowStatusFeedback": true,
+  "warns": [
+   "User not licensed but company has licenses"
+  ],
+  "errors": [],
+  "warnMetadata": []
+ },
+ {
+  "case": "yaml_invalid",
+  "fileReadCalls": 0,
+  "status": "skipped",
+  "noticePosted": 1,
+  "reaction": 1,
+  "pipelineShowStatusFeedback": true,
+  "warns": [
+   "User not licensed but company has licenses"
+  ],
+  "errors": [],
+  "warnMetadata": []
+ },
+ {
+  "case": "yaml_quoted_false",
+  "fileReadCalls": 0,
+  "status": "skipped",
+  "noticePosted": 1,
+  "reaction": 1,
+  "pipelineShowStatusFeedback": true,
+  "warns": [
+   "User not licensed but company has licenses"
+  ],
+  "errors": [],
+  "warnMetadata": []
+ }
+]
