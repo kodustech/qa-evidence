@@ -1,0 +1,274 @@
+{
+ "audit_repo_quoted_true_stored_repo_false": {
+  "result": {
+   "success": true,
+   "message": "Config files synchronized successfully"
+  },
+  "before": {
+   "global": "<absent>",
+   "r1": {
+    "implicitReplies": false
+   },
+   "r2": "<absent>",
+   "r1dirs": []
+  },
+  "after": {
+   "global": "<absent>",
+   "r1": {
+    "implicitReplies": false
+   },
+   "r2": "<absent>",
+   "r1dirs": []
+  },
+  "stringStored": false,
+  "writes": [
+   {
+    "repositoryId": "r1",
+    "conversationSent": {
+     "implicitReplies": false
+    }
+   }
+  ],
+  "reads": [
+   "athena/kodus-config.yml"
+  ],
+  "loaderWarns": [
+   {
+    "message": "Ignoring an invalid conversation.implicitReplies in kodus-config.yml: the stored setting applies",
+    "valueType": "string"
+   }
+  ],
+  "syncLogs": [],
+  "gate": {
+   "r1": {
+    "implicitReplies": false
+   }
+  }
+ },
+ "audit_repo_yaml_yes_stored_repo_false": {
+  "result": {
+   "success": true,
+   "message": "Config files synchronized successfully"
+  },
+  "before": {
+   "global": "<absent>",
+   "r1": {
+    "implicitReplies": false
+   },
+   "r2": "<absent>",
+   "r1dirs": []
+  },
+  "after": {
+   "global": "<absent>",
+   "r1": {
+    "implicitReplies": false
+   },
+   "r2": "<absent>",
+   "r1dirs": []
+  },
+  "stringStored": false,
+  "writes": [
+   {
+    "repositoryId": "r1",
+    "conversationSent": {
+     "implicitReplies": false
+    }
+   }
+  ],
+  "reads": [
+   "athena/kodus-config.yml"
+  ],
+  "loaderWarns": [
+   {
+    "message": "Ignoring an invalid conversation.implicitReplies in kodus-config.yml: the stored setting applies",
+    "valueType": "string"
+   }
+  ],
+  "syncLogs": [],
+  "gate": {
+   "r1": {
+    "implicitReplies": false
+   }
+  }
+ },
+ "audit_repo_yaml_on_stored_repo_false": {
+  "result": {
+   "success": true,
+   "message": "Config files synchronized successfully"
+  },
+  "before": {
+   "global": "<absent>",
+   "r1": {
+    "implicitReplies": false
+   },
+   "r2": "<absent>",
+   "r1dirs": []
+  },
+  "after": {
+   "global": "<absent>",
+   "r1": {
+    "implicitReplies": false
+   },
+   "r2": "<absent>",
+   "r1dirs": []
+  },
+  "stringStored": false,
+  "writes": [
+   {
+    "repositoryId": "r1",
+    "conversationSent": {
+     "implicitReplies": false
+    }
+   }
+  ],
+  "reads": [
+   "athena/kodus-config.yml"
+  ],
+  "loaderWarns": [
+   {
+    "message": "Ignoring an invalid conversation.implicitReplies in kodus-config.yml: the stored setting applies",
+    "valueType": "string"
+   }
+  ],
+  "syncLogs": [],
+  "gate": {
+   "r1": {
+    "implicitReplies": false
+   }
+  }
+ },
+ "audit_repo_one_stored_repo_false": {
+  "result": {
+   "success": true,
+   "message": "Config files synchronized successfully"
+  },
+  "before": {
+   "global": "<absent>",
+   "r1": {
+    "implicitReplies": false
+   },
+   "r2": "<absent>",
+   "r1dirs": []
+  },
+  "after": {
+   "global": "<absent>",
+   "r1": {
+    "implicitReplies": false
+   },
+   "r2": "<absent>",
+   "r1dirs": []
+  },
+  "stringStored": false,
+  "writes": [
+   {
+    "repositoryId": "r1",
+    "conversationSent": {
+     "implicitReplies": false
+    }
+   }
+  ],
+  "reads": [
+   "athena/kodus-config.yml"
+  ],
+  "loaderWarns": [
+   {
+    "message": "Ignoring an invalid conversation.implicitReplies in kodus-config.yml: the stored setting applies",
+    "valueType": "number"
+   }
+  ],
+  "syncLogs": [],
+  "gate": {
+   "r1": {
+    "implicitReplies": false
+   }
+  }
+ },
+ "audit_repo_real_true_stored_repo_false": {
+  "result": {
+   "success": true,
+   "message": "Config files synchronized successfully"
+  },
+  "before": {
+   "global": "<absent>",
+   "r1": {
+    "implicitReplies": false
+   },
+   "r2": "<absent>",
+   "r1dirs": []
+  },
+  "after": {
+   "global": "<absent>",
+   "r1": "<absent>",
+   "r2": "<absent>",
+   "r1dirs": []
+  },
+  "stringStored": false,
+  "writes": [
+   {
+    "repositoryId": "r1",
+    "conversationSent": {
+     "implicitReplies": true
+    }
+   }
+  ],
+  "reads": [
+   "athena/kodus-config.yml"
+  ],
+  "loaderWarns": [],
+  "syncLogs": [],
+  "gate": {
+   "r1": {
+    "implicitReplies": true
+   }
+  }
+ },
+ "audit_repo_sibling_invalid_stored_repo_false": {
+  "result": {
+   "success": true,
+   "message": "Config files synchronized successfully"
+  },
+  "before": {
+   "global": "<absent>",
+   "r1": {
+    "implicitReplies": false
+   },
+   "r2": "<absent>",
+   "r1dirs": []
+  },
+  "after": {
+   "global": "<absent>",
+   "r1": {
+    "implicitReplies": false,
+    "other": "x"
+   },
+   "r2": "<absent>",
+   "r1dirs": []
+  },
+  "stringStored": false,
+  "writes": [
+   {
+    "repositoryId": "r1",
+    "conversationSent": {
+     "other": "x",
+     "implicitReplies": false
+    }
+   }
+  ],
+  "reads": [
+   "athena/kodus-config.yml"
+  ],
+  "loaderWarns": [
+   {
+    "message": "Ignoring an invalid conversation.implicitReplies in kodus-config.yml: the stored setting applies",
+    "valueType": "string"
+   }
+  ],
+  "syncLogs": [],
+  "gate": {
+   "r1": {
+    "implicitReplies": false,
+    "other": "x"
+   }
+  }
+ }
+}
