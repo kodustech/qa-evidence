@@ -1,0 +1,408 @@
+{
+ "pr": "kodus-olimpo/codex-athena#13",
+ "file_on_main": "version 2.0; ignorePaths qa2576/ignored/**; conversation.implicitReplies: \"false\" (commit 9b478f28)",
+ "logs": [
+  {
+   "t": "2026-11-27T17:38:53.222Z",
+   "level": "info",
+   "component": "GitHubPullRequestHandler",
+   "message": "Code review job enqueued for asynchronous processing"
+  },
+  {
+   "t": "2026-11-27T17:38:53.925Z",
+   "level": "info",
+   "component": "RunCodeReviewAutomationUseCase",
+   "message": "RunCodeReviewAutomationUseCase PR#13"
+  },
+  {
+   "t": "2026-11-27T17:38:54.569Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Starting pipeline: CodeReviewPipeline (ID: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34)"
+  },
+  {
+   "t": "2026-11-27T17:38:54.646Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidatePrerequisitesStage' completed in 65ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:38:54.663Z",
+   "level": "info",
+   "component": "ValidateNewCommitsStage",
+   "message": "No last analyzed commit found, analyzing all commits"
+  },
+  {
+   "t": "2026-11-27T17:38:54.929Z",
+   "level": "info",
+   "component": "ValidateNewCommitsStage",
+   "message": "Processing 1 new commits for PR#13 (1 total)"
+  },
+  {
+   "t": "2026-11-27T17:38:54.939Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidateNewCommitsStage' completed in 292ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:38:55.854Z",
+   "level": "warn",
+   "component": "CodeBaseConfigService",
+   "message": "Ignoring an invalid conversation.implicitReplies in kodus-config.yml: the stored setting applies"
+  },
+  {
+   "t": "2026-11-27T17:38:55.857Z",
+   "level": "info",
+   "component": "PermissionValidationService",
+   "message": "@@VALID PERMISSION@@ - Validating resource limits"
+  },
+  {
+   "t": "2026-11-27T17:38:55.869Z",
+   "level": "info",
+   "component": "PermissionValidationService",
+   "message": "@@VALID PERMISSION@@ - Resource limits validated"
+  },
+  {
+   "t": "2026-11-27T17:38:55.888Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ResolveConfigStage' completed in 948ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:38:55.907Z",
+   "level": "info",
+   "component": "ValidateConfigStage",
+   "message": "Branch Review Validation"
+  },
+  {
+   "t": "2026-11-27T17:38:55.916Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidateConfigStage' completed in 27ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:38:55.937Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'AssessPrRiskStage' completed in 20ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:38:55.938Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ResolveRiskRoutingStage' completed in 0ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:38:55.952Z",
+   "level": "info",
+   "component": "FetchChangedFilesStage",
+   "message": "Found 1 files to analyze for PR#13 (2 total, 1 ignored)"
+  },
+  {
+   "t": "2026-11-27T17:38:56.271Z",
+   "level": "info",
+   "component": "GithubService",
+   "message": "[GRAPHQL_BATCH_COST] files=1 cost=1 remaining=4998 limit=5000 resetAt=2026-11-27T18:38:53Z"
+  },
+  {
+   "t": "2026-11-27T17:38:56.281Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'FetchChangedFilesStage' completed in 342ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:38:56.331Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'LoadExternalContextStage' completed in 49ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:38:56.352Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'LoadCiEvidenceStage' completed in 20ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:38:57.287Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'InitialCommentStage' completed in 935ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:38:57.303Z",
+   "level": "info",
+   "component": "PermissionValidationService",
+   "message": "@@VALID PERMISSION@@ - Validating resource limits"
+  },
+  {
+   "t": "2026-11-27T17:38:57.320Z",
+   "level": "info",
+   "component": "PermissionValidationService",
+   "message": "@@VALID PERMISSION@@ - Resource limits validated"
+  },
+  {
+   "t": "2026-11-27T17:38:57.389Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "Business validation skipped (no_reference)"
+  },
+  {
+   "t": "2026-11-27T17:38:57.406Z",
+   "level": "info",
+   "component": "BusinessLogicValidationStage",
+   "message": "[BUSINESS-LOGIC] Skipped (no_reference): no reference."
+  },
+  {
+   "t": "2026-11-27T17:38:57.415Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'BusinessLogicValidationStage' completed in 127ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:38:57.853Z",
+   "level": "info",
+   "component": "E2BSandboxService",
+   "message": "[egress] route=fixed_ip (rollout_off)"
+  },
+  {
+   "t": "2026-11-27T17:39:01.911Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'CreateSandboxStage' completed in 4495ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:39:01.969Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'RunAnalyzersStage' completed in 57ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:39:11.759Z",
+   "level": "warn",
+   "component": "CodeBaseConfigService",
+   "message": "Ignoring an invalid conversation.implicitReplies in kodus-config.yml: the stored setting applies"
+  },
+  {
+   "t": "2026-11-27T17:39:15.772Z",
+   "level": "info",
+   "component": "GeneralistAgentProvider",
+   "message": "[AGENT] Generalist finder settings for openai_compatible:opencode_go/deepseek-v4.1-flash: family=deepseek, maxSteps=20, synthesisRescue=true"
+  },
+  {
+   "t": "2026-11-27T17:39:15.773Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent context window: 1000000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash"
+  },
+  {
+   "t": "2026-11-27T17:39:50.998Z",
+   "level": "info",
+   "component": "VerifierAgent",
+   "message": "verifier verdict recovered from text (keep=true)"
+  },
+  {
+   "t": "2026-11-27T17:40:00.901Z",
+   "level": "info",
+   "component": "VerifierAgent",
+   "message": "verifier verdict recovered from text (keep=true)"
+  },
+  {
+   "t": "2026-11-27T17:40:02.447Z",
+   "level": "info",
+   "component": "CheckIfPRCanBeApprovedCronProvider",
+   "message": "Open pull requests found"
+  },
+  {
+   "t": "2026-11-27T17:40:04.749Z",
+   "level": "info",
+   "component": "VerifierAgent",
+   "message": "verifier verdict recovered from text (keep=false)"
+  },
+  {
+   "t": "2026-11-27T17:40:04.750Z",
+   "level": "info",
+   "component": "review-funnel",
+   "message": "review recall funnel (verify gate)"
+  },
+  {
+   "t": "2026-11-27T17:40:04.753Z",
+   "level": "info",
+   "component": "ReviewOrchestratorService",
+   "message": "[AGENT] generalist returned 2 suggestions in 48985ms"
+  },
+  {
+   "t": "2026-11-27T17:40:20.559Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[AGENT] Reclassified severity for 2 suggestions (0 left unclassified, default kept)"
+  },
+  {
+   "t": "2026-11-27T17:40:22.871Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[ENRICH] PR#13: enriched 2, failed 0, skipped 0"
+  },
+  {
+   "t": "2026-11-27T17:40:22.872Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[AGENT] Titled 2 suggestions (from summary 2, from body 0, over the ceiling 0, empty 0)"
+  },
+  {
+   "t": "2026-11-27T17:40:23.956Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[AGENT] Formatted 2/2 suggestion contents"
+  },
+  {
+   "t": "2026-11-27T17:40:23.956Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[AGENT] Shaped 2 suggestion bodies (fences removed 0, title repeat dropped 0, capped 0, titles rewritten 0, titles cut 0)"
+  },
+  {
+   "t": "2026-11-27T17:40:23.958Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[AGENT] Downgraded 1 suggestion(s) with unusable improvedCode to plain comments"
+  },
+  {
+   "t": "2026-11-27T17:40:23.968Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'AgentReviewStage' completed in 81998ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:40:23.982Z",
+   "level": "info",
+   "component": "CreatePrLevelCommentsStage",
+   "message": "No PR-level suggestions to process for PR#13"
+  },
+  {
+   "t": "2026-11-27T17:40:23.992Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'CreatePrLevelCommentsStage' completed in 23ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:40:30.281Z",
+   "level": "info",
+   "component": "ValidateSuggestionsStage",
+   "message": "No patched files generated for validation"
+  },
+  {
+   "t": "2026-11-27T17:40:30.293Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidateSuggestionsStage' completed in 6300ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:40:30.314Z",
+   "level": "info",
+   "component": "CreateFileCommentsStage",
+   "message": "Starting file comments creation for PR#13"
+  },
+  {
+   "t": "2026-11-27T17:40:30.708Z",
+   "level": "info",
+   "component": "CommentManagerService",
+   "message": "Create Line Comments PR#13"
+  },
+  {
+   "t": "2026-11-27T17:40:31.769Z",
+   "level": "info",
+   "component": "GithubService",
+   "message": "Created line comment for PR#13"
+  },
+  {
+   "t": "2026-11-27T17:40:34.582Z",
+   "level": "info",
+   "component": "GithubService",
+   "message": "Created line comment for PR#13"
+  },
+  {
+   "t": "2026-11-27T17:40:34.763Z",
+   "level": "info",
+   "component": "CreateFileCommentsStage",
+   "message": "Successfully processed file comments for PR#13"
+  },
+  {
+   "t": "2026-11-27T17:40:34.773Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'CreateFileCommentsStage' completed in 4479ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:40:34.785Z",
+   "level": "info",
+   "component": "AggregateResultsStage",
+   "message": "Aggregated 2 valid suggestions, 1 discarded suggestions"
+  },
+  {
+   "t": "2026-11-27T17:40:34.786Z",
+   "level": "warn",
+   "component": "AggregateResultsStage",
+   "message": "No valid suggestions to aggregate for PR#13"
+  },
+  {
+   "t": "2026-11-27T17:40:34.795Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'AggregateResultsStage' completed in 21ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:40:34.809Z",
+   "level": "info",
+   "component": "UpdateCommentsAndGenerateSummaryStage",
+   "message": "Generating summary for PR#13"
+  },
+  {
+   "t": "2026-11-27T17:40:35.165Z",
+   "level": "info",
+   "component": "CommentManagerService",
+   "message": "GenerateSummaryPR: Start PR#13. After get PR data"
+  },
+  {
+   "t": "2026-11-27T17:40:40.682Z",
+   "level": "info",
+   "component": "CommentManagerService",
+   "message": "GenerateSummaryPR: End PR#13. After concatenate"
+  },
+  {
+   "t": "2026-11-27T17:40:42.688Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 7892ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:40:42.708Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'DecidePrApprovalStage' completed in 20ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:40:42.721Z",
+   "level": "info",
+   "component": "RequestChangesOrApproveStage",
+   "message": "Finished processing PR#13"
+  },
+  {
+   "t": "2026-11-27T17:40:42.730Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'RequestChangesOrApproveStage' completed in 21ms: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34"
+  },
+  {
+   "t": "2026-11-27T17:40:42.730Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Finished pipeline: CodeReviewPipeline (ID: 31b84d3a-2b99-4a3b-ad8c-96ab9e777a34)"
+  },
+  {
+   "t": "2026-11-27T17:40:44.615Z",
+   "level": "info",
+   "component": "AutomationCodeReviewService",
+   "message": "Successfully handled pull request for PR#13"
+  }
+ ]
+}
