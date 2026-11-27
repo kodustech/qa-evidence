@@ -1,0 +1,82 @@
+S31 real network errors (generateText/createOpenAICompatible + fetch). realmFix=true = production shape (see note in network.spec.ts)
+=====================================================================================================================================
+
+[unresolvable .invalid sdk maxRetries=0 realmFix=false]
+  MERGE : err=TypeError:fetch failed | TRANSIENT | failover=true | hard=false | msg="Couldn't connect to the provider (openai_compatible): ENOTFOUND kodus-qa-2700-unreachable.invalid. If it keeps failing, check the base URL."
+  PARENT: err=TypeError:fetch failed | TRANSIENT | failover=true | hard=false | msg="Transient error reaching the provider (openai_compatible). Try again."
+
+[unresolvable .invalid sdk maxRetries=2 realmFix=false]
+  MERGE : err=TypeError:fetch failed | TRANSIENT | failover=true | hard=false | msg="Couldn't connect to the provider (openai_compatible): ENOTFOUND kodus-qa-2700-unreachable.invalid. If it keeps failing, check the base URL."
+  PARENT: err=TypeError:fetch failed | TRANSIENT | failover=true | hard=false | msg="Transient error reaching the provider (openai_compatible). Try again."
+
+[unresolvable .invalid sdk maxRetries=0 realmFix=true]
+  MERGE : err=AI_APICallError:Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid | TRANSIENT | failover=true | hard=false | msg="Couldn't connect to the provider (openai_compatible): ENOTFOUND kodus-qa-2700-unreachable.invalid. If it keeps failing, check the base URL."
+  PARENT: err=AI_APICallError:Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid | UNKNOWN | failover=false | hard=false | msg="Unexpected error while running the code review (openai_compatible)."
+
+[unresolvable .invalid sdk maxRetries=2 realmFix=true]
+  MERGE : err=AI_RetryError:Failed after 3 attempts. Last error: AI_APICallError: Cannot connect to API: getaddrinfo E | TRANSIENT | failover=true | hard=false | msg="Couldn't connect to the provider (openai_compatible): ENOTFOUND kodus-qa-2700-unreachable.invalid. If it keeps failing, check the base URL."
+  PARENT: err=AI_RetryError:Failed after 3 attempts. Last error: AI_APICallError: Cannot connect to API: getaddrinfo E | UNKNOWN | failover=false | hard=false | msg="Unexpected error while running the code review (openai_compatible)."
+
+[unresolvable .invalid plain fetch]
+  MERGE : err=TypeError:fetch failed | TRANSIENT | failover=true | hard=false | msg="Couldn't connect to the provider (openai_compatible): ENOTFOUND kodus-qa-2700-unreachable.invalid. If it keeps failing, check the base URL."
+  PARENT: err=TypeError:fetch failed | TRANSIENT | failover=true | hard=false | msg="Transient error reaching the provider (openai_compatible). Try again."
+
+[ECONNREFUSED closed port sdk maxRetries=0 realmFix=false]
+  MERGE : err=TypeError:fetch failed | TRANSIENT | failover=true | hard=false | msg="Couldn't connect to the provider (openai_compatible): ECONNREFUSED 127.0.0.1:50685. If it keeps failing, check the base URL."
+  PARENT: err=TypeError:fetch failed | TRANSIENT | failover=true | hard=false | msg="Transient error reaching the provider (openai_compatible). Try again."
+
+[ECONNREFUSED closed port sdk maxRetries=2 realmFix=false]
+  MERGE : err=TypeError:fetch failed | TRANSIENT | failover=true | hard=false | msg="Couldn't connect to the provider (openai_compatible): ECONNREFUSED 127.0.0.1:50685. If it keeps failing, check the base URL."
+  PARENT: err=TypeError:fetch failed | TRANSIENT | failover=true | hard=false | msg="Transient error reaching the provider (openai_compatible). Try again."
+
+[ECONNREFUSED closed port sdk maxRetries=0 realmFix=true]
+  MERGE : err=AI_APICallError:Cannot connect to API: connect ECONNREFUSED 127.0.0.1:50685 | TRANSIENT | failover=true | hard=false | msg="Couldn't connect to the provider (openai_compatible): ECONNREFUSED 127.0.0.1:50685. If it keeps failing, check the base URL."
+  PARENT: err=AI_APICallError:Cannot connect to API: connect ECONNREFUSED 127.0.0.1:50683 | UNKNOWN | failover=false | hard=false | msg="Unexpected error while running the code review (openai_compatible)."
+
+[ECONNREFUSED closed port sdk maxRetries=2 realmFix=true]
+  MERGE : err=AI_RetryError:Failed after 3 attempts. Last error: AI_APICallError: Cannot connect to API: connect ECONN | TRANSIENT | failover=true | hard=false | msg="Couldn't connect to the provider (openai_compatible): ECONNREFUSED 127.0.0.1:50685. If it keeps failing, check the base URL."
+  PARENT: err=AI_RetryError:Failed after 3 attempts. Last error: AI_APICallError: Cannot connect to API: connect ECONN | UNKNOWN | failover=false | hard=false | msg="Unexpected error while running the code review (openai_compatible)."
+
+[ECONNREFUSED closed port plain fetch]
+  MERGE : err=TypeError:fetch failed | TRANSIENT | failover=true | hard=false | msg="Couldn't connect to the provider (openai_compatible): ECONNREFUSED 127.0.0.1:50685. If it keeps failing, check the base URL."
+  PARENT: err=TypeError:fetch failed | TRANSIENT | failover=true | hard=false | msg="Transient error reaching the provider (openai_compatible). Try again."
+
+[TEST-NET 192.0.2.1 (4s abort) sdk maxRetries=0 realmFix=false]
+  MERGE : err=TimeoutError:The operation was aborted due to timeout | TRANSIENT | failover=false | hard=true | msg="Transient error reaching the provider (openai_compatible). Try again."
+  PARENT: err=TimeoutError:The operation was aborted due to timeout | TRANSIENT | failover=false | hard=true | msg="Transient error reaching the provider (openai_compatible). Try again."
+
+[TEST-NET 192.0.2.1 (4s abort) sdk maxRetries=2 realmFix=false]
+  MERGE : err=TimeoutError:The operation was aborted due to timeout | TRANSIENT | failover=false | hard=true | msg="Transient error reaching the provider (openai_compatible). Try again."
+  PARENT: err=TimeoutError:The operation was aborted due to timeout | TRANSIENT | failover=false | hard=true | msg="Transient error reaching the provider (openai_compatible). Try again."
+
+[TEST-NET 192.0.2.1 (4s abort) sdk maxRetries=0 realmFix=true]
+  MERGE : err=TimeoutError:The operation was aborted due to timeout | TRANSIENT | failover=false | hard=true | msg="Transient error reaching the provider (openai_compatible). Try again."
+  PARENT: err=TimeoutError:The operation was aborted due to timeout | TRANSIENT | failover=false | hard=true | msg="Transient error reaching the provider (openai_compatible). Try again."
+
+[TEST-NET 192.0.2.1 (4s abort) sdk maxRetries=2 realmFix=true]
+  MERGE : err=TimeoutError:The operation was aborted due to timeout | TRANSIENT | failover=false | hard=true | msg="Transient error reaching the provider (openai_compatible). Try again."
+  PARENT: err=TimeoutError:The operation was aborted due to timeout | TRANSIENT | failover=false | hard=true | msg="Transient error reaching the provider (openai_compatible). Try again."
+
+[TEST-NET 192.0.2.1 (4s abort) plain fetch]
+  MERGE : err=TimeoutError:The operation was aborted due to timeout | TRANSIENT | failover=false | hard=true | msg="Transient error reaching the provider (openai_compatible). Try again."
+  PARENT: err=TimeoutError:The operation was aborted due to timeout | TRANSIENT | failover=false | hard=true | msg="Transient error reaching the provider (openai_compatible). Try again."
+
+[TEST-NET undici connect-timeout (no abort, realmFix) cause.code=UND_ERR_CONNECT_TIMEOUT]
+  MERGE : err=AI_APICallError:Cannot connect to API: Connect Timeout Error (attempted address: 192.0.2.1:80, timeout: 10 | TRANSIENT | failover=false | hard=true | msg="Couldn't connect to the provider (openai_compatible): the connection failed. If it keeps failing, check the base URL."
+  PARENT: err=AI_APICallError:Cannot connect to API: Connect Timeout Error (attempted address: 192.0.2.1:80, timeout: 10 | TRANSIENT | failover=false | hard=true | msg="Transient error reaching the provider (openai_compatible). Try again."
+
+[TEST-NET undici connect-timeout maxRetries=2 realmFix]
+  MERGE : err=AI_RetryError:Failed after 3 attempts. Last error: AI_APICallError: Cannot connect to API: Connect Timeo | TRANSIENT | failover=false | hard=true | msg="Couldn't connect to the provider (openai_compatible): the connection failed. If it keeps failing, check the base URL."
+  PARENT: err=AI_RetryError:Failed after 3 attempts. Last error: AI_APICallError: Cannot connect to API: Connect Timeo | TRANSIENT | failover=false | hard=true | msg="Transient error reaching the provider (openai_compatible). Try again."
+
+[200 body quotes ENOTFOUND -> Error(text)]
+  MERGE : err=Error:Failed to parse model output: The diff mentions getaddrinfo ENOTFOUND api.foo.com and ECON | UNKNOWN | failover=false | hard=false | msg="Unexpected error while running the code review (openai_compatible)."
+  PARENT: err=Error:Failed to parse model output: The diff mentions getaddrinfo ENOTFOUND api.foo.com and ECON | UNKNOWN | failover=false | hard=false | msg="Unexpected error while running the code review (openai_compatible)."
+
+[400 body says "Cannot connect to API"]
+  MERGE : err=AI_APICallError:Cannot connect to API: getaddrinfo ENOTFOUND api.foo.com (quoted from the diff) | REQUEST_REJECTED | failover=false | hard=false | msg="The provider (openai_compatible) refused the request for this model: Cannot connect to API: getaddrinfo ENOTFOUND api.foo.com (quoted from the diff)"
+  PARENT: err=AI_APICallError:Cannot connect to API: getaddrinfo ENOTFOUND api.foo.com (quoted from the diff) | REQUEST_REJECTED | failover=false | hard=false | msg="The provider (openai_compatible) refused the request for this model: Cannot connect to API: getaddrinfo ENOTFOUND api.foo.com (quoted from the diff)"
+
+[400 body says "Cannot connect to API" maxRetries=2]
+  MERGE : err=AI_APICallError:Cannot connect to API: getaddrinfo ENOTFOUND api.foo.com (quoted from the diff) | REQUEST_REJECTED | failover=false | hard=false | msg="The provider (openai_compatible) refused the request for this model: Cannot connect to API: getaddrinfo ENOTFOUND api.foo.com (quoted from the diff)"
+  PARENT: err=AI_APICallError:Cannot connect to API: getaddrinfo ENOTFOUND api.foo.com (quoted from the diff) | REQUEST_REJECTED | failover=false | hard=false | msg="The provider (openai_compatible) refused the request for this model: Cannot connect to API: getaddrinfo ENOTFOUND api.foo.com (quoted from the diff)"
