@@ -1,0 +1,2 @@
+e-truncated | stop_reason=max_tokens | requests=1 | lastUserHasJsonHint=n/a | THREW [structured-output] reroute-json produced no valid object for qa-2036-s51e
+e-control-ended-no-valid-object | stop_reason=end_turn | requests=1 | lastUserHasJsonHint=n/a | THREW [structured-output] reroute-json produced no valid object for qa-2036-s51e
