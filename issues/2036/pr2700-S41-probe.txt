@@ -1,0 +1,4 @@
+MiniMax-M3.1-Flash-Preview None 201 {"ok": true, "code": "ok", "httpStatus": null, "message": null, "providerMessage": null}
+MiniMax-M3.1-Flash-Preview high 201 {"ok": true, "code": "ok", "httpStatus": null, "message": null, "providerMessage": null}
+MiniMax-M3.1-Flash-Preview none 201 {"ok": true, "code": "ok", "httpStatus": null, "message": null, "providerMessage": null}
+MiniMax-M3 None 201 {"ok": true, "code": "ok", "httpStatus": null, "message": null, "providerMessage": null}
