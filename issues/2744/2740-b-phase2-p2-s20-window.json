@@ -1,0 +1,1132 @@
+[
+ {
+  "timestamp": "2026-11-27T22:46:36.794Z",
+  "level": "info",
+  "message": "Starting conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-r9oe63",
+    "metadata": {
+     "description": "Thread TR-cmc-r9oe63",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723880960
+    }
+   },
+   "userLanguage": "en-US",
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:37.296Z",
+  "level": "info",
+  "message": "Conversation agent MCP tools connected",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "threadId": "TR-cmc-r9oe63",
+   "mcpToolCount": 22,
+   "proactiveTools": [
+    "KODUS_CREATE_KODY_RULE",
+    "KODUS_UPDATE_KODY_RULE",
+    "KODUS_CREATE_MEMORY",
+    "KODUS_CREATE_KODY_ISSUE",
+    "KODUS_UPDATE_KODY_ISSUE_STATUS",
+    "KODUS_UPDATE_KODY_ISSUE_CATEGORY"
+   ],
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:38.551Z",
+  "level": "info",
+  "message": "Starting conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-cnkwgr",
+    "metadata": {
+     "description": "Thread TR-cmc-cnkwgr",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723881806
+    }
+   },
+   "userLanguage": "en-US",
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:38.948Z",
+  "level": "info",
+  "message": "Conversation agent MCP tools connected",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "threadId": "TR-cmc-cnkwgr",
+   "mcpToolCount": 22,
+   "proactiveTools": [
+    "KODUS_CREATE_KODY_RULE",
+    "KODUS_UPDATE_KODY_RULE",
+    "KODUS_CREATE_MEMORY",
+    "KODUS_CREATE_KODY_ISSUE",
+    "KODUS_UPDATE_KODY_ISSUE_STATUS",
+    "KODUS_UPDATE_KODY_ISSUE_CATEGORY"
+   ],
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:40.237Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: acquire prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:40.257Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: connecting to existing sandbox sandboxId=\"igms7ai1jomlr3h9qgdl2\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "sandboxId": "igms7ai1jomlr3h9qgdl2",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:41.781Z",
+  "level": "info",
+  "message": "[DEBUG] syncE2BSandboxRepo: synced reused sandbox to refspec=refs/pull/14/head",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "refspec": "refs/pull/14/head",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:41.785Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: connected to existing sandbox prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\" leaseId=\"83f03155-2d25-486e-bb0a-edbec3a6a74a\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "leaseId": "83f03155-2d25-486e-bb0a-edbec3a6a74a",
+   "sandboxId": "igms7ai1jomlr3h9qgdl2",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:41.814Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: acquire prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:41.827Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: connecting to existing sandbox sandboxId=\"igms7ai1jomlr3h9qgdl2\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "sandboxId": "igms7ai1jomlr3h9qgdl2",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:41.924Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: skipping destructive git sync for sandboxId=\"igms7ai1jomlr3h9qgdl2\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" \u2014 leaseCount=2 other consumer(s) active",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "sandboxId": "igms7ai1jomlr3h9qgdl2",
+   "leaseCount": 2,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:41.926Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: connected to existing sandbox prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\" leaseId=\"a871f7fa-3e2a-4654-ab17-cf0cffa9c603\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "leaseId": "a871f7fa-3e2a-4654-ab17-cf0cffa9c603",
+   "sandboxId": "igms7ai1jomlr3h9qgdl2",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:41.968Z",
+  "level": "info",
+  "message": "Starting conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-if7w68",
+    "metadata": {
+     "description": "Thread TR-cmc-if7w68",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723881548
+    }
+   },
+   "userLanguage": "en-US",
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:42.230Z",
+  "level": "warn",
+  "message": "[SANDBOX-EXEC] command stopped after 2000000 output characters",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "program": "seq",
+   "maxChars": 2000000,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:42.601Z",
+  "level": "warn",
+  "message": "[SANDBOX-EXEC] command stopped after 2000000 output characters",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "program": "cat",
+   "maxChars": 2000000,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:42.607Z",
+  "level": "warn",
+  "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+  "component": "ConversationTools",
+  "metadata": {
+   "component": "ConversationTools",
+   "level": "warn",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "tool": "exec",
+   "field": "stdout",
+   "outputChars": 1999841,
+   "longestLine": 200,
+   "linesCut": 0,
+   "files": [],
+   "maxLine": 2000,
+   "component": "ConversationTools",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:42.701Z",
+  "level": "warn",
+  "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+  "component": "ConversationTools",
+  "metadata": {
+   "component": "ConversationTools",
+   "level": "warn",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "tool": "exec",
+   "field": "stdout",
+   "outputChars": 1999996,
+   "longestLine": 6,
+   "linesCut": 0,
+   "files": [],
+   "maxLine": 2000,
+   "component": "ConversationTools",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:42.917Z",
+  "level": "info",
+  "message": "Conversation agent MCP tools connected",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "threadId": "TR-cmc-if7w68",
+   "mcpToolCount": 22,
+   "proactiveTools": [
+    "KODUS_CREATE_KODY_RULE",
+    "KODUS_UPDATE_KODY_RULE",
+    "KODUS_CREATE_MEMORY",
+    "KODUS_CREATE_KODY_ISSUE",
+    "KODUS_UPDATE_KODY_ISSUE_STATUS",
+    "KODUS_UPDATE_KODY_ISSUE_CATEGORY"
+   ],
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:44.673Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: acquire prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:44.688Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: connecting to existing sandbox sandboxId=\"igms7ai1jomlr3h9qgdl2\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "sandboxId": "igms7ai1jomlr3h9qgdl2",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:44.791Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: skipping destructive git sync for sandboxId=\"igms7ai1jomlr3h9qgdl2\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" \u2014 leaseCount=3 other consumer(s) active",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "sandboxId": "igms7ai1jomlr3h9qgdl2",
+   "leaseCount": 3,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:44.794Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: connected to existing sandbox prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\" leaseId=\"466b2bf9-af4f-447a-b809-93abb2394e40\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "leaseId": "466b2bf9-af4f-447a-b809-93abb2394e40",
+   "sandboxId": "igms7ai1jomlr3h9qgdl2",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:45.295Z",
+  "level": "warn",
+  "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+  "component": "ConversationTools",
+  "metadata": {
+   "component": "ConversationTools",
+   "level": "warn",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "tool": "exec",
+   "field": "stdout",
+   "outputChars": 793,
+   "longestLine": 79,
+   "linesCut": 0,
+   "files": [],
+   "maxLine": 2000,
+   "component": "ConversationTools",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:46.922Z",
+  "level": "info",
+  "message": "Finish conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-r9oe63",
+    "metadata": {
+     "description": "Thread TR-cmc-r9oe63",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723880960
+    }
+   },
+   "steps": 3,
+   "usage": {
+    "inputTokens": 71307,
+    "outputTokens": 743,
+    "totalTokens": 72050,
+    "reasoningTokens": 149,
+    "cacheReadTokens": 31872,
+    "cacheWriteTokens": null
+   },
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:46.922Z",
+  "level": "error",
+  "message": "Conversation agent declared an action it never performed",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "error",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "threadId": "TR-cmc-r9oe63",
+   "intendedTool": "exec",
+   "authorizingQuote": "exec output limit test: run `seq 1 3000000` exactly as written (no pipe, head, tail or redirect) and tell me the last number your tool returned and whether it was cut.",
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:46.938Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: released leaseId=\"83f03155-2d25-486e-bb0a-edbec3a6a74a\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" leaseCount=2",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "leaseId": "83f03155-2d25-486e-bb0a-edbec3a6a74a",
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "leaseCount": 2,
+   "consumer": "conversation",
+   "heldMs": 5145,
+   "acquireToFirstUseMs": 0,
+   "lastUseToReleaseMs": 4701,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:48.237Z",
+  "level": "error",
+  "message": "Conversation agent declared an action it never performed",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "error",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "threadId": "TR-cmc-cnkwgr",
+   "intendedTool": "exec",
+   "authorizingQuote": "run `cat qa2744/fixtures/attendance-export.json` exactly as written (no pipe, head, tail or redirect) and tell me the last line your tool returned and whether it was cut",
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:48.237Z",
+  "level": "info",
+  "message": "Finish conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-cnkwgr",
+    "metadata": {
+     "description": "Thread TR-cmc-cnkwgr",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723881806
+    }
+   },
+   "steps": 3,
+   "usage": {
+    "inputTokens": 58897,
+    "outputTokens": 1067,
+    "totalTokens": 59964,
+    "reasoningTokens": 387,
+    "cacheReadTokens": 32768,
+    "cacheWriteTokens": null
+   },
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:48.249Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: released leaseId=\"a871f7fa-3e2a-4654-ab17-cf0cffa9c603\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" leaseCount=1",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "leaseId": "a871f7fa-3e2a-4654-ab17-cf0cffa9c603",
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "leaseCount": 1,
+   "consumer": "conversation",
+   "heldMs": 6317,
+   "acquireToFirstUseMs": 0,
+   "lastUseToReleaseMs": 5642,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:50.623Z",
+  "level": "info",
+  "message": "Event loop delay max=102ms",
+  "component": "EventLoopMonitor",
+  "metadata": {
+   "component": "EventLoopMonitor",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "p50Ms": 20,
+   "p99Ms": 21,
+   "maxMs": 102,
+   "meanMs": 20,
+   "windowMs": 60000,
+   "msSinceLastProbe": 18259,
+   "lastProbeStatus": "ok",
+   "memory": {
+    "rssMb": 820,
+    "heapUsedMb": 516,
+    "heapTotalMb": 562,
+    "heapLimitMb": 4288,
+    "externalMb": 54,
+    "arrayBuffersMb": 25,
+    "heapAfterMajorGcMb": 480,
+    "heapAfterMajorGcMinMb": null,
+    "majorGcs": 0,
+    "gcPauseMs": 71,
+    "gcMaxPauseMs": 19
+   },
+   "jobs": {
+    "total": 0,
+    "byWorkflowType": {},
+    "reviews": {
+     "withSize": 0,
+     "withLines": 0,
+     "changedFilesSum": 0,
+     "changedFilesMax": 0,
+     "changedLinesSum": 0
+    }
+   },
+   "gauges": {
+    "cache": {
+     "entries": 64,
+     "expired": 0,
+     "valueMb": 0.6
+    }
+   },
+   "component": "EventLoopMonitor",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:50.801Z",
+  "level": "warn",
+  "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+  "component": "ConversationTools",
+  "metadata": {
+   "component": "ConversationTools",
+   "level": "warn",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "tool": "exec",
+   "field": "stdout",
+   "outputChars": 364,
+   "longestLine": 49,
+   "linesCut": 0,
+   "files": [],
+   "maxLine": 2000,
+   "component": "ConversationTools",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:52.340Z",
+  "level": "info",
+  "message": "Event loop delay max=24ms",
+  "component": "EventLoopMonitor",
+  "metadata": {
+   "component": "EventLoopMonitor",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "p50Ms": 20,
+   "p99Ms": 21,
+   "maxMs": 24,
+   "meanMs": 20,
+   "windowMs": 60000,
+   "msSinceLastProbe": 20150,
+   "lastProbeStatus": "ok",
+   "memory": {
+    "rssMb": 432,
+    "heapUsedMb": 218,
+    "heapTotalMb": 250,
+    "heapLimitMb": 2096,
+    "externalMb": 28,
+    "arrayBuffersMb": 22,
+    "heapAfterMajorGcMb": 215,
+    "heapAfterMajorGcMinMb": null,
+    "majorGcs": 0,
+    "gcPauseMs": 7,
+    "gcMaxPauseMs": 2
+   },
+   "jobs": {
+    "total": 0,
+    "byWorkflowType": {},
+    "reviews": {
+     "withSize": 0,
+     "withLines": 0,
+     "changedFilesSum": 0,
+     "changedFilesMax": 0,
+     "changedLinesSum": 0
+    }
+   },
+   "gauges": {
+    "cache": {
+     "entries": 0,
+     "expired": 0,
+     "valueMb": 0
+    }
+   },
+   "component": "EventLoopMonitor",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:46:56.804Z",
+  "level": "warn",
+  "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+  "component": "ConversationTools",
+  "metadata": {
+   "component": "ConversationTools",
+   "level": "warn",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "tool": "exec",
+   "field": "stdout",
+   "outputChars": 452,
+   "longestLine": 57,
+   "linesCut": 0,
+   "files": [],
+   "maxLine": 2000,
+   "component": "ConversationTools",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:47:00.339Z",
+  "level": "warn",
+  "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+  "component": "ConversationTools",
+  "metadata": {
+   "component": "ConversationTools",
+   "level": "warn",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "tool": "exec",
+   "field": "stdout",
+   "outputChars": 377,
+   "longestLine": 47,
+   "linesCut": 0,
+   "files": [],
+   "maxLine": 2000,
+   "component": "ConversationTools",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:47:03.920Z",
+  "level": "info",
+  "message": "Finish conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-if7w68",
+    "metadata": {
+     "description": "Thread TR-cmc-if7w68",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723881548
+    }
+   },
+   "steps": 7,
+   "usage": {
+    "inputTokens": 90300,
+    "outputTokens": 2074,
+    "totalTokens": 92374,
+    "reasoningTokens": 1309,
+    "cacheReadTokens": 84992,
+    "cacheWriteTokens": null
+   },
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:47:03.934Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: released leaseId=\"466b2bf9-af4f-447a-b809-93abb2394e40\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" leaseCount=0",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "leaseId": "466b2bf9-af4f-447a-b809-93abb2394e40",
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "leaseCount": 0,
+   "consumer": "conversation",
+   "heldMs": 19134,
+   "acquireToFirstUseMs": 1,
+   "lastUseToReleaseMs": 3590,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:47:03.939Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-27T22:52:03.934Z for sandboxId=\"igms7ai1jomlr3h9qgdl2\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "sandboxId": "igms7ai1jomlr3h9qgdl2",
+   "idleTimeoutMs": 300000,
+   "killAt": "2026-11-27T22:52:03.934Z",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:47:19.634Z",
+  "level": "info",
+  "message": "Event loop delay max=553ms",
+  "component": "EventLoopMonitor",
+  "metadata": {
+   "component": "EventLoopMonitor",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "p50Ms": 20,
+   "p99Ms": 21,
+   "maxMs": 553,
+   "meanMs": 20,
+   "windowMs": 60000,
+   "msSinceLastProbe": 18344,
+   "lastProbeStatus": "ok",
+   "memory": {
+    "rssMb": 702,
+    "heapUsedMb": 466,
+    "heapTotalMb": 482,
+    "heapLimitMb": 4288,
+    "externalMb": 54,
+    "arrayBuffersMb": 22,
+    "heapAfterMajorGcMb": 465,
+    "heapAfterMajorGcMinMb": 465,
+    "majorGcs": 3,
+    "gcPauseMs": 245,
+    "gcMaxPauseMs": 72
+   },
+   "jobs": {
+    "total": 0,
+    "byWorkflowType": {},
+    "reviews": {
+     "withSize": 0,
+     "withLines": 0,
+     "changedFilesSum": 0,
+     "changedFilesMax": 0,
+     "changedLinesSum": 0
+    }
+   },
+   "gauges": {
+    "cache": {
+     "entries": 50,
+     "expired": 0,
+     "valueMb": 0.2
+    }
+   },
+   "component": "EventLoopMonitor",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:47:21.902Z",
+  "level": "info",
+  "message": "Event loop delay max=23ms",
+  "component": "EventLoopMonitor",
+  "metadata": {
+   "component": "EventLoopMonitor",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "p50Ms": 20,
+   "p99Ms": 20,
+   "maxMs": 23,
+   "meanMs": 20,
+   "windowMs": 60000,
+   "msSinceLastProbe": null,
+   "lastProbeStatus": null,
+   "memory": {
+    "rssMb": 651,
+    "heapUsedMb": 429,
+    "heapTotalMb": 454,
+    "heapLimitMb": 4288,
+    "externalMb": 29,
+    "arrayBuffersMb": 23,
+    "heapAfterMajorGcMb": 416,
+    "heapAfterMajorGcMinMb": null,
+    "majorGcs": 0,
+    "gcPauseMs": 10,
+    "gcMaxPauseMs": 2
+   },
+   "jobs": {
+    "total": 0,
+    "byWorkflowType": {},
+    "reviews": {
+     "withSize": 0,
+     "withLines": 0,
+     "changedFilesSum": 0,
+     "changedFilesMax": 0,
+     "changedLinesSum": 0
+    }
+   },
+   "gauges": {
+    "cache": {
+     "entries": 0,
+     "expired": 0,
+     "valueMb": 0
+    }
+   },
+   "component": "EventLoopMonitor",
+   "originalCorrelationId": null
+  }
+ }
+]
