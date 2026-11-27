@@ -1,0 +1,42 @@
+Stub B (Gemini native, every generateContent -> 429 message-only "Please retry in 4.86s") request log during S14 (Bitbucket claude-ares PR 1, 20:40:41Z-20:43:43Z). Columns: time, gap since previous request with the same system-prompt prefix, path, system prompt prefix. The stub appended a fake bait key/e-mail to the 429 message (fake values).
+
+20:41:07.636            /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"<CodeReviewAgent>\n  <Date>27/11/2026</Date>\n  <Role>\n    You are kodus-generalist-review
+20:41:09.840     +2.2s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"<CodeReviewAgent>\n  <Date>27/11/2026</Date>\n  <Role>\n    You are kodus-generalist-review
+20:41:14.046     +4.2s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"<CodeReviewAgent>\n  <Date>27/11/2026</Date>\n  <Role>\n    You are kodus-generalist-review
+20:41:22.268     +8.2s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"<CodeReviewAgent>\n  <Date>27/11/2026</Date>\n  <Role>\n    You are kodus-generalist-review
+20:41:33.871    +11.6s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"<CodeReviewAgent>\n  <Date>27/11/2026</Date>\n  <Role>\n    You are kodus-generalist-review
+20:41:36.066     +2.2s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"<CodeReviewAgent>\n  <Date>27/11/2026</Date>\n  <Role>\n    You are kodus-generalist-review
+20:41:40.271     +4.2s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"<CodeReviewAgent>\n  <Date>27/11/2026</Date>\n  <Role>\n    You are kodus-generalist-review
+20:41:48.473     +8.2s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"<CodeReviewAgent>\n  <Date>27/11/2026</Date>\n  <Role>\n    You are kodus-generalist-review
+20:42:03.436            /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You are a surgical code review verifier.\n\nYour task is to verify ONE candidate finding: c
+20:42:03.449     +0.0s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You are a surgical code review verifier.\n\nYour task is to verify ONE candidate finding: c
+20:42:03.459     +0.0s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You are a surgical code review verifier.\n\nYour task is to verify ONE candidate finding: c
+20:42:03.464     +0.0s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You are a surgical code review verifier.\n\nYour task is to verify ONE candidate finding: c
+20:42:05.605     +2.1s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You are a surgical code review verifier.\n\nYour task is to verify ONE candidate finding: c
+20:42:05.619     +0.0s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You are a surgical code review verifier.\n\nYour task is to verify ONE candidate finding: c
+20:42:05.627     +0.0s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You are a surgical code review verifier.\n\nYour task is to verify ONE candidate finding: c
+20:42:05.634     +0.0s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You are a surgical code review verifier.\n\nYour task is to verify ONE candidate finding: c
+20:42:09.789     +4.2s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You are a surgical code review verifier.\n\nYour task is to verify ONE candidate finding: c
+20:42:09.799     +0.0s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You are a surgical code review verifier.\n\nYour task is to verify ONE candidate finding: c
+20:42:09.806     +0.0s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You are a surgical code review verifier.\n\nYour task is to verify ONE candidate finding: c
+20:42:09.821     +0.0s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You are a surgical code review verifier.\n\nYour task is to verify ONE candidate finding: c
+20:42:17.961     +8.1s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You are a surgical code review verifier.\n\nYour task is to verify ONE candidate finding: c
+20:42:17.970     +0.0s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You are a surgical code review verifier.\n\nYour task is to verify ONE candidate finding: c
+20:42:17.977     +0.0s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You are a surgical code review verifier.\n\nYour task is to verify ONE candidate finding: c
+20:42:17.990     +0.0s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You are a surgical code review verifier.\n\nYour task is to verify ONE candidate finding: c
+20:42:40.859            /b/v1beta/models/gemini-3.8-flash:generateContent  ""
+20:42:44.156     +3.3s  /b/v1beta/models/gemini-3.8-flash:generateContent  ""
+20:42:46.830     +2.7s  /b/v1beta/models/gemini-3.8-flash:generateContent  ""
+20:42:50.626     +3.8s  /b/v1beta/models/gemini-3.8-flash:generateContent  ""
+20:43:16.556            /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You complete a code-review finding so it can be posted as a comment. The finding is a confi
+20:43:16.558     +0.0s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You complete a code-review finding so it can be posted as a comment. The finding is a confi
+20:43:16.729     +0.2s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You complete a code-review finding so it can be posted as a comment. The finding is a confi
+20:43:19.549     +2.8s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You complete a code-review finding so it can be posted as a comment. The finding is a confi
+20:43:20.320     +0.8s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You complete a code-review finding so it can be posted as a comment. The finding is a confi
+20:43:20.333     +0.0s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You complete a code-review finding so it can be posted as a comment. The finding is a confi
+20:43:22.479    +31.9s  /b/v1beta/models/gemini-3.8-flash:generateContent  ""
+20:43:25.995     +3.5s  /b/v1beta/models/gemini-3.8-flash:generateContent  ""
+20:43:32.262            /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You write pull request descriptions. Put only the requested description, in Markdown, in th
+20:43:36.321     +4.1s  /b/v1beta/models/gemini-3.8-flash:generateContent  {"parts":[{"text":"You write pull request descriptions. Put only the requested description, in Markdown, in th
+
+total POSTs: 38
