@@ -1,0 +1,337 @@
+{
+ "gl-1-2-unchanged.json": [
+  {
+   "cmd": "@kody -v business-logic #1",
+   "cmd_id": 4343772708,
+   "cmd_at": "2026-11-27T23:03:26.922Z",
+   "new_or_updated": [
+    {
+     "id": 4343773069,
+     "created": "2026-11-27T23:03:35.171Z",
+     "updated": "2026-11-27T23:03:35.171Z",
+     "body": "<!-- kody-business-logic -->\n## Kody · Business Logic\n\n**[#1 · Monthly attendance summary](https://gitlab.com/<namespace>/claude-athena/-/work_items/1)**\nAll requirements met\n<sub>Task read 2026-11-27 23:03 UTC · re-checked on request at `b6dcbaa`</sub>\n\n✅ 3 of 3 met: AC01, AC02, AC03\n\n<sub>Disagree with a line? Reply here and mention @kody. Fixed it? Comment `@kody -v business-logic` and this comment is updated.</sub>"
+    },
+    {
+     "id": 4343773086,
+     "created": "2026-11-27T23:03:35.592Z",
+     "updated": "2026-11-27T23:03:35.592Z",
+     "body": "Business logic checked. The result is in the Kody · Business Logic comment on this pull request."
+    }
+   ]
+  },
+  {
+   "cmd": "@kody -v business-logic #1",
+   "cmd_id": 4343773504,
+   "cmd_at": "2026-11-27T23:03:46.391Z",
+   "new_or_updated": [
+    {
+     "id": 4343773882,
+     "created": "2026-11-27T23:03:54.774Z",
+     "updated": "2026-11-27T23:03:54.774Z",
+     "body": "Business logic re-checked: same result as before, #1 met. The Kody · Business Logic comment on this pull request shows it."
+    }
+   ]
+  }
+ ],
+ "gl-3-changed.json": {
+  "cmd": "@kody -v business-logic #1",
+  "cmd_id": 4343777248,
+  "cmd_at": "2026-11-27T23:05:02.676Z",
+  "new_or_updated": [
+   {
+    "id": 4343773069,
+    "created": "2026-11-27T23:03:35.171Z",
+    "updated": "2026-11-27T23:05:18.172Z",
+    "body": "<!-- kody-business-logic -->\n## Kody · Business Logic\n\n**[#1 · Monthly attendance summary](https://gitlab.com/<namespace>/claude-athena/-/work_items/1)**\n1 partial\n<sub>Task read 2026-11-27 23:05 UTC · re-checked on request at `356d797`</sub>\n\n| | Requirement | In this PR |\n|---|---|---|\n| ✅ **MET** | AC1: `monthlyAttendance(records, month)` counts only the records whose date falls in the given month (format YYYY-MM). <sub>AC01</sub> | `src/attendance/monthly.ts:14` · Filters the records by date prefix matching the given YYYY-MM month, so only records from that month are counted. |\n| ✅ **MET** | AC 2: it returns the number of present days and the number of absent days. <sub>AC02</sub> | `src/attendance/monthly.ts:15`, `src/attendance/monthly.ts:16` · Counts the present records and derives the absent count from the remaining records of the month, and returns both. |\n| 🟡 **PARTIAL** | AC3: it returns the attendance rate as a percentage rounded to one decimal, and 0 when there are no records in the month. <sub>AC03</sub> | `src/attendance/monthly.ts:17` · The rate is computed as a percentage rounded to one decimal, but when the month has no records the division is by zero and the returned rate is not 0; there is no guard for the empty-month case. · **Do:** Return a rate of 0 when there are no records in the month, for example by checking the month's record count before dividing. · _was met_ |\n\n<sub>Earlier checks: `b6dcbaa` 3/3 met ✓</sub>\n\n<sub>Disagree with a line? Reply here and mention @kody. Fixed it? Comment `@kody -v business-logic` and this comment is updated.</sub>"
+   },
+   {
+    "id": 4343778017,
+    "created": "2026-11-27T23:05:18.657Z",
+    "updated": "2026-11-27T23:05:18.657Z",
+    "body": "Business logic re-checked: the result changed, #1 met. The Kody · Business Logic comment on this pull request is updated."
+   }
+  ]
+ },
+ "gl-4-changed-open.json": {
+  "cmd": "@kody -v business-logic #1",
+  "cmd_id": 4343781097,
+  "cmd_at": "2026-11-27T23:06:27.659Z",
+  "new_or_updated": [
+   {
+    "id": 4343773069,
+    "created": "2026-11-27T23:03:35.171Z",
+    "updated": "2026-11-27T23:06:42.781Z",
+    "body": "<!-- kody-business-logic -->\n## Kody · Business Logic\n\n**[#1 · Monthly attendance summary](https://gitlab.com/<namespace>/claude-athena/-/work_items/1)**\n2 partial\n<sub>Task read 2026-11-27 23:06 UTC · re-checked on request at `a660099`</sub>\n\n| | Requirement | In this PR |\n|---|---|---|\n| ✅ **MET** | AC1: `monthlyAttendance(records, month)` counts only the records whose date falls in the given month (format YYYY-MM). <sub>AC01</sub> | `src/attendance/monthly.ts:13` · Filters the records to those whose date starts with the requested month followed by a dash, so only records in that YYYY-MM month are counted. |\n| 🟡 **PARTIAL** | AC 2: it returns the number of present days and the number of absent days. <sub>AC02</sub> | `src/attendance/monthly.ts:16`, `src/attendance/monthly.ts:8` · Only the present count is returned; the result object carries `present` and `rate`, with no absent count at all. · **Do:** Count the records in the month that are not present and return that number as `absent` alongside `present` (add it to the MonthlyAttendance result type). · _was met_ |\n| 🟡 **PARTIAL** | AC3: it returns the attendance rate as a percentage rounded to one decimal, and 0 when there are no records in the month. <sub>AC03</sub> | `src/attendance/monthly.ts:15` · The percentage is rounded to one decimal correctly, but when the month has no records the division is 0 by 0, which produces NaN instead of 0. The empty-month case is not handled. · **Do:** Return 0 for the rate when there are no records in the month, instead of dividing by zero. |\n\n<sub>Earlier checks: `b6dcbaa` 3/3 met ✓ → `356d797` 2/3 met ✓</sub>\n\n<sub>Disagree with a line? Reply here and mention @kody. Fixed it? Comment `@kody -v business-logic` and this comment is updated.</sub>"
+   },
+   {
+    "id": 4343781852,
+    "created": "2026-11-27T23:06:43.192Z",
+    "updated": "2026-11-27T23:06:43.192Z",
+    "body": "Business logic re-checked: the result changed, #1 met. The Kody · Business Logic comment on this pull request is updated."
+   }
+  ]
+ },
+ "gl-runs-mr22.json": {
+  "query": "mongosh kodus_db: const r=db.businessValidationRuns.find({organizationId:'4c73f172-aa70-4ad5-87a3-819a915c23e2',pullRequestNumber:22}).sort({createdAt:1}).toArray().map(x=>({createdAt:x.createdAt,door:x.door,platformType:x.platformType,repositoryName:x.repositoryName,headSha:x.headSha,outcome:x.outcome,skipReason:x.skipReason,passed:x.passed,references:x.references,attempts:x.attempts,unseenFiles:x.unseenFiles,comment:x.comment,tasks:x.tasks.map(t=>({id:t.id,tracker:t.tracker,passed:t.passed,textHash:t.textHash,reqs:t.requirements.map(q=>({source:q.source,state:q.state})),outOfScope:t.outOfScope.map(o=>o.change)}))}));print(JSON.stringify(r))",
+  "output": [
+   {
+    "createdAt": "2026-11-27T23:03:35.455Z",
+    "door": "command",
+    "platformType": "GITLAB",
+    "repositoryName": "claude-athena",
+    "headSha": "b6dcbaa9538754cd76a27f1916be06fe17df408e",
+    "outcome": "validated",
+    "passed": true,
+    "references": [
+     {
+      "kind": "git_issue",
+      "id": "1",
+      "raw": "#1",
+      "source": "command",
+      "intent": "closes"
+     }
+    ],
+    "attempts": [
+     {
+      "reference": "#1",
+      "tracker": "Git Issues",
+      "status": "found",
+      "tools": [
+       "KODUS_GET_ISSUE"
+      ]
+     }
+    ],
+    "unseenFiles": [],
+    "comment": {
+     "id": 4343773069
+    },
+    "tasks": [
+     {
+      "id": "#1",
+      "tracker": "Git Issues",
+      "passed": true,
+      "textHash": "11001fbf6ecb36db7f068a7d56e163793c92b70e365ea1757853d30891873bea",
+      "reqs": [
+       {
+        "source": "AC01",
+        "state": "met"
+       },
+       {
+        "source": "AC02",
+        "state": "met"
+       },
+       {
+        "source": "AC03",
+        "state": "met"
+       }
+      ],
+      "outOfScope": []
+     }
+    ]
+   },
+   {
+    "createdAt": "2026-11-27T23:03:54.564Z",
+    "door": "command",
+    "platformType": "GITLAB",
+    "repositoryName": "claude-athena",
+    "headSha": "b6dcbaa9538754cd76a27f1916be06fe17df408e",
+    "outcome": "validated",
+    "passed": true,
+    "references": [
+     {
+      "kind": "git_issue",
+      "id": "1",
+      "raw": "#1",
+      "source": "command",
+      "intent": "closes"
+     }
+    ],
+    "attempts": [
+     {
+      "reference": "#1",
+      "tracker": "Git Issues",
+      "status": "found",
+      "tools": [
+       "KODUS_GET_ISSUE"
+      ]
+     }
+    ],
+    "unseenFiles": [],
+    "comment": {
+     "id": 4343773069
+    },
+    "tasks": [
+     {
+      "id": "#1",
+      "tracker": "Git Issues",
+      "passed": true,
+      "textHash": "11001fbf6ecb36db7f068a7d56e163793c92b70e365ea1757853d30891873bea",
+      "reqs": [
+       {
+        "source": "AC1",
+        "state": "met"
+       },
+       {
+        "source": "AC2",
+        "state": "met"
+       },
+       {
+        "source": "AC3",
+        "state": "met"
+       }
+      ],
+      "outOfScope": []
+     }
+    ]
+   },
+   {
+    "createdAt": "2026-11-27T23:05:18.479Z",
+    "door": "command",
+    "platformType": "GITLAB",
+    "repositoryName": "claude-athena",
+    "headSha": "356d79753f5d8d6db577e3d3b44bc3ed876d5c64",
+    "outcome": "validated",
+    "passed": true,
+    "references": [
+     {
+      "kind": "git_issue",
+      "id": "1",
+      "raw": "#1",
+      "source": "command",
+      "intent": "closes"
+     }
+    ],
+    "attempts": [
+     {
+      "reference": "#1",
+      "tracker": "Git Issues",
+      "status": "found",
+      "tools": [
+       "KODUS_GET_ISSUE"
+      ]
+     }
+    ],
+    "unseenFiles": [],
+    "comment": {
+     "id": 4343773069
+    },
+    "tasks": [
+     {
+      "id": "#1",
+      "tracker": "Git Issues",
+      "passed": true,
+      "textHash": "11001fbf6ecb36db7f068a7d56e163793c92b70e365ea1757853d30891873bea",
+      "reqs": [
+       {
+        "source": "AC1",
+        "state": "met"
+       },
+       {
+        "source": "AC2",
+        "state": "met"
+       },
+       {
+        "source": "AC3",
+        "state": "partial"
+       }
+      ],
+      "outOfScope": []
+     }
+    ]
+   },
+   {
+    "createdAt": "2026-11-27T23:06:43.009Z",
+    "door": "command",
+    "platformType": "GITLAB",
+    "repositoryName": "claude-athena",
+    "headSha": "a66009977ee895a0790741b4d0f5124fc784e9a2",
+    "outcome": "validated",
+    "passed": true,
+    "references": [
+     {
+      "kind": "git_issue",
+      "id": "1",
+      "raw": "#1",
+      "source": "command",
+      "intent": "closes"
+     }
+    ],
+    "attempts": [
+     {
+      "reference": "#1",
+      "tracker": "Git Issues",
+      "status": "found",
+      "tools": [
+       "KODUS_GET_ISSUE"
+      ]
+     }
+    ],
+    "unseenFiles": [],
+    "comment": {
+     "id": 4343773069
+    },
+    "tasks": [
+     {
+      "id": "#1",
+      "tracker": "Git Issues",
+      "passed": true,
+      "textHash": "11001fbf6ecb36db7f068a7d56e163793c92b70e365ea1757853d30891873bea",
+      "reqs": [
+       {
+        "source": "AC1",
+        "state": "met"
+       },
+       {
+        "source": "AC2",
+        "state": "partial"
+       },
+       {
+        "source": "AC3",
+        "state": "partial"
+       }
+      ],
+      "outOfScope": []
+     }
+    ]
+   }
+  ]
+ },
+ "gl-notes-rendered.json": {
+  "4343772708": {
+   "raw": "@kody -v business-logic #1",
+   "html": "<p data-sourcepos=\"1:1-1:26\" dir=\"auto\"><a href=\"https://gitlab.com/Kody\" title=\"Kody\" class=\"gfm gfm-project_member js-user-link\" data-user=\"270970\" data-original=\"@kody\" data-container=\"body\" data-placement=\"top\" data-reference-type=\"user\">@Kody</a> -v business-logic <a href=\"https://gitlab.com/<namespace>/claude-athena/-/work_items/1\" title=\"Monthly attendance summary\" class=\"gfm gfm-issue\" data-original=\"#1\" data-link=\"false\" data-link-reference=\"false\" data-issue=\"212259218\" data-project=\"89319162\" data-iid=\"1\" data-namespace-path=\"<namespace>/claude-athena\" data-project-path=\"<namespace>/claude-athena\" data-issue-type=\"issue\" data-container=\"body\" data-placement=\"top\" data-reference-type=\"issue\">#1</a></p>"
+  },
+  "4343773069": {
+   "raw": "<!-- kody-business-logic -->\n## Kody · Business Logic\n\n**[#1 · Monthly attendance summary](https://gitlab.com/<namespace>/claude-athena/-/work_items/1)**\n2 partial\n<sub>Task read 2026-11-27 23:06 UTC · re-checked on request at `a660099`</sub>\n\n| | Requirement | In this PR |\n|---|---|---|\n| ✅ **MET** | AC1: `monthlyAttendance(records, month)` counts only the records whose date falls in the given month (format YYYY-MM). <sub>AC01</sub> | `src/attendance/monthly.ts:13` · Filters the records to those whose date starts with the requested month followed by a dash, so only records in that YYYY-MM month are counted. |\n| 🟡 **PARTIAL** | AC 2: it returns the number of present days and the number of absent days. <sub>AC02</sub> | `src/attendance/monthly.ts:16`, `src/attendance/monthly.ts:8` · Only the present count is returned; the result object carries `present` and `rate`, with no absent count at all. · **Do:** Count the records in the month that are not present and return that number as `absent` alongside `present` (add it to the MonthlyAttendance result type). · _was met_ |\n| 🟡 **PARTIAL** | AC3: it returns the attendance rate as a percentage rounded to one decimal, and 0 when there are no records in the month. <sub>AC03</sub> | `src/attendance/monthly.ts:15` · The percentage is rounded to one decimal correctly, but when the month has no records the division is 0 by 0, which produces NaN instead of 0. The empty-month case is not handled. · **Do:** Return 0 for the rate when there are no records in the month, instead of dividing by zero. |\n\n<sub>Earlier checks: `b6dcbaa` 3/3 met ✓ → `356d797` 2/3 met ✓</sub>\n\n<sub>Disagree with a line? Reply here and mention @kody. Fixed it? Comment `@kody -v business-logic` and this comment is updated.</sub>",
+   "html": "<!-- kody-business-logic -->\n<h2 id=\"user-content-kody--business-logic\" data-sourcepos=\"2:1-2:25\" dir=\"auto\">Kody · Business Logic<a href=\"#kody--business-logic\" aria-label=\"Link to heading 'Kody · Business Logic'\" data-heading-content=\"Kody · Business Logic\" class=\"anchor\"></a></h2>\n<p data-sourcepos=\"4:1-6:79\" dir=\"auto\"><strong data-sourcepos=\"4:1-4:97\"><a href=\"https://gitlab.com/<namespace>/claude-athena/-/work_items/1\" title=\"Monthly attendance summary\" class=\"gfm gfm-work_item\" data-original=\"#1 · Monthly attendance summary\" data-link=\"true\" data-original-href=\"https://gitlab.com/<namespace>/claude-athena/-/work_items/1\" data-link-reference=\"true\" data-work-item=\"212259218\" data-project=\"89319162\" data-iid=\"1\" data-namespace-path=\"<namespace>/claude-athena\" data-project-path=\"<namespace>/claude-athena\" data-work-item-type=\"issue\" data-container=\"body\" data-placement=\"top\" data-reference-type=\"work_item\">#1 · Monthly attendance summary</a></strong>\n2 partial\n<sub>Task read 2026-11-27 23:06 UTC · re-checked on request at <code data-sourcepos=\"6:65-6:73\">a660099</code></sub></p>\n<table data-sourcepos=\"8:1-12:478\" dir=\"auto\">\n<thead>\n<tr data-sourcepos=\"8:1-8:30\">\n<th data-sourcepos=\"8:2-8:2\"></th>\n<th data-sourcepos=\"8:4-8:16\">Requirement</th>\n<th data-sourcepos=\"8:18-8:29\">In this PR</th>\n</tr>\n</thead>\n<tbody>\n<tr data-sourcepos=\"10:1-10:331\">\n<td data-sourcepos=\"10:2-10:14\"><gl-emoji title=\"check mark button\" data-name=\"white_check_mark\" data-unicode-version=\"6.0\">✅</gl-emoji> <strong data-sourcepos=\"10:7-10:13\">MET</strong></td>\n<td data-sourcepos=\"10:16-10:151\">AC1: <code data-sourcepos=\"10:22-10:56\">monthlyAttendance(records, month)</code> counts only the records whose date falls in the given month (format YYYY-MM). <sub>AC01</sub></td>\n<td data-sourcepos=\"10:153-10:330\"><code data-sourcepos=\"10:154-10:183\">src/attendance/monthly.ts:13</code> · Filters the records to those whose date starts with the requested month followed by a dash, so only records in that YYYY-MM month are counted.</td>\n</tr>\n<tr data-sourcepos=\"11:1-11:471\">\n<td data-sourcepos=\"11:2-11:19\"><gl-emoji title=\"yellow circle\" data-name=\"yellow_circle\" data-unicode-version=\"12.0\">🟡</gl-emoji> <strong data-sourcepos=\"11:8-11:18\">PARTIAL</strong></td>\n<td data-sourcepos=\"11:21-11:112\">AC 2: it returns the number of present days and the number of absent days. <sub>AC02</sub></td>\n<td data-sourcepos=\"11:114-11:470\"><code data-sourcepos=\"11:115-11:144\">src/attendance/monthly.ts:16</code>, <code data-sourcepos=\"11:147-11:175\">src/attendance/monthly.ts:8</code> · Only the present count is returned; the result object carries <code data-sourcepos=\"11:242-11:250\">present</code> and <code data-sourcepos=\"11:256-11:261\">rate</code>, with no absent count at all. · <strong data-sourcepos=\"11:296-11:302\">Do:</strong> Count the records in the month that are not present and return that number as <code data-sourcepos=\"11:382-11:389\">absent</code> alongside <code data-sourcepos=\"11:401-11:409\">present</code> (add it to the MonthlyAttendance result type). · <em data-sourcepos=\"11:461-11:469\">was met</em></td>\n</tr>\n<tr data-sourcepos=\"12:1-12:478\">\n<td data-sourcepos=\"12:2-12:19\"><gl-emoji title=\"yellow circle\" data-name=\"yellow_circle\" data-unicode-version=\"12.0\">🟡</gl-emoji> <strong data-sourcepos=\"12:8-12:18\">PARTIAL</strong></td>\n<td data-sourcepos=\"12:21-12:159\">AC3: it returns the attendance rate as a percentage rounded to one decimal, and 0 when there are no records in the month. <sub>AC03</sub></td>\n<td data-sourcepos=\"12:161-12:477\"><code data-sourcepos=\"12:162-12:191\">src/attendance/monthly.ts:15</code> · The percentage is rounded to one decimal correctly, but when the month has no records the division is 0 by 0, which produces NaN instead of 0. The empty-month case is not handled. · <strong data-sourcepos=\"12:379-12:385\">Do:</strong> Return 0 for the rate when there are no records in the month, instead of dividing by zero.</td>\n</tr>\n</tbody>\n</table>\n<p data-sourcepos=\"14:1-14:74\" dir=\"auto\"><sub>Earlier checks: <code data-sourcepos=\"14:22-14:30\">b6dcbaa</code> 3/3 met ✓ → <code data-sourcepos=\"14:48-14:56\">356d797</code> 2/3 met ✓</sub></p>\n<p data-sourcepos=\"16:1-16:135\" dir=\"auto\"><sub>Disagree with a line? Reply here and mention <a href=\"https://gitlab.com/Kody\" title=\"Kody\" class=\"gfm gfm-project_member js-user-link\" data-user=\"270970\" data-original=\"@kody\" data-container=\"body\" data-placement=\"top\" data-reference-type=\"user\">@Kody</a>. Fixed it? Comment <code data-sourcepos=\"16:76-16:100\">@kody -v business-logic</code> and this comment is updated.</sub></p>"
+  },
+  "4343773086": {
+   "raw": "Business logic checked. The result is in the Kody · Business Logic comment on this pull request.",
+   "html": "<p data-sourcepos=\"1:1-1:97\" dir=\"auto\">Business logic checked. The result is in the Kody · Business Logic comment on this pull request.</p>"
+  },
+  "4343773504": {
+   "raw": "@kody -v business-logic #1",
+   "html": "<p data-sourcepos=\"1:1-1:26\" dir=\"auto\"><a href=\"https://gitlab.com/Kody\" title=\"Kody\" class=\"gfm gfm-project_member js-user-link\" data-user=\"270970\" data-original=\"@kody\" data-container=\"body\" data-placement=\"top\" data-reference-type=\"user\">@Kody</a> -v business-logic <a href=\"https://gitlab.com/<namespace>/claude-athena/-/work_items/1\" title=\"Monthly attendance summary\" class=\"gfm gfm-issue\" data-original=\"#1\" data-link=\"false\" data-link-reference=\"false\" data-issue=\"212259218\" data-project=\"89319162\" data-iid=\"1\" data-namespace-path=\"<namespace>/claude-athena\" data-project-path=\"<namespace>/claude-athena\" data-issue-type=\"issue\" data-container=\"body\" data-placement=\"top\" data-reference-type=\"issue\">#1</a></p>"
+  },
+  "4343773882": {
+   "raw": "Business logic re-checked: same result as before, #1 met. The Kody · Business Logic comment on this pull request shows it.",
+   "html": "<p data-sourcepos=\"1:1-1:123\" dir=\"auto\">Business logic re-checked: same result as before, <a href=\"https://gitlab.com/<namespace>/claude-athena/-/work_items/1\" title=\"Monthly attendance summary\" class=\"gfm gfm-issue\" data-original=\"#1\" data-link=\"false\" data-link-reference=\"false\" data-issue=\"212259218\" data-project=\"89319162\" data-iid=\"1\" data-namespace-path=\"<namespace>/claude-athena\" data-project-path=\"<namespace>/claude-athena\" data-issue-type=\"issue\" data-container=\"body\" data-placement=\"top\" data-reference-type=\"issue\">#1</a> met. The Kody · Business Logic comment on this pull request shows it.</p>"
+  },
+  "4343777248": {
+   "raw": "@kody -v business-logic #1",
+   "html": "<p data-sourcepos=\"1:1-1:26\" dir=\"auto\"><a href=\"https://gitlab.com/Kody\" title=\"Kody\" class=\"gfm gfm-project_member js-user-link\" data-user=\"270970\" data-original=\"@kody\" data-container=\"body\" data-placement=\"top\" data-reference-type=\"user\">@Kody</a> -v business-logic <a href=\"https://gitlab.com/<namespace>/claude-athena/-/work_items/1\" title=\"Monthly attendance summary\" class=\"gfm gfm-issue\" data-original=\"#1\" data-link=\"false\" data-link-reference=\"false\" data-issue=\"212259218\" data-project=\"89319162\" data-iid=\"1\" data-namespace-path=\"<namespace>/claude-athena\" data-project-path=\"<namespace>/claude-athena\" data-issue-type=\"issue\" data-container=\"body\" data-placement=\"top\" data-reference-type=\"issue\">#1</a></p>"
+  },
+  "4343778017": {
+   "raw": "Business logic re-checked: the result changed, #1 met. The Kody · Business Logic comment on this pull request is updated.",
+   "html": "<p data-sourcepos=\"1:1-1:122\" dir=\"auto\">Business logic re-checked: the result changed, <a href=\"https://gitlab.com/<namespace>/claude-athena/-/work_items/1\" title=\"Monthly attendance summary\" class=\"gfm gfm-issue\" data-original=\"#1\" data-link=\"false\" data-link-reference=\"false\" data-issue=\"212259218\" data-project=\"89319162\" data-iid=\"1\" data-namespace-path=\"<namespace>/claude-athena\" data-project-path=\"<namespace>/claude-athena\" data-issue-type=\"issue\" data-container=\"body\" data-placement=\"top\" data-reference-type=\"issue\">#1</a> met. The Kody · Business Logic comment on this pull request is updated.</p>"
+  },
+  "4343781097": {
+   "raw": "@kody -v business-logic #1",
+   "html": "<p data-sourcepos=\"1:1-1:26\" dir=\"auto\"><a href=\"https://gitlab.com/Kody\" title=\"Kody\" class=\"gfm gfm-project_member js-user-link\" data-user=\"270970\" data-original=\"@kody\" data-container=\"body\" data-placement=\"top\" data-reference-type=\"user\">@Kody</a> -v business-logic <a href=\"https://gitlab.com/<namespace>/claude-athena/-/work_items/1\" title=\"Monthly attendance summary\" class=\"gfm gfm-issue\" data-original=\"#1\" data-link=\"false\" data-link-reference=\"false\" data-issue=\"212259218\" data-project=\"89319162\" data-iid=\"1\" data-namespace-path=\"<namespace>/claude-athena\" data-project-path=\"<namespace>/claude-athena\" data-issue-type=\"issue\" data-container=\"body\" data-placement=\"top\" data-reference-type=\"issue\">#1</a></p>"
+  },
+  "4343781852": {
+   "raw": "Business logic re-checked: the result changed, #1 met. The Kody · Business Logic comment on this pull request is updated.",
+   "html": "<p data-sourcepos=\"1:1-1:122\" dir=\"auto\">Business logic re-checked: the result changed, <a href=\"https://gitlab.com/<namespace>/claude-athena/-/work_items/1\" title=\"Monthly attendance summary\" class=\"gfm gfm-issue\" data-original=\"#1\" data-link=\"false\" data-link-reference=\"false\" data-issue=\"212259218\" data-project=\"89319162\" data-iid=\"1\" data-namespace-path=\"<namespace>/claude-athena\" data-project-path=\"<namespace>/claude-athena\" data-issue-type=\"issue\" data-container=\"body\" data-placement=\"top\" data-reference-type=\"issue\">#1</a> met. The Kody · Business Logic comment on this pull request is updated.</p>"
+  }
+ }
+}
