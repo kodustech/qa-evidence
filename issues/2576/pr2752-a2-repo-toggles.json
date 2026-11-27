@@ -1,0 +1,122 @@
+{
+ "from": "2026-11-27T18:51:04Z",
+ "steps": [
+  {
+   "label": "global off",
+   "t": "2026-11-27T18:51:04Z",
+   "status": 201,
+   "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+   "global": {
+    "implicitReplies": false
+   },
+   "athena": "<absent>"
+  },
+  {
+   "label": "repo athena on",
+   "t": "2026-11-27T18:51:11Z",
+   "status": 201,
+   "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+   "global": {
+    "implicitReplies": false
+   },
+   "athena": {
+    "implicitReplies": true
+   }
+  },
+  {
+   "label": "repo athena off",
+   "t": "2026-11-27T18:51:14Z",
+   "status": 201,
+   "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+   "global": {
+    "implicitReplies": false
+   },
+   "athena": "<absent>"
+  },
+  {
+   "label": "repo athena on again",
+   "t": "2026-11-27T18:51:18Z",
+   "status": 201,
+   "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+   "global": {
+    "implicitReplies": false
+   },
+   "athena": {
+    "implicitReplies": true
+   }
+  },
+  {
+   "label": "remove repo override (inheritFields)",
+   "t": "2026-11-27T18:51:22Z",
+   "status": 400,
+   "resp": "{'statusCode': 400, 'timestamp': '2026-11-27T18:51:23.143Z', 'path': '/parameters/create-or-update-code-review', 'error': 'Bad Request', 'message': 'each value in inheritFields must be one of the foll",
+   "global": {
+    "implicitReplies": false
+   },
+   "athena": {
+    "implicitReplies": true
+   }
+  }
+ ],
+ "settings_log": [
+  {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "action": "edit",
+   "userInfo": {
+    "userId": "12741dc3-6ccf-4dd6-a7f8-a713d0592423",
+    "userEmail": "<email>"
+   },
+   "configLevel": "global",
+   "changedData": [
+    {
+     "actionDescription": "Configuration Updated",
+     "previousValue": {
+      "conversation": {
+       "implicitReplies": "false"
+      }
+     },
+     "currentValue": {
+      "conversation": {
+       "implicitReplies": false
+      }
+     },
+     "description": "User <email> changed Implicit Replies from false to disabled"
+    }
+   ],
+   "createdAt": "2026-11-27T18:51:06.164Z",
+   "updatedAt": "2026-11-27T18:51:06.164Z",
+   "__v": 0
+  },
+  {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "action": "create",
+   "userInfo": {
+    "userId": "12741dc3-6ccf-4dd6-a7f8-a713d0592423",
+    "userEmail": "<email>"
+   },
+   "configLevel": "repository",
+   "repository": {
+    "id": "1468015189",
+    "name": "codex-athena",
+    "isSelected": false,
+    "directories": []
+   },
+   "changedData": [
+    {
+     "actionDescription": "Repository Configuration Created",
+     "previousValue": null,
+     "currentValue": {
+      "repositoryId": "1468015189",
+      "repositoryName": "codex-athena"
+     },
+     "description": "User <email> created configuration for repository \"codex-athena\""
+    }
+   ],
+   "createdAt": "2026-11-27T18:51:11.778Z",
+   "updatedAt": "2026-11-27T18:51:11.778Z",
+   "__v": 0
+  }
+ ]
+}
