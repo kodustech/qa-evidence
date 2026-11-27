@@ -1,0 +1,51 @@
+{
+ "reviewComments": [
+  {
+   "id": 4722213860,
+   "user": "sartorijr92",
+   "in_reply_to": null,
+   "path": "src/qa2628r/attendance-rate.ts",
+   "created_at": "2026-11-27T17:32:18Z",
+   "body": "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Bug](https://img.shields.io/badge/Bug-B71C1C) ![medium](https://img.shields.io/badge/severity_level-medium-1A7BBE)\n\n\n**Floor applied before scaling collapses sub-100% attendance rates to 0**\n\nEvery attenda"
+  },
+  {
+   "id": 4722214075,
+   "user": "sartorijr92",
+   "in_reply_to": 4722213860,
+   "path": "src/qa2628r/attendance-rate.ts",
+   "created_at": "2026-11-27T17:32:19Z",
+   "body": "@kody in one sentence: which input makes this function throw, and what does it return for an empty grade list?"
+  },
+  {
+   "id": 4722214263,
+   "user": "sartorijr92",
+   "in_reply_to": null,
+   "path": "src/qa2628r/grade-book.ts",
+   "created_at": "2026-11-27T17:32:21Z",
+   "body": "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Bug](https://img.shields.io/badge/Bug-B71C1C) ![high](https://img.shields.io/badge/severity_level-high-6B6B92)\n\n\n**Loop condition reads past end of `own`, throwing on undefined element**\n\nThe final iterati"
+  },
+  {
+   "id": 4722214586,
+   "user": "sartorijr92",
+   "in_reply_to": null,
+   "path": "src/qa2628r/grade-book.ts",
+   "created_at": "2026-11-27T17:32:23Z",
+   "body": "![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Bug](https://img.shields.io/badge/Bug-B71C1C) ![medium](https://img.shields.io/badge/severity_level-medium-1A7BBE)\n\n\n**recoveryList filters for scores above passing mark instead of below**\n\nThis selects st"
+  },
+  {
+   "id": 4722216619,
+   "user": "sartorijr92",
+   "in_reply_to": 4722213860,
+   "path": "src/qa2628r/attendance-rate.ts",
+   "created_at": "2026-11-27T17:32:40Z",
+   "body": "No input makes it throw \u2014 JavaScript division by zero doesn't throw, so `attendanceRate({present: 0, total: 0})` returns `NaN` (and `present > 0, total = 0` returns `Infinity`), and since the function takes an `Attendance` rather than a grade list, an empty grade list isn't an input here at all (`sr"
+  }
+ ],
+ "issueComments": [
+  {
+   "user": "sartorijr92",
+   "created_at": "2026-11-27T17:29:55Z",
+   "body": "## Code Review Completed! \ud83d\udd25\n\nThe code review was successfully completed based on your current configurations.\n\n\n\n<details>\n<summary>Kody Guide: Usage and Configuration</summary>\n\n<details>\n<summary>In"
+  }
+ ]
+}
