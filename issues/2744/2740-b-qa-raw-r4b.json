@@ -1,0 +1,3517 @@
+[
+ {
+  "timestamp": "2026-11-27T22:03:14.075Z",
+  "level": "info",
+  "message": "RunCodeReviewAutomationUseCase PR#15",
+  "component": "RunCodeReviewAutomationUseCase",
+  "metadata": {
+   "component": "RunCodeReviewAutomationUseCase",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   },
+   "repository": {
+    "id": "1468015189",
+    "url": "https://github.com/kodus-olimpo/codex-athena",
+    "fork": false,
+    "name": "codex-athena",
+    "size": 13,
+    "forks": 0,
+    "owner": {
+     "id": 360001334,
+     "url": "https://api.github.com/users/kodus-olimpo",
+     "type": "Organization",
+     "login": "kodus-olimpo",
+     "node_id": "O_kgDOFXUvNg",
+     "html_url": "https://github.com/kodus-olimpo",
+     "gists_url": "https://api.github.com/users/kodus-olimpo/gists{/gist_id}",
+     "repos_url": "https://api.github.com/users/kodus-olimpo/repos",
+     "avatar_url": "https://avatars.githubusercontent.com/u/360001334?v=4",
+     "events_url": "https://api.github.com/users/kodus-olimpo/events{/privacy}",
+     "site_admin": false,
+     "gravatar_id": "",
+     "starred_url": "https://api.github.com/users/kodus-olimpo/starred{/owner}{/repo}",
+     "followers_url": "https://api.github.com/users/kodus-olimpo/followers",
+     "following_url": "https://api.github.com/users/kodus-olimpo/following{/other_user}",
+     "user_view_type": "public",
+     "organizations_url": "https://api.github.com/users/kodus-olimpo/orgs",
+     "subscriptions_url": "https://api.github.com/users/kodus-olimpo/subscriptions",
+     "received_events_url": "https://api.github.com/users/kodus-olimpo/received_events"
+    },
+    "topics": [],
+    "git_url": "git://github.com/kodus-olimpo/codex-athena.git",
+    "license": null,
+    "node_id": "R_kgDOV4AiVQ",
+    "private": true,
+    "ssh_url": "git@github.com:kodus-olimpo/codex-athena.git",
+    "svn_url": "https://github.com/kodus-olimpo/codex-athena",
+    "archived": false,
+    "disabled": false,
+    "has_wiki": false,
+    "homepage": null,
+    "html_url": "https://github.com/kodus-olimpo/codex-athena",
+    "keys_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/keys{/key_id}",
+    "language": "TypeScript",
+    "tags_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/tags",
+    "watchers": 0,
+    "blobs_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/blobs{/sha}",
+    "clone_url": "https://github.com/kodus-olimpo/codex-athena.git",
+    "forks_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/forks",
+    "full_name": "kodus-olimpo/codex-athena",
+    "has_pages": false,
+    "hooks_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/hooks",
+    "pulls_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/pulls{/number}",
+    "pushed_at": "2026-11-27T22:01:17Z",
+    "teams_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/teams",
+    "trees_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/trees{/sha}",
+    "created_at": "2026-11-22T21:43:05Z",
+    "events_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/events",
+    "has_issues": true,
+    "issues_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/issues{/number}",
+    "labels_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/labels{/name}",
+    "merges_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/merges",
+    "mirror_url": null,
+    "updated_at": "2026-11-24T21:16:08Z",
+    "visibility": "private",
+    "archive_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/{archive_format}{/ref}",
+    "commits_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/commits{/sha}",
+    "compare_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/compare/{base}...{head}",
+    "description": null,
+    "forks_count": 0,
+    "is_template": false,
+    "open_issues": 2,
+    "branches_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/branches{/branch}",
+    "comments_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/comments{/number}",
+    "contents_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/contents/{+path}",
+    "git_refs_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/refs{/sha}",
+    "git_tags_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/tags{/sha}",
+    "has_projects": true,
+    "releases_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/releases{/id}",
+    "statuses_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/statuses/{sha}",
+    "allow_forking": false,
+    "assignees_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/assignees{/user}",
+    "downloads_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/downloads",
+    "has_downloads": false,
+    "languages_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/languages",
+    "default_branch": "main",
+    "milestones_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/milestones{/number}",
+    "stargazers_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/stargazers",
+    "watchers_count": 0,
+    "deployments_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/deployments",
+    "git_commits_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/commits{/sha}",
+    "has_discussions": false,
+    "subscribers_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/subscribers",
+    "contributors_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/contributors",
+    "issue_events_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/issues/events{/number}",
+    "stargazers_count": 0,
+    "subscription_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/subscription",
+    "collaborators_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/collaborators{/collaborator}",
+    "custom_properties": {},
+    "has_pull_requests": true,
+    "issue_comment_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/issues/comments{/number}",
+    "notifications_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/notifications{?since,all,participating}",
+    "open_issues_count": 2,
+    "web_commit_signoff_required": false,
+    "pull_request_creation_policy": "all",
+    "fullName": "kodus-olimpo/codex-athena"
+   },
+   "pullRequest": {
+    "id": "5533656345",
+    "base": {
+     "repo": {
+      "fullName": "kodus-olimpo/codex-athena",
+      "defaultBranch": "main"
+     },
+     "ref": "main",
+     "sha": "f93a3ea18aa3f6b97493ddf11ff9bd729e03abc1"
+    },
+    "body": "Adds one grade service per subject.",
+    "head": {
+     "repo": {
+      "fullName": "kodus-olimpo/codex-athena"
+     },
+     "ref": "qa2744-r4",
+     "sha": "ee84ff69aa4b0a1bf8f5ea815556e53053a06678"
+    },
+    "user": {
+     "id": "17408306",
+     "name": "",
+     "login": "sartorijr92"
+    },
+    "prURL": "https://github.com/kodus-olimpo/codex-athena/pull/15",
+    "state": "open",
+    "title": "qa2744: grade services per subject",
+    "labels": [],
+    "number": 15,
+    "isDraft": false,
+    "message": "qa2744: grade services per subject",
+    "closed_at": "",
+    "merged_at": "",
+    "reviewers": [],
+    "created_at": "2026-11-27T22:01:19Z",
+    "repository": {
+     "id": 1468015189,
+     "url": "https://api.github.com/repos/kodus-olimpo/codex-athena",
+     "fork": false,
+     "name": "codex-athena",
+     "size": 13,
+     "forks": 0,
+     "owner": "[Circular]",
+     "topics": "[Circular]",
+     "git_url": "git://github.com/kodus-olimpo/codex-athena.git",
+     "license": null,
+     "node_id": "R_kgDOV4AiVQ",
+     "private": true,
+     "ssh_url": "git@github.com:kodus-olimpo/codex-athena.git",
+     "svn_url": "https://github.com/kodus-olimpo/codex-athena",
+     "archived": false,
+     "disabled": false,
+     "has_wiki": false,
+     "homepage": null,
+     "html_url": "https://github.com/kodus-olimpo/codex-athena",
+     "keys_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/keys{/key_id}",
+     "language": "TypeScript",
+     "tags_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/tags",
+     "watchers": 0,
+     "blobs_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/blobs{/sha}",
+     "clone_url": "https://github.com/kodus-olimpo/codex-athena.git",
+     "forks_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/forks",
+     "full_name": "kodus-olimpo/codex-athena",
+     "has_pages": false,
+     "hooks_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/hooks",
+     "pulls_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/pulls{/number}",
+     "pushed_at": "2026-11-27T22:01:17Z",
+     "teams_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/teams",
+     "trees_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/trees{/sha}",
+     "created_at": "2026-11-22T21:43:05Z",
+     "events_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/events",
+     "has_issues": true,
+     "issues_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/issues{/number}",
+     "labels_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/labels{/name}",
+     "merges_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/merges",
+     "mirror_url": null,
+     "updated_at": "2026-11-24T21:16:08Z",
+     "visibility": "private",
+     "archive_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/{archive_format}{/ref}",
+     "commits_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/commits{/sha}",
+     "compare_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/compare/{base}...{head}",
+     "description": null,
+     "forks_count": 0,
+     "is_template": false,
+     "open_issues": 2,
+     "branches_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/branches{/branch}",
+     "comments_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/comments{/number}",
+     "contents_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/contents/{+path}",
+     "git_refs_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/refs{/sha}",
+     "git_tags_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/tags{/sha}",
+     "has_projects": true,
+     "releases_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/releases{/id}",
+     "statuses_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/statuses/{sha}",
+     "allow_forking": false,
+     "assignees_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/assignees{/user}",
+     "downloads_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/downloads",
+     "has_downloads": false,
+     "languages_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/languages",
+     "default_branch": "main",
+     "milestones_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/milestones{/number}",
+     "stargazers_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/stargazers",
+     "watchers_count": 0,
+     "deployments_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/deployments",
+     "git_commits_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/commits{/sha}",
+     "has_discussions": false,
+     "subscribers_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/subscribers",
+     "contributors_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/contributors",
+     "issue_events_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/issues/events{/number}",
+     "stargazers_count": 0,
+     "subscription_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/subscription",
+     "collaborators_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/collaborators{/collaborator}",
+     "custom_properties": "[Circular]",
+     "has_pull_requests": true,
+     "issue_comment_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/issues/comments{/number}",
+     "notifications_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/notifications{?since,all,participating}",
+     "open_issues_count": 2,
+     "web_commit_signoff_required": false,
+     "pull_request_creation_policy": "all"
+    },
+    "updated_at": "2026-11-27T22:03:09Z",
+    "pull_number": 15,
+    "participants": [
+     {
+      "id": "17408306"
+     }
+    ],
+    "pull_request": {
+     "id": "5533656345",
+     "base": {
+      "ref": "main",
+      "sha": "f93a3ea18aa3f6b97493ddf11ff9bd729e03abc1",
+      "repo": {
+       "fullName": "kodus-olimpo/codex-athena",
+       "defaultBranch": "main"
+      }
+     },
+     "body": "Adds one grade service per subject.",
+     "head": {
+      "ref": "qa2744-r4",
+      "sha": "ee84ff69aa4b0a1bf8f5ea815556e53053a06678",
+      "repo": {
+       "fullName": "kodus-olimpo/codex-athena"
+      }
+     },
+     "user": {
+      "id": "17408306",
+      "name": "",
+      "login": "sartorijr92"
+     },
+     "prURL": "https://github.com/kodus-olimpo/codex-athena/pull/15",
+     "state": "open",
+     "title": "qa2744: grade services per subject",
+     "labels": [],
+     "number": 15,
+     "isDraft": false,
+     "message": "qa2744: grade services per subject",
+     "closed_at": "",
+     "merged_at": "",
+     "reviewers": [],
+     "created_at": "2026-11-27T22:01:19Z",
+     "repository": {
+      "id": 1468015189,
+      "name": "codex-athena",
+      "fullName": "kodus-olimpo/codex-athena"
+     },
+     "updated_at": "2026-11-27T22:03:09Z",
+     "pull_number": 15,
+     "participants": [
+      {
+       "id": "17408306"
+      }
+     ],
+     "repositoryId": "1468015189",
+     "sourceRefName": "qa2744-r4",
+     "targetRefName": "main",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "repositoryData": {
+      "id": "1468015189",
+      "name": "kodus-olimpo/codex-athena"
+     },
+     "changedFilesCount": 12
+    },
+    "repositoryId": "1468015189",
+    "sourceRefName": "qa2744-r4",
+    "targetRefName": "main",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "repositoryData": {
+     "id": "1468015189",
+     "name": "kodus-olimpo/codex-athena"
+    },
+    "changedFilesCount": 12,
+    "url": "https://github.com/kodus-olimpo/codex-athena/pull/15",
+    "tags": []
+   },
+   "branch": "qa2744-r4",
+   "codeManagementEvent": "issue_comment",
+   "platformType": "GITHUB",
+   "origin": "command",
+   "component": "RunCodeReviewAutomationUseCase",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:14.627Z",
+  "level": "info",
+  "message": "Starting pipeline: CodeReviewPipeline (ID: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede)",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:14.704Z",
+  "level": "info",
+  "message": "Stage 'ValidatePrerequisitesStage' completed in 65ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "stage": "ValidatePrerequisitesStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:14.719Z",
+  "level": "info",
+  "message": "No last analyzed commit found, analyzing all commits",
+  "component": "ValidateNewCommitsStage",
+  "metadata": {
+   "component": "ValidateNewCommitsStage",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "repository": "codex-athena",
+   "pullRequestNumber": 15,
+   "component": "ValidateNewCommitsStage",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:14.988Z",
+  "level": "info",
+  "message": "Processing 1 new commits for PR#15 (1 total)",
+  "component": "ValidateNewCommitsStage",
+  "metadata": {
+   "component": "ValidateNewCommitsStage",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "repository": "codex-athena",
+   "pullRequestNumber": 15,
+   "component": "ValidateNewCommitsStage",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:14.998Z",
+  "level": "info",
+  "message": "Stage 'ValidateNewCommitsStage' completed in 293ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "ValidateNewCommitsStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:15.457Z",
+  "level": "info",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "component": "PermissionValidationService",
+  "metadata": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "component": "PermissionValidationService",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:15.474Z",
+  "level": "info",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "component": "PermissionValidationService",
+  "metadata": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "result": {
+    "valid": true,
+    "subscriptionStatus": "trial",
+    "planType": "teams_managed",
+    "trialStart": "2026-11-24T01:42:19.592Z",
+    "trialEnd": "2026-12-08T01:42:19.591Z",
+    "stripeCustomerId": null,
+    "byok": false,
+    "trialReviewCreditsTotal": 5,
+    "trialReviewCreditsUsed": 0,
+    "trialReviewCreditsRemaining": 5,
+    "trialCreditTier": "base",
+    "trialUnlocks": [
+     {
+      "key": "company_email",
+      "status": "locked",
+      "rewardCredits": 5,
+      "title": "Use a company email",
+      "description": "A confirmed work email helps us qualify the trial automatically."
+     },
+     {
+      "key": "team_setup",
+      "status": "locked",
+      "rewardCredits": 5,
+      "title": "Invite 3 teammates",
+      "description": "Add teammates so the trial reflects a real review workflow."
+     },
+     {
+      "key": "code_org_10_plus",
+      "status": "locked",
+      "rewardCredits": 20,
+      "title": "Connect a 10+ developer code org",
+      "description": "Connect the organization, not only a personal account, so we can evaluate team fit."
+     },
+     {
+      "key": "byok",
+      "status": "available",
+      "title": "Connect BYOK",
+      "description": "Use your own AI key. Reviews no longer use Kodus-paid PRs."
+     },
+     {
+      "key": "manual_extension",
+      "status": "available",
+      "title": "Request more trial PR reviews",
+      "description": "Ask Kodus to review your trial signals and extend the evaluation manually."
+     }
+    ],
+    "creditBalanceUsd": 0
+   },
+   "component": "PermissionValidationService",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:15.492Z",
+  "level": "info",
+  "message": "Stage 'ResolveConfigStage' completed in 494ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "ResolveConfigStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:15.524Z",
+  "level": "info",
+  "message": "Stage 'ValidateConfigStage' completed in 29ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "ValidateConfigStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:15.546Z",
+  "level": "info",
+  "message": "Stage 'AssessPrRiskStage' completed in 20ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "AssessPrRiskStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:15.547Z",
+  "level": "info",
+  "message": "Stage 'ResolveRiskRoutingStage' completed in 0ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "ResolveRiskRoutingStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:15.561Z",
+  "level": "info",
+  "message": "Found 12 files to analyze for PR#15 (12 total, 0 ignored)",
+  "component": "FetchChangedFilesStage",
+  "metadata": {
+   "component": "FetchChangedFilesStage",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "repository": "codex-athena",
+   "pullRequestNumber": 15,
+   "filesCount": 12,
+   "totalFilesBeforeFilter": 12,
+   "ignoredFilesCount": 0,
+   "component": "FetchChangedFilesStage",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:15.871Z",
+  "level": "info",
+  "message": "[GRAPHQL_BATCH_COST] files=12 cost=1 remaining=4974 limit=5000 resetAt=2026-11-27T22:46:04Z",
+  "component": "GithubService",
+  "metadata": {
+   "component": "GithubService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "instrumentation": "graphql_batch_content_cost",
+   "batchSize": 12,
+   "cost": 1,
+   "remaining": 4974,
+   "limit": 5000,
+   "resetAt": "2026-11-27T22:46:04Z",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "repositoryName": "codex-athena",
+   "component": "GithubService",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:15.883Z",
+  "level": "info",
+  "message": "Stage 'FetchChangedFilesStage' completed in 335ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "FetchChangedFilesStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:15.925Z",
+  "level": "info",
+  "message": "Stage 'LoadExternalContextStage' completed in 41ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "LoadExternalContextStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:15.946Z",
+  "level": "info",
+  "message": "Stage 'LoadCiEvidenceStage' completed in 20ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "LoadCiEvidenceStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:16.853Z",
+  "level": "info",
+  "message": "Stage 'InitialCommentStage' completed in 906ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "InitialCommentStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:16.871Z",
+  "level": "info",
+  "message": "Business validation skipped (no_reference)",
+  "component": "BusinessValidationService",
+  "metadata": {
+   "component": "BusinessValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "repositoryId": "1468015189",
+   "pullRequest": 15,
+   "door": "auto",
+   "references": [],
+   "attempts": [],
+   "component": "BusinessValidationService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:16.888Z",
+  "level": "info",
+  "message": "[BUSINESS-LOGIC] Skipped (no_reference): no reference.",
+  "component": "BusinessLogicValidationStage",
+  "metadata": {
+   "component": "BusinessLogicValidationStage",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "prNumber": 15,
+   "reason": "no_reference",
+   "component": "BusinessLogicValidationStage",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:16.897Z",
+  "level": "info",
+  "message": "Stage 'BusinessLogicValidationStage' completed in 43ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "BusinessLogicValidationStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:17.156Z",
+  "level": "info",
+  "message": "[egress] route=fixed_ip (rollout_off)",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "platform": "GITHUB",
+   "sandboxId": "isxnlwtzuaqw4dtpefbbe",
+   "route": "fixed_ip",
+   "why": "rollout_off",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:21.076Z",
+  "level": "info",
+  "message": "Stage 'CreateSandboxStage' completed in 4178ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "CreateSandboxStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:21.128Z",
+  "level": "info",
+  "message": "Stage 'RunAnalyzersStage' completed in 51ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "RunAnalyzersStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:28.975Z",
+  "level": "info",
+  "message": "[AGENT] Generalist finder settings for openai_compatible:qa2744-capped: family=default, maxSteps=22, synthesisRescue=true",
+  "component": "GeneralistAgentProvider",
+  "metadata": {
+   "component": "GeneralistAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "prNumber": 15,
+   "primaryModelName": "openai_compatible:qa2744-capped",
+   "fallbackModelName": null,
+   "family": "default",
+   "maxSteps": 22,
+   "skipSynthesisRescue": false,
+   "component": "GeneralistAgentProvider",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:28.979Z",
+  "level": "info",
+  "message": "[AGENT] kodus-generalist-review-agent context window: 128000 tokens for openai_compatible:qa2744-capped",
+  "component": "CodeReviewAgent",
+  "metadata": {
+   "component": "CodeReviewAgent",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "prNumber": 15,
+   "modelName": "openai_compatible:qa2744-capped",
+   "modelId": "qa2744-capped",
+   "contextWindowTokens": 128000,
+   "contextWindowSource": "default",
+   "component": "CodeReviewAgent",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:29.516Z",
+  "level": "warn",
+  "message": "[LLM-ERROR] kodus-rules-review-agent.shard: \"qa2744-capped\" failed (QUOTA_EXCEEDED) \u2014 Your project has exceeded its monthly spending cap",
+  "component": "ModelFailover",
+  "metadata": {
+   "component": "ModelFailover",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "runName": "kodus-rules-review-agent.shard",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "category": "QUOTA_EXCEEDED",
+   "modelId": "a5c0727f-48c2-46ae-aea1-c9bfc12a4438",
+   "exhausted": true,
+   "component": "ModelFailover",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:29.525Z",
+  "level": "warn",
+  "message": "[LLM-ERROR] kodus-rules-review-agent.shard: \"qa2744-capped\" failed (QUOTA_EXCEEDED) \u2014 Your project has exceeded its monthly spending cap",
+  "component": "ModelFailover",
+  "metadata": {
+   "component": "ModelFailover",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "runName": "kodus-rules-review-agent.shard",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "category": "QUOTA_EXCEEDED",
+   "modelId": "a5c0727f-48c2-46ae-aea1-c9bfc12a4438",
+   "exhausted": true,
+   "component": "ModelFailover",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:29.694Z",
+  "level": "warn",
+  "message": "[LLM-ERROR] kodus-rules-review-agent.shard: \"qa2744-capped\" failed (QUOTA_EXCEEDED) \u2014 Your project has exceeded its monthly spending cap",
+  "component": "ModelFailover",
+  "metadata": {
+   "component": "ModelFailover",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "runName": "kodus-rules-review-agent.shard",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "category": "QUOTA_EXCEEDED",
+   "modelId": "a5c0727f-48c2-46ae-aea1-c9bfc12a4438",
+   "exhausted": true,
+   "component": "ModelFailover",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:29.699Z",
+  "level": "warn",
+  "message": "[LLM-ERROR] kodus-rules-review-agent.shard: \"qa2744-capped\" failed (QUOTA_EXCEEDED) \u2014 Your project has exceeded its monthly spending cap",
+  "component": "ModelFailover",
+  "metadata": {
+   "component": "ModelFailover",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "runName": "kodus-rules-review-agent.shard",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "category": "QUOTA_EXCEEDED",
+   "modelId": "a5c0727f-48c2-46ae-aea1-c9bfc12a4438",
+   "exhausted": true,
+   "component": "ModelFailover",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:29.823Z",
+  "level": "warn",
+  "message": "[LLM-ERROR] kodus-rules-review-agent.shard: \"qa2744-capped\" failed (QUOTA_EXCEEDED) \u2014 Your project has exceeded its monthly spending cap",
+  "component": "ModelFailover",
+  "metadata": {
+   "component": "ModelFailover",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "runName": "kodus-rules-review-agent.shard",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "category": "QUOTA_EXCEEDED",
+   "modelId": "a5c0727f-48c2-46ae-aea1-c9bfc12a4438",
+   "exhausted": true,
+   "component": "ModelFailover",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:29.826Z",
+  "level": "warn",
+  "message": "[kody-rules] the model provider refused PR#15 (QUOTA_EXCEEDED); the remaining shards were skipped instead of called",
+  "component": "KodyRulesShardedAgent",
+  "metadata": {
+   "component": "KodyRulesShardedAgent",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "prNumber": 15,
+   "category": "QUOTA_EXCEEDED",
+   "shardsRun": 13,
+   "shardsErrored": 13,
+   "component": "KodyRulesShardedAgent",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:29.826Z",
+  "level": "info",
+  "message": "[kody-rules-shard] prompt cache: 12 file shard(s) in 1 head group(s), 1 shared; 6 of 11 sibling(s) ran after their group's first shard",
+  "component": "KodyRulesShardedAgent",
+  "metadata": {
+   "component": "KodyRulesShardedAgent",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "prNumber": 15,
+   "fileShards": 12,
+   "groups": 1,
+   "sharedGroups": 1,
+   "siblings": 11,
+   "siblingsAfterLeader": 6,
+   "siblingsEarly": 5,
+   "component": "KodyRulesShardedAgent",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:29.829Z",
+  "level": "error",
+  "message": "[AGENT] kody-rules agent failed for PR#15",
+  "component": "ReviewOrchestratorService",
+  "metadata": {
+   "component": "ReviewOrchestratorService",
+   "level": "error",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "repositoryId": "1468015189",
+   "repositoryName": "kodus-olimpo/codex-athena",
+   "prNumber": 15,
+   "agent": "kody-rules",
+   "customAgentId": null,
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "durationMs": 862,
+   "component": "ReviewOrchestratorService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:44.280Z",
+  "level": "warn",
+  "message": "[LLM-ERROR] code-review-generalist: \"qa2744-capped\" failed (QUOTA_EXCEEDED) \u2014 Failed after 4 attempts. Last error: AI_APICallError: Your project has exceeded its monthly spending cap",
+  "component": "ModelFailover",
+  "metadata": {
+   "component": "ModelFailover",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "runName": "code-review-generalist",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "category": "QUOTA_EXCEEDED",
+   "modelId": "a5c0727f-48c2-46ae-aea1-c9bfc12a4438",
+   "exhausted": true,
+   "component": "ModelFailover",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:44.282Z",
+  "level": "info",
+  "message": "[DONE-TOOL] prose recovery returned 0 finding(s)",
+  "component": "finder",
+  "metadata": {
+   "component": "finder",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "recovered": 0,
+   "outcome": "no-artifact",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "modelId": "qa2744-capped",
+   "component": "finder",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:44.566Z",
+  "level": "info",
+  "message": "Notification emitted: byok.llm_errors_threshold",
+  "component": "NotificationService",
+  "metadata": {
+   "component": "NotificationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "event": "byok.llm_errors_threshold",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "recipientCount": 0,
+   "correlationId": "c11c9ed4-8e63-4050-8cab-f689b16803bd",
+   "component": "NotificationService",
+   "originalCorrelationId": "c11c9ed4-8e63-4050-8cab-f689b16803bd"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:46.515Z",
+  "level": "info",
+  "message": "Processing notification: byok.llm_errors_threshold",
+  "component": "NotificationConsumer",
+  "metadata": {
+   "component": "NotificationConsumer",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "event": "byok.llm_errors_threshold",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "correlationId": "c11c9ed4-8e63-4050-8cab-f689b16803bd",
+   "component": "NotificationConsumer",
+   "originalCorrelationId": "c11c9ed4-8e63-4050-8cab-f689b16803bd"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.313Z",
+  "level": "warn",
+  "message": "[LLM-ERROR] code-review-generalist: \"qa2744-capped\" failed (QUOTA_EXCEEDED) \u2014 Failed after 4 attempts. Last error: AI_APICallError: Your project has exceeded its monthly spending cap",
+  "component": "ModelFailover",
+  "metadata": {
+   "component": "ModelFailover",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "runName": "code-review-generalist",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "category": "QUOTA_EXCEEDED",
+   "modelId": "a5c0727f-48c2-46ae-aea1-c9bfc12a4438",
+   "exhausted": true,
+   "component": "ModelFailover",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.315Z",
+  "level": "info",
+  "message": "[DONE-TOOL] prose recovery returned 0 finding(s)",
+  "component": "finder",
+  "metadata": {
+   "component": "finder",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "recovered": 0,
+   "outcome": "no-artifact",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "modelId": "qa2744-capped",
+   "component": "finder",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.316Z",
+  "level": "info",
+  "message": "review recall funnel (verify gate)",
+  "component": "review-funnel",
+  "metadata": {
+   "component": "review-funnel",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "pullRequestId": 15,
+   "repositoryId": "1468015189",
+   "agent": "kodus-generalist-review-agent",
+   "funnel": {
+    "found": 0,
+    "survivedVerify": 0,
+    "droppedByVerify": 0,
+    "bySeverity": {},
+    "byLabel": {}
+   },
+   "toolCache": {
+    "hits": 0,
+    "misses": 0,
+    "size": 0
+   },
+   "component": "review-funnel",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.321Z",
+  "level": "warn",
+  "message": "[AGENT] generalist agent failed for PR#15",
+  "component": "ReviewOrchestratorService",
+  "metadata": {
+   "component": "ReviewOrchestratorService",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "repositoryId": "1468015189",
+   "repositoryName": "kodus-olimpo/codex-athena",
+   "prNumber": 15,
+   "agent": "generalist",
+   "customAgentId": null,
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "durationMs": 30355,
+   "component": "ReviewOrchestratorService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.323Z",
+  "level": "warn",
+  "message": "[AGENT] generalist failed: Failed after 4 attempts. Last error: AI_APICallError: Your project has exceeded its monthly spending cap",
+  "component": "ReviewOrchestratorService",
+  "metadata": {
+   "component": "ReviewOrchestratorService",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "repositoryId": "1468015189",
+   "repositoryName": "kodus-olimpo/codex-athena",
+   "prNumber": 15,
+   "agent": "generalist",
+   "customAgentId": null,
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "component": "ReviewOrchestratorService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.324Z",
+  "level": "error",
+  "message": "[AGENT] kody-rules failed: Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR.",
+  "component": "ReviewOrchestratorService",
+  "metadata": {
+   "component": "ReviewOrchestratorService",
+   "level": "error",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "repositoryId": "1468015189",
+   "repositoryName": "kodus-olimpo/codex-athena",
+   "prNumber": 15,
+   "agent": "kody-rules",
+   "customAgentId": null,
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "component": "ReviewOrchestratorService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.331Z",
+  "level": "info",
+  "message": "[AGENT] Reclassified severity for 0 suggestions (0 left unclassified, default kept)",
+  "component": "AgentReviewStage",
+  "metadata": {
+   "component": "AgentReviewStage",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "prNumber": 15,
+   "unclassified": 0,
+   "component": "AgentReviewStage",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.332Z",
+  "level": "info",
+  "message": "[ENRICH] PR#15: enriched 0, failed 0, skipped 0",
+  "component": "AgentReviewStage",
+  "metadata": {
+   "component": "AgentReviewStage",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "prNumber": 15,
+   "enriched": 0,
+   "failed": 0,
+   "skipped": 0,
+   "byFixStatus": {},
+   "component": "AgentReviewStage",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.333Z",
+  "level": "info",
+  "message": "[AGENT] Titled 0 suggestions (from summary 0, from body 0, over the ceiling 0, empty 0)",
+  "component": "AgentReviewStage",
+  "metadata": {
+   "component": "AgentReviewStage",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "prNumber": 15,
+   "fromSummary": 0,
+   "fromBody": 0,
+   "overCeiling": 0,
+   "empty": 0,
+   "component": "AgentReviewStage",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.335Z",
+  "level": "info",
+  "message": "[AGENT] Formatted 0/0 suggestion contents",
+  "component": "AgentReviewStage",
+  "metadata": {
+   "component": "AgentReviewStage",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "prNumber": 15,
+   "formatted": 0,
+   "formatTargets": 0,
+   "component": "AgentReviewStage",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.336Z",
+  "level": "info",
+  "message": "[AGENT] Shaped 0 suggestion bodies (fences removed 0, title repeat dropped 0, capped 0, titles rewritten 0, titles cut 0)",
+  "component": "AgentReviewStage",
+  "metadata": {
+   "component": "AgentReviewStage",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "prNumber": 15,
+   "shaped": 0,
+   "removedFences": 0,
+   "droppedTitleRepeat": 0,
+   "capped": 0,
+   "impactActionFallback": 0,
+   "titleRewritten": 0,
+   "titleCut": 0,
+   "writingGuidelines": "saved-default",
+   "component": "AgentReviewStage",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.352Z",
+  "level": "info",
+  "message": "Stage 'AgentReviewStage' completed in 38223ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "AgentReviewStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.364Z",
+  "level": "info",
+  "message": "No PR-level suggestions to process for PR#15",
+  "component": "CreatePrLevelCommentsStage",
+  "metadata": {
+   "component": "CreatePrLevelCommentsStage",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "prNumber": 15,
+   "component": "CreatePrLevelCommentsStage",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.375Z",
+  "level": "info",
+  "message": "Stage 'CreatePrLevelCommentsStage' completed in 22ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "CreatePrLevelCommentsStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.388Z",
+  "level": "info",
+  "message": "No valid suggestions or changed files to validate",
+  "component": "ValidateSuggestionsStage",
+  "metadata": {
+   "component": "ValidateSuggestionsStage",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "prNumber": 15,
+   "validSuggestionsCount": 0,
+   "changedFilesCount": 12,
+   "component": "ValidateSuggestionsStage",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.397Z",
+  "level": "info",
+  "message": "Stage 'ValidateSuggestionsStage' completed in 21ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "ValidateSuggestionsStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.415Z",
+  "level": "info",
+  "message": "No file-level suggestions to process for PR#15",
+  "component": "CreateFileCommentsStage",
+  "metadata": {
+   "component": "CreateFileCommentsStage",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "prNumber": 15,
+   "discardedSuggestionsCount": 0,
+   "component": "CreateFileCommentsStage",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.429Z",
+  "level": "info",
+  "message": "Saved PR#15 with 12 files and 0 discarded suggestions",
+  "component": "CreateFileCommentsStage",
+  "metadata": {
+   "component": "CreateFileCommentsStage",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "prNumber": 15,
+   "changedFilesCount": 12,
+   "discardedSuggestionsCount": 0,
+   "component": "CreateFileCommentsStage",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.438Z",
+  "level": "info",
+  "message": "Stage 'CreateFileCommentsStage' completed in 40ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "CreateFileCommentsStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.452Z",
+  "level": "warn",
+  "message": "No file analysis results to aggregate for PR#15",
+  "component": "AggregateResultsStage",
+  "metadata": {
+   "component": "AggregateResultsStage",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "prNumber": 15,
+   "component": "AggregateResultsStage",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.452Z",
+  "level": "warn",
+  "message": "No valid suggestions to aggregate for PR#15",
+  "component": "AggregateResultsStage",
+  "metadata": {
+   "component": "AggregateResultsStage",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "prNumber": 15,
+   "component": "AggregateResultsStage",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.460Z",
+  "level": "info",
+  "message": "Stage 'AggregateResultsStage' completed in 22ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "AggregateResultsStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.474Z",
+  "level": "info",
+  "message": "Generating summary for PR#15",
+  "component": "UpdateCommentsAndGenerateSummaryStage",
+  "metadata": {
+   "component": "UpdateCommentsAndGenerateSummaryStage",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "prNumber": 15,
+   "repository": {
+    "id": "1468015189",
+    "url": "https://github.com/kodus-olimpo/codex-athena",
+    "fork": false,
+    "name": "codex-athena",
+    "size": 13,
+    "forks": 0,
+    "owner": {
+     "id": 360001334,
+     "url": "https://api.github.com/users/kodus-olimpo",
+     "type": "Organization",
+     "login": "kodus-olimpo",
+     "node_id": "O_kgDOFXUvNg",
+     "html_url": "https://github.com/kodus-olimpo",
+     "gists_url": "https://api.github.com/users/kodus-olimpo/gists{/gist_id}",
+     "repos_url": "https://api.github.com/users/kodus-olimpo/repos",
+     "avatar_url": "https://avatars.githubusercontent.com/u/360001334?v=4",
+     "events_url": "https://api.github.com/users/kodus-olimpo/events{/privacy}",
+     "site_admin": false,
+     "gravatar_id": "",
+     "starred_url": "https://api.github.com/users/kodus-olimpo/starred{/owner}{/repo}",
+     "followers_url": "https://api.github.com/users/kodus-olimpo/followers",
+     "following_url": "https://api.github.com/users/kodus-olimpo/following{/other_user}",
+     "user_view_type": "public",
+     "organizations_url": "https://api.github.com/users/kodus-olimpo/orgs",
+     "subscriptions_url": "https://api.github.com/users/kodus-olimpo/subscriptions",
+     "received_events_url": "https://api.github.com/users/kodus-olimpo/received_events"
+    },
+    "topics": [],
+    "git_url": "git://github.com/kodus-olimpo/codex-athena.git",
+    "license": null,
+    "node_id": "R_kgDOV4AiVQ",
+    "private": true,
+    "ssh_url": "git@github.com:kodus-olimpo/codex-athena.git",
+    "svn_url": "https://github.com/kodus-olimpo/codex-athena",
+    "archived": false,
+    "disabled": false,
+    "has_wiki": false,
+    "homepage": null,
+    "html_url": "https://github.com/kodus-olimpo/codex-athena",
+    "keys_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/keys{/key_id}",
+    "language": "TypeScript",
+    "tags_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/tags",
+    "watchers": 0,
+    "blobs_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/blobs{/sha}",
+    "clone_url": "https://github.com/kodus-olimpo/codex-athena.git",
+    "forks_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/forks",
+    "full_name": "kodus-olimpo/codex-athena",
+    "has_pages": false,
+    "hooks_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/hooks",
+    "pulls_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/pulls{/number}",
+    "pushed_at": "2026-11-27T22:01:17Z",
+    "teams_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/teams",
+    "trees_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/trees{/sha}",
+    "created_at": "2026-11-22T21:43:05Z",
+    "events_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/events",
+    "has_issues": true,
+    "issues_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/issues{/number}",
+    "labels_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/labels{/name}",
+    "merges_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/merges",
+    "mirror_url": null,
+    "updated_at": "2026-11-24T21:16:08Z",
+    "visibility": "private",
+    "archive_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/{archive_format}{/ref}",
+    "commits_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/commits{/sha}",
+    "compare_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/compare/{base}...{head}",
+    "description": null,
+    "forks_count": 0,
+    "is_template": false,
+    "open_issues": 2,
+    "branches_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/branches{/branch}",
+    "comments_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/comments{/number}",
+    "contents_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/contents/{+path}",
+    "git_refs_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/refs{/sha}",
+    "git_tags_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/tags{/sha}",
+    "has_projects": true,
+    "releases_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/releases{/id}",
+    "statuses_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/statuses/{sha}",
+    "allow_forking": false,
+    "assignees_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/assignees{/user}",
+    "downloads_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/downloads",
+    "has_downloads": false,
+    "languages_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/languages",
+    "default_branch": "main",
+    "milestones_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/milestones{/number}",
+    "stargazers_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/stargazers",
+    "watchers_count": 0,
+    "deployments_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/deployments",
+    "git_commits_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/commits{/sha}",
+    "has_discussions": false,
+    "subscribers_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/subscribers",
+    "contributors_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/contributors",
+    "issue_events_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/issues/events{/number}",
+    "stargazers_count": 0,
+    "subscription_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/subscription",
+    "collaborators_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/collaborators{/collaborator}",
+    "custom_properties": {},
+    "has_pull_requests": true,
+    "issue_comment_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/issues/comments{/number}",
+    "notifications_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/notifications{?since,all,participating}",
+    "open_issues_count": 2,
+    "web_commit_signoff_required": false,
+    "pull_request_creation_policy": "all",
+    "fullName": "kodus-olimpo/codex-athena"
+   },
+   "component": "UpdateCommentsAndGenerateSummaryStage",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:03:59.942Z",
+  "level": "info",
+  "message": "GenerateSummaryPR: Start PR#15. After get PR data",
+  "component": "CommentManagerService",
+  "metadata": {
+   "component": "CommentManagerService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "pullRequestNumber": 15,
+   "repositoryId": "1468015189",
+   "summaryConfig": {
+    "generatePRSummary": true,
+    "behaviourForNewCommits": "none",
+    "behaviourForExistingDescription": "replace",
+    "customInstructions": ""
+   },
+   "prDescription": "Adds one grade service per subject.",
+   "component": "CommentManagerService",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:04:00.151Z",
+  "level": "warn",
+  "message": "[LLM-ERROR] generateSummaryPR: \"qa2744-capped\" failed (QUOTA_EXCEEDED) \u2014 Your project has exceeded its monthly spending cap",
+  "component": "ModelFailover",
+  "metadata": {
+   "component": "ModelFailover",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "runName": "generateSummaryPR",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "category": "QUOTA_EXCEEDED",
+   "modelId": "a5c0727f-48c2-46ae-aea1-c9bfc12a4438",
+   "exhausted": true,
+   "component": "ModelFailover",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:04:00.161Z",
+  "level": "warn",
+  "message": "Error generateOverallComment pull request: PR#15",
+  "component": "CommentManagerService",
+  "metadata": {
+   "component": "CommentManagerService",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "pullRequest": {
+    "id": "5533656345",
+    "base": {
+     "repo": {
+      "fullName": "kodus-olimpo/codex-athena",
+      "defaultBranch": "main"
+     },
+     "ref": "main",
+     "sha": "f93a3ea18aa3f6b97493ddf11ff9bd729e03abc1"
+    },
+    "body": "Adds one grade service per subject.",
+    "head": {
+     "repo": {
+      "fullName": "kodus-olimpo/codex-athena"
+     },
+     "ref": "qa2744-r4",
+     "sha": "ee84ff69aa4b0a1bf8f5ea815556e53053a06678"
+    },
+    "user": {
+     "id": "17408306",
+     "name": "",
+     "login": "sartorijr92"
+    },
+    "prURL": "https://github.com/kodus-olimpo/codex-athena/pull/15",
+    "state": "open",
+    "title": "qa2744: grade services per subject",
+    "labels": [],
+    "number": 15,
+    "isDraft": false,
+    "message": "qa2744: grade services per subject",
+    "closed_at": "",
+    "merged_at": "",
+    "reviewers": [],
+    "created_at": "2026-11-27T22:01:19Z",
+    "repository": {
+     "id": 1468015189,
+     "url": "https://api.github.com/repos/kodus-olimpo/codex-athena",
+     "fork": false,
+     "name": "codex-athena",
+     "size": 13,
+     "forks": 0,
+     "owner": {
+      "id": 360001334,
+      "url": "https://api.github.com/users/kodus-olimpo",
+      "type": "Organization",
+      "login": "kodus-olimpo",
+      "node_id": "O_kgDOFXUvNg",
+      "html_url": "https://github.com/kodus-olimpo",
+      "gists_url": "https://api.github.com/users/kodus-olimpo/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/kodus-olimpo/repos",
+      "avatar_url": "https://avatars.githubusercontent.com/u/360001334?v=4",
+      "events_url": "https://api.github.com/users/kodus-olimpo/events{/privacy}",
+      "site_admin": false,
+      "gravatar_id": "",
+      "starred_url": "https://api.github.com/users/kodus-olimpo/starred{/owner}{/repo}",
+      "followers_url": "https://api.github.com/users/kodus-olimpo/followers",
+      "following_url": "https://api.github.com/users/kodus-olimpo/following{/other_user}",
+      "user_view_type": "public",
+      "organizations_url": "https://api.github.com/users/kodus-olimpo/orgs",
+      "subscriptions_url": "https://api.github.com/users/kodus-olimpo/subscriptions",
+      "received_events_url": "https://api.github.com/users/kodus-olimpo/received_events"
+     },
+     "topics": [],
+     "git_url": "git://github.com/kodus-olimpo/codex-athena.git",
+     "license": null,
+     "node_id": "R_kgDOV4AiVQ",
+     "private": true,
+     "ssh_url": "git@github.com:kodus-olimpo/codex-athena.git",
+     "svn_url": "https://github.com/kodus-olimpo/codex-athena",
+     "archived": false,
+     "disabled": false,
+     "has_wiki": false,
+     "homepage": null,
+     "html_url": "https://github.com/kodus-olimpo/codex-athena",
+     "keys_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/keys{/key_id}",
+     "language": "TypeScript",
+     "tags_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/tags",
+     "watchers": 0,
+     "blobs_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/blobs{/sha}",
+     "clone_url": "https://github.com/kodus-olimpo/codex-athena.git",
+     "forks_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/forks",
+     "full_name": "kodus-olimpo/codex-athena",
+     "has_pages": false,
+     "hooks_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/hooks",
+     "pulls_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/pulls{/number}",
+     "pushed_at": "2026-11-27T22:01:17Z",
+     "teams_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/teams",
+     "trees_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/trees{/sha}",
+     "created_at": "2026-11-22T21:43:05Z",
+     "events_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/events",
+     "has_issues": true,
+     "issues_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/issues{/number}",
+     "labels_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/labels{/name}",
+     "merges_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/merges",
+     "mirror_url": null,
+     "updated_at": "2026-11-24T21:16:08Z",
+     "visibility": "private",
+     "archive_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/{archive_format}{/ref}",
+     "commits_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/commits{/sha}",
+     "compare_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/compare/{base}...{head}",
+     "description": null,
+     "forks_count": 0,
+     "is_template": false,
+     "open_issues": 2,
+     "branches_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/branches{/branch}",
+     "comments_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/comments{/number}",
+     "contents_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/contents/{+path}",
+     "git_refs_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/refs{/sha}",
+     "git_tags_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/tags{/sha}",
+     "has_projects": true,
+     "releases_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/releases{/id}",
+     "statuses_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/statuses/{sha}",
+     "allow_forking": false,
+     "assignees_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/assignees{/user}",
+     "downloads_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/downloads",
+     "has_downloads": false,
+     "languages_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/languages",
+     "default_branch": "main",
+     "milestones_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/milestones{/number}",
+     "stargazers_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/stargazers",
+     "watchers_count": 0,
+     "deployments_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/deployments",
+     "git_commits_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/commits{/sha}",
+     "has_discussions": false,
+     "subscribers_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/subscribers",
+     "contributors_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/contributors",
+     "issue_events_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/issues/events{/number}",
+     "stargazers_count": 0,
+     "subscription_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/subscription",
+     "collaborators_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/collaborators{/collaborator}",
+     "custom_properties": {},
+     "has_pull_requests": true,
+     "issue_comment_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/issues/comments{/number}",
+     "notifications_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/notifications{?since,all,participating}",
+     "open_issues_count": 2,
+     "web_commit_signoff_required": false,
+     "pull_request_creation_policy": "all"
+    },
+    "updated_at": "2026-11-27T22:03:09Z",
+    "pull_number": 15,
+    "participants": [
+     {
+      "id": "17408306"
+     }
+    ],
+    "pull_request": {
+     "id": "5533656345",
+     "base": {
+      "ref": "main",
+      "sha": "f93a3ea18aa3f6b97493ddf11ff9bd729e03abc1",
+      "repo": {
+       "fullName": "kodus-olimpo/codex-athena",
+       "defaultBranch": "main"
+      }
+     },
+     "body": "Adds one grade service per subject.",
+     "head": {
+      "ref": "qa2744-r4",
+      "sha": "ee84ff69aa4b0a1bf8f5ea815556e53053a06678",
+      "repo": {
+       "fullName": "kodus-olimpo/codex-athena"
+      }
+     },
+     "user": {
+      "id": "17408306",
+      "name": "",
+      "login": "sartorijr92"
+     },
+     "prURL": "https://github.com/kodus-olimpo/codex-athena/pull/15",
+     "state": "open",
+     "title": "qa2744: grade services per subject",
+     "labels": [],
+     "number": 15,
+     "isDraft": false,
+     "message": "qa2744: grade services per subject",
+     "closed_at": "",
+     "merged_at": "",
+     "reviewers": [],
+     "created_at": "2026-11-27T22:01:19Z",
+     "repository": {
+      "id": 1468015189,
+      "name": "codex-athena",
+      "fullName": "kodus-olimpo/codex-athena"
+     },
+     "updated_at": "2026-11-27T22:03:09Z",
+     "pull_number": 15,
+     "participants": [
+      {
+       "id": "17408306"
+      }
+     ],
+     "repositoryId": "1468015189",
+     "sourceRefName": "qa2744-r4",
+     "targetRefName": "main",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "repositoryData": {
+      "id": "1468015189",
+      "name": "kodus-olimpo/codex-athena"
+     },
+     "changedFilesCount": 12
+    },
+    "repositoryId": "1468015189",
+    "sourceRefName": "qa2744-r4",
+    "targetRefName": "main",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "repositoryData": {
+     "id": "1468015189",
+     "name": "kodus-olimpo/codex-athena"
+    },
+    "changedFilesCount": 12,
+    "url": "https://github.com/kodus-olimpo/codex-athena/pull/15",
+    "tags": [],
+    "stats": {
+     "total_additions": 216,
+     "total_deletions": 0,
+     "total_files": 12,
+     "total_lines_changed": 216
+    }
+   },
+   "component": "CommentManagerService",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:04:00.163Z",
+  "level": "info",
+  "message": "GenerateSummaryPR: Start PR#15. After get PR data",
+  "component": "CommentManagerService",
+  "metadata": {
+   "component": "CommentManagerService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "pullRequestNumber": 15,
+   "repositoryId": "1468015189",
+   "summaryConfig": {
+    "generatePRSummary": true,
+    "behaviourForNewCommits": "none",
+    "behaviourForExistingDescription": "replace",
+    "customInstructions": ""
+   },
+   "prDescription": "Adds one grade service per subject.",
+   "component": "CommentManagerService",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:04:00.365Z",
+  "level": "warn",
+  "message": "[LLM-ERROR] generateSummaryPR: \"qa2744-capped\" failed (QUOTA_EXCEEDED) \u2014 Your project has exceeded its monthly spending cap",
+  "component": "ModelFailover",
+  "metadata": {
+   "component": "ModelFailover",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "runName": "generateSummaryPR",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "category": "QUOTA_EXCEEDED",
+   "modelId": "a5c0727f-48c2-46ae-aea1-c9bfc12a4438",
+   "exhausted": true,
+   "component": "ModelFailover",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:04:00.367Z",
+  "level": "warn",
+  "message": "Error generateOverallComment pull request: PR#15",
+  "component": "CommentManagerService",
+  "metadata": {
+   "component": "CommentManagerService",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "pullRequest": {
+    "id": "5533656345",
+    "base": {
+     "repo": {
+      "fullName": "kodus-olimpo/codex-athena",
+      "defaultBranch": "main"
+     },
+     "ref": "main",
+     "sha": "f93a3ea18aa3f6b97493ddf11ff9bd729e03abc1"
+    },
+    "body": "Adds one grade service per subject.",
+    "head": {
+     "repo": {
+      "fullName": "kodus-olimpo/codex-athena"
+     },
+     "ref": "qa2744-r4",
+     "sha": "ee84ff69aa4b0a1bf8f5ea815556e53053a06678"
+    },
+    "user": {
+     "id": "17408306",
+     "name": "",
+     "login": "sartorijr92"
+    },
+    "prURL": "https://github.com/kodus-olimpo/codex-athena/pull/15",
+    "state": "open",
+    "title": "qa2744: grade services per subject",
+    "labels": [],
+    "number": 15,
+    "isDraft": false,
+    "message": "qa2744: grade services per subject",
+    "closed_at": "",
+    "merged_at": "",
+    "reviewers": [],
+    "created_at": "2026-11-27T22:01:19Z",
+    "repository": {
+     "id": 1468015189,
+     "url": "https://api.github.com/repos/kodus-olimpo/codex-athena",
+     "fork": false,
+     "name": "codex-athena",
+     "size": 13,
+     "forks": 0,
+     "owner": {
+      "id": 360001334,
+      "url": "https://api.github.com/users/kodus-olimpo",
+      "type": "Organization",
+      "login": "kodus-olimpo",
+      "node_id": "O_kgDOFXUvNg",
+      "html_url": "https://github.com/kodus-olimpo",
+      "gists_url": "https://api.github.com/users/kodus-olimpo/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/kodus-olimpo/repos",
+      "avatar_url": "https://avatars.githubusercontent.com/u/360001334?v=4",
+      "events_url": "https://api.github.com/users/kodus-olimpo/events{/privacy}",
+      "site_admin": false,
+      "gravatar_id": "",
+      "starred_url": "https://api.github.com/users/kodus-olimpo/starred{/owner}{/repo}",
+      "followers_url": "https://api.github.com/users/kodus-olimpo/followers",
+      "following_url": "https://api.github.com/users/kodus-olimpo/following{/other_user}",
+      "user_view_type": "public",
+      "organizations_url": "https://api.github.com/users/kodus-olimpo/orgs",
+      "subscriptions_url": "https://api.github.com/users/kodus-olimpo/subscriptions",
+      "received_events_url": "https://api.github.com/users/kodus-olimpo/received_events"
+     },
+     "topics": [],
+     "git_url": "git://github.com/kodus-olimpo/codex-athena.git",
+     "license": null,
+     "node_id": "R_kgDOV4AiVQ",
+     "private": true,
+     "ssh_url": "git@github.com:kodus-olimpo/codex-athena.git",
+     "svn_url": "https://github.com/kodus-olimpo/codex-athena",
+     "archived": false,
+     "disabled": false,
+     "has_wiki": false,
+     "homepage": null,
+     "html_url": "https://github.com/kodus-olimpo/codex-athena",
+     "keys_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/keys{/key_id}",
+     "language": "TypeScript",
+     "tags_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/tags",
+     "watchers": 0,
+     "blobs_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/blobs{/sha}",
+     "clone_url": "https://github.com/kodus-olimpo/codex-athena.git",
+     "forks_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/forks",
+     "full_name": "kodus-olimpo/codex-athena",
+     "has_pages": false,
+     "hooks_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/hooks",
+     "pulls_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/pulls{/number}",
+     "pushed_at": "2026-11-27T22:01:17Z",
+     "teams_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/teams",
+     "trees_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/trees{/sha}",
+     "created_at": "2026-11-22T21:43:05Z",
+     "events_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/events",
+     "has_issues": true,
+     "issues_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/issues{/number}",
+     "labels_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/labels{/name}",
+     "merges_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/merges",
+     "mirror_url": null,
+     "updated_at": "2026-11-24T21:16:08Z",
+     "visibility": "private",
+     "archive_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/{archive_format}{/ref}",
+     "commits_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/commits{/sha}",
+     "compare_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/compare/{base}...{head}",
+     "description": null,
+     "forks_count": 0,
+     "is_template": false,
+     "open_issues": 2,
+     "branches_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/branches{/branch}",
+     "comments_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/comments{/number}",
+     "contents_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/contents/{+path}",
+     "git_refs_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/refs{/sha}",
+     "git_tags_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/tags{/sha}",
+     "has_projects": true,
+     "releases_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/releases{/id}",
+     "statuses_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/statuses/{sha}",
+     "allow_forking": false,
+     "assignees_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/assignees{/user}",
+     "downloads_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/downloads",
+     "has_downloads": false,
+     "languages_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/languages",
+     "default_branch": "main",
+     "milestones_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/milestones{/number}",
+     "stargazers_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/stargazers",
+     "watchers_count": 0,
+     "deployments_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/deployments",
+     "git_commits_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/commits{/sha}",
+     "has_discussions": false,
+     "subscribers_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/subscribers",
+     "contributors_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/contributors",
+     "issue_events_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/issues/events{/number}",
+     "stargazers_count": 0,
+     "subscription_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/subscription",
+     "collaborators_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/collaborators{/collaborator}",
+     "custom_properties": {},
+     "has_pull_requests": true,
+     "issue_comment_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/issues/comments{/number}",
+     "notifications_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/notifications{?since,all,participating}",
+     "open_issues_count": 2,
+     "web_commit_signoff_required": false,
+     "pull_request_creation_policy": "all"
+    },
+    "updated_at": "2026-11-27T22:03:09Z",
+    "pull_number": 15,
+    "participants": [
+     {
+      "id": "17408306"
+     }
+    ],
+    "pull_request": {
+     "id": "5533656345",
+     "base": {
+      "ref": "main",
+      "sha": "f93a3ea18aa3f6b97493ddf11ff9bd729e03abc1",
+      "repo": {
+       "fullName": "kodus-olimpo/codex-athena",
+       "defaultBranch": "main"
+      }
+     },
+     "body": "Adds one grade service per subject.",
+     "head": {
+      "ref": "qa2744-r4",
+      "sha": "ee84ff69aa4b0a1bf8f5ea815556e53053a06678",
+      "repo": {
+       "fullName": "kodus-olimpo/codex-athena"
+      }
+     },
+     "user": {
+      "id": "17408306",
+      "name": "",
+      "login": "sartorijr92"
+     },
+     "prURL": "https://github.com/kodus-olimpo/codex-athena/pull/15",
+     "state": "open",
+     "title": "qa2744: grade services per subject",
+     "labels": [],
+     "number": 15,
+     "isDraft": false,
+     "message": "qa2744: grade services per subject",
+     "closed_at": "",
+     "merged_at": "",
+     "reviewers": [],
+     "created_at": "2026-11-27T22:01:19Z",
+     "repository": {
+      "id": 1468015189,
+      "name": "codex-athena",
+      "fullName": "kodus-olimpo/codex-athena"
+     },
+     "updated_at": "2026-11-27T22:03:09Z",
+     "pull_number": 15,
+     "participants": [
+      {
+       "id": "17408306"
+      }
+     ],
+     "repositoryId": "1468015189",
+     "sourceRefName": "qa2744-r4",
+     "targetRefName": "main",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "repositoryData": {
+      "id": "1468015189",
+      "name": "kodus-olimpo/codex-athena"
+     },
+     "changedFilesCount": 12
+    },
+    "repositoryId": "1468015189",
+    "sourceRefName": "qa2744-r4",
+    "targetRefName": "main",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "repositoryData": {
+     "id": "1468015189",
+     "name": "kodus-olimpo/codex-athena"
+    },
+    "changedFilesCount": 12,
+    "url": "https://github.com/kodus-olimpo/codex-athena/pull/15",
+    "tags": [],
+    "stats": {
+     "total_additions": 216,
+     "total_deletions": 0,
+     "total_files": 12,
+     "total_lines_changed": 216
+    }
+   },
+   "component": "CommentManagerService",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:04:00.370Z",
+  "level": "warn",
+  "message": "Error generateOverallComment pull request. Max retries exceeded: PR#15",
+  "component": "CommentManagerService",
+  "metadata": {
+   "component": "CommentManagerService",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "pullRequest": {
+    "id": "5533656345",
+    "base": {
+     "repo": {
+      "fullName": "kodus-olimpo/codex-athena",
+      "defaultBranch": "main"
+     },
+     "ref": "main",
+     "sha": "f93a3ea18aa3f6b97493ddf11ff9bd729e03abc1"
+    },
+    "body": "Adds one grade service per subject.",
+    "head": {
+     "repo": {
+      "fullName": "kodus-olimpo/codex-athena"
+     },
+     "ref": "qa2744-r4",
+     "sha": "ee84ff69aa4b0a1bf8f5ea815556e53053a06678"
+    },
+    "user": {
+     "id": "17408306",
+     "name": "",
+     "login": "sartorijr92"
+    },
+    "prURL": "https://github.com/kodus-olimpo/codex-athena/pull/15",
+    "state": "open",
+    "title": "qa2744: grade services per subject",
+    "labels": [],
+    "number": 15,
+    "isDraft": false,
+    "message": "qa2744: grade services per subject",
+    "closed_at": "",
+    "merged_at": "",
+    "reviewers": [],
+    "created_at": "2026-11-27T22:01:19Z",
+    "repository": {
+     "id": 1468015189,
+     "url": "https://api.github.com/repos/kodus-olimpo/codex-athena",
+     "fork": false,
+     "name": "codex-athena",
+     "size": 13,
+     "forks": 0,
+     "owner": {
+      "id": 360001334,
+      "url": "https://api.github.com/users/kodus-olimpo",
+      "type": "Organization",
+      "login": "kodus-olimpo",
+      "node_id": "O_kgDOFXUvNg",
+      "html_url": "https://github.com/kodus-olimpo",
+      "gists_url": "https://api.github.com/users/kodus-olimpo/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/kodus-olimpo/repos",
+      "avatar_url": "https://avatars.githubusercontent.com/u/360001334?v=4",
+      "events_url": "https://api.github.com/users/kodus-olimpo/events{/privacy}",
+      "site_admin": false,
+      "gravatar_id": "",
+      "starred_url": "https://api.github.com/users/kodus-olimpo/starred{/owner}{/repo}",
+      "followers_url": "https://api.github.com/users/kodus-olimpo/followers",
+      "following_url": "https://api.github.com/users/kodus-olimpo/following{/other_user}",
+      "user_view_type": "public",
+      "organizations_url": "https://api.github.com/users/kodus-olimpo/orgs",
+      "subscriptions_url": "https://api.github.com/users/kodus-olimpo/subscriptions",
+      "received_events_url": "https://api.github.com/users/kodus-olimpo/received_events"
+     },
+     "topics": [],
+     "git_url": "git://github.com/kodus-olimpo/codex-athena.git",
+     "license": null,
+     "node_id": "R_kgDOV4AiVQ",
+     "private": true,
+     "ssh_url": "git@github.com:kodus-olimpo/codex-athena.git",
+     "svn_url": "https://github.com/kodus-olimpo/codex-athena",
+     "archived": false,
+     "disabled": false,
+     "has_wiki": false,
+     "homepage": null,
+     "html_url": "https://github.com/kodus-olimpo/codex-athena",
+     "keys_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/keys{/key_id}",
+     "language": "TypeScript",
+     "tags_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/tags",
+     "watchers": 0,
+     "blobs_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/blobs{/sha}",
+     "clone_url": "https://github.com/kodus-olimpo/codex-athena.git",
+     "forks_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/forks",
+     "full_name": "kodus-olimpo/codex-athena",
+     "has_pages": false,
+     "hooks_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/hooks",
+     "pulls_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/pulls{/number}",
+     "pushed_at": "2026-11-27T22:01:17Z",
+     "teams_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/teams",
+     "trees_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/trees{/sha}",
+     "created_at": "2026-11-22T21:43:05Z",
+     "events_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/events",
+     "has_issues": true,
+     "issues_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/issues{/number}",
+     "labels_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/labels{/name}",
+     "merges_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/merges",
+     "mirror_url": null,
+     "updated_at": "2026-11-24T21:16:08Z",
+     "visibility": "private",
+     "archive_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/{archive_format}{/ref}",
+     "commits_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/commits{/sha}",
+     "compare_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/compare/{base}...{head}",
+     "description": null,
+     "forks_count": 0,
+     "is_template": false,
+     "open_issues": 2,
+     "branches_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/branches{/branch}",
+     "comments_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/comments{/number}",
+     "contents_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/contents/{+path}",
+     "git_refs_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/refs{/sha}",
+     "git_tags_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/tags{/sha}",
+     "has_projects": true,
+     "releases_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/releases{/id}",
+     "statuses_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/statuses/{sha}",
+     "allow_forking": false,
+     "assignees_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/assignees{/user}",
+     "downloads_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/downloads",
+     "has_downloads": false,
+     "languages_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/languages",
+     "default_branch": "main",
+     "milestones_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/milestones{/number}",
+     "stargazers_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/stargazers",
+     "watchers_count": 0,
+     "deployments_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/deployments",
+     "git_commits_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/git/commits{/sha}",
+     "has_discussions": false,
+     "subscribers_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/subscribers",
+     "contributors_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/contributors",
+     "issue_events_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/issues/events{/number}",
+     "stargazers_count": 0,
+     "subscription_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/subscription",
+     "collaborators_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/collaborators{/collaborator}",
+     "custom_properties": {},
+     "has_pull_requests": true,
+     "issue_comment_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/issues/comments{/number}",
+     "notifications_url": "https://api.github.com/repos/kodus-olimpo/codex-athena/notifications{?since,all,participating}",
+     "open_issues_count": 2,
+     "web_commit_signoff_required": false,
+     "pull_request_creation_policy": "all"
+    },
+    "updated_at": "2026-11-27T22:03:09Z",
+    "pull_number": 15,
+    "participants": [
+     {
+      "id": "17408306"
+     }
+    ],
+    "pull_request": {
+     "id": "5533656345",
+     "base": {
+      "ref": "main",
+      "sha": "f93a3ea18aa3f6b97493ddf11ff9bd729e03abc1",
+      "repo": {
+       "fullName": "kodus-olimpo/codex-athena",
+       "defaultBranch": "main"
+      }
+     },
+     "body": "Adds one grade service per subject.",
+     "head": {
+      "ref": "qa2744-r4",
+      "sha": "ee84ff69aa4b0a1bf8f5ea815556e53053a06678",
+      "repo": {
+       "fullName": "kodus-olimpo/codex-athena"
+      }
+     },
+     "user": {
+      "id": "17408306",
+      "name": "",
+      "login": "sartorijr92"
+     },
+     "prURL": "https://github.com/kodus-olimpo/codex-athena/pull/15",
+     "state": "open",
+     "title": "qa2744: grade services per subject",
+     "labels": [],
+     "number": 15,
+     "isDraft": false,
+     "message": "qa2744: grade services per subject",
+     "closed_at": "",
+     "merged_at": "",
+     "reviewers": [],
+     "created_at": "2026-11-27T22:01:19Z",
+     "repository": {
+      "id": 1468015189,
+      "name": "codex-athena",
+      "fullName": "kodus-olimpo/codex-athena"
+     },
+     "updated_at": "2026-11-27T22:03:09Z",
+     "pull_number": 15,
+     "participants": [
+      {
+       "id": "17408306"
+      }
+     ],
+     "repositoryId": "1468015189",
+     "sourceRefName": "qa2744-r4",
+     "targetRefName": "main",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "repositoryData": {
+      "id": "1468015189",
+      "name": "kodus-olimpo/codex-athena"
+     },
+     "changedFilesCount": 12
+    },
+    "repositoryId": "1468015189",
+    "sourceRefName": "qa2744-r4",
+    "targetRefName": "main",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "repositoryData": {
+     "id": "1468015189",
+     "name": "kodus-olimpo/codex-athena"
+    },
+    "changedFilesCount": 12,
+    "url": "https://github.com/kodus-olimpo/codex-athena/pull/15",
+    "tags": [],
+    "stats": {
+     "total_additions": 216,
+     "total_deletions": 0,
+     "total_files": 12,
+     "total_lines_changed": 216
+    }
+   },
+   "component": "CommentManagerService",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:04:00.374Z",
+  "level": "warn",
+  "message": "Failed to generate summary for PR#15",
+  "component": "UpdateCommentsAndGenerateSummaryStage",
+  "metadata": {
+   "component": "UpdateCommentsAndGenerateSummaryStage",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "prNumber": 15,
+   "repository": {
+    "id": "1468015189",
+    "name": "codex-athena"
+   },
+   "summaryStep": "generate",
+   "component": "UpdateCommentsAndGenerateSummaryStage",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:04:01.530Z",
+  "level": "info",
+  "message": "Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 2069ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "UpdateCommentsAndGenerateSummaryStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:04:01.551Z",
+  "level": "info",
+  "message": "Stage 'DecidePrApprovalStage' completed in 21ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "DecidePrApprovalStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:04:01.564Z",
+  "level": "info",
+  "message": "Finished processing PR#15",
+  "component": "RequestChangesOrApproveStage",
+  "metadata": {
+   "component": "RequestChangesOrApproveStage",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lineCommentsCount": 0,
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "component": "RequestChangesOrApproveStage",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:04:01.572Z",
+  "level": "info",
+  "message": "Stage 'RequestChangesOrApproveStage' completed in 19ms: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "stage": "RequestChangesOrApproveStage",
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "status": {
+    "status": "in_progress",
+    "message": "Pipeline started"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:04:01.573Z",
+  "level": "info",
+  "message": "Finished pipeline: CodeReviewPipeline (ID: 2a50aa31-7a7e-4010-ac3e-4a06d3736ede)",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "345560cc-973e-4ba5-9008-e9923843ad35"
+   },
+   "pipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "parentPipelineId": null,
+   "rootPipelineId": "2a50aa31-7a7e-4010-ac3e-4a06d3736ede",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "correlationId": "corr_239lg5Q51wT6_mwzj2i65",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": "corr_239lg5Q51wT6_mwzj2i65"
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:04:02.052Z",
+  "level": "info",
+  "message": "Open pull requests found",
+  "component": "CheckIfPRCanBeApprovedCronProvider",
+  "metadata": {
+   "component": "CheckIfPRCanBeApprovedCronProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "openPullRequests": 1,
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "component": "CheckIfPRCanBeApprovedCronProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:04:02.133Z",
+  "level": "info",
+  "message": "@@VALID PERMISSION@@ - Validating resource limits",
+  "component": "PermissionValidationService",
+  "metadata": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "component": "PermissionValidationService",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:04:02.195Z",
+  "level": "info",
+  "message": "@@VALID PERMISSION@@ - Resource limits validated",
+  "component": "PermissionValidationService",
+  "metadata": {
+   "component": "PermissionValidationService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "result": {
+    "valid": true,
+    "subscriptionStatus": "trial",
+    "planType": "teams_managed",
+    "trialStart": "2026-11-24T01:42:19.592Z",
+    "trialEnd": "2026-12-08T01:42:19.591Z",
+    "stripeCustomerId": null,
+    "byok": false,
+    "trialReviewCreditsTotal": 5,
+    "trialReviewCreditsUsed": 0,
+    "trialReviewCreditsRemaining": 5,
+    "trialCreditTier": "base",
+    "trialUnlocks": [
+     {
+      "key": "company_email",
+      "status": "locked",
+      "rewardCredits": 5,
+      "title": "Use a company email",
+      "description": "A confirmed work email helps us qualify the trial automatically."
+     },
+     {
+      "key": "team_setup",
+      "status": "locked",
+      "rewardCredits": 5,
+      "title": "Invite 3 teammates",
+      "description": "Add teammates so the trial reflects a real review workflow."
+     },
+     {
+      "key": "code_org_10_plus",
+      "status": "locked",
+      "rewardCredits": 20,
+      "title": "Connect a 10+ developer code org",
+      "description": "Connect the organization, not only a personal account, so we can evaluate team fit."
+     },
+     {
+      "key": "byok",
+      "status": "available",
+      "title": "Connect BYOK",
+      "description": "Use your own AI key. Reviews no longer use Kodus-paid PRs."
+     },
+     {
+      "key": "manual_extension",
+      "status": "available",
+      "title": "Request more trial PR reviews",
+      "description": "Ask Kodus to review your trial signals and extend the evaluation manually."
+     }
+    ],
+    "creditBalanceUsd": 0
+   },
+   "component": "PermissionValidationService",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:04:03.310Z",
+  "level": "error",
+  "message": "Review failed for PR#15 - adding error reaction",
+  "component": "CodeReviewHandlerService",
+  "metadata": {
+   "component": "CodeReviewHandlerService",
+   "level": "error",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "errorReason": "Code review failed: The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan.",
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "organizationName": "jr-codex-github"
+   },
+   "component": "CodeReviewHandlerService",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:04:03.324Z",
+  "level": "info",
+  "message": "Successfully handled pull request for PR#15",
+  "component": "AutomationCodeReviewService",
+  "metadata": {
+   "component": "AutomationCodeReviewService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   },
+   "lastAnalyzedCommit": {
+    "sha": "ee84ff69aa4b0a1bf8f5ea815556e53053a06678"
+   },
+   "commentId": 7228986715,
+   "noteId": null,
+   "threadId": null,
+   "automaticReviewStatus": {
+    "previousStatus": "automatic",
+    "currentStatus": "command",
+    "reasonForChange": "Review triggered by start-review command"
+   },
+   "approvalDecision": null,
+   "approvalRisk": null,
+   "riskAssessment": {
+    "status": "disabled"
+   },
+   "reviewRoutingReason": "default",
+   "approvalPolicyEligibility": null,
+   "approvalReviewSummary": null,
+   "customAgentRiskSkips": [],
+   "statusInfo": {
+    "status": "error",
+    "message": "Code review failed: The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+   },
+   "reviewApprovalBlocked": true,
+   "orphanedBaseCommit": null,
+   "businessLogicValidatedAt": null,
+   "licenseNoticePostedAt": null,
+   "reviewWarnings": null,
+   "linkedRepositoriesMetadata": null,
+   "heavy": false,
+   "ultra": null,
+   "component": "AutomationCodeReviewService",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ }
+]
