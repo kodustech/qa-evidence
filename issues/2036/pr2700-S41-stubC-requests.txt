@@ -1,0 +1,8 @@
+Stub C (Anthropic /v1/messages; answers 400 if thinking.type == "disabled", else 200) request log during S41/S43 (test-byok and Test & save for MiniMax-M3.1-Flash-Preview and MiniMax-M3). Field thinking = the request body's thinking value (ABSENT = not sent).
+
+{"ts": "2026-11-27T20:29:54.288Z", "method": "POST", "path": "/c/v1/messages", "model": "MiniMax-M3.1-Flash-Preview", "thinking": "ABSENT", "max_tokens": 16, "stream": false, "status": 200}
+{"ts": "2026-11-27T20:29:55.027Z", "method": "POST", "path": "/c/v1/messages", "model": "MiniMax-M3.1-Flash-Preview", "thinking": "ABSENT", "max_tokens": 16, "stream": false, "status": 200}
+{"ts": "2026-11-27T20:29:55.779Z", "method": "POST", "path": "/c/v1/messages", "model": "MiniMax-M3.1-Flash-Preview", "thinking": "ABSENT", "max_tokens": 16, "stream": false, "status": 200}
+{"ts": "2026-11-27T20:29:56.501Z", "method": "POST", "path": "/c/v1/messages", "model": "MiniMax-M3", "thinking": "ABSENT", "max_tokens": 16, "stream": false, "status": 200}
+{"ts": "2026-11-27T20:41:08.580Z", "method": "POST", "path": "/c/v1/messages", "model": "MiniMax-M3.1-Flash-Preview", "thinking": "ABSENT", "max_tokens": 16, "stream": false, "status": 200}
+{"ts": "2026-11-27T20:41:47.974Z", "method": "POST", "path": "/c/v1/messages", "model": "MiniMax-M3.1-Flash-Preview", "thinking": "ABSENT", "max_tokens": 16, "stream": false, "status": 200}
