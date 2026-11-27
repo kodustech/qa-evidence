@@ -1,5 +1,5 @@
 const http = require('http'); const https = require('https'); const fs = require('fs');
-const { getEncoding } = require('/Users/juniorsartori/Projects/Kody/kodus-ai/node_modules/js-tiktoken');
+const { getEncoding } = require('js-tiktoken');
 const enc = getEncoding('o200k_base');
 const UP = new URL(process.env.UPSTREAM); const KEY = process.env.UPKEY; delete process.env.UPKEY;
 const LOG = process.env.STUBLOG; const ALIAS = { 'local/qwen-coder': 'opencode_go/deepseek-v4.1-flash' };
