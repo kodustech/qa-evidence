@@ -1,0 +1,27 @@
+{
+ "id": "global",
+ "name": "Global",
+ "configs": {
+  "conversation": {
+   "implicitReplies": false
+  },
+  "kodyRulesGeneratorEnabled": false
+ },
+ "isSelected": true,
+ "repositories": [
+  {
+   "id": "1468015189",
+   "name": "codex-athena",
+   "configs": {},
+   "isSelected": true,
+   "directories": []
+  },
+  {
+   "id": "1468015288",
+   "name": "codex-ares",
+   "configs": {},
+   "isSelected": false,
+   "directories": []
+  }
+ ]
+}
