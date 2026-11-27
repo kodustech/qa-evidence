@@ -1,0 +1,111 @@
+const http = require('node:http');
+const crypto = require('node:crypto');
+const { McpServer } = require('@modelcontextprotocol/sdk/server/mcp.js');
+const { StreamableHTTPServerTransport } = require('@modelcontextprotocol/sdk/server/streamableHttp.js');
+const z = require('zod');
+
+function listen(server) {
+  return new Promise((r) => server.listen(0, '127.0.0.1', () => r(server.address().port)));
+}
+function readBody(req) {
+  return new Promise((r) => { let b = ''; req.on('data', (c) => (b += c)); req.on('end', () => r(b)); });
+}
+
+// OpenAI-compatible fake: script(n, body) -> {toolCalls:[{name,input}]} | {text}
+async function openaiFake(script, log) {
+  let n = 0;
+  const server = http.createServer(async (req, res) => {
+    const raw = await readBody(req);
+    if (!req.url.includes('chat/completions')) { res.writeHead(200, {'content-type':'application/json'}); res.end('{"data":[]}'); return; }
+    const body = JSON.parse(raw);
+    n += 1;
+    const t = Date.now();
+    log.push({ n, t, body });
+    const step = script(n, body);
+    const msg = { role: 'assistant', content: step.text ?? null };
+    if (step.toolCalls) msg.tool_calls = step.toolCalls.map((c, i) => ({ id: `call_${n}_${i}`, type: 'function', function: { name: c.name, arguments: JSON.stringify(c.input) } }));
+    res.writeHead(200, { 'content-type': 'application/json' });
+    res.end(JSON.stringify({ id: `cmpl-${n}`, object: 'chat.completion', created: Math.floor(t / 1000), model: body.model,
+      choices: [{ index: 0, message: msg, finish_reason: step.toolCalls ? 'tool_calls' : 'stop' }],
+      usage: { prompt_tokens: 100, completion_tokens: 10, total_tokens: 110 } }));
+  });
+  const port = await listen(server);
+  return { port, server, count: () => n };
+}
+
+// Anthropic fake. A thinking block's signature binds the tool list (sha of the
+// request's tools) and its own text. On replay with a different tool list the
+// fake answers the incident's 400. It also records whether the replayed
+// block's preceding wire messages (minus trailing runtime note text) match.
+async function anthropicFake(script, log) {
+  let n = 0;
+  const origins = {}; // sig -> {toolsHash, prefix}
+  const toolsHashOf = (b) => crypto.createHash('sha256').update(JSON.stringify((b.tools || []).map((t) => ({ name: t.name, description: t.description, input_schema: t.input_schema })))).digest('hex').slice(0, 16);
+  const strip = (msgs) => JSON.stringify(msgs, (k, v) => (k === 'cache_control' ? undefined : v));
+  const server = http.createServer(async (req, res) => {
+    const raw = await readBody(req);
+    if (!req.url.includes('/messages')) { res.writeHead(200, {'content-type':'application/json'}); res.end('{"data":[]}'); return; }
+    const body = JSON.parse(raw);
+    n += 1;
+    const th = toolsHashOf(body);
+    const entry = { n, t: Date.now(), body, toolsHash: th, replayed: [], prefixMismatches: [] };
+    log.push(entry);
+    // verify every replayed thinking block
+    for (let i = 0; i < body.messages.length; i++) {
+      const m = body.messages[i];
+      if (m.role !== 'assistant' || !Array.isArray(m.content)) continue;
+      m.content.forEach((p, j) => {
+        if (p.type !== 'thinking') return;
+        entry.replayed.push(p.signature);
+        const o = origins[p.signature];
+        if (!o || o.toolsHash !== th) {
+          entry.rejected = `messages.${i}.content.${j}: Invalid \`signature\` in \`thinking\` block`;
+        } else if (o.prefix !== strip(body.messages.slice(0, i)).slice(0, o.prefix.length) ) {
+          entry.prefixMismatches.push(p.signature);
+        }
+      });
+    }
+    if (entry.rejected) {
+      res.writeHead(400, { 'content-type': 'application/json' });
+      res.end(JSON.stringify({ type: 'error', error: { type: 'invalid_request_error', message: entry.rejected } }));
+      return;
+    }
+    const step = script(n, body);
+    const sig = `sig-${n}-${th}`;
+    // prefix the block was produced on: all messages, minus the trailing note text block
+    const msgs = JSON.parse(JSON.stringify(body.messages));
+    origins[sig] = { toolsHash: th, prefix: '' };
+    const content = [{ type: 'thinking', thinking: `thinking ${n}`, signature: sig }];
+    if (step.toolCalls) step.toolCalls.forEach((c, i) => content.push({ type: 'tool_use', id: `toolu_${n}_${i}`, name: c.name, input: c.input }));
+    if (step.text) content.push({ type: 'text', text: step.text });
+    res.writeHead(200, { 'content-type': 'application/json' });
+    res.end(JSON.stringify({ id: `msg_${n}`, type: 'message', role: 'assistant', model: body.model, content,
+      stop_reason: step.toolCalls ? 'tool_use' : 'end_turn', stop_sequence: null, usage: { input_tokens: 100, output_tokens: 10 } }));
+  });
+  const port = await listen(server);
+  return { port, server, count: () => n };
+}
+
+// MCP: one write tool, one read tool. writeMode: 'ok' | 'throw'
+async function mcpFake(state) {
+  const server = http.createServer(async (req, res) => {
+    const raw = await readBody(req);
+    const mcp = new McpServer({ name: 'kodus-fake', version: '1.0.0' });
+    mcp.registerTool('kodyMemoriesCreate', { description: 'Create a Kody memory for the team.', inputSchema: { content: z.string().optional() }, annotations: { readOnlyHint: false } },
+      async (args) => {
+        state.writeCalls.push({ t: Date.now(), args });
+        if (state.writeMode === 'throw') throw new Error('memory store unavailable');
+        return { content: [{ type: 'text', text: JSON.stringify({ data: { link: 'https://app.kodus.io/memories/mem-qa2744' } }) }] };
+      });
+    mcp.registerTool('kodyMemoriesSearch', { description: 'Search Kody memories.', inputSchema: { query: z.string().optional() }, annotations: { readOnlyHint: true } },
+      async (args) => { state.readCalls.push({ t: Date.now(), args }); return { content: [{ type: 'text', text: 'no memories match' }] }; });
+    const transport = new StreamableHTTPServerTransport({ sessionIdGenerator: undefined });
+    res.on('close', () => { transport.close(); mcp.close(); });
+    await mcp.connect(transport);
+    await transport.handleRequest(req, res, raw ? JSON.parse(raw) : undefined);
+  });
+  const port = await listen(server);
+  return { port, server };
+}
+
+module.exports = { openaiFake, anthropicFake, mcpFake };
