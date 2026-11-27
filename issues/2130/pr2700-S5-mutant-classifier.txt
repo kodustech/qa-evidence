@@ -1,0 +1,162 @@
+S5 mutant (PER_MINUTE_RETRY_MAX_SECONDS=0, unreachableEndpoint dropped) vs merge vs parent
+==========================================================================================
+
+[S1a gemini perMin 17.3s 429 nobody]
+  MERGE : RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S1b RetryError(4x) 37.5s]
+  MERGE : RATE_LIMIT | failover=true | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S1c delay 4.86s]
+  MERGE : RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S1c delay 4.61s]
+  MERGE : RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S1c delay 18.12s]
+  MERGE : RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S1d google JSON PerModelPerMinute+RetryInfo]
+  MERGE : RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  MUTANT: RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+
+[S1e google JSON PerDay retry 35s]
+  MERGE : QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S1f billing no delay]
+  MERGE : QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S1g Z.AI insufficient balance]
+  MERGE : QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S1h insufficient_quota minified+link]
+  MERGE : QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S1i bare 429 Too Many Requests]
+  MERGE : RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  MUTANT: RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+
+[S1j status-less per-minute text]
+  MERGE : RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S1k retry in 60s]
+  MERGE : RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S1k retry in 61s]
+  MERGE : QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S1k retry in 0.5s]
+  MERGE : RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S1k retry in 1m30s]
+  MERGE : QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S1a RetryError of 17.3s (exhausted)]
+  MERGE : RATE_LIMIT | failover=true | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S2 free tier limit:0 retry 20s]
+  MERGE : RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S2 free tier limit:0 retry 20s EXHAUSTED]
+  MERGE : RATE_LIMIT | failover=true | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S2 free daily requests limit:20 retry 35s]
+  MERGE : RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S2 free daily requests limit:20 EXHAUSTED]
+  MERGE : RATE_LIMIT | failover=true | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+  MUTANT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S34a RetryError(3) over status-less empty APICallError]
+  MERGE : UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+  PARENT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+  MUTANT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+
+[S34a RetryError(3) over APICallError "<none>"]
+  MERGE : UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+  PARENT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+  MUTANT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+
+[S34a plain Error "Failed after 3 attempts. Last error: AI_APICallError: <none>"]
+  MERGE : UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+  PARENT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+  MUTANT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+
+[S34b UND_ERR_CONNECT_TIMEOUT (SDK-wrapped)]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: TRANSIENT | failover=false | hardTimeout=true | msg="Transient error reaching the provider (google_gemini). Try again."
+  MUTANT: TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+
+[S34b UND_ERR_CONNECT_TIMEOUT RetryError(3)]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: TRANSIENT | failover=false | hardTimeout=true | msg="Transient error reaching the provider (google_gemini). Try again."
+  MUTANT: TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+
+[S34c AggregateError ETIMEDOUT empty (SDK-wrapped)]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+  MUTANT: UNKNOWN | failover=false | hardTimeout=true | msg="Unexpected error while running the code review (google_gemini)."
+
+[S34c AggregateError ETIMEDOUT RetryError(3)]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+  MUTANT: UNKNOWN | failover=false | hardTimeout=true | msg="Unexpected error while running the code review (google_gemini)."
+
+[S34d UND_ERR_HEADERS_TIMEOUT]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: TRANSIENT | failover=false | hardTimeout=true | msg="Transient error reaching the provider (google_gemini). Try again."
+  MUTANT: TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+
+[S34d UND_ERR_HEADERS_TIMEOUT RetryError(3)]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: TRANSIENT | failover=false | hardTimeout=true | msg="Transient error reaching the provider (google_gemini). Try again."
+  MUTANT: TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+
+[S36 [ETIMEDOUT,ETIMEDOUT,503]]
+  MERGE : TRANSIENT | failover=true | hardTimeout=false | msg="Transient error reaching the provider (google_gemini). Try again."
+  PARENT: TRANSIENT | failover=true | hardTimeout=false | msg="Transient error reaching the provider (google_gemini). Try again."
+  MUTANT: TRANSIENT | failover=true | hardTimeout=false | msg="Transient error reaching the provider (google_gemini). Try again."
+
+[S36 [503,ETIMEDOUT]]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+  MUTANT: UNKNOWN | failover=false | hardTimeout=true | msg="Unexpected error while running the code review (google_gemini)."
