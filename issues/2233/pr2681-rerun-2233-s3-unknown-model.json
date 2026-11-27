@@ -1,0 +1,202 @@
+{
+ "s3_r10_logs": [
+  {
+   "t": "2026-11-27T23:05:12.383Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent context window: 128000 tokens for openai_compatible:local/qwen-coder",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   }
+  },
+  {
+   "t": "2026-11-27T23:05:12.779Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent batch 1/6 context window: 128000 tokens for openai_compatible:local/qwen-coder",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   }
+  },
+  {
+   "t": "2026-11-27T23:06:49.485Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent batch 2/6 context window: 128000 tokens for openai_compatible:local/qwen-coder",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   }
+  },
+  {
+   "t": "2026-11-27T23:08:50.410Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent batch 3/6 context window: 128000 tokens for openai_compatible:local/qwen-coder",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   }
+  },
+  {
+   "t": "2026-11-27T23:11:08.213Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent batch 4/6 context window: 128000 tokens for openai_compatible:local/qwen-coder",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   }
+  },
+  {
+   "t": "2026-11-27T23:12:49.602Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent batch 5/6 context window: 128000 tokens for openai_compatible:local/qwen-coder",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   }
+  },
+  {
+   "t": "2026-11-27T23:17:15.332Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent batch 6/6 context window: 128000 tokens for openai_compatible:local/qwen-coder",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   }
+  },
+  {
+   "t": "2026-11-27T23:18:42.427Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[ENRICH] PR#17: enriched 0, failed 0, skipped 0",
+   "meta": {
+    "component": "AgentReviewStage",
+    "level": "info",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   }
+  },
+  {
+   "t": "2026-11-27T23:18:42.428Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[AGENT] Titled 0 suggestions (from summary 0, from body 0, over the ceiling 0, empty 0)",
+   "meta": {
+    "component": "AgentReviewStage",
+    "level": "info",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   }
+  },
+  {
+   "t": "2026-11-27T23:18:42.568Z",
+   "level": "info",
+   "component": "UpdateCommentsAndGenerateSummaryStage",
+   "message": "Generating summary for PR#17",
+   "meta": {
+    "component": "UpdateCommentsAndGenerateSummaryStage",
+    "level": "info",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   }
+  },
+  {
+   "t": "2026-11-27T23:18:42.935Z",
+   "level": "info",
+   "component": "CommentManagerService",
+   "message": "GenerateSummaryPR: Start PR#17. After get PR data",
+   "meta": {
+    "component": "CommentManagerService",
+    "level": "info",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   }
+  },
+  {
+   "t": "2026-11-27T23:18:50.983Z",
+   "level": "info",
+   "component": "CommentManagerService",
+   "message": "GenerateSummaryPR: End PR#17. After concatenate",
+   "meta": {
+    "component": "CommentManagerService",
+    "level": "info",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   }
+  },
+  {
+   "t": "2026-11-27T23:18:53.211Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 10651ms: 206d523c-6b4d-4904-9532-e59e3e5e5ba4",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   }
+  },
+  {
+   "t": "2026-11-27T23:18:55.101Z",
+   "level": "info",
+   "component": "AutomationCodeReviewService",
+   "message": "Successfully handled pull request for PR#17",
+   "meta": {
+    "component": "AutomationCodeReviewService",
+    "level": "info",
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+    "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   }
+  }
+ ],
+ "s3_r10_summary_span": [
+  {
+   "t": "2026-11-27T23:18:43.323Z",
+   "name": "CommentManagerService::generateSummaryPR",
+   "agent": "CommentManagerService",
+   "status": "ok",
+   "err": null,
+   "pr": 17,
+   "in": 277754,
+   "out": 258,
+   "cacheRead": 0,
+   "model": "openai_compatible:local/qwen-coder",
+   "ms": 7656
+  }
+ ],
+ "note": "jr-codex-github, BYOK model local/qwen-coder (unknown to the table, aliased by the stub to DeepSeek), no maxInputTokens; stub request 25 = PR summary, 274,140 o200k tokens in one request; finder logged context window 128000"
+}
