@@ -1,0 +1,361 @@
+{
+  "R1_real": [
+    {
+      "message": "Error generating kody rules",
+      "component": "KodyLearningCronProvider",
+      "level": "error",
+      "org": "qa2639r-org-1",
+      "team": "qa2639r-team-1",
+      "metaTenant": "qa2639r-org-1",
+      "tenant": "qa2639r-org-1",
+      "attrParams": {
+        "organizationId": "qa2639r-org-1",
+        "teamId": "qa2639r-team-1"
+      },
+      "attrOrg": "qa2639r-org-1",
+      "errorName": "ServiceUnavailableException",
+      "errorMessage": "Could not fetch pull requests from the code management integration; no rules were generated"
+    }
+  ],
+  "R1_real_useCaseRow": [
+    {
+      "message": "Failed to fetch pull requests (code management integration/auth error)",
+      "component": "GenerateKodyRulesUseCase",
+      "level": "error",
+      "org": "qa2639r-org-1",
+      "team": "unknown",
+      "metaTenant": "qa2639r-org-1",
+      "tenant": "qa2639r-org-1",
+      "attrOrg": "qa2639r-org-1"
+    },
+    {
+      "message": "Error generating kody rules",
+      "component": "GenerateKodyRulesUseCase",
+      "level": "error",
+      "org": "unknown",
+      "team": "qa2639r-team-1",
+      "metaTenant": "unknown",
+      "tenant": "unknown",
+      "errorName": "ServiceUnavailableException",
+      "errorMessage": "Could not fetch pull requests from the code management integration; no rules were generated"
+    }
+  ],
+  "R1_reject": [
+    {
+      "message": "Error generating kody rules",
+      "component": "KodyLearningCronProvider",
+      "level": "error",
+      "org": "qa2639r-org-1",
+      "team": "qa2639r-team-1",
+      "metaTenant": "qa2639r-org-1",
+      "tenant": "qa2639r-org-1",
+      "attrParams": {
+        "organizationId": "qa2639r-org-1",
+        "teamId": "qa2639r-team-1"
+      },
+      "attrOrg": "qa2639r-org-1",
+      "errorName": "Error",
+      "errorMessage": "qa2639r boom"
+    }
+  ],
+  "R1_findByKey": [
+    {
+      "message": "Error generating kody rules",
+      "component": "KodyLearningCronProvider",
+      "level": "error",
+      "org": "qa2639r-org-1",
+      "team": "qa2639r-team-1",
+      "metaTenant": "qa2639r-org-1",
+      "tenant": "qa2639r-org-1",
+      "attrParams": {
+        "organizationId": "qa2639r-org-1",
+        "teamId": "qa2639r-team-1"
+      },
+      "attrOrg": "qa2639r-org-1",
+      "errorName": "Error",
+      "errorMessage": "qa2639r findByKey failure"
+    }
+  ],
+  "R2_aborted": {
+    "rows": [
+      {
+        "message": "Error save code review feedback",
+        "component": "SaveCodeReviewFeedbackUseCase",
+        "level": "error",
+        "org": "qa2639r-org-2",
+        "team": "qa2639r-team-2",
+        "metaTenant": "qa2639r-org-2",
+        "tenant": "qa2639r-org-2",
+        "attrPayload": {
+          "organizationId": "qa2639r-org-2",
+          "teamId": "qa2639r-team-2",
+          "automationExecutionsPRs": [
+            11,
+            12
+          ],
+          "pullRequestRefs": [
+            {
+              "repositoryId": "qa2639r-repo",
+              "number": 11
+            }
+          ]
+        },
+        "attrOrg": "qa2639r-org-2",
+        "errorName": "ReactionSyncAbortedError",
+        "errorMessage": "Reaction sync aborted after 3 rate-limited PRs"
+      }
+    ],
+    "rethrown": "ReactionSyncAbortedError"
+  },
+  "R2_listing": {
+    "rows": [
+      {
+        "message": "Error save code review feedback",
+        "component": "SaveCodeReviewFeedbackUseCase",
+        "level": "error",
+        "org": "qa2639r-org-2",
+        "team": "qa2639r-team-2",
+        "metaTenant": "qa2639r-org-2",
+        "tenant": "qa2639r-org-2",
+        "attrPayload": {
+          "organizationId": "qa2639r-org-2",
+          "teamId": "qa2639r-team-2",
+          "automationExecutionsPRs": [
+            11,
+            12
+          ],
+          "pullRequestRefs": [
+            {
+              "repositoryId": "qa2639r-repo",
+              "number": 11
+            }
+          ]
+        },
+        "attrOrg": "qa2639r-org-2",
+        "errorName": "Error",
+        "errorMessage": "qa2639r mongo listing failure"
+      }
+    ],
+    "rethrown": "Error"
+  },
+  "R3_platform": [
+    {
+      "message": "Platform configs not found",
+      "component": "KodyLearningCronProvider",
+      "level": "error",
+      "org": "qa2639r-org-1",
+      "team": "qa2639r-team-1",
+      "metaTenant": "qa2639r-org-1",
+      "tenant": "qa2639r-org-1",
+      "attrOrg": "qa2639r-org-1"
+    }
+  ],
+  "R3_stuck": [
+    {
+      "message": "Kody learning stuck and exhausted retries — giving up",
+      "component": "KodyLearningCronProvider",
+      "level": "error",
+      "org": "qa2639r-org-1",
+      "team": "qa2639r-team-1",
+      "metaTenant": "qa2639r-org-1",
+      "tenant": "qa2639r-org-1",
+      "attrOrg": "qa2639r-org-1"
+    }
+  ],
+  "R6": [
+    {
+      "message": "qa2639r-R6-c_topPair_payloadFlat",
+      "org": "A",
+      "team": "TA",
+      "metaTenant": "A",
+      "tenant": "A"
+    },
+    {
+      "message": "qa2639r-R6-e_paramsNested_paramsFlat",
+      "org": "A",
+      "team": "TA",
+      "metaTenant": "A",
+      "tenant": "A"
+    },
+    {
+      "message": "qa2639r-R6-d_topScalar_paramsFlat",
+      "org": "A",
+      "team": "TB",
+      "metaTenant": "A",
+      "tenant": "A"
+    },
+    {
+      "message": "qa2639r-R6-a_partialTop_paramsNested",
+      "org": "B",
+      "team": "TB",
+      "metaTenant": "B",
+      "tenant": "B"
+    },
+    {
+      "message": "qa2639r-R6-b_emptyTop_paramsFlat",
+      "org": "B",
+      "team": "TB",
+      "metaTenant": "B",
+      "tenant": "B"
+    },
+    {
+      "message": "qa2639r-R6-f_paramsFlat_payloadFlat",
+      "org": "B",
+      "team": "TB",
+      "metaTenant": "B",
+      "tenant": "B"
+    },
+    {
+      "message": "qa2639r-R6-j_payloadNested",
+      "org": "B",
+      "team": "TB",
+      "metaTenant": "B",
+      "tenant": "B"
+    },
+    {
+      "message": "qa2639r-R6-h_emptyParamsOrg_payload",
+      "org": "C",
+      "team": "TC",
+      "metaTenant": "C",
+      "tenant": "C"
+    },
+    {
+      "message": "qa2639r-R6-k_teamOnlyParams_payloadOrg",
+      "org": "C",
+      "team": "unknown",
+      "metaTenant": "C",
+      "tenant": "C"
+    },
+    {
+      "message": "qa2639r-R6-a_partialTop_paramsNested-Z",
+      "org": "qa2639r-org-z",
+      "team": "qa2639r-team-z",
+      "metaTenant": "qa2639r-org-z",
+      "tenant": "qa2639r-org-z"
+    },
+    {
+      "message": "qa2639r-R6-b_emptyTop_paramsFlat-Z",
+      "org": "qa2639r-org-z",
+      "team": "qa2639r-team-z",
+      "metaTenant": "qa2639r-org-z",
+      "tenant": "qa2639r-org-z"
+    },
+    {
+      "message": "qa2639r-R6-c_topPair_payloadFlat-Z",
+      "org": "qa2639r-org-z",
+      "team": "qa2639r-team-z",
+      "metaTenant": "qa2639r-org-z",
+      "tenant": "qa2639r-org-z"
+    },
+    {
+      "message": "qa2639r-R6-d_topScalar_paramsFlat-Z",
+      "org": "qa2639r-org-z",
+      "team": "qa2639r-team-z",
+      "metaTenant": "qa2639r-org-z",
+      "tenant": "qa2639r-org-z"
+    },
+    {
+      "message": "qa2639r-R6-e_paramsNested_paramsFlat-Z",
+      "org": "qa2639r-org-z",
+      "team": "qa2639r-team-z",
+      "metaTenant": "qa2639r-org-z",
+      "tenant": "qa2639r-org-z"
+    },
+    {
+      "message": "qa2639r-R6-f_paramsFlat_payloadFlat-Z",
+      "org": "qa2639r-org-z",
+      "team": "qa2639r-team-z",
+      "metaTenant": "qa2639r-org-z",
+      "tenant": "qa2639r-org-z"
+    },
+    {
+      "message": "qa2639r-R6-g_paramsPayloadOrg_only-Z",
+      "org": "qa2639r-org-z",
+      "team": "qa2639r-team-z",
+      "metaTenant": "qa2639r-org-z",
+      "tenant": "qa2639r-org-z"
+    },
+    {
+      "message": "qa2639r-R6-h_emptyParamsOrg_payload-Z",
+      "org": "qa2639r-org-z",
+      "team": "qa2639r-team-z",
+      "metaTenant": "qa2639r-org-z",
+      "tenant": "qa2639r-org-z"
+    },
+    {
+      "message": "qa2639r-R6-i1_numericIds-Z",
+      "org": "qa2639r-org-z",
+      "team": "qa2639r-team-z",
+      "metaTenant": "qa2639r-org-z",
+      "tenant": "qa2639r-org-z"
+    },
+    {
+      "message": "qa2639r-R6-i2_arrayParams-Z",
+      "org": "qa2639r-org-z",
+      "team": "qa2639r-team-z",
+      "metaTenant": "qa2639r-org-z",
+      "tenant": "qa2639r-org-z"
+    },
+    {
+      "message": "qa2639r-R6-i3_stringParams-Z",
+      "org": "qa2639r-org-z",
+      "team": "qa2639r-team-z",
+      "metaTenant": "qa2639r-org-z",
+      "tenant": "qa2639r-org-z"
+    },
+    {
+      "message": "qa2639r-R6-j_payloadNested-Z",
+      "org": "qa2639r-org-z",
+      "team": "qa2639r-team-z",
+      "metaTenant": "qa2639r-org-z",
+      "tenant": "qa2639r-org-z"
+    },
+    {
+      "message": "qa2639r-R6-k_teamOnlyParams_payloadOrg-Z",
+      "org": "qa2639r-org-z",
+      "team": "qa2639r-team-z",
+      "metaTenant": "qa2639r-org-z",
+      "tenant": "qa2639r-org-z"
+    },
+    {
+      "message": "qa2639r-R6-g_paramsPayloadOrg_only",
+      "org": "unknown",
+      "team": "unknown",
+      "metaTenant": "unknown",
+      "tenant": "unknown"
+    },
+    {
+      "message": "qa2639r-R6-i1_numericIds",
+      "org": "unknown",
+      "team": "unknown",
+      "metaTenant": "unknown",
+      "tenant": "unknown"
+    },
+    {
+      "message": "qa2639r-R6-i2_arrayParams",
+      "org": "unknown",
+      "team": "unknown",
+      "metaTenant": "unknown",
+      "tenant": "unknown"
+    },
+    {
+      "message": "qa2639r-R6-i3_stringParams",
+      "org": "unknown",
+      "team": "unknown",
+      "metaTenant": "unknown",
+      "tenant": "unknown"
+    }
+  ],
+  "R13": {
+    "org": "qa2639r-org-2",
+    "payload": {
+      "organizationId": "qa2639r-org-2",
+      "teamId": "qa2639r-team-2",
+      "token": "[REDACTED]",
+      "password": "[REDACTED]",
+      "marker": "qa2639r-benign"
+    },
+    "hasTokenLiteral": false,
+    "hasPasswordLiteral": false
+  }
+}
