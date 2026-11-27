@@ -1,0 +1,92 @@
+[
+ {
+  "t": "2026-11-27T20:41:22.347Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] code-review-generalist: \"gemini-3.8-flash\" failed (RATE_LIMIT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T20:41:48.552Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] code-review-generalist: \"gemini-3.8-flash\" failed (RATE_LIMIT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T20:42:18.040Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] code-review-generalist-verify: \"gemini-3.8-flash\" failed (RATE_LIMIT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T20:42:18.053Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] code-review-generalist-verify: \"gemini-3.8-flash\" failed (RATE_LIMIT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T20:42:18.066Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] code-review-generalist-verify: \"gemini-3.8-flash\" failed (RATE_LIMIT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T20:42:18.080Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] code-review-generalist-verify: \"gemini-3.8-flash\" failed (RATE_LIMIT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T20:42:44.231Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] code-review-dedup: \"gemini-3.8-flash\" failed (RATE_LIMIT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T20:42:50.700Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] severity-classifier: \"gemini-3.8-flash\" failed (RATE_LIMIT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T20:43:19.625Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] code-review-enrich: \"gemini-3.8-flash\" failed (RATE_LIMIT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T20:43:20.396Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] code-review-enrich: \"gemini-3.8-flash\" failed (RATE_LIMIT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T20:43:20.406Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] code-review-enrich: \"gemini-3.8-flash\" failed (RATE_LIMIT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T20:43:26.084Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] suggestion-formatter: \"gemini-3.8-flash\" failed (RATE_LIMIT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T20:43:32.156Z",
+  "level": "info",
+  "component": "CommentManagerService",
+  "message": "GenerateSummaryPR: Start PR#1. After get PR data"
+ },
+ {
+  "t": "2026-11-27T20:43:36.396Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] [model-failover] generateSummaryPR: \"gemini-3.8-flash\" failed (RATE_LIMIT); cascading to fallback \"opencode_go/deepseek-v4.1-flash\""
+ },
+ {
+  "t": "2026-11-27T20:43:41.864Z",
+  "level": "info",
+  "component": "CommentManagerService",
+  "message": "GenerateSummaryPR: End PR#1. After concatenate"
+ }
+]
