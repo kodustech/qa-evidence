@@ -1,0 +1,7 @@
+{"at":"2026-11-27T17:29:38.921Z","docs":[]}
+{"at":"2026-11-27T17:29:56.443Z","docs":[{"_id":"<org:jr-claude-github>:1468014267:27","consumer":"review","expiresAt":"2026-11-27T17:59:56.114Z","killRetryCount":0,"leaseCount":1,"state":"CREATING"}]}
+{"at":"2026-11-27T17:30:00.616Z","docs":[{"_id":"<org:jr-claude-github>:1468014267:27","consumer":"review","expiresAt":"2026-11-27T17:59:56.114Z","killRetryCount":0,"leaseCount":1,"state":"READY","sandboxId":"sbx-QA-GH"}]}
+{"at":"2026-11-27T17:31:50.769Z","docs":[{"_id":"<org:jr-claude-github>:1468014267:27","consumer":"review","expiresAt":"2026-11-27T17:59:56.114Z","killRetryCount":0,"leaseCount":0,"state":"READY","sandboxId":"sbx-QA-GH","killAt":"2026-11-27T17:32:20.175Z"}]}
+{"at":"2026-11-27T17:32:28.386Z","docs":[{"_id":"<org:jr-claude-github>:1468014267:27","consumer":"conversation","expiresAt":"2026-11-27T17:59:56.114Z","killRetryCount":0,"leaseCount":1,"state":"READY","sandboxId":"sbx-QA-GH"}]}
+{"at":"2026-11-27T17:32:40.193Z","docs":[{"_id":"<org:jr-claude-github>:1468014267:27","consumer":"conversation","expiresAt":"2026-11-27T17:59:56.114Z","killRetryCount":0,"leaseCount":0,"state":"READY","sandboxId":"sbx-QA-GH","killAt":"2026-11-27T17:37:39.574Z"}]}
+{"at":"2026-11-27T17:38:00.850Z","docs":[]}
