@@ -1,0 +1,142 @@
+GitHub kodus-olimpo/codex-athena#16 (S44, BYOK MiniMax-M3.1-Flash-Preview on anthropic_compatible via stub D). PR body + comments via REST; logins omitted.
+execution 9429c60e-9178-43db-b9df-bcecbbecd2a8 status=success
+
+=== PR description ===
+QA for kodustech/kodus-ai#2700
+
+<!-- kody-pr-summary:start -->
+## Summary
+
+Adds a new grade service module (`qa2700/grades.ts`) that defines the grade domain types and a service for recording student grades, computing a student's average, and evaluating honor-roll eligibility against an injected repository.
+
+## Changes
+
+- **New `GradeRecord` interface** — represents a single grade as `studentId`, `courseId`, and numeric `value`.
+- **New `GradeRepository` interface** — declares the persistence contract the service depends on: `save(record)` and `findByStudent(studentId)`.
+- **New `GradeService` class** — takes a `GradeRepository` via constructor injection and exposes three operations:
+  - `recordGrade(studentId, courseId, value)` — builds a grade record, persists it through the repository, and returns the stored record.
+  - `averageFor(studentId)` — loads the student's grades from the repository and computes their arithmetic mean.
+  - `isHonorRoll(studentId)` — derives honor-roll status from the student's average using a threshold of 90.
+
+## Known issues reported by automated review
+
+The review agent flagged the following on the new module:
+
+- **[high]** `recordGrade` persists grades without rejecting values outside the 0–100 range.
+- **[medium]** `averageFor` yields `NaN` for an empty grade list instead of an explicit result.
+- **[medium]** Off-by-one loop bound in `averageFor` reads past the end of the grades array.
+- **[medium]** `isHonorRoll` compares a `Promise` rather than the awaited average.
+<!-- kody-pr-summary:end -->
+
+=== issue comment 2026-11-27T22:30:21Z
+## Code Review Completed! 🔥
+
+The code review was successfully completed based on your current configurations.
+
+
+
+<details>
+<summary>Kody Guide: Usage and Configuration</summary>
+
+<details>
+<summary>Interacting with Kody</summary>
+
+- **Request a Review:** Ask Kody to review your PR manually by adding a comment with the `@kody start-review` command at the root of your PR.
+
+- **Validate Business Logic:** Ask Kody to validate your code against business rules by adding a comment with the `@kody -v business-logic` command.
+
+- **Provide Feedback:** Help Kody learn and improve by reacting to its comments with a 👍 for helpful suggestions or a 👎 if improvements are needed.
+
+</details>
+
+<details>
+<summary>Current Kody Configuration</summary>
+
+<details>
+<summary>Review Options</summary>
+
+The following review options are enabled or disabled:
+
+| Options                        | Enabled |
+|-------------------------------|---------|
+| **Bug** | ✅ |
+| **Performance** | ✅ |
+| **Security** | ✅ |
+| **Business Logic** | ✅ |
+
+</details>
+
+**[Access your configuration settings here.](https://qa.web.kodus.io/settings/code-review/global/general)**
+
+</details>
+</details>
+
+<!-- kody-codereview-completed-1795818840406-ot50c358p7p -->
+<!-- kody-codereview -->
+&#8203;
+
+=== review comment path=qa2700/grades.ts line=17
+![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Kody Rules](https://img.shields.io/badge/Kody_Rules-4527A0) ![high](https://img.shields.io/badge/severity_level-high-6B6B92)
+
+
+**recordGrade saves grades without rejecting values outside 0-100**
+
+An out-of-range `value` reaches `repo.save` and corrupts stored data and later averages, violating the grading rule under `qa2700/`. Validate that `value` is a finite number from 0 through 100 and throw `RangeError` before creating the record in `recordGrade`.
+
+Kody rule violation: [qa2700 grade values must 
+
+=== review comment path=qa2700/grades.ts line=27
+![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Bug](https://img.shields.io/badge/Bug-B71C1C) ![medium](https://img.shields.io/badge/severity_level-medium-1A7BBE)
+
+
+**averageFor yields NaN for an empty grade list instead of an explicit result**
+
+`NaN` flows into `isHonorRoll` as a non-comparable value instead of a clear empty/no-data result. Return an explicit sentinel from `averageFor` when `grades.length === 0`.
+
+
+
+<details>
+<summary>Prompt for LLM</summary>
+
+````text
+File qa2700/grades.ts, line 27:
+
+averageFor yields NaN for an empty grade list
+
+=== review comment path=qa2700/grades.ts line=24
+![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Bug](https://img.shields.io/badge/Bug-B71C1C) ![medium](https://img.shields.io/badge/severity_level-medium-1A7BBE)
+
+
+**Off-by-one loop bound in averageFor reads past end of grades array**
+
+`grades[grades.length]` is `undefined`, so `total += undefined.value` throws for every non-empty grade list. Change the `averageFor` loop bound to `i < grades.length`.
+
+
+
+<details>
+<summary>Prompt for LLM</summary>
+
+````text
+File qa2700/grades.ts, line 24:
+
+Off-by-one loop bound in averageFor reads past end of grad
+
+=== review comment path=qa2700/grades.ts line=31
+![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Bug](https://img.shields.io/badge/Bug-B71C1C) ![medium](https://img.shields.io/badge/severity_level-medium-1A7BBE)
+
+
+**isHonorRoll compares a Promise instead of awaited average**
+
+Without `await`, `avg` is a `Promise`, and the cast hides the type error, so honor roll is never true. Await `this.averageFor(studentId)` and remove the cast in `isHonorRoll`.
+
+
+
+<details>
+<summary>Prompt for LLM</summary>
+
+````text
+File qa2700/grades.ts, line 31:
+
+isHonorRoll compares a Promise instead of awaited average
+
+
