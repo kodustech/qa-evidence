@@ -1,0 +1,24 @@
+{
+ "C1 PR #23 reactions": [],
+ "C1 command comment reactions": [],
+ "C1 comments": [
+  {
+   "id": 28672786,
+   "body": "@kody start-review",
+   "created": "2026-11-27T20:28:21+01:00"
+  }
+ ],
+ "R7b PR #22 reactions": [
+  {
+   "content": "-1",
+   "created": "2026-11-27T20:25:22+01:00"
+  }
+ ],
+ "R7b comments": [
+  {
+   "id": 28672690,
+   "body": "## Kodus license not found\n\nKody skipped this review because the PR author has no Kodus license assigned. Ask your Kodus admin to assign you a license.\n\n<!-- kody-codereview -->",
+   "created": "2026-11-27T20:25:22+01:00"
+  }
+ ]
+}
