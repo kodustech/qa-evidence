@@ -1,0 +1,524 @@
+FAIL test/unit/ee/codeReviewSettingsLog/handlers/codeReviewConfigLog.handler.spec.ts
+  ● CodeReviewConfigLogHandler › general settings › logs turning conversation.implicitReplies off
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 0
+    Received array:  []
+
+      112 |
+      113 |             const data = extractChangedData(mockUnified.saveLogEntry);
+    > 114 |             expect(data).toHaveLength(1);
+          |                          ^
+      115 |             expect(data[0].description).toEqual(
+      116 |                 'User <email> changed Implicit Replies from enabled to disabled',
+      117 |             );
+
+      at Object.toHaveLength (test/unit/ee/codeReviewSettingsLog/handlers/codeReviewConfigLog.handler.spec.ts:114:26)
+
+FAIL libs/organization/dtos/create-or-update-code-review-parameter.dto.spec.ts
+  ● CreateOrUpdateCodeReviewParameterDto — conversation.implicitReplies › rejects a non-boolean implicitReplies ("false")
+
+    expect(received).resolves.toEqual()
+
+    Received promise rejected instead of resolved
+    Rejected to value: [Error: expected the pipe to reject]
+
+      262 |         'rejects a non-boolean implicitReplies (%j)',
+      263 |         async (value) => {
+    > 264 |             await expect(
+          |                   ^
+      265 |                 rejection({ conversation: { implicitReplies: value } }),
+      266 |             ).resolves.toEqual({
+      267 |                 statusCode: 400,
+
+      at expect (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2116:15)
+      at expect (libs/organization/dtos/create-or-update-code-review-parameter.dto.spec.ts:264:19)
+
+  ● CreateOrUpdateCodeReviewParameterDto — conversation.implicitReplies › rejects a non-boolean implicitReplies ("no")
+
+    expect(received).resolves.toEqual()
+
+    Received promise rejected instead of resolved
+    Rejected to value: [Error: expected the pipe to reject]
+
+      262 |         'rejects a non-boolean implicitReplies (%j)',
+      263 |         async (value) => {
+    > 264 |             await expect(
+          |                   ^
+      265 |                 rejection({ conversation: { implicitReplies: value } }),
+      266 |             ).resolves.toEqual({
+      267 |                 statusCode: 400,
+
+      at expect (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2116:15)
+      at expect (libs/organization/dtos/create-or-update-code-review-parameter.dto.spec.ts:264:19)
+
+  ● CreateOrUpdateCodeReviewParameterDto — conversation.implicitReplies › rejects a non-boolean implicitReplies ("off")
+
+    expect(received).resolves.toEqual()
+
+    Received promise rejected instead of resolved
+    Rejected to value: [Error: expected the pipe to reject]
+
+      262 |         'rejects a non-boolean implicitReplies (%j)',
+      263 |         async (value) => {
+    > 264 |             await expect(
+          |                   ^
+      265 |                 rejection({ conversation: { implicitReplies: value } }),
+      266 |             ).resolves.toEqual({
+      267 |                 statusCode: 400,
+
+      at expect (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2116:15)
+      at expect (libs/organization/dtos/create-or-update-code-review-parameter.dto.spec.ts:264:19)
+
+  ● CreateOrUpdateCodeReviewParameterDto — conversation.implicitReplies › rejects a non-boolean implicitReplies ("true")
+
+    expect(received).resolves.toEqual()
+
+    Received promise rejected instead of resolved
+    Rejected to value: [Error: expected the pipe to reject]
+
+      262 |         'rejects a non-boolean implicitReplies (%j)',
+      263 |         async (value) => {
+    > 264 |             await expect(
+          |                   ^
+      265 |                 rejection({ conversation: { implicitReplies: value } }),
+      266 |             ).resolves.toEqual({
+      267 |                 statusCode: 400,
+
+      at expect (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2116:15)
+      at expect (libs/organization/dtos/create-or-update-code-review-parameter.dto.spec.ts:264:19)
+
+  ● CreateOrUpdateCodeReviewParameterDto — conversation.implicitReplies › rejects a non-boolean implicitReplies (0)
+
+    expect(received).resolves.toEqual()
+
+    Received promise rejected instead of resolved
+    Rejected to value: [Error: expected the pipe to reject]
+
+      262 |         'rejects a non-boolean implicitReplies (%j)',
+      263 |         async (value) => {
+    > 264 |             await expect(
+          |                   ^
+      265 |                 rejection({ conversation: { implicitReplies: value } }),
+      266 |             ).resolves.toEqual({
+      267 |                 statusCode: 400,
+
+      at expect (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2116:15)
+      at expect (libs/organization/dtos/create-or-update-code-review-parameter.dto.spec.ts:264:19)
+
+  ● CreateOrUpdateCodeReviewParameterDto — conversation.implicitReplies › rejects a non-boolean implicitReplies (1)
+
+    expect(received).resolves.toEqual()
+
+    Received promise rejected instead of resolved
+    Rejected to value: [Error: expected the pipe to reject]
+
+      262 |         'rejects a non-boolean implicitReplies (%j)',
+      263 |         async (value) => {
+    > 264 |             await expect(
+          |                   ^
+      265 |                 rejection({ conversation: { implicitReplies: value } }),
+      266 |             ).resolves.toEqual({
+      267 |                 statusCode: 400,
+
+      at expect (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2116:15)
+      at expect (libs/organization/dtos/create-or-update-code-review-parameter.dto.spec.ts:264:19)
+
+  ● CreateOrUpdateCodeReviewParameterDto — conversation.implicitReplies › rejects a non-boolean implicitReplies (null)
+
+    expect(received).resolves.toEqual()
+
+    Received promise rejected instead of resolved
+    Rejected to value: [Error: expected the pipe to reject]
+
+      262 |         'rejects a non-boolean implicitReplies (%j)',
+      263 |         async (value) => {
+    > 264 |             await expect(
+          |                   ^
+      265 |                 rejection({ conversation: { implicitReplies: value } }),
+      266 |             ).resolves.toEqual({
+      267 |                 statusCode: 400,
+
+      at expect (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2116:15)
+      at expect (libs/organization/dtos/create-or-update-code-review-parameter.dto.spec.ts:264:19)
+
+  ● CreateOrUpdateCodeReviewParameterDto — conversation.implicitReplies › rejects a conversation block that is not an object (null)
+
+    expect(received).resolves.toEqual()
+
+    Received promise rejected instead of resolved
+    Rejected to value: [Error: expected the pipe to reject]
+
+      296 |         'rejects a conversation block that is not an object (%j)',
+      297 |         async (conversation, message) => {
+    > 298 |             await expect(rejection({ conversation })).resolves.toEqual({
+          |                   ^
+      299 |                 statusCode: 400,
+      300 |                 message,
+      301 |                 error: 'Bad Request',
+
+      at expect (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2116:15)
+      at expect (libs/organization/dtos/create-or-update-code-review-parameter.dto.spec.ts:298:19)
+
+  ● CreateOrUpdateCodeReviewParameterDto — conversation.implicitReplies › rejects a conversation block that is not an object ([{"implicitReplies":false}])
+
+    expect(received).resolves.toEqual()
+
+    Received promise rejected instead of resolved
+    Rejected to value: [Error: expected the pipe to reject]
+
+      296 |         'rejects a conversation block that is not an object (%j)',
+      297 |         async (conversation, message) => {
+    > 298 |             await expect(rejection({ conversation })).resolves.toEqual({
+          |                   ^
+      299 |                 statusCode: 400,
+      300 |                 message,
+      301 |                 error: 'Bad Request',
+
+      at expect (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2116:15)
+      at expect (libs/organization/dtos/create-or-update-code-review-parameter.dto.spec.ts:298:19)
+
+  ● CreateOrUpdateCodeReviewParameterDto — conversation.implicitReplies › rejects a conversation block that is not an object ("off")
+
+    expect(received).resolves.toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 0
+
+      Object {
+        "error": "Bad Request",
+        "message": Array [
+    -     "configValue.conversation must be an object",
+          "configValue.nested property conversation must be either object or array",
+        ],
+        "statusCode": 400,
+      }
+
+      296 |         'rejects a conversation block that is not an object (%j)',
+      297 |         async (conversation, message) => {
+    > 298 |             await expect(rejection({ conversation })).resolves.toEqual({
+          |                                                                ^
+      299 |                 statusCode: 400,
+      300 |                 message,
+      301 |                 error: 'Bad Request',
+
+      at Object.toEqual (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2140:20)
+      at toEqual (libs/organization/dtos/create-or-update-code-review-parameter.dto.spec.ts:298:64)
+
+FAIL libs/ee/codeBase/__tests__/kodus-config-implicit-replies.spec.ts
+  ● kodus-config.yml conversation.implicitReplies › drops a quoted false and keeps the rest of the file
+
+    expect(received).resolves.toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+      Object {
+        "automatedReviewActive": false,
+    -   "conversation": Object {},
+    +   "conversation": Object {
+    +     "implicitReplies": "false",
+    +   },
+      }
+
+      78 |             );
+      79 |
+    > 80 |             await expect(file).resolves.toEqual({
+         |                                         ^
+      81 |                 automatedReviewActive: false,
+      82 |                 conversation: {},
+      83 |             });
+
+      at Object.toEqual (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2140:20)
+      at toEqual (libs/ee/codeBase/__tests__/kodus-config-implicit-replies.spec.ts:80:41)
+
+  ● kodus-config.yml conversation.implicitReplies › drops YAML 1.2 no and keeps the rest of the file
+
+    expect(received).resolves.toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+      Object {
+        "automatedReviewActive": false,
+    -   "conversation": Object {},
+    +   "conversation": Object {
+    +     "implicitReplies": "no",
+    +   },
+      }
+
+      78 |             );
+      79 |
+    > 80 |             await expect(file).resolves.toEqual({
+         |                                         ^
+      81 |                 automatedReviewActive: false,
+      82 |                 conversation: {},
+      83 |             });
+
+      at Object.toEqual (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2140:20)
+      at toEqual (libs/ee/codeBase/__tests__/kodus-config-implicit-replies.spec.ts:80:41)
+
+  ● kodus-config.yml conversation.implicitReplies › drops YAML 1.2 off and keeps the rest of the file
+
+    expect(received).resolves.toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+      Object {
+        "automatedReviewActive": false,
+    -   "conversation": Object {},
+    +   "conversation": Object {
+    +     "implicitReplies": "off",
+    +   },
+      }
+
+      78 |             );
+      79 |
+    > 80 |             await expect(file).resolves.toEqual({
+         |                                         ^
+      81 |                 automatedReviewActive: false,
+      82 |                 conversation: {},
+      83 |             });
+
+      at Object.toEqual (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2140:20)
+      at toEqual (libs/ee/codeBase/__tests__/kodus-config-implicit-replies.spec.ts:80:41)
+
+  ● kodus-config.yml conversation.implicitReplies › drops a number and keeps the rest of the file
+
+    expect(received).resolves.toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+      Object {
+        "automatedReviewActive": false,
+    -   "conversation": Object {},
+    +   "conversation": Object {
+    +     "implicitReplies": 0,
+    +   },
+      }
+
+      78 |             );
+      79 |
+    > 80 |             await expect(file).resolves.toEqual({
+         |                                         ^
+      81 |                 automatedReviewActive: false,
+      82 |                 conversation: {},
+      83 |             });
+
+      at Object.toEqual (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2140:20)
+      at toEqual (libs/ee/codeBase/__tests__/kodus-config-implicit-replies.spec.ts:80:41)
+
+  ● kodus-config.yml conversation.implicitReplies › drops null and keeps the rest of the file
+
+    expect(received).resolves.toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+      Object {
+        "automatedReviewActive": false,
+    -   "conversation": Object {},
+    +   "conversation": Object {
+    +     "implicitReplies": null,
+    +   },
+      }
+
+      78 |             );
+      79 |
+    > 80 |             await expect(file).resolves.toEqual({
+         |                                         ^
+      81 |                 automatedReviewActive: false,
+      82 |                 conversation: {},
+      83 |             });
+
+      at Object.toEqual (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2140:20)
+      at toEqual (libs/ee/codeBase/__tests__/kodus-config-implicit-replies.spec.ts:80:41)
+
+  ● kodus-config.yml conversation.implicitReplies › drops an empty key and keeps the rest of the file
+
+    expect(received).resolves.toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+      Object {
+        "automatedReviewActive": false,
+    -   "conversation": Object {},
+    +   "conversation": Object {
+    +     "implicitReplies": null,
+    +   },
+      }
+
+      78 |             );
+      79 |
+    > 80 |             await expect(file).resolves.toEqual({
+         |                                         ^
+      81 |                 automatedReviewActive: false,
+      82 |                 conversation: {},
+      83 |             });
+
+      at Object.toEqual (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2140:20)
+      at toEqual (libs/ee/codeBase/__tests__/kodus-config-implicit-replies.spec.ts:80:41)
+
+  ● kodus-config.yml conversation.implicitReplies › drops a conversation block that is not an object
+
+    expect(received).resolves.toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Object {}
+    + Object {
+    +   "conversation": "false",
+    + }
+
+       97 |         );
+       98 |
+    >  99 |         await expect(file).resolves.toEqual({});
+          |                                     ^
+      100 |         expect(onRejectedImplicitReplies).toHaveBeenCalledTimes(1);
+      101 |         expect(svc.logger.warn).toHaveBeenCalledTimes(1);
+      102 |         expect(svc.logger.warn).toHaveBeenCalledWith(expectedWarn('string'));
+
+      at Object.toEqual (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2140:20)
+      at Object.toEqual (libs/ee/codeBase/__tests__/kodus-config-implicit-replies.spec.ts:99:37)
+
+  ● kodus-config.yml conversation.implicitReplies › logs the string type and not the value
+
+    expect(received).resolves.toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+      Object {
+        "automatedReviewActive": false,
+    -   "conversation": Object {},
+    +   "conversation": Object {
+    +     "implicitReplies": "kodus-canary-secret-SHOULD-NOT-LOG",
+    +   },
+      }
+
+      114 |         );
+      115 |
+    > 116 |         await expect(file).resolves.toEqual({
+          |                                     ^
+      117 |             automatedReviewActive: false,
+      118 |             conversation: {},
+      119 |         });
+
+      at Object.toEqual (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2140:20)
+      at toEqual (libs/ee/codeBase/__tests__/kodus-config-implicit-replies.spec.ts:116:37)
+
+  ● kodus-config.yml conversation.implicitReplies › logs the object type and not the value
+
+    expect(received).resolves.toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 5
+
+      Object {
+        "automatedReviewActive": false,
+    -   "conversation": Object {},
+    +   "conversation": Object {
+    +     "implicitReplies": Object {
+    +       "token": "kodus-canary-secret-SHOULD-NOT-LOG",
+    +     },
+    +   },
+      }
+
+      114 |         );
+      115 |
+    > 116 |         await expect(file).resolves.toEqual({
+          |                                     ^
+      117 |             automatedReviewActive: false,
+      118 |             conversation: {},
+      119 |         });
+
+      at Object.toEqual (../../../../../Projects/Kody/kodus-ai/node_modules/expect/build/index.js:2140:20)
+      at toEqual (libs/ee/codeBase/__tests__/kodus-config-implicit-replies.spec.ts:116:37)
+
+FAIL libs/centralized-config/infrastructure/adapters/services/__tests__/centralized-config.service.spec.ts
+  ● CentralizedConfigService › #1518 empty-discovery wipe guard › rejected conversation.implicitReplies › keeps the stored repository opt-out when the file value is rejected
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 1
+
+      Object {
+        "automatedReviewActive": false,
+    -   "conversation": Object {
+    -     "implicitReplies": false,
+    -   },
+    +   "conversation": Object {},
+      }
+
+      1165 |                 });
+      1166 |
+    > 1167 |                 expect(savedConfig()).toEqual({
+           |                                       ^
+      1168 |                     automatedReviewActive: false,
+      1169 |                     conversation: { implicitReplies: false },
+      1170 |                 });
+
+      at Object.toEqual (libs/centralized-config/infrastructure/adapters/services/__tests__/centralized-config.service.spec.ts:1167:39)
+
+  ● CentralizedConfigService › #1518 empty-discovery wipe guard › rejected conversation.implicitReplies › keeps the opt-out when the directory group has the same paths
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 1
+
+      Object {
+        "automatedReviewActive": false,
+    -   "conversation": Object {
+    -     "implicitReplies": false,
+    -   },
+    +   "conversation": Object {},
+      }
+
+      1284 |                 });
+      1285 |
+    > 1286 |                 expect(savedConfig()).toEqual({
+           |                                       ^
+      1287 |                     automatedReviewActive: false,
+      1288 |                     conversation: { implicitReplies: false },
+      1289 |                 });
+
+      at Object.toEqual (libs/centralized-config/infrastructure/adapters/services/__tests__/centralized-config.service.spec.ts:1286:39)
+
+  ● CentralizedConfigService › #1518 empty-discovery wipe guard › rejected conversation.implicitReplies › uses the group whose paths equal the file, not one that overlaps
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 1
+
+      Object {
+        "automatedReviewActive": false,
+    -   "conversation": Object {
+    -     "implicitReplies": true,
+    -   },
+    +   "conversation": Object {},
+      }
+
+      1464 |                 });
+      1465 |
+    > 1466 |                 expect(savedConfig()).toEqual({
+           |                                       ^
+      1467 |                     automatedReviewActive: false,
+      1468 |                     conversation: { implicitReplies: true },
+      1469 |                 });
+
+      at Object.toEqual (libs/centralized-config/infrastructure/adapters/services/__tests__/centralized-config.service.spec.ts:1466:39)
+
+Test Suites: 4 failed, 4 total
+Tests:       23 failed, 153 passed, 176 total
+Snapshots:   0 total
+Time:        1.831 s
+Ran all test suites matching libs/centralized-config/infrastructure/adapters/services/__tests__/centralized-config.service.spec.ts|libs/ee/codeBase/__tests__/kodus-config-implicit-replies.spec.ts|libs/organization/dtos/create-or-update-code-review-parameter.dto.spec.ts|test/unit/ee/codeReviewSettingsLog/handlers/codeReviewConfigLog.handler.spec.ts.
