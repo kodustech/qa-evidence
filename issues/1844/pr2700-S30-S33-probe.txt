@@ -1,0 +1,2 @@
+https://kodus-qa-2700-unreachable.invalid/v1 400 {"statusCode": 400, "timestamp": "2026-11-27T20:43:24.186Z", "path": "/organization-parameters/test-byok", "error": "Bad Request", "message": "Couldn't resolve host \"kodus-qa-2700-unreachable.invalid\". Check the base URL."}
+https://kodus-qa-2700-unreachable.invalid/v1?api_key=fake123 400 {"statusCode": 400, "timestamp": "2026-11-27T20:43:24.730Z", "path": "/organization-parameters/test-byok", "error": "Bad Request", "message": "Couldn't resolve host \"kodus-qa-2700-unreachable.invalid\". Check the base URL."}
