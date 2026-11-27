@@ -1,0 +1,4 @@
+{"rev":"cand-term","pid":68385,"event":"release-returned","at":"2026-11-27T17:47:45.350Z","t":1795801665350,"leaseCount":1,"killAt":null,"background":1}
+{"rev":"cand-term","pid":68385,"event":"mongo-closing","at":"2026-11-27T17:47:46.450Z","t":1795801666450,"signal":"SIGTERM"}
+{"rev":"cand-term","pid":68385,"event":"mongo-closed","at":"2026-11-27T17:47:46.469Z","t":1795801666469}
+{"event": "driver", "signal": "TERM", "signalAt": 1795801666.429684, "exitCode": -15, "exitAfterSignalS": 0.072, "docAfterExit": [{"_id": "44444444-2628-4ddd-8ddd-000000000004:r18:1", "__v": 0, "cleanupAttempts": 0, "consumer": "review", "createdAt": "2026-11-27T17:47:45.266Z", "expiresAt": "2026-11-27T18:17:45.266Z", "killRetryCount": 0, "leaseCount": 0, "organizationId": "44444444-2628-4ddd-8ddd-000000000004", "prNumber": "1", "repositoryId": "r18", "state": "READY", "privilegesDropped": false, "sandboxId": "sbx-cand-term-68385", "killAt": "2026-11-27T17:48:16.441Z"}]}
