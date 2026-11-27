@@ -1,0 +1,122 @@
+{
+ "cand-lock": {
+  "iterations": 200,
+  "errors": [],
+  "processes": 4,
+  "kills": 261,
+  "sandboxesKilledMoreThanOnce": 0,
+  "warmJoins": 139,
+  "coldJoins": 61,
+  "violations_killWhileHeld": 0,
+  "violationSamples": [],
+  "samplesHeldWithKillAt": 12,
+  "finalDocs": 0,
+  "finalHeldDocs": 0,
+  "finalDocsWithFutureOrPastKillAt": 0,
+  "closestBJoinToARelease_ms": [
+   [
+    0,
+    3
+   ],
+   [
+    0,
+    31
+   ],
+   [
+    0,
+    40
+   ],
+   [
+    0,
+    147
+   ],
+   [
+    0,
+    180
+   ]
+  ]
+ },
+ "ctrl-lock": {
+  "iterations": 200,
+  "errors": [],
+  "processes": 4,
+  "kills": 305,
+  "sandboxesKilledMoreThanOnce": 0,
+  "warmJoins": 95,
+  "coldJoins": 105,
+  "violations_killWhileHeld": 7,
+  "violationSamples": [
+   {
+    "sandboxId": "sbx-ctrl-lock-A-87339-1",
+    "killAt": 1795803731468,
+    "killerPid": 87343,
+    "holder": "A",
+    "i": 0,
+    "holdStart": 1795803731119,
+    "holdEnd": 1795803731549
+   },
+   {
+    "sandboxId": "sbx-ctrl-lock-A-87339-65",
+    "killAt": 1795803891503,
+    "killerPid": 87342,
+    "holder": "A",
+    "i": 64,
+    "holdStart": 1795803891065,
+    "holdEnd": 1795803891528
+   },
+   {
+    "sandboxId": "sbx-ctrl-lock-A-87339-71",
+    "killAt": 1795803906422,
+    "killerPid": 87343,
+    "holder": "A",
+    "i": 70,
+    "holdStart": 1795803906066,
+    "holdEnd": 1795803906523
+   },
+   {
+    "sandboxId": "sbx-ctrl-lock-A-87339-75",
+    "killAt": 1795803916501,
+    "killerPid": 87342,
+    "holder": "A",
+    "i": 74,
+    "holdStart": 1795803916061,
+    "holdEnd": 1795803916553
+   },
+   {
+    "sandboxId": "sbx-ctrl-lock-A-87339-99",
+    "killAt": 1795803976503,
+    "killerPid": 87342,
+    "holder": "A",
+    "i": 98,
+    "holdStart": 1795803976081,
+    "holdEnd": 1795803976563
+   }
+  ],
+  "samplesHeldWithKillAt": 17,
+  "finalDocs": 0,
+  "finalHeldDocs": 0,
+  "finalDocsWithFutureOrPastKillAt": 0,
+  "closestBJoinToARelease_ms": [
+   [
+    0,
+    83
+   ],
+   [
+    0,
+    147
+   ],
+   [
+    0,
+    180
+   ],
+   [
+    1,
+    12
+   ],
+   [
+    1,
+    13
+   ]
+  ]
+ }
+}
