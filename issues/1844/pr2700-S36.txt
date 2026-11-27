@@ -1,0 +1,10 @@
+S36 RetryError attempt order
+============================
+
+[S36 [ETIMEDOUT,ETIMEDOUT,503]]
+  MERGE : TRANSIENT | failover=true | hardTimeout=false | msg="Transient error reaching the provider (google_gemini). Try again."
+  PARENT: TRANSIENT | failover=true | hardTimeout=false | msg="Transient error reaching the provider (google_gemini). Try again."
+
+[S36 [503,ETIMEDOUT]]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
