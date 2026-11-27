@@ -1,0 +1,193 @@
+GitHub kodus-olimpo/claude-athena#34: PR body + all issue comments + review comments, read via REST on 2026-11-27. Author logins omitted (comments are posted by the integration token user).
+
+=== PR description ===
+QA for kodustech/kodus-ai#2700
+
+<!-- kody-pr-summary:start -->
+Adds `qa2700/grades.ts`, introducing a grade service for recording and querying student grades.
+
+- Defines `GradeRecord` with `studentId`, `courseId`, and `value`, plus a `GradeRepository` contract for saving records and finding them by student.
+- Adds `GradeService.recordGrade` to persist a grade and return the saved record.
+- Adds `GradeService.averageFor` to retrieve a student's grades and calculate their average.
+- Adds `GradeService.isHonorRoll` to determine honor-roll status using an average threshold of 90.
+<!-- kody-pr-summary:end -->
+
+=== reviews: ['COMMENTED', 'COMMENTED']
+
+=== issue comment 7227729391 created 2026-11-27T20:40:20Z updated 2026-11-27T20:41:49Z
+## Code Review Completed! 🔥
+
+The code review was successfully completed based on your current configurations.
+
+
+
+> ⚠️ Note: some checks couldn't be completed in this run, so auto-approval (when enabled) was skipped. Check the details at https://qa.web.kodus.io/pull-requests and then comment `@kody review` on this PR to retry once the issue is resolved.
+
+
+<details>
+<summary>Kody Guide: Usage and Configuration</summary>
+
+<details>
+<summary>Interacting with Kody</summary>
+
+- **Request a Review:** Ask Kody to review your PR manually by adding a comment with the `@kody start-review` command at the root of your PR.
+
+- **Validate Business Logic:** Ask Kody to validate your code against business rules by adding a comment with the `@kody -v business-logic` command.
+
+- **Provide Feedback:** Help Kody learn and improve by reacting to its comments with a 👍 for helpful suggestions or a 👎 if improvements are needed.
+
+</details>
+
+<details>
+<summary>Current Kody Configuration</summary>
+
+<details>
+<summary>Review Options</summary>
+
+The following review options are enabled or disabled:
+
+| Options                        | Enabled |
+|-------------------------------|---------|
+| **Bug** | ✅ |
+| **Performance** | ✅ |
+| **Security** | ✅ |
+| **Business Logic** | ✅ |
+
+</details>
+
+**[Access your configuration settings here.](https://qa.web.kodus.io/settings/code-review/global/general)**
+
+</details>
+</details>
+
+<!-- kody-codereview-completed-1795812108834-7l9rhkufady -->
+<!-- kody-codereview -->
+&#8203;
+
+=== issue comment 7227767161 created 2026-11-27T20:42:42Z updated 2026-11-27T20:42:42Z
+@kody start-review
+
+=== issue comment 7227768732 created 2026-11-27T20:42:48Z updated 2026-11-27T20:43:55Z
+# Kody Review Complete
+**Great news!** 🎉
+No issues were found that match your current review configurations.
+
+Keep up the excellent work! 🚀
+
+> ⚠️ Note: some checks couldn't be completed in this run, so auto-approval (when enabled) was skipped. Check the details at https://qa.web.kodus.io/pull-requests and then comment `@kody review` on this PR to retry once the issue is resolved.
+
+
+<details>
+<summary>Kody Guide: Usage and Configuration</summary>
+
+<details>
+<summary>Interacting with Kody</summary>
+
+- **Request a Review:** Ask Kody to review your PR manually by adding a comment with the `@kody start-review` command at the root of your PR.
+
+- **Validate Business Logic:** Ask Kody to validate your code against business rules by adding a comment with the `@kody -v business-logic` command.
+
+- **Provide Feedback:** Help Kody learn and improve by reacting to its comments with a 👍 for helpful suggestions or a 👎 if improvements are needed.
+
+</details>
+
+<details>
+<summary>Current Kody Configuration</summary>
+
+<details>
+<summary>Review Options</summary>
+
+The following review options are enabled or disabled:
+
+| Options                        | Enabled |
+|-------------------------------|---------|
+| **Bug** | ✅ |
+| **Performance** | ✅ |
+| **Security** | ✅ |
+| **Business Logic** | ✅ |
+
+</details>
+
+**[Access your configuration settings here.](https://qa.web.kodus.io/settings/code-review/global/general)**
+
+</details>
+</details>
+
+<!-- kody-codereview-completed-1795812234461-b8ftzxs6ycu -->
+<!-- kody-codereview -->
+&#8203;
+
+=== review comment 4723492271 path=qa2700/grades.ts line=26 created 2026-11-27T20:41:39Z
+![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Bug](https://img.shields.io/badge/Bug-B71C1C) ![high](https://img.shields.io/badge/severity_level-high-6B6B92)
+
+
+**Off-by-one loop condition reads past end of grades array**
+
+The `i <= grades.length` condition reads `undefined` at the last index, so `averageFor` throws a `TypeError` on every call, even an empty set. Change the loop to `i < grades.length`.
+
+
+
+<details>
+<summary>Prompt for LLM</summary>
+
+````text
+File qa2700/grades.ts, lines 24-26:
+
+Off-by-one loop condition reads past end of grades array
+
+The loop condition `i <= grades.length` iterates one index past the end, so `grades[i].value` dereferences `undefined` and throws `TypeError: Cannot read properties of undefined (reading 'value')`. Since it also triggers on an empty result set (i=0 <= 0), `averageFor` throws on every input instead of returning an average; use `i < grades.length`.
+
+Suggested code:
+
+for (let i = 0; i < grades.length; i++) {
+    total += grades[i].value;
+}
+````
+
+</details>
+
+
+<sub>Talk to Kody by mentioning @kody</sub>
+
+
+<sub>Was this suggestion helpful? React with 👍 or 👎 to help Kody learn from this interaction.</sub>
+
+<!-- kody-codereview -->&#8203;
+&#8203;
+
+=== review comment 4723492580 path=qa2700/grades.ts line=32 created 2026-11-27T20:41:42Z
+![kody code-review](https://img.shields.io/badge/kody-code--review-312B4B?labelColor=C9BBF2) ![Bug](https://img.shields.io/badge/Bug-B71C1C) ![high](https://img.shields.io/badge/severity_level-high-6B6B92)
+
+
+**isHonorRoll compares an unawaited Promise against 90, so it always returns false**
+
+Comparing the unawaited `Promise` from `averageFor` against 90 is always `false`, so no student ever qualifies. Add `await` and drop the `as unknown as number` cast.
+
+
+
+<details>
+<summary>Prompt for LLM</summary>
+
+````text
+File qa2700/grades.ts, lines 31-32:
+
+isHonorRoll compares an unawaited Promise against 90, so it always returns false
+
+`averageFor` is async but its result is not awaited, so `avg` is a `Promise<number>` and `avg >= 90` compares an object against a number, which is always `false` — `isHonorRoll` never returns `true` for any student. The `as unknown as number` cast hides the compiler error; add `await` and drop the cast.
+
+Suggested code:
+
+const avg = await this.averageFor(studentId);
+return avg >= 90;
+````
+
+</details>
+
+
+<sub>Talk to Kody by mentioning @kody</sub>
+
+
+<sub>Was this suggestion helpful? React with 👍 or 👎 to help Kody learn from this interaction.</sub>
+
+<!-- kody-codereview -->&#8203;
+&#8203;
