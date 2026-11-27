@@ -1,0 +1,4480 @@
+{
+ "r1-spans.json": [
+  {
+   "t": "2026-11-27T22:09:16.856Z",
+   "name": "BusinessRulesValidation::businessRulesAnalyzer",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 5326,
+   "out": 1073,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 5995
+  },
+  {
+   "t": "2026-11-27T22:09:22.865Z",
+   "name": "BusinessRulesValidation::gapCheck",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "in": 3815,
+   "out": 255,
+   "cacheRead": 1664,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 3458
+  },
+  {
+   "t": "2026-11-27T22:09:32.115Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 20086,
+   "out": 851,
+   "cacheRead": 14208,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 7462
+  },
+  {
+   "t": "2026-11-27T22:09:39.580Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 13353,
+   "out": 519,
+   "cacheRead": 11520,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 6235
+  },
+  {
+   "t": "2026-11-27T22:09:39.581Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 14309,
+   "out": 873,
+   "cacheRead": 12160,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 8158
+  },
+  {
+   "t": "2026-11-27T22:09:47.775Z",
+   "name": "code-review::dedup",
+   "agent": "code-review",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 1009,
+   "out": 28,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 922
+  },
+  {
+   "t": "2026-11-27T22:09:48.701Z",
+   "name": "severity-classifier",
+   "agent": "severity-classifier",
+   "status": "ok",
+   "err": null,
+   "in": 1410,
+   "out": 1367,
+   "cacheRead": 1152,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 9321
+  },
+  {
+   "t": "2026-11-27T22:09:58.026Z",
+   "name": "code-review-enrich",
+   "agent": "code-review-enrich",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 1249,
+   "out": 79,
+   "cacheRead": 512,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1000
+  },
+  {
+   "t": "2026-11-27T22:09:58.027Z",
+   "name": "code-review-enrich",
+   "agent": "code-review-enrich",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 1051,
+   "out": 249,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 2024
+  },
+  {
+   "t": "2026-11-27T22:10:00.063Z",
+   "name": "suggestion-formatter",
+   "agent": "suggestion-formatter",
+   "status": "ok",
+   "err": null,
+   "in": 744,
+   "out": 115,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1108
+  },
+  {
+   "t": "2026-11-27T22:10:01.227Z",
+   "name": "SuggestionLLMValidator::checkSuggestionSimplicity",
+   "agent": "SuggestionLLMValidator",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 418,
+   "out": 129,
+   "cacheRead": 256,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1570
+  },
+  {
+   "t": "2026-11-27T22:10:01.230Z",
+   "name": "SuggestionLLMValidator::checkSuggestionSimplicity",
+   "agent": "SuggestionLLMValidator",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 426,
+   "out": 64,
+   "cacheRead": 256,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1148
+  },
+  {
+   "t": "2026-11-27T22:10:07.911Z",
+   "name": "CommentManagerService::generateSummaryPR",
+   "agent": "CommentManagerService",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 1197,
+   "out": 1056,
+   "cacheRead": 256,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 6660
+  }
+ ],
+ "r2-spans.json": [
+  {
+   "t": "2026-11-27T22:15:35.819Z",
+   "name": "validateImplementedSuggestions",
+   "agent": "validateImplementedSuggestions",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 636,
+   "out": 41,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 408
+  },
+  {
+   "t": "2026-11-27T22:15:39.023Z",
+   "name": "BusinessRulesValidation::businessRulesAnalyzer",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "pr": 38,
+   "in": 4760,
+   "out": 424,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 2319
+  },
+  {
+   "t": "2026-11-27T22:15:45.265Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent batch 1/4",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 53412,
+   "out": 2617,
+   "cacheRead": 42752,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 21352
+  },
+  {
+   "t": "2026-11-27T22:16:04.055Z",
+   "name": "BusinessRulesValidation::businessRulesAnalyzer",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "pr": 38,
+   "in": 4760,
+   "out": 654,
+   "cacheRead": 4736,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 4286
+  },
+  {
+   "t": "2026-11-27T22:16:06.620Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 1/4",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 13821,
+   "out": 777,
+   "cacheRead": 10624,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 6584
+  },
+  {
+   "t": "2026-11-27T22:16:06.622Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 1/4",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 24378,
+   "out": 1096,
+   "cacheRead": 18816,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 10035
+  },
+  {
+   "t": "2026-11-27T22:16:16.680Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent batch 2/4",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 17500,
+   "out": 1176,
+   "cacheRead": 13696,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 9365
+  },
+  {
+   "t": "2026-11-27T22:16:26.049Z",
+   "name": "code-review-generalist-recovery",
+   "agent": "code-review-generalist-recovery",
+   "status": "ok",
+   "err": null,
+   "in": 1799,
+   "out": 84,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1258
+  },
+  {
+   "t": "2026-11-27T22:16:27.333Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent batch 3/4",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 86181,
+   "out": 2970,
+   "cacheRead": 65920,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 23915
+  },
+  {
+   "t": "2026-11-27T22:16:43.384Z",
+   "name": "BusinessRulesValidation::businessRulesAnalyzer",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "pr": 38,
+   "in": 4760,
+   "out": 819,
+   "cacheRead": 4736,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 4756
+  },
+  {
+   "t": "2026-11-27T22:16:51.251Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 3/4",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 13846,
+   "out": 766,
+   "cacheRead": 11136,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 6225
+  },
+  {
+   "t": "2026-11-27T22:16:57.499Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent batch 4/4",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 154337,
+   "out": 2420,
+   "cacheRead": 134400,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 21941
+  },
+  {
+   "t": "2026-11-27T22:17:19.443Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 4/4",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 34148,
+   "out": 2293,
+   "cacheRead": 24960,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 16166
+  },
+  {
+   "t": "2026-11-27T22:17:36.057Z",
+   "name": "code-review::repeat-check",
+   "agent": "code-review",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 1254,
+   "out": 71,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1117
+  },
+  {
+   "t": "2026-11-27T22:17:37.205Z",
+   "name": "code-review::dedup",
+   "agent": "code-review",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 1100,
+   "out": 65,
+   "cacheRead": 768,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 878
+  },
+  {
+   "t": "2026-11-27T22:17:38.085Z",
+   "name": "severity-classifier",
+   "agent": "severity-classifier",
+   "status": "ok",
+   "err": null,
+   "in": 1501,
+   "out": 908,
+   "cacheRead": 1152,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 6599
+  },
+  {
+   "t": "2026-11-27T22:17:41.095Z",
+   "name": "BusinessRulesValidation::businessRulesAnalyzer",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "pr": 38,
+   "in": 4749,
+   "out": 789,
+   "cacheRead": 4224,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 4405
+  },
+  {
+   "t": "2026-11-27T22:17:44.687Z",
+   "name": "code-review-enrich",
+   "agent": "code-review-enrich",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 32149,
+   "out": 7901,
+   "cacheRead": 512,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 49940
+  },
+  {
+   "t": "2026-11-27T22:17:45.508Z",
+   "name": "BusinessRulesValidation::gapCheck",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "in": 4221,
+   "out": 296,
+   "cacheRead": 2432,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 3749
+  },
+  {
+   "t": "2026-11-27T22:18:34.631Z",
+   "name": "suggestion-formatter",
+   "agent": "suggestion-formatter",
+   "status": "ok",
+   "err": null,
+   "in": 11018,
+   "out": 96,
+   "cacheRead": 384,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1705
+  },
+  {
+   "t": "2026-11-27T22:18:36.383Z",
+   "name": "SuggestionLLMValidator::checkSuggestionSimplicity",
+   "agent": "SuggestionLLMValidator",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 10810,
+   "out": 108,
+   "cacheRead": 256,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 2336
+  },
+  {
+   "t": "2026-11-27T22:18:59.593Z",
+   "name": "BusinessRulesValidation::businessRulesAnalyzer",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "pr": 38,
+   "in": 4806,
+   "out": 711,
+   "cacheRead": 4096,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 4307
+  }
+ ],
+ "r2-logs.json": [
+  {
+   "t": "2026-11-27T22:15:34.690Z",
+   "level": "info",
+   "component": "RunCodeReviewAutomationUseCase",
+   "message": "RunCodeReviewAutomationUseCase PR#37",
+   "meta": {
+    "component": "RunCodeReviewAutomationUseCase",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:15:35.582Z",
+   "level": "info",
+   "component": "ValidateNewCommitsStage",
+   "message": "Processing 1 new commits for PR#37 (2 total)",
+   "meta": {
+    "component": "ValidateNewCommitsStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:15:36.252Z",
+   "level": "info",
+   "component": "SuggestionService",
+   "message": "Implementation check for PR#37: 1 decided, 1 raised, 1 unmeasured",
+   "meta": {
+    "component": "SuggestionService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:15:36.636Z",
+   "level": "info",
+   "component": "FetchChangedFilesStage",
+   "message": "Found 4 files to analyze for PR#37 (4 total, 0 ignored)",
+   "meta": {
+    "component": "FetchChangedFilesStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:15:36.879Z",
+   "level": "info",
+   "component": "LoadExternalContextStage",
+   "message": "Loaded 3 previous review decisions for PR#37",
+   "meta": {
+    "component": "LoadExternalContextStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:15:36.919Z",
+   "level": "info",
+   "component": "InitialCommentStage",
+   "message": "Minimizing previous review comment for subsequent review on PR#37",
+   "meta": {
+    "component": "InitialCommentStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:15:38.063Z",
+   "level": "info",
+   "component": "CommentManagerService",
+   "message": "Successfully minimized previous review comment for PR#37",
+   "meta": {
+    "component": "CommentManagerService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:15:39.961Z",
+   "level": "info",
+   "component": "BusinessLogicValidationStage",
+   "message": "[BUSINESS-LOGIC] Skipped (already_validated): Business logic was already validated for this pull request. Run `@kody -v business-logic` to validate it again.",
+   "meta": {
+    "component": "BusinessLogicValidationStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "unknown",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:15:39.970Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'BusinessLogicValidationStage' completed in 20ms: 048198b6-2559-4168-8b3e-46422c2e031d",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:15:41.346Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "Business validation validated (passed)",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:15:45.065Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent context window: 24000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:15:45.250Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent batch 1/4 context window: 24000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:16:08.344Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "Business validation validated (passed)",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:16:16.670Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent batch 2/4 context window: 24000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:16:27.319Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent batch 3/4 context window: 24000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:16:48.142Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "Business validation validated (passed)",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:16:57.488Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent batch 4/4 context window: 24000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:17:37.176Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[REPEAT-CHECK] PR#37: 0 repeats (0 of answered threads), 0 reversals, 0 withheld without a verdict, 2 kept, 0 linked revisions (history 3, model ok)",
+   "meta": {
+    "component": "AgentReviewStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:17:49.259Z",
+   "level": "info",
+   "component": "TaskFinder",
+   "message": "[BUSINESS-LOGIC] gapCheck spent 4221 input and 296 output tokens in 3 step(s)",
+   "meta": {
+    "component": "TaskFinder",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:17:49.259Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "[BUSINESS-LOGIC] Re-checked 1 requirement(s) across the repository; 0 already in the code, 0 confirmed missing",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "unknown",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:17:49.260Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "Business validation validated (failed)",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:18:34.629Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[ENRICH] PR#37: enriched 1, failed 0, skipped 0",
+   "meta": {
+    "component": "AgentReviewStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:18:34.629Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[AGENT] Titled 1 suggestions (from summary 1, from body 0, over the ceiling 0, empty 0)",
+   "meta": {
+    "component": "AgentReviewStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:18:36.362Z",
+   "level": "info",
+   "component": "CreatePrLevelCommentsStage",
+   "message": "No PR-level suggestions to process for PR#37",
+   "meta": {
+    "component": "CreatePrLevelCommentsStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:18:39.103Z",
+   "level": "info",
+   "component": "CreateFileCommentsStage",
+   "message": "Starting file comments creation for PR#37",
+   "meta": {
+    "component": "CreateFileCommentsStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:18:39.444Z",
+   "level": "info",
+   "component": "CommentManagerService",
+   "message": "Create Line Comments PR#37",
+   "meta": {
+    "component": "CommentManagerService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:18:40.483Z",
+   "level": "info",
+   "component": "GithubService",
+   "message": "Created line comment for PR#37",
+   "meta": {
+    "component": "GithubService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:18:40.527Z",
+   "level": "info",
+   "component": "CreateFileCommentsStage",
+   "message": "Successfully processed file comments for PR#37",
+   "meta": {
+    "component": "CreateFileCommentsStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:18:40.553Z",
+   "level": "warn",
+   "component": "AggregateResultsStage",
+   "message": "No valid suggestions to aggregate for PR#37",
+   "meta": {
+    "component": "AggregateResultsStage",
+    "level": "warn",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:18:41.795Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 1232ms: 048198b6-2559-4168-8b3e-46422c2e031d",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:18:41.827Z",
+   "level": "info",
+   "component": "RequestChangesOrApproveStage",
+   "message": "Finished processing PR#37",
+   "meta": {
+    "component": "RequestChangesOrApproveStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:18:44.624Z",
+   "level": "info",
+   "component": "AutomationCodeReviewService",
+   "message": "Successfully handled pull request for PR#37",
+   "meta": {
+    "component": "AutomationCodeReviewService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:19:07.085Z",
+   "level": "info",
+   "component": "TaskFinder",
+   "message": "[BUSINESS-LOGIC] gapCheck spent 2868 input and 281 output tokens in 2 step(s)",
+   "meta": {
+    "component": "TaskFinder",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:19:07.085Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "[BUSINESS-LOGIC] Re-checked 1 requirement(s) across the repository; 0 already in the code, 0 confirmed missing",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "unknown",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:19:07.086Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "Business validation validated (failed)",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:19:44.241Z",
+   "level": "info",
+   "component": "TaskFinder",
+   "message": "[BUSINESS-LOGIC] gapCheck spent 4569 input and 348 output tokens in 3 step(s)",
+   "meta": {
+    "component": "TaskFinder",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:19:44.242Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "Business validation validated (failed)",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:19:44.242Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "[BUSINESS-LOGIC] Re-checked 1 requirement(s) across the repository; 0 already in the code, 0 confirmed missing",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "unknown",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:19:46.675Z",
+   "level": "info",
+   "component": "TaskFinder",
+   "message": "[BUSINESS-LOGIC] gapCheck spent 2885 input and 289 output tokens in 2 step(s)",
+   "meta": {
+    "component": "TaskFinder",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:19:46.677Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "[BUSINESS-LOGIC] Re-checked 1 requirement(s) across the repository; 0 already in the code, 0 confirmed missing",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "unknown",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:19:46.678Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "Business validation validated (failed)",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:20:34.541Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "Business validation task_required (task_required)",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:20:53.019Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "Business validation task_required (task_required)",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:21:57.714Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "Business validation skipped (task_not_found)",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:22:15.803Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "Business validation skipped (no_capable_tracker)",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:22:34.863Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "Business validation skipped (no_capable_tracker)",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  }
+ ],
+ "s10-pr37-suggestions.json": [
+  {
+   "file": "src/enrollment/discount.ts",
+   "id": "933435a4-a0ad-4323-a1e3-33fbc10254ad",
+   "line": 8,
+   "status": "not_implemented",
+   "deliveryStatus": "sent",
+   "comment": 4723986561,
+   "ic": {
+    "checkedAt": "2026-11-27T22:15:36.229Z",
+    "outcome": "unmeasured",
+    "reason": "diff_too_large"
+   },
+   "title": "Loop reads one index past array end, making sumDiscounts return NaN"
+  },
+  {
+   "file": "src/enrollment/discount.ts",
+   "id": "192c763e-9e56-4411-a777-564a1bb3f99b",
+   "line": 10,
+   "deliveryStatus": "not_sent",
+   "title": "bug"
+  },
+  {
+   "file": "src/enrollment/discount.ts",
+   "id": "0707828f-3765-441f-b8ed-8ef975553905",
+   "line": 8,
+   "deliveryStatus": "not_sent",
+   "title": "bug"
+  },
+  {
+   "file": "src/enrollment/discount.ts",
+   "id": "63f01d0e-828d-4a91-be3e-0825d788b54a",
+   "line": 16,
+   "deliveryStatus": "not_sent",
+   "title": "performance"
+  },
+  {
+   "file": "src/enrollment/fee.service.ts",
+   "id": "7a7c350a-db21-45c7-8557-735e04889183",
+   "line": 21,
+   "status": "implemented",
+   "deliveryStatus": "sent",
+   "comment": 4723986750,
+   "ic": {
+    "checkedAt": "2026-11-27T22:15:36.229Z",
+    "outcome": "decided",
+    "verdict": "implemented"
+   },
+   "title": "Sibling discount is added to the fee instead of subtracted"
+  },
+  {
+   "file": "src/enrollment/students-fixture.ts",
+   "id": "c079afd5-6a68-4d2a-8935-7939d18658d8",
+   "line": 2,
+   "status": "not_implemented",
+   "deliveryStatus": "sent",
+   "comment": 4724044037,
+   "title": "Fixture students use `siblings` instead of `siblingsEnrolled`"
+  }
+ ],
+ "s11-threads.json": {
+  "data": {
+   "repository": {
+    "pullRequest": {
+     "reviewThreads": {
+      "nodes": [
+       {
+        "isResolved": false,
+        "path": "src/enrollment/discount.ts",
+        "line": 13,
+        "comments": {
+         "nodes": [
+          {
+           "databaseId": 4723986561
+          }
+         ]
+        }
+       },
+       {
+        "isResolved": true,
+        "path": "src/enrollment/fee.service.ts",
+        "line": null,
+        "comments": {
+         "nodes": [
+          {
+           "databaseId": 4723986750
+          }
+         ]
+        }
+       },
+       {
+        "isResolved": false,
+        "path": "src/enrollment/students-fixture.ts",
+        "line": 2,
+        "comments": {
+         "nodes": [
+          {
+           "databaseId": 4724044037
+          }
+         ]
+        }
+       }
+      ]
+     }
+    }
+   }
+  }
+ },
+ "r5-spans-early.json": [
+  {
+   "t": "2026-11-27T22:23:40.945Z",
+   "name": "BusinessRulesValidation::businessRulesAnalyzer",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 5374,
+   "out": 1710,
+   "cacheRead": 3968,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 8825
+  },
+  {
+   "t": "2026-11-27T22:23:49.781Z",
+   "name": "BusinessRulesValidation::gapCheck",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "in": 9809,
+   "out": 633,
+   "cacheRead": 6400,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 5949
+  }
+ ],
+ "s12-s28-spans.json": [
+  {
+   "t": "2026-11-27T22:24:02.549Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent batch 1/4",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 65799,
+   "out": 1915,
+   "cacheRead": 52096,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 16603
+  },
+  {
+   "t": "2026-11-27T22:24:19.155Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 1/4",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 9744,
+   "out": 387,
+   "cacheRead": 8576,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 4710
+  },
+  {
+   "t": "2026-11-27T22:24:19.157Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 1/4",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 20117,
+   "out": 967,
+   "cacheRead": 15872,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 8177
+  },
+  {
+   "t": "2026-11-27T22:24:27.353Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent batch 2/4",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 14314,
+   "out": 702,
+   "cacheRead": 8832,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 5551
+  },
+  {
+   "t": "2026-11-27T22:24:32.907Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 2/4",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 9296,
+   "out": 670,
+   "cacheRead": 8448,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 5731
+  },
+  {
+   "t": "2026-11-27T22:24:32.908Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 2/4",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 15165,
+   "out": 680,
+   "cacheRead": 11264,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 5563
+  },
+  {
+   "t": "2026-11-27T22:24:38.656Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent batch 3/4",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 73521,
+   "out": 2500,
+   "cacheRead": 52480,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 19175
+  },
+  {
+   "t": "2026-11-27T22:24:44.876Z",
+   "name": "BusinessRulesValidation::businessRulesAnalyzer",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 15614,
+   "out": 2042,
+   "cacheRead": 4352,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 11542
+  },
+  {
+   "t": "2026-11-27T22:24:56.538Z",
+   "name": "BusinessRulesValidation::gapCheck",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "in": 18488,
+   "out": 367,
+   "cacheRead": 11648,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 4195
+  },
+  {
+   "t": "2026-11-27T22:24:56.540Z",
+   "name": "BusinessRulesValidation::gapCheck",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "in": 18278,
+   "out": 508,
+   "cacheRead": 12160,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 5519
+  },
+  {
+   "t": "2026-11-27T22:24:56.541Z",
+   "name": "BusinessRulesValidation::gapCheck",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "in": 18313,
+   "out": 513,
+   "cacheRead": 11520,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 4588
+  },
+  {
+   "t": "2026-11-27T22:24:57.834Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 3/4",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 13718,
+   "out": 600,
+   "cacheRead": 12160,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 6371
+  },
+  {
+   "t": "2026-11-27T22:24:57.835Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 3/4",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 12837,
+   "out": 697,
+   "cacheRead": 11520,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 9343
+  },
+  {
+   "t": "2026-11-27T22:24:57.836Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 3/4",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 33066,
+   "out": 1527,
+   "cacheRead": 27008,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 14124
+  },
+  {
+   "t": "2026-11-27T22:25:11.982Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent batch 4/4",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 76970,
+   "out": 2076,
+   "cacheRead": 61568,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 16170
+  },
+  {
+   "t": "2026-11-27T22:25:28.155Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 4/4",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 37526,
+   "out": 2757,
+   "cacheRead": 30080,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 22832
+  },
+  {
+   "t": "2026-11-27T22:25:51.019Z",
+   "name": "code-review::dedup",
+   "agent": "code-review",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 1025,
+   "out": 58,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 782
+  },
+  {
+   "t": "2026-11-27T22:25:51.804Z",
+   "name": "severity-classifier",
+   "agent": "severity-classifier",
+   "status": "ok",
+   "err": null,
+   "in": 1426,
+   "out": 3301,
+   "cacheRead": 1152,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 22178
+  },
+  {
+   "t": "2026-11-27T22:26:13.986Z",
+   "name": "code-review-enrich",
+   "agent": "code-review-enrich",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 1034,
+   "out": 99,
+   "cacheRead": 512,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1403
+  },
+  {
+   "t": "2026-11-27T22:26:13.987Z",
+   "name": "code-review-enrich",
+   "agent": "code-review-enrich",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 1233,
+   "out": 51,
+   "cacheRead": 512,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1150
+  },
+  {
+   "t": "2026-11-27T22:26:15.393Z",
+   "name": "suggestion-formatter",
+   "agent": "suggestion-formatter",
+   "status": "ok",
+   "err": null,
+   "in": 660,
+   "out": 155,
+   "cacheRead": 384,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1068
+  },
+  {
+   "t": "2026-11-27T22:26:16.502Z",
+   "name": "SuggestionLLMValidator::checkSuggestionSimplicity",
+   "agent": "SuggestionLLMValidator",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 391,
+   "out": 224,
+   "cacheRead": 256,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 2384
+  },
+  {
+   "t": "2026-11-27T22:26:16.504Z",
+   "name": "SuggestionLLMValidator::checkSuggestionSimplicity",
+   "agent": "SuggestionLLMValidator",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 382,
+   "out": 59,
+   "cacheRead": 256,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1088
+  },
+  {
+   "t": "2026-11-27T22:26:24.160Z",
+   "name": "CommentManagerService::generateSummaryPR_chunk_1",
+   "agent": "CommentManagerService",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 20404,
+   "out": 1077,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 7108
+  },
+  {
+   "t": "2026-11-27T22:26:24.162Z",
+   "name": "CommentManagerService::generateSummaryPR_chunk_2",
+   "agent": "CommentManagerService",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 19539,
+   "out": 195,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 2334
+  },
+  {
+   "t": "2026-11-27T22:26:24.164Z",
+   "name": "CommentManagerService::generateSummaryPR_chunk_3",
+   "agent": "CommentManagerService",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 13828,
+   "out": 242,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 2629
+  },
+  {
+   "t": "2026-11-27T22:26:31.270Z",
+   "name": "CommentManagerService::generateSummaryPR_consolidation",
+   "agent": "CommentManagerService",
+   "status": "ok",
+   "err": null,
+   "pr": 39,
+   "in": 1062,
+   "out": 694,
+   "cacheRead": 256,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 4747
+  },
+  {
+   "t": "2026-11-27T22:27:35.853Z",
+   "name": "BusinessRulesValidation::businessRulesAnalyzer",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "pr": 37,
+   "in": 15614,
+   "out": 2314,
+   "cacheRead": 15488,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 13138
+  },
+  {
+   "t": "2026-11-27T22:27:49.118Z",
+   "name": "BusinessRulesValidation::gapCheck",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "in": 18208,
+   "out": 372,
+   "cacheRead": 12288,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 4057
+  },
+  {
+   "t": "2026-11-27T22:27:49.122Z",
+   "name": "BusinessRulesValidation::gapCheck",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "in": 18212,
+   "out": 358,
+   "cacheRead": 12288,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 4005
+  },
+  {
+   "t": "2026-11-27T22:27:49.123Z",
+   "name": "BusinessRulesValidation::gapCheck",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "in": 18385,
+   "out": 395,
+   "cacheRead": 12288,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 4154
+  }
+ ],
+ "r5-logs.json": [
+  {
+   "t": "2026-11-27T22:23:37.496Z",
+   "level": "info",
+   "component": "GitHubPullRequestHandler",
+   "message": "Code review job enqueued for asynchronous processing",
+   "meta": {
+    "component": "GitHubPullRequestHandler",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:37.732Z",
+   "level": "info",
+   "component": "RunCodeReviewAutomationUseCase",
+   "message": "RunCodeReviewAutomationUseCase PR#39",
+   "meta": {
+    "component": "RunCodeReviewAutomationUseCase",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:38.282Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Starting pipeline: CodeReviewPipeline (ID: a0322baa-08d9-43d6-bea9-969232e19846)",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:38.348Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidatePrerequisitesStage' completed in 55ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:38.359Z",
+   "level": "info",
+   "component": "ValidateNewCommitsStage",
+   "message": "No last analyzed commit found, analyzing all commits",
+   "meta": {
+    "component": "ValidateNewCommitsStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:38.586Z",
+   "level": "info",
+   "component": "ValidateNewCommitsStage",
+   "message": "Processing 1 new commits for PR#39 (1 total)",
+   "meta": {
+    "component": "ValidateNewCommitsStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:38.594Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidateNewCommitsStage' completed in 246ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:38.824Z",
+   "level": "info",
+   "component": "PermissionValidationService",
+   "message": "@@VALID PERMISSION@@ - Validating resource limits",
+   "meta": {
+    "component": "PermissionValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:38.842Z",
+   "level": "info",
+   "component": "PermissionValidationService",
+   "message": "@@VALID PERMISSION@@ - Resource limits validated",
+   "meta": {
+    "component": "PermissionValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:38.855Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ResolveConfigStage' completed in 261ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:38.869Z",
+   "level": "info",
+   "component": "ValidateConfigStage",
+   "message": "Branch Review Validation",
+   "meta": {
+    "component": "ValidateConfigStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:38.876Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidateConfigStage' completed in 19ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:38.891Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'AssessPrRiskStage' completed in 14ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:38.892Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ResolveRiskRoutingStage' completed in 1ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:38.903Z",
+   "level": "info",
+   "component": "FetchChangedFilesStage",
+   "message": "Found 6 files to analyze for PR#39 (6 total, 0 ignored)",
+   "meta": {
+    "component": "FetchChangedFilesStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:39.176Z",
+   "level": "info",
+   "component": "GithubService",
+   "message": "[GRAPHQL_BATCH_COST] files=6 cost=1 remaining=4950 limit=5000 resetAt=2026-11-27T22:46:04Z",
+   "meta": {
+    "component": "GithubService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:39.187Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'FetchChangedFilesStage' completed in 295ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:39.223Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'LoadExternalContextStage' completed in 35ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:39.238Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'LoadCiEvidenceStage' completed in 14ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:40.101Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'InitialCommentStage' completed in 862ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:40.111Z",
+   "level": "info",
+   "component": "PermissionValidationService",
+   "message": "@@VALID PERMISSION@@ - Validating resource limits",
+   "meta": {
+    "component": "PermissionValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:40.130Z",
+   "level": "info",
+   "component": "PermissionValidationService",
+   "message": "@@VALID PERMISSION@@ - Resource limits validated",
+   "meta": {
+    "component": "PermissionValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:40.396Z",
+   "level": "info",
+   "component": "KodusIssuesMcpServerService",
+   "message": "Kodus Issues MCP stateless request received",
+   "meta": {
+    "component": "KodusIssuesMcpServerService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:40.403Z",
+   "level": "info",
+   "component": "KodusIssuesMcpServerFactory",
+   "message": "MCP tool invoked",
+   "meta": {
+    "component": "KodusIssuesMcpServerFactory",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:40.726Z",
+   "level": "info",
+   "component": "KodusIssuesMcpServerService",
+   "message": "Kodus Issues MCP stateless request completed",
+   "meta": {
+    "component": "KodusIssuesMcpServerService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:51.105Z",
+   "level": "info",
+   "component": "GithubService",
+   "message": "Retrieved 22 files from repository claude-athena",
+   "meta": {
+    "component": "GithubService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:55.731Z",
+   "level": "info",
+   "component": "TaskFinder",
+   "message": "[BUSINESS-LOGIC] gapCheck spent 9809 input and 633 output tokens in 4 step(s)",
+   "meta": {
+    "component": "TaskFinder",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:55.732Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "[BUSINESS-LOGIC] Re-checked 1 requirement(s) across the repository; 0 already in the code, 0 confirmed missing",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "unknown",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:55.733Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "Business validation validated (passed)",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:57.060Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'BusinessLogicValidationStage' completed in 16958ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:23:57.521Z",
+   "level": "info",
+   "component": "E2BSandboxService",
+   "message": "[egress] route=fixed_ip (rollout_off)",
+   "meta": {
+    "component": "E2BSandboxService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:01.619Z",
+   "level": "info",
+   "component": "CheckIfPRCanBeApprovedCronProvider",
+   "message": "Open pull requests found",
+   "meta": {
+    "component": "CheckIfPRCanBeApprovedCronProvider",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:01.661Z",
+   "level": "info",
+   "component": "PermissionValidationService",
+   "message": "@@VALID PERMISSION@@ - Validating resource limits",
+   "meta": {
+    "component": "PermissionValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:01.744Z",
+   "level": "info",
+   "component": "PermissionValidationService",
+   "message": "@@VALID PERMISSION@@ - Resource limits validated",
+   "meta": {
+    "component": "PermissionValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:02.319Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'CreateSandboxStage' completed in 5258ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:02.364Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'RunAnalyzersStage' completed in 44ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:02.385Z",
+   "level": "info",
+   "component": "GeneralistAgentProvider",
+   "message": "[AGENT] Generalist finder settings for openai_compatible:opencode_go/deepseek-v4.1-flash: family=deepseek, maxSteps=20, synthesisRescue=true",
+   "meta": {
+    "component": "GeneralistAgentProvider",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:02.386Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent context window: 24000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:02.540Z",
+   "level": "info",
+   "component": "GeneralistAgentProvider",
+   "message": "[AGENT] Generalist finder settings for openai_compatible:opencode_go/deepseek-v4.1-flash: family=deepseek, maxSteps=20, synthesisRescue=true",
+   "meta": {
+    "component": "GeneralistAgentProvider",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:02.541Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent batch 1/4 context window: 24000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:23.867Z",
+   "level": "info",
+   "component": "VerifierAgent",
+   "message": "verifier verdict recovered from text (keep=true)",
+   "meta": {
+    "component": "VerifierAgent",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:27.335Z",
+   "level": "info",
+   "component": "review-funnel",
+   "message": "review recall funnel (verify gate)",
+   "meta": {
+    "component": "review-funnel",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:27.345Z",
+   "level": "info",
+   "component": "GeneralistAgentProvider",
+   "message": "[AGENT] Generalist finder settings for openai_compatible:opencode_go/deepseek-v4.1-flash: family=deepseek, maxSteps=20, synthesisRescue=true",
+   "meta": {
+    "component": "GeneralistAgentProvider",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:27.345Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent batch 2/4 context window: 24000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:38.640Z",
+   "level": "info",
+   "component": "VerifierAgent",
+   "message": "verifier verdict recovered from text (keep=true)",
+   "meta": {
+    "component": "VerifierAgent",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:38.640Z",
+   "level": "info",
+   "component": "review-funnel",
+   "message": "review recall funnel (verify gate)",
+   "meta": {
+    "component": "review-funnel",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:38.648Z",
+   "level": "info",
+   "component": "GeneralistAgentProvider",
+   "message": "[AGENT] Generalist finder settings for openai_compatible:opencode_go/deepseek-v4.1-flash: family=deepseek, maxSteps=20, synthesisRescue=true",
+   "meta": {
+    "component": "GeneralistAgentProvider",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:38.648Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent batch 3/4 context window: 24000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:43.980Z",
+   "level": "info",
+   "component": "PermissionValidationService",
+   "message": "@@VALID PERMISSION@@ - Validating resource limits",
+   "meta": {
+    "component": "PermissionValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:44.000Z",
+   "level": "info",
+   "component": "PermissionValidationService",
+   "message": "@@VALID PERMISSION@@ - Resource limits validated",
+   "meta": {
+    "component": "PermissionValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:44.244Z",
+   "level": "info",
+   "component": "KodusIssuesMcpServerService",
+   "message": "Kodus Issues MCP stateless request received",
+   "meta": {
+    "component": "KodusIssuesMcpServerService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:44.254Z",
+   "level": "info",
+   "component": "KodusIssuesMcpServerFactory",
+   "message": "MCP tool invoked",
+   "meta": {
+    "component": "KodusIssuesMcpServerFactory",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:44.531Z",
+   "level": "info",
+   "component": "KodusIssuesMcpServerService",
+   "message": "Kodus Issues MCP stateless request completed",
+   "meta": {
+    "component": "KodusIssuesMcpServerService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:24:57.717Z",
+   "level": "info",
+   "component": "GithubService",
+   "message": "Retrieved 23 files from repository claude-athena",
+   "meta": {
+    "component": "GithubService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:25:00.734Z",
+   "level": "info",
+   "component": "TaskFinder",
+   "message": "[BUSINESS-LOGIC] gapCheck spent 18488 input and 367 output tokens in 3 step(s)",
+   "meta": {
+    "component": "TaskFinder",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:25:01.131Z",
+   "level": "info",
+   "component": "TaskFinder",
+   "message": "[BUSINESS-LOGIC] gapCheck spent 18313 input and 513 output tokens in 3 step(s)",
+   "meta": {
+    "component": "TaskFinder",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:25:02.060Z",
+   "level": "info",
+   "component": "TaskFinder",
+   "message": "[BUSINESS-LOGIC] gapCheck spent 18278 input and 508 output tokens in 3 step(s)",
+   "meta": {
+    "component": "TaskFinder",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:25:02.061Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "[BUSINESS-LOGIC] Re-checked 3 requirement(s) across the repository; 3 already in the code, 0 confirmed missing",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "unknown",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:25:02.062Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "Business validation validated (passed)",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:25:11.961Z",
+   "level": "info",
+   "component": "VerifierAgent",
+   "message": "verifier verdict recovered from text (keep=false)",
+   "meta": {
+    "component": "VerifierAgent",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:25:11.962Z",
+   "level": "info",
+   "component": "review-funnel",
+   "message": "review recall funnel (verify gate)",
+   "meta": {
+    "component": "review-funnel",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:25:11.973Z",
+   "level": "info",
+   "component": "GeneralistAgentProvider",
+   "message": "[AGENT] Generalist finder settings for openai_compatible:opencode_go/deepseek-v4.1-flash: family=deepseek, maxSteps=20, synthesisRescue=true",
+   "meta": {
+    "component": "GeneralistAgentProvider",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:25:11.974Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent batch 4/4 context window: 24000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:25:50.988Z",
+   "level": "info",
+   "component": "VerifierAgent",
+   "message": "verifier verdict recovered from text (keep=false)",
+   "meta": {
+    "component": "VerifierAgent",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:25:50.989Z",
+   "level": "info",
+   "component": "review-funnel",
+   "message": "review recall funnel (verify gate)",
+   "meta": {
+    "component": "review-funnel",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:25:50.992Z",
+   "level": "info",
+   "component": "ReviewOrchestratorService",
+   "message": "[AGENT] generalist returned 2 suggestions in 108609ms",
+   "meta": {
+    "component": "ReviewOrchestratorService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:13.984Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[AGENT] Reclassified severity for 2 suggestions (0 left unclassified, default kept)",
+   "meta": {
+    "component": "AgentReviewStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:15.391Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[ENRICH] PR#39: enriched 2, failed 0, skipped 0",
+   "meta": {
+    "component": "AgentReviewStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:15.392Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[AGENT] Titled 2 suggestions (from summary 2, from body 0, over the ceiling 0, empty 0)",
+   "meta": {
+    "component": "AgentReviewStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:16.466Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[AGENT] Formatted 2/2 suggestion contents",
+   "meta": {
+    "component": "AgentReviewStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:16.467Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[AGENT] Shaped 2 suggestion bodies (fences removed 0, title repeat dropped 2, capped 0, titles rewritten 0, titles cut 0)",
+   "meta": {
+    "component": "AgentReviewStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:16.468Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[AGENT] Downgraded 1 suggestion(s) with unusable improvedCode to plain comments",
+   "meta": {
+    "component": "AgentReviewStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "unknown",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:16.476Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'AgentReviewStage' completed in 134112ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:16.485Z",
+   "level": "info",
+   "component": "CreatePrLevelCommentsStage",
+   "message": "No PR-level suggestions to process for PR#39",
+   "meta": {
+    "component": "CreatePrLevelCommentsStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:16.492Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'CreatePrLevelCommentsStage' completed in 14ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:18.890Z",
+   "level": "info",
+   "component": "ValidateSuggestionsStage",
+   "message": "No patched files generated for validation",
+   "meta": {
+    "component": "ValidateSuggestionsStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:18.899Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidateSuggestionsStage' completed in 2406ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:18.911Z",
+   "level": "info",
+   "component": "CreateFileCommentsStage",
+   "message": "Starting file comments creation for PR#39",
+   "meta": {
+    "component": "CreateFileCommentsStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:19.275Z",
+   "level": "info",
+   "component": "CommentManagerService",
+   "message": "Create Line Comments PR#39",
+   "meta": {
+    "component": "CommentManagerService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:20.535Z",
+   "level": "info",
+   "component": "GithubService",
+   "message": "Created line comment for PR#39",
+   "meta": {
+    "component": "GithubService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:23.245Z",
+   "level": "info",
+   "component": "GithubService",
+   "message": "Created line comment for PR#39",
+   "meta": {
+    "component": "GithubService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:23.280Z",
+   "level": "info",
+   "component": "CreateFileCommentsStage",
+   "message": "Successfully processed file comments for PR#39",
+   "meta": {
+    "component": "CreateFileCommentsStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:23.288Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'CreateFileCommentsStage' completed in 4388ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:23.296Z",
+   "level": "info",
+   "component": "AggregateResultsStage",
+   "message": "Aggregated 2 valid suggestions, 2 discarded suggestions",
+   "meta": {
+    "component": "AggregateResultsStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:23.297Z",
+   "level": "warn",
+   "component": "AggregateResultsStage",
+   "message": "No valid suggestions to aggregate for PR#39",
+   "meta": {
+    "component": "AggregateResultsStage",
+    "level": "warn",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:23.303Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'AggregateResultsStage' completed in 14ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:23.316Z",
+   "level": "info",
+   "component": "UpdateCommentsAndGenerateSummaryStage",
+   "message": "Generating summary for PR#39",
+   "meta": {
+    "component": "UpdateCommentsAndGenerateSummaryStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:23.671Z",
+   "level": "info",
+   "component": "CommentManagerService",
+   "message": "GenerateSummaryPR: Start PR#39. After get PR data",
+   "meta": {
+    "component": "CommentManagerService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:24.159Z",
+   "level": "info",
+   "component": "CommentManagerService",
+   "message": "Generating PR summary in 3 chunks for PR#39",
+   "meta": {
+    "component": "CommentManagerService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:36.018Z",
+   "level": "info",
+   "component": "CommentManagerService",
+   "message": "GenerateSummaryPR: End PR#39. After concatenate",
+   "meta": {
+    "component": "CommentManagerService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:38.183Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 14880ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:38.198Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'DecidePrApprovalStage' completed in 14ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:38.207Z",
+   "level": "info",
+   "component": "RequestChangesOrApproveStage",
+   "message": "Finished processing PR#39",
+   "meta": {
+    "component": "RequestChangesOrApproveStage",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:38.213Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'RequestChangesOrApproveStage' completed in 14ms: a0322baa-08d9-43d6-bea9-969232e19846",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:38.213Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Finished pipeline: CodeReviewPipeline (ID: a0322baa-08d9-43d6-bea9-969232e19846)",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:40.123Z",
+   "level": "info",
+   "component": "AutomationCodeReviewService",
+   "message": "Successfully handled pull request for PR#39",
+   "meta": {
+    "component": "AutomationCodeReviewService",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  }
+ ],
+ "s1-pr39-description.md": "Closes #36\n\n<!-- kody-pr-summary:start -->\n## Summary\n\nAdds enrollment fee discount support, including base fee and sibling discount calculation, generated discount lookup data, a generated school logo path, and a student fixture for enrollment previews. Unit tests cover the regular fee case and the sibling-discount case.\n\n## Changes\n\n- Added `EnrollmentFeeService` with a base enrollment fee of `500` and a sibling discount path when `siblingsEnrolled > 0`, returning a non-negative fee rounded to 2 decimals.\n- Added sibling discount constants and helpers in `discount.ts`, including a 10% sibling discount rate and a `sumDiscounts` helper intended for invoice previews.\n- Added a generated `DISCOUNT_LOOKUP` constant.\n- Added a generated `SCHOOL_LOGO_PATH` constant containing the school logo SVG path data, exported for use by enrollment-related UI or supporting modules.\n- Added `src/enrollment/students-fixture.ts` with an exported `STUDENTS_FIXTURE` constant containing 367 student records. Each record includes `id`, `name`, `grade` (1–12), `siblings` (0–3), and a `scholarship` boolean, providing consistent sample data for enrollment previews across grade levels, sibling counts, and scholarship scenarios.\n- Added tests covering a regular student paying 500 and a student with one enrolled sibling expected to pay 450.\n\n## Review findings\n\n- `src/enrollment/fee.service.ts:23` — the sibling discount is added to the fee instead of subtracted, so the sibling case currently returns 550 rather than the tested 450.\n- `src/enrollment/discount.ts:10` — `sumDiscounts` iterates with `i <= amounts.length`, reading one element past the end of the array and yielding `NaN`.\n<!-- kody-pr-summary:end -->",
+ "runs-pr39.json": [
+  {
+   "id": "6b0a02fde73f3f1dba3f3566",
+   "createdAt": "2026-11-27T22:23:57.038Z",
+   "door": "auto",
+   "trigger": "auto",
+   "headSha": "46478c1",
+   "outcome": "validated",
+   "passed": true,
+   "references": [
+    {
+     "kind": "git_issue",
+     "id": "36",
+     "raw": "#36",
+     "source": "body",
+     "intent": "closes"
+    }
+   ],
+   "attempts": [
+    {
+     "reference": "#36",
+     "tracker": "Git Issues",
+     "status": "found",
+     "tools": [
+      "KODUS_GET_ISSUE"
+     ]
+    }
+   ],
+   "unseenFiles": [
+    "src/enrollment/discount-lookup.ts",
+    "src/enrollment/logo-path.ts",
+    "src/enrollment/students-fixture.ts"
+   ],
+   "comment": {
+    "id": 7229294792
+   },
+   "tasks": [
+    {
+     "id": "#36",
+     "tracker": "Git Issues",
+     "passed": true,
+     "textHash": "c95b7b7afa",
+     "reqs": [
+      "AC-1:met",
+      "AC #2:partial",
+      "AC3:met"
+     ],
+     "oos": [
+      "Generates enrollment logo path data",
+      "Adds a students fixture",
+      "Adds a discount lookup table",
+      "Adds a sumDiscounts helper for the invoice preview, with a loop that runs past t"
+     ]
+    }
+   ]
+  }
+ ],
+ "s12-pr39-bl-comment.md": "<!-- kody-business-logic -->\n## Kody · Business Logic\n\n**[#36 · Enrollment fee discount](https://github.com/kodus-olimpo/claude-athena/issues/36)**\n1 partial · 4 changes not in the task\n<sub>Task read 2026-11-27 22:23 UTC · at `46478c1`</sub>\n\n| | Requirement | In this PR |\n|---|---|---|\n| ✅ **MET** | AC-1: `EnrollmentFeeService.calculateEnrollmentFee` returns the base fee of 500.00 for a student with no sibling enrolled. <sub>AC01</sub> | `src/enrollment/fee.service.ts:9`, `src/enrollment/fee.service.ts:20` · The base fee is set to 500 and the discount branch is skipped when the student has no sibling enrolled, so a regular student pays 500.00. |\n| 🟡 **PARTIAL** | AC #2: a student with at least one sibling already enrolled gets a 10% discount on the fee (pays 450.00). <sub>AC02</sub> | `src/enrollment/fee.service.ts:23`, `src/enrollment/discount.ts:4` · The 10% rate is correct, but the code adds the discount amount to the fee instead of subtracting it, so a student with an enrolled sibling would be charged 550.00 rather than the 450.00 the task asks for. The added unit test expects 450 and does not match this behavior. · **Do:** Subtract the discount from the fee (fee = fee - discount) so the student with an enrolled sibling pays 450.00. |\n| ✅ **MET** | AC3: the fee is never negative and is rounded to 2 decimals. <sub>AC03</sub> | `src/enrollment/fee.service.ts:25` · The returned fee is clamped at zero and rounded to two decimals before being returned. |\n| ➕ **NOT IN TASK** | Generates enrollment logo path data | `src/enrollment/logo-path.ts` · #36 doesn't ask for it. · Revert it, or reference the task that asks for logo path data. |\n| ➕ **NOT IN TASK** | Adds a students fixture | `src/enrollment/students-fixture.ts` · #36 doesn't ask for it. · Revert it, or reference the task that asks for this fixture. |\n| ➕ **NOT IN TASK** | Adds a discount lookup table | `src/enrollment/discount-lookup.ts` · #36 doesn't ask for it. · Revert it, or reference the task that asks for the lookup table. |\n| ➕ **NOT IN TASK** | Adds a sumDiscounts helper for the invoice preview, with a loop that runs past the end of the array | `src/enrollment/discount.ts:10` · #36 doesn't ask for it. · Remove it from this PR or move it to the task that needs the invoice preview sum. |\n\n<sub>Disagree with a line? Reply here and mention @kody. Fixed it? Comment `@kody -v business-logic` and this comment is updated.</sub>",
+ "bb-spans.json": [
+  {
+   "t": "2026-11-27T22:10:24.581Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent",
+   "status": "ok",
+   "err": null,
+   "pr": 21,
+   "in": 13872,
+   "out": 734,
+   "cacheRead": 8448,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 5635
+  },
+  {
+   "t": "2026-11-27T22:10:30.219Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent",
+   "status": "ok",
+   "err": null,
+   "pr": 21,
+   "in": 12562,
+   "out": 527,
+   "cacheRead": 11264,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 5391
+  },
+  {
+   "t": "2026-11-27T22:10:30.221Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent",
+   "status": "ok",
+   "err": null,
+   "pr": 21,
+   "in": 11978,
+   "out": 553,
+   "cacheRead": 8448,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 8770
+  },
+  {
+   "t": "2026-11-27T22:10:39.027Z",
+   "name": "code-review::dedup",
+   "agent": "code-review",
+   "status": "ok",
+   "err": null,
+   "pr": 21,
+   "in": 1013,
+   "out": 78,
+   "cacheRead": 768,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1172
+  },
+  {
+   "t": "2026-11-27T22:10:40.202Z",
+   "name": "severity-classifier",
+   "agent": "severity-classifier",
+   "status": "ok",
+   "err": null,
+   "in": 1414,
+   "out": 1909,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 13958
+  },
+  {
+   "t": "2026-11-27T22:10:54.163Z",
+   "name": "code-review-enrich",
+   "agent": "code-review-enrich",
+   "status": "ok",
+   "err": null,
+   "pr": 21,
+   "in": 1260,
+   "out": 93,
+   "cacheRead": 512,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1099
+  },
+  {
+   "t": "2026-11-27T22:10:54.165Z",
+   "name": "code-review-enrich",
+   "agent": "code-review-enrich",
+   "status": "ok",
+   "err": null,
+   "pr": 21,
+   "in": 1046,
+   "out": 100,
+   "cacheRead": 512,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1210
+  },
+  {
+   "t": "2026-11-27T22:10:55.378Z",
+   "name": "suggestion-formatter",
+   "agent": "suggestion-formatter",
+   "status": "ok",
+   "err": null,
+   "in": 754,
+   "out": 115,
+   "cacheRead": 384,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1456
+  },
+  {
+   "t": "2026-11-27T22:11:00.213Z",
+   "name": "CommentManagerService::generateSummaryPR",
+   "agent": "CommentManagerService",
+   "status": "ok",
+   "err": null,
+   "pr": 21,
+   "in": 1197,
+   "out": 794,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 6133
+  },
+  {
+   "t": "2026-11-27T22:24:03.860Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent batch 1/3",
+   "status": "ok",
+   "err": null,
+   "pr": 21,
+   "in": 23150,
+   "out": 1617,
+   "cacheRead": 16000,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 13049
+  },
+  {
+   "t": "2026-11-27T22:24:16.914Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 1/3",
+   "status": "ok",
+   "err": null,
+   "pr": 21,
+   "in": 12517,
+   "out": 674,
+   "cacheRead": 10112,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 5834
+  },
+  {
+   "t": "2026-11-27T22:24:16.916Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 1/3",
+   "status": "ok",
+   "err": null,
+   "pr": 21,
+   "in": 11992,
+   "out": 557,
+   "cacheRead": 9984,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 4803
+  },
+  {
+   "t": "2026-11-27T22:24:22.778Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent batch 2/3",
+   "status": "ok",
+   "err": null,
+   "pr": 21,
+   "in": 19240,
+   "out": 1404,
+   "cacheRead": 12672,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 10436
+  },
+  {
+   "t": "2026-11-27T22:24:33.217Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 2/3",
+   "status": "ok",
+   "err": null,
+   "pr": 21,
+   "in": 8093,
+   "out": 514,
+   "cacheRead": 6144,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 3669
+  },
+  {
+   "t": "2026-11-27T22:24:33.218Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 2/3",
+   "status": "ok",
+   "err": null,
+   "pr": 21,
+   "in": 11975,
+   "out": 559,
+   "cacheRead": 9856,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 4960
+  },
+  {
+   "t": "2026-11-27T22:24:38.202Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent batch 3/3",
+   "status": "ok",
+   "err": null,
+   "pr": 21,
+   "in": 158709,
+   "out": 2840,
+   "cacheRead": 130944,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 26033
+  },
+  {
+   "t": "2026-11-27T22:25:04.239Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 3/3",
+   "status": "ok",
+   "err": null,
+   "pr": 21,
+   "in": 46483,
+   "out": 2788,
+   "cacheRead": 37120,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 22639
+  }
+ ],
+ "bb-r7-spans.json": [
+  {
+   "t": "2026-11-27T22:36:23.189Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent batch 1/4",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 43057,
+   "out": 1683,
+   "cacheRead": 32640,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 14165
+  },
+  {
+   "t": "2026-11-27T22:36:37.358Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 1/4",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 9266,
+   "out": 477,
+   "cacheRead": 7936,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 5141
+  },
+  {
+   "t": "2026-11-27T22:36:37.360Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 1/4",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 8823,
+   "out": 561,
+   "cacheRead": 7808,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 5135
+  },
+  {
+   "t": "2026-11-27T22:36:37.361Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 1/4",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 18763,
+   "out": 1223,
+   "cacheRead": 14592,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 11470
+  },
+  {
+   "t": "2026-11-27T22:36:48.856Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent batch 2/4",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 18581,
+   "out": 957,
+   "cacheRead": 16000,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 7481
+  },
+  {
+   "t": "2026-11-27T22:36:56.340Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 2/4",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 9233,
+   "out": 482,
+   "cacheRead": 7936,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 5556
+  },
+  {
+   "t": "2026-11-27T22:36:56.341Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 2/4",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 13293,
+   "out": 1099,
+   "cacheRead": 11520,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 9321
+  },
+  {
+   "t": "2026-11-27T22:36:58.541Z",
+   "name": "BusinessRulesValidation::businessRulesAnalyzer",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 15665,
+   "out": 1384,
+   "cacheRead": 3968,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 7953
+  },
+  {
+   "t": "2026-11-27T22:37:05.680Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent batch 3/4",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 31707,
+   "out": 1694,
+   "cacheRead": 23424,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 13864
+  },
+  {
+   "t": "2026-11-27T22:37:06.537Z",
+   "name": "BusinessRulesValidation::gapCheck",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "in": 11626,
+   "out": 408,
+   "cacheRead": 6144,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 5611
+  },
+  {
+   "t": "2026-11-27T22:37:19.547Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 3/4",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 12867,
+   "out": 573,
+   "cacheRead": 11264,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 6429
+  },
+  {
+   "t": "2026-11-27T22:37:19.549Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 3/4",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 12577,
+   "out": 875,
+   "cacheRead": 11136,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 7198
+  },
+  {
+   "t": "2026-11-27T22:37:26.769Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent batch 4/4",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 133956,
+   "out": 4711,
+   "cacheRead": 109440,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 35638
+  },
+  {
+   "t": "2026-11-27T22:37:32.415Z",
+   "name": "BusinessRulesValidation::businessRulesAnalyzer",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 15665,
+   "out": 1599,
+   "cacheRead": 15616,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 8587
+  },
+  {
+   "t": "2026-11-27T22:37:41.053Z",
+   "name": "BusinessRulesValidation::gapCheck",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "in": 24818,
+   "out": 549,
+   "cacheRead": 18560,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 10570
+  },
+  {
+   "t": "2026-11-27T22:38:02.410Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 4/4",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 21734,
+   "out": 967,
+   "cacheRead": 17024,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 7443
+  },
+  {
+   "t": "2026-11-27T22:38:02.411Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 4/4",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 8947,
+   "out": 607,
+   "cacheRead": 5504,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 6031
+  },
+  {
+   "t": "2026-11-27T22:38:02.413Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent batch 4/4",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 24542,
+   "out": 1549,
+   "cacheRead": 17664,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 12615
+  },
+  {
+   "t": "2026-11-27T22:38:15.069Z",
+   "name": "code-review::dedup",
+   "agent": "code-review",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 1139,
+   "out": 139,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1084
+  },
+  {
+   "t": "2026-11-27T22:38:16.156Z",
+   "name": "severity-classifier",
+   "agent": "severity-classifier",
+   "status": "ok",
+   "err": null,
+   "in": 1544,
+   "out": 2292,
+   "cacheRead": 1152,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 15887
+  },
+  {
+   "t": "2026-11-27T22:38:32.047Z",
+   "name": "code-review-enrich",
+   "agent": "code-review-enrich",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 1304,
+   "out": 219,
+   "cacheRead": 512,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1848
+  },
+  {
+   "t": "2026-11-27T22:38:32.049Z",
+   "name": "code-review-enrich",
+   "agent": "code-review-enrich",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 1062,
+   "out": 88,
+   "cacheRead": 512,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1262
+  },
+  {
+   "t": "2026-11-27T22:38:33.898Z",
+   "name": "suggestion-formatter",
+   "agent": "suggestion-formatter",
+   "status": "ok",
+   "err": null,
+   "in": 845,
+   "out": 141,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1223
+  },
+  {
+   "t": "2026-11-27T22:38:38.509Z",
+   "name": "CommentManagerService::generateSummaryPR_chunk_1",
+   "agent": "CommentManagerService",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 20403,
+   "out": 1643,
+   "cacheRead": 256,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 12071
+  },
+  {
+   "t": "2026-11-27T22:38:38.511Z",
+   "name": "CommentManagerService::generateSummaryPR_chunk_2",
+   "agent": "CommentManagerService",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 19539,
+   "out": 160,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 2504
+  },
+  {
+   "t": "2026-11-27T22:38:38.513Z",
+   "name": "CommentManagerService::generateSummaryPR_chunk_3",
+   "agent": "CommentManagerService",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 13826,
+   "out": 177,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1584
+  },
+  {
+   "t": "2026-11-27T22:38:50.582Z",
+   "name": "CommentManagerService::generateSummaryPR_consolidation",
+   "agent": "CommentManagerService",
+   "status": "ok",
+   "err": null,
+   "pr": 22,
+   "in": 974,
+   "out": 568,
+   "cacheRead": 256,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 4106
+  }
+ ],
+ "bb-r7-logs.json": [
+  {
+   "t": "2026-11-27T22:38:33.896Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[ENRICH] PR#22: enriched 2, failed 0, skipped 0",
+   "meta": {
+    "component": "AgentReviewStage",
+    "level": "info",
+    "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a"
+   }
+  },
+  {
+   "t": "2026-11-27T22:38:33.897Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[AGENT] Titled 2 suggestions (from summary 2, from body 0, over the ceiling 0, empty 0)",
+   "meta": {
+    "component": "AgentReviewStage",
+    "level": "info",
+    "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a"
+   }
+  },
+  {
+   "t": "2026-11-27T22:38:37.667Z",
+   "level": "info",
+   "component": "UpdateCommentsAndGenerateSummaryStage",
+   "message": "Generating summary for PR#22",
+   "meta": {
+    "component": "UpdateCommentsAndGenerateSummaryStage",
+    "level": "info",
+    "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a"
+   }
+  },
+  {
+   "t": "2026-11-27T22:38:38.025Z",
+   "level": "info",
+   "component": "CommentManagerService",
+   "message": "GenerateSummaryPR: Start PR#22. After get PR data",
+   "meta": {
+    "component": "CommentManagerService",
+    "level": "info",
+    "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a"
+   }
+  },
+  {
+   "t": "2026-11-27T22:38:38.507Z",
+   "level": "info",
+   "component": "CommentManagerService",
+   "message": "Generating PR summary in 3 chunks for PR#22",
+   "meta": {
+    "component": "CommentManagerService",
+    "level": "info",
+    "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a"
+   }
+  },
+  {
+   "t": "2026-11-27T22:38:54.690Z",
+   "level": "info",
+   "component": "CommentManagerService",
+   "message": "GenerateSummaryPR: End PR#22. After concatenate",
+   "meta": {
+    "component": "CommentManagerService",
+    "level": "info",
+    "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a"
+   }
+  },
+  {
+   "t": "2026-11-27T22:38:55.692Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 18036ms: a6e87e85-e2b0-424a-8cba-502dab216436",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a"
+   }
+  },
+  {
+   "t": "2026-11-27T22:38:55.736Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Finished pipeline: CodeReviewPipeline (ID: a6e87e85-e2b0-424a-8cba-502dab216436)",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a"
+   }
+  }
+ ],
+ "runs-bb-pr22.json": [
+  {
+   "id": "6b0a05e2844994d2ac87bd44",
+   "createdAt": "2026-11-27T22:36:18.078Z",
+   "door": "auto",
+   "trigger": "auto",
+   "headSha": "c049689",
+   "outcome": "skipped",
+   "skipReason": "no_reference",
+   "references": [],
+   "attempts": [],
+   "unseenFiles": [],
+   "tasks": []
+  },
+  {
+   "id": "6b0a0619844994d2ac87bdd3",
+   "createdAt": "2026-11-27T22:37:13.457Z",
+   "door": "command",
+   "trigger": "command",
+   "headSha": "c049689",
+   "outcome": "validated",
+   "passed": true,
+   "references": [],
+   "attempts": [],
+   "unseenFiles": [
+    "src/enrollment/discount-lookup.ts",
+    "src/enrollment/logo-path.ts"
+   ],
+   "comment": {
+    "id": 913410698
+   },
+   "tasks": [
+    {
+     "id": "Task in the command",
+     "tracker": "the command",
+     "passed": true,
+     "textHash": "04373ff50b",
+     "reqs": [
+      "AC1:met",
+      "AC2:partial",
+      "AC3:met"
+     ],
+     "oos": [
+      "Adds a large generated students fixture (300+ students with grades, sibling coun",
+      "Adds generated logo path data, unrelated to the enrollment fee.",
+      "Adds a discount lookup table file not needed by the fee rule described in the ta",
+      "Adds a sumDiscounts helper for an invoice preview, which the task does not ask f"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6b0a0640e73f3f1dba3f38d9",
+   "createdAt": "2026-11-27T22:37:52.363Z",
+   "door": "command",
+   "trigger": "command",
+   "headSha": "c049689",
+   "outcome": "validated",
+   "passed": false,
+   "references": [],
+   "attempts": [],
+   "unseenFiles": [
+    "src/enrollment/discount-lookup.ts",
+    "src/enrollment/logo-path.ts"
+   ],
+   "comment": {
+    "id": 913410698
+   },
+   "tasks": [
+    {
+     "id": "Task in the command",
+     "tracker": "the command",
+     "passed": false,
+     "textHash": "04373ff50b",
+     "reqs": [
+      "AC01:met",
+      "AC02:missing",
+      "AC03:met"
+     ],
+     "oos": [
+      "Adds a sumDiscounts helper for an invoice preview that the task does not mention",
+      "Adds a generated fixture with hundreds of students and extra fields (grade, scho",
+      "Adds generated discount lookup data and logo path data, which the task does not "
+     ]
+    }
+   ]
+  }
+ ],
+ "az-spans.json": [
+  {
+   "t": "2026-11-27T22:10:54.694Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent",
+   "status": "ok",
+   "err": null,
+   "pr": 223,
+   "in": 42998,
+   "out": 1809,
+   "cacheRead": 38528,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 14225
+  },
+  {
+   "t": "2026-11-27T22:11:08.922Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent",
+   "status": "ok",
+   "err": null,
+   "pr": 223,
+   "in": 9992,
+   "out": 1292,
+   "cacheRead": 9600,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 8931
+  },
+  {
+   "t": "2026-11-27T22:11:17.857Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent",
+   "status": "ok",
+   "err": null,
+   "pr": 223,
+   "in": 15528,
+   "out": 872,
+   "cacheRead": 13184,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 8743
+  },
+  {
+   "t": "2026-11-27T22:11:26.612Z",
+   "name": "severity-classifier",
+   "agent": "severity-classifier",
+   "status": "ok",
+   "err": null,
+   "in": 1406,
+   "out": 236,
+   "cacheRead": 1152,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 2655
+  },
+  {
+   "t": "2026-11-27T22:11:29.271Z",
+   "name": "code-review-enrich",
+   "agent": "code-review-enrich",
+   "status": "ok",
+   "err": null,
+   "pr": 223,
+   "in": 1173,
+   "out": 125,
+   "cacheRead": 512,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1399
+  },
+  {
+   "t": "2026-11-27T22:11:30.675Z",
+   "name": "suggestion-formatter",
+   "agent": "suggestion-formatter",
+   "status": "ok",
+   "err": null,
+   "in": 652,
+   "out": 80,
+   "cacheRead": 384,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1128
+  },
+  {
+   "t": "2026-11-27T22:11:33.150Z",
+   "name": "CommentManagerService::generateSummaryPR",
+   "agent": "CommentManagerService",
+   "status": "ok",
+   "err": null,
+   "pr": 223,
+   "in": 1320,
+   "out": 336,
+   "cacheRead": 256,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 2487
+  }
+ ],
+ "az-logs.json": [
+  {
+   "t": "2026-11-27T22:10:32.374Z",
+   "level": "info",
+   "component": "FetchChangedFilesStage",
+   "message": "Found 3 files to analyze for PR#223 (3 total, 0 ignored)",
+   "meta": {
+    "component": "FetchChangedFilesStage",
+    "level": "info",
+    "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa"
+   }
+  },
+  {
+   "t": "2026-11-27T22:10:33.032Z",
+   "level": "info",
+   "component": "AzureReposService",
+   "message": "Created issue comment for PR#223",
+   "meta": {
+    "component": "AzureReposService",
+    "level": "info",
+    "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa"
+   }
+  },
+  {
+   "t": "2026-11-27T22:10:33.061Z",
+   "level": "info",
+   "component": "BusinessValidationService",
+   "message": "Business validation skipped (no_reference)",
+   "meta": {
+    "component": "BusinessValidationService",
+    "level": "info",
+    "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa"
+   }
+  },
+  {
+   "t": "2026-11-27T22:10:33.082Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'BusinessLogicValidationStage' completed in 34ms: 54f546e4-f113-4483-82b6-af5a4d9e7a9c",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa"
+   }
+  },
+  {
+   "t": "2026-11-27T22:10:54.683Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent context window: 1000000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa"
+   }
+  },
+  {
+   "t": "2026-11-27T22:11:30.672Z",
+   "level": "info",
+   "component": "AgentReviewStage",
+   "message": "[AGENT] Titled 1 suggestions (from summary 1, from body 0, over the ceiling 0, empty 0)",
+   "meta": {
+    "component": "AgentReviewStage",
+    "level": "info",
+    "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa"
+   }
+  },
+  {
+   "t": "2026-11-27T22:11:32.962Z",
+   "level": "info",
+   "component": "UpdateCommentsAndGenerateSummaryStage",
+   "message": "Generating summary for PR#223",
+   "meta": {
+    "component": "UpdateCommentsAndGenerateSummaryStage",
+    "level": "info",
+    "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa"
+   }
+  },
+  {
+   "t": "2026-11-27T22:11:33.139Z",
+   "level": "info",
+   "component": "CommentManagerService",
+   "message": "GenerateSummaryPR: Start PR#223. After get PR data",
+   "meta": {
+    "component": "CommentManagerService",
+    "level": "info",
+    "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa"
+   }
+  },
+  {
+   "t": "2026-11-27T22:11:35.639Z",
+   "level": "info",
+   "component": "CommentManagerService",
+   "message": "GenerateSummaryPR: End PR#223. After concatenate",
+   "meta": {
+    "component": "CommentManagerService",
+    "level": "info",
+    "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa"
+   }
+  },
+  {
+   "t": "2026-11-27T22:11:36.021Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 3067ms: 54f546e4-f113-4483-82b6-af5a4d9e7a9c",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa"
+   }
+  },
+  {
+   "t": "2026-11-27T22:11:36.114Z",
+   "level": "info",
+   "component": "RequestChangesOrApproveStage",
+   "message": "Finished processing PR#223",
+   "meta": {
+    "component": "RequestChangesOrApproveStage",
+    "level": "info",
+    "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa"
+   }
+  },
+  {
+   "t": "2026-11-27T22:11:36.121Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Finished pipeline: CodeReviewPipeline (ID: 54f546e4-f113-4483-82b6-af5a4d9e7a9c)",
+   "meta": {
+    "component": "PipelineExecutor",
+    "level": "info",
+    "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa"
+   }
+  }
+ ],
+ "errors-all-orgs-window.json": [
+  {
+   "t": "2026-11-27T22:08:01.959Z",
+   "c": "CodeBaseConfigService",
+   "org": "1304ae67-2214-4e9c-9cb2-dd9dd16ee13e",
+   "m": "Error getting code review config parameters"
+  },
+  {
+   "t": "2026-11-27T22:08:01.962Z",
+   "c": "CodeBaseConfigService",
+   "org": "88c1a2c5-0f39-4cc3-8643-c3d6cc2cf8f0",
+   "m": "Error getting code review config parameters"
+  },
+  {
+   "t": "2026-11-27T22:12:02.794Z",
+   "c": "CodeBaseConfigService",
+   "org": "88c1a2c5-0f39-4cc3-8643-c3d6cc2cf8f0",
+   "m": "Error getting code review config parameters"
+  },
+  {
+   "t": "2026-11-27T22:12:02.824Z",
+   "c": "CodeBaseConfigService",
+   "org": "1304ae67-2214-4e9c-9cb2-dd9dd16ee13e",
+   "m": "Error getting code review config parameters"
+  },
+  {
+   "t": "2026-11-27T22:16:02.035Z",
+   "c": "CodeBaseConfigService",
+   "org": "1304ae67-2214-4e9c-9cb2-dd9dd16ee13e",
+   "m": "Error getting code review config parameters"
+  },
+  {
+   "t": "2026-11-27T22:16:02.059Z",
+   "c": "CodeBaseConfigService",
+   "org": "88c1a2c5-0f39-4cc3-8643-c3d6cc2cf8f0",
+   "m": "Error getting code review config parameters"
+  },
+  {
+   "t": "2026-11-27T22:20:02.990Z",
+   "c": "CodeBaseConfigService",
+   "org": "88c1a2c5-0f39-4cc3-8643-c3d6cc2cf8f0",
+   "m": "Error getting code review config parameters"
+  },
+  {
+   "t": "2026-11-27T22:20:02.995Z",
+   "c": "CodeBaseConfigService",
+   "org": "1304ae67-2214-4e9c-9cb2-dd9dd16ee13e",
+   "m": "Error getting code review config parameters"
+  },
+  {
+   "t": "2026-11-27T22:24:02.055Z",
+   "c": "CodeBaseConfigService",
+   "org": "88c1a2c5-0f39-4cc3-8643-c3d6cc2cf8f0",
+   "m": "Error getting code review config parameters"
+  },
+  {
+   "t": "2026-11-27T22:24:02.074Z",
+   "c": "CodeBaseConfigService",
+   "org": "1304ae67-2214-4e9c-9cb2-dd9dd16ee13e",
+   "m": "Error getting code review config parameters"
+  },
+  {
+   "t": "2026-11-27T22:28:02.270Z",
+   "c": "CodeBaseConfigService",
+   "org": "88c1a2c5-0f39-4cc3-8643-c3d6cc2cf8f0",
+   "m": "Error getting code review config parameters"
+  },
+  {
+   "t": "2026-11-27T22:28:02.311Z",
+   "c": "CodeBaseConfigService",
+   "org": "1304ae67-2214-4e9c-9cb2-dd9dd16ee13e",
+   "m": "Error getting code review config parameters"
+  },
+  {
+   "t": "2026-11-27T22:30:40.183Z",
+   "c": "CodeReviewAgent",
+   "org": "unknown",
+   "m": "[AGENT] kodus-generalist-review-agent failed for PR#5 after 30080ms: Failed after 4 attempts. Last error: AI_APICallError: You exceeded your current quota, please check your plan and billing details. "
+  },
+  {
+   "t": "2026-11-27T22:30:40.184Z",
+   "c": "ReviewOrchestratorService",
+   "org": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "m": "[AGENT] generalist agent failed for PR#5"
+  },
+  {
+   "t": "2026-11-27T22:30:40.187Z",
+   "c": "ReviewOrchestratorService",
+   "org": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "m": "[AGENT] generalist failed: Failed after 4 attempts. Last error: AI_APICallError: You exceeded your current quota, please check your plan and billing details. For more information on this error, head t"
+  },
+  {
+   "t": "2026-11-27T22:30:44.256Z",
+   "c": "CommentManagerService",
+   "org": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "m": "Error generateOverallComment pull request: PR#5"
+  }
+ ],
+ "errwarn-github.json": [
+  {
+   "t": "2026-11-27T22:09:38.007Z",
+   "level": "warn",
+   "component": "ValidateConfigStage",
+   "message": "Draft PR Skipped — Enable 'Running on Draft Pull Requests' in settings or mark as Ready (runOnDraft=false)",
+   "meta": {
+    "component": "ValidateConfigStage",
+    "level": "warn",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:10:07.456Z",
+   "level": "warn",
+   "component": "AggregateResultsStage",
+   "message": "No valid suggestions to aggregate for PR#37",
+   "meta": {
+    "component": "AggregateResultsStage",
+    "level": "warn",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:16:58.465Z",
+   "level": "warn",
+   "component": "ValidateConfigStage",
+   "message": "Draft PR Skipped — Enable 'Running on Draft Pull Requests' in settings or mark as Ready (runOnDraft=false)",
+   "meta": {
+    "component": "ValidateConfigStage",
+    "level": "warn",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:18:14.709Z",
+   "level": "warn",
+   "component": "ValidateConfigStage",
+   "message": "Draft PR Skipped — Enable 'Running on Draft Pull Requests' in settings or mark as Ready (runOnDraft=false)",
+   "meta": {
+    "component": "ValidateConfigStage",
+    "level": "warn",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:18:40.553Z",
+   "level": "warn",
+   "component": "AggregateResultsStage",
+   "message": "No valid suggestions to aggregate for PR#37",
+   "meta": {
+    "component": "AggregateResultsStage",
+    "level": "warn",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  },
+  {
+   "t": "2026-11-27T22:26:23.297Z",
+   "level": "warn",
+   "component": "AggregateResultsStage",
+   "message": "No valid suggestions to aggregate for PR#39",
+   "meta": {
+    "component": "AggregateResultsStage",
+    "level": "warn",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  }
+ ],
+ "errwarn-bitbucket.json": [
+  {
+   "t": "2026-11-27T22:10:59.525Z",
+   "level": "warn",
+   "component": "AggregateResultsStage",
+   "message": "No valid suggestions to aggregate for PR#21",
+   "meta": {
+    "component": "AggregateResultsStage",
+    "level": "warn",
+    "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a"
+   }
+  },
+  {
+   "t": "2026-11-27T22:25:27.062Z",
+   "level": "warn",
+   "component": "AggregateResultsStage",
+   "message": "No valid suggestions to aggregate for PR#21",
+   "meta": {
+    "component": "AggregateResultsStage",
+    "level": "warn",
+    "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+    "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+    "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a"
+   }
+  }
+ ],
+ "errwarn-azure.json": [
+  {
+   "t": "2026-11-27T22:11:32.947Z",
+   "level": "warn",
+   "component": "AggregateResultsStage",
+   "message": "No valid suggestions to aggregate for PR#223",
+   "meta": {
+    "component": "AggregateResultsStage",
+    "level": "warn",
+    "organizationId": "a570f880-a17c-46d5-8ffd-7955455f20aa",
+    "teamId": "1da33d1a-4549-4f9b-9460-f1e6aa2538d0",
+    "tenantId": "a570f880-a17c-46d5-8ffd-7955455f20aa"
+   }
+  }
+ ],
+ "s18-r8-spans.json": [
+  {
+   "t": "2026-11-27T22:40:03.454Z",
+   "name": "BusinessRulesValidation::businessRulesAnalyzer",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "pr": 40,
+   "in": 5365,
+   "out": 2260,
+   "cacheRead": 4992,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 13083
+  },
+  {
+   "t": "2026-11-27T22:40:16.548Z",
+   "name": "BusinessRulesValidation::gapCheck",
+   "agent": "BusinessRulesValidation",
+   "status": "ok",
+   "err": null,
+   "in": 6533,
+   "out": 401,
+   "cacheRead": 4352,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 4134
+  },
+  {
+   "t": "2026-11-27T22:40:44.588Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent",
+   "status": "ok",
+   "err": null,
+   "pr": 40,
+   "in": 297689,
+   "out": 1462,
+   "cacheRead": 205184,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 11860
+  },
+  {
+   "t": "2026-11-27T22:40:56.453Z",
+   "name": "code-review-generalist",
+   "agent": "kodus-generalist-review-agent",
+   "status": "ok",
+   "err": null,
+   "pr": 40,
+   "in": 200191,
+   "out": 1195,
+   "cacheRead": 196992,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 8943
+  },
+  {
+   "t": "2026-11-27T22:41:05.400Z",
+   "name": "code-review-generalist-recovery",
+   "agent": "code-review-generalist-recovery",
+   "status": "ok",
+   "err": null,
+   "in": 654,
+   "out": 233,
+   "cacheRead": 256,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1905
+  },
+  {
+   "t": "2026-11-27T22:41:07.310Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent",
+   "status": "ok",
+   "err": null,
+   "pr": 40,
+   "in": 14593,
+   "out": 767,
+   "cacheRead": 12160,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 6929
+  },
+  {
+   "t": "2026-11-27T22:41:07.312Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent",
+   "status": "ok",
+   "err": null,
+   "pr": 40,
+   "in": 17860,
+   "out": 850,
+   "cacheRead": 16128,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 9014
+  },
+  {
+   "t": "2026-11-27T22:41:07.313Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent",
+   "status": "ok",
+   "err": null,
+   "pr": 40,
+   "in": 14028,
+   "out": 612,
+   "cacheRead": 10880,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 6635
+  },
+  {
+   "t": "2026-11-27T22:41:07.314Z",
+   "name": "code-review-generalist-verify",
+   "agent": "kodus-generalist-review-agent",
+   "status": "ok",
+   "err": null,
+   "pr": 40,
+   "in": 16302,
+   "out": 619,
+   "cacheRead": 13824,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 7614
+  },
+  {
+   "t": "2026-11-27T22:41:16.358Z",
+   "name": "code-review::dedup",
+   "agent": "code-review",
+   "status": "ok",
+   "err": null,
+   "pr": 40,
+   "in": 1155,
+   "out": 30,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1250
+  },
+  {
+   "t": "2026-11-27T22:41:24.762Z",
+   "name": "dedup-tiebreak",
+   "agent": "dedup-tiebreak",
+   "status": "ok",
+   "err": null,
+   "in": 398,
+   "out": 78,
+   "cacheRead": 256,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1371
+  },
+  {
+   "t": "2026-11-27T22:41:32.333Z",
+   "name": "dedup-tiebreak",
+   "agent": "dedup-tiebreak",
+   "status": "ok",
+   "err": null,
+   "in": 399,
+   "out": 96,
+   "cacheRead": 256,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1107
+  },
+  {
+   "t": "2026-11-27T22:41:33.443Z",
+   "name": "severity-classifier",
+   "agent": "severity-classifier",
+   "status": "ok",
+   "err": null,
+   "in": 1405,
+   "out": 1171,
+   "cacheRead": 1152,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 8580
+  },
+  {
+   "t": "2026-11-27T22:41:42.028Z",
+   "name": "code-review-enrich",
+   "agent": "code-review-enrich",
+   "status": "ok",
+   "err": null,
+   "pr": 40,
+   "in": 1231,
+   "out": 42,
+   "cacheRead": 512,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 836
+  },
+  {
+   "t": "2026-11-27T22:41:42.030Z",
+   "name": "code-review-enrich",
+   "agent": "code-review-enrich",
+   "status": "ok",
+   "err": null,
+   "pr": 40,
+   "in": 1009,
+   "out": 46,
+   "cacheRead": 512,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 910
+  },
+  {
+   "t": "2026-11-27T22:41:42.944Z",
+   "name": "suggestion-formatter",
+   "agent": "suggestion-formatter",
+   "status": "ok",
+   "err": null,
+   "in": 627,
+   "out": 114,
+   "cacheRead": 384,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1159
+  },
+  {
+   "t": "2026-11-27T22:41:44.146Z",
+   "name": "SuggestionLLMValidator::checkSuggestionSimplicity",
+   "agent": "SuggestionLLMValidator",
+   "status": "ok",
+   "err": null,
+   "pr": 40,
+   "in": 382,
+   "out": 59,
+   "cacheRead": 256,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1086
+  },
+  {
+   "t": "2026-11-27T22:41:44.147Z",
+   "name": "SuggestionLLMValidator::checkSuggestionSimplicity",
+   "agent": "SuggestionLLMValidator",
+   "status": "ok",
+   "err": null,
+   "pr": 40,
+   "in": 385,
+   "out": 265,
+   "cacheRead": 256,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 2406
+  },
+  {
+   "t": "2026-11-27T22:41:52.057Z",
+   "name": "CommentManagerService::generateSummaryPR_chunk_1",
+   "agent": "CommentManagerService",
+   "status": "ok",
+   "err": null,
+   "pr": 40,
+   "in": 20405,
+   "out": 1642,
+   "cacheRead": 0,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 10145
+  },
+  {
+   "t": "2026-11-27T22:41:52.059Z",
+   "name": "CommentManagerService::generateSummaryPR_chunk_2",
+   "agent": "CommentManagerService",
+   "status": "ok",
+   "err": null,
+   "pr": 40,
+   "in": 19542,
+   "out": 202,
+   "cacheRead": 256,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 1991
+  },
+  {
+   "t": "2026-11-27T22:41:52.060Z",
+   "name": "CommentManagerService::generateSummaryPR_chunk_3",
+   "agent": "CommentManagerService",
+   "status": "ok",
+   "err": null,
+   "pr": 40,
+   "in": 13825,
+   "out": 211,
+   "cacheRead": 256,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 2296
+  },
+  {
+   "t": "2026-11-27T22:42:02.204Z",
+   "name": "CommentManagerService::generateSummaryPR_consolidation",
+   "agent": "CommentManagerService",
+   "status": "ok",
+   "err": null,
+   "pr": 40,
+   "in": 820,
+   "out": 732,
+   "cacheRead": 256,
+   "model": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "ms": 5109
+  }
+ ],
+ "s18-window-logs.json": [
+  {
+   "t": "2026-11-27T22:40:44.569Z",
+   "level": "info",
+   "component": "CodeReviewAgent",
+   "message": "[AGENT] kodus-generalist-review-agent context window: 1000000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "meta": {
+    "component": "CodeReviewAgent",
+    "level": "info",
+    "organizationId": "1376936a-961c-4267-862b-cbc19d309ce4",
+    "teamId": "8aecb3fa-b4e5-46e4-99ea-cdcf7007363d",
+    "tenantId": "1376936a-961c-4267-862b-cbc19d309ce4"
+   }
+  }
+ ],
+ "runs-pr40.json": [
+  {
+   "id": "6b0a06d6e73f3f1dba3f3941",
+   "createdAt": "2026-11-27T22:40:22.018Z",
+   "door": "auto",
+   "trigger": "auto",
+   "headSha": "a5199c2",
+   "outcome": "validated",
+   "passed": true,
+   "references": [
+    {
+     "kind": "git_issue",
+     "id": "36",
+     "raw": "#36",
+     "source": "body",
+     "intent": "closes"
+    }
+   ],
+   "attempts": [
+    {
+     "reference": "#36",
+     "tracker": "Git Issues",
+     "status": "found",
+     "tools": [
+      "KODUS_GET_ISSUE"
+     ]
+    }
+   ],
+   "unseenFiles": [
+    "src/enrollment/discount-lookup.ts",
+    "src/enrollment/logo-path.ts",
+    "src/enrollment/students-fixture.ts"
+   ],
+   "comment": {
+    "id": 7229522040
+   },
+   "tasks": [
+    {
+     "id": "#36",
+     "tracker": "Git Issues",
+     "passed": true,
+     "textHash": "c95b7b7afa",
+     "reqs": [
+      "AC-1:met",
+      "AC #2:partial",
+      "AC3:met"
+     ],
+     "oos": [
+      "Adds a `sumDiscounts` helper described as \"used by the invoice preview\", which t"
+     ]
+    }
+   ]
+  }
+ ]
+}
