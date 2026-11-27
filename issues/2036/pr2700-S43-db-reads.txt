@@ -1,0 +1,6 @@
+2026-11-27T22:28:08.811Z before (fresh model, nothing set): [{"id": "qa2700-mm-model", "model": "MiniMax-M3.1-Flash-Preview", "credentialId": "qa2700-mm-cred"}]
+UI: Claude id -> Thinking High -> back to MiniMax-M3.1-Flash-Preview -> Test & save; url after: https://qa.web.kodus.io/byok
+2026-11-27T22:28:41.504Z after Claude-High -> M3.1 -> Test & save: [{"id": "qa2700-mm-model", "model": "MiniMax-M3.1-Flash-Preview", "credentialId": "qa2700-mm-cred"}]
+2026-11-27T22:28:44.992Z after API write reasoningEffort=high (simulates a row saved before the fix): [{"id": "qa2700-mm-model", "model": "MiniMax-M3.1-Flash-Preview", "credentialId": "qa2700-mm-cred", "reasoningEffort": "high"}]
+UI with stored high shows: Thinking / Reasoning | This model always reasons. Its level can't be set on this endpoint, so it runs at the model's own default. | Temperature | 0 = dete
+2026-11-27T22:29:11.849Z after Test & save without changes: [{"id": "qa2700-mm-model", "model": "MiniMax-M3.1-Flash-Preview", "credentialId": "qa2700-mm-cred"}]
