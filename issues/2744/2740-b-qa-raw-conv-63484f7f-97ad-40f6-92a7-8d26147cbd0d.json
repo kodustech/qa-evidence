@@ -1,0 +1,46 @@
+[
+ {
+  "timestamp": "2026-11-27T21:52:41.515Z",
+  "level": "info",
+  "message": "Finish conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "63484f7f-97ad-40f6-92a7-8d26147cbd0d",
+   "teamId": "ab9558e8-3687-44fe-abe3-ef6be71022f6",
+   "tenantId": "63484f7f-97ad-40f6-92a7-8d26147cbd0d"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "63484f7f-97ad-40f6-92a7-8d26147cbd0d",
+    "teamId": "ab9558e8-3687-44fe-abe3-ef6be71022f6"
+   },
+   "thread": {
+    "id": "TR-cmc-ew24xw",
+    "metadata": {
+     "description": "Thread TR-cmc-ew24xw",
+     "type": "thread",
+     "organizationId": "63484f7f-97ad-40f6-92a7-8d26147cbd0d",
+     "teamId": "ab9558e8-3687-44fe-abe3-ef6be71022f6",
+     "repositoryId": "32c159b2-ac16-419b-9445-8ab275cabadc",
+     "userId": "f9487644-9b9d-6659-96db-37dfde9f6430",
+     "suggestionCommentId": 1
+    }
+   },
+   "steps": 3,
+   "usage": {
+    "inputTokens": 33378,
+    "outputTokens": 566,
+    "totalTokens": 33944,
+    "reasoningTokens": 317,
+    "cacheReadTokens": 30464,
+    "cacheWriteTokens": null
+   },
+   "component": "ConversationAgentProvider",
+   "organizationId": "63484f7f-97ad-40f6-92a7-8d26147cbd0d",
+   "teamId": "ab9558e8-3687-44fe-abe3-ef6be71022f6",
+   "originalCorrelationId": null
+  }
+ }
+]
