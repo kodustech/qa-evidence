@@ -1,0 +1,627 @@
+S21 — provision.sh REMOTE heredoc rendered locally. Method: copy _common.sh to scratch repo, HOME=scratch config, env -i, PATH without op; extract 'ssh_vm bash -s <<REMOTE'..'REMOTE' from provision.sh, swap 'ssh_vm bash -s' for 'cat', source _common.sh, render; then run the rendered text with bash (as the VM would via bash -s) with (a) stub env_set = printf '%s=%s
+' "$1" "$2" >> .env, (b) real env_set with sed -i -> sed -i '' (BSD). prefill=1 means .env already holds KEY= lines (as if .env.example declares them) so the sed branch runs. Nasty values are single-quoted in the config so the sourced value is exact (same as an op:// value resolved by op read). Scripts: harness/s2x-scripts/s21.sh, configs c21_*
+
+
+################ tree=m config=gem prefill=0
+--- config:
+DIGITALOCEAN_TOKEN=dop_fake
+API_LLM_PROVIDER=google_gemini
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+API_LLM_API_KEY=fake-ai-studio
+API_LLM_BASE_URL=
+API_LLM_REASONING_EFFORT=
+API_OPEN_AI_API_KEY=
+--- render stderr:
+--- rendered LLM lines:
+41:# API_LLM_PROVIDER reaches the VM along with the legacy OpenAI-named vars.
+42:env_set API_LLM_PROVIDER "google_gemini"
+43:env_set API_LLM_PROVIDER_MODEL "gemini-3.5-flash"
+44:env_set API_LLM_API_KEY "fake-ai-studio"
+--- (a) stub env_set exit=0
+--- (a) .env LLM lines (stub):
+API_LLM_PROVIDER=google_gemini
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+API_LLM_API_KEY=fake-ai-studio
+--- (b) real env_set (prefill=0) exit=0
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER=google_gemini
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+API_LLM_API_KEY=fake-ai-studio
+
+################ tree=m config=gem prefill=1
+--- config:
+DIGITALOCEAN_TOKEN=dop_fake
+API_LLM_PROVIDER=google_gemini
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+API_LLM_API_KEY=fake-ai-studio
+API_LLM_BASE_URL=
+API_LLM_REASONING_EFFORT=
+API_OPEN_AI_API_KEY=
+--- render stderr:
+--- rendered LLM lines:
+41:# API_LLM_PROVIDER reaches the VM along with the legacy OpenAI-named vars.
+42:env_set API_LLM_PROVIDER "google_gemini"
+43:env_set API_LLM_PROVIDER_MODEL "gemini-3.5-flash"
+44:env_set API_LLM_API_KEY "fake-ai-studio"
+--- (a) stub env_set exit=0
+--- (a) .env LLM lines (stub):
+API_LLM_PROVIDER=google_gemini
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+API_LLM_API_KEY=fake-ai-studio
+--- (b) real env_set (prefill=1) exit=0
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER=google_gemini
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+API_LLM_API_KEY=fake-ai-studio
+API_LLM_BASE_URL=
+API_OPEN_AI_API_KEY=
+API_OPENAI_FORCE_BASE_URL=
+
+################ tree=m config=legacy prefill=0
+--- config:
+DIGITALOCEAN_TOKEN=dop_fake
+API_OPEN_AI_API_KEY=fake-legacy-key
+API_OPENAI_FORCE_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+--- render stderr:
+--- rendered LLM lines:
+41:# API_LLM_PROVIDER reaches the VM along with the legacy OpenAI-named vars.
+42:env_set API_LLM_PROVIDER_MODEL "gemini-3.5-flash"
+43:env_set API_OPEN_AI_API_KEY "fake-legacy-key"
+44:env_set API_OPENAI_FORCE_BASE_URL "https://generativelanguage.googleapis.com/v1beta/openai/"
+--- (a) stub env_set exit=0
+--- (a) .env LLM lines (stub):
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+API_OPEN_AI_API_KEY=fake-legacy-key
+API_OPENAI_FORCE_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+--- (b) real env_set (prefill=0) exit=0
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+API_OPEN_AI_API_KEY=fake-legacy-key
+API_OPENAI_FORCE_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+
+################ tree=m config=legacy prefill=1
+--- config:
+DIGITALOCEAN_TOKEN=dop_fake
+API_OPEN_AI_API_KEY=fake-legacy-key
+API_OPENAI_FORCE_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+--- render stderr:
+--- rendered LLM lines:
+41:# API_LLM_PROVIDER reaches the VM along with the legacy OpenAI-named vars.
+42:env_set API_LLM_PROVIDER_MODEL "gemini-3.5-flash"
+43:env_set API_OPEN_AI_API_KEY "fake-legacy-key"
+44:env_set API_OPENAI_FORCE_BASE_URL "https://generativelanguage.googleapis.com/v1beta/openai/"
+--- (a) stub env_set exit=0
+--- (a) .env LLM lines (stub):
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+API_OPEN_AI_API_KEY=fake-legacy-key
+API_OPENAI_FORCE_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+--- (b) real env_set (prefill=1) exit=0
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER=
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+API_LLM_API_KEY=
+API_LLM_BASE_URL=
+API_OPEN_AI_API_KEY=fake-legacy-key
+API_OPENAI_FORCE_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+
+################ tree=m config=nasty prefill=0
+--- config:
+DIGITALOCEAN_TOKEN=dop_fake
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY='ab$cd"ef'
+API_LLM_BASE_URL='https://x.example/v1?a=1&b=2'
+API_OPEN_AI_API_KEY='sk tick`x`y z'
+--- render stderr:
+--- rendered LLM lines:
+41:# API_LLM_PROVIDER reaches the VM along with the legacy OpenAI-named vars.
+42:env_set API_LLM_PROVIDER "openai_compatible"
+43:env_set API_LLM_PROVIDER_MODEL "kimi-k2.6"
+44:env_set API_LLM_API_KEY "ab$cd"ef"
+45:env_set API_LLM_BASE_URL "https://x.example/v1?a=1&b=2"
+46:env_set API_OPEN_AI_API_KEY "sk tick`x`y z"
+--- (a) stub env_set exit=2
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-m-nasty-0/run_stub.sh: line 40: unexpected EOF while looking for matching `"'
+--- (a) .env LLM lines (stub):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+--- (b) real env_set (prefill=0) exit=2
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-m-nasty-0/run_real.sh: line 46: unexpected EOF while looking for matching `"'
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+
+################ tree=m config=nasty prefill=1
+--- config:
+DIGITALOCEAN_TOKEN=dop_fake
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY='ab$cd"ef'
+API_LLM_BASE_URL='https://x.example/v1?a=1&b=2'
+API_OPEN_AI_API_KEY='sk tick`x`y z'
+--- render stderr:
+--- rendered LLM lines:
+41:# API_LLM_PROVIDER reaches the VM along with the legacy OpenAI-named vars.
+42:env_set API_LLM_PROVIDER "openai_compatible"
+43:env_set API_LLM_PROVIDER_MODEL "kimi-k2.6"
+44:env_set API_LLM_API_KEY "ab$cd"ef"
+45:env_set API_LLM_BASE_URL "https://x.example/v1?a=1&b=2"
+46:env_set API_OPEN_AI_API_KEY "sk tick`x`y z"
+--- (a) stub env_set exit=2
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-m-nasty-1/run_stub.sh: line 40: unexpected EOF while looking for matching `"'
+--- (a) .env LLM lines (stub):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+--- (b) real env_set (prefill=1) exit=2
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-m-nasty-1/run_real.sh: line 46: unexpected EOF while looking for matching `"'
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=
+API_LLM_BASE_URL=
+API_OPEN_AI_API_KEY=
+API_OPENAI_FORCE_BASE_URL=
+
+################ tree=m config=nasty_legacy prefill=0
+--- config:
+DIGITALOCEAN_TOKEN=dop_fake
+API_OPEN_AI_API_KEY='ab$cd"ef'
+API_OPENAI_FORCE_BASE_URL='https://x.example/v1?a=1&b=2'
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+--- render stderr:
+--- rendered LLM lines:
+41:# API_LLM_PROVIDER reaches the VM along with the legacy OpenAI-named vars.
+42:env_set API_LLM_PROVIDER_MODEL "kimi-k2.6"
+43:env_set API_OPEN_AI_API_KEY "ab$cd"ef"
+44:env_set API_OPENAI_FORCE_BASE_URL "https://x.example/v1?a=1&b=2"
+--- (a) stub env_set exit=2
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-m-nasty_legacy-0/run_stub.sh: line 38: unexpected EOF while looking for matching `"'
+--- (a) .env LLM lines (stub):
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+--- (b) real env_set (prefill=0) exit=2
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-m-nasty_legacy-0/run_real.sh: line 44: unexpected EOF while looking for matching `"'
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+
+################ tree=m config=nasty_legacy prefill=1
+--- config:
+DIGITALOCEAN_TOKEN=dop_fake
+API_OPEN_AI_API_KEY='ab$cd"ef'
+API_OPENAI_FORCE_BASE_URL='https://x.example/v1?a=1&b=2'
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+--- render stderr:
+--- rendered LLM lines:
+41:# API_LLM_PROVIDER reaches the VM along with the legacy OpenAI-named vars.
+42:env_set API_LLM_PROVIDER_MODEL "kimi-k2.6"
+43:env_set API_OPEN_AI_API_KEY "ab$cd"ef"
+44:env_set API_OPENAI_FORCE_BASE_URL "https://x.example/v1?a=1&b=2"
+--- (a) stub env_set exit=2
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-m-nasty_legacy-1/run_stub.sh: line 38: unexpected EOF while looking for matching `"'
+--- (a) .env LLM lines (stub):
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+--- (b) real env_set (prefill=1) exit=2
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-m-nasty_legacy-1/run_real.sh: line 44: unexpected EOF while looking for matching `"'
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER=
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=
+API_LLM_BASE_URL=
+API_OPEN_AI_API_KEY=
+API_OPENAI_FORCE_BASE_URL=
+
+################ tree=p config=gem prefill=0
+--- config:
+DIGITALOCEAN_TOKEN=dop_fake
+API_LLM_PROVIDER=google_gemini
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+API_LLM_API_KEY=fake-ai-studio
+API_LLM_BASE_URL=
+API_LLM_REASONING_EFFORT=
+API_OPEN_AI_API_KEY=
+--- render stderr:
+--- rendered LLM lines:
+41:    env_set API_OPEN_AI_API_KEY ""
+44:    env_set API_OPENAI_FORCE_BASE_URL ""
+47:    env_set API_LLM_PROVIDER_MODEL "gemini-3.5-flash"
+--- (a) stub env_set exit=0
+--- (a) .env LLM lines (stub):
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+--- (b) real env_set (prefill=0) exit=0
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+
+################ tree=p config=gem prefill=1
+--- config:
+DIGITALOCEAN_TOKEN=dop_fake
+API_LLM_PROVIDER=google_gemini
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+API_LLM_API_KEY=fake-ai-studio
+API_LLM_BASE_URL=
+API_LLM_REASONING_EFFORT=
+API_OPEN_AI_API_KEY=
+--- render stderr:
+--- rendered LLM lines:
+41:    env_set API_OPEN_AI_API_KEY ""
+44:    env_set API_OPENAI_FORCE_BASE_URL ""
+47:    env_set API_LLM_PROVIDER_MODEL "gemini-3.5-flash"
+--- (a) stub env_set exit=0
+--- (a) .env LLM lines (stub):
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+--- (b) real env_set (prefill=1) exit=0
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER=
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+API_LLM_API_KEY=
+API_LLM_BASE_URL=
+API_OPEN_AI_API_KEY=
+API_OPENAI_FORCE_BASE_URL=
+
+################ tree=p config=legacy prefill=0
+--- config:
+DIGITALOCEAN_TOKEN=dop_fake
+API_OPEN_AI_API_KEY=fake-legacy-key
+API_OPENAI_FORCE_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+--- render stderr:
+--- rendered LLM lines:
+41:    env_set API_OPEN_AI_API_KEY "fake-legacy-key"
+44:    env_set API_OPENAI_FORCE_BASE_URL "https://generativelanguage.googleapis.com/v1beta/openai/"
+47:    env_set API_LLM_PROVIDER_MODEL "gemini-3.5-flash"
+--- (a) stub env_set exit=0
+--- (a) .env LLM lines (stub):
+API_OPEN_AI_API_KEY=fake-legacy-key
+API_OPENAI_FORCE_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+--- (b) real env_set (prefill=0) exit=0
+--- (b) .env LLM lines (real):
+API_OPEN_AI_API_KEY=fake-legacy-key
+API_OPENAI_FORCE_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+
+################ tree=p config=legacy prefill=1
+--- config:
+DIGITALOCEAN_TOKEN=dop_fake
+API_OPEN_AI_API_KEY=fake-legacy-key
+API_OPENAI_FORCE_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+--- render stderr:
+--- rendered LLM lines:
+41:    env_set API_OPEN_AI_API_KEY "fake-legacy-key"
+44:    env_set API_OPENAI_FORCE_BASE_URL "https://generativelanguage.googleapis.com/v1beta/openai/"
+47:    env_set API_LLM_PROVIDER_MODEL "gemini-3.5-flash"
+--- (a) stub env_set exit=0
+--- (a) .env LLM lines (stub):
+API_OPEN_AI_API_KEY=fake-legacy-key
+API_OPENAI_FORCE_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+--- (b) real env_set (prefill=1) exit=0
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER=
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+API_LLM_API_KEY=
+API_LLM_BASE_URL=
+API_OPEN_AI_API_KEY=fake-legacy-key
+API_OPENAI_FORCE_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+
+################ tree=p config=nasty prefill=0
+--- config:
+DIGITALOCEAN_TOKEN=dop_fake
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY='ab$cd"ef'
+API_LLM_BASE_URL='https://x.example/v1?a=1&b=2'
+API_OPEN_AI_API_KEY='sk tick`x`y z'
+--- render stderr:
+--- rendered LLM lines:
+41:    env_set API_OPEN_AI_API_KEY "sk tick`x`y z"
+44:    env_set API_OPENAI_FORCE_BASE_URL ""
+47:    env_set API_LLM_PROVIDER_MODEL "kimi-k2.6"
+--- (a) stub env_set exit=0
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-p-nasty-0/run_stub.sh: line 34: x: command not found
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-p-nasty-0/run_stub.sh: line 35: x: command not found
+--- (a) .env LLM lines (stub):
+API_OPEN_AI_API_KEY=sk ticky z
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+--- (b) real env_set (prefill=0) exit=0
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-p-nasty-0/run_real.sh: line 40: x: command not found
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-p-nasty-0/run_real.sh: line 41: x: command not found
+--- (b) .env LLM lines (real):
+API_OPEN_AI_API_KEY=sk ticky z
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+
+################ tree=p config=nasty prefill=1
+--- config:
+DIGITALOCEAN_TOKEN=dop_fake
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY='ab$cd"ef'
+API_LLM_BASE_URL='https://x.example/v1?a=1&b=2'
+API_OPEN_AI_API_KEY='sk tick`x`y z'
+--- render stderr:
+--- rendered LLM lines:
+41:    env_set API_OPEN_AI_API_KEY "sk tick`x`y z"
+44:    env_set API_OPENAI_FORCE_BASE_URL ""
+47:    env_set API_LLM_PROVIDER_MODEL "kimi-k2.6"
+--- (a) stub env_set exit=0
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-p-nasty-1/run_stub.sh: line 34: x: command not found
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-p-nasty-1/run_stub.sh: line 35: x: command not found
+--- (a) .env LLM lines (stub):
+API_OPEN_AI_API_KEY=sk ticky z
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+--- (b) real env_set (prefill=1) exit=0
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-p-nasty-1/run_real.sh: line 40: x: command not found
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-p-nasty-1/run_real.sh: line 41: x: command not found
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER=
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=
+API_LLM_BASE_URL=
+API_OPEN_AI_API_KEY=sk ticky z
+API_OPENAI_FORCE_BASE_URL=
+
+################ tree=p config=nasty_legacy prefill=0
+--- config:
+DIGITALOCEAN_TOKEN=dop_fake
+API_OPEN_AI_API_KEY='ab$cd"ef'
+API_OPENAI_FORCE_BASE_URL='https://x.example/v1?a=1&b=2'
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+--- render stderr:
+--- rendered LLM lines:
+41:    env_set API_OPEN_AI_API_KEY "ab$cd"ef"
+44:    env_set API_OPENAI_FORCE_BASE_URL "https://x.example/v1?a=1&b=2"
+47:    env_set API_LLM_PROVIDER_MODEL "kimi-k2.6"
+--- (a) stub env_set exit=2
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-p-nasty_legacy-0/run_stub.sh: line 36: syntax error near unexpected token `fi'
+--- (a) .env LLM lines (stub):
+--- (b) real env_set (prefill=0) exit=2
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-p-nasty_legacy-0/run_real.sh: line 42: syntax error near unexpected token `fi'
+--- (b) .env LLM lines (real):
+
+################ tree=p config=nasty_legacy prefill=1
+--- config:
+DIGITALOCEAN_TOKEN=dop_fake
+API_OPEN_AI_API_KEY='ab$cd"ef'
+API_OPENAI_FORCE_BASE_URL='https://x.example/v1?a=1&b=2'
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+--- render stderr:
+--- rendered LLM lines:
+41:    env_set API_OPEN_AI_API_KEY "ab$cd"ef"
+44:    env_set API_OPENAI_FORCE_BASE_URL "https://x.example/v1?a=1&b=2"
+47:    env_set API_LLM_PROVIDER_MODEL "kimi-k2.6"
+--- (a) stub env_set exit=2
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-p-nasty_legacy-1/run_stub.sh: line 36: syntax error near unexpected token `fi'
+--- (a) .env LLM lines (stub):
+--- (b) real env_set (prefill=1) exit=2
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-p-nasty_legacy-1/run_real.sh: line 42: syntax error near unexpected token `fi'
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER=
+API_LLM_PROVIDER_MODEL=
+API_LLM_API_KEY=
+API_LLM_BASE_URL=
+API_OPEN_AI_API_KEY=
+API_OPENAI_FORCE_BASE_URL=
+
+=============== ISOLATED SPECIAL CHARS (merge)
+
+################ tree=m config=iso_dollar_amp prefill=0
+--- config:
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY='ab$cd'
+API_LLM_BASE_URL='https://x.example/v1?a=1&b=2'
+--- render stderr:
+--- rendered LLM lines:
+41:# API_LLM_PROVIDER reaches the VM along with the legacy OpenAI-named vars.
+42:env_set API_LLM_PROVIDER "openai_compatible"
+43:env_set API_LLM_PROVIDER_MODEL "kimi-k2.6"
+44:env_set API_LLM_API_KEY "ab$cd"
+45:env_set API_LLM_BASE_URL "https://x.example/v1?a=1&b=2"
+--- (a) stub env_set exit=0
+--- (a) .env LLM lines (stub):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=ab
+API_LLM_BASE_URL=https://x.example/v1?a=1&b=2
+--- (b) real env_set (prefill=0) exit=0
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=ab
+API_LLM_BASE_URL=https://x.example/v1?a=1&b=2
+
+################ tree=m config=iso_dollar_amp prefill=1
+--- config:
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY='ab$cd'
+API_LLM_BASE_URL='https://x.example/v1?a=1&b=2'
+--- render stderr:
+--- rendered LLM lines:
+41:# API_LLM_PROVIDER reaches the VM along with the legacy OpenAI-named vars.
+42:env_set API_LLM_PROVIDER "openai_compatible"
+43:env_set API_LLM_PROVIDER_MODEL "kimi-k2.6"
+44:env_set API_LLM_API_KEY "ab$cd"
+45:env_set API_LLM_BASE_URL "https://x.example/v1?a=1&b=2"
+--- (a) stub env_set exit=0
+--- (a) .env LLM lines (stub):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=ab
+API_LLM_BASE_URL=https://x.example/v1?a=1&b=2
+--- (b) real env_set (prefill=1) exit=0
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=ab
+API_LLM_BASE_URL=https://x.example/v1?a=1API_LLM_BASE_URL=b=2
+API_OPEN_AI_API_KEY=
+API_OPENAI_FORCE_BASE_URL=
+
+################ tree=m config=iso_backtick prefill=0
+--- config:
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY='sk tick`x`y z'
+API_LLM_BASE_URL='https://x.example/v1'
+--- render stderr:
+--- rendered LLM lines:
+41:# API_LLM_PROVIDER reaches the VM along with the legacy OpenAI-named vars.
+42:env_set API_LLM_PROVIDER "openai_compatible"
+43:env_set API_LLM_PROVIDER_MODEL "kimi-k2.6"
+44:env_set API_LLM_API_KEY "sk tick`x`y z"
+45:env_set API_LLM_BASE_URL "https://x.example/v1"
+--- (a) stub env_set exit=0
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-m-iso_backtick-0/run_stub.sh: line 38: x: command not found
+--- (a) .env LLM lines (stub):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=sk ticky z
+API_LLM_BASE_URL=https://x.example/v1
+--- (b) real env_set (prefill=0) exit=0
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-m-iso_backtick-0/run_real.sh: line 44: x: command not found
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=sk ticky z
+API_LLM_BASE_URL=https://x.example/v1
+
+################ tree=m config=iso_backtick prefill=1
+--- config:
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY='sk tick`x`y z'
+API_LLM_BASE_URL='https://x.example/v1'
+--- render stderr:
+--- rendered LLM lines:
+41:# API_LLM_PROVIDER reaches the VM along with the legacy OpenAI-named vars.
+42:env_set API_LLM_PROVIDER "openai_compatible"
+43:env_set API_LLM_PROVIDER_MODEL "kimi-k2.6"
+44:env_set API_LLM_API_KEY "sk tick`x`y z"
+45:env_set API_LLM_BASE_URL "https://x.example/v1"
+--- (a) stub env_set exit=0
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-m-iso_backtick-1/run_stub.sh: line 38: x: command not found
+--- (a) .env LLM lines (stub):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=sk ticky z
+API_LLM_BASE_URL=https://x.example/v1
+--- (b) real env_set (prefill=1) exit=0
+~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/s21-m-iso_backtick-1/run_real.sh: line 44: x: command not found
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=sk ticky z
+API_LLM_BASE_URL=https://x.example/v1
+API_OPEN_AI_API_KEY=
+API_OPENAI_FORCE_BASE_URL=
+
+################ tree=m config=iso_pipe prefill=0
+--- config:
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY='k1|k2'
+API_LLM_BASE_URL='https://x.example/v1'
+--- render stderr:
+--- rendered LLM lines:
+41:# API_LLM_PROVIDER reaches the VM along with the legacy OpenAI-named vars.
+42:env_set API_LLM_PROVIDER "openai_compatible"
+43:env_set API_LLM_PROVIDER_MODEL "kimi-k2.6"
+44:env_set API_LLM_API_KEY "k1|k2"
+45:env_set API_LLM_BASE_URL "https://x.example/v1"
+--- (a) stub env_set exit=0
+--- (a) .env LLM lines (stub):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=k1|k2
+API_LLM_BASE_URL=https://x.example/v1
+--- (b) real env_set (prefill=0) exit=0
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=k1|k2
+API_LLM_BASE_URL=https://x.example/v1
+
+################ tree=m config=iso_pipe prefill=1
+--- config:
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY='k1|k2'
+API_LLM_BASE_URL='https://x.example/v1'
+--- render stderr:
+--- rendered LLM lines:
+41:# API_LLM_PROVIDER reaches the VM along with the legacy OpenAI-named vars.
+42:env_set API_LLM_PROVIDER "openai_compatible"
+43:env_set API_LLM_PROVIDER_MODEL "kimi-k2.6"
+44:env_set API_LLM_API_KEY "k1|k2"
+45:env_set API_LLM_BASE_URL "https://x.example/v1"
+--- (a) stub env_set exit=0
+--- (a) .env LLM lines (stub):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=k1|k2
+API_LLM_BASE_URL=https://x.example/v1
+--- (b) real env_set (prefill=1) exit=1
+sed: 1: "s|^API_LLM_API_KEY=.*|A ...": bad flag in substitute command: 'k'
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=
+API_LLM_BASE_URL=
+API_OPEN_AI_API_KEY=
+API_OPENAI_FORCE_BASE_URL=
+
+################ tree=m config=iso_backslash prefill=0
+--- config:
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY='ab\cd'
+API_LLM_BASE_URL='https://x.example/v1'
+--- render stderr:
+--- rendered LLM lines:
+41:# API_LLM_PROVIDER reaches the VM along with the legacy OpenAI-named vars.
+42:env_set API_LLM_PROVIDER "openai_compatible"
+43:env_set API_LLM_PROVIDER_MODEL "kimi-k2.6"
+44:env_set API_LLM_API_KEY "ab\cd"
+45:env_set API_LLM_BASE_URL "https://x.example/v1"
+--- (a) stub env_set exit=0
+--- (a) .env LLM lines (stub):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=ab\cd
+API_LLM_BASE_URL=https://x.example/v1
+--- (b) real env_set (prefill=0) exit=0
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=ab\cd
+API_LLM_BASE_URL=https://x.example/v1
+
+################ tree=m config=iso_backslash prefill=1
+--- config:
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY='ab\cd'
+API_LLM_BASE_URL='https://x.example/v1'
+--- render stderr:
+--- rendered LLM lines:
+41:# API_LLM_PROVIDER reaches the VM along with the legacy OpenAI-named vars.
+42:env_set API_LLM_PROVIDER "openai_compatible"
+43:env_set API_LLM_PROVIDER_MODEL "kimi-k2.6"
+44:env_set API_LLM_API_KEY "ab\cd"
+45:env_set API_LLM_BASE_URL "https://x.example/v1"
+--- (a) stub env_set exit=0
+--- (a) .env LLM lines (stub):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=ab\cd
+API_LLM_BASE_URL=https://x.example/v1
+--- (b) real env_set (prefill=1) exit=0
+--- (b) .env LLM lines (real):
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=abcd
+API_LLM_BASE_URL=https://x.example/v1
+API_OPEN_AI_API_KEY=
+API_OPENAI_FORCE_BASE_URL=
