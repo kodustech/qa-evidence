@@ -1,0 +1,724 @@
+[
+ {
+  "label": "baseline set global false",
+  "t": "2026-11-27T17:20:42Z",
+  "sent": {
+   "conversation": {
+    "implicitReplies": false
+   }
+  },
+  "repositoryId": null,
+  "status": 201,
+  "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "raw_before": {
+   "global": "<absent>",
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": true,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R1 implicitReplies=\"false\"",
+  "t": "2026-11-27T17:20:47Z",
+  "sent": {
+   "conversation": {
+    "implicitReplies": "false"
+   }
+  },
+  "repositoryId": null,
+  "status": 400,
+  "resp": {
+   "statusCode": 400,
+   "timestamp": "2026-11-27T17:20:48.183Z",
+   "path": "/parameters/create-or-update-code-review",
+   "error": "Bad Request",
+   "message": "configValue.conversation.implicitReplies must be a boolean value"
+  },
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R1 implicitReplies=\"no\"",
+  "t": "2026-11-27T17:20:51Z",
+  "sent": {
+   "conversation": {
+    "implicitReplies": "no"
+   }
+  },
+  "repositoryId": null,
+  "status": 400,
+  "resp": {
+   "statusCode": 400,
+   "timestamp": "2026-11-27T17:20:52.543Z",
+   "path": "/parameters/create-or-update-code-review",
+   "error": "Bad Request",
+   "message": "configValue.conversation.implicitReplies must be a boolean value"
+  },
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R1 implicitReplies=\"off\"",
+  "t": "2026-11-27T17:20:56Z",
+  "sent": {
+   "conversation": {
+    "implicitReplies": "off"
+   }
+  },
+  "repositoryId": null,
+  "status": 400,
+  "resp": {
+   "statusCode": 400,
+   "timestamp": "2026-11-27T17:20:56.594Z",
+   "path": "/parameters/create-or-update-code-review",
+   "error": "Bad Request",
+   "message": "configValue.conversation.implicitReplies must be a boolean value"
+  },
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R1 implicitReplies=\"true\"",
+  "t": "2026-11-27T17:21:00Z",
+  "sent": {
+   "conversation": {
+    "implicitReplies": "true"
+   }
+  },
+  "repositoryId": null,
+  "status": 400,
+  "resp": {
+   "statusCode": 400,
+   "timestamp": "2026-11-27T17:21:00.595Z",
+   "path": "/parameters/create-or-update-code-review",
+   "error": "Bad Request",
+   "message": "configValue.conversation.implicitReplies must be a boolean value"
+  },
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R1 implicitReplies=0",
+  "t": "2026-11-27T17:21:03Z",
+  "sent": {
+   "conversation": {
+    "implicitReplies": 0
+   }
+  },
+  "repositoryId": null,
+  "status": 400,
+  "resp": {
+   "statusCode": 400,
+   "timestamp": "2026-11-27T17:21:04.431Z",
+   "path": "/parameters/create-or-update-code-review",
+   "error": "Bad Request",
+   "message": "configValue.conversation.implicitReplies must be a boolean value"
+  },
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R1 implicitReplies=1",
+  "t": "2026-11-27T17:21:08Z",
+  "sent": {
+   "conversation": {
+    "implicitReplies": 1
+   }
+  },
+  "repositoryId": null,
+  "status": 400,
+  "resp": {
+   "statusCode": 400,
+   "timestamp": "2026-11-27T17:21:08.682Z",
+   "path": "/parameters/create-or-update-code-review",
+   "error": "Bad Request",
+   "message": "configValue.conversation.implicitReplies must be a boolean value"
+  },
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R1 implicitReplies=null",
+  "t": "2026-11-27T17:21:12Z",
+  "sent": {
+   "conversation": {
+    "implicitReplies": null
+   }
+  },
+  "repositoryId": null,
+  "status": 400,
+  "resp": {
+   "statusCode": 400,
+   "timestamp": "2026-11-27T17:21:12.496Z",
+   "path": "/parameters/create-or-update-code-review",
+   "error": "Bad Request",
+   "message": "configValue.conversation.implicitReplies must be a boolean value"
+  },
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R1 implicitReplies=[false]",
+  "t": "2026-11-27T17:21:15Z",
+  "sent": {
+   "conversation": {
+    "implicitReplies": [
+     false
+    ]
+   }
+  },
+  "repositoryId": null,
+  "status": 400,
+  "resp": {
+   "statusCode": 400,
+   "timestamp": "2026-11-27T17:21:16.481Z",
+   "path": "/parameters/create-or-update-code-review",
+   "error": "Bad Request",
+   "message": "configValue.conversation.implicitReplies must be a boolean value"
+  },
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R1 implicitReplies={}",
+  "t": "2026-11-27T17:21:19Z",
+  "sent": {
+   "conversation": {
+    "implicitReplies": {}
+   }
+  },
+  "repositoryId": null,
+  "status": 400,
+  "resp": {
+   "statusCode": 400,
+   "timestamp": "2026-11-27T17:21:20.288Z",
+   "path": "/parameters/create-or-update-code-review",
+   "error": "Bad Request",
+   "message": "configValue.conversation.implicitReplies must be a boolean value"
+  },
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R1 rerun implicitReplies=\"false\"",
+  "t": "2026-11-27T17:21:24Z",
+  "sent": {
+   "conversation": {
+    "implicitReplies": "false"
+   }
+  },
+  "repositoryId": null,
+  "status": 400,
+  "resp": {
+   "statusCode": 400,
+   "timestamp": "2026-11-27T17:21:25.063Z",
+   "path": "/parameters/create-or-update-code-review",
+   "error": "Bad Request",
+   "message": "configValue.conversation.implicitReplies must be a boolean value"
+  },
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R1 rerun implicitReplies=\"no\"",
+  "t": "2026-11-27T17:21:28Z",
+  "sent": {
+   "conversation": {
+    "implicitReplies": "no"
+   }
+  },
+  "repositoryId": null,
+  "status": 400,
+  "resp": {
+   "statusCode": 400,
+   "timestamp": "2026-11-27T17:21:28.893Z",
+   "path": "/parameters/create-or-update-code-review",
+   "error": "Bad Request",
+   "message": "configValue.conversation.implicitReplies must be a boolean value"
+  },
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R1 rerun implicitReplies=\"off\"",
+  "t": "2026-11-27T17:21:32Z",
+  "sent": {
+   "conversation": {
+    "implicitReplies": "off"
+   }
+  },
+  "repositoryId": null,
+  "status": 400,
+  "resp": {
+   "statusCode": 400,
+   "timestamp": "2026-11-27T17:21:32.842Z",
+   "path": "/parameters/create-or-update-code-review",
+   "error": "Bad Request",
+   "message": "configValue.conversation.implicitReplies must be a boolean value"
+  },
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ }
+]
