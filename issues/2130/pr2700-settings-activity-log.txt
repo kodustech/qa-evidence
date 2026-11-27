@@ -1,0 +1,15 @@
+Mongo codeReviewSettingsLog (the /user-logs activity log) for the two slot-a orgs from 20:20Z, read-only, 2026-11-27. Account e-mails masked. Note: BYOK edits to non-default models (e.g. a reasoningEffort on the MiniMax test model) are not recorded by this log.
+
+## org jr-claude-github
+2026-11-27T20:27:32.621Z create: User <qa-account> created "qa2700 grade values must be validated QA2700MARK"
+2026-11-27T20:40:02.291Z edit: User <qa-account> changed Base URL in BYOK Main from https://litellm.kodus.io/v1 to https://dealtime-prints-inquiry-soonest.trycloudflare.com/a/v1 || User <qa-account> updated the API Key in BYOK Main configuration
+2026-11-27T20:54:37.534Z edit: User <qa-account> added BYOK Fallback configuration (provider: openai_compatible, model: opencode_go/deepseek-v4.1-flash)
+2026-11-27T21:46:11.234Z edit: User <qa-account> changed Pull Request Approval from disabled to enabled
+2026-11-27T21:49:59.197Z edit: User <qa-account> changed Base URL in BYOK Main from https://kodus-qa-2700-unreachable.invalid/v1?api_key=fake123 to https://litellm.kodus.io/v1 || User <qa-account> updated the API Key in BYOK Main configuration
+2026-11-27T21:50:05.783Z edit: User <qa-account> changed Pull Request Approval from enabled to disabled
+2026-11-27T21:50:06.409Z delete: User <qa-account> deleted "qa2700 grade values must be validated QA2700MARK"
+
+## org jr-claude-bitbucket
+2026-11-27T20:28:52.541Z edit: User <qa-account> changed Provider in BYOK Main from openai_compatible to google_gemini || User <qa-account> changed Model in BYOK Main from opencode_go/deepseek-v4.1-flash to gemini-3.8-flash || User <qa-account> changed Base URL in BYOK Main from https://litellm.kodus.io/v1 to https://dealtime-prints-inquiry-soonest.trycloudflare.com/b/v1beta || User <qa-account> changed Reasoning Effort in BYOK Main from low to not set || User <qa-account> updated the API Key in BYOK Main configuration
+2026-11-27T20:40:24.850Z edit: User <qa-account> added BYOK Fallback configuration (provider: openai_compatible, model: opencode_go/deepseek-v4.1-flash)
+2026-11-27T21:50:03.164Z edit: User <qa-account> changed Provider in BYOK Main from google_gemini to openai_compatible || User <qa-account> changed Model in BYOK Main from gemini-3.8-flash to opencode_go/deepseek-v4.1-flash || User <qa-account> changed Base URL in BYOK Main from https://dealtime-prints-inquiry-soonest.trycloudflare.com/b/v1beta to https://litellm.kodus.io/v1 || User <qa-account> changed Reasoning Effort in BYOK Main from not set to low || User <qa-account> updated the API Key in BYOK Main configuration || User <qa-account> removed BYOK Fallback configuration
