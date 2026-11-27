@@ -31,14 +31,12 @@
    }
   }
  ],
- "langfuse_total": 0,
- "classifier": [],
- "conversation_spans": [],
  "claim": [
   [
    "PROCESSED",
    "1",
    "2026-11-27 17:52:26.087"
   ]
- ]
+ ],
+ "note": "Langfuse fields removed: the configured Langfuse project is not the QA one. Proof is the log lines and the claim row."
 }
