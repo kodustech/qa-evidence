@@ -1,0 +1,109 @@
+--- comment 913384794 2026-11-27T20:29:36.190988+00:00
+RAW:
+## Code Review Could Not Complete ⚠️
+
+The review failed before suggestions could be generated.
+
+**Reason:** Rate limit reached on the provider (google_gemini). Try again in a few minutes.
+
+google_gemini · gemini-3.8-flash · HTTP 429 · generalist
+
+Provider said: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. * Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash Please retr…
+
+After fixing the issue, comment `@kody review` on this PR to re-run the review.
+
+
+
+
+Kody Guide: Usage and Configuration
+
+
+Interacting with Kody
+
+- **Request a Review:** Ask Kody to review your PR manually by adding a comment with the `@kody start-review` command at the root of your PR.
+
+- **Validate Business Logic:** Ask Kody to validate your code against business rules by adding a comment with the `@kody -v business-logic` command.
+
+- **Provide Feedback:** Help Kody learn and improve by reacting to its comments with a 👍 for helpful suggestions or a 👎 if improvements are needed.
+
+
+
+
+Current Kody Configuration
+
+
+Review Options
+
+The following review options are enabled or disabled:
+
+| Options                        | Enabled |
+|-------------------------------|---------|
+| **Bug** | ✅ |
+| **Performance** | ✅ |
+| **Security** | ✅ |
+| **Business Logic** | ✅ |
+
+
+
+**[Access your configuration settings here.](https://qa.web.kodus.io/settings/code-review/global/general)**
+
+
+
+
+<!-- kody-codereview-completed-1795811426596-sfb4rwdp9hq -->
+HTML:
+<h2 id="markdown-header-code-review-could-not-complete">Code Review Could Not Complete ⚠️</h2>
+<p>The review failed before suggestions could be generated.</p>
+<p><strong>Reason:</strong> Rate limit reached on the provider (google_gemini). Try again in a few minutes.</p>
+<p>google_gemini · gemini-3.8-flash · HTTP 429 · generalist</p>
+<p>Provider said: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: <a href="https://ai.google.dev/gemini-api/docs/rate-limits." rel="nofollow" class="ap-connect-link">https://ai.google.dev/gemini-api/docs/rate-limits.</a> To monitor your current usage, head to: <a href="https://ai.dev/rate-limit." rel="nofollow" class="ap-connect-link">https://ai.dev/rate-limit.</a> * Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: <a href="https://bitbucket.org/kodustech/claude-athena/commits/2000000" rel="nofollow" class="ap-connect-link">2000000</a>, model: gemini-3.8-flash Please retr…</p>
+<p>After fixing the issue, comment <code>@kody review</code> on this PR to re-run the review.</p>
+<p>Kody Guide: Usage and Configuration</p>
+<p>Interacting with Kody</p>
+<ul>
+<li>
+<p><strong>Request a Review:</strong> Ask Kody to review your PR manually by adding a comment with the <code>@kody start-review</code> command at the root of your PR.</p>
+</li>
+<li>
+<p><strong>Validate Business Logic:</strong> Ask Kody to validate your code against business rules by adding a comment with the <code>@kody -v business-logic</code> command.</p>
+</li>
+<li>
+<p><strong>Provide Feedback:</strong> Help Kody learn and improve by reacting to its comments with a 👍 for helpful suggestions or a 👎 if improvements are needed.</p>
+</li>
+</ul>
+<p>Current Kody Configuration</p>
+<p>Review Options</p>
+<p>The following review options are enabled or disabled:</p>
+<table>
+<thead>
+<tr>
+<th>Options</th>
+<th>Enabled</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bug</strong></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>Performance</strong></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>Security</strong></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>Business Logic</strong></td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p><strong><a data-is-external-link="true" href="https://qa.web.kodus.io/settings/code-review/global/general" rel="nofollow">Access your configuration settings here.</a></strong></p>
+<p>&lt;!-- kody-codereview-completed-1795811426596-sfb4rwdp9hq --&gt;</p>
+--- comment 913385003 2026-11-27T20:30:27.305821+00:00
+RAW:
+[😕](https://docs.kodus.io/how_to_use/en/code_review/flow#what-each-emoji-means)
+HTML:
+<p><a data-is-external-link="true" href="https://docs.kodus.io/how_to_use/en/code_review/flow#what-each-emoji-means" rel="nofollow">😕</a></p>
