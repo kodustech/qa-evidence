@@ -1,0 +1,109 @@
+{
+ "logs": [
+  {
+   "t": "2026-11-27T18:16:45.750Z",
+   "level": "info",
+   "component": "GitHubPullRequestHandler",
+   "message": "Code review job enqueued for asynchronous processing"
+  },
+  {
+   "t": "2026-11-27T18:16:46.482Z",
+   "level": "info",
+   "component": "GitHubPullRequestHandler",
+   "message": "Code review job enqueued for asynchronous processing"
+  },
+  {
+   "t": "2026-11-27T18:16:47.629Z",
+   "level": "info",
+   "component": "RunCodeReviewAutomationUseCase",
+   "message": "RunCodeReviewAutomationUseCase PR#27"
+  },
+  {
+   "t": "2026-11-27T18:16:48.398Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Starting pipeline: CodeReviewPipeline (ID: f4b792fe-324f-4028-95c1-d6d0afa7bca9)"
+  },
+  {
+   "t": "2026-11-27T18:16:48.504Z",
+   "level": "warn",
+   "component": "PermissionValidationService",
+   "message": "User not licensed"
+  },
+  {
+   "t": "2026-11-27T18:16:49.056Z",
+   "level": "info",
+   "component": "PermissionValidationService",
+   "message": "@@VALID PERMISSION@@ - Validating resource limits"
+  },
+  {
+   "t": "2026-11-27T18:16:49.071Z",
+   "level": "info",
+   "component": "PermissionValidationService",
+   "message": "@@VALID PERMISSION@@ - Resource limits validated"
+  },
+  {
+   "t": "2026-11-27T18:16:49.081Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses"
+  },
+  {
+   "t": "2026-11-27T18:16:50.851Z",
+   "level": "info",
+   "component": "SuggestionService",
+   "message": "Implementation check for PR#27: 2 decided, 0 raised, 0 unmeasured"
+  },
+  {
+   "t": "2026-11-27T18:16:51.177Z",
+   "level": "info",
+   "component": "NotificationService",
+   "message": "Notification emitted: review.skipped_no_license"
+  },
+  {
+   "t": "2026-11-27T18:16:51.186Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidatePrerequisitesStage' completed in 2779ms: f4b792fe-324f-4028-95c1-d6d0afa7bca9"
+  },
+  {
+   "t": "2026-11-27T18:16:51.187Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Pipeline 'CodeReviewPipeline' skipped due to SKIP status f4b792fe-324f-4028-95c1-d6d0afa7bca9"
+  },
+  {
+   "t": "2026-11-27T18:16:51.188Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Finished pipeline: CodeReviewPipeline (ID: f4b792fe-324f-4028-95c1-d6d0afa7bca9)"
+  },
+  {
+   "t": "2026-11-27T18:16:52.275Z",
+   "level": "info",
+   "component": "NotificationConsumer",
+   "message": "Processing notification: review.skipped_no_license"
+  },
+  {
+   "t": "2026-11-27T18:16:53.042Z",
+   "level": "info",
+   "component": "CodeReviewHandlerService",
+   "message": "Review skipped for PR#27 - notification already handled"
+  },
+  {
+   "t": "2026-11-27T18:16:53.054Z",
+   "level": "info",
+   "component": "AutomationCodeReviewService",
+   "message": "Successfully handled pull request for PR#27"
+  }
+ ],
+ "licenseRow(read only)": [
+  [
+   "active",
+   "teams_byok",
+   "2",
+   "0",
+   "2026-11-27 17:48:02.269924"
+  ]
+ ]
+}
