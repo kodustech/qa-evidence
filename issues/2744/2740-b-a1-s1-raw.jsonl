@@ -1,0 +1,22 @@
+{"side":"parent","shape":"diffNoBoundary","via":"fn","chars":20000019,"lines":154701,"ms":136,"msPerMB":6.8,"eldMaxMs":144,"outLen":20000019,"slow":[]}
+{"side":"merge","shape":"diffNoBoundary","via":"fn","chars":20000019,"lines":154701,"ms":141,"msPerMB":7.04,"eldMaxMs":149,"outLen":20000019,"slow":[]}
+{"side":"parent","shape":"diffDates","via":"fn","chars":20000051,"lines":180556,"ms":40,"msPerMB":2,"eldMaxMs":48,"outLen":20000051,"slow":[]}
+{"side":"merge","shape":"diffDates","via":"fn","chars":20000051,"lines":180556,"ms":42,"msPerMB":2.08,"eldMaxMs":52,"outLen":20000051,"slow":[]}
+{"side":"parent","shape":"grepPath","via":"fn","chars":20000058,"lines":145022,"ms":54,"msPerMB":2.69,"eldMaxMs":62,"outLen":20000058,"slow":[]}
+{"side":"merge","shape":"grepPath","via":"fn","chars":20000058,"lines":145022,"ms":59,"msPerMB":2.93,"eldMaxMs":67,"outLen":20000058,"slow":[]}
+{"side":"parent","shape":"grepLongDir","via":"fn","chars":20000431,"lines":21428,"ms":78,"msPerMB":3.92,"eldMaxMs":86,"outLen":20000431,"slow":[]}
+{"side":"merge","shape":"grepLongDir","via":"fn","chars":20000431,"lines":21428,"ms":77,"msPerMB":3.85,"eldMaxMs":87,"outLen":20000431,"slow":[]}
+{"side":"parent","shape":"svg","via":"fn","chars":20000001,"lines":159612,"ms":148,"msPerMB":7.38,"eldMaxMs":155,"outLen":20000001,"slow":[]}
+{"side":"merge","shape":"svg","via":"fn","chars":20000001,"lines":159612,"ms":169,"msPerMB":8.43,"eldMaxMs":177,"outLen":20000001,"slow":[]}
+{"side":"parent","shape":"gitLogHeader","via":"fn","chars":20000017,"lines":274934,"ms":241,"msPerMB":12.03,"eldMaxMs":250,"outLen":20000017,"slow":[]}
+{"side":"merge","shape":"gitLogHeader","via":"fn","chars":20000017,"lines":274934,"ms":223,"msPerMB":11.13,"eldMaxMs":232,"outLen":20000017,"slow":[]}
+{"side":"parent","shape":"svgLong","via":"fn","chars":20007711,"lines":2491,"ms":250,"msPerMB":12.51,"eldMaxMs":258,"outLen":20007711,"slow":[]}
+{"side":"merge","shape":"svgLong","via":"fn","chars":20007711,"lines":2491,"ms":256,"msPerMB":12.82,"eldMaxMs":264,"outLen":20007711,"slow":[]}
+{"side":"parent","shape":"numbersLong","via":"fn","chars":20004494,"lines":2499,"ms":443,"msPerMB":22.14,"eldMaxMs":451,"outLen":20004494,"slow":[]}
+{"side":"merge","shape":"numbersLong","via":"fn","chars":20004494,"lines":2499,"ms":82,"msPerMB":4.1,"eldMaxMs":90,"outLen":20004494,"slow":[]}
+{"side":"parent","shape":"timecodes","via":"fn","chars":20004479,"lines":3330,"ms":313,"msPerMB":15.66,"eldMaxMs":321,"outLen":20004479,"slow":[]}
+{"side":"merge","shape":"timecodes","via":"fn","chars":20004479,"lines":3330,"ms":74,"msPerMB":3.69,"eldMaxMs":84,"outLen":20004479,"slow":[]}
+{"side":"parent","shape":"numbersLong","via":"tool","chars":424000834,"lines":52967,"ms":11132,"msPerMB":26.26,"eldMaxMs":11140,"outLen":64060,"slow":[{"message":"[SLOW-SYNC] conversation tool output (secret filter, line cut) held the event loop 11128ms","metadata":{"label":"conversation tool output (secret filter, line cut)","durationMs":11128,"tool":"exec"}}]}
+{"side":"merge","shape":"numbersLong","via":"tool","chars":424000834,"lines":52967,"ms":16,"msPerMB":0.04,"eldMaxMs":24,"outLen":64000,"slow":[]}
+{"side":"parent","shape":"gitLogHeader","via":"tool","chars":424000072,"lines":5709919,"ms":4871,"msPerMB":11.49,"eldMaxMs":4903,"outLen":64060,"slow":[{"message":"[SLOW-SYNC] conversation tool output (secret filter, line cut) held the event loop 4868ms","metadata":{"label":"conversation tool output (secret filter, line cut)","durationMs":4868,"tool":"exec"}}]}
+{"side":"merge","shape":"gitLogHeader","via":"tool","chars":424000072,"lines":5709919,"ms":15,"msPerMB":0.04,"eldMaxMs":23,"outLen":64000,"slow":[]}
