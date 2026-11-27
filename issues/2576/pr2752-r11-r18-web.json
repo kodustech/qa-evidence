@@ -1,0 +1,94 @@
+[
+ {
+  "tag": "desktop",
+  "implicitLines": [
+   "User <email> changed Implicit Replies from enabled to disabled",
+   "User <email> changed Implicit Replies from disabled to enabled",
+   "User <email> changed Implicit Replies from enabled to disabled",
+   "User <email> changed Implicit Replies from disabled to enabled",
+   "User <email> changed Implicit Replies from enabled to disabled",
+   "User <email> changed Implicit Replies from disabled to enabled",
+   "User <email> changed Implicit Replies from enabled to disabled"
+  ],
+  "overflowCount": 0,
+  "docSW": 1280,
+  "docCW": 1280,
+  "before": "true",
+  "afterReload": "false",
+  "restored": "true",
+  "net": [
+   {
+    "err": 404,
+    "u": "/api/proxy/api/parameters/find-by-key?key=centralized_config&teamId=<id>"
+   },
+   {
+    "t": "2026-11-27T17:26:18.595Z",
+    "u": "/api/proxy/api/parameters/create-or-update-code-review",
+    "body": "{\"configValue\":{\"runOnDraft\":false},\"organizationAndTeamData\":{\"teamId\":\"0461d23a-e6ef-47a5-b804-33d815c5729d\"}}"
+   },
+   {
+    "t": "2026-11-27T17:26:18.789Z",
+    "status": 201
+   },
+   {
+    "err": 404,
+    "u": "/api/proxy/api/parameters/find-by-key?key=centralized_config&teamId=<id>"
+   },
+   {
+    "t": "2026-11-27T17:26:33.136Z",
+    "u": "/api/proxy/api/parameters/create-or-update-code-review",
+    "body": "{\"configValue\":{\"runOnDraft\":true},\"organizationAndTeamData\":{\"teamId\":\"0461d23a-e6ef-47a5-b804-33d815c5729d\"}}"
+   },
+   {
+    "t": "2026-11-27T17:26:33.338Z",
+    "status": 201
+   }
+  ]
+ },
+ {
+  "tag": "m390",
+  "implicitLines": [
+   "User <email> changed Implicit Replies from enabled to disabled",
+   "User <email> changed Implicit Replies from disabled to enabled",
+   "User <email> changed Implicit Replies from enabled to disabled",
+   "User <email> changed Implicit Replies from disabled to enabled",
+   "User <email> changed Implicit Replies from enabled to disabled",
+   "User <email> changed Implicit Replies from disabled to enabled",
+   "User <email> changed Implicit Replies from enabled to disabled"
+  ],
+  "overflowCount": 0,
+  "docSW": 390,
+  "docCW": 390,
+  "before": "true",
+  "afterReload": "false",
+  "restored": "true",
+  "net": [
+   {
+    "err": 404,
+    "u": "/api/proxy/api/parameters/find-by-key?key=centralized_config&teamId=<id>"
+   },
+   {
+    "t": "2026-11-27T17:26:56.950Z",
+    "u": "/api/proxy/api/parameters/create-or-update-code-review",
+    "body": "{\"configValue\":{\"runOnDraft\":false},\"organizationAndTeamData\":{\"teamId\":\"0461d23a-e6ef-47a5-b804-33d815c5729d\"}}"
+   },
+   {
+    "t": "2026-11-27T17:26:57.150Z",
+    "status": 201
+   },
+   {
+    "err": 404,
+    "u": "/api/proxy/api/parameters/find-by-key?key=centralized_config&teamId=<id>"
+   },
+   {
+    "t": "2026-11-27T17:27:12.913Z",
+    "u": "/api/proxy/api/parameters/create-or-update-code-review",
+    "body": "{\"configValue\":{\"runOnDraft\":true},\"organizationAndTeamData\":{\"teamId\":\"0461d23a-e6ef-47a5-b804-33d815c5729d\"}}"
+   },
+   {
+    "t": "2026-11-27T17:27:13.133Z",
+    "status": 201
+   }
+  ]
+ }
+]
