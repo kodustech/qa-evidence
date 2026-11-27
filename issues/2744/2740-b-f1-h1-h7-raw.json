@@ -1,0 +1,1369 @@
+{
+ "h1-merge-emoji.json": {
+  "side": "merge",
+  "case": "emoji",
+  "command": "cat emoji/edge.txt",
+  "wallMs": 117,
+  "capToAnswerMs": 13,
+  "eventLoopDelayMaxMs": 36,
+  "maxTimerGapMs": 17,
+  "heapUsedPeakDeltaMb": 11,
+  "rssPeakDeltaMb": 27,
+  "externalPeakDeltaMb": 19,
+  "rawExec": {
+   "stdoutLen": 1999999,
+   "stderrLen": 0,
+   "exitCode": -1,
+   "truncated": true,
+   "stdoutUtf8RoundTrip": true,
+   "lastCharCode": "61"
+  },
+  "toolAnswer": {
+   "stdoutLen": 2050,
+   "stdoutUtf8RoundTrip": true,
+   "lastStdoutLine": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "cut": {
+    "hiddenChars": {
+     "stdout": 999999
+    },
+    "hint": "Only the start of this output is shown. Narrow the call: a path, a pattern, --stat or | head."
+   },
+   "keys": [
+    "stdout",
+    "stderr",
+    "exitCode",
+    "truncated",
+    "cut"
+   ]
+  },
+  "callbackCharsReceived": 2031617,
+  "kills": 1,
+  "disconnects": 2,
+  "sandboxProcessAfterAnswer": {
+   "alive": false,
+   "sent": 2293760,
+   "produced": 2500003
+  },
+  "sandboxProcessAfter3s": {
+   "alive": false,
+   "sent": 2293760,
+   "produced": 2500003
+  },
+  "followupEchoMs": 15,
+  "followupEchoStdout": "ok\n",
+  "logs": [
+   {
+    "level": "warn",
+    "message": "[SANDBOX-EXEC] command stopped after 2000000 output characters",
+    "context": "SandboxLeaseManager",
+    "metadata": {
+     "organizationId": "org-harness",
+     "prKey": "harness#1",
+     "program": "cat",
+     "maxChars": 2000000
+    }
+   },
+   {
+    "level": "warn",
+    "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+    "context": "ConversationTools",
+    "metadata": {
+     "tool": "exec",
+     "field": "stdout",
+     "outputChars": 1999999,
+     "longestLine": 1000000,
+     "linesCut": 1,
+     "files": [],
+     "maxLine": 2000
+    }
+   }
+  ]
+ },
+ "h1-merge-envtoken.json": {
+  "side": "merge",
+  "case": "envtoken",
+  "command": "API_TOKEN=abc123 seq 1 3000000",
+  "wallMs": 172,
+  "capToAnswerMs": 81,
+  "eventLoopDelayMaxMs": 97,
+  "maxTimerGapMs": 71,
+  "heapUsedPeakDeltaMb": 67,
+  "rssPeakDeltaMb": 100,
+  "externalPeakDeltaMb": 1,
+  "rawExec": {
+   "stdoutLen": 1999996,
+   "stderrLen": 0,
+   "exitCode": -1,
+   "truncated": true
+  },
+  "toolAnswer": {
+   "stdoutLen": 64000,
+   "stdoutUtf8RoundTrip": true,
+   "lastStdoutLine": "1251",
+   "cut": {
+    "hiddenChars": {
+     "stdout": 1935996
+    },
+    "hint": "Only the start of this output is shown. Narrow the call: a path, a pattern, --stat or | head."
+   },
+   "keys": [
+    "stdout",
+    "stderr",
+    "exitCode",
+    "truncated",
+    "cut"
+   ]
+  },
+  "callbackCharsReceived": 2031619,
+  "kills": 1,
+  "disconnects": 2,
+  "sandboxProcessAfterAnswer": {
+   "alive": false,
+   "sent": 2162688,
+   "produced": 12255232
+  },
+  "sandboxProcessAfter3s": {
+   "alive": false,
+   "sent": 2162688,
+   "produced": 12255232
+  },
+  "followupEchoMs": 13,
+  "followupEchoStdout": "ok\n",
+  "logs": [
+   {
+    "level": "warn",
+    "message": "[SANDBOX-EXEC] command stopped after 2000000 output characters",
+    "context": "SandboxLeaseManager",
+    "metadata": {
+     "organizationId": "org-harness",
+     "prKey": "harness#1",
+     "program": "API_TOKEN=abc123",
+     "maxChars": 2000000
+    }
+   },
+   {
+    "level": "warn",
+    "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+    "context": "ConversationTools",
+    "metadata": {
+     "tool": "exec",
+     "field": "stdout",
+     "outputChars": 1999996,
+     "longestLine": 6,
+     "linesCut": 0,
+     "files": [],
+     "maxLine": 2000
+    }
+   }
+  ]
+ },
+ "h1-merge-gitshow-r1048576.json": {
+  "side": "merge",
+  "case": "gitshow",
+  "command": "git show <C_big>",
+  "wallMs": 1034,
+  "capToAnswerMs": 5,
+  "eventLoopDelayMaxMs": 33,
+  "maxTimerGapMs": 22,
+  "heapUsedPeakDeltaMb": 11,
+  "rssPeakDeltaMb": 0,
+  "externalPeakDeltaMb": 15,
+  "rawExec": {
+   "stdoutLen": 1999994,
+   "stderrLen": 0,
+   "exitCode": -1,
+   "truncated": true
+  },
+  "toolAnswer": {
+   "stdoutLen": 64000,
+   "stdoutUtf8RoundTrip": true,
+   "lastStdoutLine": "+{\"id\":419,\"studentId\":\"stu-18061\",\"classId\":\"cls-19\",\"date\":\"2026-06-28\",\"status\":\"late\",\"note\":\"auto-gen",
+   "cut": {
+    "hiddenChars": {
+     "stdout": 1935994
+    },
+    "hint": "Only the start of this output is shown. Narrow the call: a path, a pattern, --stat or | head."
+   },
+   "keys": [
+    "stdout",
+    "stderr",
+    "exitCode",
+    "truncated",
+    "cut"
+   ]
+  },
+  "callbackCharsReceived": 2031619,
+  "kills": 1,
+  "disconnects": 2,
+  "sandboxProcessAfterAnswer": {
+   "alive": false,
+   "sent": 2031616,
+   "produced": 31850496
+  },
+  "sandboxProcessAfter3s": {
+   "alive": false,
+   "sent": 2031616,
+   "produced": 31850496
+  },
+  "followupEchoMs": 15,
+  "followupEchoStdout": "ok\n",
+  "logs": [
+   {
+    "level": "warn",
+    "message": "[SANDBOX-EXEC] command stopped after 2000000 output characters",
+    "context": "SandboxLeaseManager",
+    "metadata": {
+     "organizationId": "org-harness",
+     "prKey": "harness#1",
+     "program": "git",
+     "maxChars": 2000000
+    }
+   },
+   {
+    "level": "warn",
+    "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+    "context": "ConversationTools",
+    "metadata": {
+     "tool": "exec",
+     "field": "stdout",
+     "outputChars": 1999994,
+     "longestLine": 155,
+     "linesCut": 0,
+     "files": [],
+     "maxLine": 2000
+    }
+   }
+  ]
+ },
+ "h1-merge-gitshow.json": {
+  "side": "merge",
+  "case": "gitshow",
+  "command": "git show <C_big>",
+  "wallMs": 2301,
+  "capToAnswerMs": 24,
+  "eventLoopDelayMaxMs": 126,
+  "maxTimerGapMs": 117,
+  "heapUsedPeakDeltaMb": 11,
+  "rssPeakDeltaMb": 2,
+  "externalPeakDeltaMb": 16,
+  "rawExec": {
+   "stdoutLen": 1999994,
+   "stderrLen": 0,
+   "exitCode": -1,
+   "truncated": true
+  },
+  "toolAnswer": {
+   "stdoutLen": 64000,
+   "stdoutUtf8RoundTrip": true,
+   "lastStdoutLine": "+{\"id\":419,\"studentId\":\"stu-18061\",\"classId\":\"cls-19\",\"date\":\"2026-06-28\",\"status\":\"late\",\"note\":\"auto-gen",
+   "cut": {
+    "hiddenChars": {
+     "stdout": 1935994
+    },
+    "hint": "Only the start of this output is shown. Narrow the call: a path, a pattern, --stat or | head."
+   },
+   "keys": [
+    "stdout",
+    "stderr",
+    "exitCode",
+    "truncated",
+    "cut"
+   ]
+  },
+  "callbackCharsReceived": 2031619,
+  "kills": 1,
+  "disconnects": 2,
+  "sandboxProcessAfterAnswer": {
+   "alive": false,
+   "sent": 2293760,
+   "produced": 33882112
+  },
+  "sandboxProcessAfter3s": {
+   "alive": false,
+   "sent": 2293760,
+   "produced": 33882112
+  },
+  "followupEchoMs": 16,
+  "followupEchoStdout": "ok\n",
+  "logs": [
+   {
+    "level": "warn",
+    "message": "[SANDBOX-EXEC] command stopped after 2000000 output characters",
+    "context": "SandboxLeaseManager",
+    "metadata": {
+     "organizationId": "org-harness",
+     "prKey": "harness#1",
+     "program": "git",
+     "maxChars": 2000000
+    }
+   },
+   {
+    "level": "warn",
+    "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+    "context": "ConversationTools",
+    "metadata": {
+     "tool": "exec",
+     "field": "stdout",
+     "outputChars": 1999994,
+     "longestLine": 155,
+     "linesCut": 0,
+     "files": [],
+     "maxLine": 2000
+    }
+   }
+  ]
+ },
+ "h1-merge-oneline.json": {
+  "side": "merge",
+  "case": "oneline",
+  "command": "cat oneline/one.txt",
+  "wallMs": 103,
+  "capToAnswerMs": 5,
+  "eventLoopDelayMaxMs": 21,
+  "maxTimerGapMs": 4,
+  "heapUsedPeakDeltaMb": 8,
+  "rssPeakDeltaMb": 20,
+  "externalPeakDeltaMb": 16,
+  "rawExec": {
+   "stdoutLen": 2000000,
+   "stderrLen": 0,
+   "exitCode": -1,
+   "truncated": true
+  },
+  "toolAnswer": {
+   "stdoutLen": 2050,
+   "stdoutUtf8RoundTrip": true,
+   "lastStdoutLine": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+   "cut": {
+    "hiddenChars": {
+     "stdout": 1000000
+    },
+    "hint": "Only the start of this output is shown. Narrow the call: a path, a pattern, --stat or | head."
+   },
+   "keys": [
+    "stdout",
+    "stderr",
+    "exitCode",
+    "truncated",
+    "cut"
+   ]
+  },
+  "callbackCharsReceived": 2031619,
+  "kills": 1,
+  "disconnects": 2,
+  "sandboxProcessAfterAnswer": {
+   "alive": false,
+   "sent": 2293760,
+   "produced": 5000000
+  },
+  "sandboxProcessAfter3s": {
+   "alive": false,
+   "sent": 2293760,
+   "produced": 5000000
+  },
+  "followupEchoMs": 18,
+  "followupEchoStdout": "ok\n",
+  "logs": [
+   {
+    "level": "warn",
+    "message": "[SANDBOX-EXEC] command stopped after 2000000 output characters",
+    "context": "SandboxLeaseManager",
+    "metadata": {
+     "organizationId": "org-harness",
+     "prKey": "harness#1",
+     "program": "cat",
+     "maxChars": 2000000
+    }
+   },
+   {
+    "level": "warn",
+    "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+    "context": "ConversationTools",
+    "metadata": {
+     "tool": "exec",
+     "field": "stdout",
+     "outputChars": 2000000,
+     "longestLine": 1000000,
+     "linesCut": 1,
+     "files": [],
+     "maxLine": 2000
+    }
+   }
+  ]
+ },
+ "h1-merge-seq.json": {
+  "side": "merge",
+  "case": "seq",
+  "command": "seq 1 60000000",
+  "wallMs": 162,
+  "capToAnswerMs": 74,
+  "eventLoopDelayMaxMs": 89,
+  "maxTimerGapMs": 61,
+  "heapUsedPeakDeltaMb": 67,
+  "rssPeakDeltaMb": 101,
+  "externalPeakDeltaMb": 1,
+  "rawExec": {
+   "stdoutLen": 1999996,
+   "stderrLen": 0,
+   "exitCode": -1,
+   "truncated": true
+  },
+  "toolAnswer": {
+   "stdoutLen": 64000,
+   "stdoutUtf8RoundTrip": true,
+   "lastStdoutLine": "1251",
+   "cut": {
+    "hiddenChars": {
+     "stdout": 1935996
+    },
+    "hint": "Only the start of this output is shown. Narrow the call: a path, a pattern, --stat or | head."
+   },
+   "keys": [
+    "stdout",
+    "stderr",
+    "exitCode",
+    "truncated",
+    "cut"
+   ]
+  },
+  "callbackCharsReceived": 2031619,
+  "kills": 1,
+  "disconnects": 2,
+  "sandboxProcessAfterAnswer": {
+   "alive": false,
+   "sent": 2293760,
+   "produced": 9961472
+  },
+  "sandboxProcessAfter3s": {
+   "alive": false,
+   "sent": 2293760,
+   "produced": 9961472
+  },
+  "followupEchoMs": 15,
+  "followupEchoStdout": "ok\n",
+  "logs": [
+   {
+    "level": "warn",
+    "message": "[SANDBOX-EXEC] command stopped after 2000000 output characters",
+    "context": "SandboxLeaseManager",
+    "metadata": {
+     "organizationId": "org-harness",
+     "prKey": "harness#1",
+     "program": "seq",
+     "maxChars": 2000000
+    }
+   },
+   {
+    "level": "warn",
+    "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+    "context": "ConversationTools",
+    "metadata": {
+     "tool": "exec",
+     "field": "stdout",
+     "outputChars": 1999996,
+     "longestLine": 6,
+     "linesCut": 0,
+     "files": [],
+     "maxLine": 2000
+    }
+   }
+  ]
+ },
+ "h1-merge-small.json": {
+  "side": "merge",
+  "case": "small",
+  "command": "git log --oneline -1",
+  "wallMs": 46,
+  "capToAnswerMs": null,
+  "eventLoopDelayMaxMs": 11,
+  "maxTimerGapMs": 0,
+  "heapUsedPeakDeltaMb": 0,
+  "rssPeakDeltaMb": 0,
+  "externalPeakDeltaMb": 0,
+  "rawExec": {
+   "stdoutLen": 3,
+   "stderrLen": 0,
+   "exitCode": 0
+  },
+  "toolAnswer": {
+   "stdoutLen": 34,
+   "stdoutUtf8RoundTrip": true,
+   "lastStdoutLine": "52e07d5 attendance export fixture",
+   "keys": [
+    "stdout",
+    "stderr",
+    "exitCode"
+   ]
+  },
+  "callbackCharsReceived": 37,
+  "kills": 0,
+  "disconnects": 2,
+  "sandboxProcessAfterAnswer": {
+   "alive": false,
+   "sent": 34,
+   "produced": 34
+  },
+  "sandboxProcessAfter3s": {
+   "alive": false,
+   "sent": 34,
+   "produced": 34
+  },
+  "followupEchoMs": 13,
+  "followupEchoStdout": "ok\n",
+  "logs": []
+ },
+ "h1-mutant-gitshow-r1048576.json": {
+  "side": "mutant",
+  "case": "gitshow",
+  "command": "git show <C_big>",
+  "wallMs": 6390,
+  "capToAnswerMs": 5391,
+  "eventLoopDelayMaxMs": 73,
+  "maxTimerGapMs": 57,
+  "heapUsedPeakDeltaMb": 65,
+  "rssPeakDeltaMb": 129,
+  "externalPeakDeltaMb": 62,
+  "rawExec": {
+   "stdoutLen": 1999994,
+   "stderrLen": 0,
+   "exitCode": -1,
+   "truncated": true
+  },
+  "toolAnswer": {
+   "stdoutLen": 64000,
+   "stdoutUtf8RoundTrip": true,
+   "lastStdoutLine": "+{\"id\":419,\"studentId\":\"stu-18061\",\"classId\":\"cls-19\",\"date\":\"2026-06-28\",\"status\":\"late\",\"note\":\"auto-gen",
+   "cut": {
+    "hiddenChars": {
+     "stdout": 1935994
+    },
+    "hint": "Only the start of this output is shown. Narrow the call: a path, a pattern, --stat or | head."
+   },
+   "keys": [
+    "stdout",
+    "stderr",
+    "exitCode",
+    "truncated",
+    "cut"
+   ]
+  },
+  "callbackCharsReceived": 31784963,
+  "kills": 1,
+  "disconnects": 2,
+  "sandboxProcessAfterAnswer": {
+   "alive": false,
+   "sent": 31784960,
+   "produced": 31784960
+  },
+  "sandboxProcessAfter3s": {
+   "alive": false,
+   "sent": 31784960,
+   "produced": 31784960
+  },
+  "followupEchoMs": 16,
+  "followupEchoStdout": "ok\n",
+  "logs": [
+   {
+    "level": "warn",
+    "message": "[SANDBOX-EXEC] command stopped after 2000000 output characters",
+    "context": "SandboxLeaseManager",
+    "metadata": {
+     "organizationId": "org-harness",
+     "prKey": "harness#1",
+     "program": "git",
+     "maxChars": 2000000
+    }
+   },
+   {
+    "level": "warn",
+    "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+    "context": "ConversationTools",
+    "metadata": {
+     "tool": "exec",
+     "field": "stdout",
+     "outputChars": 1999994,
+     "longestLine": 155,
+     "linesCut": 0,
+     "files": [],
+     "maxLine": 2000
+    }
+   }
+  ]
+ },
+ "h1-mutant-gitshow.json": {
+  "side": "mutant",
+  "case": "gitshow",
+  "command": "git show <C_big>",
+  "wallMs": 2333,
+  "capToAnswerMs": 1152,
+  "eventLoopDelayMaxMs": 49,
+  "maxTimerGapMs": 6,
+  "heapUsedPeakDeltaMb": 70,
+  "rssPeakDeltaMb": 158,
+  "externalPeakDeltaMb": 63,
+  "rawExec": {
+   "stdoutLen": 1999994,
+   "stderrLen": 0,
+   "exitCode": -1,
+   "truncated": true
+  },
+  "toolAnswer": {
+   "stdoutLen": 64000,
+   "stdoutUtf8RoundTrip": true,
+   "lastStdoutLine": "+{\"id\":419,\"studentId\":\"stu-18061\",\"classId\":\"cls-19\",\"date\":\"2026-06-28\",\"status\":\"late\",\"note\":\"auto-gen",
+   "cut": {
+    "hiddenChars": {
+     "stdout": 1935994
+    },
+    "hint": "Only the start of this output is shown. Narrow the call: a path, a pattern, --stat or | head."
+   },
+   "keys": [
+    "stdout",
+    "stderr",
+    "exitCode",
+    "truncated",
+    "cut"
+   ]
+  },
+  "callbackCharsReceived": 32964611,
+  "kills": 1,
+  "disconnects": 2,
+  "sandboxProcessAfterAnswer": {
+   "alive": false,
+   "sent": 32964608,
+   "produced": 32964608
+  },
+  "sandboxProcessAfter3s": {
+   "alive": false,
+   "sent": 32964608,
+   "produced": 32964608
+  },
+  "followupEchoMs": 14,
+  "followupEchoStdout": "ok\n",
+  "logs": [
+   {
+    "level": "warn",
+    "message": "[SANDBOX-EXEC] command stopped after 2000000 output characters",
+    "context": "SandboxLeaseManager",
+    "metadata": {
+     "organizationId": "org-harness",
+     "prKey": "harness#1",
+     "program": "git",
+     "maxChars": 2000000
+    }
+   },
+   {
+    "level": "warn",
+    "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+    "context": "ConversationTools",
+    "metadata": {
+     "tool": "exec",
+     "field": "stdout",
+     "outputChars": 1999994,
+     "longestLine": 155,
+     "linesCut": 0,
+     "files": [],
+     "maxLine": 2000
+    }
+   }
+  ]
+ },
+ "h1-mutant-seq.json": {
+  "side": "mutant",
+  "case": "seq",
+  "command": "seq 1 60000000",
+  "wallMs": 244,
+  "capToAnswerMs": 168,
+  "eventLoopDelayMaxMs": 100,
+  "maxTimerGapMs": 93,
+  "heapUsedPeakDeltaMb": 56,
+  "rssPeakDeltaMb": 123,
+  "externalPeakDeltaMb": 19,
+  "rawExec": {
+   "stdoutLen": 1999996,
+   "stderrLen": 0,
+   "exitCode": -1,
+   "truncated": true
+  },
+  "toolAnswer": {
+   "stdoutLen": 64000,
+   "stdoutUtf8RoundTrip": true,
+   "lastStdoutLine": "1251",
+   "cut": {
+    "hiddenChars": {
+     "stdout": 1935996
+    },
+    "hint": "Only the start of this output is shown. Narrow the call: a path, a pattern, --stat or | head."
+   },
+   "keys": [
+    "stdout",
+    "stderr",
+    "exitCode",
+    "truncated",
+    "cut"
+   ]
+  },
+  "callbackCharsReceived": 4259843,
+  "kills": 1,
+  "disconnects": 2,
+  "sandboxProcessAfterAnswer": {
+   "alive": false,
+   "sent": 4259840,
+   "produced": 4259840
+  },
+  "sandboxProcessAfter3s": {
+   "alive": false,
+   "sent": 4259840,
+   "produced": 4259840
+  },
+  "followupEchoMs": 13,
+  "followupEchoStdout": "ok\n",
+  "logs": [
+   {
+    "level": "warn",
+    "message": "[SANDBOX-EXEC] command stopped after 2000000 output characters",
+    "context": "SandboxLeaseManager",
+    "metadata": {
+     "organizationId": "org-harness",
+     "prKey": "harness#1",
+     "program": "seq",
+     "maxChars": 2000000
+    }
+   },
+   {
+    "level": "warn",
+    "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+    "context": "ConversationTools",
+    "metadata": {
+     "tool": "exec",
+     "field": "stdout",
+     "outputChars": 1999996,
+     "longestLine": 6,
+     "linesCut": 0,
+     "files": [],
+     "maxLine": 2000
+    }
+   }
+  ]
+ },
+ "h1-parent-emoji.json": {
+  "side": "parent",
+  "case": "emoji",
+  "command": "cat emoji/edge.txt",
+  "wallMs": 165,
+  "capToAnswerMs": null,
+  "eventLoopDelayMaxMs": 68,
+  "maxTimerGapMs": 66,
+  "heapUsedPeakDeltaMb": 16,
+  "rssPeakDeltaMb": 31,
+  "externalPeakDeltaMb": 19,
+  "rawExec": {
+   "stdoutLen": 2500001,
+   "stderrLen": 0,
+   "exitCode": 0
+  },
+  "toolAnswer": {
+   "stdoutLen": 2051,
+   "stdoutUtf8RoundTrip": true,
+   "lastStdoutLine": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "keys": [
+    "stdout",
+    "stderr",
+    "exitCode"
+   ]
+  },
+  "callbackCharsReceived": 0,
+  "kills": 0,
+  "disconnects": 2,
+  "sandboxProcessAfterAnswer": {
+   "alive": false,
+   "sent": 2500003,
+   "produced": 2500003
+  },
+  "sandboxProcessAfter3s": {
+   "alive": false,
+   "sent": 2500003,
+   "produced": 2500003
+  },
+  "followupEchoMs": 14,
+  "followupEchoStdout": "ok\n",
+  "logs": [
+   {
+    "level": "warn",
+    "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+    "context": "ConversationTools",
+    "metadata": {
+     "tool": "exec",
+     "field": "stdout",
+     "outputChars": 2500001,
+     "longestLine": 2500001,
+     "linesCut": 1,
+     "files": [],
+     "maxLine": 2000
+    }
+   }
+  ]
+ },
+ "h1-parent-envtoken.json": {
+  "side": "parent",
+  "case": "envtoken",
+  "command": "API_TOKEN=abc123 seq 1 3000000",
+  "wallMs": 2631,
+  "capToAnswerMs": null,
+  "eventLoopDelayMaxMs": 1578,
+  "maxTimerGapMs": 1572,
+  "heapUsedPeakDeltaMb": 378,
+  "rssPeakDeltaMb": 827,
+  "externalPeakDeltaMb": 44,
+  "rawExec": {
+   "stdoutLen": 30666660,
+   "stderrLen": 0,
+   "exitCode": 0
+  },
+  "toolAnswer": {
+   "stdoutLen": 64059,
+   "stdoutUtf8RoundTrip": true,
+   "lastStdoutLine": "... (30602660 more characters not shown \u2014 narrow the call)",
+   "keys": [
+    "stdout",
+    "stderr",
+    "exitCode"
+   ]
+  },
+  "callbackCharsReceived": 0,
+  "kills": 0,
+  "disconnects": 2,
+  "sandboxProcessAfterAnswer": {
+   "alive": false,
+   "sent": 30666660,
+   "produced": 30666660
+  },
+  "sandboxProcessAfter3s": {
+   "alive": false,
+   "sent": 30666660,
+   "produced": 30666660
+  },
+  "followupEchoMs": 18,
+  "followupEchoStdout": "ok\n",
+  "logs": [
+   {
+    "level": "warn",
+    "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+    "context": "ConversationTools",
+    "metadata": {
+     "tool": "exec",
+     "field": "stdout",
+     "outputChars": 30666660,
+     "longestLine": 11,
+     "linesCut": 0,
+     "files": [],
+     "maxLine": 2000
+    }
+   },
+   {
+    "level": "warn",
+    "message": "[SLOW-SYNC] conversation tool output (secret filter, line cut) held the event loop 1561ms",
+    "context": "SlowSync",
+    "metadata": {
+     "label": "conversation tool output (secret filter, line cut)",
+     "durationMs": 1561,
+     "tool": "exec"
+    }
+   }
+  ]
+ },
+ "h1-parent-gitshow.json": {
+  "side": "parent",
+  "case": "gitshow",
+  "command": "git show <C_big>",
+  "wallMs": 49704,
+  "capToAnswerMs": null,
+  "eventLoopDelayMaxMs": 31189,
+  "maxTimerGapMs": 31161,
+  "heapUsedPeakDeltaMb": 706,
+  "rssPeakDeltaMb": 1058,
+  "externalPeakDeltaMb": 67,
+  "rawExec": {
+   "stdoutLen": 447401933,
+   "stderrLen": 0,
+   "exitCode": 0
+  },
+  "toolAnswer": {
+   "stdoutLen": 64060,
+   "stdoutUtf8RoundTrip": true,
+   "lastStdoutLine": "... (447337933 more characters not shown \u2014 narrow the call)",
+   "keys": [
+    "stdout",
+    "stderr",
+    "exitCode"
+   ]
+  },
+  "callbackCharsReceived": 0,
+  "kills": 0,
+  "disconnects": 2,
+  "sandboxProcessAfterAnswer": {
+   "alive": false,
+   "sent": 447401933,
+   "produced": 447401933
+  },
+  "sandboxProcessAfter3s": {
+   "alive": false,
+   "sent": 447401933,
+   "produced": 447401933
+  },
+  "followupEchoMs": 23,
+  "followupEchoStdout": "ok\n",
+  "logs": [
+   {
+    "level": "warn",
+    "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+    "context": "ConversationTools",
+    "metadata": {
+     "tool": "exec",
+     "field": "stdout",
+     "outputChars": 447401933,
+     "longestLine": 161,
+     "linesCut": 0,
+     "files": [],
+     "maxLine": 2000
+    }
+   },
+   {
+    "level": "warn",
+    "message": "[SLOW-SYNC] conversation tool output (secret filter, line cut) held the event loop 1297ms",
+    "context": "SlowSync",
+    "metadata": {
+     "label": "conversation tool output (secret filter, line cut)",
+     "durationMs": 1297,
+     "tool": "exec"
+    }
+   }
+  ]
+ },
+ "h1-parent-oneline.json": {
+  "side": "parent",
+  "case": "oneline",
+  "command": "cat oneline/one.txt",
+  "wallMs": 225,
+  "capToAnswerMs": null,
+  "eventLoopDelayMaxMs": 36,
+  "maxTimerGapMs": 26,
+  "heapUsedPeakDeltaMb": 19,
+  "rssPeakDeltaMb": 50,
+  "externalPeakDeltaMb": 37,
+  "rawExec": {
+   "stdoutLen": 5000000,
+   "stderrLen": 0,
+   "exitCode": 0
+  },
+  "toolAnswer": {
+   "stdoutLen": 2051,
+   "stdoutUtf8RoundTrip": true,
+   "lastStdoutLine": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+   "keys": [
+    "stdout",
+    "stderr",
+    "exitCode"
+   ]
+  },
+  "callbackCharsReceived": 0,
+  "kills": 0,
+  "disconnects": 2,
+  "sandboxProcessAfterAnswer": {
+   "alive": false,
+   "sent": 5000000,
+   "produced": 5000000
+  },
+  "sandboxProcessAfter3s": {
+   "alive": false,
+   "sent": 5000000,
+   "produced": 5000000
+  },
+  "followupEchoMs": 14,
+  "followupEchoStdout": "ok\n",
+  "logs": [
+   {
+    "level": "warn",
+    "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+    "context": "ConversationTools",
+    "metadata": {
+     "tool": "exec",
+     "field": "stdout",
+     "outputChars": 5000000,
+     "longestLine": 5000000,
+     "linesCut": 1,
+     "files": [],
+     "maxLine": 2000
+    }
+   }
+  ]
+ },
+ "h1-parent-seq.json": {
+  "side": "parent",
+  "case": "seq",
+  "command": "seq 1 60000000",
+  "wallMs": 268933,
+  "capToAnswerMs": null,
+  "eventLoopDelayMaxMs": 250584,
+  "maxTimerGapMs": 250484,
+  "heapUsedPeakDeltaMb": 516,
+  "rssPeakDeltaMb": 434,
+  "externalPeakDeltaMb": 68,
+  "rawExec": {
+   "stdoutLen": 3,
+   "stderrLen": 0,
+   "exitCode": 0
+  },
+  "toolAnswer": null,
+  "error": "RangeError: Invalid string length\n    at <local>/kodus-ai/node_modules/e2b/dist/index.js:2374:31\n    at Generator.next (<anonymous>)\n    at resume (<local>/kodus-ai/node_modules/e2b/dist/index.js:874:16)\n    at <local>/kodus-ai/node_modules/e2b/dist/index.js:878:33\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+  "callbackCharsReceived": 0,
+  "kills": 0,
+  "disconnects": 2,
+  "sandboxProcessAfterAnswer": {
+   "alive": true,
+   "sent": 537067520,
+   "produced": 561053696
+  },
+  "sandboxProcessAfter3s": {
+   "alive": true,
+   "sent": 537067520,
+   "produced": 561053696
+  },
+  "followupEchoMs": 19,
+  "followupEchoStdout": "ok\n",
+  "logs": []
+ },
+ "h7-merge-nofd.json": {
+  "side": "merge",
+  "extraPath": "sbin-nofd",
+  "out": [
+   {
+    "case": "findFile(*.test.ts, many) fd missing",
+    "ms": 1086,
+    "answerLen": 1829,
+    "answerHead": "many/d12/attendance_report_component_long_name_04062.test.ts\nmany/d12/attendance_report_component_long_name_08962.test.ts\nmany/d12/attendance_report_component_l",
+    "answerTail": "ndance_report_component_long_name_43862.test.ts\nmany/d12/attendance_report_component_long_name_07212.test.ts\nmany/d12/attendance_report_component_long_name_26262.test.ts\nmany/d12/attendance_report_component_long_name_05462.test.ts",
+    "utf8ok": true,
+    "calls": [
+     {
+      "fn": "exec",
+      "arg": "find 'many' -type f -iname '*.test.ts'",
+      "stdoutLen": 1999945,
+      "stderrLen": 0,
+      "exitCode": -1,
+      "truncated": true
+     }
+    ]
+   }
+  ],
+  "logs": 1
+ },
+ "h7-merge.json": {
+  "side": "merge",
+  "extraPath": null,
+  "out": [
+   {
+    "case": "grep qaNeedle big3m (3M-char matching file)",
+    "ms": 126,
+    "answerLen": 1000085,
+    "answerHead": "big3m/match.ts:1:const qaNeedle = 1; // x\nbig3m/match.ts:2:const qaNeedle = 1; // x\nbig3m/match.ts:3:const qaNeedle = 1; // x\nbig3m/match.ts:4:const qaNeedle = ",
+    "answerTail": "8:const qaNeedle = 1; // x\nbig3m/match.ts:21979:const qaNeedle = 1; // x\nbig3m/match.ts:21980:const qaNeedle = 1; // x\n... (more matches hidden \u2014 narrow with a more specific regex, glob='*.ts', path=<subdir>, or excludeTests=true)",
+    "utf8ok": true,
+    "calls": [
+     {
+      "fn": "exec",
+      "arg": "rg -n -C 2 -e 'qaNeedle' -- 'big3m'",
+      "stdoutLen": 1999967,
+      "stderrLen": 0,
+      "exitCode": -1,
+      "truncated": true
+     }
+    ]
+   },
+   {
+    "case": "grep qaNeedle big3m namesOnly",
+    "ms": 13,
+    "answerLen": 14,
+    "answerHead": "big3m/match.ts",
+    "answerTail": "big3m/match.ts",
+    "utf8ok": true,
+    "calls": [
+     {
+      "fn": "exec",
+      "arg": "rg -l -e 'qaNeedle' -- 'big3m'",
+      "stdoutLen": 15,
+      "stderrLen": 0,
+      "exitCode": 0
+     }
+    ]
+   },
+   {
+    "case": "grep qaNeedle keysonly (secret-only head)",
+    "ms": 102,
+    "answerLen": 179,
+    "answerHead": "Matches were found, but the part of the output that was read only had matches in secret files, which are not shown. Narrow the search with a path, a glob or a m",
+    "answerTail": "Matches were found, but the part of the output that was read only had matches in secret files, which are not shown. Narrow the search with a path, a glob or a more specific regex.",
+    "utf8ok": true,
+    "calls": [
+     {
+      "fn": "exec",
+      "arg": "rg -n -C 2 -e 'qaNeedle' -- 'keysonly'",
+      "stdoutLen": 1999961,
+      "stderrLen": 0,
+      "exitCode": -1,
+      "truncated": true
+     }
+    ]
+   },
+   {
+    "case": "grep qaNeedle perm (stderr flood, empty stdout)",
+    "ms": 185,
+    "answerLen": 175,
+    "answerHead": "The search was stopped at the output limit before it printed any match, so whether anything matches is unknown. Narrow the search with a path, a glob or a more ",
+    "answerTail": "The search was stopped at the output limit before it printed any match, so whether anything matches is unknown. Narrow the search with a path, a glob or a more specific regex.",
+    "utf8ok": true,
+    "calls": [
+     {
+      "fn": "exec",
+      "arg": "rg -n -C 2 -e 'qaNeedle' -- 'perm'",
+      "stdoutLen": 0,
+      "stderrLen": 1999987,
+      "exitCode": -1,
+      "truncated": true
+     }
+    ]
+   },
+   {
+    "case": "findFile(*.test.ts, many) with fd",
+    "ms": 35,
+    "answerLen": 1829,
+    "answerHead": "many/d34/attendance_report_component_long_name_00084.test.ts\nmany/d34/attendance_report_component_long_name_01484.test.ts\nmany/d34/attendance_report_component_l",
+    "answerTail": "ndance_report_component_long_name_41684.test.ts\nmany/d34/attendance_report_component_long_name_46134.test.ts\nmany/d34/attendance_report_component_long_name_47534.test.ts\nmany/d34/attendance_report_component_long_name_47884.test.ts",
+    "utf8ok": true,
+    "calls": [
+     {
+      "fn": "exec",
+      "arg": "fd --glob --type f --max-results 30 -- '*.test.ts' 'many'",
+      "stdoutLen": 1830,
+      "stderrLen": 0,
+      "exitCode": 0
+     }
+    ]
+   },
+   {
+    "case": "linked grep qaNeedle big3m",
+    "ms": 100,
+    "answerLen": 1571515,
+    "answerHead": "[kodus-olimpo/linked-lib] big3m/match.ts:1:const qaNeedle = 1; // x\n[kodus-olimpo/linked-lib] big3m/match.ts:2:const qaNeedle = 1; // x\n[kodus-olimpo/linked-lib",
+    "answerTail": "const qaNeedle = 1; // x\n[kodus-olimpo/linked-lib] big3m/match.ts:21979:const qaNeedle = 1; // x\n[kodus-olimpo/linked-lib] big3m/match.ts:21980:const qaNeedle = 1; // x\n... (more matches hidden \u2014 narrow with a more specific regex)",
+    "utf8ok": true,
+    "calls": [
+     {
+      "fn": "exec",
+      "arg": "cd '/home/user/_linked/kodus-olimpo/linked-lib' && rg -n -C 2 -e 'qaNeedle' -- 'big3m'",
+      "stdoutLen": 1999967,
+      "stderrLen": 0,
+      "exitCode": -1,
+      "truncated": true
+     }
+    ]
+   },
+   {
+    "case": "linked listDir many depth 4 (40k files)",
+    "ms": 85,
+    "answerLen": 4016,
+    "answerHead": "[kodus-olimpo/linked-lib] <local>/h/f1/sbx/_linked/kodus-olimpo/linked-lib/many/d12/linked_attendance_comp",
+    "answerTail": "linked_attendance_component_with_a_long_name_14612.ts\n[kodus-olimpo/linked-lib] <local>/h/f1/sbx/_linked/kodus-olimpo/linked-lib/many/d12/linked_attendance_comp\n... (truncated)",
+    "utf8ok": true,
+    "calls": [
+     {
+      "fn": "exec",
+      "arg": "find '/home/user/_linked/kodus-olimpo/linked-lib/many' -maxdepth 4 -type f",
+      "stdoutLen": 1999967,
+      "stderrLen": 0,
+      "exitCode": -1,
+      "truncated": true
+     }
+    ]
+   },
+   {
+    "case": "astGrep pattern (5.3M chars of --json=stream)",
+    "ms": 135,
+    "answerLen": 3354,
+    "answerHead": "4500 matches for the pattern:\nsrc/generated/grades_0.service.ts:1:5\n  this.repo.save(grade0)\nsrc/generated/grades_1.service.ts:2:5\n  this.repo.save(grade1)\nsrc/",
+    "answerTail": "47.service.ts:48:5\n  this.repo.save(grade47)\nsrc/generated/grades_48.service.ts:49:5\n  this.repo.save(grade48)\nsrc/generated/grades_49.service.ts:50:5\n  this.repo.save(grade49)\n... 4450 more not shown; narrow the pattern or paths.",
+    "utf8ok": true,
+    "calls": [
+     {
+      "fn": "exec",
+      "arg": "'ast-grep' 'run' '--config=.kody-ast-grep-mwzif8og-l4rjzoam/sgconfig.yml' '--pattern=this.repo.save($A)' '--lang=typescript' '--json=stream'",
+      "stdoutLen": 1999853,
+      "stderrLen": 0,
+      "exitCode": -1,
+      "truncated": true
+     }
+    ]
+   }
+  ],
+  "logs": 6
+ },
+ "h7-parent-nofd.json": {
+  "side": "parent",
+  "extraPath": "sbin-nofd",
+  "out": [
+   {
+    "case": "findFile(*.test.ts, many) fd missing",
+    "ms": 270,
+    "answerLen": 1829,
+    "answerHead": "many/d12/attendance_report_component_long_name_04062.test.ts\nmany/d12/attendance_report_component_long_name_08962.test.ts\nmany/d12/attendance_report_component_l",
+    "answerTail": "ndance_report_component_long_name_43862.test.ts\nmany/d12/attendance_report_component_long_name_07212.test.ts\nmany/d12/attendance_report_component_long_name_26262.test.ts\nmany/d12/attendance_report_component_long_name_05462.test.ts",
+    "utf8ok": true,
+    "calls": [
+     {
+      "fn": "exec",
+      "arg": "find 'many' -type f -iname '*.test.ts'",
+      "stdoutLen": 3050000,
+      "stderrLen": 0,
+      "exitCode": 0
+     }
+    ]
+   }
+  ],
+  "logs": 0
+ },
+ "h7-parent.json": {
+  "side": "parent",
+  "extraPath": null,
+  "out": [
+   {
+    "case": "grep qaNeedle big3m (3M-char matching file)",
+    "ms": 318,
+    "answerLen": 5528894,
+    "answerHead": "big3m/match.ts:1:const qaNeedle = 1; // x\nbig3m/match.ts:2:const qaNeedle = 1; // x\nbig3m/match.ts:3:const qaNeedle = 1; // x\nbig3m/match.ts:4:const qaNeedle = ",
+    "answerTail": "m/match.ts:119996:const qaNeedle = 1; // x\nbig3m/match.ts:119997:const qaNeedle = 1; // x\nbig3m/match.ts:119998:const qaNeedle = 1; // x\nbig3m/match.ts:119999:const qaNeedle = 1; // x\nbig3m/match.ts:120000:const qaNeedle = 1; // x",
+    "utf8ok": true,
+    "calls": [
+     {
+      "fn": "exec",
+      "arg": "rg -n -C 2 -e 'qaNeedle' -- 'big3m'",
+      "stdoutLen": 5528895,
+      "stderrLen": 0,
+      "exitCode": 0
+     }
+    ]
+   },
+   {
+    "case": "grep qaNeedle big3m namesOnly",
+    "ms": 12,
+    "answerLen": 14,
+    "answerHead": "big3m/match.ts",
+    "answerTail": "big3m/match.ts",
+    "utf8ok": true,
+    "calls": [
+     {
+      "fn": "exec",
+      "arg": "rg -l -e 'qaNeedle' -- 'big3m'",
+      "stdoutLen": 15,
+      "stderrLen": 0,
+      "exitCode": 0
+     }
+    ]
+   },
+   {
+    "case": "grep qaNeedle keysonly (secret-only head)",
+    "ms": 331,
+    "answerLen": 17,
+    "answerHead": "No matches found.",
+    "answerTail": "No matches found.",
+    "utf8ok": true,
+    "calls": [
+     {
+      "fn": "exec",
+      "arg": "rg -n -C 2 -e 'qaNeedle' -- 'keysonly'",
+      "stdoutLen": 5938895,
+      "stderrLen": 0,
+      "exitCode": 0
+     }
+    ]
+   },
+   {
+    "case": "grep qaNeedle perm (stderr flood, empty stdout)",
+    "ms": 537,
+    "answerLen": 32,
+    "answerHead": "Error searching for \"qaNeedle\": ",
+    "answerTail": "Error searching for \"qaNeedle\": ",
+    "utf8ok": true,
+    "calls": []
+   },
+   {
+    "case": "findFile(*.test.ts, many) with fd",
+    "ms": 23,
+    "answerLen": 1829,
+    "answerHead": "many/d34/attendance_report_component_long_name_00084.test.ts\nmany/d34/attendance_report_component_long_name_01484.test.ts\nmany/d34/attendance_report_component_l",
+    "answerTail": "ndance_report_component_long_name_42634.test.ts\nmany/d34/attendance_report_component_long_name_44584.test.ts\nmany/d34/attendance_report_component_long_name_46134.test.ts\nmany/d34/attendance_report_component_long_name_47884.test.ts",
+    "utf8ok": true,
+    "calls": [
+     {
+      "fn": "exec",
+      "arg": "fd --glob --type f --max-results 30 -- '*.test.ts' 'many'",
+      "stdoutLen": 1830,
+      "stderrLen": 0,
+      "exitCode": 0
+     }
+    ]
+   },
+   {
+    "case": "linked grep qaNeedle big3m",
+    "ms": 295,
+    "answerLen": 8648894,
+    "answerHead": "[kodus-olimpo/linked-lib] big3m/match.ts:1:const qaNeedle = 1; // x\n[kodus-olimpo/linked-lib] big3m/match.ts:2:const qaNeedle = 1; // x\n[kodus-olimpo/linked-lib",
+    "answerTail": "e = 1; // x\n[kodus-olimpo/linked-lib] big3m/match.ts:119998:const qaNeedle = 1; // x\n[kodus-olimpo/linked-lib] big3m/match.ts:119999:const qaNeedle = 1; // x\n[kodus-olimpo/linked-lib] big3m/match.ts:120000:const qaNeedle = 1; // x",
+    "utf8ok": true,
+    "calls": [
+     {
+      "fn": "exec",
+      "arg": "cd '/home/user/_linked/kodus-olimpo/linked-lib' && rg -n -C 2 -e 'qaNeedle' -- 'big3m'",
+      "stdoutLen": 5528895,
+      "stderrLen": 0,
+      "exitCode": 0
+     }
+    ]
+   },
+   {
+    "case": "linked listDir many depth 4 (40k files)",
+    "ms": 294,
+    "answerLen": 4016,
+    "answerHead": "[kodus-olimpo/linked-lib] <local>/h/f1/sbx/_linked/kodus-olimpo/linked-lib/many/d12/linked_attendance_comp",
+    "answerTail": "linked_attendance_component_with_a_long_name_14612.ts\n[kodus-olimpo/linked-lib] <local>/h/f1/sbx/_linked/kodus-olimpo/linked-lib/many/d12/linked_attendance_comp\n... (truncated)",
+    "utf8ok": true,
+    "calls": [
+     {
+      "fn": "exec",
+      "arg": "find '/home/user/_linked/kodus-olimpo/linked-lib/many' -maxdepth 4 -type f",
+      "stdoutLen": 6640000,
+      "stderrLen": 0,
+      "exitCode": 0
+     }
+    ]
+   },
+   {
+    "case": "astGrep pattern (5.3M chars of --json=stream)",
+    "ms": 306,
+    "answerLen": 3356,
+    "answerHead": "12000 matches for the pattern:\nsrc/generated/grades_0.service.ts:1:5\n  this.repo.save(grade0)\nsrc/generated/grades_1.service.ts:2:5\n  this.repo.save(grade1)\nsrc",
+    "answerTail": "7.service.ts:48:5\n  this.repo.save(grade47)\nsrc/generated/grades_48.service.ts:49:5\n  this.repo.save(grade48)\nsrc/generated/grades_49.service.ts:50:5\n  this.repo.save(grade49)\n... 11950 more not shown; narrow the pattern or paths.",
+    "utf8ok": true,
+    "calls": [
+     {
+      "fn": "exec",
+      "arg": "'ast-grep' 'run' '--config=.kody-ast-grep-mwzifijn-xi55ghen/sgconfig.yml' '--pattern=this.repo.save($A)' '--lang=typescript' '--json=stream'",
+      "stdoutLen": 5357604,
+      "stderrLen": 0,
+      "exitCode": 0
+     }
+    ]
+   }
+  ],
+  "logs": 0
+ }
+}
