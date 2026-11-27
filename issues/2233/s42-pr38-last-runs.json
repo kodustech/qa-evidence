@@ -1,0 +1,26 @@
+{
+ "query": "db.businessValidationRuns.find({organizationId:'1376936a-961c-4267-862b-cbc19d309ce4',repositoryId:'1468014267',pullRequestNumber:38}).sort({createdAt:-1}).limit(3).toArray().map(x=>({createdAt:x.createdAt,door:x.door,outcome:x.outcome,skipReason:x.skipReason,headSha:x.headSha}))",
+ "result": [
+  {
+   "createdAt": "2026-11-27T22:34:32.467Z",
+   "door": "command",
+   "outcome": "skipped",
+   "skipReason": "too_large_for_model",
+   "headSha": "35321e8f45885a6c1e71969ed76a143c63cb8974"
+  },
+  {
+   "createdAt": "2026-11-27T22:34:01.123Z",
+   "door": "command",
+   "outcome": "skipped",
+   "skipReason": "too_large_for_model",
+   "headSha": "35321e8f45885a6c1e71969ed76a143c63cb8974"
+  },
+  {
+   "createdAt": "2026-11-27T22:22:35.160Z",
+   "door": "command",
+   "outcome": "skipped",
+   "skipReason": "no_capable_tracker",
+   "headSha": "35321e8f45885a6c1e71969ed76a143c63cb8974"
+  }
+ ]
+}
