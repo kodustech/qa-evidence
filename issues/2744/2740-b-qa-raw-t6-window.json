@@ -1,0 +1,752 @@
+[
+ {
+  "timestamp": "2026-11-27T21:55:42.260Z",
+  "level": "info",
+  "message": "Starting conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-cnkwgr",
+    "metadata": {
+     "description": "Thread TR-cmc-cnkwgr",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723881806
+    }
+   },
+   "userLanguage": "en-US",
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:55:42.310Z",
+  "level": "info",
+  "message": "Starting conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-r9oe63",
+    "metadata": {
+     "description": "Thread TR-cmc-r9oe63",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723880960
+    }
+   },
+   "userLanguage": "en-US",
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:55:42.677Z",
+  "level": "info",
+  "message": "Conversation agent MCP tools connected",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "threadId": "TR-cmc-cnkwgr",
+   "mcpToolCount": 22,
+   "proactiveTools": [
+    "KODUS_CREATE_KODY_RULE",
+    "KODUS_UPDATE_KODY_RULE",
+    "KODUS_CREATE_MEMORY",
+    "KODUS_CREATE_KODY_ISSUE",
+    "KODUS_UPDATE_KODY_ISSUE_STATUS",
+    "KODUS_UPDATE_KODY_ISSUE_CATEGORY"
+   ],
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:55:42.748Z",
+  "level": "info",
+  "message": "Conversation agent MCP tools connected",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "threadId": "TR-cmc-r9oe63",
+   "mcpToolCount": 22,
+   "proactiveTools": [
+    "KODUS_CREATE_KODY_RULE",
+    "KODUS_UPDATE_KODY_RULE",
+    "KODUS_CREATE_MEMORY",
+    "KODUS_CREATE_KODY_ISSUE",
+    "KODUS_UPDATE_KODY_ISSUE_STATUS",
+    "KODUS_UPDATE_KODY_ISSUE_CATEGORY"
+   ],
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:55:45.494Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: acquire prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:55:45.516Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: connecting to existing sandbox sandboxId=\"iys09hsxm1i2oppm6mxe4\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:55:46.577Z",
+  "level": "info",
+  "message": "Finish conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-cnkwgr",
+    "metadata": {
+     "description": "Thread TR-cmc-cnkwgr",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723881806
+    }
+   },
+   "steps": 1,
+   "usage": {
+    "inputTokens": 10864,
+    "outputTokens": 554,
+    "totalTokens": 11418,
+    "reasoningTokens": 101,
+    "cacheReadTokens": 9088,
+    "cacheWriteTokens": null
+   },
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:55:47.121Z",
+  "level": "info",
+  "message": "[DEBUG] syncE2BSandboxRepo: synced reused sandbox to refspec=refs/pull/14/head",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "refspec": "refs/pull/14/head",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:55:47.124Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: connected to existing sandbox prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\" leaseId=\"8ca64da5-02b0-43eb-9694-832090b4b156\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "leaseId": "8ca64da5-02b0-43eb-9694-832090b4b156",
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:55:47.881Z",
+  "level": "warn",
+  "message": "[SANDBOX-EXEC] command stopped after 2000000 output characters",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "warn",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "program": "seq",
+   "maxChars": 2000000,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:55:48.425Z",
+  "level": "warn",
+  "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+  "component": "ConversationTools",
+  "metadata": {
+   "component": "ConversationTools",
+   "level": "warn",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "tool": "exec",
+   "field": "stdout",
+   "outputChars": 1999996,
+   "longestLine": 6,
+   "linesCut": 0,
+   "files": [],
+   "maxLine": 2000,
+   "component": "ConversationTools",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:55:50.621Z",
+  "level": "info",
+  "message": "Event loop delay max=678ms",
+  "component": "EventLoopMonitor",
+  "metadata": {
+   "component": "EventLoopMonitor",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "p50Ms": 20,
+   "p99Ms": 21,
+   "maxMs": 678,
+   "meanMs": 20,
+   "windowMs": 60000,
+   "msSinceLastProbe": 27613,
+   "lastProbeStatus": "ok",
+   "memory": {
+    "rssMb": 772,
+    "heapUsedMb": 478,
+    "heapTotalMb": 555,
+    "heapLimitMb": 4288,
+    "externalMb": 52,
+    "arrayBuffersMb": 23,
+    "heapAfterMajorGcMb": 461,
+    "heapAfterMajorGcMinMb": 461,
+    "majorGcs": 1,
+    "gcPauseMs": 149,
+    "gcMaxPauseMs": 18
+   },
+   "jobs": {
+    "total": 0,
+    "byWorkflowType": {},
+    "reviews": {
+     "withSize": 0,
+     "withLines": 0,
+     "changedFilesSum": 0,
+     "changedFilesMax": 0,
+     "changedLinesSum": 0
+    }
+   },
+   "gauges": {
+    "cache": {
+     "entries": 19,
+     "expired": 0,
+     "valueMb": 0
+    }
+   },
+   "component": "EventLoopMonitor",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:55:52.334Z",
+  "level": "info",
+  "message": "Event loop delay max=40ms",
+  "component": "EventLoopMonitor",
+  "metadata": {
+   "component": "EventLoopMonitor",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "p50Ms": 20,
+   "p99Ms": 20,
+   "maxMs": 40,
+   "meanMs": 20,
+   "windowMs": 60000,
+   "msSinceLastProbe": 29428,
+   "lastProbeStatus": "ok",
+   "memory": {
+    "rssMb": 432,
+    "heapUsedMb": 243,
+    "heapTotalMb": 251,
+    "heapLimitMb": 2096,
+    "externalMb": 30,
+    "arrayBuffersMb": 24,
+    "heapAfterMajorGcMb": 223,
+    "heapAfterMajorGcMinMb": null,
+    "majorGcs": 0,
+    "gcPauseMs": 31,
+    "gcMaxPauseMs": 13
+   },
+   "jobs": {
+    "total": 0,
+    "byWorkflowType": {},
+    "reviews": {
+     "withSize": 0,
+     "withLines": 0,
+     "changedFilesSum": 0,
+     "changedFilesMax": 0,
+     "changedLinesSum": 0
+    }
+   },
+   "gauges": {
+    "cache": {
+     "entries": 0,
+     "expired": 0,
+     "valueMb": 0
+    }
+   },
+   "component": "EventLoopMonitor",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:55:55.028Z",
+  "level": "error",
+  "message": "Conversation agent declared an action it never performed",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "error",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "threadId": "TR-cmc-r9oe63",
+   "intendedTool": "exec",
+   "authorizingQuote": "Run `seq 1 3000000` exactly as written, with no pipe, no tail and no redirect, and tell me the last number your tool actually returned to you and whether the output was cut.",
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:55:55.028Z",
+  "level": "info",
+  "message": "Finish conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-r9oe63",
+    "metadata": {
+     "description": "Thread TR-cmc-r9oe63",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723880960
+    }
+   },
+   "steps": 3,
+   "usage": {
+    "inputTokens": 69859,
+    "outputTokens": 1067,
+    "totalTokens": 70926,
+    "reasoningTokens": 456,
+    "cacheReadTokens": 30976,
+    "cacheWriteTokens": null
+   },
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:55:55.044Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: released leaseId=\"8ca64da5-02b0-43eb-9694-832090b4b156\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" leaseCount=0",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "leaseId": "8ca64da5-02b0-43eb-9694-832090b4b156",
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "leaseCount": 0,
+   "consumer": "conversation",
+   "heldMs": 7912,
+   "acquireToFirstUseMs": 0,
+   "lastUseToReleaseMs": 7155,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:55:55.050Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-27T22:00:55.044Z for sandboxId=\"iys09hsxm1i2oppm6mxe4\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "idleTimeoutMs": 300000,
+   "killAt": "2026-11-27T22:00:55.044Z",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:56:19.627Z",
+  "level": "info",
+  "message": "Event loop delay max=105ms",
+  "component": "EventLoopMonitor",
+  "metadata": {
+   "component": "EventLoopMonitor",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "p50Ms": 20,
+   "p99Ms": 21,
+   "maxMs": 105,
+   "meanMs": 20,
+   "windowMs": 60000,
+   "msSinceLastProbe": 27638,
+   "lastProbeStatus": "ok",
+   "memory": {
+    "rssMb": 771,
+    "heapUsedMb": 493,
+    "heapTotalMb": 514,
+    "heapLimitMb": 4288,
+    "externalMb": 56,
+    "arrayBuffersMb": 24,
+    "heapAfterMajorGcMb": 442,
+    "heapAfterMajorGcMinMb": null,
+    "majorGcs": 0,
+    "gcPauseMs": 47,
+    "gcMaxPauseMs": 4
+   },
+   "jobs": {
+    "total": 0,
+    "byWorkflowType": {},
+    "reviews": {
+     "withSize": 0,
+     "withLines": 0,
+     "changedFilesSum": 0,
+     "changedFilesMax": 0,
+     "changedLinesSum": 0
+    }
+   },
+   "gauges": {
+    "cache": {
+     "entries": 17,
+     "expired": 0,
+     "valueMb": 0
+    }
+   },
+   "component": "EventLoopMonitor",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:56:21.896Z",
+  "level": "info",
+  "message": "Event loop delay max=26ms",
+  "component": "EventLoopMonitor",
+  "metadata": {
+   "component": "EventLoopMonitor",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "p50Ms": 20,
+   "p99Ms": 20,
+   "maxMs": 26,
+   "meanMs": 20,
+   "windowMs": 60000,
+   "msSinceLastProbe": null,
+   "lastProbeStatus": null,
+   "memory": {
+    "rssMb": 623,
+    "heapUsedMb": 425,
+    "heapTotalMb": 432,
+    "heapLimitMb": 4288,
+    "externalMb": 29,
+    "arrayBuffersMb": 23,
+    "heapAfterMajorGcMb": 408,
+    "heapAfterMajorGcMinMb": null,
+    "majorGcs": 0,
+    "gcPauseMs": 15,
+    "gcMaxPauseMs": 6
+   },
+   "jobs": {
+    "total": 0,
+    "byWorkflowType": {},
+    "reviews": {
+     "withSize": 0,
+     "withLines": 0,
+     "changedFilesSum": 0,
+     "changedFilesMax": 0,
+     "changedLinesSum": 0
+    }
+   },
+   "gauges": {
+    "cache": {
+     "entries": 0,
+     "expired": 0,
+     "valueMb": 0
+    }
+   },
+   "component": "EventLoopMonitor",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:56:50.621Z",
+  "level": "info",
+  "message": "Event loop delay max=44ms",
+  "component": "EventLoopMonitor",
+  "metadata": {
+   "component": "EventLoopMonitor",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "p50Ms": 20,
+   "p99Ms": 21,
+   "maxMs": 44,
+   "meanMs": 20,
+   "windowMs": 60000,
+   "msSinceLastProbe": 27437,
+   "lastProbeStatus": "ok",
+   "memory": {
+    "rssMb": 768,
+    "heapUsedMb": 466,
+    "heapTotalMb": 491,
+    "heapLimitMb": 4288,
+    "externalMb": 52,
+    "arrayBuffersMb": 23,
+    "heapAfterMajorGcMb": 461,
+    "heapAfterMajorGcMinMb": null,
+    "majorGcs": 0,
+    "gcPauseMs": 4,
+    "gcMaxPauseMs": 4
+   },
+   "jobs": {
+    "total": 0,
+    "byWorkflowType": {},
+    "reviews": {
+     "withSize": 0,
+     "withLines": 0,
+     "changedFilesSum": 0,
+     "changedFilesMax": 0,
+     "changedLinesSum": 0
+    }
+   },
+   "gauges": {
+    "cache": {
+     "entries": 19,
+     "expired": 0,
+     "valueMb": 0
+    }
+   },
+   "component": "EventLoopMonitor",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:56:52.335Z",
+  "level": "info",
+  "message": "Event loop delay max=26ms",
+  "component": "EventLoopMonitor",
+  "metadata": {
+   "component": "EventLoopMonitor",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "p50Ms": 20,
+   "p99Ms": 20,
+   "maxMs": 26,
+   "meanMs": 20,
+   "windowMs": 60000,
+   "msSinceLastProbe": 29252,
+   "lastProbeStatus": "ok",
+   "memory": {
+    "rssMb": 434,
+    "heapUsedMb": 243,
+    "heapTotalMb": 251,
+    "heapLimitMb": 2096,
+    "externalMb": 30,
+    "arrayBuffersMb": 24,
+    "heapAfterMajorGcMb": 223,
+    "heapAfterMajorGcMinMb": null,
+    "majorGcs": 0,
+    "gcPauseMs": 15,
+    "gcMaxPauseMs": 3
+   },
+   "jobs": {
+    "total": 0,
+    "byWorkflowType": {},
+    "reviews": {
+     "withSize": 0,
+     "withLines": 0,
+     "changedFilesSum": 0,
+     "changedFilesMax": 0,
+     "changedLinesSum": 0
+    }
+   },
+   "gauges": {
+    "cache": {
+     "entries": 0,
+     "expired": 0,
+     "valueMb": 0
+    }
+   },
+   "component": "EventLoopMonitor",
+   "originalCorrelationId": null
+  }
+ }
+]
