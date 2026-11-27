@@ -1,0 +1,76 @@
+## anthropic_compatible baseURL=https://api.minimax.io/anthropic
+anthropic_compatible | minimax-m3-1 | unset | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=reroute-json | providerOptions={} | LOOP={} | STRUCT={} | DISABLED_SENT=false
+anthropic_compatible | minimax-m3-1 | none | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=reroute-json | providerOptions={} | LOOP={} | STRUCT={} | DISABLED_SENT=false
+anthropic_compatible | minimax-m3-1 | high | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=reroute-json | providerOptions={} | LOOP={} | STRUCT={} | DISABLED_SENT=false
+anthropic_compatible | MiniMax-M3-1-Flash | unset | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=reroute-json | providerOptions={} | LOOP={} | STRUCT={} | DISABLED_SENT=false
+anthropic_compatible | MiniMax-M3-1-Flash | none | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=reroute-json | providerOptions={} | LOOP={} | STRUCT={} | DISABLED_SENT=false
+anthropic_compatible | MiniMax-M3-1-Flash | high | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=reroute-json | providerOptions={} | LOOP={} | STRUCT={} | DISABLED_SENT=false
+anthropic_compatible | MiniMax-M4 | unset | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=suppress-thinking | providerOptions={"anthropic":{"thinking":{"type":"disabled"}}} | LOOP={} | STRUCT={"thinking":{"type":"disabled"},"tool_choice":{"type":"any","disable_parallel_tool_use":true},"tools":["json"]} | DISABLED_SENT=true
+anthropic_compatible | MiniMax-M4 | none | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=suppress-thinking | providerOptions={"anthropic":{"thinking":{"type":"disabled"}}} | LOOP={"thinking":{"type":"disabled"}} | STRUCT={"thinking":{"type":"disabled"},"tool_choice":{"type":"any","disable_parallel_tool_use":true},"tools":["json"]} | DISABLED_SENT=true
+anthropic_compatible | MiniMax-M4 | high | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=suppress-thinking | providerOptions={} | LOOP={} | STRUCT={"thinking":{"type":"disabled"},"tool_choice":{"type":"any","disable_parallel_tool_use":true},"tools":["json"]} | DISABLED_SENT=true
+anthropic_compatible | minimax-m4-preview | unset | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=suppress-thinking | providerOptions={"anthropic":{"thinking":{"type":"disabled"}}} | LOOP={} | STRUCT={"thinking":{"type":"disabled"},"tool_choice":{"type":"any","disable_parallel_tool_use":true},"tools":["json"]} | DISABLED_SENT=true
+anthropic_compatible | minimax-m4-preview | none | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=suppress-thinking | providerOptions={"anthropic":{"thinking":{"type":"disabled"}}} | LOOP={"thinking":{"type":"disabled"}} | STRUCT={"thinking":{"type":"disabled"},"tool_choice":{"type":"any","disable_parallel_tool_use":true},"tools":["json"]} | DISABLED_SENT=true
+anthropic_compatible | minimax-m4-preview | high | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=suppress-thinking | providerOptions={} | LOOP={} | STRUCT={"thinking":{"type":"disabled"},"tool_choice":{"type":"any","disable_parallel_tool_use":true},"tools":["json"]} | DISABLED_SENT=true
+anthropic_compatible | MiniMax-M3.1 | unset | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=reroute-json | providerOptions={} | LOOP={} | STRUCT={} | DISABLED_SENT=false
+anthropic_compatible | MiniMax-M3.1 | none | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=reroute-json | providerOptions={} | LOOP={} | STRUCT={} | DISABLED_SENT=false
+anthropic_compatible | MiniMax-M3.1 | high | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=reroute-json | providerOptions={} | LOOP={} | STRUCT={} | DISABLED_SENT=false
+anthropic_compatible | MiniMax-M3 | unset | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=reroute-json | providerOptions={} | LOOP={} | STRUCT={} | DISABLED_SENT=false
+anthropic_compatible | MiniMax-M3 | none | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=reroute-json | providerOptions={} | LOOP={} | STRUCT={} | DISABLED_SENT=false
+anthropic_compatible | MiniMax-M3 | high | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=reroute-json | providerOptions={} | LOOP={} | STRUCT={} | DISABLED_SENT=false
+## openai_compatible baseURL=https://api.minimax.io/v1
+openai_compatible | minimax-m3-1 | unset | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"response_format":{"type":"json_object"}} | DISABLED_SENT=false
+openai_compatible | minimax-m3-1 | none | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"response_format":{"type":"json_object"}} | DISABLED_SENT=false
+openai_compatible | minimax-m3-1 | high | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"response_format":{"type":"json_object"}} | DISABLED_SENT=false
+openai_compatible | MiniMax-M3-1-Flash | unset | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"response_format":{"type":"json_object"}} | DISABLED_SENT=false
+openai_compatible | MiniMax-M3-1-Flash | none | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"response_format":{"type":"json_object"}} | DISABLED_SENT=false
+openai_compatible | MiniMax-M3-1-Flash | high | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"response_format":{"type":"json_object"}} | DISABLED_SENT=false
+openai_compatible | MiniMax-M4 | unset | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"response_format":{"type":"json_object"}} | DISABLED_SENT=false
+openai_compatible | MiniMax-M4 | none | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"response_format":{"type":"json_object"}} | DISABLED_SENT=false
+openai_compatible | MiniMax-M4 | high | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"response_format":{"type":"json_object"}} | DISABLED_SENT=false
+openai_compatible | minimax-m4-preview | unset | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"response_format":{"type":"json_object"}} | DISABLED_SENT=false
+openai_compatible | minimax-m4-preview | none | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"response_format":{"type":"json_object"}} | DISABLED_SENT=false
+openai_compatible | minimax-m4-preview | high | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"response_format":{"type":"json_object"}} | DISABLED_SENT=false
+openai_compatible | MiniMax-M3.1 | unset | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"response_format":{"type":"json_object"}} | DISABLED_SENT=false
+openai_compatible | MiniMax-M3.1 | none | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"response_format":{"type":"json_object"}} | DISABLED_SENT=false
+openai_compatible | MiniMax-M3.1 | high | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"response_format":{"type":"json_object"}} | DISABLED_SENT=false
+openai_compatible | MiniMax-M3 | unset | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"response_format":{"type":"json_object"}} | DISABLED_SENT=false
+openai_compatible | MiniMax-M3 | none | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"response_format":{"type":"json_object"}} | DISABLED_SENT=false
+openai_compatible | MiniMax-M3 | high | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"response_format":{"type":"json_object"}} | DISABLED_SENT=false
+## amazon_bedrock us-east-1
+amazon_bedrock | minimax.minimax-m3-1-v1:0 | unset | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"toolConfig":{"tools":["json"],"toolChoice":{"any":{}}}} | DISABLED_SENT=false
+amazon_bedrock | minimax.minimax-m3-1-v1:0 | none | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"toolConfig":{"tools":["json"],"toolChoice":{"any":{}}}} | DISABLED_SENT=false
+amazon_bedrock | minimax.minimax-m3-1-v1:0 | high | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"toolConfig":{"tools":["json"],"toolChoice":{"any":{}}}} | DISABLED_SENT=false
+amazon_bedrock | minimax.minimax-m4-v1:0 | unset | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"toolConfig":{"tools":["json"],"toolChoice":{"any":{}}}} | DISABLED_SENT=false
+amazon_bedrock | minimax.minimax-m4-v1:0 | none | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"toolConfig":{"tools":["json"],"toolChoice":{"any":{}}}} | DISABLED_SENT=false
+amazon_bedrock | minimax.minimax-m4-v1:0 | high | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"toolConfig":{"tools":["json"],"toolChoice":{"any":{}}}} | DISABLED_SENT=false
+amazon_bedrock | minimax.minimax-m3.1 | unset | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"toolConfig":{"tools":["json"],"toolChoice":{"any":{}}}} | DISABLED_SENT=false
+amazon_bedrock | minimax.minimax-m3.1 | none | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"toolConfig":{"tools":["json"],"toolChoice":{"any":{}}}} | DISABLED_SENT=false
+amazon_bedrock | minimax.minimax-m3.1 | high | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"toolConfig":{"tools":["json"],"toolChoice":{"any":{}}}} | DISABLED_SENT=false
+amazon_bedrock | minimax.minimax-m3 | unset | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"toolConfig":{"tools":["json"],"toolChoice":{"any":{}}}} | DISABLED_SENT=false
+amazon_bedrock | minimax.minimax-m3 | none | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"toolConfig":{"tools":["json"],"toolChoice":{"any":{}}}} | DISABLED_SENT=false
+amazon_bedrock | minimax.minimax-m3 | high | alwaysOn=- | supportsReasoning=false | opts=[] | defaultEffort=- | plan=as-is | providerOptions={} | LOOP={} | STRUCT={"toolConfig":{"tools":["json"],"toolChoice":{"any":{}}}} | DISABLED_SENT=false
+## registry providers: openai,openai_compatible,anthropic,anthropic_compatible,google_gemini,google_vertex,open_router,amazon_bedrock,novita,moonshot,azure,zai,kodus
+cap anthropic minimax-m3-1 alwaysOn=- supportsReasoning=false
+cap anthropic MiniMax-M3-1-Flash alwaysOn=- supportsReasoning=false
+cap anthropic MiniMax-M4 alwaysOn=- supportsReasoning=false
+cap anthropic minimax-m4-preview alwaysOn=- supportsReasoning=false
+cap anthropic MiniMax-M3.1 alwaysOn=- supportsReasoning=false
+cap anthropic MiniMax-M3 alwaysOn=- supportsReasoning=false
+cap moonshot minimax-m3-1 alwaysOn=- supportsReasoning=true
+cap moonshot MiniMax-M3-1-Flash alwaysOn=- supportsReasoning=true
+cap moonshot MiniMax-M4 alwaysOn=- supportsReasoning=true
+cap moonshot minimax-m4-preview alwaysOn=- supportsReasoning=true
+cap moonshot MiniMax-M3.1 alwaysOn=- supportsReasoning=true
+cap moonshot MiniMax-M3 alwaysOn=- supportsReasoning=true
+cap zai minimax-m3-1 alwaysOn=- supportsReasoning=true
+cap zai MiniMax-M3-1-Flash alwaysOn=- supportsReasoning=true
+cap zai MiniMax-M4 alwaysOn=- supportsReasoning=true
+cap zai minimax-m4-preview alwaysOn=- supportsReasoning=true
+cap zai MiniMax-M3.1 alwaysOn=- supportsReasoning=true
+cap zai MiniMax-M3 alwaysOn=- supportsReasoning=true
+traits minimax-m3-1 {"thinksByDefault":false,"canDisableThinking":false,"supportsForcedToolChoice":true,"forcedToolChoiceRejectsThinking":true}
+traits MiniMax-M3-1-Flash {"thinksByDefault":false,"canDisableThinking":false,"supportsForcedToolChoice":true,"forcedToolChoiceRejectsThinking":true}
+traits MiniMax-M4 {"thinksByDefault":false,"canDisableThinking":true,"supportsForcedToolChoice":true,"forcedToolChoiceRejectsThinking":true}
+traits minimax-m4-preview {"thinksByDefault":false,"canDisableThinking":true,"supportsForcedToolChoice":true,"forcedToolChoiceRejectsThinking":true}
+traits MiniMax-M3.1 {"thinksByDefault":false,"canDisableThinking":false,"supportsForcedToolChoice":true,"forcedToolChoiceRejectsThinking":true}
+traits MiniMax-M3 {"thinksByDefault":false,"canDisableThinking":false,"supportsForcedToolChoice":true,"forcedToolChoiceRejectsThinking":true}
