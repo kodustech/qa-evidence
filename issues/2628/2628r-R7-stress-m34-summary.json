@@ -1,0 +1,122 @@
+{
+ "cand-m34": {
+  "iterations": 60,
+  "errors": [],
+  "processes": 4,
+  "kills": 60,
+  "sandboxesKilledMoreThanOnce": 0,
+  "warmJoins": 60,
+  "coldJoins": 0,
+  "violations_killWhileHeld": 0,
+  "violationSamples": [],
+  "samplesHeldWithKillAt": 0,
+  "finalDocs": 0,
+  "finalHeldDocs": 0,
+  "finalDocsWithFutureOrPastKillAt": 0,
+  "closestBJoinToARelease_ms": [
+   [
+    30,
+    16
+   ],
+   [
+    31,
+    17
+   ],
+   [
+    33,
+    14
+   ],
+   [
+    33,
+    20
+   ],
+   [
+    33,
+    53
+   ]
+  ]
+ },
+ "ctrl-m34": {
+  "iterations": 60,
+  "errors": [],
+  "processes": 4,
+  "kills": 60,
+  "sandboxesKilledMoreThanOnce": 0,
+  "warmJoins": 60,
+  "coldJoins": 0,
+  "violations_killWhileHeld": 60,
+  "violationSamples": [
+   {
+    "sandboxId": "sbx-ctrl-m34-A-87344-1",
+    "killAt": 1795803731468,
+    "killerPid": 87347,
+    "holder": "B",
+    "i": 0,
+    "holdStart": 1795803731207,
+    "holdEnd": 1795803731718
+   },
+   {
+    "sandboxId": "sbx-ctrl-m34-A-87344-2",
+    "killAt": 1795803734154,
+    "killerPid": 87346,
+    "holder": "B",
+    "i": 1,
+    "holdStart": 1795803733935,
+    "holdEnd": 1795803734370
+   },
+   {
+    "sandboxId": "sbx-ctrl-m34-A-87344-3",
+    "killAt": 1795803736614,
+    "killerPid": 87346,
+    "holder": "B",
+    "i": 2,
+    "holdStart": 1795803736394,
+    "holdEnd": 1795803737000
+   },
+   {
+    "sandboxId": "sbx-ctrl-m34-A-87344-4",
+    "killAt": 1795803739013,
+    "killerPid": 87346,
+    "holder": "B",
+    "i": 3,
+    "holdStart": 1795803738788,
+    "holdEnd": 1795803739442
+   },
+   {
+    "sandboxId": "sbx-ctrl-m34-A-87344-5",
+    "killAt": 1795803741675,
+    "killerPid": 87347,
+    "holder": "B",
+    "i": 4,
+    "holdStart": 1795803741443,
+    "holdEnd": 1795803741960
+   }
+  ],
+  "samplesHeldWithKillAt": 196,
+  "finalDocs": 0,
+  "finalHeldDocs": 0,
+  "finalDocsWithFutureOrPastKillAt": 0,
+  "closestBJoinToARelease_ms": [
+   [
+    31,
+    14
+   ],
+   [
+    32,
+    16
+   ],
+   [
+    32,
+    17
+   ],
+   [
+    32,
+    20
+   ],
+   [
+    32,
+    53
+   ]
+  ]
+ }
+}
