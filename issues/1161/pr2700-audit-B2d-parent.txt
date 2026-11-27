@@ -1,0 +1,53 @@
+##### B2d (parent) same values in parent prompt order
+--- run (p) setup.sh 
+
+╭─ Kodus self-hosted dev setup ─╮
+
+  Saved to ~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/p-b2d-b/.kodus-dev/config (chmod 600).
+  Re-running: press Enter to keep the current value; type to replace it.
+
+
+
+DigitalOcean API token
+  https://cloud.digitalocean.com/account/api — scopes: droplet:create/read/delete + ssh_key:create/read/delete
+  → 
+
+Self-hosted license key
+  Optional. Empty = stack boots in the installer's default mode (paid features locked).
+  → 
+
+GitHub dev token (PAT)
+  Optional. If set, provision.sh auto-configures the GitHub integration after signup.
+  → 
+
+OpenAI-compatible API key
+  Required for Kodus to review PRs. Team default uses Kimi/Moonshot — get a key at https://platform.moonshot.ai. For native OpenAI, use https://platform.openai.com/api-keys.
+  → 
+
+OpenAI-compatible base URL
+  Team default: https://api.moonshot.ai/v1 (Moonshot for Kimi). For native OpenAI, set to https://api.openai.com/v1 (or leave empty — the app treats empty as OpenAI default).
+  [https://api.moonshot.ai/v1] → 
+LLM model
+  Team default: kimi-k2.6 (Moonshot Kimi K2.6). For OpenAI, use 'gpt-4o' or 'auto' to let Kodus router pick.
+  [kimi-k2.6] → 
+Path to kodus-installer checkout
+  Where the local installer checkout lives (the script rsyncs it onto the droplet).
+  [~/.kodus-qa-runs/2026-11-27/pr-2700/p/../kodus-installer] → [warn]   Directory /nonexistent does not exist yet. That's fine — provision.sh will complain if you try to provision before cloning.
+[ok]     Saved to ~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/p-b2d-b/.kodus-dev/config
+
+direnv not detected. Install with 'brew install direnv' for auto-load (optional).
+Without direnv: scripts/selfhosted/*.sh reads ~/.kodus-dev/config automatically.
+
+Done. Next step:
+
+  pnpm run selfhosted:provision
+
+--- exit=0
+--- config AFTER
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+API_OPEN_AI_API_KEY=fake-litellm-key
+API_OPENAI_FORCE_BASE_URL=https://litellm.example.com/v1
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+KODUS_INSTALLER_PATH=/nonexistent
