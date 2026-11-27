@@ -1,0 +1,162 @@
+[
+ {
+  "timestamp": "2026-11-27T21:51:34.897Z",
+  "level": "info",
+  "message": "Starting conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-if7w68",
+    "metadata": {
+     "description": "Thread TR-cmc-if7w68",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723881548
+    }
+   },
+   "userLanguage": "en-US",
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:51:47.064Z",
+  "level": "info",
+  "message": "Finish conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-if7w68",
+    "metadata": {
+     "description": "Thread TR-cmc-if7w68",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723881548
+    }
+   },
+   "steps": 3,
+   "usage": {
+    "inputTokens": 34005,
+    "outputTokens": 728,
+    "totalTokens": 34733,
+    "reasoningTokens": 274,
+    "cacheReadTokens": 22016,
+    "cacheWriteTokens": null
+   },
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:50.212Z",
+  "level": "info",
+  "message": "Starting conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-82gi8z",
+    "metadata": {
+     "description": "Thread TR-cmc-82gi8z",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723881248
+    }
+   },
+   "userLanguage": "en-US",
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:53:12.337Z",
+  "level": "info",
+  "message": "Finish conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-82gi8z",
+    "metadata": {
+     "description": "Thread TR-cmc-82gi8z",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723881248
+    }
+   },
+   "steps": 6,
+   "usage": {
+    "inputTokens": 88153,
+    "outputTokens": 2412,
+    "totalTokens": 90565,
+    "reasoningTokens": 1173,
+    "cacheReadTokens": 76032,
+    "cacheWriteTokens": null
+   },
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ }
+]
