@@ -1,0 +1,254 @@
+[
+ {
+  "label": "R3 true",
+  "t": "2026-11-27T17:22:02Z",
+  "sent": {
+   "conversation": {
+    "implicitReplies": true
+   }
+  },
+  "repositoryId": null,
+  "status": 201,
+  "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": "<absent>",
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": true,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": true,
+     "level": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": true,
+     "level": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R3 false",
+  "t": "2026-11-27T17:22:06Z",
+  "sent": {
+   "conversation": {
+    "implicitReplies": false
+   }
+  },
+  "repositoryId": null,
+  "status": 201,
+  "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "raw_before": {
+   "global": "<absent>",
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": true,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R3 conversation {}",
+  "t": "2026-11-27T17:22:10Z",
+  "sent": {
+   "conversation": {}
+  },
+  "repositoryId": null,
+  "status": 201,
+  "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R3 repo athena true",
+  "t": "2026-11-27T17:22:14Z",
+  "sent": {
+   "conversation": {
+    "implicitReplies": true
+   }
+  },
+  "repositoryId": "1468015189",
+  "status": 201,
+  "resp": "{'data': True, 'statusCode': 201, 'type': 'Boolean'}",
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": {
+     "implicitReplies": true
+    },
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": true,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": true,
+     "level": "repository",
+     "overriddenValue": false,
+     "overriddenLevel": "global"
+    }
+   }
+  }
+ },
+ {
+  "label": "R3 unknown key",
+  "t": "2026-11-27T17:22:18Z",
+  "sent": {
+   "conversation": {
+    "answerEveryone": true
+   }
+  },
+  "repositoryId": null,
+  "status": 400,
+  "resp": {
+   "statusCode": 400,
+   "timestamp": "2026-11-27T17:22:19.232Z",
+   "path": "/parameters/create-or-update-code-review",
+   "error": "Bad Request",
+   "message": "configValue.conversation.property answerEveryone should not exist"
+  },
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": {
+     "implicitReplies": true
+    },
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": {
+     "implicitReplies": true
+    },
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": true,
+     "level": "repository",
+     "overriddenValue": false,
+     "overriddenLevel": "global"
+    }
+   }
+  }
+ }
+]
