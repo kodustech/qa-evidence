@@ -1,0 +1,340 @@
+{
+ "merge aeb08f11f": [
+  {
+   "name": "a) 403 OpenRouter Key limit exceeded (monthly limit)",
+   "ms": 40,
+   "requests_main": 5,
+   "requests_fallback": 0,
+   "pr_shard_requests": 0,
+   "statuses_main": "403,403,403,403,403",
+   "refusal_log": {
+    "message": "[kody-rules] the model provider refused PR#2744 (QUOTA_EXCEEDED); the remaining shards were skipped instead of called",
+    "metadata": {
+     "category": "QUOTA_EXCEEDED",
+     "shardsRun": 13,
+     "shardsErrored": 13
+    }
+   },
+   "shard_failed_warns": 5,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "31ms main#1 403",
+    "37ms main#2 403",
+    "38ms main#3 403",
+    "39ms main#4 403",
+    "39ms main#5 403"
+   ]
+  },
+  {
+   "name": "b) 429 reached your weekly usage limit",
+   "ms": 9,
+   "requests_main": 5,
+   "requests_fallback": 0,
+   "pr_shard_requests": 0,
+   "statuses_main": "429,429,429,429,429",
+   "refusal_log": {
+    "message": "[kody-rules] the model provider refused PR#2744 (QUOTA_EXCEEDED); the remaining shards were skipped instead of called",
+    "metadata": {
+     "category": "QUOTA_EXCEEDED",
+     "shardsRun": 13,
+     "shardsErrored": 13
+    }
+   },
+   "shard_failed_warns": 5,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "5ms main#1 429",
+    "7ms main#2 429",
+    "7ms main#3 429",
+    "8ms main#4 429",
+    "8ms main#5 429"
+   ]
+  },
+  {
+   "name": "c) 429 Token Plan rate limit (MiniMax)",
+   "ms": 13444,
+   "requests_main": 26,
+   "requests_fallback": 0,
+   "pr_shard_requests": 2,
+   "statuses_main": "429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429",
+   "refusal_log": null,
+   "shard_failed_warns": 12,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "4ms main#1 429",
+    "4ms main#2 429",
+    "5ms main#3 429",
+    "5ms main#4 429",
+    "3036ms main#5 429",
+    "3041ms main#6 429",
+    "3385ms main#7 429",
+    "3392ms main#8 429",
+    "3503ms main#9 429",
+    "3515ms main#10 429",
+    "3901ms main#11 429",
+    "3907ms main#12 429",
+    "5764ms main#13 429",
+    "5768ms main#14 429",
+    "6081ms main#15 429",
+    "6087ms main#16 429",
+    "6727ms main#17 429",
+    "6733ms main#18 429",
+    "7222ms main#19 429",
+    "7228ms main#20 429",
+    "7848ms main#21 429",
+    "8604ms main#22 429",
+    "9354ms main#23 429",
+    "10894ms main#24 429",
+    "10900ms main#25 429 PR",
+    "13441ms main#26 429 PR"
+   ]
+  }
+ ],
+ "parent b172fdbac": [
+  {
+   "name": "a) 403 OpenRouter Key limit exceeded (monthly limit)",
+   "ms": 57,
+   "requests_main": 13,
+   "requests_fallback": 0,
+   "pr_shard_requests": 1,
+   "statuses_main": "403,403,403,403,403,403,403,403,403,403,403,403,403",
+   "refusal_log": null,
+   "shard_failed_warns": 12,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "30ms main#1 403",
+    "36ms main#2 403",
+    "38ms main#3 403",
+    "41ms main#4 403",
+    "43ms main#5 403",
+    "43ms main#6 403",
+    "46ms main#7 403",
+    "49ms main#8 403",
+    "50ms main#9 403",
+    "52ms main#10 403",
+    "52ms main#11 403",
+    "53ms main#12 403",
+    "56ms main#13 403 PR"
+   ]
+  },
+  {
+   "name": "b) 429 reached your weekly usage limit",
+   "ms": 13576,
+   "requests_main": 26,
+   "requests_fallback": 0,
+   "pr_shard_requests": 2,
+   "statuses_main": "429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429",
+   "refusal_log": null,
+   "shard_failed_warns": 12,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "6ms main#1 429",
+    "7ms main#2 429",
+    "7ms main#3 429",
+    "7ms main#4 429",
+    "2831ms main#5 429",
+    "2834ms main#6 429",
+    "3100ms main#7 429",
+    "3103ms main#8 429",
+    "3217ms main#9 429",
+    "3221ms main#10 429",
+    "3947ms main#11 429",
+    "3950ms main#12 429",
+    "5746ms main#13 429",
+    "5752ms main#14 429",
+    "5873ms main#15 429",
+    "5880ms main#16 429",
+    "6004ms main#17 429",
+    "6007ms main#18 429",
+    "6259ms main#19 429",
+    "6262ms main#20 429",
+    "8447ms main#21 429",
+    "9697ms main#22 429",
+    "9742ms main#23 429",
+    "10154ms main#24 429",
+    "10157ms main#25 429 PR",
+    "13573ms main#26 429 PR"
+   ]
+  },
+  {
+   "name": "c) 429 Token Plan rate limit (MiniMax)",
+   "ms": 13464,
+   "requests_main": 26,
+   "requests_fallback": 0,
+   "pr_shard_requests": 2,
+   "statuses_main": "429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429",
+   "refusal_log": null,
+   "shard_failed_warns": 12,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "3ms main#1 429",
+    "4ms main#2 429",
+    "4ms main#3 429",
+    "4ms main#4 429",
+    "2891ms main#5 429",
+    "2895ms main#6 429",
+    "3324ms main#7 429",
+    "3331ms main#8 429",
+    "3408ms main#9 429",
+    "3413ms main#10 429",
+    "3474ms main#11 429",
+    "3479ms main#12 429",
+    "5836ms main#13 429",
+    "5842ms main#14 429",
+    "6314ms main#15 429",
+    "6319ms main#16 429",
+    "6577ms main#17 429",
+    "6583ms main#18 429",
+    "7151ms main#19 429",
+    "7156ms main#20 429",
+    "7936ms main#21 429",
+    "9409ms main#22 429",
+    "9421ms main#23 429",
+    "9699ms main#24 429",
+    "9702ms main#25 429 PR",
+    "13464ms main#26 429 PR"
+   ]
+  }
+ ],
+ "mutant nostop (merge, stop removed)": [
+  {
+   "name": "a) 403 OpenRouter Key limit exceeded (monthly limit)",
+   "ms": 50,
+   "requests_main": 12,
+   "requests_fallback": 0,
+   "pr_shard_requests": 0,
+   "statuses_main": "403,403,403,403,403,403,403,403,403,403,403,403",
+   "refusal_log": {
+    "message": "[kody-rules] the model provider refused PR#2744 (QUOTA_EXCEEDED); the remaining shards were skipped instead of called",
+    "metadata": {
+     "category": "QUOTA_EXCEEDED",
+     "shardsRun": 13,
+     "shardsErrored": 13
+    }
+   },
+   "shard_failed_warns": 12,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "29ms main#1 403",
+    "36ms main#2 403",
+    "37ms main#3 403",
+    "38ms main#4 403",
+    "39ms main#5 403",
+    "44ms main#6 403",
+    "44ms main#7 403",
+    "44ms main#8 403",
+    "44ms main#9 403",
+    "48ms main#10 403",
+    "49ms main#11 403",
+    "49ms main#12 403"
+   ]
+  },
+  {
+   "name": "b) 429 reached your weekly usage limit",
+   "ms": 18,
+   "requests_main": 12,
+   "requests_fallback": 0,
+   "pr_shard_requests": 0,
+   "statuses_main": "429,429,429,429,429,429,429,429,429,429,429,429",
+   "refusal_log": {
+    "message": "[kody-rules] the model provider refused PR#2744 (QUOTA_EXCEEDED); the remaining shards were skipped instead of called",
+    "metadata": {
+     "category": "QUOTA_EXCEEDED",
+     "shardsRun": 13,
+     "shardsErrored": 13
+    }
+   },
+   "shard_failed_warns": 12,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "5ms main#1 429",
+    "6ms main#2 429",
+    "7ms main#3 429",
+    "8ms main#4 429",
+    "8ms main#5 429",
+    "13ms main#6 429",
+    "13ms main#7 429",
+    "13ms main#8 429",
+    "13ms main#9 429",
+    "16ms main#10 429",
+    "17ms main#11 429",
+    "17ms main#12 429"
+   ]
+  },
+  {
+   "name": "c) 429 Token Plan rate limit (MiniMax)",
+   "ms": 11781,
+   "requests_main": 26,
+   "requests_fallback": 0,
+   "pr_shard_requests": 2,
+   "statuses_main": "429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429",
+   "refusal_log": null,
+   "shard_failed_warns": 12,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "3ms main#1 429",
+    "4ms main#2 429",
+    "4ms main#3 429",
+    "4ms main#4 429",
+    "2171ms main#5 429",
+    "2177ms main#6 429",
+    "3080ms main#7 429",
+    "3083ms main#8 429",
+    "3313ms main#9 429",
+    "3316ms main#10 429",
+    "3571ms main#11 429",
+    "3573ms main#12 429",
+    "4330ms main#13 429",
+    "4333ms main#14 429",
+    "5694ms main#15 429",
+    "5699ms main#16 429",
+    "6633ms main#17 429",
+    "6635ms main#18 429",
+    "6785ms main#19 429",
+    "6788ms main#20 429",
+    "6898ms main#21 429",
+    "8445ms main#22 429",
+    "8824ms main#23 429",
+    "9507ms main#24 429",
+    "9514ms main#25 429 PR",
+    "11780ms main#26 429 PR"
+   ]
+  }
+ ]
+}
