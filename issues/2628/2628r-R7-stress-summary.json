@@ -1,0 +1,122 @@
+{
+ "cand": {
+  "iterations": 200,
+  "errors": [],
+  "processes": 4,
+  "kills": 307,
+  "sandboxesKilledMoreThanOnce": 47,
+  "warmJoins": 140,
+  "coldJoins": 60,
+  "violations_killWhileHeld": 0,
+  "violationSamples": [],
+  "samplesHeldWithKillAt": 23,
+  "finalDocs": 0,
+  "finalHeldDocs": 0,
+  "finalDocsWithFutureOrPastKillAt": 0,
+  "closestBJoinToARelease_ms": [
+   [
+    0,
+    16
+   ],
+   [
+    0,
+    31
+   ],
+   [
+    0,
+    40
+   ],
+   [
+    0,
+    72
+   ],
+   [
+    0,
+    180
+   ]
+  ]
+ },
+ "ctrl": {
+  "iterations": 200,
+  "errors": [],
+  "processes": 4,
+  "kills": 345,
+  "sandboxesKilledMoreThanOnce": 41,
+  "warmJoins": 96,
+  "coldJoins": 104,
+  "violations_killWhileHeld": 9,
+  "violationSamples": [
+   {
+    "sandboxId": "sbx-ctrl-A-68041-1",
+    "killAt": 1795801657463,
+    "killerPid": 68044,
+    "holder": "A",
+    "i": 0,
+    "holdStart": 1795801657135,
+    "holdEnd": 1795801657566
+   },
+   {
+    "sandboxId": "sbx-ctrl-A-68041-1",
+    "killAt": 1795801657466,
+    "killerPid": 68043,
+    "holder": "A",
+    "i": 0,
+    "holdStart": 1795801657135,
+    "holdEnd": 1795801657566
+   },
+   {
+    "sandboxId": "sbx-ctrl-A-68041-65",
+    "killAt": 1795801817494,
+    "killerPid": 68043,
+    "holder": "A",
+    "i": 64,
+    "holdStart": 1795801817077,
+    "holdEnd": 1795801817539
+   },
+   {
+    "sandboxId": "sbx-ctrl-A-68041-71",
+    "killAt": 1795801832438,
+    "killerPid": 68043,
+    "holder": "A",
+    "i": 70,
+    "holdStart": 1795801832057,
+    "holdEnd": 1795801832514
+   },
+   {
+    "sandboxId": "sbx-ctrl-A-68041-75",
+    "killAt": 1795801842474,
+    "killerPid": 68043,
+    "holder": "A",
+    "i": 74,
+    "holdStart": 1795801842079,
+    "holdEnd": 1795801842571
+   }
+  ],
+  "samplesHeldWithKillAt": 52,
+  "finalDocs": 0,
+  "finalHeldDocs": 0,
+  "finalDocsWithFutureOrPastKillAt": 0,
+  "closestBJoinToARelease_ms": [
+   [
+    0,
+    12
+   ],
+   [
+    0,
+    16
+   ],
+   [
+    0,
+    31
+   ],
+   [
+    0,
+    40
+   ],
+   [
+    0,
+    147
+   ]
+  ]
+ }
+}
