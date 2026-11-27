@@ -1,0 +1,17 @@
+{
+ "commentId": "4342374629",
+ "window": [
+  "2026-11-27T18:17:40Z",
+  "2026-11-27T18:17:48Z"
+ ],
+ "logs": [],
+ "langfuse_total": 0,
+ "classifier": [],
+ "conversation_spans": [],
+ "claim": [
+  [
+   "READY",
+   "1"
+  ]
+ ]
+}
