@@ -1,0 +1,22 @@
+S32 LLM.run summary path (schema one-shot as runSummaryPromptV5) + resolveTaskSlot(prSummary); main real ENOTFOUND, fallback stub
+=================================================================================================================================
+
+[S32 direct-slot ENOTFOUND door=oneshot-schema]
+  MERGE : NO-FB: THROW AI_APICallError: Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid -> TRANSIENT failover=true msg="Couldn't connect to the provider (openai_compatible): ENOTFOUND kodus-qa-2700-unreachable.invalid. If it keeps failing, check the base URL. (383ms) mainHits=2 | WITH-FB: OK {"description":"Summary written by the fallback slot."} (303ms) mainHits=2 fbHits=1
+  PARENT: NO-FB: THROW AI_APICallError: Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid -> UNKNOWN failover=false msg="Unexpected error while running the code review (openai_compatible)." (87ms) mainHits=1 | WITH-FB: THROW AI_APICallError: Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid -> UNKNOWN failover=false msg="Unexpected error while running the code review (openai_compatible)." (4ms) mainHits=1 fbHits=0
+
+[S32 direct-slot ENOTFOUND door=oneshot-text]
+  MERGE : NO-FB: THROW AI_APICallError: Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid -> TRANSIENT failover=true msg="Couldn't connect to the provider (openai_compatible): ENOTFOUND kodus-qa-2700-unreachable.invalid. If it keeps failing, check the base URL. (379ms) mainHits=2 | WITH-FB: OK "{\"description\":\"Summary written by the fallback slot.\"} (261ms) mainHits=2 fbHits=1
+  PARENT: NO-FB: THROW AI_APICallError: Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid -> UNKNOWN failover=false msg="Unexpected error while running the code review (openai_compatible)." (4ms) mainHits=1 | WITH-FB: THROW AI_APICallError: Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid -> UNKNOWN failover=false msg="Unexpected error while running the code review (openai_compatible)." (7ms) mainHits=1 fbHits=0
+
+[S32 direct-slot ENOTFOUND door=loop]
+  MERGE : NO-FB: THROW AI_RetryError: Failed after 4 attempts. Last error: AI_APICallError: Cannot connect to API: get -> TRANSIENT failover=true msg="Couldn't connect to the provider (openai_compatible): ENOTFOUND kodus-qa-2700-unreachable.invalid. If it keeps failing, check the base URL. (14010ms) mainHits=4 | WITH-FB: OK {"initialResponseMessages":[],"steps":[{"callId":"call-fuqJj (14014ms) mainHits=4 fbHits=1
+  PARENT: NO-FB: THROW AI_RetryError: Failed after 4 attempts. Last error: AI_APICallError: Cannot connect to API: get -> UNKNOWN failover=false msg="Unexpected error while running the code review (openai_compatible)." (14032ms) mainHits=4 | WITH-FB: THROW AI_RetryError: Failed after 4 attempts. Last error: AI_APICallError: Cannot connect to API: get -> UNKNOWN failover=false msg="Unexpected error while running the code review (openai_compatible)." (14011ms) mainHits=4 fbHits=0
+
+[S32 resolveTaskSlot(override prSummary) verdict=m-ovr primary=override-model@https://kodus-qa-2700-override.invalid/v1 fallback=fallback-model]
+  MERGE : OK {"description":"Summary written by the fallback slot."} (464ms) | hits={"kodus-qa-2700-override.invalid":2,"fallback.kodus.test":1}
+  PARENT: THROW AI_APICallError: Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-override.invalid -> UNKNOWN failover=false msg="Unexpected error while running the code review (openai_compatible)." (3ms) | hits={"kodus-qa-2700-override.invalid":1}
+
+[S32 resolveTaskSlot(no override (default main)) verdict=m-main primary=main-model@https://kodus-qa-2700-unreachable.invalid/v1?api_key=fake123 fallback=fallback-model]
+  MERGE : OK {"description":"Summary written by the fallback slot."} (429ms) | hits={"kodus-qa-2700-unreachable.invalid":2,"fallback.kodus.test":1}
+  PARENT: THROW AI_APICallError: Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid -> UNKNOWN failover=false msg="Unexpected error while running the code review (openai_compatible)." (1ms) | hits={"kodus-qa-2700-unreachable.invalid":1}
