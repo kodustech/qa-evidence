@@ -1,0 +1,39 @@
+{
+ "PR #28 (R1/R2) reactions": [
+  {
+   "content": "-1",
+   "created_at": "2026-11-27T18:31:06Z",
+   "user": "sartorijr92"
+  }
+ ],
+ "PR #28 command comment 7225622900 reactions (R2)": [
+  {
+   "content": "-1",
+   "created_at": "2026-11-27T18:34:06Z",
+   "user": "sartorijr92"
+  }
+ ],
+ "PR #29 (R15) reactions": [],
+ "PR #30 (R12) reactions": [
+  {
+   "content": "-1",
+   "created_at": "2026-11-27T18:40:26Z",
+   "user": "sartorijr92"
+  }
+ ],
+ "ares PR #7 (R10) reactions": [
+  {
+   "content": "-1",
+   "created_at": "2026-11-27T18:31:53Z",
+   "user": "sartorijr92"
+  }
+ ],
+ "ares PR #8 (R10 H2) reactions": [],
+ "Forgejo #21 (R9) reactions": [
+  {
+   "content": "-1",
+   "created": "2026-11-27T19:28:49+01:00"
+  }
+ ],
+ "note": "GitHub reactions API lists current reactions only; a \ud83d\udc40 added and then removed leaves no trace here. R1 runs were 18:26:33 and 18:28:30; the only \ud83d\udc4e on #28 is from 18:31 (R2 run after the YAML was removed)."
+}
