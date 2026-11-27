@@ -1,0 +1,21 @@
+// Local, read-only check at 8108fb83d (QA build) against gitlab.com, project sartorijr/claude-athena MR !20.
+// Token passed via env (never printed). Same calls with the repo's gitlabRequesterFn and with gitbeaker's default requester.
+import { Gitlab } from '@gitbeaker/rest';
+import * as fs from 'node:fs';
+import { gitlabRequesterFn } from './gitlab-request-handler';
+it('gitlab requester against gitlab.com', async () => {
+    const out: any = {};
+    for (const [label, opts] of [['custom requester (QA code)', { requesterFn: gitlabRequesterFn }], ['gitbeaker default requester', {}]] as any) {
+        const api = new Gitlab({ token: process.env.QA_GL as string, camelize: false, ...opts });
+        for (const [name, fn] of [
+            ['allDiffs', () => api.MergeRequests.allDiffs('89319162', 20)],
+            ['allCommits', () => api.MergeRequests.allCommits('89319162', 20)],
+            ['awardEmoji', () => (api as any).MergeRequestAwardEmojis.all('89319162', 20)],
+        ] as any) {
+            const r = await fn();
+            out[`${label} ${name}`] = { isArray: Array.isArray(r), ctor: r?.constructor?.name };
+        }
+    }
+    fs.writeFileSync(process.env.QA_OUT as string, JSON.stringify(out, null, 1));
+});
+// Run 1: gitlab-request-handler.ts at 8108fb83d -> Blob for all three. Run 2: same file at 6a84388e7^ -> Array.
