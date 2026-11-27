@@ -1,0 +1,33 @@
+{
+ "commentId": "4722530555",
+ "window": [
+  "2026-11-27T18:12:50Z",
+  "2026-11-27T18:12:57Z"
+ ],
+ "logs": [
+  {
+   "t": "2026-11-27T18:12:55.361Z",
+   "level": "info",
+   "component": "ChatWithKodyFromGitUseCase",
+   "message": "Unmentioned reply left unanswered: disabled",
+   "attrs": {
+    "implicitReplySilence": "disabled",
+    "commentId": 4722530555,
+    "platformType": "GITHUB",
+    "pullRequestNumber": 13,
+    "repository": "codex-athena",
+    "org": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   }
+  }
+ ],
+ "langfuse_total": 0,
+ "classifier": [],
+ "conversation_spans": [],
+ "claim": [
+  [
+   "PROCESSED",
+   "1",
+   "2026-11-27 18:12:55.362"
+  ]
+ ]
+}
