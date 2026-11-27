@@ -5,13 +5,11 @@
   "2026-11-27T18:17:48Z"
  ],
  "logs": [],
- "langfuse_total": 0,
- "classifier": [],
- "conversation_spans": [],
  "claim": [
   [
    "READY",
    "1"
   ]
- ]
+ ],
+ "note": "Langfuse fields removed: the configured Langfuse project is not the QA one. Proof is the log lines and the claim row."
 }
