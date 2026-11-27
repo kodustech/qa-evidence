@@ -1,0 +1,49 @@
+{
+ "window": [
+  "2026-11-27T16:23:21.000Z",
+  "2026-11-27T17:54:01.000Z"
+ ],
+ "rows": 26,
+ "counts": {
+  "releasedUnknown": 0,
+  "releasedAny": 4,
+  "unknownLeaseId": 0,
+  "waited": 0,
+  "gaveUp": 0,
+  "stoppedAtShutdown": 0,
+  "stillAtShutdown": 0,
+  "finishedBeforeShutdown": 0,
+  "bgFailed": 0,
+  "couldNotRestore": 0,
+  "restored": 0,
+  "joinedBeforeIdleKill": 0,
+  "cronHolderJoined": 0,
+  "givingUp": 0,
+  "usedAfterRelease": 0,
+  "killedIdle": 3,
+  "scheduledIdleKill": 4
+ },
+ "releasedByConsumer": {
+  "review:n": 3,
+  "conversation:n": 1
+ },
+ "waitedMs": [],
+ "warnAndError": [],
+ "firstSampleOfEach": {
+  "releasedAny": {
+   "t": "2026-11-27T17:31:50.175Z",
+   "level": "info",
+   "message": "SandboxLeaseManager: released leaseId=\"9247ee71-ee3d-47f7-94be-3a37b19d7134\" prKey=\"<org:jr-claude-github>:1468014267:27\" leaseCount=0"
+  },
+  "scheduledIdleKill": {
+   "t": "2026-11-27T17:31:50.182Z",
+   "level": "info",
+   "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-27T17:32:20.175Z for sandboxId=\"sbx-QA-GH\""
+  },
+  "killedIdle": {
+   "t": "2026-11-27T17:38:00.345Z",
+   "level": "info",
+   "message": "[SANDBOX-IDLE-KILL] Killed idle sandbox"
+  }
+ }
+}
