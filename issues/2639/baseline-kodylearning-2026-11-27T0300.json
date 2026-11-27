@@ -1,0 +1,555 @@
+[
+ {
+  "_id": "6b08f23441e66f1291efc9b3",
+  "timestamp": "2026-11-27T03:00:03.398Z",
+  "message": "Code review config not found",
+  "tenantId": "uuid#e30579f9",
+  "metadata": {
+   "organizationId": "uuid#e30579f9",
+   "teamId": "uuid#6efb8a03",
+   "tenantId": "uuid#e30579f9"
+  },
+  "attributes": {
+   "organizationId": "uuid#e30579f9"
+  }
+ },
+ {
+  "_id": "6b08f23441e66f1291efc9d5",
+  "timestamp": "2026-11-27T03:00:02.498Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#c10ee47b",
+    "teamId": "uuid#fc58a1c6"
+   }
+  },
+  "error": {
+   "name": "ServiceUnavailableException",
+   "message": "Could not fetch pull requests from the code management integration; no rules were generated"
+  }
+ },
+ {
+  "_id": "6b08f23441e66f1291efc9d6",
+  "timestamp": "2026-11-27T03:00:03.380Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#5f60b6d8",
+    "teamId": "uuid#7bece9ac"
+   }
+  },
+  "error": {
+   "name": "ServiceUnavailableException",
+   "message": "Could not fetch pull requests from the code management integration; no rules were generated"
+  }
+ },
+ {
+  "_id": "6b08f23741e66f1291efc9db",
+  "timestamp": "2026-11-27T03:00:05.723Z",
+  "message": "No repositories found",
+  "tenantId": "uuid#263ff873",
+  "metadata": {
+   "organizationId": "uuid#263ff873",
+   "teamId": "uuid#aae11927",
+   "tenantId": "uuid#263ff873"
+  },
+  "attributes": {
+   "organizationId": "uuid#263ff873"
+  }
+ },
+ {
+  "_id": "6b08f23741e66f1291efc9ea",
+  "timestamp": "2026-11-27T03:00:05.633Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#a652aace",
+    "teamId": "uuid#77be1a84"
+   }
+  },
+  "error": {
+   "name": "ServiceUnavailableException",
+   "message": "Could not fetch pull requests from the code management integration; no rules were generated"
+  }
+ },
+ {
+  "_id": "6b08f23a41e66f1291efc9f7",
+  "timestamp": "2026-11-27T03:00:10.439Z",
+  "message": "Code review config not found",
+  "tenantId": "uuid#ef602286",
+  "metadata": {
+   "organizationId": "uuid#ef602286",
+   "teamId": "uuid#bad2f61f",
+   "tenantId": "uuid#ef602286"
+  },
+  "attributes": {
+   "organizationId": "uuid#ef602286"
+  }
+ },
+ {
+  "_id": "6b08f23d41e66f1291efca20",
+  "timestamp": "2026-11-27T03:00:10.918Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#70e7cd06",
+    "teamId": "uuid#90dcad7a"
+   }
+  },
+  "error": {
+   "name": "ServiceUnavailableException",
+   "message": "Could not fetch pull requests from the code management integration; no rules were generated"
+  }
+ },
+ {
+  "_id": "6b08f23d41e66f1291efca21",
+  "timestamp": "2026-11-27T03:00:11.194Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#5c6ea0c0",
+    "teamId": "uuid#a024524e"
+   }
+  },
+  "error": {
+   "name": "ServiceUnavailableException",
+   "message": "Could not fetch pull requests from the code management integration; no rules were generated"
+  }
+ },
+ {
+  "_id": "6b08f23d41e66f1291efca24",
+  "timestamp": "2026-11-27T03:00:13.667Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#95883d39",
+    "teamId": "uuid#babe21ec"
+   }
+  },
+  "error": {
+   "name": "ServiceUnavailableException",
+   "message": "Could not fetch pull requests from the code management integration; no rules were generated"
+  }
+ },
+ {
+  "_id": "6b08f24041e66f1291efca35",
+  "timestamp": "2026-11-27T03:00:14.809Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#999fca4c",
+    "teamId": "uuid#b3d3cc6c"
+   }
+  },
+  "error": {
+   "name": "ServiceUnavailableException",
+   "message": "Could not fetch pull requests from the code management integration; no rules were generated"
+  }
+ },
+ {
+  "_id": "6b08f24c41e66f1291efca6f",
+  "timestamp": "2026-11-27T03:00:28.392Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#aa56326a",
+    "teamId": "uuid#0c42e813"
+   }
+  },
+  "error": {
+   "name": "ServiceUnavailableException",
+   "message": "Could not fetch pull requests from the code management integration; no rules were generated"
+  }
+ },
+ {
+  "_id": "6b08f24f41e66f1291efca89",
+  "timestamp": "2026-11-27T03:00:29.179Z",
+  "message": "Code review config not found",
+  "tenantId": "uuid#20c9bc42",
+  "metadata": {
+   "organizationId": "uuid#20c9bc42",
+   "teamId": "uuid#67ac33ca",
+   "tenantId": "uuid#20c9bc42"
+  },
+  "attributes": {
+   "organizationId": "uuid#20c9bc42"
+  }
+ },
+ {
+  "_id": "6b08f24f41e66f1291efcaab",
+  "timestamp": "2026-11-27T03:00:29.175Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#0f776099",
+    "teamId": "uuid#0d59c19a"
+   }
+  },
+  "error": {
+   "name": "ServiceUnavailableException",
+   "message": "Could not fetch pull requests from the code management integration; no rules were generated"
+  }
+ },
+ {
+  "_id": "6b08f24f41e66f1291efcaae",
+  "timestamp": "2026-11-27T03:00:30.995Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#349b2c53",
+    "teamId": "uuid#90f9423b"
+   }
+  },
+  "error": {
+   "name": "ServiceUnavailableException",
+   "message": "Could not fetch pull requests from the code management integration; no rules were generated"
+  }
+ },
+ {
+  "_id": "6b08f24f41e66f1291efcab0",
+  "timestamp": "2026-11-27T03:00:31.177Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#6029e14e",
+    "teamId": "uuid#17df06e8"
+   }
+  },
+  "error": {
+   "name": "ServiceUnavailableException",
+   "message": "Could not fetch pull requests from the code management integration; no rules were generated"
+  }
+ },
+ {
+  "_id": "6b08f25241e66f1291efcabf",
+  "timestamp": "2026-11-27T03:00:33.034Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#b848baba",
+    "teamId": "uuid#e00b8056"
+   }
+  },
+  "error": {
+   "name": "ServiceUnavailableException",
+   "message": "Could not fetch pull requests from the code management integration; no rules were generated"
+  }
+ },
+ {
+  "_id": "6b08f25541e66f1291efcac8",
+  "timestamp": "2026-11-27T03:00:35.760Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#2733453c",
+    "teamId": "uuid#10055c25"
+   }
+  },
+  "error": {
+   "name": "AI_APICallError",
+   "message": "The API key you provided is invalid."
+  }
+ },
+ {
+  "_id": "6b08f2df41e66f1291efcb4a",
+  "timestamp": "2026-11-27T03:02:55.507Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#28b42faf",
+    "teamId": "uuid#5e1deeb0"
+   }
+  },
+  "error": {
+   "name": "ServiceUnavailableException",
+   "message": "Could not fetch pull requests from the code management integration; no rules were generated"
+  }
+ },
+ {
+  "_id": "6b08f2e541e66f1291efcb88",
+  "timestamp": "2026-11-27T03:02:59.698Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#78c6f321",
+    "teamId": "uuid#aa7bf96b"
+   }
+  },
+  "error": {
+   "name": "ServiceUnavailableException",
+   "message": "Could not fetch pull requests from the code management integration; no rules were generated"
+  }
+ },
+ {
+  "_id": "6b08f2eb41e66f1291efcb9c",
+  "timestamp": "2026-11-27T03:03:07.208Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#be554191",
+    "teamId": "uuid#db7b8ec2"
+   }
+  },
+  "error": {
+   "name": "ServiceUnavailableException",
+   "message": "Could not fetch pull requests from the code management integration; no rules were generated"
+  }
+ },
+ {
+  "_id": "6b08f2eb41e66f1291efcb9d",
+  "timestamp": "2026-11-27T03:03:07.486Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#f59ce8dc",
+    "teamId": "uuid#28a269e9"
+   }
+  },
+  "error": {
+   "name": "ServiceUnavailableException",
+   "message": "Could not fetch pull requests from the code management integration; no rules were generated"
+  }
+ },
+ {
+  "_id": "6b08f2f441e66f1291efcc0b",
+  "timestamp": "2026-11-27T03:03:15.386Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#78e2f2a0",
+    "teamId": "uuid#f9adb6a8"
+   }
+  },
+  "error": {
+   "name": "ServiceUnavailableException",
+   "message": "Could not fetch pull requests from the code management integration; no rules were generated"
+  }
+ },
+ {
+  "_id": "6b08f2f941e66f1291efcc59",
+  "timestamp": "2026-11-27T03:03:20.539Z",
+  "message": "No repositories found",
+  "tenantId": "uuid#693c11c0",
+  "metadata": {
+   "organizationId": "uuid#693c11c0",
+   "teamId": "uuid#0cfda04d",
+   "tenantId": "uuid#693c11c0"
+  },
+  "attributes": {
+   "organizationId": "uuid#693c11c0"
+  }
+ },
+ {
+  "_id": "6b08f2f941e66f1291efcc5c",
+  "timestamp": "2026-11-27T03:03:21.864Z",
+  "message": "No repositories found",
+  "tenantId": "uuid#d9710430",
+  "metadata": {
+   "organizationId": "uuid#d9710430",
+   "teamId": "uuid#d2612853",
+   "tenantId": "uuid#d9710430"
+  },
+  "attributes": {
+   "organizationId": "uuid#d9710430"
+  }
+ },
+ {
+  "_id": "6b08f2f941e66f1291efcc60",
+  "timestamp": "2026-11-27T03:03:21.907Z",
+  "message": "No repositories found",
+  "tenantId": "uuid#3a67e908",
+  "metadata": {
+   "organizationId": "uuid#3a67e908",
+   "teamId": "uuid#5fec6052",
+   "tenantId": "uuid#3a67e908"
+  },
+  "attributes": {
+   "organizationId": "uuid#3a67e908"
+  }
+ },
+ {
+  "_id": "6b08f2f941e66f1291efcc63",
+  "timestamp": "2026-11-27T03:03:21.829Z",
+  "message": "No repositories found",
+  "tenantId": "uuid#fe772da7",
+  "metadata": {
+   "organizationId": "uuid#fe772da7",
+   "teamId": "uuid#f56dc94d",
+   "tenantId": "uuid#fe772da7"
+  },
+  "attributes": {
+   "organizationId": "uuid#fe772da7"
+  }
+ },
+ {
+  "_id": "6b08f2f941e66f1291efcc79",
+  "timestamp": "2026-11-27T03:03:21.773Z",
+  "message": "No repositories found",
+  "tenantId": "uuid#dc73d278",
+  "metadata": {
+   "organizationId": "uuid#dc73d278",
+   "teamId": "uuid#bfc4b67b",
+   "tenantId": "uuid#dc73d278"
+  },
+  "attributes": {
+   "organizationId": "uuid#dc73d278"
+  }
+ },
+ {
+  "_id": "6b08f2f941e66f1291efcc7f",
+  "timestamp": "2026-11-27T03:03:21.848Z",
+  "message": "No repositories found",
+  "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+  "metadata": {
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "uuid#0da938f1",
+   "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  },
+  "attributes": {
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  }
+ },
+ {
+  "_id": "6b08f2f941e66f1291efcc81",
+  "timestamp": "2026-11-27T03:03:20.564Z",
+  "message": "No repositories found",
+  "tenantId": "uuid#b31bcb08",
+  "metadata": {
+   "organizationId": "uuid#b31bcb08",
+   "teamId": "uuid#025fbae2",
+   "tenantId": "uuid#b31bcb08"
+  },
+  "attributes": {
+   "organizationId": "uuid#b31bcb08"
+  }
+ },
+ {
+  "_id": "6b08f2f941e66f1291efcc88",
+  "timestamp": "2026-11-27T03:03:20.331Z",
+  "message": "Error generating kody rules",
+  "tenantId": "unknown",
+  "metadata": {
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "params": {
+    "organizationId": "uuid#6b9a1044",
+    "teamId": "uuid#c84804a8"
+   }
+  },
+  "error": {
+   "name": "AI_APICallError",
+   "message": "The API key you provided is invalid."
+  }
+ }
+]
