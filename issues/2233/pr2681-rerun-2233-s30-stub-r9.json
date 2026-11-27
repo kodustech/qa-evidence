@@ -1,0 +1,243 @@
+{
+ "stub_method": "local OpenAI-compatible recording proxy behind a cloudflared quick tunnel; QA BYOK holds a fake key; the LiteLLM key is added locally by the proxy; counts are o200k over messages text + tools JSON",
+ "per_request_table": {
+  "window": 24000,
+  "tokenizer": "o200k_base over messages text + tools JSON (js-tiktoken)",
+  "table": [
+   {
+    "kind": "BL analyzer",
+    "requests": 2,
+    "max_input_tokens": 5179,
+    "max_input_plus_declared_answer": 11179,
+    "declared_answer_of_that": 6000,
+    "over_24000_input": [],
+    "over_24000_with_answer": []
+   },
+   {
+    "kind": "BL gap check",
+    "requests": 13,
+    "max_input_tokens": 2477,
+    "max_input_plus_declared_answer": 3277,
+    "declared_answer_of_that": 800,
+    "over_24000_input": [],
+    "over_24000_with_answer": []
+   },
+   {
+    "kind": "BL reply classifier",
+    "requests": 4,
+    "max_input_tokens": 558,
+    "max_input_plus_declared_answer": 958,
+    "declared_answer_of_that": 400,
+    "over_24000_input": [],
+    "over_24000_with_answer": []
+   },
+   {
+    "kind": "PR summary (chunk/consolidation)",
+    "requests": 4,
+    "max_input_tokens": 20044,
+    "max_input_plus_declared_answer": 20044,
+    "declared_answer_of_that": null,
+    "over_24000_input": [],
+    "over_24000_with_answer": []
+   },
+   {
+    "kind": "chat (conversation agent)",
+    "requests": 2,
+    "max_input_tokens": 7898,
+    "max_input_plus_declared_answer": 27898,
+    "declared_answer_of_that": 20000,
+    "over_24000_input": [],
+    "over_24000_with_answer": [
+     162,
+     166
+    ]
+   },
+   {
+    "kind": "enrich (code-review-enrich)",
+    "requests": 2,
+    "max_input_tokens": 92403,
+    "max_input_plus_declared_answer": 92403,
+    "declared_answer_of_that": null,
+    "over_24000_input": [
+     126
+    ],
+    "over_24000_with_answer": [
+     126
+    ]
+   },
+   {
+    "kind": "finder (code-review-generalist)",
+    "requests": 35,
+    "max_input_tokens": 14775,
+    "max_input_plus_declared_answer": 14775,
+    "declared_answer_of_that": null,
+    "over_24000_input": [],
+    "over_24000_with_answer": []
+   },
+   {
+    "kind": "other: Assign each code review comment below one severity",
+    "requests": 1,
+    "max_input_tokens": 1552,
+    "max_input_plus_declared_answer": 1552,
+    "declared_answer_of_that": null,
+    "over_24000_input": [],
+    "over_24000_with_answer": []
+   },
+   {
+    "kind": "other: Return ONLY a JSON object that conforms EXACTLY to",
+    "requests": 2,
+    "max_input_tokens": 1234,
+    "max_input_plus_declared_answer": 1234,
+    "declared_answer_of_that": null,
+    "over_24000_input": [],
+    "over_24000_with_answer": []
+   },
+   {
+    "kind": "other: The tool \"submitReplyIntent\" was called with argum",
+    "requests": 1,
+    "max_input_tokens": 113,
+    "max_input_plus_declared_answer": 113,
+    "declared_answer_of_that": null,
+    "over_24000_input": [],
+    "over_24000_with_answer": []
+   },
+   {
+    "kind": "other: You are a code review comment editor. Each suggest",
+    "requests": 1,
+    "max_input_tokens": 827,
+    "max_input_plus_declared_answer": 827,
+    "declared_answer_of_that": null,
+    "over_24000_input": [],
+    "over_24000_with_answer": []
+   },
+   {
+    "kind": "other: You are an expert code reviewer. Your task is to a",
+    "requests": 2,
+    "max_input_tokens": 429,
+    "max_input_plus_declared_answer": 429,
+    "declared_answer_of_that": null,
+    "over_24000_input": [],
+    "over_24000_with_answer": []
+   },
+   {
+    "kind": "verify (code-review-generalist-verify)",
+    "requests": 48,
+    "max_input_tokens": 9895,
+    "max_input_plus_declared_answer": 9895,
+    "declared_answer_of_that": null,
+    "over_24000_input": [],
+    "over_24000_with_answer": []
+   }
+  ]
+ },
+ "s12_r9_command": {
+  "cmd_id": 7229926731,
+  "cmd_at": "2026-11-27T23:10:11Z",
+  "replies": [
+   {
+    "id": 7229932469,
+    "created": "2026-11-27T23:10:35Z",
+    "updated": "2026-11-27T23:10:35Z",
+    "body": "<!-- kody-business-logic -->\n## Kody \u00b7 Business Logic\n\n**[#36 \u00b7 Enrollment fee discount](https://github.com/kodus-olimpo/claude-athena/issues/36)**\n4 changes not in the task\n<sub>Task read 2026-11-27 23:10 UTC \u00b7 re-checked on request at `e8a57b6`</sub>\n\n| | Requirement | In this PR |\n|---|---|---|\n| \u2705 **MET** | AC-1: `EnrollmentFeeService.calculateEnrollmentFee` returns the base fee of 500.00 for a student with no sibling enrolled. <sub>AC01</sub> | `src/enrollment/discount-lookup.ts:11` \u00b7 applySiblingDiscount returns the fee unchanged when siblingsEnrolled is zero (line 11-12), so calculateEnrollmentFee returns the base 500 for a student with no sibling enrolled. \u00b7 _already in the code, outside this PR's diff_ |\n| \u2705 **MET** | AC #2: a student with at least one sibling already enrolled gets a 10% discount on the fee (pays 450.00). <sub>AC02</sub> | `src/enrollment/discount-lookup.ts:14` \u00b7 `applySiblingDiscount` \u2014 the helper `EnrollmentFeeService.calculateEnrollmentFee` calls \u2014 returns `fee - fee * 0.1` when `siblingsEnrolled > 0` (line 11 returns the full fee otherwise), so a base fee of 500 becomes 450.00 for a student with at least one enrolled sibling. \u00b7 _already in the code, outside this PR's diff_ |\n| \u2705 **MET** | AC3: the fee is never negative and is rounded to 2 decimals. <sub>AC03</sub> | `src/enrollment/fee.service.ts:14` \u00b7 The returned fee is clamped to a minimum of zero and rounded to two decimals with `Math.max(0, Math.round(fee * 100) / 100)`. |\n| \u2795 **NOT IN TASK** | Adds school logo SVG path data (`SCHOOL_LOGO_PATH`) for rendering a logo in the enrollment screen. | `src/enrollment/logo-path.ts` \u00b7 #36 doesn't ask for it. \u00b7 Revert it, or reference the task that asks for the logo rendering. |\n| \u2795 **NOT IN TASK** | Adds student fixture data (`STUDENTS_FIXTURE`) with names, grade levels, sibling counts and scholarship status. | `src/enrollment/students-fixture.ts` \u00b7 #36 doesn't ask for it. \u00b7 Revert it, or move it to the task that asks for preview/fixture data. |\n| \u2795 **NOT IN TASK** | Adds a `sumDiscounts` helper described as used by the invoice preview, which no task requirement mentions (and whose loop bound can return NaN). | `src/enrollment/discount.ts:9` \u00b7 #36 doesn't ask for it. \u00b7 Revert it, or move it to the invoice preview task that needs it. |\n| \u2795 **NOT IN TASK** | Adds a `siblingDiscountRate` helper that defines the 10% rule separately from the helper the fee service actually uses. | `src/enrollment/discount.ts:3` \u00b7 #36 doesn't ask for it. \u00b7 Use a single discount rule in the fee path, or remove the duplicate. |\n\n<sub>Disagree with a line? Reply here and mention @kody. Fixed it? Comment `@kody -v business-logic` and this comment is updated.</sub>"
+   },
+   {
+    "id": 7229933246,
+    "created": "2026-11-27T23:10:38Z",
+    "updated": "2026-11-27T23:10:38Z",
+    "body": "Business logic checked. The result is in the Kody \u00b7 Business Logic comment on this pull request."
+   }
+  ]
+ },
+ "s12_r9_runs": [
+  {
+   "id": "6b0a0c78844994d2ac87c14d",
+   "createdAt": "2026-11-27T23:04:24.056Z",
+   "door": "auto",
+   "trigger": "auto",
+   "headSha": "e8a57b6",
+   "outcome": "skipped",
+   "skipReason": "no_tracker",
+   "references": [
+    {
+     "kind": "git_issue",
+     "id": "36",
+     "raw": "#36",
+     "source": "body",
+     "intent": "closes"
+    }
+   ],
+   "attempts": [],
+   "unseenFiles": [],
+   "tasks": []
+  },
+  {
+   "id": "6b0a0deb844994d2ac87c359",
+   "createdAt": "2026-11-27T23:10:35.930Z",
+   "door": "command",
+   "trigger": "command",
+   "headSha": "e8a57b6",
+   "outcome": "validated",
+   "passed": true,
+   "references": [
+    {
+     "kind": "git_issue",
+     "id": "36",
+     "raw": "#36",
+     "source": "body",
+     "intent": "closes"
+    }
+   ],
+   "attempts": [
+    {
+     "reference": "#36",
+     "tracker": "Git Issues",
+     "status": "found",
+     "tools": [
+      "KODUS_GET_ISSUE"
+     ]
+    }
+   ],
+   "unseenFiles": [
+    "src/enrollment/discount-lookup.ts",
+    "src/enrollment/logo-path.ts",
+    "src/enrollment/students-fixture.ts"
+   ],
+   "comment": {
+    "id": 7229932469
+   },
+   "tasks": [
+    {
+     "id": "#36",
+     "tracker": "Git Issues",
+     "passed": true,
+     "textHash": "c95b7b7afa",
+     "reqs": [
+      "AC-1:met",
+      "AC #2:met",
+      "AC3:met"
+     ],
+     "oos": [
+      "Adds school logo SVG path data (`SCHOOL_LOGO_PATH`) for rendering a logo in the ",
+      "Adds student fixture data (`STUDENTS_FIXTURE`) with names, grade levels, sibling",
+      "Adds a `sumDiscounts` helper described as used by the invoice preview, which no ",
+      "Adds a `siblingDiscountRate` helper that defines the 10% rule separately from th"
+     ]
+    }
+   ]
+  }
+ ],
+ "s30_chat_reply": {
+  "pr": 41,
+  "root": 4724298401,
+  "question": "@kody read the whole diff of this PR and tell me whether discount-lookup.ts changes the enrollment fee.",
+  "question_id": 4724307496,
+  "asked_at": "2026-11-27T23:11:05Z",
+  "replies": [
+   {
+    "id": 4724308817,
+    "created": "2026-11-27T23:11:22Z",
+    "body": "I didn't get an actual question in your message \u2014 just the context for PR #41 (`qa2681-r9` \u2192 `main`) in `claude-athena`. Happy to dig in, but I need to know what you're after.\n\nA few things I can do right away:\n\n- **Review the PR** \u2014 read the full diff and flag issues by severity\n- **Explain the change** \u2014 summarize what the branch does and what it touches\n- **Check against Kody Rules** \u2014 verify the diff respects your team's standards\n- **Trace something specific** \u2014 e.g. how `EnrollmentFeeService` is wired up, or where the sibling-discount logic lives\n\nOne thing I noticed while poking around: there's a spec at `src/enrollment/fee.service.spec.ts` importing `EnrollmentFeeService`, so fee logic is clearly in scope here. If your question is about that, say the word and I'll pull the file and the relevant diff hunks.\n\nWhat would you like me to look at?\n\n<!-- kody-codereview -->\n<!-- kody-conversation -->"
+   }
+  ]
+ }
+}
