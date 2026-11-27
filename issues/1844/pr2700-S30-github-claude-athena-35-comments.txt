@@ -1,0 +1,69 @@
+GitHub kodus-olimpo/claude-athena#35: PR body + all issue comments + review comments, read via REST on 2026-11-27. Author logins omitted (comments are posted by the integration token user).
+
+=== PR description ===
+QA for kodustech/kodus-ai#2700
+
+<!-- kody-pr-summary:start -->
+## Summary
+
+Adds a `Classroom` model and a helper to format a human-readable classroom label.
+
+## Changes
+
+- **`qa2700/classroom.ts`** (new):
+  - Introduces a `Classroom` interface with `id`, `name`, and `capacity` fields.
+  - Adds `formatClassroomLabel(room)`, which returns the classroom name followed by its seat count, e.g. `Room A (30 seats)`.
+
+## Impact
+
+Provides a single, consistent way to display classroom names alongside their capacity, so callers don't need to build this label string themselves.
+<!-- kody-pr-summary:end -->
+
+=== reviews: []
+
+=== issue comment 7228743535 created 2026-11-27T21:46:34Z updated 2026-11-27T21:47:35Z
+# Kody Review Complete
+**Great news!** 🎉
+No issues were found that match your current review configurations.
+
+Keep up the excellent work! 🚀
+
+<details>
+<summary>Kody Guide: Usage and Configuration</summary>
+
+<details>
+<summary>Interacting with Kody</summary>
+
+- **Request a Review:** Ask Kody to review your PR manually by adding a comment with the `@kody start-review` command at the root of your PR.
+
+- **Validate Business Logic:** Ask Kody to validate your code against business rules by adding a comment with the `@kody -v business-logic` command.
+
+- **Provide Feedback:** Help Kody learn and improve by reacting to its comments with a 👍 for helpful suggestions or a 👎 if improvements are needed.
+
+</details>
+
+<details>
+<summary>Current Kody Configuration</summary>
+
+<details>
+<summary>Review Options</summary>
+
+The following review options are enabled or disabled:
+
+| Options                        | Enabled |
+|-------------------------------|---------|
+| **Bug** | ✅ |
+| **Performance** | ✅ |
+| **Security** | ✅ |
+| **Business Logic** | ✅ |
+
+</details>
+
+**[Access your configuration settings here.](https://qa.web.kodus.io/settings/code-review/global/general)**
+
+</details>
+</details>
+
+<!-- kody-codereview-completed-1795816055196-s92x8upusxf -->
+<!-- kody-codereview -->
+&#8203;
