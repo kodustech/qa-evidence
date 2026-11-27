@@ -1,0 +1,407 @@
+[
+ {
+  "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+  "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+  "action": "edit",
+  "userInfo": {
+   "userId": "12741dc3-6ccf-4dd6-a7f8-a713d0592423",
+   "userEmail": "<email>"
+  },
+  "configLevel": "global",
+  "changedData": [
+   {
+    "actionDescription": "Configuration Updated",
+    "previousValue": {
+     "conversation": {
+      "implicitReplies": true
+     }
+    },
+    "currentValue": {
+     "conversation": {
+      "implicitReplies": false
+     }
+    },
+    "description": "User <email> changed Implicit Replies from enabled to disabled"
+   }
+  ],
+  "createdAt": "2026-11-27T17:20:44.046Z",
+  "updatedAt": "2026-11-27T17:20:44.046Z",
+  "__v": 0
+ },
+ {
+  "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+  "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+  "action": "edit",
+  "userInfo": {
+   "userId": "12741dc3-6ccf-4dd6-a7f8-a713d0592423",
+   "userEmail": "<email>"
+  },
+  "configLevel": "global",
+  "changedData": [
+   {
+    "actionDescription": "Configuration Updated",
+    "previousValue": {
+     "conversation": {
+      "implicitReplies": false
+     }
+    },
+    "currentValue": {
+     "conversation": {
+      "implicitReplies": true
+     }
+    },
+    "description": "User <email> changed Implicit Replies from disabled to enabled"
+   }
+  ],
+  "createdAt": "2026-11-27T17:22:03.610Z",
+  "updatedAt": "2026-11-27T17:22:03.610Z",
+  "__v": 0
+ },
+ {
+  "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+  "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+  "action": "edit",
+  "userInfo": {
+   "userId": "12741dc3-6ccf-4dd6-a7f8-a713d0592423",
+   "userEmail": "<email>"
+  },
+  "configLevel": "global",
+  "changedData": [
+   {
+    "actionDescription": "Configuration Updated",
+    "previousValue": {
+     "conversation": {
+      "implicitReplies": true
+     }
+    },
+    "currentValue": {
+     "conversation": {
+      "implicitReplies": false
+     }
+    },
+    "description": "User <email> changed Implicit Replies from enabled to disabled"
+   }
+  ],
+  "createdAt": "2026-11-27T17:22:07.454Z",
+  "updatedAt": "2026-11-27T17:22:07.454Z",
+  "__v": 0
+ },
+ {
+  "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+  "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+  "action": "create",
+  "userInfo": {
+   "userId": "12741dc3-6ccf-4dd6-a7f8-a713d0592423",
+   "userEmail": "<email>"
+  },
+  "configLevel": "repository",
+  "repository": {
+   "id": "1468015189",
+   "name": "codex-athena",
+   "isSelected": false,
+   "directories": []
+  },
+  "changedData": [
+   {
+    "actionDescription": "Repository Configuration Created",
+    "previousValue": null,
+    "currentValue": {
+     "repositoryId": "1468015189",
+     "repositoryName": "codex-athena"
+    },
+    "description": "User <email> created configuration for repository \"codex-athena\""
+   }
+  ],
+  "createdAt": "2026-11-27T17:22:15.424Z",
+  "updatedAt": "2026-11-27T17:22:15.424Z",
+  "__v": 0
+ },
+ {
+  "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+  "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+  "action": "edit",
+  "userInfo": {
+   "userId": "12741dc3-6ccf-4dd6-a7f8-a713d0592423",
+   "userEmail": "<email>"
+  },
+  "configLevel": "global",
+  "changedData": [
+   {
+    "actionDescription": "Configuration Updated",
+    "previousValue": {
+     "conversation": {
+      "implicitReplies": false
+     }
+    },
+    "currentValue": {
+     "conversation": {
+      "implicitReplies": true
+     }
+    },
+    "description": "User <email> changed Implicit Replies from disabled to enabled"
+   }
+  ],
+  "createdAt": "2026-11-27T17:23:52.592Z",
+  "updatedAt": "2026-11-27T17:23:52.592Z",
+  "__v": 0
+ },
+ {
+  "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+  "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+  "action": "edit",
+  "userInfo": {
+   "userId": "12741dc3-6ccf-4dd6-a7f8-a713d0592423",
+   "userEmail": "<email>"
+  },
+  "configLevel": "repository",
+  "repository": {
+   "id": "1468015189",
+   "name": "codex-athena",
+   "configs": {
+    "conversation": {
+     "implicitReplies": true
+    }
+   },
+   "isSelected": true,
+   "directories": []
+  },
+  "changedData": [
+   {
+    "actionDescription": "Configuration Updated",
+    "previousValue": {
+     "conversation": {
+      "implicitReplies": true
+     }
+    },
+    "currentValue": {
+     "conversation": {
+      "implicitReplies": false
+     }
+    },
+    "description": "User <email> changed Implicit Replies from enabled to disabled"
+   }
+  ],
+  "createdAt": "2026-11-27T17:23:56.932Z",
+  "updatedAt": "2026-11-27T17:23:56.932Z",
+  "__v": 0
+ },
+ {
+  "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+  "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+  "action": "edit",
+  "userInfo": {
+   "userId": "12741dc3-6ccf-4dd6-a7f8-a713d0592423",
+   "userEmail": "<email>"
+  },
+  "configLevel": "repository",
+  "repository": {
+   "id": "1468015189",
+   "name": "codex-athena",
+   "configs": {
+    "conversation": {
+     "implicitReplies": false
+    }
+   },
+   "isSelected": true,
+   "directories": []
+  },
+  "changedData": [
+   {
+    "actionDescription": "Configuration Updated",
+    "previousValue": {
+     "conversation": {
+      "implicitReplies": false
+     }
+    },
+    "currentValue": {
+     "conversation": {
+      "implicitReplies": true
+     }
+    },
+    "description": "User <email> changed Implicit Replies from disabled to enabled"
+   }
+  ],
+  "createdAt": "2026-11-27T17:24:03.972Z",
+  "updatedAt": "2026-11-27T17:24:03.972Z",
+  "__v": 0
+ },
+ {
+  "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+  "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+  "action": "edit",
+  "userInfo": {
+   "userId": "12741dc3-6ccf-4dd6-a7f8-a713d0592423",
+   "userEmail": "<email>"
+  },
+  "configLevel": "global",
+  "changedData": [
+   {
+    "actionDescription": "Configuration Updated",
+    "previousValue": {
+     "runOnDraft": true
+    },
+    "currentValue": {
+     "runOnDraft": false
+    },
+    "description": "User <email> changed Run on Draft from enabled to disabled"
+   }
+  ],
+  "createdAt": "2026-11-27T17:24:42.654Z",
+  "updatedAt": "2026-11-27T17:24:42.654Z",
+  "__v": 0
+ },
+ {
+  "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+  "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+  "action": "edit",
+  "userInfo": {
+   "userId": "12741dc3-6ccf-4dd6-a7f8-a713d0592423",
+   "userEmail": "<email>"
+  },
+  "configLevel": "global",
+  "changedData": [
+   {
+    "actionDescription": "Configuration Updated",
+    "previousValue": {
+     "runOnDraft": false
+    },
+    "currentValue": {
+     "runOnDraft": true
+    },
+    "description": "User <email> changed Run on Draft from disabled to enabled"
+   }
+  ],
+  "createdAt": "2026-11-27T17:25:00.901Z",
+  "updatedAt": "2026-11-27T17:25:00.901Z",
+  "__v": 0
+ },
+ {
+  "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+  "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+  "action": "edit",
+  "userInfo": {
+   "userId": "12741dc3-6ccf-4dd6-a7f8-a713d0592423",
+   "userEmail": "<email>"
+  },
+  "configLevel": "global",
+  "changedData": [
+   {
+    "actionDescription": "Configuration Updated",
+    "previousValue": {
+     "conversation": {
+      "implicitReplies": true
+     }
+    },
+    "currentValue": {
+     "conversation": {
+      "implicitReplies": false
+     }
+    },
+    "description": "User <email> changed Implicit Replies from enabled to disabled"
+   }
+  ],
+  "createdAt": "2026-11-27T17:25:47.901Z",
+  "updatedAt": "2026-11-27T17:25:47.901Z",
+  "__v": 0
+ },
+ {
+  "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+  "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+  "action": "edit",
+  "userInfo": {
+   "userId": "12741dc3-6ccf-4dd6-a7f8-a713d0592423",
+   "userEmail": "<email>"
+  },
+  "configLevel": "global",
+  "changedData": [
+   {
+    "actionDescription": "Configuration Updated",
+    "previousValue": {
+     "runOnDraft": true
+    },
+    "currentValue": {
+     "runOnDraft": false
+    },
+    "description": "User <email> changed Run on Draft from enabled to disabled"
+   }
+  ],
+  "createdAt": "2026-11-27T17:26:18.737Z",
+  "updatedAt": "2026-11-27T17:26:18.737Z",
+  "__v": 0
+ },
+ {
+  "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+  "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+  "action": "edit",
+  "userInfo": {
+   "userId": "12741dc3-6ccf-4dd6-a7f8-a713d0592423",
+   "userEmail": "<email>"
+  },
+  "configLevel": "global",
+  "changedData": [
+   {
+    "actionDescription": "Configuration Updated",
+    "previousValue": {
+     "runOnDraft": false
+    },
+    "currentValue": {
+     "runOnDraft": true
+    },
+    "description": "User <email> changed Run on Draft from disabled to enabled"
+   }
+  ],
+  "createdAt": "2026-11-27T17:26:33.287Z",
+  "updatedAt": "2026-11-27T17:26:33.287Z",
+  "__v": 0
+ },
+ {
+  "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+  "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+  "action": "edit",
+  "userInfo": {
+   "userId": "12741dc3-6ccf-4dd6-a7f8-a713d0592423",
+   "userEmail": "<email>"
+  },
+  "configLevel": "global",
+  "changedData": [
+   {
+    "actionDescription": "Configuration Updated",
+    "previousValue": {
+     "runOnDraft": true
+    },
+    "currentValue": {
+     "runOnDraft": false
+    },
+    "description": "User <email> changed Run on Draft from enabled to disabled"
+   }
+  ],
+  "createdAt": "2026-11-27T17:26:57.100Z",
+  "updatedAt": "2026-11-27T17:26:57.100Z",
+  "__v": 0
+ },
+ {
+  "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+  "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+  "action": "edit",
+  "userInfo": {
+   "userId": "12741dc3-6ccf-4dd6-a7f8-a713d0592423",
+   "userEmail": "<email>"
+  },
+  "configLevel": "global",
+  "changedData": [
+   {
+    "actionDescription": "Configuration Updated",
+    "previousValue": {
+     "runOnDraft": false
+    },
+    "currentValue": {
+     "runOnDraft": true
+    },
+    "description": "User <email> changed Run on Draft from disabled to enabled"
+   }
+  ],
+  "createdAt": "2026-11-27T17:27:13.057Z",
+  "updatedAt": "2026-11-27T17:27:13.057Z",
+  "__v": 0
+ }
+]
