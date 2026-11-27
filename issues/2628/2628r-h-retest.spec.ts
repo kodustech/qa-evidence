@@ -462,6 +462,66 @@ describe(`retest lease harness @${REV}`, () => {
         expect(out.e2bSetTimeoutAfterCmdEndMs).toBeGreaterThanOrEqual(1000);
     });
 
+    it('R31 X5 custom-agent astGrep on E2B (stub): release during the >1 s target-branch read', async () => {
+        const T = 'R31';
+        const { buildAstGrepTool } = require('@libs/code-review/infrastructure/agents/adapters/ast-grep.tool');
+        const { sandboxFileWriter } = require('@libs/code-review/infrastructure/agents/adapters/custom-agent-tools');
+        const m = manager(providerOf(() => instance('sbx-r31-' + REV + '-' + ++seq, { remoteCommands: { read: jest.fn(async () => 'x'), exec: jest.fn(async (c: string) => ({ stdout: '', stderr: '', exitCode: 0, cmd: c })) } })));
+        const n = prNum(); const k = prKeyOf(n);
+        const handle = await stageAcquire(m, n);
+        const sbx = handle.sandboxId;
+        const marks: any = {};
+        const t0 = Date.now();
+        const realSet = repo.setKillAt.bind(repo);
+        jest.spyOn(repo, 'setKillAt').mockImplementation(async (pk: string, at: Date) => { marks.setKillAt = Date.now() - t0; return realSet(pk, at) as any; });
+        const write = sandboxFileWriter(handle);
+        const astGrep = buildAstGrepTool({
+            exec: async (c: string) => { const r = await handle.remoteCommands.exec(c); if (/ast-grep/.test(Array.isArray(c) ? c.join(' ') : String(c))) marks.scanEnd = Date.now() - t0; return r; },
+            writeFile: async (p: string, c: string) => { await write(p, c); if (/rules/.test(p)) marks.rulesWritten = Date.now() - t0; else marks.configWritten = Date.now() - t0; },
+            changedFiles: ['a.ts'], rulesPath: '.kody/ast-grep.yml',
+            readTargetFile: async () => { await sleep(2000); return 'id: r\nlanguage: typescript\nrule:\n  pattern: x\n'; },
+            logContext: {},
+        });
+        const run = astGrep.execute({ useRules: true }, { runId: 'r31' });
+        await sleep(1200);
+        marks.release = Date.now() - t0;
+        await handle.cleanup();
+        const res = await run;
+        await sleep(200);
+        const d = await doc(k);
+        const st = e2bCalls(sbx).find((c) => c.op === 'setTimeout');
+        const out = { marks, toolIsError: !!res.isError, docAfter: slim(d), killAtMinusScanEndMs: d?.killAt && marks.scanEnd ? new Date(d.killAt).getTime() - t0 - marks.scanEnd : null, e2bSetTimeoutAt: st ? st.startedAt - t0 : null, killScheduledBeforeLastCommand: marks.setKillAt !== undefined && marks.setKillAt < Math.max(marks.rulesWritten ?? 0, marks.scanEnd ?? 0) };
+        ev(T, 'result', out);
+        expect(out.killScheduledBeforeLastCommand).toBe(false);
+    });
+
+    it('R32 double kill: a tick outlives the 25 s cron lock and the next worker tick kills the same sandbox', async () => {
+        const T = 'R32';
+        // A distributed lock with TTL semantics shared by two workers; TTLs scaled 1:1000 (25 s -> 25 ms).
+        const held = new Map<string, number>();
+        const ttlLock = { acquire: async (key: string, o: { ttl: number }) => { const now = Date.now(); const exp = held.get(key); if (exp && exp > now) return null; held.set(key, now + o.ttl / 1000); return { release: async () => { held.delete(key); } }; } } as any;
+        const w1 = new SandboxLeaseReaperService(repo, ttlLock, withKey), w2 = new SandboxLeaseReaperService(repo, ttlLock, withKey);
+        const A = manager();
+        const n = prNum(); const k = prKeyOf(n);
+        const a = await A.acquire(k, 'review', undefined, CLONE);
+        const sbx = a.sandboxId;
+        await A.release(a.leaseId, { idleMs: 50 });
+        await sleep(120);
+        const slow = deferred<void>();
+        let first = true;
+        e2b.kill.mockImplementation(async () => { if (first) { first = false; await slow.promise; } return true; });
+        const tick1 = w1.killIdleSandboxes();
+        await waitFor(() => e2bCalls(sbx).some((c) => c.op === 'kill'), 3000);
+        await sleep(40); // past the (scaled) 25 s lock TTL while tick 1 is still in Sandbox.kill
+        const docsBetween = { prDoc: slim(await doc(k)), retired: slim(await doc(`${ORG}:retired:${sbx}`)) };
+        await w2.killIdleSandboxes();
+        slow.resolve();
+        await tick1;
+        const out = { docsBetween, killsOfSameSandbox: e2bCalls(sbx).filter((c) => c.op === 'kill').length, docsAfter: { prDoc: slim(await doc(k)), retired: slim(await doc(`${ORG}:retired:${sbx}`)) }, reaperLogs: LOGS.filter((l) => l.name === 'SandboxLeaseReaperService').map((l) => String(l.message).slice(0, 90)) };
+        ev(T, 'result', out);
+        expect(out.killsOfSameSandbox).toBe(1);
+    });
+
     it('R14 drain cap: a command that never ends and one that never goes quiet', async () => {
         const T = 'R14';
         if (process.env.H_R14 !== '1') { ev(T, 'skipped', { reason: 'H_R14 not set (6 min run)' }); return; }
