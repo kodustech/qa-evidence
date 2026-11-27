@@ -1,0 +1,221 @@
+{
+ "bb-draft-skip-logs.json": {
+  "query": "observability_logs_ts org 2b4fdd21… 23:07:40–23:09:00Z message~Draft|skipped|PR#23",
+  "output": [
+   {
+    "t": "2026-11-27T23:07:51.977Z",
+    "level": "info",
+    "component": "RunCodeReviewAutomationUseCase",
+    "message": "RunCodeReviewAutomationUseCase PR#23",
+    "meta": {
+     "component": "RunCodeReviewAutomationUseCase",
+     "level": "info",
+     "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+     "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+     "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a"
+    }
+   },
+   {
+    "t": "2026-11-27T23:07:52.436Z",
+    "level": "info",
+    "component": "ValidateNewCommitsStage",
+    "message": "Processing 1 new commits for PR#23 (1 total)",
+    "meta": {
+     "component": "ValidateNewCommitsStage",
+     "level": "info",
+     "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+     "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+     "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a"
+    }
+   },
+   {
+    "t": "2026-11-27T23:07:54.036Z",
+    "level": "warn",
+    "component": "ValidateConfigStage",
+    "message": "Draft PR Skipped — Enable 'Running on Draft Pull Requests' in settings or mark as Ready (runOnDraft=false)",
+    "meta": {
+     "component": "ValidateConfigStage",
+     "level": "warn",
+     "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+     "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+     "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a"
+    }
+   },
+   {
+    "t": "2026-11-27T23:07:54.043Z",
+    "level": "info",
+    "component": "PipelineExecutor",
+    "message": "Pipeline 'CodeReviewPipeline' skipped due to SKIP status 2d084892-aaf1-4588-bb45-29950c1da30d",
+    "meta": {
+     "component": "PipelineExecutor",
+     "level": "info",
+     "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+     "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+     "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a"
+    }
+   },
+   {
+    "t": "2026-11-27T23:07:54.772Z",
+    "level": "info",
+    "component": "BitbucketCloudService createIssueComment",
+    "message": "Created issue comment for PR#23",
+    "meta": {
+     "component": "BitbucketCloudService createIssueComment",
+     "level": "info",
+     "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+     "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+     "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a"
+    }
+   },
+   {
+    "t": "2026-11-27T23:07:54.772Z",
+    "level": "info",
+    "component": "CodeReviewHandlerService",
+    "message": "Review skipped for PR#23 - adding skip reaction",
+    "meta": {
+     "component": "CodeReviewHandlerService",
+     "level": "info",
+     "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+     "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+     "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a"
+    }
+   },
+   {
+    "t": "2026-11-27T23:07:54.781Z",
+    "level": "info",
+    "component": "AutomationCodeReviewService",
+    "message": "Successfully handled pull request for PR#23",
+    "meta": {
+     "component": "AutomationCodeReviewService",
+     "level": "info",
+     "organizationId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a",
+     "teamId": "c2bc10db-ec00-41fb-9c77-c8e91f7b6056",
+     "tenantId": "2b4fdd21-4a09-4464-80bd-f4417ec8843a"
+    }
+   }
+  ]
+ },
+ "bb-s29-same-result.json": [
+  {
+   "cmd_id": 913415227,
+   "cmd_at": "2026-11-27T23:08:18.222515+00:00",
+   "new": [
+    {
+     "id": 913415236,
+     "created_on": "2026-11-27T23:08:22.125759+00:00",
+     "updated_on": "2026-11-27T23:08:30.817197+00:00",
+     "content": {
+      "raw": "Business logic checked. The result is in the Kody · Business Logic comment on this pull request.",
+      "html": "<p>Business logic checked. The result is in the Kody · Business Logic comment on this pull request.</p>"
+     }
+    },
+    {
+     "id": 913415250,
+     "created_on": "2026-11-27T23:08:29.451388+00:00",
+     "updated_on": "2026-11-27T23:08:29.456786+00:00",
+     "content": {
+      "raw": "<!-- kody-business-logic -->\n## Kody · Business Logic\n\n**Task in the command · Monthly attendance summary for parents. AC1: monthlyAttendance counts only the records whose date falls in the given mon**\nAll requirements met\n<sub>Task read 2026-11-27 23:08 UTC · re-checked on request at `dbc7c4d`</sub>\n\n✅ 3 of 3 met: AC01, AC02, AC03\n\n<sub>Disagree with a line? Reply here and mention @kody. Fixed it? Comment `@kody -v business-logic` and this comment is updated.</sub>",
+      "html": "<p>&lt;!-- kody-business-logic --&gt;</p>\n<h2 id=\"markdown-header-kody-business-logic\">Kody · Business Logic</h2>\n<p><strong>Task in the command · Monthly attendance summary for parents. AC1: monthlyAttendance counts only the records whose date falls in the given mon</strong>\nAll requirements met\n&lt;sub&gt;Task read 2026-11-27 23:08 UTC · re-checked on request at <code>dbc7c4d</code>&lt;/sub&gt;</p>\n<p>✅ 3 of 3 met: AC01, AC02, AC03</p>\n<p>&lt;sub&gt;Disagree with a line? Reply here and mention @kody. Fixed it? Comment <code>@kody -v business-logic</code> and this comment is updated.&lt;/sub&gt;</p>"
+     }
+    }
+   ]
+  },
+  {
+   "cmd_id": 913415263,
+   "cmd_at": "2026-11-27T23:08:35.387736+00:00",
+   "new": [
+    {
+     "id": 913415267,
+     "created_on": "2026-11-27T23:08:37.264480+00:00",
+     "updated_on": "2026-11-27T23:08:44.746723+00:00",
+     "content": {
+      "raw": "Business logic re-checked: same result as before, Task in the command met. The Kody · Business Logic comment on this pull request shows it.",
+      "html": "<p>Business logic re-checked: same result as before, Task in the command met. The Kody · Business Logic comment on this pull request shows it.</p>"
+     }
+    }
+   ]
+  }
+ ],
+ "bb-s29-runs-render.json": {
+  "query": "mongosh kodus_db: const r=db.businessValidationRuns.find({organizationId:'2b4fdd21-4a09-4464-80bd-f4417ec8843a',pullRequestNumber:23}).sort({createdAt:1}).toArray().map(x=>({createdAt:x.createdAt,door:x.door,platformType:x.platformType,headSha:x.headSha,outcome:x.outcome,passed:x.passed,references:x.references,attempts:x.attempts,comment:x.comment,tasks:x.tasks.map(t=>({id:t.id,tracker:t.tracker,passed:t.passed,textHash:t.textHash,reqs:t.requirements.map(q=>({source:q.source,state:q.state})),outOfScope:t.outOfScope.map(o=>o.change)}))}));print(JSON.stringify(r))",
+  "output": [
+   {
+    "createdAt": "2026-11-27T23:08:30.630Z",
+    "door": "command",
+    "platformType": "BITBUCKET",
+    "headSha": "dbc7c4d6bda8",
+    "outcome": "validated",
+    "passed": true,
+    "references": [],
+    "attempts": [],
+    "comment": {
+     "id": 913415250
+    },
+    "tasks": [
+     {
+      "id": "Task in the command",
+      "tracker": "the command",
+      "passed": true,
+      "textHash": "f847d74817536e65bc119ecaffca22475ac276722d2fe3b9ad95a675b3ca6eec",
+      "reqs": [
+       {
+        "source": "AC1",
+        "state": "met"
+       },
+       {
+        "source": "AC2",
+        "state": "met"
+       },
+       {
+        "source": "AC3",
+        "state": "met"
+       }
+      ],
+      "outOfScope": []
+     }
+    ]
+   },
+   {
+    "createdAt": "2026-11-27T23:08:44.436Z",
+    "door": "command",
+    "platformType": "BITBUCKET",
+    "headSha": "dbc7c4d6bda8",
+    "outcome": "validated",
+    "passed": true,
+    "references": [],
+    "attempts": [],
+    "comment": {
+     "id": 913415250
+    },
+    "tasks": [
+     {
+      "id": "Task in the command",
+      "tracker": "the command",
+      "passed": true,
+      "textHash": "f847d74817536e65bc119ecaffca22475ac276722d2fe3b9ad95a675b3ca6eec",
+      "reqs": [
+       {
+        "source": "AC1",
+        "state": "met"
+       },
+       {
+        "source": "AC2",
+        "state": "met"
+       },
+       {
+        "source": "AC3",
+        "state": "met"
+       }
+      ],
+      "outOfScope": []
+     }
+    ]
+   }
+  ],
+  "rendered_html": {
+   "913415236": "<p>Business logic checked. The result is in the Kody · Business Logic comment on this pull request.</p>",
+   "913415250": "<p>&lt;!-- kody-business-logic --&gt;</p>\n<h2 id=\"markdown-header-kody-business-logic\">Kody · Business Logic</h2>\n<p><strong>Task in the command · Monthly attendance summary for parents. AC1: monthlyAttendance counts only the records whose date falls in the given mon</strong>\nAll requirements met\n&lt;sub&gt;Task read 2026-11-27 23:08 UTC · re-checked on request at <code>dbc7c4d</code>&lt;/sub&gt;</p>\n<p>✅ 3 of 3 met: AC01, AC02, AC03</p>\n<p>&lt;sub&gt;Disagree with a line? Reply here and mention @kody. Fixed it? Comment <code>@kody -v business-logic</code> and this comment is updated.&lt;/sub&gt;</p>",
+   "913415267": "<p>Business logic re-checked: same result as before, Task in the command met. The Kody · Business Logic comment on this pull request shows it.</p>"
+  }
+ }
+}
