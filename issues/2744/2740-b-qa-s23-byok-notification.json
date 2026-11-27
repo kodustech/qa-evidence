@@ -1,0 +1,38 @@
+[
+ {
+  "createdAt": "2026-11-27T22:03:46.654Z",
+  "event": "byok.llm_errors_threshold",
+  "category": "QUOTA_EXCEEDED",
+  "provider": "openai_compatible",
+  "model": null,
+  "sampleError": "Your project has exceeded its monthly spending cap",
+  "title": "BYOK LLM errors exceeded threshold",
+  "metadataKeys": [
+   "category",
+   "errorCount",
+   "httpStatus",
+   "provider",
+   "sampleError",
+   "windowEnd",
+   "windowStart"
+  ]
+ },
+ {
+  "createdAt": "2026-11-27T22:02:01.382Z",
+  "event": "byok.llm_errors_threshold",
+  "category": "QUOTA_EXCEEDED",
+  "provider": "openai_compatible",
+  "model": null,
+  "sampleError": "Your project has exceeded its monthly spending cap",
+  "title": "BYOK LLM errors exceeded threshold",
+  "metadataKeys": [
+   "category",
+   "errorCount",
+   "httpStatus",
+   "provider",
+   "sampleError",
+   "windowEnd",
+   "windowStart"
+  ]
+ }
+]
