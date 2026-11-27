@@ -1,0 +1,1135 @@
+[
+ {
+  "timestamp": "2026-11-27T21:57:33.685Z",
+  "level": "info",
+  "message": "Starting conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-if7w68",
+    "metadata": {
+     "description": "Thread TR-cmc-if7w68",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723881548
+    }
+   },
+   "userLanguage": "en-US",
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:34.110Z",
+  "level": "info",
+  "message": "Conversation agent MCP tools connected",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "threadId": "TR-cmc-if7w68",
+   "mcpToolCount": 22,
+   "proactiveTools": [
+    "KODUS_CREATE_KODY_RULE",
+    "KODUS_UPDATE_KODY_RULE",
+    "KODUS_CREATE_MEMORY",
+    "KODUS_CREATE_KODY_ISSUE",
+    "KODUS_UPDATE_KODY_ISSUE_STATUS",
+    "KODUS_UPDATE_KODY_ISSUE_CATEGORY"
+   ],
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:34.306Z",
+  "level": "info",
+  "message": "Starting conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-wn6yzu",
+    "metadata": {
+     "description": "Thread TR-cmc-wn6yzu",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723882352
+    }
+   },
+   "userLanguage": "en-US",
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:34.724Z",
+  "level": "info",
+  "message": "Conversation agent MCP tools connected",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "threadId": "TR-cmc-wn6yzu",
+   "mcpToolCount": 22,
+   "proactiveTools": [
+    "KODUS_CREATE_KODY_RULE",
+    "KODUS_UPDATE_KODY_RULE",
+    "KODUS_CREATE_MEMORY",
+    "KODUS_CREATE_KODY_ISSUE",
+    "KODUS_UPDATE_KODY_ISSUE_STATUS",
+    "KODUS_UPDATE_KODY_ISSUE_CATEGORY"
+   ],
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:36.254Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: acquire prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:36.279Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: connecting to existing sandbox sandboxId=\"iys09hsxm1i2oppm6mxe4\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:36.919Z",
+  "level": "info",
+  "message": "Starting conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-cg6six",
+    "metadata": {
+     "description": "Thread TR-cmc-cg6six",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723880351
+    }
+   },
+   "userLanguage": "en-US",
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:37.122Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: acquire prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:37.133Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: connecting to existing sandbox sandboxId=\"iys09hsxm1i2oppm6mxe4\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:37.235Z",
+  "level": "info",
+  "message": "Conversation agent MCP tools connected",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "threadId": "TR-cmc-cg6six",
+   "mcpToolCount": 22,
+   "proactiveTools": [
+    "KODUS_CREATE_KODY_RULE",
+    "KODUS_UPDATE_KODY_RULE",
+    "KODUS_CREATE_MEMORY",
+    "KODUS_CREATE_KODY_ISSUE",
+    "KODUS_UPDATE_KODY_ISSUE_STATUS",
+    "KODUS_UPDATE_KODY_ISSUE_CATEGORY"
+   ],
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:37.350Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: skipping destructive git sync for sandboxId=\"iys09hsxm1i2oppm6mxe4\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" \u2014 leaseCount=2 other consumer(s) active",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "leaseCount": 2,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:37.354Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: connected to existing sandbox prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\" leaseId=\"73aea6e9-8b02-46d5-bdab-c627606668ad\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "leaseId": "73aea6e9-8b02-46d5-bdab-c627606668ad",
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:37.570Z",
+  "level": "warn",
+  "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+  "component": "ConversationTools",
+  "metadata": {
+   "component": "ConversationTools",
+   "level": "warn",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "tool": "exec",
+   "field": "stdout",
+   "outputChars": 793,
+   "longestLine": 79,
+   "linesCut": 0,
+   "files": [],
+   "maxLine": 2000,
+   "component": "ConversationTools",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:38.100Z",
+  "level": "info",
+  "message": "[DEBUG] syncE2BSandboxRepo: synced reused sandbox to refspec=refs/pull/14/head",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "refspec": "refs/pull/14/head",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:38.104Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: connected to existing sandbox prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\" leaseId=\"01fa3628-9ddd-497b-9d5a-f74b7e3d6c9a\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "leaseId": "01fa3628-9ddd-497b-9d5a-f74b7e3d6c9a",
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:39.334Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: acquire prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:39.347Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: connecting to existing sandbox sandboxId=\"iys09hsxm1i2oppm6mxe4\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:39.430Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: skipping destructive git sync for sandboxId=\"iys09hsxm1i2oppm6mxe4\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" \u2014 leaseCount=3 other consumer(s) active",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "unknown",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "leaseCount": 3,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:39.433Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: connected to existing sandbox prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\" leaseId=\"b4b32081-0c63-403f-9511-6f08e188ee88\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "leaseId": "b4b32081-0c63-403f-9511-6f08e188ee88",
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:39.590Z",
+  "level": "warn",
+  "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+  "component": "ConversationTools",
+  "metadata": {
+   "component": "ConversationTools",
+   "level": "warn",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "tool": "exec",
+   "field": "stdout",
+   "outputChars": 793,
+   "longestLine": 79,
+   "linesCut": 0,
+   "files": [],
+   "maxLine": 2000,
+   "component": "ConversationTools",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:40.498Z",
+  "level": "error",
+  "message": "Conversation agent declared an action it never performed",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "error",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "threadId": "TR-cmc-if7w68",
+   "intendedTool": "exec",
+   "authorizingQuote": "@kody now run `git show --stat 28fb9a8`",
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:40.499Z",
+  "level": "info",
+  "message": "Finish conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-if7w68",
+    "metadata": {
+     "description": "Thread TR-cmc-if7w68",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723881548
+    }
+   },
+   "steps": 3,
+   "usage": {
+    "inputTokens": 34527,
+    "outputTokens": 675,
+    "totalTokens": 35202,
+    "reasoningTokens": 154,
+    "cacheReadTokens": 22528,
+    "cacheWriteTokens": null
+   },
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:40.514Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: released leaseId=\"73aea6e9-8b02-46d5-bdab-c627606668ad\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" leaseCount=2",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "leaseId": "73aea6e9-8b02-46d5-bdab-c627606668ad",
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "leaseCount": 2,
+   "consumer": "conversation",
+   "heldMs": 3156,
+   "acquireToFirstUseMs": 0,
+   "lastUseToReleaseMs": 2941,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:42.547Z",
+  "level": "warn",
+  "message": "[CONVERSATION-TOOLS] listDir output cut before the agent",
+  "component": "ConversationTools",
+  "metadata": {
+   "component": "ConversationTools",
+   "level": "warn",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "tool": "listDir",
+   "field": "listing",
+   "outputChars": 863,
+   "longestLine": 40,
+   "linesCut": 0,
+   "files": [],
+   "maxLine": 2000,
+   "component": "ConversationTools",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:44.532Z",
+  "level": "info",
+  "message": "Finish conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-cg6six",
+    "metadata": {
+     "description": "Thread TR-cmc-cg6six",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723880351
+    }
+   },
+   "steps": 3,
+   "usage": {
+    "inputTokens": 34270,
+    "outputTokens": 757,
+    "totalTokens": 35027,
+    "reasoningTokens": 222,
+    "cacheReadTokens": 31232,
+    "cacheWriteTokens": null
+   },
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:44.546Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: released leaseId=\"b4b32081-0c63-403f-9511-6f08e188ee88\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" leaseCount=1",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "leaseId": "b4b32081-0c63-403f-9511-6f08e188ee88",
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "leaseCount": 1,
+   "consumer": "conversation",
+   "heldMs": 5108,
+   "acquireToFirstUseMs": 0,
+   "lastUseToReleaseMs": 3591,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:47.843Z",
+  "level": "info",
+  "message": "Finish conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-wn6yzu",
+    "metadata": {
+     "description": "Thread TR-cmc-wn6yzu",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723882352
+    }
+   },
+   "steps": 5,
+   "usage": {
+    "inputTokens": 57580,
+    "outputTokens": 1083,
+    "totalTokens": 58663,
+    "reasoningTokens": 455,
+    "cacheReadTokens": 54144,
+    "cacheWriteTokens": null
+   },
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:47.858Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: released leaseId=\"01fa3628-9ddd-497b-9d5a-f74b7e3d6c9a\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" leaseCount=0",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "leaseId": "01fa3628-9ddd-497b-9d5a-f74b7e3d6c9a",
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "leaseCount": 0,
+   "consumer": "conversation",
+   "heldMs": 9748,
+   "acquireToFirstUseMs": 1,
+   "lastUseToReleaseMs": 5306,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:47.863Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-27T22:02:47.858Z for sandboxId=\"iys09hsxm1i2oppm6mxe4\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "idleTimeoutMs": 300000,
+   "killAt": "2026-11-27T22:02:47.858Z",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:50.622Z",
+  "level": "info",
+  "message": "Event loop delay max=113ms",
+  "component": "EventLoopMonitor",
+  "metadata": {
+   "component": "EventLoopMonitor",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "p50Ms": 20,
+   "p99Ms": 21,
+   "maxMs": 113,
+   "meanMs": 20,
+   "windowMs": 60000,
+   "msSinceLastProbe": 27253,
+   "lastProbeStatus": "ok",
+   "memory": {
+    "rssMb": 770,
+    "heapUsedMb": 457,
+    "heapTotalMb": 563,
+    "heapLimitMb": 4288,
+    "externalMb": 52,
+    "arrayBuffersMb": 23,
+    "heapAfterMajorGcMb": 452,
+    "heapAfterMajorGcMinMb": 452,
+    "majorGcs": 1,
+    "gcPauseMs": 82,
+    "gcMaxPauseMs": 15
+   },
+   "jobs": {
+    "total": 0,
+    "byWorkflowType": {},
+    "reviews": {
+     "withSize": 0,
+     "withLines": 0,
+     "changedFilesSum": 0,
+     "changedFilesMax": 0,
+     "changedLinesSum": 0
+    }
+   },
+   "gauges": {
+    "cache": {
+     "entries": 19,
+     "expired": 0,
+     "valueMb": 0
+    }
+   },
+   "component": "EventLoopMonitor",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:57:52.337Z",
+  "level": "info",
+  "message": "Event loop delay max=94ms",
+  "component": "EventLoopMonitor",
+  "metadata": {
+   "component": "EventLoopMonitor",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "p50Ms": 20,
+   "p99Ms": 20,
+   "maxMs": 94,
+   "meanMs": 20,
+   "windowMs": 60000,
+   "msSinceLastProbe": 29073,
+   "lastProbeStatus": "ok",
+   "memory": {
+    "rssMb": 411,
+    "heapUsedMb": 224,
+    "heapTotalMb": 251,
+    "heapLimitMb": 2096,
+    "externalMb": 28,
+    "arrayBuffersMb": 22,
+    "heapAfterMajorGcMb": 223,
+    "heapAfterMajorGcMinMb": 223,
+    "majorGcs": 1,
+    "gcPauseMs": 107,
+    "gcMaxPauseMs": 88
+   },
+   "jobs": {
+    "total": 0,
+    "byWorkflowType": {},
+    "reviews": {
+     "withSize": 0,
+     "withLines": 0,
+     "changedFilesSum": 0,
+     "changedFilesMax": 0,
+     "changedLinesSum": 0
+    }
+   },
+   "gauges": {
+    "cache": {
+     "entries": 0,
+     "expired": 0,
+     "valueMb": 0
+    }
+   },
+   "component": "EventLoopMonitor",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:58:13.536Z",
+  "level": "info",
+  "message": "Starting conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-cg6six",
+    "metadata": {
+     "description": "Thread TR-cmc-cg6six",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723880351
+    }
+   },
+   "userLanguage": "en-US",
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:58:13.853Z",
+  "level": "info",
+  "message": "Conversation agent MCP tools connected",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "threadId": "TR-cmc-cg6six",
+   "mcpToolCount": 22,
+   "proactiveTools": [
+    "KODUS_CREATE_KODY_RULE",
+    "KODUS_UPDATE_KODY_RULE",
+    "KODUS_CREATE_MEMORY",
+    "KODUS_CREATE_KODY_ISSUE",
+    "KODUS_UPDATE_KODY_ISSUE_STATUS",
+    "KODUS_UPDATE_KODY_ISSUE_CATEGORY"
+   ],
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:58:17.722Z",
+  "level": "info",
+  "message": "Conversation agent called write tool KODUS_CREATE_MEMORY",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "threadId": "TR-cmc-cg6six",
+   "repositoryId": "1468015189",
+   "developer": "sartorijr92",
+   "tool": "KODUS_CREATE_MEMORY",
+   "failed": false,
+   "error": null,
+   "result": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"success\\\":true,\\\"count\\\":1,\\\"data\\\":{\\\"uuid\\\":\\\"394dceb8-c490-43f8-8f27-b0a2518e5042\\\",\\\"title\\\":\\\"qa2744: validate class owner before writing grades\\\",\\\"rule\\\":\\\"In the qa2744 module, any code path that writes or updates a student grade must first validate that the acting teacher/context owns the class the grade belongs to. Do not write grades without an ownership check \u2014 enforce it explicitly (e.g. GradeService.updateScore must use the teacher context to verify the class owner and reject or no-op otherwise).\\\",\\\"status\\\":\\\"active\\\",\\\"action\\\":\\\"created\\\",\\\"requiresApproval\\\":false,\\\"message\\\":\\\"Memory created. Final decision: created. Approval required in UI: no. You can open it directly from the provided link.\\\",\\\"link\\\":\\\"https://qa.web.kodus.io/settings/code-review/1468015189/kody-rules/394dceb8-c490-43f8-8f27-b0a2518e5042?tab=memories&teamId=0461d23a-e6ef-47a5-b804-33d815c5729d\\\"}}\"}],\"structuredContent\":{\"success\":true,\"count\":1,\"data\":{\"uuid\":\"394dceb8-c490-43f8-8f27-b0a2518e5042\",\"title\":\"qa2744: validate class owner before writing grades\",\"rule\":\"In the qa2744 module, any code path that writes or updates a student grade must first validate that the acting teacher/context owns the class the grade belongs to. Do not write grades without an ownership check \u2014 enforce it explicitly (e.g. GradeService.updateScore must use the teacher context to verify the class owner and reject or no-op otherwise).\",\"status\":\"active\",\"action\":\"created\",\"requiresApproval\":false,\"message\":\"Memory created. Final decision: created. Approval required in UI: no. You can open it directly from the provided link.\",\"link\":\"https://qa.web.kodus.io/settings/code-review/1468015189/kody-rules/394dceb8-c490-43f8-8f27-b0a2518e5042?tab=memories&teamId=0461d23a-e6ef-47a5-b804-33d815c5729d\"}}}",
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:58:19.629Z",
+  "level": "info",
+  "message": "Event loop delay max=108ms",
+  "component": "EventLoopMonitor",
+  "metadata": {
+   "component": "EventLoopMonitor",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "p50Ms": 20,
+   "p99Ms": 21,
+   "maxMs": 108,
+   "meanMs": 20,
+   "windowMs": 60000,
+   "msSinceLastProbe": 27275,
+   "lastProbeStatus": "ok",
+   "memory": {
+    "rssMb": 689,
+    "heapUsedMb": 452,
+    "heapTotalMb": 464,
+    "heapLimitMb": 4288,
+    "externalMb": 55,
+    "arrayBuffersMb": 23,
+    "heapAfterMajorGcMb": 448,
+    "heapAfterMajorGcMinMb": 448,
+    "majorGcs": 3,
+    "gcPauseMs": 212,
+    "gcMaxPauseMs": 84
+   },
+   "jobs": {
+    "total": 0,
+    "byWorkflowType": {},
+    "reviews": {
+     "withSize": 0,
+     "withLines": 0,
+     "changedFilesSum": 0,
+     "changedFilesMax": 0,
+     "changedLinesSum": 0
+    }
+   },
+   "gauges": {
+    "cache": {
+     "entries": 17,
+     "expired": 0,
+     "valueMb": 0
+    }
+   },
+   "component": "EventLoopMonitor",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:58:19.675Z",
+  "level": "info",
+  "message": "Finish conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-cg6six",
+    "metadata": {
+     "description": "Thread TR-cmc-cg6six",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723880351
+    }
+   },
+   "steps": 3,
+   "usage": {
+    "inputTokens": 34858,
+    "outputTokens": 601,
+    "totalTokens": 35459,
+    "reasoningTokens": 29,
+    "cacheReadTokens": 31616,
+    "cacheWriteTokens": null
+   },
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:58:21.896Z",
+  "level": "info",
+  "message": "Event loop delay max=26ms",
+  "component": "EventLoopMonitor",
+  "metadata": {
+   "component": "EventLoopMonitor",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "p50Ms": 20,
+   "p99Ms": 21,
+   "maxMs": 26,
+   "meanMs": 20,
+   "windowMs": 60000,
+   "msSinceLastProbe": null,
+   "lastProbeStatus": null,
+   "memory": {
+    "rssMb": 623,
+    "heapUsedMb": 425,
+    "heapTotalMb": 433,
+    "heapLimitMb": 4288,
+    "externalMb": 29,
+    "arrayBuffersMb": 23,
+    "heapAfterMajorGcMb": 408,
+    "heapAfterMajorGcMinMb": null,
+    "majorGcs": 0,
+    "gcPauseMs": 14,
+    "gcMaxPauseMs": 6
+   },
+   "jobs": {
+    "total": 0,
+    "byWorkflowType": {},
+    "reviews": {
+     "withSize": 0,
+     "withLines": 0,
+     "changedFilesSum": 0,
+     "changedFilesMax": 0,
+     "changedLinesSum": 0
+    }
+   },
+   "gauges": {
+    "cache": {
+     "entries": 0,
+     "expired": 0,
+     "valueMb": 0
+    }
+   },
+   "component": "EventLoopMonitor",
+   "originalCorrelationId": null
+  }
+ }
+]
