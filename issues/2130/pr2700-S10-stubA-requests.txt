@@ -1,0 +1,43 @@
+20:40:35.730 429 INJECTED-429  You check a set of team rules against the diff of a SINGLE file. Repor
+20:40:38.133 200  2476 <CodeReviewAgent>   <Date>27/11/2026</Date>   <Role>     You are kodus
+20:40:39.475 429 INJECTED-429  You check a set of team rules against the diff of a SINGLE file. Repor
+20:40:41.857 200  3373 <CodeReviewAgent>   <Date>27/11/2026</Date>   <Role>     You are kodus
+20:40:54.025 200  8301 <CodeReviewAgent>   <Date>27/11/2026</Date>   <Role>     You are kodus
+20:41:00.135 200  5897 <CodeReviewAgent>   <Date>27/11/2026</Date>   <Role>     You are kodus
+20:41:01.182 200  830 You are a surgical code review verifier.  Your task is to verify ONE c
+20:41:01.735 200  1378 You are a surgical code review verifier.  Your task is to verify ONE c
+20:41:01.953 200  1566 You are a surgical code review verifier.  Your task is to verify ONE c
+20:41:03.007 200  1270 You are a surgical code review verifier.  Your task is to verify ONE c
+20:41:05.531 200  3271 You are a surgical code review verifier.  Your task is to verify ONE c
+20:41:05.913 200  2620 You are a surgical code review verifier.  Your task is to verify ONE c
+20:41:07.376 200  1660 You are a surgical code review verifier.  Your task is to verify ONE c
+20:41:07.429 200  1335 You are a surgical code review verifier.  Your task is to verify ONE c
+20:41:14.733 200  12722 You are a surgical code review verifier.  Your task is to verify ONE c
+20:41:20.727 200  5702 You are a surgical code review verifier.  Your task is to verify ONE c
+20:41:22.641 200  1719 You are a surgical code review verifier.  Your task is to verify ONE c
+20:41:23.890 200  1006 Return ONLY a JSON object that conforms EXACTLY to this JSON Schema (s
+20:41:33.069 200  9001 ""
+20:41:34.595 200  1345 You complete a code-review finding so it can be posted as a comment. T
+20:41:34.782 200  1522 You complete a code-review finding so it can be posted as a comment. T
+20:41:36.657 200  1707 ""
+20:41:38.425 200  1560 You are an expert code reviewer. Your task is to analyze a code sugges
+20:41:38.783 200  1904 You are an expert code reviewer. Your task is to analyze a code sugges
+20:41:47.996 200  4318 You write pull request descriptions. Put only the requested descriptio
+20:43:02.357 429 INJECTED-429  You check a set of team rules against the diff of a SINGLE file. Repor
+20:43:04.555 200  2250 <CodeReviewAgent>   <Date>27/11/2026</Date>   <Role>     You are kodus
+20:43:04.827 429 INJECTED-429  You check a set of team rules against the diff of a SINGLE file. Repor
+20:43:15.542 200  10624 <CodeReviewAgent>   <Date>27/11/2026</Date>   <Role>     You are kodus
+20:43:21.934 200  6169 <CodeReviewAgent>   <Date>27/11/2026</Date>   <Role>     You are kodus
+20:43:23.508 200  1162 <CodeReviewAgent>   <Date>27/11/2026</Date>   <Role>     You are kodus
+20:43:28.169 200  4355 <CodeReviewAgent>   <Date>27/11/2026</Date>   <Role>     You are kodus
+20:43:29.452 200  1087 Return ONLY a JSON object that conforms EXACTLY to this JSON Schema (s
+20:43:31.002 200  1345 You are a surgical code review verifier.  Your task is to verify ONE c
+20:43:31.392 200  1729 You are a surgical code review verifier.  Your task is to verify ONE c
+20:43:33.091 200  1504 You are a surgical code review verifier.  Your task is to verify ONE c
+20:43:38.926 200  5540 You are a surgical code review verifier.  Your task is to verify ONE c
+20:43:41.225 200  1995 You are a surgical code review verifier.  Your task is to verify ONE c
+20:43:43.269 200  11980 You are a surgical code review verifier.  Your task is to verify ONE c
+20:43:44.335 200  2748 You are a surgical code review verifier.  Your task is to verify ONE c
+20:43:46.053 200  2589 You are a surgical code review verifier.  Your task is to verify ONE c
+20:43:46.870 200  2346 You are a surgical code review verifier.  Your task is to verify ONE c
+20:43:53.479 200  5828 You write pull request descriptions. Put only the requested descriptio
