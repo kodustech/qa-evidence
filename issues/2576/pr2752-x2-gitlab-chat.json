@@ -1,0 +1,74 @@
+{
+ "run1": {
+  "commentId": 4342374629,
+  "mr": 3,
+  "claim": [
+   [
+    "READY",
+    "1"
+   ]
+  ]
+ },
+ "run2": {
+  "commentId": 4342402120,
+  "mr": 2
+ },
+ "chat_and_gitlab_logs_run2": [
+  {
+   "t": "2026-11-27T18:22:01.026Z",
+   "l": "info",
+   "c": "ChatWithKodyFromGitUseCase",
+   "m": "Receiving pull request review webhook for conversation",
+   "e": "\"\""
+  },
+  {
+   "t": "2026-11-27T18:22:01.063Z",
+   "l": "info",
+   "c": "ChatWithKodyFromGitUseCase",
+   "m": "PR description extracted",
+   "e": "\"\""
+  },
+  {
+   "t": "2026-11-27T18:22:01.064Z",
+   "l": "info",
+   "c": "ChatWithKodyFromGitUseCase",
+   "m": "Extracted PR information",
+   "e": "\"\""
+  },
+  {
+   "t": "2026-11-27T18:22:03.420Z",
+   "l": "error",
+   "c": "ChatWithKodyFromGitUseCase",
+   "m": "Error while executing the git comment response agent",
+   "e": "{\"name\":\"TypeError\",\"message\":\"comments?.find is not a function\",\"stack\":\"TypeError: comments?.find is not a function\\n    at GitlabService.getPullRequestReviewComment (/usr/src/app/libs/platform/infrastructure/adapters/services/gitlab.service.ts:3998:46)\\n    at processTicksAndRejections (node:inte"
+  },
+  {
+   "t": "2026-11-27T18:22:19.076Z",
+   "l": "info",
+   "c": "ChatWithKodyFromGitUseCase",
+   "m": "Receiving pull request review webhook for conversation",
+   "e": "\"\""
+  },
+  {
+   "t": "2026-11-27T18:22:19.102Z",
+   "l": "info",
+   "c": "ChatWithKodyFromGitUseCase",
+   "m": "PR description extracted",
+   "e": "\"\""
+  },
+  {
+   "t": "2026-11-27T18:22:19.103Z",
+   "l": "info",
+   "c": "ChatWithKodyFromGitUseCase",
+   "m": "Extracted PR information",
+   "e": "\"\""
+  },
+  {
+   "t": "2026-11-27T18:22:19.862Z",
+   "l": "info",
+   "c": "ChatWithKodyFromGitUseCase",
+   "m": "Unmentioned reply left unanswered: disabled",
+   "e": "\"\""
+  }
+ ]
+}
