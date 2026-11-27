@@ -1,0 +1,957 @@
+{
+ "merge aeb08f11f": [
+  {
+   "name": "S21 spend cap, 12 files one rule (shared head) + PR rule",
+   "ms": 38,
+   "requests_main": 5,
+   "requests_fallback": 0,
+   "pr_shard_requests": 0,
+   "statuses_main": "429,429,429,429,429",
+   "refusal_log": {
+    "message": "[kody-rules] the model provider refused PR#2744 (QUOTA_EXCEEDED); the remaining shards were skipped instead of called",
+    "metadata": {
+     "category": "QUOTA_EXCEEDED",
+     "shardsRun": 13,
+     "shardsErrored": 13
+    }
+   },
+   "shard_failed_warns": 5,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "28ms main#1 429",
+    "35ms main#2 429",
+    "36ms main#3 429",
+    "37ms main#4 429",
+    "37ms main#5 429"
+   ]
+  },
+  {
+   "name": "S21 spend cap, 12 files distinct rules + PR rule",
+   "ms": 9,
+   "requests_main": 5,
+   "requests_fallback": 0,
+   "pr_shard_requests": 0,
+   "statuses_main": "429,429,429,429,429",
+   "refusal_log": {
+    "message": "[kody-rules] the model provider refused PR#2744 (QUOTA_EXCEEDED); the remaining shards were skipped instead of called",
+    "metadata": {
+     "category": "QUOTA_EXCEEDED",
+     "shardsRun": 13,
+     "shardsErrored": 13
+    }
+   },
+   "shard_failed_warns": 5,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "6ms main#1 429",
+    "7ms main#2 429",
+    "8ms main#3 429",
+    "8ms main#4 429",
+    "9ms main#5 429"
+   ]
+  },
+  {
+   "name": "S24 slow success in flight + 2 refusals",
+   "ms": 3021,
+   "requests_main": 15,
+   "requests_fallback": 0,
+   "pr_shard_requests": 3,
+   "statuses_main": "200,429,429,200,200,200,200,200,200,200,200,200,200,200,200",
+   "refusal_log": null,
+   "shard_failed_warns": 2,
+   "done_line": "[AGENT] kodus-rules-review-agent (sharded) done for PR#2744: 10 suggestions (10 confirmed across 13 shards, 2 errored; 0 detector candidate(s) offered; lookup unavailable (no sandbox handle)) in 3020ms",
+   "outcome": {
+    "ok": true,
+    "suggestions": 10
+   },
+   "timeline": [
+    "4ms main#1 200",
+    "4ms main#2 429",
+    "6ms main#3 429",
+    "6ms main#4 200",
+    "9ms main#5 200",
+    "10ms main#6 200",
+    "11ms main#7 200",
+    "11ms main#8 200",
+    "15ms main#9 200",
+    "15ms main#10 200",
+    "18ms main#11 200",
+    "3009ms main#12 200",
+    "3012ms main#13 200 PR",
+    "3015ms main#14 200 PR",
+    "3019ms main#15 200 PR"
+   ]
+  },
+  {
+   "name": "S25a 3 moderation 403",
+   "ms": 13,
+   "requests_main": 13,
+   "requests_fallback": 0,
+   "pr_shard_requests": 1,
+   "statuses_main": "403,403,403,200,200,200,200,200,200,200,200,200,200",
+   "refusal_log": null,
+   "shard_failed_warns": 3,
+   "done_line": "[AGENT] kodus-rules-review-agent (sharded) done for PR#2744: 0 suggestions (0 confirmed across 13 shards, 3 errored; 0 detector candidate(s) offered; lookup unavailable (no sandbox handle)) in 13ms",
+   "outcome": {
+    "ok": true,
+    "suggestions": 0
+   },
+   "timeline": [
+    "3ms main#1 403",
+    "4ms main#2 403",
+    "5ms main#3 403",
+    "6ms main#4 200",
+    "7ms main#5 200",
+    "7ms main#6 200",
+    "7ms main#7 200",
+    "9ms main#8 200",
+    "9ms main#9 200",
+    "9ms main#10 200",
+    "10ms main#11 200",
+    "11ms main#12 200",
+    "13ms main#13 200 PR"
+   ]
+  },
+  {
+   "name": "S25b 3 schema-failed replies mentioning quota",
+   "ms": 14,
+   "requests_main": 16,
+   "requests_fallback": 0,
+   "pr_shard_requests": 1,
+   "statuses_main": "200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200",
+   "refusal_log": null,
+   "shard_failed_warns": 0,
+   "done_line": "[AGENT] kodus-rules-review-agent (sharded) done for PR#2744: 0 suggestions (0 confirmed across 13 shards; 0 detector candidate(s) offered; lookup unavailable (no sandbox handle)) in 14ms",
+   "outcome": {
+    "ok": true,
+    "suggestions": 0
+   },
+   "timeline": [
+    "3ms main#1 200",
+    "4ms main#2 200",
+    "4ms main#3 200",
+    "5ms main#4 200",
+    "6ms main#5 200",
+    "6ms main#6 200",
+    "6ms main#7 200",
+    "8ms main#8 200",
+    "8ms main#9 200",
+    "9ms main#10 200",
+    "11ms main#11 200",
+    "11ms main#12 200",
+    "11ms main#13 200",
+    "12ms main#14 200",
+    "13ms main#15 200",
+    "14ms main#16 200 PR"
+   ]
+  },
+  {
+   "name": "S25c 401, cap, 401 alternating",
+   "ms": 15,
+   "requests_main": 13,
+   "requests_fallback": 0,
+   "pr_shard_requests": 1,
+   "statuses_main": "401,429,401,200,200,200,200,200,200,200,200,200,200",
+   "refusal_log": null,
+   "shard_failed_warns": 3,
+   "done_line": "[AGENT] kodus-rules-review-agent (sharded) done for PR#2744: 0 suggestions (0 confirmed across 13 shards, 3 errored; 0 detector candidate(s) offered; lookup unavailable (no sandbox handle)) in 15ms",
+   "outcome": {
+    "ok": true,
+    "suggestions": 0
+   },
+   "timeline": [
+    "4ms main#1 401",
+    "5ms main#2 429",
+    "6ms main#3 401",
+    "7ms main#4 200",
+    "8ms main#5 200",
+    "8ms main#6 200",
+    "9ms main#7 200",
+    "9ms main#8 200",
+    "12ms main#9 200",
+    "13ms main#10 200",
+    "13ms main#11 200",
+    "13ms main#12 200",
+    "15ms main#13 200 PR"
+   ]
+  },
+  {
+   "name": "S26 main spend cap, fallback 200",
+   "ms": 20,
+   "requests_main": 13,
+   "requests_fallback": 13,
+   "pr_shard_requests": 2,
+   "statuses_main": "429,429,429,429,429,429,429,429,429,429,429,429,429",
+   "refusal_log": null,
+   "shard_failed_warns": 0,
+   "done_line": "[AGENT] kodus-rules-review-agent (sharded) done for PR#2744: 0 suggestions (0 confirmed across 13 shards; 0 detector candidate(s) offered; lookup unavailable (no sandbox handle)) in 20ms",
+   "outcome": {
+    "ok": true,
+    "suggestions": 0
+   },
+   "timeline": [
+    "3ms main#1 429",
+    "4ms main#2 429",
+    "5ms main#3 429",
+    "5ms main#4 429",
+    "5ms fallback#1 200",
+    "7ms fallback#2 200",
+    "7ms fallback#3 200",
+    "8ms main#5 429",
+    "... 26 requests"
+   ]
+  },
+  {
+   "name": "S28 401 invalid key",
+   "ms": 5,
+   "requests_main": 5,
+   "requests_fallback": 0,
+   "pr_shard_requests": 0,
+   "statuses_main": "401,401,401,401,401",
+   "refusal_log": {
+    "message": "[kody-rules] the model provider refused PR#2744 (AUTH_INVALID); the remaining shards were skipped instead of called",
+    "metadata": {
+     "category": "AUTH_INVALID",
+     "shardsRun": 13,
+     "shardsErrored": 13
+    }
+   },
+   "shard_failed_warns": 5,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "3ms main#1 401",
+    "4ms main#2 401",
+    "4ms main#3 401",
+    "5ms main#4 401",
+    "5ms main#5 401"
+   ]
+  },
+  {
+   "name": "S28 404 no endpoints",
+   "ms": 5,
+   "requests_main": 5,
+   "requests_fallback": 0,
+   "pr_shard_requests": 0,
+   "statuses_main": "404,404,404,404,404",
+   "refusal_log": {
+    "message": "[kody-rules] the model provider refused PR#2744 (MODEL_NOT_FOUND); the remaining shards were skipped instead of called",
+    "metadata": {
+     "category": "MODEL_NOT_FOUND",
+     "shardsRun": 13,
+     "shardsErrored": 13
+    }
+   },
+   "shard_failed_warns": 5,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "3ms main#1 404",
+    "4ms main#2 404",
+    "4ms main#3 404",
+    "4ms main#4 404",
+    "5ms main#5 404"
+   ]
+  },
+  {
+   "name": "control: plain 429 rate limit",
+   "ms": 12950,
+   "requests_main": 26,
+   "requests_fallback": 0,
+   "pr_shard_requests": 2,
+   "statuses_main": "429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429",
+   "refusal_log": null,
+   "shard_failed_warns": 12,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "4ms main#1 429",
+    "4ms main#2 429",
+    "5ms main#3 429",
+    "5ms main#4 429",
+    "2133ms main#5 429",
+    "2136ms main#6 429",
+    "2239ms main#7 429",
+    "2242ms main#8 429",
+    "... 26 requests"
+   ]
+  },
+  {
+   "name": "S24b two slow successes in flight + 2 refusals land first",
+   "ms": 3055,
+   "requests_main": 15,
+   "requests_fallback": 0,
+   "pr_shard_requests": 3,
+   "statuses_main": "200,429,429,200,200,200,200,200,200,200,200,200,200,200,200",
+   "refusal_log": null,
+   "shard_failed_warns": 2,
+   "done_line": "[AGENT] kodus-rules-review-agent (sharded) done for PR#2744: 10 suggestions (10 confirmed across 13 shards, 2 errored; 0 detector candidate(s) offered; lookup unavailable (no sandbox handle)) in 3054ms",
+   "outcome": {
+    "ok": true,
+    "suggestions": 10
+   },
+   "timeline": [
+    "33ms main#1 200",
+    "34ms main#2 429",
+    "42ms main#3 429",
+    "43ms main#4 200",
+    "43ms main#5 200",
+    "48ms main#6 200",
+    "50ms main#7 200",
+    "53ms main#8 200",
+    "56ms main#9 200",
+    "59ms main#10 200",
+    "61ms main#11 200",
+    "3046ms main#12 200",
+    "3048ms main#13 200 PR",
+    "3051ms main#14 200 PR",
+    "3054ms main#15 200 PR"
+   ]
+  },
+  {
+   "name": "S34 400 rules x 300 large files (SLOW-SYNC labels)",
+   "ms": 35702,
+   "requests_main": 5,
+   "requests_fallback": 0,
+   "pr_shard_requests": 0,
+   "statuses_main": "401,401,401,401,401",
+   "refusal_log": {
+    "message": "[kody-rules] the model provider refused PR#2744 (AUTH_INVALID); the remaining shards were skipped instead of called",
+    "metadata": {
+     "category": "AUTH_INVALID",
+     "shardsRun": 600,
+     "shardsErrored": 600
+    }
+   },
+   "shard_failed_warns": 5,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 600 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "35670ms main#1 401",
+    "35686ms main#2 401",
+    "35689ms main#3 401",
+    "35698ms main#4 401",
+    "35701ms main#5 401"
+   ]
+  },
+  {
+   "name": "S34b 6000 rules x 3000 files (format rules label)",
+   "ms": 30671,
+   "requests_main": 5,
+   "requests_fallback": 0,
+   "pr_shard_requests": 0,
+   "statuses_main": "401,401,401,401,401",
+   "refusal_log": {
+    "message": "[kody-rules] the model provider refused PR#2744 (AUTH_INVALID); the remaining shards were skipped instead of called",
+    "metadata": {
+     "category": "AUTH_INVALID",
+     "shardsRun": 3000,
+     "shardsErrored": 3000
+    }
+   },
+   "shard_failed_warns": 5,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 3000 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "30571ms main#1 401",
+    "30583ms main#2 401",
+    "30584ms main#3 401",
+    "30585ms main#4 401",
+    "30586ms main#5 401"
+   ]
+  }
+ ],
+ "parent b172fdbac": [
+  {
+   "name": "S21 spend cap, 12 files one rule (shared head) + PR rule",
+   "ms": 12567,
+   "requests_main": 26,
+   "requests_fallback": 0,
+   "pr_shard_requests": 2,
+   "statuses_main": "429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429",
+   "refusal_log": null,
+   "shard_failed_warns": 12,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "45ms main#1 429",
+    "52ms main#2 429",
+    "54ms main#3 429",
+    "55ms main#4 429",
+    "2606ms main#5 429",
+    "2609ms main#6 429",
+    "2609ms main#7 429",
+    "2612ms main#8 429",
+    "... 26 requests"
+   ]
+  },
+  {
+   "name": "S21 spend cap, 12 files distinct rules + PR rule",
+   "ms": 15134,
+   "requests_main": 26,
+   "requests_fallback": 0,
+   "pr_shard_requests": 2,
+   "statuses_main": "429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429",
+   "refusal_log": null,
+   "shard_failed_warns": 12,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "5ms main#1 429",
+    "8ms main#2 429",
+    "8ms main#3 429",
+    "9ms main#4 429",
+    "2771ms main#5 429",
+    "2773ms main#6 429",
+    "3413ms main#7 429",
+    "3415ms main#8 429",
+    "... 26 requests"
+   ]
+  },
+  {
+   "name": "S24 slow success in flight + 2 refusals",
+   "ms": 3139,
+   "requests_main": 17,
+   "requests_fallback": 0,
+   "pr_shard_requests": 3,
+   "statuses_main": "200,429,429,200,200,200,200,200,200,200,200,200,200,200,200,200,200",
+   "refusal_log": null,
+   "shard_failed_warns": 0,
+   "done_line": "[AGENT] kodus-rules-review-agent (sharded) done for PR#2744: 12 suggestions (12 confirmed across 13 shards; 0 detector candidate(s) offered; lookup unavailable (no sandbox handle)) in 3138ms",
+   "outcome": {
+    "ok": true,
+    "suggestions": 12
+   },
+   "timeline": [
+    "5ms main#1 200",
+    "5ms main#2 429",
+    "6ms main#3 429",
+    "6ms main#4 200",
+    "12ms main#5 200",
+    "14ms main#6 200",
+    "16ms main#7 200",
+    "18ms main#8 200",
+    "19ms main#9 200",
+    "21ms main#10 200",
+    "23ms main#11 200",
+    "25ms main#12 200",
+    "2108ms main#13 200",
+    "3111ms main#14 200",
+    "3119ms main#15 200 PR",
+    "3124ms main#16 200 PR",
+    "3132ms main#17 200 PR"
+   ]
+  },
+  {
+   "name": "S25a 3 moderation 403",
+   "ms": 14,
+   "requests_main": 13,
+   "requests_fallback": 0,
+   "pr_shard_requests": 1,
+   "statuses_main": "403,403,403,200,200,200,200,200,200,200,200,200,200",
+   "refusal_log": null,
+   "shard_failed_warns": 3,
+   "done_line": "[AGENT] kodus-rules-review-agent (sharded) done for PR#2744: 0 suggestions (0 confirmed across 13 shards, 3 errored; 0 detector candidate(s) offered; lookup unavailable (no sandbox handle)) in 14ms",
+   "outcome": {
+    "ok": true,
+    "suggestions": 0
+   },
+   "timeline": [
+    "4ms main#1 403",
+    "5ms main#2 403",
+    "6ms main#3 403",
+    "7ms main#4 200",
+    "8ms main#5 200",
+    "9ms main#6 200",
+    "9ms main#7 200",
+    "10ms main#8 200",
+    "11ms main#9 200",
+    "12ms main#10 200",
+    "12ms main#11 200",
+    "12ms main#12 200",
+    "14ms main#13 200 PR"
+   ]
+  },
+  {
+   "name": "S25b 3 schema-failed replies mentioning quota",
+   "ms": 15,
+   "requests_main": 16,
+   "requests_fallback": 0,
+   "pr_shard_requests": 1,
+   "statuses_main": "200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200",
+   "refusal_log": null,
+   "shard_failed_warns": 0,
+   "done_line": "[AGENT] kodus-rules-review-agent (sharded) done for PR#2744: 0 suggestions (0 confirmed across 13 shards; 0 detector candidate(s) offered; lookup unavailable (no sandbox handle)) in 15ms",
+   "outcome": {
+    "ok": true,
+    "suggestions": 0
+   },
+   "timeline": [
+    "3ms main#1 200",
+    "3ms main#2 200",
+    "5ms main#3 200",
+    "6ms main#4 200",
+    "7ms main#5 200",
+    "7ms main#6 200",
+    "8ms main#7 200",
+    "9ms main#8 200",
+    "9ms main#9 200",
+    "9ms main#10 200",
+    "11ms main#11 200",
+    "12ms main#12 200",
+    "12ms main#13 200",
+    "12ms main#14 200",
+    "14ms main#15 200",
+    "15ms main#16 200 PR"
+   ]
+  },
+  {
+   "name": "S25c 401, cap, 401 alternating",
+   "ms": 2469,
+   "requests_main": 14,
+   "requests_fallback": 0,
+   "pr_shard_requests": 1,
+   "statuses_main": "401,429,401,200,200,200,200,200,200,200,200,200,200,200",
+   "refusal_log": null,
+   "shard_failed_warns": 2,
+   "done_line": "[AGENT] kodus-rules-review-agent (sharded) done for PR#2744: 0 suggestions (0 confirmed across 13 shards, 2 errored; 0 detector candidate(s) offered; lookup unavailable (no sandbox handle)) in 2469ms",
+   "outcome": {
+    "ok": true,
+    "suggestions": 0
+   },
+   "timeline": [
+    "3ms main#1 401",
+    "3ms main#2 429",
+    "4ms main#3 401",
+    "6ms main#4 200",
+    "6ms main#5 200",
+    "7ms main#6 200",
+    "7ms main#7 200",
+    "8ms main#8 200",
+    "9ms main#9 200",
+    "9ms main#10 200",
+    "10ms main#11 200",
+    "10ms main#12 200",
+    "2466ms main#13 200",
+    "2468ms main#14 200 PR"
+   ]
+  },
+  {
+   "name": "S26 main spend cap, fallback 200",
+   "ms": 12289,
+   "requests_main": 26,
+   "requests_fallback": 13,
+   "pr_shard_requests": 3,
+   "statuses_main": "429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429",
+   "refusal_log": null,
+   "shard_failed_warns": 0,
+   "done_line": "[AGENT] kodus-rules-review-agent (sharded) done for PR#2744: 0 suggestions (0 confirmed across 13 shards; 0 detector candidate(s) offered; lookup unavailable (no sandbox handle)) in 12289ms",
+   "outcome": {
+    "ok": true,
+    "suggestions": 0
+   },
+   "timeline": [
+    "3ms main#1 429",
+    "4ms main#2 429",
+    "4ms main#3 429",
+    "4ms main#4 429",
+    "2223ms main#5 429",
+    "2225ms fallback#1 200",
+    "2227ms main#6 429",
+    "3200ms main#7 429",
+    "... 39 requests"
+   ]
+  },
+  {
+   "name": "S28 401 invalid key",
+   "ms": 18,
+   "requests_main": 13,
+   "requests_fallback": 0,
+   "pr_shard_requests": 1,
+   "statuses_main": "401,401,401,401,401,401,401,401,401,401,401,401,401",
+   "refusal_log": null,
+   "shard_failed_warns": 12,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "5ms main#1 401",
+    "6ms main#2 401",
+    "7ms main#3 401",
+    "8ms main#4 401",
+    "9ms main#5 401",
+    "9ms main#6 401",
+    "11ms main#7 401",
+    "13ms main#8 401",
+    "13ms main#9 401",
+    "14ms main#10 401",
+    "15ms main#11 401",
+    "15ms main#12 401",
+    "18ms main#13 401 PR"
+   ]
+  },
+  {
+   "name": "S28 404 no endpoints",
+   "ms": 20,
+   "requests_main": 13,
+   "requests_fallback": 0,
+   "pr_shard_requests": 1,
+   "statuses_main": "404,404,404,404,404,404,404,404,404,404,404,404,404",
+   "refusal_log": null,
+   "shard_failed_warns": 12,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "5ms main#1 404",
+    "7ms main#2 404",
+    "8ms main#3 404",
+    "9ms main#4 404",
+    "10ms main#5 404",
+    "10ms main#6 404",
+    "11ms main#7 404",
+    "13ms main#8 404",
+    "14ms main#9 404",
+    "14ms main#10 404",
+    "15ms main#11 404",
+    "17ms main#12 404",
+    "20ms main#13 404 PR"
+   ]
+  },
+  {
+   "name": "control: plain 429 rate limit",
+   "ms": 13073,
+   "requests_main": 26,
+   "requests_fallback": 0,
+   "pr_shard_requests": 2,
+   "statuses_main": "429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429",
+   "refusal_log": null,
+   "shard_failed_warns": 12,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "3ms main#1 429",
+    "4ms main#2 429",
+    "4ms main#3 429",
+    "4ms main#4 429",
+    "2694ms main#5 429",
+    "2696ms main#6 429",
+    "2847ms main#7 429",
+    "2849ms main#8 429",
+    "... 26 requests"
+   ]
+  },
+  {
+   "name": "S24b two slow successes in flight + 2 refusals land first",
+   "ms": 3331,
+   "requests_main": 17,
+   "requests_fallback": 0,
+   "pr_shard_requests": 3,
+   "statuses_main": "200,429,429,200,200,200,200,200,200,200,200,200,200,200,200,200,200",
+   "refusal_log": null,
+   "shard_failed_warns": 0,
+   "done_line": "[AGENT] kodus-rules-review-agent (sharded) done for PR#2744: 12 suggestions (12 confirmed across 13 shards; 0 detector candidate(s) offered; lookup unavailable (no sandbox handle)) in 3330ms",
+   "outcome": {
+    "ok": true,
+    "suggestions": 12
+   },
+   "timeline": [
+    "48ms main#1 200",
+    "48ms main#2 429",
+    "56ms main#3 429",
+    "57ms main#4 200",
+    "2638ms main#5 200",
+    "2643ms main#6 200",
+    "2646ms main#7 200",
+    "2649ms main#8 200",
+    "2654ms main#9 200",
+    "2658ms main#10 200",
+    "2660ms main#11 200",
+    "2662ms main#12 200",
+    "2664ms main#13 200",
+    "3312ms main#14 200",
+    "3317ms main#15 200 PR",
+    "3322ms main#16 200 PR",
+    "3327ms main#17 200 PR"
+   ]
+  },
+  {
+   "name": "S34 400 rules x 300 large files (SLOW-SYNC labels)",
+   "ms": 35752,
+   "requests_main": 600,
+   "requests_fallback": 0,
+   "pr_shard_requests": 0,
+   "statuses_main": "401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,... (600 total)",
+   "refusal_log": null,
+   "shard_failed_warns": 600,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 600 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "33275ms main#1 401",
+    "33292ms main#2 401",
+    "33298ms main#3 401",
+    "33304ms main#4 401",
+    "33305ms main#5 401",
+    "33315ms main#6 401",
+    "33316ms main#7 401",
+    "33324ms main#8 401",
+    "... 600 requests"
+   ]
+  },
+  {
+   "name": "S34b 6000 rules x 3000 files (format rules label)",
+   "ms": 31866,
+   "requests_main": 3000,
+   "requests_fallback": 0,
+   "pr_shard_requests": 0,
+   "statuses_main": "401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,... (3000 total)",
+   "refusal_log": null,
+   "shard_failed_warns": 3000,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 3000 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "30257ms main#1 401",
+    "30266ms main#2 401",
+    "30275ms main#3 401",
+    "30278ms main#4 401",
+    "30278ms main#5 401",
+    "30281ms main#6 401",
+    "30281ms main#7 401",
+    "30284ms main#8 401",
+    "... 3000 requests"
+   ]
+  }
+ ],
+ "mutant nostop (merge, skipped-shard branch disabled)": [
+  {
+   "name": "S21 spend cap, 12 files one rule (shared head) + PR rule",
+   "ms": 70,
+   "requests_main": 12,
+   "requests_fallback": 0,
+   "pr_shard_requests": 0,
+   "statuses_main": "429,429,429,429,429,429,429,429,429,429,429,429",
+   "refusal_log": {
+    "message": "[kody-rules] the model provider refused PR#2744 (QUOTA_EXCEEDED); the remaining shards were skipped instead of called",
+    "metadata": {
+     "category": "QUOTA_EXCEEDED",
+     "shardsRun": 13,
+     "shardsErrored": 13
+    }
+   },
+   "shard_failed_warns": 12,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "33ms main#1 429",
+    "42ms main#2 429",
+    "43ms main#3 429",
+    "44ms main#4 429",
+    "44ms main#5 429",
+    "56ms main#6 429",
+    "56ms main#7 429",
+    "57ms main#8 429",
+    "57ms main#9 429",
+    "68ms main#10 429",
+    "69ms main#11 429",
+    "69ms main#12 429"
+   ]
+  },
+  {
+   "name": "S21 spend cap, 12 files distinct rules + PR rule",
+   "ms": 17,
+   "requests_main": 12,
+   "requests_fallback": 0,
+   "pr_shard_requests": 0,
+   "statuses_main": "429,429,429,429,429,429,429,429,429,429,429,429",
+   "refusal_log": {
+    "message": "[kody-rules] the model provider refused PR#2744 (QUOTA_EXCEEDED); the remaining shards were skipped instead of called",
+    "metadata": {
+     "category": "QUOTA_EXCEEDED",
+     "shardsRun": 13,
+     "shardsErrored": 13
+    }
+   },
+   "shard_failed_warns": 12,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "6ms main#1 429",
+    "7ms main#2 429",
+    "8ms main#3 429",
+    "8ms main#4 429",
+    "9ms main#5 429",
+    "12ms main#6 429",
+    "12ms main#7 429",
+    "12ms main#8 429",
+    "12ms main#9 429",
+    "16ms main#10 429",
+    "16ms main#11 429",
+    "17ms main#12 429"
+   ]
+  },
+  {
+   "name": "S28 401 invalid key",
+   "ms": 14,
+   "requests_main": 12,
+   "requests_fallback": 0,
+   "pr_shard_requests": 0,
+   "statuses_main": "401,401,401,401,401,401,401,401,401,401,401,401",
+   "refusal_log": {
+    "message": "[kody-rules] the model provider refused PR#2744 (AUTH_INVALID); the remaining shards were skipped instead of called",
+    "metadata": {
+     "category": "AUTH_INVALID",
+     "shardsRun": 13,
+     "shardsErrored": 13
+    }
+   },
+   "shard_failed_warns": 12,
+   "done_line": null,
+   "outcome": {
+    "ok": false,
+    "error": "Kody Rules could not be evaluated: all 13 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+   },
+   "timeline": [
+    "4ms main#1 401",
+    "5ms main#2 401",
+    "6ms main#3 401",
+    "6ms main#4 401",
+    "7ms main#5 401",
+    "9ms main#6 401",
+    "9ms main#7 401",
+    "9ms main#8 401",
+    "9ms main#9 401",
+    "12ms main#10 401",
+    "13ms main#11 401",
+    "13ms main#12 401"
+   ]
+  }
+ ],
+ "mutant nowait (merge, no wait for shards in flight)": [
+  {
+   "name": "S24b two slow successes in flight + 2 refusals land first",
+   "ms": 3052,
+   "requests_main": 5,
+   "requests_fallback": 0,
+   "pr_shard_requests": 0,
+   "statuses_main": "200,429,429,200,200",
+   "refusal_log": {
+    "message": "[kody-rules] the model provider refused PR#2744 (QUOTA_EXCEEDED); the remaining shards were skipped instead of called",
+    "metadata": {
+     "category": "QUOTA_EXCEEDED",
+     "shardsRun": 13,
+     "shardsErrored": 10
+    }
+   },
+   "shard_failed_warns": 2,
+   "done_line": "[AGENT] kodus-rules-review-agent (sharded) done for PR#2744: 3 suggestions (3 confirmed across 13 shards, 10 errored; 0 detector candidate(s) offered; lookup unavailable (no sandbox handle)) in 3051ms",
+   "outcome": {
+    "ok": true,
+    "suggestions": 3
+   },
+   "timeline": [
+    "37ms main#1 200",
+    "38ms main#2 429",
+    "48ms main#3 429",
+    "50ms main#4 200",
+    "50ms main#5 200"
+   ]
+  }
+ ],
+ "S34 SlowSync lines captured (stdout of the process)": {
+  "merge": [
+   {
+    "level": "warn",
+    "time": "2026-11-27T20:35:38.881Z",
+    "serviceName": "SlowSync",
+    "context": "SlowSync",
+    "label": "kody-rules detectors",
+    "durationMs": 34673,
+    "rules": 800,
+    "files": 600,
+    "patchChars": 124801800,
+    "environment": "unknown",
+    "metadata": {
+     "label": "kody-rules detectors",
+     "durationMs": 34673,
+     "rules": 800,
+     "files": 600,
+     "patchChars": 124801800
+    },
+    "traceId": null,
+    "spanId": null,
+    "msg": "[SLOW-SYNC] kody-rules detectors held the event loop 34673ms"
+   },
+   {
+    "level": "warn",
+    "time": "2026-11-27T20:36:35.829Z",
+    "serviceName": "SlowSync",
+    "context": "SlowSync",
+    "label": "kody-rules format rules",
+    "durationMs": 7443,
+    "rules": 6000,
+    "files": 3000,
+    "patchChars": 669000,
+    "environment": "unknown",
+    "metadata": {
+     "label": "kody-rules format rules",
+     "durationMs": 7443,
+     "rules": 6000,
+     "files": 3000,
+     "patchChars": 669000
+    },
+    "traceId": null,
+    "spanId": null,
+    "msg": "[SLOW-SYNC] kody-rules format rules held the event loop 7443ms"
+   }
+  ],
+  "parent": []
+ }
+}
