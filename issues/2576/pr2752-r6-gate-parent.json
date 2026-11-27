@@ -1,0 +1,244 @@
+{
+ "stored_false__quoted_false": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_true__quoted_false": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_false__canary_string": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_true__canary_string": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_false__yaml_no": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_true__yaml_no": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_false__yaml_off": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_true__yaml_off": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_false__zero": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_true__zero": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_false__null": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_true__null": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_false__empty_key": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_true__empty_key": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_false__array_false": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_true__array_false": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_false__conversation_off": {
+  "outcome": "silenced:log:disabled",
+  "classify": 0,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_true__conversation_off": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_false__conversation_null": {
+  "outcome": "silenced:log:disabled",
+  "classify": 0,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_true__conversation_null": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_false__true": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_true__true": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_false__false": {
+  "outcome": "silenced:log:disabled",
+  "classify": 0,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_true__false": {
+  "outcome": "silenced:log:disabled",
+  "classify": 0,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_false__missing_key": {
+  "outcome": "silenced:log:disabled",
+  "classify": 0,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_true__missing_key": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_false__empty_block": {
+  "outcome": "silenced:log:disabled",
+  "classify": 0,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "stored_true__empty_block": {
+  "outcome": "classifier",
+  "classify": 1,
+  "fileReads": 1,
+  "loaderWarns": [],
+  "otherCbsWarns": []
+ },
+ "loader_rest_of_file": {
+  "quoted_with_siblings": {
+   "rejected": 0,
+   "conversation": {
+    "implicitReplies": "false"
+   },
+   "reviewOptions": {
+    "bug": false,
+    "security": true
+   },
+   "runOnDraft": false,
+   "keys": [
+    "conversation",
+    "reviewOptions",
+    "runOnDraft"
+   ]
+  },
+  "nonobject_with_siblings": {
+   "rejected": 0,
+   "conversation": "off",
+   "reviewOptions": {
+    "bug": false
+   },
+   "runOnDraft": false,
+   "keys": [
+    "conversation",
+    "reviewOptions",
+    "runOnDraft"
+   ]
+  },
+  "valid_with_siblings": {
+   "rejected": 0,
+   "conversation": {
+    "implicitReplies": false
+   },
+   "reviewOptions": {
+    "bug": false
+   },
+   "runOnDraft": false,
+   "keys": [
+    "conversation",
+    "reviewOptions",
+    "runOnDraft"
+   ]
+  }
+ }
+}
