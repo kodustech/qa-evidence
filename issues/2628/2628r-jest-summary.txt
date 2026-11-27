@@ -1,0 +1,59 @@
+== h-retest-cand
+Tests:       16 passed, 16 total
+== h-retest-ctrl
+FAIL qa-h/h-retest.spec.ts (33.542 s)
+  ● retest lease harness @ctrl › R1 M34 form 1: setKillAt lands after a joiner
+  ● retest lease harness @ctrl › R3 M34 form 2: the release idle timeout lands after the joiner connected
+  ● retest lease harness @ctrl › R5 M34 form 3: the cron read the lease as idle, then a holder joined
+  ● retest lease harness @ctrl › R5b M34 form 3: the cron resumes after the joiner incremented, before it cleared killAt
+  ● retest lease harness @ctrl › R8 retire and re-create: the old holder release does not take the new count
+  ● retest lease harness @ctrl › R13 X5 on E2B (stub): the abandoned command runs past the release; kill and E2B timeout wait for it
+  ● retest lease harness @ctrl › R17 double release in the same tick, idle and busy
+  ● retest lease harness @ctrl › R20 kill fails after detach: retries go to the retired doc
+Tests:       8 failed, 8 passed, 16 total
+== h-orch2-cand
+Tests:       3 passed, 3 total
+== h-orch2-ctrl
+FAIL qa-h/h-orch2.spec.ts (13.597 s)
+  ● H orch @ctrl › R10 X5: hard timeout while `sleep 8; cat a.ts` runs (real stage, orchestrator, local provider); R16 observer + pipeline timing; R29 usage
+  ● H orch @ctrl › R12 X5: outline-first readFile runs two sandbox reads back to back; the release lands during the first
+  ● H orch @ctrl › R12b X5: two sandbox reads 50 ms apart (a tool with a short non-sandbox await between them); the release lands during the first
+Tests:       3 failed, 3 total
+== h-r14-cand
+Tests:       15 skipped, 1 passed, 16 total
+== h-mutant-M-a
+FAIL qa-h/h-retest.spec.ts
+  ● retest lease harness @cand-M-a › R1 M34 form 1: setKillAt lands after a joiner
+Tests:       1 failed, 13 skipped, 14 total
+== h-mutant-M-b
+FAIL qa-h/h-retest.spec.ts
+  ● retest lease harness @cand-M-b › R1 M34 form 1: setKillAt lands after a joiner
+Tests:       1 failed, 13 skipped, 14 total
+== h-mutant-M-c
+FAIL qa-h/h-retest.spec.ts (6.16 s)
+  ● retest lease harness @cand-M-c › R3 M34 form 2: the release idle timeout lands after the joiner connected
+Tests:       1 failed, 13 skipped, 14 total
+== h-mutant-M-d
+Tests:       13 skipped, 1 passed, 14 total
+== h-mutant-M-d-R5b
+FAIL qa-h/h-retest.spec.ts
+  ● retest lease harness @cand-M-d › R5b M34 form 3: the cron resumes after the joiner incremented, before it cleared killAt
+Tests:       1 failed, 14 skipped, 15 total
+== h-mutant-M-e
+FAIL qa-h/h-retest.spec.ts
+  ● retest lease harness @cand-M-e › R8 retire and re-create: the old holder release does not take the new count
+Tests:       1 failed, 13 skipped, 14 total
+== h-mutant-M-f
+FAIL qa-h/h-orch2.spec.ts (10.309 s)
+  ● H orch @cand-M-f › R10 X5: hard timeout while `sleep 8; cat a.ts` runs (real stage, orchestrator, local provider); R16 observer + pipeline timing; R29 usage
+Tests:       1 failed, 1 skipped, 2 total
+== h-mutant-M-g
+Tests:       1 skipped, 1 passed, 2 total
+== h-mutant-M-g-R12b
+FAIL qa-h/h-orch2.spec.ts
+  ● H orch @cand-M-g › R12b X5: two sandbox reads 50 ms apart (a tool with a short non-sandbox await between them); the release lands during the first
+Tests:       1 failed, 2 skipped, 3 total
+== h-mutant-M-h
+FAIL qa-h/h-retest.spec.ts
+  ● retest lease harness @cand-M-h › R17 double release in the same tick, idle and busy
+Tests:       1 failed, 13 skipped, 14 total
