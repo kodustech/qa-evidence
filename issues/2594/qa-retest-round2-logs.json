@@ -1,0 +1,76 @@
+{
+ "forgejo": [
+  {
+   "t": "2026-11-27T19:25:21.765Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 22,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T19:25:22.635Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidatePrerequisitesStage' completed in 1728ms: 46b43ed1-1635-462b-b7f6-676390794bbd"
+  },
+  {
+   "t": "2026-11-27T19:26:59.208Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 22,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T19:26:59.766Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidatePrerequisitesStage' completed in 1334ms: aa6e2fac-837d-4401-984b-064cfe334638"
+  },
+  {
+   "t": "2026-11-27T19:27:43.318Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 23,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T19:27:43.684Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidatePrerequisitesStage' completed in 1282ms: 27177895-d497-41de-8e3f-e515922c122e"
+  },
+  {
+   "t": "2026-11-27T19:28:26.334Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 23,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T19:28:26.698Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidatePrerequisitesStage' completed in 425ms: 1d09e8e3-a263-401b-9baa-f1fabcd69a45"
+  }
+ ],
+ "azure": [
+  {
+   "t": "2026-11-27T19:25:40.043Z",
+   "level": "warn",
+   "component": "ValidatePrerequisitesStage",
+   "message": "User not licensed but company has licenses",
+   "prNumber": 221,
+   "autoAssignReason": "AUTO_ASSIGN_DISABLED"
+  },
+  {
+   "t": "2026-11-27T19:25:40.401Z",
+   "level": "info",
+   "component": "PipelineExecutor",
+   "message": "Stage 'ValidatePrerequisitesStage' completed in 1465ms: 65d7a0f3-4d23-4542-b689-97ea8e918bd2"
+  }
+ ]
+}
