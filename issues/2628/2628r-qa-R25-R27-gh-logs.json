@@ -1,0 +1,203 @@
+[
+ {
+  "t": "2026-11-27T17:29:56.114Z",
+  "level": "info",
+  "component": "SandboxLeaseManager",
+  "message": "SandboxLeaseManager: acquire prKey=\"<org:jr-claude-github>:1468014267:27\" consumer=\"review\"",
+  "org": "unknown",
+  "attributes": {
+   "prKey": "<org:jr-claude-github>:1468014267:27",
+   "consumer": "review",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "t": "2026-11-27T17:29:56.132Z",
+  "level": "info",
+  "component": "SandboxLeaseManager",
+  "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"<org:jr-claude-github>:1468014267:27\" consumer=\"review\"",
+  "org": "unknown",
+  "attributes": {
+   "prKey": "<org:jr-claude-github>:1468014267:27",
+   "consumer": "review",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "t": "2026-11-27T17:30:00.332Z",
+  "level": "info",
+  "component": "SandboxLeaseManager",
+  "message": "SandboxLeaseManager: sandbox READY prKey=\"<org:jr-claude-github>:1468014267:27\" consumer=\"review\" leaseId=\"9247ee71-ee3d-47f7-94be-3a37b19d7134\"",
+  "org": "unknown",
+  "attributes": {
+   "prKey": "<org:jr-claude-github>:1468014267:27",
+   "consumer": "review",
+   "leaseId": "9247ee71-ee3d-47f7-94be-3a37b19d7134",
+   "sandboxId": "sbx-QA-GH",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "t": "2026-11-27T17:31:50.175Z",
+  "level": "info",
+  "component": "SandboxLeaseManager",
+  "message": "SandboxLeaseManager: released leaseId=\"9247ee71-ee3d-47f7-94be-3a37b19d7134\" prKey=\"<org:jr-claude-github>:1468014267:27\" leaseCount=0",
+  "org": "unknown",
+  "attributes": {
+   "leaseId": "9247ee71-ee3d-47f7-94be-3a37b19d7134",
+   "prKey": "<org:jr-claude-github>:1468014267:27",
+   "leaseCount": 0,
+   "consumer": "review",
+   "heldMs": 109757,
+   "acquireToFirstUseMs": 149,
+   "lastUseToReleaseMs": 9071,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "t": "2026-11-27T17:31:50.182Z",
+  "level": "info",
+  "component": "SandboxLeaseManager",
+  "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-27T17:32:20.175Z for sandboxId=\"sbx-QA-GH\"",
+  "org": "unknown",
+  "attributes": {
+   "prKey": "<org:jr-claude-github>:1468014267:27",
+   "sandboxId": "sbx-QA-GH",
+   "idleTimeoutMs": 30000,
+   "killAt": "2026-11-27T17:32:20.175Z",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "t": "2026-11-27T17:32:28.125Z",
+  "level": "info",
+  "component": "SandboxLeaseManager",
+  "message": "SandboxLeaseManager: acquire prKey=\"<org:jr-claude-github>:1468014267:27\" consumer=\"conversation\"",
+  "org": "unknown",
+  "attributes": {
+   "prKey": "<org:jr-claude-github>:1468014267:27",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "t": "2026-11-27T17:32:28.139Z",
+  "level": "info",
+  "component": "SandboxLeaseManager",
+  "message": "SandboxLeaseManager: connecting to existing sandbox sandboxId=\"sbx-QA-GH\" prKey=\"<org:jr-claude-github>:1468014267:27\" consumer=\"conversation\"",
+  "org": "unknown",
+  "attributes": {
+   "prKey": "<org:jr-claude-github>:1468014267:27",
+   "consumer": "conversation",
+   "sandboxId": "sbx-QA-GH",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "t": "2026-11-27T17:32:29.948Z",
+  "level": "info",
+  "component": "SandboxLeaseManager",
+  "message": "[DEBUG] syncE2BSandboxRepo: synced reused sandbox to refspec=refs/pull/27/head",
+  "org": "unknown",
+  "attributes": {
+   "refspec": "refs/pull/27/head",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "t": "2026-11-27T17:32:29.952Z",
+  "level": "info",
+  "component": "SandboxLeaseManager",
+  "message": "SandboxLeaseManager: connected to existing sandbox prKey=\"<org:jr-claude-github>:1468014267:27\" consumer=\"conversation\" leaseId=\"7c21e6f0-b362-4a03-8f2b-6ffba6b9fb0f\"",
+  "org": "unknown",
+  "attributes": {
+   "prKey": "<org:jr-claude-github>:1468014267:27",
+   "consumer": "conversation",
+   "leaseId": "7c21e6f0-b362-4a03-8f2b-6ffba6b9fb0f",
+   "sandboxId": "sbx-QA-GH",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "t": "2026-11-27T17:32:39.574Z",
+  "level": "info",
+  "component": "SandboxLeaseManager",
+  "message": "SandboxLeaseManager: released leaseId=\"7c21e6f0-b362-4a03-8f2b-6ffba6b9fb0f\" prKey=\"<org:jr-claude-github>:1468014267:27\" leaseCount=0",
+  "org": "unknown",
+  "attributes": {
+   "leaseId": "7c21e6f0-b362-4a03-8f2b-6ffba6b9fb0f",
+   "prKey": "<org:jr-claude-github>:1468014267:27",
+   "leaseCount": 0,
+   "consumer": "conversation",
+   "heldMs": 9616,
+   "acquireToFirstUseMs": 1,
+   "lastUseToReleaseMs": 9521,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "t": "2026-11-27T17:32:39.579Z",
+  "level": "info",
+  "component": "SandboxLeaseManager",
+  "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-27T17:37:39.574Z for sandboxId=\"sbx-QA-GH\"",
+  "org": "unknown",
+  "attributes": {
+   "prKey": "<org:jr-claude-github>:1468014267:27",
+   "sandboxId": "sbx-QA-GH",
+   "idleTimeoutMs": 300000,
+   "killAt": "2026-11-27T17:37:39.574Z",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "t": "2026-11-27T17:38:00.345Z",
+  "level": "info",
+  "component": "SandboxLeaseReaperService",
+  "message": "[SANDBOX-IDLE-KILL] Killed idle sandbox",
+  "org": "unknown",
+  "attributes": {
+   "prKey": "<org:jr-claude-github>:1468014267:27",
+   "sandboxId": "sbx-QA-GH",
+   "killAt": "2026-11-27T17:37:39.574Z",
+   "component": "SandboxLeaseReaperService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "t": "2026-11-27T17:38:57.437Z",
+  "level": "info",
+  "component": "SandboxLeaseManager",
+  "message": "SandboxLeaseManager: acquire prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:13\" consumer=\"review\"",
+  "org": "unknown",
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:13",
+   "consumer": "review",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "t": "2026-11-27T17:38:57.449Z",
+  "level": "info",
+  "component": "SandboxLeaseManager",
+  "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:13\" consumer=\"review\"",
+  "org": "unknown",
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:13",
+   "consumer": "review",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ }
+]
