@@ -1,0 +1,180 @@
+
+##### A1.1 RetryError(4) over APICallError 429, AIzaSy key + e-mail
+classify: category=QUOTA_EXCEEDED httpStatus=429 provider=google_gemini
+
+===== PR COMMENT BODY =====
+## Code Review Could Not Complete ⚠️
+
+The review failed before suggestions could be generated.
+
+**Reason:** The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan.
+
+google_gemini · gemini-3.8-flash · HTTP 429 · generalist
+
+After fixing the issue, comment `@kody review` on this PR to re-run the review.
+
+
+
+<!-- config table omitted by harness -->
+
+<!-- kody-codereview-completed-<id> -->
+<!-- kody-codereview -->
+&#8203;
+----- no bait leaked
+
+===== IN-APP NOTIFICATION =====
+title: BYOK LLM errors exceeded threshold
+body: Your google_gemini model returned 5 errors in the recent window. Reviews may be impacted. Latest error: HTTP 429 — Quota exceeded for caller [redacted] contact qa-bait@example.com. You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. * Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash Please retry….
+----- LEAKS: qa-bait@example.com
+
+===== E-MAIL NOTIFICATION =====
+subject: BYOK LLM errors — google_gemini above threshold
+text: Your BYOK google_gemini model failed 5 times in the recent window. Your BYOK google_gemini model failed 5 times in the recent window. BYOK LLM errors above threshold Your BYOK google_gemini model returned 5 errors between 20:00 UTC and 20:05 UTC. Code reviews using this configuration may be delayed or skipped while the outage continues. Latest error: HTTP 429 — Quota exceeded for caller [redacted] contact qa-bait@example.com. You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. * Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash Please retry… You will not receive another notification about this until a cooldown period elapses, even if errors continue. Check your provider dashboard or rotate keys if needed. Kodus, LLC · kodus.io
+----- LEAKS: qa-bait@example.com
+notification (URLs stripped) says "rate limit": NO | says "billing": YES
+
+##### A1.2 same, AI Studio AQ. key
+classify: category=QUOTA_EXCEEDED httpStatus=429 provider=google_gemini
+
+===== PR COMMENT BODY =====
+## Code Review Could Not Complete ⚠️
+
+The review failed before suggestions could be generated.
+
+**Reason:** The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan.
+
+google_gemini · gemini-3.8-flash · HTTP 429 · generalist
+
+After fixing the issue, comment `@kody review` on this PR to re-run the review.
+
+
+
+<!-- config table omitted by harness -->
+
+<!-- kody-codereview-completed-<id> -->
+<!-- kody-codereview -->
+&#8203;
+----- no bait leaked
+
+===== IN-APP NOTIFICATION =====
+title: BYOK LLM errors exceeded threshold
+body: Your google_gemini model returned 5 errors in the recent window. Reviews may be impacted. Latest error: HTTP 429 — Quota exceeded for caller AQ.<FAKE-AI-STUDIO-BAIT, printed verbatim by the parent; shortened here so secret scanning accepts the file> contact qa-bait@example.com. You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. * Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini….
+----- LEAKS: qa-bait@example.com, AQ.<FAKE-AI-STUDIO-BAIT, printed verbatim by the parent; shortened here so secret scanning accepts the file>
+
+===== E-MAIL NOTIFICATION =====
+subject: BYOK LLM errors — google_gemini above threshold
+text: Your BYOK google_gemini model failed 5 times in the recent window. Your BYOK google_gemini model failed 5 times in the recent window. BYOK LLM errors above threshold Your BYOK google_gemini model returned 5 errors between 20:00 UTC and 20:05 UTC. Code reviews using this configuration may be delayed or skipped while the outage continues. Latest error: HTTP 429 — Quota exceeded for caller AQ.<FAKE-AI-STUDIO-BAIT, printed verbatim by the parent; shortened here so secret scanning accepts the file> contact qa-bait@example.com. You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. * Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini… You will not receive another notification about this until a cooldown period elapses, even if errors continue. Check your provider dashboard or rotate keys if needed. Kodus, LLC · kodus.io
+----- LEAKS: qa-bait@example.com, AQ.<FAKE-AI-STUDIO-BAIT, printed verbatim by the parent; shortened here so secret scanning accepts the file>
+notification (URLs stripped) says "rate limit": NO | says "billing": YES
+
+##### A1.3 same, ?key= URL in the message
+classify: category=QUOTA_EXCEEDED httpStatus=429 provider=google_gemini
+
+===== PR COMMENT BODY =====
+## Code Review Could Not Complete ⚠️
+
+The review failed before suggestions could be generated.
+
+**Reason:** The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan.
+
+google_gemini · gemini-3.8-flash · HTTP 429 · generalist
+
+After fixing the issue, comment `@kody review` on this PR to re-run the review.
+
+
+
+<!-- config table omitted by harness -->
+
+<!-- kody-codereview-completed-<id> -->
+<!-- kody-codereview -->
+&#8203;
+----- no bait leaked
+
+===== IN-APP NOTIFICATION =====
+title: BYOK LLM errors exceeded threshold
+body: Your google_gemini model returned 5 errors in the recent window. Reviews may be impacted. Latest error: HTTP 429 — Quota exceeded for caller https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=FAKEKEYQS123456 contact qa-bait@example.com. You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. * Quota exceeded for metric: generativelanguage.googleapis.com/….
+----- LEAKS: qa-bait@example.com, FAKEKEYQS123456
+
+===== E-MAIL NOTIFICATION =====
+subject: BYOK LLM errors — google_gemini above threshold
+text: Your BYOK google_gemini model failed 5 times in the recent window. Your BYOK google_gemini model failed 5 times in the recent window. BYOK LLM errors above threshold Your BYOK google_gemini model returned 5 errors between 20:00 UTC and 20:05 UTC. Code reviews using this configuration may be delayed or skipped while the outage continues. Latest error: HTTP 429 — Quota exceeded for caller https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=FAKEKEYQS123456 contact qa-bait@example.com. You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. * Quota exceeded for metric: generativelanguage.googleapis.com/… You will not receive another notification about this until a cooldown period elapses, even if errors continue. Check your provider dashboard or rotate keys if needed. Kodus, LLC · kodus.io
+----- LEAKS: qa-bait@example.com, FAKEKEYQS123456
+notification (URLs stripped) says "rate limit": NO | says "billing": YES
+
+##### A1.4 REAL WIRE LLM.run loop -> stub 429 (bait), requests=4, wall=14056ms, thrown=AI_RetryError: Failed after 4 attempts. Last error: AI_APICallError: Quota exceeded for caller AIzaSyD-FAKEFAKEFAKEFAKEFAKEFAKEFAKEFAKE
+classify: category=QUOTA_EXCEEDED httpStatus=429
+
+===== PR COMMENT BODY (real wire) =====
+## Code Review Could Not Complete ⚠️
+
+The review failed before suggestions could be generated.
+
+**Reason:** The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan.
+
+openai_compatible · gemini-3.8-flash · HTTP 429 · generalist
+
+After fixing the issue, comment `@kody review` on this PR to re-run the review.
+
+
+
+<!-- config table omitted by harness -->
+
+<!-- kody-codereview-completed-<id> -->
+<!-- kody-codereview -->
+&#8203;
+----- no bait leaked
+reporter entries=4; last={"organizationId":"org-qa","provider":"openai_compatible","errorMessage":"Quota exceeded for caller [redacted] contact qa-bait@example.com. You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. * Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash Please retry…","category":"QUOTA_EXCEEDED","httpStatus":429}
+
+===== IN-APP NOTIFICATION (real reporter entry) =====
+title: BYOK LLM errors exceeded threshold
+body: Your openai_compatible model returned 5 errors in the recent window. Reviews may be impacted. Latest error: HTTP 429 — Quota exceeded for caller [redacted] contact qa-bait@example.com. You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. * Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash Please retry….
+----- LEAKS: qa-bait@example.com
+notification (URLs stripped) says "rate limit": NO | says "billing": YES
+
+##### A3.a RetryError(3) over status-less APICallError "<none>"
+classify: category=UNKNOWN friendlyMessage="Unexpected error while running the code review (openai_compatible)." providerMessage=undefined
+Reason block: Unexpected error while running the code review (openai_compatible).
+
+openai_compatible · customer-model · generalist
+
+##### A3.a' RetryError(3) over status-less APICallError ""
+classify: category=UNKNOWN friendlyMessage="Unexpected error while running the code review (openai_compatible)." providerMessage=undefined
+Reason block: Unexpected error while running the code review (openai_compatible).
+
+openai_compatible · customer-model · generalist
+
+##### A3.b APICallError "Cannot connect to API" cause UND_ERR_CONNECT_TIMEOUT
+classify: category=TRANSIENT friendlyMessage="Transient error reaching the provider (openai_compatible). Try again." providerMessage=undefined
+Reason block: Transient error reaching the provider (openai_compatible). Try again.
+
+openai_compatible · customer-model · generalist
+
+##### A3.b' RetryError(3) of A3.b
+classify: category=TRANSIENT friendlyMessage="Transient error reaching the provider (openai_compatible). Try again." providerMessage=undefined
+Reason block: Transient error reaching the provider (openai_compatible). Try again.
+
+openai_compatible · customer-model · generalist
+
+##### A3.c AggregateError ETIMEDOUT (raw)
+classify: category=UNKNOWN friendlyMessage="Unexpected error while running the code review (openai_compatible)." providerMessage=undefined
+Reason block: Unexpected error while running the code review (openai_compatible).
+
+openai_compatible · customer-model · generalist
+
+##### A3.c' APICallError "Cannot connect to API: " cause AggregateError ETIMEDOUT
+classify: category=UNKNOWN friendlyMessage="Unexpected error while running the code review (openai_compatible)." providerMessage=undefined
+Reason block: Unexpected error while running the code review (openai_compatible).
+
+openai_compatible · customer-model · generalist
+
+##### A3.d REAL undici connect timeout 192.0.2.1:443 door=oneshot-schema wall=2044ms thrown=AI_APICallError: Cannot connect to API: Connect Timeout Error (attempted address: 192.0.2.1:443, timeout: 1500ms) | cause.code=UND_ERR_CONNECT_TIMEOUT
+classify: category=TRANSIENT friendlyMessage="Transient error reaching the provider (openai_compatible). Try again." providerMessage=undefined
+Reason block: Transient error reaching the provider (openai_compatible). Try again.
+
+openai_compatible · customer-model · generalist
+
+##### A3.d REAL undici connect timeout 192.0.2.1:443 door=loop wall=22038ms thrown=AI_RetryError: Failed after 4 attempts. Last error: AI_APICallError: Cannot connect to API: Connect Timeout Error (attempted address: 192.0.2.1:443, timeout: 1500ms) | cause.code=UND_ERR_CONNECT_TIMEOUT
+classify: category=TRANSIENT friendlyMessage="Transient error reaching the provider (openai_compatible). Try again." providerMessage=undefined
+Reason block: Transient error reaching the provider (openai_compatible). Try again.
+
+openai_compatible · customer-model · generalist
