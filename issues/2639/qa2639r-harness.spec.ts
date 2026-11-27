@@ -227,6 +227,32 @@ describe('qa2639r', () => {
         for (const n of Object.keys(cases)) expect(get(`${n}-Z`)).toMatchObject({ org: 'qa2639r-org-z', team: 'qa2639r-team-z' });
     });
 
+    it('R6b teamId-only shapes (no org anywhere) keep the team', async () => {
+        const Z = { organizationId: 'qa2639r-org-z', teamId: 'qa2639r-team-z' };
+        const cases: Record<string, any> = {
+            l_paramsNested_teamOnly: { params: { organizationAndTeamData: { teamId: 'TL' } } },
+            m_topPair_teamOnly: { organizationAndTeamData: { teamId: 'TM' } },
+            n_paramsFlat_teamOnly: { params: { teamId: 'TN' } },
+            o_payloadFlat_teamOnly: { payload: { teamId: 'TO' } },
+        };
+        const log = createLogger('qa2639r-teamonly');
+        const rows = await withExporter(async () => {
+            for (const [name, metadata] of Object.entries(cases)) {
+                log.error({ message: `qa2639r-R6b-${name}`, context: 'QA2639R', metadata });
+                log.error({ message: `qa2639r-R6b-${name}-Z`, context: 'QA2639R', metadata: { organizationAndTeamData: Z } as any });
+            }
+        });
+        results.R6b = rows
+            .filter((r) => String(r.message).startsWith('qa2639r-R6b'))
+            .map((r) => ({ message: r.message, org: r.metadata?.organizationId, team: r.metadata?.teamId, metaTenant: r.metadata?.tenantId, tenant: r.tenantId }));
+        const get = (n: string) => results.R6b.find((x: any) => x.message === `qa2639r-R6b-${n}`);
+        expect(get('l_paramsNested_teamOnly')).toMatchObject({ org: 'unknown', team: 'TL' });
+        expect(get('m_topPair_teamOnly')).toMatchObject({ org: 'unknown', team: 'TM' });
+        expect(get('n_paramsFlat_teamOnly')).toMatchObject({ org: 'unknown', team: 'TN' });
+        expect(get('o_payloadFlat_teamOnly')).toMatchObject({ org: 'unknown', team: 'TO' });
+        for (const n of Object.keys(cases)) expect(get(`${n}-Z`)).toMatchObject({ org: 'qa2639r-org-z', team: 'qa2639r-team-z' });
+    });
+
     it('R13 secrets in a flat payload stay redacted', async () => {
         const log = createLogger('qa2639r-secrets');
         const rows = await withExporter(async () => {
