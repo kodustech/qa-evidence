@@ -1,0 +1,110 @@
+[
+ {
+  "t": "2026-11-27T17:33:09.199Z",
+  "level": "error",
+  "component": "SavePullRequestUseCase",
+  "message": "Failed to save pull request data for PR#19"
+ },
+ {
+  "t": "2026-11-27T17:33:10.469Z",
+  "level": "error",
+  "component": "GitlabService getCommitsForPullRequestForCodeReview",
+  "message": "Error fetching commits for PR #19"
+ },
+ {
+  "t": "2026-11-27T17:33:10.470Z",
+  "level": "error",
+  "component": "PullRequestHandlerService",
+  "message": "Error fetching new commits since last execution"
+ },
+ {
+  "t": "2026-11-27T17:33:10.479Z",
+  "level": "error",
+  "component": "PipelineExecutor",
+  "message": "Stage 'ValidateNewCommitsStage' failed: commits is not iterable"
+ },
+ {
+  "t": "2026-11-27T17:33:10.480Z",
+  "level": "warn",
+  "component": "PipelineExecutor",
+  "message": "Pipeline 'CodeReviewPipeline:be6edc10-d03b-42c3-9cee-b2a0d664bd0a' continuing despite error in stage 'ValidateNewCommitsStage'"
+ },
+ {
+  "t": "2026-11-27T17:33:11.024Z",
+  "level": "error",
+  "component": "PullRequestHandlerService",
+  "message": "Error fetching changed files metadata"
+ },
+ {
+  "t": "2026-11-27T17:33:11.025Z",
+  "level": "error",
+  "component": "ResolveConfigStage",
+  "message": "Error in ResolveConfigStage for PR#19"
+ },
+ {
+  "t": "2026-11-27T17:33:11.204Z",
+  "level": "error",
+  "component": "GitlabService",
+  "message": "Error removing reactions from MR#19"
+ },
+ {
+  "t": "2026-11-27T17:40:19.164Z",
+  "level": "error",
+  "component": "SavePullRequestUseCase",
+  "message": "Failed to save pull request data for PR#19"
+ },
+ {
+  "t": "2026-11-27T17:40:20.061Z",
+  "level": "error",
+  "component": "GitlabService",
+  "message": "Error adding reaction to MR#19"
+ },
+ {
+  "t": "2026-11-27T17:40:20.353Z",
+  "level": "error",
+  "component": "GitlabService getCommitsForPullRequestForCodeReview",
+  "message": "Error fetching commits for PR #19"
+ },
+ {
+  "t": "2026-11-27T17:40:20.354Z",
+  "level": "error",
+  "component": "PullRequestHandlerService",
+  "message": "Error fetching new commits since last execution"
+ },
+ {
+  "t": "2026-11-27T17:40:20.364Z",
+  "level": "error",
+  "component": "PipelineExecutor",
+  "message": "Stage 'ValidateNewCommitsStage' failed: commits is not iterable"
+ },
+ {
+  "t": "2026-11-27T17:40:20.365Z",
+  "level": "warn",
+  "component": "PipelineExecutor",
+  "message": "Pipeline 'CodeReviewPipeline:6395de30-8823-4312-80d6-aece95dbdf8c' continuing despite error in stage 'ValidateNewCommitsStage'"
+ },
+ {
+  "t": "2026-11-27T17:40:20.860Z",
+  "level": "error",
+  "component": "PullRequestHandlerService",
+  "message": "Error fetching changed files metadata"
+ },
+ {
+  "t": "2026-11-27T17:40:20.861Z",
+  "level": "error",
+  "component": "ResolveConfigStage",
+  "message": "Error in ResolveConfigStage for PR#19"
+ },
+ {
+  "t": "2026-11-27T17:40:21.079Z",
+  "level": "error",
+  "component": "GitlabService",
+  "message": "Error removing reactions from MR#19"
+ },
+ {
+  "t": "2026-11-27T17:40:21.212Z",
+  "level": "error",
+  "component": "GitlabService",
+  "message": "Error adding reaction to MR#19"
+ }
+]
