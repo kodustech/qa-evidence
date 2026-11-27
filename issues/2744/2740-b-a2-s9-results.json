@@ -1,0 +1,230 @@
+{
+ "merge": [
+  {
+   "scenario": "churn 40000 small keys, flag read once at end",
+   "firstEmit": true,
+   "flagPresentAtEnd": true,
+   "secondEmitAllowed": false,
+   "duplicateNotice": false,
+   "entriesAtEnd": 40001,
+   "maxEntries": 40001,
+   "largestSmallValueChars": 880,
+   "scen": "churn:40000",
+   "rc": 0,
+   "errorLines": 0
+  },
+  {
+   "scenario": "churn 49998 small keys, flag read once at end",
+   "firstEmit": true,
+   "flagPresentAtEnd": true,
+   "secondEmitAllowed": false,
+   "duplicateNotice": false,
+   "entriesAtEnd": 49999,
+   "maxEntries": 49999,
+   "largestSmallValueChars": 880,
+   "scen": "churn:49998",
+   "rc": 0,
+   "errorLines": 0
+  },
+  {
+   "scenario": "churn 49999 small keys, flag read once at end",
+   "firstEmit": true,
+   "flagPresentAtEnd": true,
+   "secondEmitAllowed": false,
+   "duplicateNotice": false,
+   "entriesAtEnd": 50000,
+   "maxEntries": 50000,
+   "largestSmallValueChars": 880,
+   "scen": "churn:49999",
+   "rc": 0,
+   "errorLines": 0
+  },
+  {
+   "scenario": "churn 60000 small keys, flag read once at end",
+   "firstEmit": true,
+   "flagPresentAtEnd": false,
+   "secondEmitAllowed": true,
+   "duplicateNotice": true,
+   "entriesAtEnd": 50000,
+   "maxEntries": 50000,
+   "largestSmallValueChars": 880,
+   "scen": "churn:60000",
+   "rc": 0,
+   "errorLines": 0
+  },
+  {
+   "scenario": "churn 100000 small keys, flag read once at end",
+   "firstEmit": true,
+   "flagPresentAtEnd": false,
+   "secondEmitAllowed": true,
+   "duplicateNotice": true,
+   "entriesAtEnd": 50000,
+   "maxEntries": 50000,
+   "largestSmallValueChars": 880,
+   "scen": "churn:100000",
+   "rc": 0,
+   "errorLines": 0
+  },
+  {
+   "scenario": "flag, then 60000 keys with 1 s TTL (expired), 2 s wait, 1,000 live writes, flag read",
+   "entriesAfterBurst": 50000,
+   "entriesAtEnd": 50000,
+   "flagPresentAtEnd": false,
+   "scen": "expired:60000",
+   "rc": 0,
+   "errorLines": 0
+  }
+ ],
+ "parent": [
+  {
+   "scenario": "churn 40000 small keys, flag read once at end",
+   "firstEmit": true,
+   "flagPresentAtEnd": true,
+   "secondEmitAllowed": false,
+   "duplicateNotice": false,
+   "entriesAtEnd": 40001,
+   "maxEntries": 40001,
+   "largestSmallValueChars": 880,
+   "scen": "churn:40000",
+   "rc": 0,
+   "errorLines": 0
+  },
+  {
+   "scenario": "churn 49998 small keys, flag read once at end",
+   "firstEmit": true,
+   "flagPresentAtEnd": true,
+   "secondEmitAllowed": false,
+   "duplicateNotice": false,
+   "entriesAtEnd": 49999,
+   "maxEntries": 49999,
+   "largestSmallValueChars": 880,
+   "scen": "churn:49998",
+   "rc": 0,
+   "errorLines": 0
+  },
+  {
+   "scenario": "churn 49999 small keys, flag read once at end",
+   "firstEmit": true,
+   "flagPresentAtEnd": true,
+   "secondEmitAllowed": false,
+   "duplicateNotice": false,
+   "entriesAtEnd": 50000,
+   "maxEntries": 50000,
+   "largestSmallValueChars": 880,
+   "scen": "churn:49999",
+   "rc": 0,
+   "errorLines": 0
+  },
+  {
+   "scenario": "churn 60000 small keys, flag read once at end",
+   "firstEmit": true,
+   "flagPresentAtEnd": true,
+   "secondEmitAllowed": false,
+   "duplicateNotice": false,
+   "entriesAtEnd": 60001,
+   "maxEntries": 60001,
+   "largestSmallValueChars": 880,
+   "scen": "churn:60000",
+   "rc": 0,
+   "errorLines": 0
+  },
+  {
+   "scenario": "churn 100000 small keys, flag read once at end",
+   "firstEmit": true,
+   "flagPresentAtEnd": true,
+   "secondEmitAllowed": false,
+   "duplicateNotice": false,
+   "entriesAtEnd": 100001,
+   "maxEntries": 100001,
+   "largestSmallValueChars": 880,
+   "scen": "churn:100000",
+   "rc": 0,
+   "errorLines": 0
+  },
+  {
+   "scenario": "flag, then 60000 keys with 1 s TTL (expired), 2 s wait, 1,000 live writes, flag read",
+   "entriesAfterBurst": 60001,
+   "entriesAtEnd": 61001,
+   "flagPresentAtEnd": true,
+   "scen": "expired:60000",
+   "rc": 0,
+   "errorLines": 0
+  }
+ ],
+ "mutant-unbounded": [
+  {
+   "scenario": "churn 40000 small keys, flag read once at end",
+   "firstEmit": true,
+   "flagPresentAtEnd": true,
+   "secondEmitAllowed": false,
+   "duplicateNotice": false,
+   "entriesAtEnd": 40001,
+   "maxEntries": 40001,
+   "largestSmallValueChars": 880,
+   "scen": "churn:40000",
+   "rc": 0,
+   "errorLines": 0
+  },
+  {
+   "scenario": "churn 49998 small keys, flag read once at end",
+   "firstEmit": true,
+   "flagPresentAtEnd": true,
+   "secondEmitAllowed": false,
+   "duplicateNotice": false,
+   "entriesAtEnd": 49999,
+   "maxEntries": 49999,
+   "largestSmallValueChars": 880,
+   "scen": "churn:49998",
+   "rc": 0,
+   "errorLines": 0
+  },
+  {
+   "scenario": "churn 49999 small keys, flag read once at end",
+   "firstEmit": true,
+   "flagPresentAtEnd": true,
+   "secondEmitAllowed": false,
+   "duplicateNotice": false,
+   "entriesAtEnd": 50000,
+   "maxEntries": 50000,
+   "largestSmallValueChars": 880,
+   "scen": "churn:49999",
+   "rc": 0,
+   "errorLines": 0
+  },
+  {
+   "scenario": "churn 60000 small keys, flag read once at end",
+   "firstEmit": true,
+   "flagPresentAtEnd": true,
+   "secondEmitAllowed": false,
+   "duplicateNotice": false,
+   "entriesAtEnd": 60001,
+   "maxEntries": 60001,
+   "largestSmallValueChars": 880,
+   "scen": "churn:60000",
+   "rc": 0,
+   "errorLines": 0
+  },
+  {
+   "scenario": "churn 100000 small keys, flag read once at end",
+   "firstEmit": true,
+   "flagPresentAtEnd": true,
+   "secondEmitAllowed": false,
+   "duplicateNotice": false,
+   "entriesAtEnd": 100001,
+   "maxEntries": 100001,
+   "largestSmallValueChars": 880,
+   "scen": "churn:100000",
+   "rc": 0,
+   "errorLines": 0
+  },
+  {
+   "scenario": "flag, then 60000 keys with 1 s TTL (expired), 2 s wait, 1,000 live writes, flag read",
+   "entriesAfterBurst": 60001,
+   "entriesAtEnd": 61001,
+   "flagPresentAtEnd": true,
+   "scen": "expired:60000",
+   "rc": 0,
+   "errorLines": 0
+  }
+ ]
+}
