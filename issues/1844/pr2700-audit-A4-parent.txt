@@ -1,0 +1,20 @@
+wall=135ms thrown=No result returned from generateSummaryPR
+logs:
+  log: GenerateSummaryPR: Start PR#7. After get PR data
+  log: Generating PR summary in 2 chunks for PR#7
+  warn: Chunk 1/2 failed for generateSummaryPR: PR#7 | error=Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid
+  warn: Chunk 2/2 failed for generateSummaryPR: PR#7 | error=Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid
+  error: All chunks returned empty for generateSummaryPR: PR#7
+  error: Error generateOverallComment pull request: PR#7 | error=No result returned from generateSummaryPR
+  log: GenerateSummaryPR: Start PR#7. After get PR data
+  log: Generating PR summary in 2 chunks for PR#7
+  warn: Chunk 1/2 failed for generateSummaryPR: PR#7 | error=Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid
+  warn: Chunk 2/2 failed for generateSummaryPR: PR#7 | error=Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid
+  error: All chunks returned empty for generateSummaryPR: PR#7
+  error: Error generateOverallComment pull request: PR#7 | error=No result returned from generateSummaryPR
+  error: Error generateOverallComment pull request. Max retries exceeded: PR#7 | error=No result returned from generateSummaryPR
+fallback stub requests (0): 
+real-network attempts on main (kodus-qa-2700-unreachable.invalid): 4 -> fetch failed cause=ENOTFOUND
+chunked branch ran: YES
+RESULT:
+undefined
