@@ -1,0 +1,276 @@
+[
+ {
+  "label": "R2 conversation=null",
+  "t": "2026-11-27T17:21:40Z",
+  "sent": {
+   "conversation": null
+  },
+  "repositoryId": null,
+  "status": 400,
+  "resp": {
+   "statusCode": 400,
+   "timestamp": "2026-11-27T17:21:41.790Z",
+   "path": "/parameters/create-or-update-code-review",
+   "error": "Bad Request",
+   "message": "configValue.conversation must be an object, configValue.nested property conversation must be either object or array"
+  },
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R2 conversation=[{\"implicitReplies\": false}]",
+  "t": "2026-11-27T17:21:45Z",
+  "sent": {
+   "conversation": [
+    {
+     "implicitReplies": false
+    }
+   ]
+  },
+  "repositoryId": null,
+  "status": 400,
+  "resp": {
+   "statusCode": 400,
+   "timestamp": "2026-11-27T17:21:45.630Z",
+   "path": "/parameters/create-or-update-code-review",
+   "error": "Bad Request",
+   "message": "configValue.conversation must be an object"
+  },
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R2 conversation=\"off\"",
+  "t": "2026-11-27T17:21:48Z",
+  "sent": {
+   "conversation": "off"
+  },
+  "repositoryId": null,
+  "status": 400,
+  "resp": {
+   "statusCode": 400,
+   "timestamp": "2026-11-27T17:21:49.450Z",
+   "path": "/parameters/create-or-update-code-review",
+   "error": "Bad Request",
+   "message": "configValue.conversation must be an object, configValue.nested property conversation must be either object or array"
+  },
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R2 conversation=false",
+  "t": "2026-11-27T17:21:52Z",
+  "sent": {
+   "conversation": false
+  },
+  "repositoryId": null,
+  "status": 400,
+  "resp": {
+   "statusCode": 400,
+   "timestamp": "2026-11-27T17:21:53.333Z",
+   "path": "/parameters/create-or-update-code-review",
+   "error": "Bad Request",
+   "message": "configValue.conversation must be an object, configValue.nested property conversation must be either object or array"
+  },
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ },
+ {
+  "label": "R2 conversation=0",
+  "t": "2026-11-27T17:21:56Z",
+  "sent": {
+   "conversation": 0
+  },
+  "repositoryId": null,
+  "status": 400,
+  "resp": {
+   "statusCode": 400,
+   "timestamp": "2026-11-27T17:21:57.156Z",
+   "path": "/parameters/create-or-update-code-review",
+   "error": "Bad Request",
+   "message": "configValue.conversation must be an object, configValue.nested property conversation must be either object or array"
+  },
+  "raw_before": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_after": {
+   "global": {
+    "implicitReplies": false
+   },
+   "repos": {
+    "1468015189": "<absent>",
+    "1468015288": "<absent>"
+   }
+  },
+  "raw_changed": false,
+  "get_after": {
+   "status": 200,
+   "global": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   },
+   "athena": {
+    "implicitReplies": {
+     "value": false,
+     "level": "global",
+     "overriddenValue": true,
+     "overriddenLevel": "default"
+    }
+   }
+  }
+ }
+]
