@@ -1,0 +1,26 @@
+S13 LLM.run main=429 stub, fallback=200 stub (real backoff timers)
+==================================================================
+
+[S13 billing-no-delay door=oneshot-schema]
+  MERGE : NO-FB: THROW AI_APICallError: You exceeded your current quota, please check your plan and billing details. For -> QUOTA_EXCEEDED failover=true msg="The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan." (37ms) mainHits=1 | WITH-FB: OK {"description":"Summary written by the fallback slot."} (3ms) mainHits=1 fbHits=1
+  PARENT: NO-FB: THROW AI_APICallError: You exceeded your current quota, please check your plan and billing details. For -> QUOTA_EXCEEDED failover=true msg="The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan." (34ms) mainHits=1 | WITH-FB: OK {"description":"Summary written by the fallback slot."} (3ms) mainHits=1 fbHits=1
+
+[S13 billing-no-delay door=loop]
+  MERGE : NO-FB: THROW AI_RetryError: Failed after 4 attempts. Last error: AI_APICallError: You exceeded your current  -> QUOTA_EXCEEDED failover=true msg="The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan." (14008ms) mainHits=4 | WITH-FB: OK {"initialResponseMessages":[],"steps":[{"callId":"call-KJj0G (14006ms) mainHits=4 fbHits=1
+  PARENT: NO-FB: THROW AI_RetryError: Failed after 4 attempts. Last error: AI_APICallError: You exceeded your current  -> QUOTA_EXCEEDED failover=true msg="The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan." (14007ms) mainHits=4 | WITH-FB: OK {"initialResponseMessages":[],"steps":[{"callId":"call-5f9Cw (14006ms) mainHits=4 fbHits=1
+
+[S13 retry 61s door=oneshot-schema]
+  MERGE : NO-FB: THROW AI_APICallError: You exceeded your current quota, please check your plan and billing details. For -> QUOTA_EXCEEDED failover=true msg="The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan." (1ms) mainHits=1 | WITH-FB: OK {"description":"Summary written by the fallback slot."} (1ms) mainHits=1 fbHits=1
+  PARENT: NO-FB: THROW AI_APICallError: You exceeded your current quota, please check your plan and billing details. For -> QUOTA_EXCEEDED failover=true msg="The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan." (1ms) mainHits=1 | WITH-FB: OK {"description":"Summary written by the fallback slot."} (1ms) mainHits=1 fbHits=1
+
+[S13 retry 61s door=loop]
+  MERGE : NO-FB: THROW AI_RetryError: Failed after 4 attempts. Last error: AI_APICallError: You exceeded your current  -> QUOTA_EXCEEDED failover=true msg="The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan." (14005ms) mainHits=4 | WITH-FB: OK {"initialResponseMessages":[],"steps":[{"callId":"call-Wpw8N (14012ms) mainHits=4 fbHits=1
+  PARENT: NO-FB: THROW AI_RetryError: Failed after 4 attempts. Last error: AI_APICallError: You exceeded your current  -> QUOTA_EXCEEDED failover=true msg="The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan." (14005ms) mainHits=4 | WITH-FB: OK {"initialResponseMessages":[],"steps":[{"callId":"call-WvyO6 (14008ms) mainHits=4 fbHits=1
+
+[S13 retry 4.86s door=oneshot-schema]
+  MERGE : NO-FB: THROW AI_APICallError: You exceeded your current quota, please check your plan and billing details. For -> RATE_LIMIT failover=true msg="Rate limit reached on the provider (openai_compatible). Try again in a few minutes." (2319ms) mainHits=2 | WITH-FB: OK {"description":"Summary written by the fallback slot."} (3439ms) mainHits=2 fbHits=1
+  PARENT: NO-FB: THROW AI_APICallError: You exceeded your current quota, please check your plan and billing details. For -> QUOTA_EXCEEDED failover=true msg="The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan." (1ms) mainHits=1 | WITH-FB: OK {"description":"Summary written by the fallback slot."} (0ms) mainHits=1 fbHits=1
+
+[S13 retry 4.86s door=loop]
+  MERGE : NO-FB: THROW AI_RetryError: Failed after 4 attempts. Last error: AI_APICallError: You exceeded your current  -> RATE_LIMIT failover=true msg="Rate limit reached on the provider (openai_compatible). Try again in a few minutes." (14010ms) mainHits=4 | WITH-FB: OK {"initialResponseMessages":[],"steps":[{"callId":"call-oBFiO (14021ms) mainHits=4 fbHits=1
+  PARENT: NO-FB: THROW AI_RetryError: Failed after 4 attempts. Last error: AI_APICallError: You exceeded your current  -> QUOTA_EXCEEDED failover=true msg="The configured API key (openai_compatible) is out of credits or has hit its billing limit. Top up the account or adjust the plan." (14008ms) mainHits=4 | WITH-FB: OK {"initialResponseMessages":[],"steps":[{"callId":"call-9jKob (14013ms) mainHits=4 fbHits=1
