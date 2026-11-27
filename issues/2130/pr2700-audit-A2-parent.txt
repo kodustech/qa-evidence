@@ -1,0 +1,6 @@
+window=20000ms from the first request; 429 body = Google per-minute message "Please retry in 20s" (no Retry-After header); no fallback slot
+scenario | outcome | category | requests (t+ms:status) | wall
+loop cooldownMs=unset | THREW AI_RetryError: Failed after 4 attempts. Last error: AI_APICallError: You exceeded your current quota, please check your plan  | QUOTA_EXCEEDED | n=4 [+0:429, +2038:429, +6048:429, +14056:429] | wall=14073ms | reporter=4 (QUOTA_EXCEEDED)
+loop cooldownMs=20000 | THREW AI_RetryError: Failed after 4 attempts. Last error: AI_APICallError: You exceeded your current quota, please check your plan  | QUOTA_EXCEEDED | n=4 [+0:429, +2006:429, +6015:429, +14023:429] | wall=14031ms | reporter=4 (QUOTA_EXCEEDED)
+oneshot-schema cooldownMs=unset | THREW AI_APICallError: You exceeded your current quota, please check your plan and billing details. For more information on this erro | QUOTA_EXCEEDED | n=1 [+0:429] | wall=8ms
+oneshot-schema cooldownMs=20000 | THREW AI_APICallError: You exceeded your current quota, please check your plan and billing details. For more information on this erro | QUOTA_EXCEEDED | n=1 [+0:429] | wall=5ms
