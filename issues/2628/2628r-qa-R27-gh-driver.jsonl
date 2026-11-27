@@ -1,0 +1,4 @@
+{"num": 27, "url": "https://github.com/kodus-olimpo/claude-athena/pull/27", "sha": "aa5525a0a0454d550554592e477e18f6111cbe37", "at": "2026-11-27T17:29:49.694736Z", "event": "pr-opened"}
+{"docAt": "2026-11-27T17:31:50.769Z", "killAt": "2026-11-27T17:32:20.175Z", "at": "2026-11-27T17:31:51.203249Z", "event": "release-seen-in-doc"}
+{"commentId": 4722213860, "path": "src/qa2628r/attendance-rate.ts", "created": "2026-11-27T17:32:18Z", "at": "2026-11-27T17:32:18.832787Z", "event": "kody-thread-seen"}
+{"status": 201, "replyId": 4722214075, "created": "2026-11-27T17:32:19Z", "at": "2026-11-27T17:32:21.068194Z", "event": "reply-posted"}
