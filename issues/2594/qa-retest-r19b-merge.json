@@ -1,0 +1,165 @@
+[
+ {
+  "case": "github_ok_yaml_false",
+  "platform": "GITHUB",
+  "noticePosted": 0,
+  "reaction": 0,
+  "licenseNoticePostedAt": null,
+  "status": "skipped",
+  "stageWarns": [
+   "User not licensed but company has licenses"
+  ],
+  "adapterLogs": []
+ },
+ {
+  "case": "github_502",
+  "platform": "GITHUB",
+  "noticePosted": 1,
+  "reaction": 1,
+  "licenseNoticePostedAt": "2026-11-27T19:13:45.255Z",
+  "status": "skipped",
+  "stageWarns": [
+   "User not licensed but company has licenses"
+  ],
+  "adapterLogs": [
+   {
+    "level": "warn",
+    "message": "Error getting file content from pull request",
+    "httpStatus": 502
+   },
+   {
+    "level": "error",
+    "message": "Error getting file content to branch base"
+   }
+  ]
+ },
+ {
+  "case": "github_rate_limit_403",
+  "platform": "GITHUB",
+  "noticePosted": 1,
+  "reaction": 1,
+  "licenseNoticePostedAt": "2026-11-27T19:13:45.257Z",
+  "status": "skipped",
+  "stageWarns": [
+   "User not licensed but company has licenses"
+  ],
+  "adapterLogs": [
+   {
+    "level": "warn",
+    "message": "Error getting file content from pull request",
+    "httpStatus": 403
+   },
+   {
+    "level": "error",
+    "message": "Error getting file content to branch base"
+   }
+  ]
+ },
+ {
+  "case": "github_429",
+  "platform": "GITHUB",
+  "noticePosted": 1,
+  "reaction": 1,
+  "licenseNoticePostedAt": "2026-11-27T19:13:45.259Z",
+  "status": "skipped",
+  "stageWarns": [
+   "User not licensed but company has licenses"
+  ],
+  "adapterLogs": [
+   {
+    "level": "warn",
+    "message": "Error getting file content from pull request",
+    "httpStatus": 429
+   },
+   {
+    "level": "error",
+    "message": "Error getting file content to branch base"
+   }
+  ]
+ },
+ {
+  "case": "github_404",
+  "platform": "GITHUB",
+  "noticePosted": 1,
+  "reaction": 1,
+  "licenseNoticePostedAt": "2026-11-27T19:13:45.260Z",
+  "status": "skipped",
+  "stageWarns": [
+   "User not licensed but company has licenses"
+  ],
+  "adapterLogs": [
+   {
+    "level": "warn",
+    "message": "Error getting file content from pull request",
+    "httpStatus": 404
+   },
+   {
+    "level": "warn",
+    "message": "File not found on PR head or base branch"
+   }
+  ]
+ },
+ {
+  "case": "bitbucket_ok_yaml_false",
+  "platform": "BITBUCKET",
+  "noticePosted": 0,
+  "reaction": 0,
+  "licenseNoticePostedAt": null,
+  "status": "skipped",
+  "stageWarns": [
+   "User not licensed but company has licenses"
+  ],
+  "adapterLogs": []
+ },
+ {
+  "case": "bitbucket_502",
+  "platform": "BITBUCKET",
+  "noticePosted": 1,
+  "reaction": 0,
+  "licenseNoticePostedAt": "2026-11-27T19:13:45.263Z",
+  "status": "skipped",
+  "stageWarns": [
+   "User not licensed but company has licenses"
+  ],
+  "adapterLogs": [
+   {
+    "level": "error",
+    "message": "Error to get repository content file"
+   }
+  ]
+ },
+ {
+  "case": "bitbucket_429",
+  "platform": "BITBUCKET",
+  "noticePosted": 1,
+  "reaction": 0,
+  "licenseNoticePostedAt": "2026-11-27T19:13:45.265Z",
+  "status": "skipped",
+  "stageWarns": [
+   "User not licensed but company has licenses"
+  ],
+  "adapterLogs": [
+   {
+    "level": "error",
+    "message": "Error to get repository content file"
+   }
+  ]
+ },
+ {
+  "case": "bitbucket_404",
+  "platform": "BITBUCKET",
+  "noticePosted": 1,
+  "reaction": 0,
+  "licenseNoticePostedAt": "2026-11-27T19:13:45.266Z",
+  "status": "skipped",
+  "stageWarns": [
+   "User not licensed but company has licenses"
+  ],
+  "adapterLogs": [
+   {
+    "level": "warn",
+    "message": "Repository content file not found"
+   }
+  ]
+ }
+]
