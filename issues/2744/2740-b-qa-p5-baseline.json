@@ -1,0 +1,33 @@
+{
+ "since_restart/StallWatchdog": [],
+ "since_restart/SlowSync": [],
+ "since_restart/ConversationAgentProvider": [],
+ "24h_before/StallWatchdog": [],
+ "24h_before/SlowSync": [],
+ "24h_before/ConversationAgentProvider": [
+  {
+   "_id": {
+    "m": "Finish conversation agent execution",
+    "ge12": false
+   },
+   "n": 4,
+   "maxDur": null
+  },
+  {
+   "_id": {
+    "m": "Starting conversation agent execution",
+    "ge12": false
+   },
+   "n": 4,
+   "maxDur": null
+  },
+  {
+   "_id": {
+    "m": "Conversation agent MCP tools connected",
+    "ge12": false
+   },
+   "n": 4,
+   "maxDur": null
+  }
+ ]
+}
