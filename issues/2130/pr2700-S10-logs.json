@@ -1,0 +1,92 @@
+[
+ {
+  "t": "2026-11-27T20:40:39.551Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] kodus-rules-review-agent.shard: \"opencode_go/deepseek-v4.1-flash\" failed (RATE_LIMIT) \u2014 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash\nPlease retry in 4.86s."
+ },
+ {
+  "t": "2026-11-27T20:40:39.554Z",
+  "level": "info",
+  "component": "KodyRulesShardedAgent",
+  "message": "[kody-rules-shard] prompt cache: 1 file shard(s) in 1 head group(s), 0 shared; 0 of 0 sibling(s) ran after their group's first shard"
+ },
+ {
+  "t": "2026-11-27T20:40:39.559Z",
+  "level": "error",
+  "component": "ReviewOrchestratorService",
+  "message": "[AGENT] kody-rules agent failed for PR#34"
+ },
+ {
+  "t": "2026-11-27T20:41:22.741Z",
+  "level": "error",
+  "component": "ReviewOrchestratorService",
+  "message": "[AGENT] kody-rules failed: Kody Rules could not be evaluated: all 1 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+ },
+ {
+  "t": "2026-11-27T20:41:38.860Z",
+  "level": "info",
+  "component": "ValidateSuggestionsStage",
+  "message": "No patched files generated for validation"
+ },
+ {
+  "t": "2026-11-27T20:41:43.576Z",
+  "level": "info",
+  "component": "CommentManagerService",
+  "message": "GenerateSummaryPR: Start PR#34. After get PR data"
+ },
+ {
+  "t": "2026-11-27T20:41:48.073Z",
+  "level": "info",
+  "component": "CommentManagerService",
+  "message": "GenerateSummaryPR: End PR#34. After concatenate"
+ },
+ {
+  "t": "2026-11-27T20:41:50.273Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 7024ms: fb380bb6-b29f-4752-b013-2515b6f1dbc6"
+ },
+ {
+  "t": "2026-11-27T20:43:04.901Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] kodus-rules-review-agent.shard: \"opencode_go/deepseek-v4.1-flash\" failed (RATE_LIMIT) \u2014 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash\nPlease retry in 4.86s."
+ },
+ {
+  "t": "2026-11-27T20:43:04.904Z",
+  "level": "info",
+  "component": "KodyRulesShardedAgent",
+  "message": "[kody-rules-shard] prompt cache: 1 file shard(s) in 1 head group(s), 0 shared; 0 of 0 sibling(s) ran after their group's first shard"
+ },
+ {
+  "t": "2026-11-27T20:43:04.908Z",
+  "level": "error",
+  "component": "ReviewOrchestratorService",
+  "message": "[AGENT] kody-rules agent failed for PR#34"
+ },
+ {
+  "t": "2026-11-27T20:43:46.952Z",
+  "level": "error",
+  "component": "ReviewOrchestratorService",
+  "message": "[AGENT] kody-rules failed: Kody Rules could not be evaluated: all 1 rule check(s) failed to run. Your Kody Rules were not applied to this PR."
+ },
+ {
+  "t": "2026-11-27T20:43:47.539Z",
+  "level": "info",
+  "component": "CommentManagerService",
+  "message": "GenerateSummaryPR: Start PR#34. After get PR data"
+ },
+ {
+  "t": "2026-11-27T20:43:53.557Z",
+  "level": "info",
+  "component": "CommentManagerService",
+  "message": "GenerateSummaryPR: End PR#34. After concatenate"
+ },
+ {
+  "t": "2026-11-27T20:43:55.572Z",
+  "level": "info",
+  "component": "PipelineExecutor",
+  "message": "Stage 'UpdateCommentsAndGenerateSummaryStage' completed in 8461ms: 30aa2c2f-a309-4c05-b4e1-e657d25d6ace"
+ }
+]
