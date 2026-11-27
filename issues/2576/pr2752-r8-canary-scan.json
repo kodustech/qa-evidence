@@ -1,55 +1,159 @@
 {
- "canary_prefix": "qa2576-canary-<8 hex>",
+ "canary": "qa2576-canary-<8 hex>",
+ "file_with_canary_on_main": "commit 622a4094 (17:52:22Z) until 42afe434 (18:22:10Z)",
+ "docs_scanned": 1056,
+ "docs_containing_canary": 0,
+ "components": {
+  "observability": 161,
+  "GithubController": 10,
+  "OutboxRelayService": 30,
+  "KodusApp": 117,
+  "WebhookProcessingJobProcessorService": 17,
+  "CodeBaseConfigService": 20,
+  "ChatWithKodyFromGitUseCase": 20,
+  "EventLoopMonitor": 112,
+  "KodusCreditsSweepCronProvider": 6,
+  "CheckIfPRCanBeApprovedCronProvider": 245,
+  "PermissionValidationService": 75,
+  "CentralizedConfigSyncListener": 16,
+  "KodyRulesSyncListener": 16,
+  "GitlabController": 5,
+  "GitHubPullRequestHandler": 10,
+  "KodyIssuesManagementService": 3,
+  "SavePullRequestUseCase": 4,
+  "RunCodeReviewAutomationUseCase": 10,
+  "GitlabService": 6,
+  "PipelineExecutor": 19,
+  "GenerateIssuesFromPrClosedUseCase": 2,
+  "SandboxLeaseManager": 6,
+  "ReasoningOptions": 7,
+  "GitLabMergeRequestHandler": 5,
+  "ValidatePrerequisitesStage": 3,
+  "PullRequestsService": 4,
+  "CodeReviewHandlerService": 3,
+  "AutomationCodeReviewService": 4,
+  "BitbucketController": 1,
+  "mongodb-exporter": 26,
+  "BitbucketPullRequestHandler": 1,
+  "SyncAllRepositoriesUseCase": 3,
+  "ModelFailover": 1,
+  "ValidateNewCommitsStage": 1,
+  "GitlabService getCommitsForPullRequestForCodeReview": 2,
+  "PullRequestHandlerService": 2,
+  "ResolveConfigStage": 1,
+  "GithubService": 5,
+  "GithubChecksService": 2,
+  "SuggestionService": 2,
+  "NotificationService": 2,
+  "NotificationConsumer": 2,
+  "InAppChannelAdapter": 2,
+  "ForgejoController": 1,
+  "GitlabService getPullRequestReviewComment": 2,
+  "telemetry": 8,
+  "WorkerDrainService": 8,
+  "WorkflowJobConsumer": 7,
+  "RabbitMQConnectionLoggerService": 6,
+  "RabbitMQDLQInitializer": 12,
+  "PoolErrorHandlerService": 2,
+  "CrossProcessEventsBridge": 13,
+  "WorkerHealthGuardService": 8
+ },
  "windows": [
   [
    "2026-11-27T17:52:15Z",
-   "2026-11-27T17:52:30Z",
-   25,
-   0
-  ],
-  [
-   "2026-11-27T17:52:30Z",
-   "2026-11-27T17:52:45Z",
-   4,
-   0
-  ],
-  [
-   "2026-11-27T17:52:45Z",
-   "2026-11-27T17:53:00Z",
-   0,
-   0
-  ],
-  [
-   "2026-11-27T17:53:00Z",
-   "2026-11-27T17:53:15Z",
-   0,
-   0
-  ],
-  [
-   "2026-11-27T17:53:15Z",
-   "2026-11-27T17:53:30Z",
-   0,
-   0
-  ],
-  [
-   "2026-11-27T17:53:30Z",
-   "2026-11-27T17:53:45Z",
-   4,
-   0
-  ],
-  [
-   "2026-11-27T17:53:45Z",
-   "2026-11-27T17:54:00Z",
-   0,
-   0
-  ],
-  [
-   "2026-11-27T17:54:00Z",
    "2026-11-27T17:54:15Z",
-   0,
+   33,
+   0
+  ],
+  [
+   "2026-11-27T17:54:15Z",
+   "2026-11-27T17:56:15Z",
+   60,
+   0
+  ],
+  [
+   "2026-11-27T17:56:15Z",
+   "2026-11-27T17:58:15Z",
+   127,
+   0
+  ],
+  [
+   "2026-11-27T17:58:15Z",
+   "2026-11-27T18:00:15Z",
+   68,
+   0
+  ],
+  [
+   "2026-11-27T18:00:15Z",
+   "2026-11-27T18:02:15Z",
+   8,
+   0
+  ],
+  [
+   "2026-11-27T18:02:15Z",
+   "2026-11-27T18:04:15Z",
+   54,
+   0
+  ],
+  [
+   "2026-11-27T18:04:15Z",
+   "2026-11-27T18:06:15Z",
+   10,
+   0
+  ],
+  [
+   "2026-11-27T18:06:15Z",
+   "2026-11-27T18:08:15Z",
+   54,
+   0
+  ],
+  [
+   "2026-11-27T18:08:15Z",
+   "2026-11-27T18:10:15Z",
+   11,
+   0
+  ],
+  [
+   "2026-11-27T18:10:15Z",
+   "2026-11-27T18:12:15Z",
+   94,
+   0
+  ],
+  [
+   "2026-11-27T18:12:15Z",
+   "2026-11-27T18:14:15Z",
+   24,
+   0
+  ],
+  [
+   "2026-11-27T18:14:15Z",
+   "2026-11-27T18:16:15Z",
+   55,
+   0
+  ],
+  [
+   "2026-11-27T18:16:15Z",
+   "2026-11-27T18:18:15Z",
+   114,
+   0
+  ],
+  [
+   "2026-11-27T18:18:15Z",
+   "2026-11-27T18:20:15Z",
+   113,
+   0
+  ],
+  [
+   "2026-11-27T18:20:15Z",
+   "2026-11-27T18:22:15Z",
+   217,
+   0
+  ],
+  [
+   "2026-11-27T18:22:15Z",
+   "2026-11-27T18:22:30Z",
+   14,
    0
   ]
- ],
- "docs_scanned": 33,
- "docs_containing_canary": 0
+ ]
 }
