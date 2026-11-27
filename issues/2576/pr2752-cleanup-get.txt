@@ -1,0 +1,3 @@
+jr-codex-github 200 {'implicitReplies': {'value': True, 'level': 'default'}} {'value': True, 'level': 'default'} {'value': False, 'level': 'default'}
+jr-codex-gitlab 200 {'implicitReplies': {'value': True, 'level': 'default'}} {'value': True, 'level': 'default'} {'value': False, 'level': 'default'}
+jr-codex-bitbucket 200 {'implicitReplies': {'value': True, 'level': 'default'}} {'value': True, 'level': 'default'} {'value': False, 'level': 'default'}
