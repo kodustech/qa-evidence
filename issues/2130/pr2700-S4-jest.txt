@@ -1,0 +1,51 @@
+== merge 41c2f8aa8, PR specs (libs)
+Test Suites: 16 passed, 16 total
+Tests:       2161 passed, 2161 total
+== merge, web advanced-settings specs
+Test Suites: 2 passed, 2 total
+Tests:       12 passed, 12 total
+== parent 000b7e23a running the merge's error-classifier / review-error-diagnostics / get-model-capabilities specs
+  ● GetModelCapabilitiesUseCase — provider-owned UI capability hints › Anthropic (temperature policy owned by the module, not capabilities) › says a model that always reasons, with no level to send, reasons (#2036)
+  ● OpenRouter upstream errors (#1871) › a rejected request quotes the upstream reason in the headline
+  ● OpenRouter upstream errors (#1871) › quotes the upstream provider's plain-text reason, not OpenRouter's wrapper
+  ● OpenRouter upstream errors (#1871) › reads the message field of an upstream JSON body kept as a string in metadata.raw
+  ● classifyLLMError › message-string fallback (no HTTP status) › Gemini per-minute input-token 429 with only its message → RATE_LIMIT (#2130)
+  ● classifyLLMError: Kody on #2700 › a connect failure publishes only the code and host, never the raw message
+  ● classifyLLMError: Kody on #2700, second pass › the connect message names the final attempt's failure, not an earlier one
+  ● classifyLLMError: review on #2700 › a link naming a daily window does not switch the per-minute delay rule off
+  ● classifyLLMError: review on #2700 › a link naming a per-minute window does not make a spent balance a rate limit
+  ● classifyLLMError: review on #2700 › an unresolvable host is TRANSIENT and the message says why
+  ● extractProviderMessage — a wrapper with no body of its own › keeps redacting a key found on the last attempt
+  ● extractProviderMessage — a wrapper with no body of its own › reads it from the cause of our own wrapper error
+  ● extractProviderMessage — a wrapper with no body of its own › reads the provider's sentence across a cause cycle and still terminates
+  ● extractProviderMessage — a wrapper with no body of its own › reads the provider's sentence from a RetryError's last attempt
+  ● extractProviderMessage: review on #2700 › reads a RetryError's earlier attempt when the last one has no body
+  ● extractProviderMessage: review on #2700 › redacts a Bedrock API key
+  ● extractProviderMessage: review on #2700 › redacts a Fireworks key
+  ● extractProviderMessage: review on #2700 › redacts a Google AI Studio auth key
+  ● extractProviderMessage: review on #2700 › redacts a Groq key
+  ● extractProviderMessage: review on #2700 › redacts a Hugging Face key
+  ● extractProviderMessage: review on #2700 › redacts a JWT
+  ● extractProviderMessage: review on #2700 › redacts a Novita key
+  ● extractProviderMessage: review on #2700 › redacts a Together key
+  ● extractProviderMessage: review on #2700 › redacts a Z.ai key
+  ● extractProviderMessage: review on #2700 › redacts a key in a query string
+  ● extractProviderMessage: review on #2700 › redacts a password: pair
+  ● extractProviderMessage: review on #2700 › redacts a token= pair
+  ● extractProviderMessage: review on #2700 › redacts an e-mail address
+  ● extractProviderMessage: review on #2700 › redacts an xAI key
+  ● extractProviderMessage: review on #2700 › still quotes an upstream's plain sentence (#1871)
+  ● real production shapes the classifier misread (prod worker logs, 11-10..11-24) › MiniMax's context window error (code 2013) is CONTEXT_OVERFLOW, not a rejected request
+  ● real production shapes the classifier misread (prod worker logs, 11-10..11-24) › a rate-limit 429 whose docs URL says "quotas" stays RATE_LIMIT
+  ● transport failures before any HTTP status (#1844) › a bare ECONNREFUSED from a caller outside the AI SDK is TRANSIENT too
+  ● transport failures before any HTTP status (#1844) › an unreachable provider (connect ECONNREFUSED 127.0.0.1:443) is TRANSIENT and cascades to the fallback
+  ● transport failures before any HTTP status (#1844) › an unreachable provider (connect EHOSTUNREACH 10.0.0.9:443) is TRANSIENT and cascades to the fallback
+  ● transport failures before any HTTP status (#1844) › an unreachable provider (connect ENETUNREACH 10.0.0.9:443) is TRANSIENT and cascades to the fallback
+  ● transport failures before any HTTP status (#1844) › an unreachable provider (getaddrinfo EAI_AGAIN llm.example.invalid) is TRANSIENT and cascades to the fallback
+  ● transport failures before any HTTP status (#1844) › an unreachable provider (getaddrinfo ENOTFOUND llm.example.invalid) is TRANSIENT and cascades to the fallback
+  ● transport failures before any HTTP status (#1844) › an unreachable provider (other side closed) is TRANSIENT and cascades to the fallback
+FAIL libs/llm/error-classifier.qa-merge.spec.ts
+FAIL libs/llm/review-error-diagnostics.qa-merge.spec.ts
+FAIL libs/organization/application/use-cases/organizationParameters/get-model-capabilities.use-case.qa-merge.spec.ts
+Test Suites: 3 failed, 3 total
+Tests:       39 failed, 228 passed, 267 total
