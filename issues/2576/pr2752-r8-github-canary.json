@@ -1,0 +1,44 @@
+{
+ "commentId": "4722358250",
+ "window": [
+  "2026-11-27T17:52:20Z",
+  "2026-11-27T17:52:28Z"
+ ],
+ "logs": [
+  {
+   "t": "2026-11-27T17:52:26.085Z",
+   "level": "warn",
+   "component": "CodeBaseConfigService",
+   "message": "Ignoring an invalid conversation.implicitReplies in kodus-config.yml: the stored setting applies",
+   "attrs": {
+    "valueType": "string",
+    "repository": "codex-athena",
+    "org": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   }
+  },
+  {
+   "t": "2026-11-27T17:52:26.087Z",
+   "level": "info",
+   "component": "ChatWithKodyFromGitUseCase",
+   "message": "Unmentioned reply left unanswered: disabled",
+   "attrs": {
+    "implicitReplySilence": "disabled",
+    "commentId": 4722358250,
+    "platformType": "GITHUB",
+    "pullRequestNumber": 13,
+    "repository": "codex-athena",
+    "org": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+   }
+  }
+ ],
+ "langfuse_total": 0,
+ "classifier": [],
+ "conversation_spans": [],
+ "claim": [
+  [
+   "PROCESSED",
+   "1",
+   "2026-11-27 17:52:26.087"
+  ]
+ ]
+}
