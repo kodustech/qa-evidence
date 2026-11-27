@@ -1,0 +1,8 @@
+one-json-tool-after-prose-example | textParts=["{\"violations\":[{\"body\":\"bug\",\"line\":12}]}"]
+two-json-tools | textParts=["{\"violations\":[{\"body\":\"bug\",\"line\":12}]}","{\"violations\":[]}"]
+text-only-json-mode | textParts=["{\"violations\":[]}"]
+text-only-no-json-mode | textParts=["hello"]
+streaming | url=/model/minimax.minimax-m3.1/converse-stream | threw 
+concurrent round0 | A=["{\"violations\":[{\"body\":\"A-only\",\"line\":1}]}"] | B=["{\"violations\":[{\"body\":\"B-only\",\"line\":2}]}"] | isolated=true
+concurrent round1 | A=["{\"violations\":[{\"body\":\"A-only\",\"line\":1}]}"] | B=["{\"violations\":[{\"body\":\"B-only\",\"line\":2}]}"] | isolated=true
+concurrent round2 | A=["{\"violations\":[{\"body\":\"A-only\",\"line\":1}]}"] | B=["{\"violations\":[{\"body\":\"B-only\",\"line\":2}]}"] | isolated=true
