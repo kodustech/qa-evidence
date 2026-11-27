@@ -1,0 +1,308 @@
+[
+ {
+  "timestamp": "2026-11-27T22:06:45.041Z",
+  "level": "info",
+  "message": "[AGENT] kodus-generalist-review-agent context window: 32000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+  "component": "CodeReviewAgent",
+  "metadata": {
+   "component": "CodeReviewAgent",
+   "level": "info",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  },
+  "attributes": {
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "prNumber": 4,
+   "modelName": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "modelId": "opencode_go/deepseek-v4.1-flash",
+   "contextWindowTokens": 32000,
+   "contextWindowSource": "byok",
+   "component": "CodeReviewAgent",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:06:45.210Z",
+  "level": "info",
+  "message": "[AGENT] kodus-generalist-review-agent batch 1/8 context window: 32000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+  "component": "CodeReviewAgent",
+  "metadata": {
+   "component": "CodeReviewAgent",
+   "level": "info",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  },
+  "attributes": {
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "prNumber": 4,
+   "modelName": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "modelId": "opencode_go/deepseek-v4.1-flash",
+   "contextWindowTokens": 32000,
+   "contextWindowSource": "byok",
+   "component": "CodeReviewAgent",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:07:57.865Z",
+  "level": "info",
+  "message": "[AGENT] kodus-generalist-review-agent batch 2/8 context window: 32000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+  "component": "CodeReviewAgent",
+  "metadata": {
+   "component": "CodeReviewAgent",
+   "level": "info",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  },
+  "attributes": {
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "prNumber": 4,
+   "modelName": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "modelId": "opencode_go/deepseek-v4.1-flash",
+   "contextWindowTokens": 32000,
+   "contextWindowSource": "byok",
+   "component": "CodeReviewAgent",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:08:34.551Z",
+  "level": "info",
+  "message": "[AGENT] kodus-generalist-review-agent batch 3/8 context window: 32000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+  "component": "CodeReviewAgent",
+  "metadata": {
+   "component": "CodeReviewAgent",
+   "level": "info",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  },
+  "attributes": {
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "prNumber": 4,
+   "modelName": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "modelId": "opencode_go/deepseek-v4.1-flash",
+   "contextWindowTokens": 32000,
+   "contextWindowSource": "byok",
+   "component": "CodeReviewAgent",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:09:34.002Z",
+  "level": "info",
+  "message": "[AGENT] kodus-generalist-review-agent batch 4/8 context window: 32000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+  "component": "CodeReviewAgent",
+  "metadata": {
+   "component": "CodeReviewAgent",
+   "level": "info",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  },
+  "attributes": {
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "prNumber": 4,
+   "modelName": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "modelId": "opencode_go/deepseek-v4.1-flash",
+   "contextWindowTokens": 32000,
+   "contextWindowSource": "byok",
+   "component": "CodeReviewAgent",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:10:18.250Z",
+  "level": "warn",
+  "message": "Exa search failed for query: Does repository.save() emit an UPDATE statement for existing entities whose column values did not change, or does it skip unchanged entities? save array of entities one update per row",
+  "component": "DocumentationSearchExaService",
+  "metadata": {
+   "component": "DocumentationSearchExaService",
+   "level": "warn",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  },
+  "attributes": {
+   "provider": "exa",
+   "packageName": "typeorm",
+   "query": "Does repository.save() emit an UPDATE statement for existing entities whose column values did not change, or does it skip unchanged entities? save array of entities one update per row",
+   "organizationAndTeamData": {
+    "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+    "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+    "organizationName": "jr-codex-bitbucket"
+   },
+   "prNumber": 4,
+   "component": "DocumentationSearchExaService",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:10:32.453Z",
+  "level": "info",
+  "message": "[AGENT] kodus-generalist-review-agent batch 5/8 context window: 32000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+  "component": "CodeReviewAgent",
+  "metadata": {
+   "component": "CodeReviewAgent",
+   "level": "info",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  },
+  "attributes": {
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "prNumber": 4,
+   "modelName": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "modelId": "opencode_go/deepseek-v4.1-flash",
+   "contextWindowTokens": 32000,
+   "contextWindowSource": "byok",
+   "component": "CodeReviewAgent",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:11:51.948Z",
+  "level": "info",
+  "message": "[AGENT] kodus-generalist-review-agent batch 6/8 context window: 32000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+  "component": "CodeReviewAgent",
+  "metadata": {
+   "component": "CodeReviewAgent",
+   "level": "info",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  },
+  "attributes": {
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "prNumber": 4,
+   "modelName": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "modelId": "opencode_go/deepseek-v4.1-flash",
+   "contextWindowTokens": 32000,
+   "contextWindowSource": "byok",
+   "component": "CodeReviewAgent",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:12:25.750Z",
+  "level": "info",
+  "message": "[AGENT] kodus-generalist-review-agent batch 7/8 context window: 32000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+  "component": "CodeReviewAgent",
+  "metadata": {
+   "component": "CodeReviewAgent",
+   "level": "info",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  },
+  "attributes": {
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "prNumber": 4,
+   "modelName": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "modelId": "opencode_go/deepseek-v4.1-flash",
+   "contextWindowTokens": 32000,
+   "contextWindowSource": "byok",
+   "component": "CodeReviewAgent",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:12:58.560Z",
+  "level": "info",
+  "message": "[AGENT] kodus-generalist-review-agent batch 8/8 context window: 32000 tokens for openai_compatible:opencode_go/deepseek-v4.1-flash",
+  "component": "CodeReviewAgent",
+  "metadata": {
+   "component": "CodeReviewAgent",
+   "level": "info",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  },
+  "attributes": {
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "prNumber": 4,
+   "modelName": "openai_compatible:opencode_go/deepseek-v4.1-flash",
+   "modelId": "opencode_go/deepseek-v4.1-flash",
+   "contextWindowTokens": 32000,
+   "contextWindowSource": "byok",
+   "component": "CodeReviewAgent",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:17:39.567Z",
+  "level": "info",
+  "message": "[ENRICH] PR#4: enriched 4, failed 0, skipped 0",
+  "component": "AgentReviewStage",
+  "metadata": {
+   "component": "AgentReviewStage",
+   "level": "info",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  },
+  "attributes": {
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "prNumber": 4,
+   "enriched": 4,
+   "failed": 0,
+   "skipped": 0,
+   "byFixStatus": {
+    "needs-wider-change": 2,
+    "local": 2
+   },
+   "component": "AgentReviewStage",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:18:01.447Z",
+  "level": "info",
+  "message": "Finished pipeline: CodeReviewPipeline (ID: 30f56756-1d4c-484d-a7b9-b4c449f4a9ac)",
+  "component": "PipelineExecutor",
+  "metadata": {
+   "component": "PipelineExecutor",
+   "level": "info",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  },
+  "attributes": {
+   "lastExecution": {
+    "uuid": "5960ce60-2ee8-4eaf-8f90-bec1826f8d3c"
+   },
+   "pipelineId": "30f56756-1d4c-484d-a7b9-b4c449f4a9ac",
+   "parentPipelineId": null,
+   "rootPipelineId": "30f56756-1d4c-484d-a7b9-b4c449f4a9ac",
+   "pipelineName": "CodeReviewPipeline",
+   "showStatusFeedback": true,
+   "subscriptionStatus": "trial",
+   "forceFullRerun": false,
+   "correlationId": "corr_fbpugdfAmx6l_mwzj6kh7",
+   "organizationAndTeamData": {
+    "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+    "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+    "organizationName": "jr-codex-bitbucket"
+   },
+   "component": "PipelineExecutor",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "originalCorrelationId": "corr_fbpugdfAmx6l_mwzj6kh7"
+  }
+ }
+]
