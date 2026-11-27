@@ -1,0 +1,98 @@
+{
+ "results": {
+  "TrialRateLimiterService": {
+   "ok": true,
+   "ret": {
+    "allowed": true,
+    "remaining": 1,
+    "resetAt": "2026-11-27T21:31:07.368Z"
+   }
+  },
+  "AuthenticatedRateLimiterService": {
+   "ok": true,
+   "ret": {
+    "allowed": true,
+    "remaining": 999,
+    "resetAt": "2026-11-27T21:31:07.369Z"
+   }
+  },
+  "NotificationRateLimiter": {
+   "ok": true,
+   "ret": true
+  },
+  "ByokErrorCounter": {
+   "ok": true
+  },
+  "SandboxEgressPolicyService": {
+   "ok": true,
+   "ret": {
+    "fixedIpAllowed": true,
+    "setFixedIp": {
+     "allowedByPlan": true,
+     "enabled": false,
+     "savedOn": false,
+     "inRollout": false
+    }
+   }
+  },
+  "GitHubRateLimitGateService": {
+   "ok": true
+  }
+ },
+ "storeSets": [
+  {
+   "service": "TrialRateLimiterService",
+   "key": "keyv:cli:trial:ratelimit:fp-qa2744",
+   "typeofValue": "string",
+   "length": 68
+  },
+  {
+   "service": "AuthenticatedRateLimiterService",
+   "key": "keyv:cli:auth:ratelimit:team-qa2744",
+   "typeofValue": "string",
+   "length": 68
+  },
+  {
+   "service": "NotificationRateLimiter",
+   "key": "keyv:notice:qa2744",
+   "typeofValue": "string",
+   "length": 40
+  },
+  {
+   "service": "ByokErrorCounter",
+   "key": "keyv:byok:errors:org-qa2744",
+   "typeofValue": "string",
+   "length": 100
+  },
+  {
+   "service": "SandboxEgressPolicyService",
+   "key": "keyv:sandbox-egress:plan:org-qa2744",
+   "typeofValue": "string",
+   "length": 54
+  },
+  {
+   "service": "SandboxEgressPolicyService",
+   "key": "keyv:sandbox-egress:plan:org-qa2744",
+   "typeofValue": "string",
+   "length": 54
+  },
+  {
+   "service": "SandboxEgressPolicyService",
+   "key": "keyv:sandbox-egress:fixed-ip:org-qa2744",
+   "typeofValue": "string",
+   "length": 55
+  },
+  {
+   "service": "GitHubRateLimitGateService",
+   "key": "keyv:rl:github:org-qa2744:team-qa2744",
+   "typeofValue": "string",
+   "length": 127
+  },
+  {
+   "service": "direct-cacheManager-set-object",
+   "key": "keyv:direct:object:qa2744",
+   "typeofValue": "string",
+   "length": 41
+  }
+ ]
+}
