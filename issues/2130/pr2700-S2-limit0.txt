@@ -1,0 +1,18 @@
+S2 Gemini free-tier rows
+========================
+
+[S2 free tier limit:0 retry 20s]
+  MERGE : RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S2 free tier limit:0 retry 20s EXHAUSTED]
+  MERGE : RATE_LIMIT | failover=true | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S2 free daily requests limit:20 retry 35s]
+  MERGE : RATE_LIMIT | failover=false | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
+
+[S2 free daily requests limit:20 EXHAUSTED]
+  MERGE : RATE_LIMIT | failover=true | hardTimeout=false | msg="Rate limit reached on the provider (google_gemini). Try again in a few minutes."
+  PARENT: QUOTA_EXCEEDED | failover=true | hardTimeout=false | msg="The configured API key (google_gemini) is out of credits or has hit its billing limit. Top up the account or adjust the plan."
