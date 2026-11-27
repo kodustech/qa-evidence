@@ -1,0 +1,72 @@
+[
+ {
+  "timestamp": "2026-11-27T21:52:37.894Z",
+  "level": "error",
+  "message": "Conversation agent declared an action it never performed",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "error",
+   "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+   "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8",
+   "tenantId": "0a010c6e-6636-44b7-a741-a08d546d41c9"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+    "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8"
+   },
+   "threadId": "TR-cmc-b3kiwl",
+   "intendedTool": "exec",
+   "authorizingQuote": "run `seq 1 3000000` and tell me the last number it printed",
+   "component": "ConversationAgentProvider",
+   "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+   "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:37.896Z",
+  "level": "info",
+  "message": "Finish conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+   "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8",
+   "tenantId": "0a010c6e-6636-44b7-a741-a08d546d41c9"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+    "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8"
+   },
+   "thread": {
+    "id": "TR-cmc-b3kiwl",
+    "metadata": {
+     "description": "Thread TR-cmc-b3kiwl",
+     "type": "thread",
+     "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+     "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8",
+     "repositoryId": "89319210",
+     "userId": 1249745,
+     "suggestionCommentId": 4343529282
+    }
+   },
+   "steps": 3,
+   "usage": {
+    "inputTokens": 33338,
+    "outputTokens": 516,
+    "totalTokens": 33854,
+    "reasoningTokens": 247,
+    "cacheReadTokens": 30592,
+    "cacheWriteTokens": null
+   },
+   "component": "ConversationAgentProvider",
+   "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+   "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8",
+   "originalCorrelationId": null
+  }
+ }
+]
