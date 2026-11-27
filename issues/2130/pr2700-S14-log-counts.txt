@@ -1,0 +1,27 @@
+S14 (Bitbucket claude-ares PR 1, main google_gemini stub B always 429, fallback DeepSeek)
+Read-only queries on QA Mongo observability_logs_ts, 2026-11-27. org ids are the slot-a QA test orgs.
+
+## QUOTA_EXCEEDED anywhere (expected 0)
+query: org=2b4fdd21-4a09-4464-80bd-f4417ec8843a window 2026-11-27T20:40:00Z..2026-11-27T20:45:00Z message =~ /QUOTA/
+result: {"total": 89, "hits": 0}
+
+## failover lines
+query: org=2b4fdd21-4a09-4464-80bd-f4417ec8843a window 2026-11-27T20:40:00Z..2026-11-27T20:45:00Z message =~ /model-failover/
+result: {"total": 89, "hits": 13}
+  2026-11-27T20:41:22.347Z | warn | ModelFailover | [LLM-ERROR] [model-failover] code-review-generalist: "gemini-3.8-flash" failed (RATE_LIMIT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+  2026-11-27T20:41:48.552Z | warn | ModelFailover | [LLM-ERROR] [model-failover] code-review-generalist: "gemini-3.8-flash" failed (RATE_LIMIT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+  2026-11-27T20:42:18.040Z | warn | ModelFailover | [LLM-ERROR] [model-failover] code-review-generalist-verify: "gemini-3.8-flash" failed (RATE_LIMIT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+  2026-11-27T20:42:18.053Z | warn | ModelFailover | [LLM-ERROR] [model-failover] code-review-generalist-verify: "gemini-3.8-flash" failed (RATE_LIMIT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+  2026-11-27T20:42:18.066Z | warn | ModelFailover | [LLM-ERROR] [model-failover] code-review-generalist-verify: "gemini-3.8-flash" failed (RATE_LIMIT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+  2026-11-27T20:42:18.080Z | warn | ModelFailover | [LLM-ERROR] [model-failover] code-review-generalist-verify: "gemini-3.8-flash" failed (RATE_LIMIT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+  2026-11-27T20:42:44.231Z | warn | ModelFailover | [LLM-ERROR] [model-failover] code-review-dedup: "gemini-3.8-flash" failed (RATE_LIMIT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+  2026-11-27T20:42:50.700Z | warn | ModelFailover | [LLM-ERROR] [model-failover] severity-classifier: "gemini-3.8-flash" failed (RATE_LIMIT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+  2026-11-27T20:43:19.625Z | warn | ModelFailover | [LLM-ERROR] [model-failover] code-review-enrich: "gemini-3.8-flash" failed (RATE_LIMIT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+  2026-11-27T20:43:20.396Z | warn | ModelFailover | [LLM-ERROR] [model-failover] code-review-enrich: "gemini-3.8-flash" failed (RATE_LIMIT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+  2026-11-27T20:43:20.406Z | warn | ModelFailover | [LLM-ERROR] [model-failover] code-review-enrich: "gemini-3.8-flash" failed (RATE_LIMIT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+  2026-11-27T20:43:26.084Z | warn | ModelFailover | [LLM-ERROR] [model-failover] suggestion-formatter: "gemini-3.8-flash" failed (RATE_LIMIT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+  2026-11-27T20:43:36.396Z | warn | ModelFailover | [LLM-ERROR] [model-failover] generateSummaryPR: "gemini-3.8-flash" failed (RATE_LIMIT); cascading to fallback "opencode_go/deepseek-v4.1-flash"
+
+## LLM-SUCCESS lines (DEBUG level, not shipped on QA: expected 0)
+query: org=2b4fdd21-4a09-4464-80bd-f4417ec8843a window 2026-11-27T20:40:00Z..2026-11-27T20:45:00Z message =~ /LLM-SUCCESS/
+result: {"total": 89, "hits": 0}
