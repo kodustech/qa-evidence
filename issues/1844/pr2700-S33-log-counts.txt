@@ -1,0 +1,20 @@
+S33 (GitHub claude-ares#9, main ...invalid/v1?api_key=fake123, no fallback)
+Read-only queries on QA Mongo observability_logs_ts, 2026-11-27. org ids are the slot-a QA test orgs.
+
+## fake123 in any log message (expected 0)
+query: org=1376936a-961c-4267-862b-cbc19d309ce4 window 2026-11-27T21:48:00Z..2026-11-27T21:52:00Z message =~ /fake123/
+result: {"total": 118, "hits": 0}
+
+## <none> in any log message (expected 0)
+query: org=1376936a-961c-4267-862b-cbc19d309ce4 window 2026-11-27T21:48:00Z..2026-11-27T21:52:00Z message =~ /<none>/
+result: {"total": 118, "hits": 0}
+
+## ENOTFOUND / TRANSIENT lines
+query: org=1376936a-961c-4267-862b-cbc19d309ce4 window 2026-11-27T21:48:00Z..2026-11-27T21:52:00Z message =~ /ENOTFOUND|TRANSIENT/
+result: {"total": 118, "hits": 6}
+  2026-11-27T21:48:54.568Z | warn | ModelFailover | [LLM-ERROR] kodus-rules-review-agent.shard: "opencode_go/deepseek-v4.1-flash" failed (TRANSIENT) — Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid
+  2026-11-27T21:49:08.247Z | warn | ModelFailover | [LLM-ERROR] code-review-generalist: "opencode_go/deepseek-v4.1-flash" failed (TRANSIENT) — Failed after 4 attempts. Last error: AI_APICallError: Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid
+  2026-11-27T21:49:22.282Z | warn | ModelFailover | [LLM-ERROR] code-review-generalist: "opencode_go/deepseek-v4.1-flash" failed (TRANSIENT) — Failed after 4 attempts. Last error: AI_APICallError: Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid
+  2026-11-27T21:49:22.289Z | error | ReviewOrchestratorService | [AGENT] generalist failed: Failed after 4 attempts. Last error: AI_APICallError: Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid
+  2026-11-27T21:49:23.165Z | warn | ModelFailover | [LLM-ERROR] generateSummaryPR: "opencode_go/deepseek-v4.1-flash" failed (TRANSIENT) — Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid
+  2026-11-27T21:49:23.640Z | warn | ModelFailover | [LLM-ERROR] generateSummaryPR: "opencode_go/deepseek-v4.1-flash" failed (TRANSIENT) — Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid
