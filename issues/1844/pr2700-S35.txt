@@ -1,0 +1,14 @@
+S35 approval gate (reviewErrorsBlockApproval) with summary-only failure
+=======================================================================
+
+[summary-only partial (both slots failed)]
+  MERGE : status(as handler computes)=partial_error | pipelineBlocksApproval=false | cronAllowsApproval=true
+  PARENT: status(as handler computes)=partial_error | pipelineBlocksApproval=false | cronAllowsApproval=true
+
+[summary + other partial]
+  MERGE : status(as handler computes)=partial_error | pipelineBlocksApproval=true | cronAllowsApproval=false
+  PARENT: status(as handler computes)=partial_error | pipelineBlocksApproval=true | cronAllowsApproval=false
+
+[other partial only]
+  MERGE : status(as handler computes)=partial_error | pipelineBlocksApproval=true | cronAllowsApproval=false
+  PARENT: status(as handler computes)=partial_error | pipelineBlocksApproval=true | cronAllowsApproval=false
