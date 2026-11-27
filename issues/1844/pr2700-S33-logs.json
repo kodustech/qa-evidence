@@ -1,0 +1,32 @@
+[
+ {
+  "t": "2026-11-27T21:49:08.247Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] code-review-generalist: \"opencode_go/deepseek-v4.1-flash\" failed (TRANSIENT) \u2014 Failed after 4 attempts. Last error: AI_APICallError: Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid"
+ },
+ {
+  "t": "2026-11-27T21:49:22.282Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] code-review-generalist: \"opencode_go/deepseek-v4.1-flash\" failed (TRANSIENT) \u2014 Failed after 4 attempts. Last error: AI_APICallError: Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid"
+ },
+ {
+  "t": "2026-11-27T21:49:22.289Z",
+  "level": "error",
+  "component": "ReviewOrchestratorService",
+  "message": "[AGENT] generalist failed: Failed after 4 attempts. Last error: AI_APICallError: Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid"
+ },
+ {
+  "t": "2026-11-27T21:49:23.165Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] generateSummaryPR: \"opencode_go/deepseek-v4.1-flash\" failed (TRANSIENT) \u2014 Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid"
+ },
+ {
+  "t": "2026-11-27T21:49:23.640Z",
+  "level": "warn",
+  "component": "ModelFailover",
+  "message": "[LLM-ERROR] generateSummaryPR: \"opencode_go/deepseek-v4.1-flash\" failed (TRANSIENT) \u2014 Cannot connect to API: getaddrinfo ENOTFOUND kodus-qa-2700-unreachable.invalid"
+ }
+]
