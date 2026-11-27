@@ -1,0 +1,108 @@
+{
+ "commentId": "913352222",
+ "from": "2026-11-27T18:36:40Z",
+ "logs": [
+  {
+   "t": "2026-11-27T18:37:15.511Z",
+   "level": "info",
+   "component": "ChatWithKodyFromGitUseCase",
+   "message": "Successfully executed conversation flow",
+   "attrs": {
+    "commentId": 913352222,
+    "pullRequestNumber": 1
+   }
+  }
+ ],
+ "claim": [
+  [
+   "PROCESSED",
+   "1",
+   "2026-11-27 18:37:15.511"
+  ]
+ ],
+ "kody_answer": [
+  {
+   "id": 913352259,
+   "parent": 913352222,
+   "created_on": "2026-11-27T18:36:52.190519+00:00",
+   "head": "`kody|code-review` Two findings are getting crossed here, so let me separate them first.\n\n**\"Clamping the index\" belongs to the `termAverage` finding, not this one.** The off-by-one (`i <= grades.leng"
+  }
+ ],
+ "org_logs": [
+  {
+   "t": "2026-11-27T18:36:42.069Z",
+   "component": "PermissionValidationService",
+   "message": "@@VALID PERMISSION@@ - Validating resource limits"
+  },
+  {
+   "t": "2026-11-27T18:36:42.134Z",
+   "component": "PermissionValidationService",
+   "message": "@@VALID PERMISSION@@ - Resource limits validated"
+  },
+  {
+   "t": "2026-11-27T18:36:52.406Z",
+   "component": "ConversationAgentProvider",
+   "message": "Starting conversation agent execution"
+  },
+  {
+   "t": "2026-11-27T18:36:52.409Z",
+   "component": "PermissionValidationService",
+   "message": "@@VALID PERMISSION@@ - Validating resource limits"
+  },
+  {
+   "t": "2026-11-27T18:36:52.426Z",
+   "component": "PermissionValidationService",
+   "message": "@@VALID PERMISSION@@ - Resource limits validated"
+  },
+  {
+   "t": "2026-11-27T18:36:52.781Z",
+   "component": "ConversationAgentProvider",
+   "message": "Conversation agent MCP tools connected"
+  },
+  {
+   "t": "2026-11-27T18:36:54.101Z",
+   "component": "ChatWithKodyFromGitUseCase",
+   "message": "Unmentioned reply left unanswered: kody_author"
+  },
+  {
+   "t": "2026-11-27T18:36:56.159Z",
+   "component": "McpServerService",
+   "message": "MCP stateless request received"
+  },
+  {
+   "t": "2026-11-27T18:36:56.167Z",
+   "component": "McpServerFactory",
+   "message": "MCP tool invoked"
+  },
+  {
+   "t": "2026-11-27T18:36:58.164Z",
+   "component": "BitbucketCloudService getRepositoryContentFile",
+   "message": "Repository content file not found"
+  },
+  {
+   "t": "2026-11-27T18:36:58.166Z",
+   "component": "McpServerService",
+   "message": "MCP stateless request completed"
+  },
+  {
+   "t": "2026-11-27T18:37:00.047Z",
+   "component": "E2BSandboxService",
+   "message": "[egress] route=fixed_ip (rollout_off)"
+  },
+  {
+   "t": "2026-11-27T18:37:02.074Z",
+   "component": "ChatWithKodyFromGitUseCase",
+   "message": "Sandbox unavailable; conversation will continue without native repository tools"
+  },
+  {
+   "t": "2026-11-27T18:37:14.741Z",
+   "component": "ConversationAgentProvider",
+   "message": "Finish conversation agent execution"
+  },
+  {
+   "t": "2026-11-27T18:37:15.511Z",
+   "component": "ChatWithKodyFromGitUseCase",
+   "message": "Successfully executed conversation flow"
+  }
+ ]
+}
