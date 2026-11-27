@@ -1,0 +1,38 @@
+S34 #1844 outage shapes
+=======================
+
+[S34a RetryError(3) over status-less empty APICallError]
+  MERGE : UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+  PARENT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+
+[S34a RetryError(3) over APICallError "<none>"]
+  MERGE : UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+  PARENT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+
+[S34a plain Error "Failed after 3 attempts. Last error: AI_APICallError: <none>"]
+  MERGE : UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+  PARENT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+
+[S34b UND_ERR_CONNECT_TIMEOUT (SDK-wrapped)]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: TRANSIENT | failover=false | hardTimeout=true | msg="Transient error reaching the provider (google_gemini). Try again."
+
+[S34b UND_ERR_CONNECT_TIMEOUT RetryError(3)]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: TRANSIENT | failover=false | hardTimeout=true | msg="Transient error reaching the provider (google_gemini). Try again."
+
+[S34c AggregateError ETIMEDOUT empty (SDK-wrapped)]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+
+[S34c AggregateError ETIMEDOUT RetryError(3)]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: UNKNOWN | failover=false | hardTimeout=false | msg="Unexpected error while running the code review (google_gemini)."
+
+[S34d UND_ERR_HEADERS_TIMEOUT]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: TRANSIENT | failover=false | hardTimeout=true | msg="Transient error reaching the provider (google_gemini). Try again."
+
+[S34d UND_ERR_HEADERS_TIMEOUT RetryError(3)]
+  MERGE : TRANSIENT | failover=false | hardTimeout=true | msg="Couldn't connect to the provider (google_gemini): the connection failed. If it keeps failing, check the base URL."
+  PARENT: TRANSIENT | failover=false | hardTimeout=true | msg="Transient error reaching the provider (google_gemini). Try again."
