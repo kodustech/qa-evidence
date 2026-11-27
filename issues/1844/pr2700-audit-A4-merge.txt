@@ -1,0 +1,12 @@
+wall=958ms thrown=none
+logs:
+  log: GenerateSummaryPR: Start PR#7. After get PR data
+  log: Generating PR summary in 2 chunks for PR#7
+  log: GenerateSummaryPR: End PR#7. After concatenate
+fallback stub requests (3): chunk 1/2, chunk 2/2, consolidation
+real-network attempts on main (kodus-qa-2700-unreachable.invalid): 6 -> fetch failed cause=ENOTFOUND
+chunked branch ran: YES
+RESULT:
+<!-- kody-pr-summary:start -->
+Description written by the FALLBACK stub (consolidation).
+<!-- kody-pr-summary:end -->
