@@ -1,0 +1,166 @@
+Bitbucket kodustech/claude-ares PR 1: description + all comments (raw), read via REST 2026-11-27. Author names omitted.
+
+=== PR description ===
+QA for kodustech/kodus-ai#2700
+
+<!-- kody-pr-summary:start -->
+## Summary
+
+Adds a new membership module file, `qa2700/Membership.cs`, under the `Ares.Memberships` namespace.
+
+### Changes
+- Introduces a `Membership` model with `MemberId`, `ExpiresAt`, and `MonthlyFee` properties.
+- Adds a `MembershipService` backed by an in-memory membership list.
+  - `IsActive(Guid memberId)` looks up the member and determines whether the membership expiration is later than the current time.
+  - `ProratedFee(Membership m, int daysUsed)` calculates a prorated fee as `MonthlyFee * (daysUsed / 30)`.
+
+### Notes
+- Membership records are held only in memory; no persistence or external data source is included in this change.
+
+### Open review findings
+- `IsActive` may dereference a null result when `FirstOrDefault` finds no matching membership.
+- `IsActive` compares a UTC-stored `ExpiresAt` against local `DateTime.Now`.
+- `ProratedFee` uses integer division (`daysUsed / 30`), discarding partial months.
+<!-- kody-pr-summary:end -->
+
+=== comment 913387863 created 2026-11-27T20:40:44.955571+00:00 inline=None
+## Code Review Completed! 🔥
+
+The code review was successfully completed based on your current configurations.
+
+
+
+
+Kody Guide: Usage and Configuration
+
+
+Interacting with Kody
+
+- **Request a Review:** Ask Kody to review your PR manually by adding a comment with the `@kody start-review` command at the root of your PR.
+
+- **Validate Business Logic:** Ask Kody to validate your code against business rules by adding a comment with the `@kody -v business-logic` command.
+
+- **Provide Feedback:** Help Kody learn and improve by reacting to its comments with a 👍 for helpful suggestions or a 👎 if improvements are needed.
+
+
+
+
+Current Kody Configuration
+
+
+Review Options
+
+The following review options are enabled or disabled:
+
+| Options                        | Enabled |
+|-------------------------------|---------|
+| **Bug** | ✅ |
+| **Performance** | ✅ |
+| **Security** | ✅ |
+| **Business Logic** | ✅ |
+
+
+
+**[Access your configuration settings here.](https://qa.web.kodus.io/settings/code-review/global/general)**
+
+
+
+
+<!-- kody-codereview-completed-1795812222586-8kjg4ksfkv8 -->
+
+=== comment 913388469 created 2026-11-27T20:43:28.835879+00:00 inline={'from': None, 'to': 20, 'path': 'qa2700/Membership.cs', 'start_from': None, 'start_to': None}
+`kody|code-review` `bug` `severity-level|high`
+
+**IsActive dereferences null membership from FirstOrDefault**
+
+Every call throws `NullReferenceException` because nothing ever adds to `_memberships`, so a missing membership never resolves to inactive. Return `m != null && m.ExpiresAt > DateTime.Now` so an unknown `MemberId` yields `false`.
+
+Was this suggestion helpful? Reply with 👍 or 👎 to help Kody learn from this interaction.
+
+```
+👍
+```
+
+```
+👎
+```
+
+=== comment 913388475 created 2026-11-27T20:43:29.436440+00:00 inline={'from': None, 'to': 20, 'path': 'qa2700/Membership.cs', 'start_from': None, 'start_to': None}
+`kody|code-review` **Prompt for LLM**: copy into your coding agent
+
+```text
+File qa2700/Membership.cs, lines 20-21:
+
+IsActive dereferences null membership from FirstOrDefault
+
+`FirstOrDefault` yields `null` for any `MemberId` not present in `_memberships`, and the next line dereferences `m.ExpiresAt`, throwing `NullReferenceException` instead of returning `false` for a unknown member. Because nothing ever adds to `_memberships`, the method throws on every call — add a null check (`return m != null && m.ExpiresAt > DateTime.UtcNow;`) so a missing membership resolves to inactive.
+
+Suggested code:
+
+var m = _memberships.FirstOrDefault(x => x.MemberId == memberId);
+            return m != null && m.ExpiresAt > DateTime.Now;
+```
+
+=== comment 913388480 created 2026-11-27T20:43:29.907828+00:00 inline={'from': None, 'to': 21, 'path': 'qa2700/Membership.cs', 'start_from': None, 'start_to': None}
+`kody|code-review` `bug` `severity-level|high`
+
+**IsActive compares UTC-stored ExpiresAt against local DateTime.Now**
+
+`DateTime.Now` shifts the active verdict by the server's UTC offset and flips it across DST. Compare `ExpiresAt` against `DateTime.UtcNow` (or normalize it to UTC first) so expiration is timezone-independent.
+
+Was this suggestion helpful? Reply with 👍 or 👎 to help Kody learn from this interaction.
+
+```
+👍
+```
+
+```
+👎
+```
+
+=== comment 913388483 created 2026-11-27T20:43:30.428000+00:00 inline={'from': None, 'to': 21, 'path': 'qa2700/Membership.cs', 'start_from': None, 'start_to': None}
+`kody|code-review` **Prompt for LLM**: copy into your coding agent
+
+```text
+File qa2700/Membership.cs, line 21:
+
+IsActive compares UTC-stored ExpiresAt against local DateTime.Now
+
+`IsActive` compares `ExpiresAt` (a timestamp whose `Kind` is unspecified and is normally persisted as UTC) against `DateTime.Now`, so the active/expired verdict is off by the server's UTC offset and flips by one hour across a DST transition. Compare against `DateTime.UtcNow` (or normalize `ExpiresAt` to UTC first) so expiration is timezone-independent.
+
+Suggested code:
+
+return m.ExpiresAt > DateTime.UtcNow;
+```
+
+=== comment 913388489 created 2026-11-27T20:43:30.959784+00:00 inline={'from': None, 'to': 26, 'path': 'qa2700/Membership.cs', 'start_from': None, 'start_to': None}
+`kody|code-review` `bug` `severity-level|medium`
+
+**Integer division in ProratedFee discards partial months**
+
+`daysUsed / 30` truncates before the multiplication, so 29 days bills 0 and 59 days bills one month. Divide by `30m` in `m.MonthlyFee * daysUsed / 30m` so partial periods are prorated.
+
+Was this suggestion helpful? Reply with 👍 or 👎 to help Kody learn from this interaction.
+
+```
+👍
+```
+
+```
+👎
+```
+
+=== comment 913388493 created 2026-11-27T20:43:31.428369+00:00 inline={'from': None, 'to': 26, 'path': 'qa2700/Membership.cs', 'start_from': None, 'start_to': None}
+`kody|code-review` **Prompt for LLM**: copy into your coding agent
+
+```text
+File qa2700/Membership.cs, line 26:
+
+Integer division in ProratedFee discards partial months
+
+`daysUsed / 30` performs integer division, so the fractional part is discarded before multiplying by `MonthlyFee`: 29 days bills 0 and 59 days bills a single month's fee. Use a decimal divisor (`m.MonthlyFee * daysUsed / 30m`) so partial periods are prorated as the method name promises.
+
+Suggested code:
+
+return m.MonthlyFee * daysUsed / 30m;
+```
