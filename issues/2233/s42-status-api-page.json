@@ -1,0 +1,50 @@
+[
+ {
+  "at": "2026-11-27T23:03:07.942Z",
+  "url": "/api/proxy/api/business-logic/status?teamId=8aecb3fa-b4e5-46e4-99ea-cdcf7007363d&repositoryId=1468014267",
+  "status": 200,
+  "body": {
+   "data": {
+    "state": "working",
+    "lastTaskRead": {
+     "id": "#36",
+     "tracker": "Git Issues",
+     "at": "2026-11-27T22:50:13.210Z"
+    },
+    "stats": {
+     "pullRequestsChecked": 4,
+     "metRate": 0.75,
+     "agreedRate": 1,
+     "couldntRead": 0,
+     "couldntReadByReason": {}
+    }
+   },
+   "statusCode": 200,
+   "type": "Object"
+  }
+ },
+ {
+  "at": "2026-11-27T23:03:17.764Z",
+  "url": "/api/proxy/api/business-logic/status?teamId=8aecb3fa-b4e5-46e4-99ea-cdcf7007363d&repositoryId=1468014267",
+  "status": 200,
+  "body": {
+   "data": {
+    "state": "working",
+    "lastTaskRead": {
+     "id": "#36",
+     "tracker": "Git Issues",
+     "at": "2026-11-27T22:50:13.210Z"
+    },
+    "stats": {
+     "pullRequestsChecked": 4,
+     "metRate": 0.75,
+     "agreedRate": 1,
+     "couldntRead": 0,
+     "couldntReadByReason": {}
+    }
+   },
+   "statusCode": 200,
+   "type": "Object"
+  }
+ }
+]
