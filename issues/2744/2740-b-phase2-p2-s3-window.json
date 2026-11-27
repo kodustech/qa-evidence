@@ -1,0 +1,687 @@
+[
+ {
+  "timestamp": "2026-11-27T22:42:34.892Z",
+  "level": "info",
+  "message": "Starting conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-cgwuga",
+    "metadata": {
+     "description": "Thread TR-cmc-cgwuga",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723882671
+    }
+   },
+   "userLanguage": "en-US",
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:35.283Z",
+  "level": "info",
+  "message": "Conversation agent MCP tools connected",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "threadId": "TR-cmc-cgwuga",
+   "mcpToolCount": 22,
+   "proactiveTools": [
+    "KODUS_CREATE_KODY_RULE",
+    "KODUS_UPDATE_KODY_RULE",
+    "KODUS_CREATE_MEMORY",
+    "KODUS_CREATE_KODY_ISSUE",
+    "KODUS_UPDATE_KODY_ISSUE_STATUS",
+    "KODUS_UPDATE_KODY_ISSUE_CATEGORY"
+   ],
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:38.244Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: acquire prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:38.251Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:38.252Z",
+  "level": "info",
+  "message": "[DEBUG] Creating E2B sandbox for PR#14 branch=qa2744-r1",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "cloneUrl": "https://github.com/kodus-olimpo/codex-athena",
+   "branch": "qa2744-r1",
+   "prNumber": 14,
+   "platform": "GITHUB",
+   "hasAuthToken": true,
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:38.427Z",
+  "level": "info",
+  "message": "[DEBUG] E2B sandbox created (template=true, id=igms7ai1jomlr3h9qgdl2)",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "usedTemplate": true,
+   "sandboxId": "igms7ai1jomlr3h9qgdl2",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:38.429Z",
+  "level": "info",
+  "message": "[egress] route=fixed_ip (rollout_off)",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "platform": "GITHUB",
+   "sandboxId": "igms7ai1jomlr3h9qgdl2",
+   "route": "fixed_ip",
+   "why": "rollout_off",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:38.429Z",
+  "level": "info",
+  "message": "[DEBUG] No E2B_PROXY_HOST configured, skipping proxy setup",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:39.156Z",
+  "level": "info",
+  "message": "[DEBUG] Git clone starting: refspec=refs/pull/14/head localRef=pr-head cloneUrl=https://github.com/kodus-olimpo/codex-athena",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "refspec": "refs/pull/14/head",
+   "localRef": "pr-head",
+   "cloneUrl": "https://github.com/kodus-olimpo/codex-athena",
+   "platform": "GITHUB",
+   "hasProxy": false,
+   "hasAuth": true,
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:41.330Z",
+  "level": "info",
+  "message": "[DEBUG] Git clone finished: exitCode=0 stdout=58chars stderr=614chars",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "exitCode": 0,
+   "stdout": "Initialized empty Git repository in /home/user/repo/.git/\n",
+   "stderr": "hint: Using 'master' as the name for the initial branch. This default branch name\nhint: is subject to change. To configure the initial branch name to use in all\nhint: of your new repositories, which will suppress this warning, call:\nhint: \nhint: \tgit config --global init.defaultBranch <name>\nhint: \nhint: Names commonly chosen instead of 'master' are 'main', 'trunk' and\nhint: 'development'. The just-created branch can be renamed via this command:\nhint: \nhint: \tgit branch -m <name>\nFrom https://gi",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:41.588Z",
+  "level": "info",
+  "message": "[DEBUG] Repo contents after clone (first 500 chars): total 13\ndrwxr-xr-x 5 user user  128 Nov 27 22:42 .\ndrwxr-xr-x 3 user user 4096 Nov 27 22:42 ..\ndrwxr-xr-x 8 user user 4096 Nov 27 22:42 .git\n-rw-r--r-- 1 user user  791 Nov 27 22:42 AGENTS.md\n-rw-r--r-- 1 user user   11 Nov 27 22:42 CLAUDE.md\n-rw-r--r-- 1 user user   14 Nov 27 22:42 README.md\ndrwxr-xr-x 4 user user   60 Nov 27 22:42 qa2628\ndrwxr-xr-x 7 user user  128 Nov 27 22:42 qa2744\n---FILE-COUNT---\n/home/user/repo/README.md\n/home/user/repo/AGENTS.md\n/home/user/repo/.git/HEAD\n/home/user/rep",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "exitCode": 0,
+   "stdout": "total 13\ndrwxr-xr-x 5 user user  128 Nov 27 22:42 .\ndrwxr-xr-x 3 user user 4096 Nov 27 22:42 ..\ndrwxr-xr-x 8 user user 4096 Nov 27 22:42 .git\n-rw-r--r-- 1 user user  791 Nov 27 22:42 AGENTS.md\n-rw-r--r-- 1 user user   11 Nov 27 22:42 CLAUDE.md\n-rw-r--r-- 1 user user   14 Nov 27 22:42 README.md\ndrwxr-xr-x 4 user user   60 Nov 27 22:42 qa2628\ndrwxr-xr-x 7 user user  128 Nov 27 22:42 qa2744\n---FILE-COUNT---\n/home/user/repo/README.md\n/home/user/repo/AGENTS.md\n/home/user/repo/.git/HEAD\n/home/user/rep",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:41.588Z",
+  "level": "info",
+  "message": "[DEBUG] Fetching base branch: main",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "baseBranch": "main",
+   "hasAuth": true,
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:43.061Z",
+  "level": "info",
+  "message": "[DEBUG] Base branch fetched successfully: origin/main",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:43.153Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: sandbox READY prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\" leaseId=\"56a482d3-c7c1-4342-adaa-f43f8b4c38ff\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "leaseId": "56a482d3-c7c1-4342-adaa-f43f8b4c38ff",
+   "sandboxId": "igms7ai1jomlr3h9qgdl2",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:43.642Z",
+  "level": "warn",
+  "message": "[SANDBOX-EXEC] command stopped after 2000000 output characters",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "warn",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "program": "git",
+   "maxChars": 2000000,
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:43.684Z",
+  "level": "warn",
+  "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+  "component": "ConversationTools",
+  "metadata": {
+   "component": "ConversationTools",
+   "level": "warn",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "tool": "exec",
+   "field": "stdout",
+   "outputChars": 1999813,
+   "longestLine": 201,
+   "linesCut": 0,
+   "files": [],
+   "maxLine": 2000,
+   "component": "ConversationTools",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:48.579Z",
+  "level": "error",
+  "message": "Conversation agent declared an action it never performed",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "error",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "threadId": "TR-cmc-cgwuga",
+   "intendedTool": "exec",
+   "authorizingQuote": "Run `git show 28fb9a8 -- qa2744/fixtures/attendance-export.json` exactly as written: no pipe, no head, no tail, no redirect, no --stat. Then tell me whether your tool cut the output and the last line it actually returned to you.",
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:48.579Z",
+  "level": "info",
+  "message": "Finish conversation agent execution",
+  "component": "ConversationAgentProvider",
+  "metadata": {
+   "component": "ConversationAgentProvider",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationAndTeamData": {
+    "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+    "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d"
+   },
+   "thread": {
+    "id": "TR-cmc-cgwuga",
+    "metadata": {
+     "description": "Thread TR-cmc-cgwuga",
+     "type": "thread",
+     "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+     "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+     "repositoryId": "1468015189",
+     "userId": 17408306,
+     "suggestionCommentId": 4723882671
+    }
+   },
+   "steps": 3,
+   "usage": {
+    "inputTokens": 57420,
+    "outputTokens": 850,
+    "totalTokens": 58270,
+    "reasoningTokens": 130,
+    "cacheReadTokens": 31104,
+    "cacheWriteTokens": null
+   },
+   "component": "ConversationAgentProvider",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:48.592Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: released leaseId=\"56a482d3-c7c1-4342-adaa-f43f8b4c38ff\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" leaseCount=0",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "leaseId": "56a482d3-c7c1-4342-adaa-f43f8b4c38ff",
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "leaseCount": 0,
+   "consumer": "conversation",
+   "heldMs": 5434,
+   "acquireToFirstUseMs": 0,
+   "lastUseToReleaseMs": 4945,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:48.597Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-27T22:47:48.592Z for sandboxId=\"igms7ai1jomlr3h9qgdl2\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "sandboxId": "igms7ai1jomlr3h9qgdl2",
+   "idleTimeoutMs": 300000,
+   "killAt": "2026-11-27T22:47:48.592Z",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:50.623Z",
+  "level": "info",
+  "message": "Event loop delay max=506ms",
+  "component": "EventLoopMonitor",
+  "metadata": {
+   "component": "EventLoopMonitor",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "p50Ms": 20,
+   "p99Ms": 21,
+   "maxMs": 506,
+   "meanMs": 20,
+   "windowMs": 60000,
+   "msSinceLastProbe": 18986,
+   "lastProbeStatus": "ok",
+   "memory": {
+    "rssMb": 790,
+    "heapUsedMb": 497,
+    "heapTotalMb": 584,
+    "heapLimitMb": 4288,
+    "externalMb": 59,
+    "arrayBuffersMb": 30,
+    "heapAfterMajorGcMb": 489,
+    "heapAfterMajorGcMinMb": 489,
+    "majorGcs": 1,
+    "gcPauseMs": 66,
+    "gcMaxPauseMs": 17
+   },
+   "jobs": {
+    "total": 0,
+    "byWorkflowType": {},
+    "reviews": {
+     "withSize": 0,
+     "withLines": 0,
+     "changedFilesSum": 0,
+     "changedFilesMax": 0,
+     "changedLinesSum": 0
+    }
+   },
+   "gauges": {
+    "cache": {
+     "entries": 64,
+     "expired": 0,
+     "valueMb": 0.6
+    }
+   },
+   "component": "EventLoopMonitor",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:42:52.340Z",
+  "level": "info",
+  "message": "Event loop delay max=32ms",
+  "component": "EventLoopMonitor",
+  "metadata": {
+   "component": "EventLoopMonitor",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "p50Ms": 20,
+   "p99Ms": 20,
+   "maxMs": 32,
+   "meanMs": 20,
+   "windowMs": 60000,
+   "msSinceLastProbe": 20879,
+   "lastProbeStatus": "ok",
+   "memory": {
+    "rssMb": 432,
+    "heapUsedMb": 217,
+    "heapTotalMb": 250,
+    "heapLimitMb": 2096,
+    "externalMb": 28,
+    "arrayBuffersMb": 22,
+    "heapAfterMajorGcMb": 215,
+    "heapAfterMajorGcMinMb": null,
+    "majorGcs": 0,
+    "gcPauseMs": 9,
+    "gcMaxPauseMs": 4
+   },
+   "jobs": {
+    "total": 0,
+    "byWorkflowType": {},
+    "reviews": {
+     "withSize": 0,
+     "withLines": 0,
+     "changedFilesSum": 0,
+     "changedFilesMax": 0,
+     "changedLinesSum": 0
+    }
+   },
+   "gauges": {
+    "cache": {
+     "entries": 0,
+     "expired": 0,
+     "valueMb": 0
+    }
+   },
+   "component": "EventLoopMonitor",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:43:19.632Z",
+  "level": "info",
+  "message": "Event loop delay max=24ms",
+  "component": "EventLoopMonitor",
+  "metadata": {
+   "component": "EventLoopMonitor",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "p50Ms": 20,
+   "p99Ms": 21,
+   "maxMs": 24,
+   "meanMs": 20,
+   "windowMs": 60000,
+   "msSinceLastProbe": 19130,
+   "lastProbeStatus": "ok",
+   "memory": {
+    "rssMb": 831,
+    "heapUsedMb": 489,
+    "heapTotalMb": 519,
+    "heapLimitMb": 4288,
+    "externalMb": 56,
+    "arrayBuffersMb": 24,
+    "heapAfterMajorGcMb": 465,
+    "heapAfterMajorGcMinMb": null,
+    "majorGcs": 0,
+    "gcPauseMs": 5,
+    "gcMaxPauseMs": 5
+   },
+   "jobs": {
+    "total": 0,
+    "byWorkflowType": {},
+    "reviews": {
+     "withSize": 0,
+     "withLines": 0,
+     "changedFilesSum": 0,
+     "changedFilesMax": 0,
+     "changedLinesSum": 0
+    }
+   },
+   "gauges": {
+    "cache": {
+     "entries": 50,
+     "expired": 0,
+     "valueMb": 0.2
+    }
+   },
+   "component": "EventLoopMonitor",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T22:43:21.902Z",
+  "level": "info",
+  "message": "Event loop delay max=26ms",
+  "component": "EventLoopMonitor",
+  "metadata": {
+   "component": "EventLoopMonitor",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "p50Ms": 20,
+   "p99Ms": 21,
+   "maxMs": 26,
+   "meanMs": 20,
+   "windowMs": 60000,
+   "msSinceLastProbe": null,
+   "lastProbeStatus": null,
+   "memory": {
+    "rssMb": 651,
+    "heapUsedMb": 427,
+    "heapTotalMb": 454,
+    "heapLimitMb": 4288,
+    "externalMb": 29,
+    "arrayBuffersMb": 23,
+    "heapAfterMajorGcMb": 416,
+    "heapAfterMajorGcMinMb": null,
+    "majorGcs": 0,
+    "gcPauseMs": 10,
+    "gcMaxPauseMs": 2
+   },
+   "jobs": {
+    "total": 0,
+    "byWorkflowType": {},
+    "reviews": {
+     "withSize": 0,
+     "withLines": 0,
+     "changedFilesSum": 0,
+     "changedFilesMax": 0,
+     "changedLinesSum": 0
+    }
+   },
+   "gauges": {
+    "cache": {
+     "entries": 0,
+     "expired": 0,
+     "valueMb": 0
+    }
+   },
+   "component": "EventLoopMonitor",
+   "originalCorrelationId": null
+  }
+ }
+]
