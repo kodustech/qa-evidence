@@ -1,0 +1,1429 @@
+[
+ {
+  "timestamp": "2026-11-27T21:51:37.279Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: acquire prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:51:37.289Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:51:37.289Z",
+  "level": "info",
+  "message": "[DEBUG] Creating E2B sandbox for PR#14 branch=qa2744-r1",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "cloneUrl": "https://github.com/kodus-olimpo/codex-athena",
+   "branch": "qa2744-r1",
+   "prNumber": 14,
+   "platform": "GITHUB",
+   "hasAuthToken": true,
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:51:37.524Z",
+  "level": "info",
+  "message": "[DEBUG] E2B sandbox created (template=true, id=iys09hsxm1i2oppm6mxe4)",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "usedTemplate": true,
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:51:37.527Z",
+  "level": "info",
+  "message": "[egress] route=fixed_ip (rollout_off)",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "tenantId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe"
+  },
+  "attributes": {
+   "organizationId": "2a73f120-e3a5-4eea-9e44-3116fce23bfe",
+   "teamId": "0461d23a-e6ef-47a5-b804-33d815c5729d",
+   "platform": "GITHUB",
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "route": "fixed_ip",
+   "why": "rollout_off",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:51:37.528Z",
+  "level": "info",
+  "message": "[DEBUG] No E2B_PROXY_HOST configured, skipping proxy setup",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:51:38.291Z",
+  "level": "info",
+  "message": "[DEBUG] Git clone starting: refspec=refs/pull/14/head localRef=pr-head cloneUrl=https://github.com/kodus-olimpo/codex-athena",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "refspec": "refs/pull/14/head",
+   "localRef": "pr-head",
+   "cloneUrl": "https://github.com/kodus-olimpo/codex-athena",
+   "platform": "GITHUB",
+   "hasProxy": false,
+   "hasAuth": true,
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:51:40.791Z",
+  "level": "info",
+  "message": "[DEBUG] Git clone finished: exitCode=0 stdout=58chars stderr=614chars",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "exitCode": 0,
+   "stdout": "Initialized empty Git repository in /home/user/repo/.git/\n",
+   "stderr": "hint: Using 'master' as the name for the initial branch. This default branch name\nhint: is subject to change. To configure the initial branch name to use in all\nhint: of your new repositories, which will suppress this warning, call:\nhint: \nhint: \tgit config --global init.defaultBranch <name>\nhint: \nhint: Names commonly chosen instead of 'master' are 'main', 'trunk' and\nhint: 'development'. The just-created branch can be renamed via this command:\nhint: \nhint: \tgit branch -m <name>\nFrom https://gi",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:51:40.879Z",
+  "level": "info",
+  "message": "[DEBUG] Repo contents after clone (first 500 chars): total 13\ndrwxr-xr-x 5 user user  128 Nov 27 21:51 .\ndrwxr-xr-x 3 user user 4096 Nov 27 21:51 ..\ndrwxr-xr-x 8 user user 4096 Nov 27 21:51 .git\n-rw-r--r-- 1 user user  791 Nov 27 21:51 AGENTS.md\n-rw-r--r-- 1 user user   11 Nov 27 21:51 CLAUDE.md\n-rw-r--r-- 1 user user   14 Nov 27 21:51 README.md\ndrwxr-xr-x 4 user user   60 Nov 27 21:51 qa2628\ndrwxr-xr-x 7 user user  128 Nov 27 21:51 qa2744\n---FILE-COUNT---\n/home/user/repo/README.md\n/home/user/repo/AGENTS.md\n/home/user/repo/.git/HEAD\n/home/user/rep",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "exitCode": 0,
+   "stdout": "total 13\ndrwxr-xr-x 5 user user  128 Nov 27 21:51 .\ndrwxr-xr-x 3 user user 4096 Nov 27 21:51 ..\ndrwxr-xr-x 8 user user 4096 Nov 27 21:51 .git\n-rw-r--r-- 1 user user  791 Nov 27 21:51 AGENTS.md\n-rw-r--r-- 1 user user   11 Nov 27 21:51 CLAUDE.md\n-rw-r--r-- 1 user user   14 Nov 27 21:51 README.md\ndrwxr-xr-x 4 user user   60 Nov 27 21:51 qa2628\ndrwxr-xr-x 7 user user  128 Nov 27 21:51 qa2744\n---FILE-COUNT---\n/home/user/repo/README.md\n/home/user/repo/AGENTS.md\n/home/user/repo/.git/HEAD\n/home/user/rep",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:51:40.880Z",
+  "level": "info",
+  "message": "[DEBUG] Fetching base branch: main",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "baseBranch": "main",
+   "hasAuth": true,
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:51:42.563Z",
+  "level": "info",
+  "message": "[DEBUG] Base branch fetched successfully: origin/main",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:51:42.652Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: sandbox READY prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\" leaseId=\"ad9d2a77-93b9-4dd7-a16c-766d4655dea0\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "leaseId": "ad9d2a77-93b9-4dd7-a16c-766d4655dea0",
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:51:42.809Z",
+  "level": "warn",
+  "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+  "component": "ConversationTools",
+  "metadata": {
+   "component": "ConversationTools",
+   "level": "warn",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "tool": "exec",
+   "field": "stdout",
+   "outputChars": 793,
+   "longestLine": 79,
+   "linesCut": 0,
+   "files": [],
+   "maxLine": 2000,
+   "component": "ConversationTools",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:51:47.086Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: released leaseId=\"ad9d2a77-93b9-4dd7-a16c-766d4655dea0\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" leaseCount=0",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "leaseId": "ad9d2a77-93b9-4dd7-a16c-766d4655dea0",
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "leaseCount": 0,
+   "consumer": "conversation",
+   "heldMs": 4427,
+   "acquireToFirstUseMs": 0,
+   "lastUseToReleaseMs": 2697,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:51:47.094Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-27T21:56:47.086Z for sandboxId=\"iys09hsxm1i2oppm6mxe4\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "idleTimeoutMs": 300000,
+   "killAt": "2026-11-27T21:56:47.086Z",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:30.297Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: acquire prKey=\"fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:30.306Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:30.307Z",
+  "level": "info",
+  "message": "[DEBUG] Creating E2B sandbox for PR#3 branch=qa2744-conv",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "cloneUrl": "https://bitbucket.org/kodustech/codex-athena",
+   "branch": "qa2744-conv",
+   "prNumber": 3,
+   "platform": "BITBUCKET",
+   "hasAuthToken": true,
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:30.561Z",
+  "level": "info",
+  "message": "[DEBUG] E2B sandbox created (template=true, id=iqjvd4wujsrbvflkctj6f)",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "usedTemplate": true,
+   "sandboxId": "iqjvd4wujsrbvflkctj6f",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:30.562Z",
+  "level": "info",
+  "message": "[DEBUG] No E2B_PROXY_HOST configured, skipping proxy setup",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:30.562Z",
+  "level": "info",
+  "message": "[egress] route=fixed_ip (rollout_off)",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  },
+  "attributes": {
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "e77e2fe9-9814-420d-bb00-e3dfb5e9a3fa",
+   "platform": "BITBUCKET",
+   "sandboxId": "iqjvd4wujsrbvflkctj6f",
+   "route": "fixed_ip",
+   "why": "rollout_off",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:30.995Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: acquire prKey=\"fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:31.008Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: joiner path \u2014 polling for READY prKey=\"fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:31.184Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: acquire prKey=\"0a010c6e-6636-44b7-a741-a08d546d41c9:89319210:6\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "0a010c6e-6636-44b7-a741-a08d546d41c9:89319210:6",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:31.192Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"0a010c6e-6636-44b7-a741-a08d546d41c9:89319210:6\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "0a010c6e-6636-44b7-a741-a08d546d41c9:89319210:6",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:31.193Z",
+  "level": "info",
+  "message": "[DEBUG] Creating E2B sandbox for PR#6 branch=qa2744-conv",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "cloneUrl": "https://gitlab.com/sartorijr/codex-athena",
+   "branch": "qa2744-conv",
+   "prNumber": 6,
+   "platform": "GITLAB",
+   "hasAuthToken": true,
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:31.281Z",
+  "level": "info",
+  "message": "[DEBUG] Git clone starting: refspec=refs/heads/qa2744-conv localRef=pr-head cloneUrl=https://bitbucket.org/kodustech/codex-athena",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "refspec": "refs/heads/qa2744-conv",
+   "localRef": "pr-head",
+   "cloneUrl": "https://bitbucket.org/kodustech/codex-athena",
+   "platform": "BITBUCKET",
+   "hasProxy": false,
+   "hasAuth": true,
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:31.711Z",
+  "level": "info",
+  "message": "[DEBUG] E2B sandbox created (template=true, id=itahqkchfgyzwfyn19sid)",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "usedTemplate": true,
+   "sandboxId": "itahqkchfgyzwfyn19sid",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:31.713Z",
+  "level": "info",
+  "message": "[DEBUG] No E2B_PROXY_HOST configured, skipping proxy setup",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:31.713Z",
+  "level": "info",
+  "message": "[egress] route=fixed_ip (rollout_off)",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+   "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8",
+   "tenantId": "0a010c6e-6636-44b7-a741-a08d546d41c9"
+  },
+  "attributes": {
+   "organizationId": "0a010c6e-6636-44b7-a741-a08d546d41c9",
+   "teamId": "fa0897ae-2dd7-40c2-8524-7ff5a44710e8",
+   "platform": "GITLAB",
+   "sandboxId": "itahqkchfgyzwfyn19sid",
+   "route": "fixed_ip",
+   "why": "rollout_off",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:32.646Z",
+  "level": "info",
+  "message": "[DEBUG] Git clone starting: refspec=refs/merge-requests/6/head localRef=pr-head cloneUrl=https://gitlab.com/sartorijr/codex-athena",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "refspec": "refs/merge-requests/6/head",
+   "localRef": "pr-head",
+   "cloneUrl": "https://gitlab.com/sartorijr/codex-athena",
+   "platform": "GITLAB",
+   "hasProxy": false,
+   "hasAuth": true,
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:32.671Z",
+  "level": "info",
+  "message": "[DEBUG] Git clone finished: exitCode=0 stdout=58chars stderr=608chars",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "exitCode": 0,
+   "stdout": "Initialized empty Git repository in /home/user/repo/.git/\n",
+   "stderr": "hint: Using 'master' as the name for the initial branch. This default branch name\nhint: is subject to change. To configure the initial branch name to use in all\nhint: of your new repositories, which will suppress this warning, call:\nhint: \nhint: \tgit config --global init.defaultBranch <name>\nhint: \nhint: Names commonly chosen instead of 'master' are 'main', 'trunk' and\nhint: 'development'. The just-created branch can be renamed via this command:\nhint: \nhint: \tgit branch -m <name>\nFrom https://bi",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:32.762Z",
+  "level": "info",
+  "message": "[DEBUG] Repo contents after clone (first 500 chars): total 21\ndrwxr-xr-x 4 user user  128 Nov 27 21:52 .\ndrwxr-xr-x 3 user user 4096 Nov 27 21:52 ..\ndrwxr-xr-x 8 user user 4096 Nov 27 21:52 .git\n-rw-r--r-- 1 user user  624 Nov 27 21:52 .gitignore\n-rw-r--r-- 1 user user  791 Nov 27 21:52 AGENTS.md\n-rw-r--r-- 1 user user   11 Nov 27 21:52 CLAUDE.md\n-rw-r--r-- 1 user user  565 Nov 27 21:52 README.md\ndrwxr-xr-x 5 user user   60 Nov 27 21:52 qa2744\n---FILE-COUNT---\n/home/user/repo/.gitignore\n/home/user/repo/README.md\n/home/user/repo/AGENTS.md\n/home/use",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "exitCode": 0,
+   "stdout": "total 21\ndrwxr-xr-x 4 user user  128 Nov 27 21:52 .\ndrwxr-xr-x 3 user user 4096 Nov 27 21:52 ..\ndrwxr-xr-x 8 user user 4096 Nov 27 21:52 .git\n-rw-r--r-- 1 user user  624 Nov 27 21:52 .gitignore\n-rw-r--r-- 1 user user  791 Nov 27 21:52 AGENTS.md\n-rw-r--r-- 1 user user   11 Nov 27 21:52 CLAUDE.md\n-rw-r--r-- 1 user user  565 Nov 27 21:52 README.md\ndrwxr-xr-x 5 user user   60 Nov 27 21:52 qa2744\n---FILE-COUNT---\n/home/user/repo/.gitignore\n/home/user/repo/README.md\n/home/user/repo/AGENTS.md\n/home/use",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:32.763Z",
+  "level": "info",
+  "message": "[DEBUG] Fetching base branch: main",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "baseBranch": "main",
+   "hasAuth": true,
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:33.961Z",
+  "level": "info",
+  "message": "[DEBUG] Base branch fetched successfully: origin/main",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:34.064Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: sandbox READY prKey=\"fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3\" consumer=\"conversation\" leaseId=\"d42a78f7-2984-4c5e-80db-40062f7d22e5\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3",
+   "consumer": "conversation",
+   "leaseId": "d42a78f7-2984-4c5e-80db-40062f7d22e5",
+   "sandboxId": "iqjvd4wujsrbvflkctj6f",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:34.345Z",
+  "level": "info",
+  "message": "[DEBUG] Git clone finished: exitCode=0 stdout=58chars stderr=691chars",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "exitCode": 0,
+   "stdout": "Initialized empty Git repository in /home/user/repo/.git/\n",
+   "stderr": "hint: Using 'master' as the name for the initial branch. This default branch name\nhint: is subject to change. To configure the initial branch name to use in all\nhint: of your new repositories, which will suppress this warning, call:\nhint: \nhint: \tgit config --global init.defaultBranch <name>\nhint: \nhint: Names commonly chosen instead of 'master' are 'main', 'trunk' and\nhint: 'development'. The just-created branch can be renamed via this command:\nhint: \nhint: \tgit branch -m <name>\nwarning: redire",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:34.442Z",
+  "level": "info",
+  "message": "[DEBUG] Repo contents after clone (first 500 chars): total 21\ndrwxr-xr-x 5 user user  128 Nov 27 21:52 .\ndrwxr-xr-x 3 user user 4096 Nov 27 21:52 ..\ndrwxr-xr-x 8 user user 4096 Nov 27 21:52 .git\n-rw-r--r-- 1 user user  791 Nov 27 21:52 AGENTS.md\n-rw-r--r-- 1 user user   11 Nov 27 21:52 CLAUDE.md\n-rw-r--r-- 1 user user 6023 Nov 27 21:52 README.md\ndrwxr-xr-x 4 user user   60 Nov 27 21:52 qa2628\ndrwxr-xr-x 5 user user   60 Nov 27 21:52 qa2744\n---FILE-COUNT---\n/home/user/repo/README.md\n/home/user/repo/AGENTS.md\n/home/user/repo/.git/HEAD\n/home/user/rep",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "exitCode": 0,
+   "stdout": "total 21\ndrwxr-xr-x 5 user user  128 Nov 27 21:52 .\ndrwxr-xr-x 3 user user 4096 Nov 27 21:52 ..\ndrwxr-xr-x 8 user user 4096 Nov 27 21:52 .git\n-rw-r--r-- 1 user user  791 Nov 27 21:52 AGENTS.md\n-rw-r--r-- 1 user user   11 Nov 27 21:52 CLAUDE.md\n-rw-r--r-- 1 user user 6023 Nov 27 21:52 README.md\ndrwxr-xr-x 4 user user   60 Nov 27 21:52 qa2628\ndrwxr-xr-x 5 user user   60 Nov 27 21:52 qa2744\n---FILE-COUNT---\n/home/user/repo/README.md\n/home/user/repo/AGENTS.md\n/home/user/repo/.git/HEAD\n/home/user/rep",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:34.443Z",
+  "level": "info",
+  "message": "[DEBUG] Fetching base branch: main",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "baseBranch": "main",
+   "hasAuth": true,
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:34.527Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: connecting to existing sandbox sandboxId=\"iqjvd4wujsrbvflkctj6f\" prKey=\"fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3",
+   "consumer": "conversation",
+   "sandboxId": "iqjvd4wujsrbvflkctj6f",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:34.619Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: skipping destructive git sync for sandboxId=\"iqjvd4wujsrbvflkctj6f\" prKey=\"fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3\" \u2014 leaseCount=2 other consumer(s) active",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "teamId": "unknown",
+   "tenantId": "fc0715d2-368e-487c-be8a-e77f2edf342b"
+  },
+  "attributes": {
+   "organizationId": "fc0715d2-368e-487c-be8a-e77f2edf342b",
+   "prKey": "fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3",
+   "sandboxId": "iqjvd4wujsrbvflkctj6f",
+   "leaseCount": 2,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:34.622Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: connected to existing sandbox prKey=\"fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3\" consumer=\"conversation\" leaseId=\"90815b60-bb0f-4e61-83e3-1c6c0d63017b\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3",
+   "consumer": "conversation",
+   "leaseId": "90815b60-bb0f-4e61-83e3-1c6c0d63017b",
+   "sandboxId": "iqjvd4wujsrbvflkctj6f",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:35.210Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: acquire prKey=\"63484f7f-97ad-40f6-92a7-8d26147cbd0d:32c159b2-ac16-419b-9445-8ab275cabadc:222\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "63484f7f-97ad-40f6-92a7-8d26147cbd0d:32c159b2-ac16-419b-9445-8ab275cabadc:222",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:35.219Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"63484f7f-97ad-40f6-92a7-8d26147cbd0d:32c159b2-ac16-419b-9445-8ab275cabadc:222\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "63484f7f-97ad-40f6-92a7-8d26147cbd0d:32c159b2-ac16-419b-9445-8ab275cabadc:222",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:35.220Z",
+  "level": "info",
+  "message": "[DEBUG] Creating E2B sandbox for PR#222 branch=qa2744-conv",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "cloneUrl": "https://dev.azure.com/kodus/Kodus%20QA/_git/codex-athena",
+   "branch": "qa2744-conv",
+   "prNumber": 222,
+   "platform": "AZURE_REPOS",
+   "hasAuthToken": true,
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:35.481Z",
+  "level": "info",
+  "message": "[egress] route=fixed_ip (rollout_off)",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "63484f7f-97ad-40f6-92a7-8d26147cbd0d",
+   "teamId": "ab9558e8-3687-44fe-abe3-ef6be71022f6",
+   "tenantId": "63484f7f-97ad-40f6-92a7-8d26147cbd0d"
+  },
+  "attributes": {
+   "organizationId": "63484f7f-97ad-40f6-92a7-8d26147cbd0d",
+   "teamId": "ab9558e8-3687-44fe-abe3-ef6be71022f6",
+   "platform": "AZURE_REPOS",
+   "sandboxId": "itdgiafgc6qotxpeyzwo9",
+   "route": "fixed_ip",
+   "why": "rollout_off",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:35.481Z",
+  "level": "info",
+  "message": "[DEBUG] E2B sandbox created (template=true, id=itdgiafgc6qotxpeyzwo9)",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "usedTemplate": true,
+   "sandboxId": "itdgiafgc6qotxpeyzwo9",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:35.482Z",
+  "level": "info",
+  "message": "[DEBUG] No E2B_PROXY_HOST configured, skipping proxy setup",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:35.767Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: released leaseId=\"d42a78f7-2984-4c5e-80db-40062f7d22e5\" prKey=\"fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3\" leaseCount=1",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "leaseId": "d42a78f7-2984-4c5e-80db-40062f7d22e5",
+   "prKey": "fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3",
+   "leaseCount": 1,
+   "consumer": "conversation",
+   "heldMs": 1696,
+   "acquireToFirstUseMs": 0,
+   "lastUseToReleaseMs": 1558,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:36.012Z",
+  "level": "info",
+  "message": "[DEBUG] Base branch fetched successfully: origin/main",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:36.112Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: sandbox READY prKey=\"0a010c6e-6636-44b7-a741-a08d546d41c9:89319210:6\" consumer=\"conversation\" leaseId=\"54197873-e290-4637-869b-ce35e169ebb4\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "0a010c6e-6636-44b7-a741-a08d546d41c9:89319210:6",
+   "consumer": "conversation",
+   "leaseId": "54197873-e290-4637-869b-ce35e169ebb4",
+   "sandboxId": "itahqkchfgyzwfyn19sid",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:36.142Z",
+  "level": "info",
+  "message": "[DEBUG] Git clone starting: refspec=refs/pull/222/merge localRef=pr-head cloneUrl=https://dev.azure.com/kodus/Kodus%20QA/_git/codex-athena",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "refspec": "refs/pull/222/merge",
+   "localRef": "pr-head",
+   "cloneUrl": "https://dev.azure.com/kodus/Kodus%20QA/_git/codex-athena",
+   "platform": "AZURE_REPOS",
+   "hasProxy": false,
+   "hasAuth": true,
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:37.425Z",
+  "level": "info",
+  "message": "[DEBUG] Git clone finished: exitCode=0 stdout=58chars stderr=628chars",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "exitCode": 0,
+   "stdout": "Initialized empty Git repository in /home/user/repo/.git/\n",
+   "stderr": "hint: Using 'master' as the name for the initial branch. This default branch name\nhint: is subject to change. To configure the initial branch name to use in all\nhint: of your new repositories, which will suppress this warning, call:\nhint: \nhint: \tgit config --global init.defaultBranch <name>\nhint: \nhint: Names commonly chosen instead of 'master' are 'main', 'trunk' and\nhint: 'development'. The just-created branch can be renamed via this command:\nhint: \nhint: \tgit branch -m <name>\nFrom https://de",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:37.511Z",
+  "level": "info",
+  "message": "[DEBUG] Repo contents after clone (first 500 chars): total 17\ndrwxr-xr-x 4 user user  128 Nov 27 21:52 .\ndrwxr-xr-x 3 user user 4096 Nov 27 21:52 ..\ndrwxr-xr-x 8 user user 4096 Nov 27 21:52 .git\n-rw-r--r-- 1 user user  791 Nov 27 21:52 AGENTS.md\n-rw-r--r-- 1 user user   11 Nov 27 21:52 CLAUDE.md\n-rw-r--r-- 1 user user  985 Nov 27 21:52 README.md\ndrwxr-xr-x 5 user user   60 Nov 27 21:52 qa2744\n---FILE-COUNT---\n/home/user/repo/README.md\n/home/user/repo/AGENTS.md\n/home/user/repo/.git/HEAD\n/home/user/repo/.git/config\n/home/user/repo/.git/description\n/",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "exitCode": 0,
+   "stdout": "total 17\ndrwxr-xr-x 4 user user  128 Nov 27 21:52 .\ndrwxr-xr-x 3 user user 4096 Nov 27 21:52 ..\ndrwxr-xr-x 8 user user 4096 Nov 27 21:52 .git\n-rw-r--r-- 1 user user  791 Nov 27 21:52 AGENTS.md\n-rw-r--r-- 1 user user   11 Nov 27 21:52 CLAUDE.md\n-rw-r--r-- 1 user user  985 Nov 27 21:52 README.md\ndrwxr-xr-x 5 user user   60 Nov 27 21:52 qa2744\n---FILE-COUNT---\n/home/user/repo/README.md\n/home/user/repo/AGENTS.md\n/home/user/repo/.git/HEAD\n/home/user/repo/.git/config\n/home/user/repo/.git/description\n/",
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:37.511Z",
+  "level": "info",
+  "message": "[DEBUG] Fetching base branch: main",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "baseBranch": "main",
+   "hasAuth": true,
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:38.010Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: released leaseId=\"54197873-e290-4637-869b-ce35e169ebb4\" prKey=\"0a010c6e-6636-44b7-a741-a08d546d41c9:89319210:6\" leaseCount=0",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "leaseId": "54197873-e290-4637-869b-ce35e169ebb4",
+   "prKey": "0a010c6e-6636-44b7-a741-a08d546d41c9:89319210:6",
+   "leaseCount": 0,
+   "consumer": "conversation",
+   "heldMs": 1801,
+   "acquireToFirstUseMs": 0,
+   "lastUseToReleaseMs": 1629,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:38.016Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-27T21:57:38.011Z for sandboxId=\"itahqkchfgyzwfyn19sid\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "0a010c6e-6636-44b7-a741-a08d546d41c9:89319210:6",
+   "sandboxId": "itahqkchfgyzwfyn19sid",
+   "idleTimeoutMs": 300000,
+   "killAt": "2026-11-27T21:57:38.011Z",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:38.654Z",
+  "level": "info",
+  "message": "[DEBUG] Base branch fetched successfully: origin/main",
+  "component": "E2BSandboxService",
+  "metadata": {
+   "component": "E2BSandboxService",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "component": "E2BSandboxService",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:38.740Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: sandbox READY prKey=\"63484f7f-97ad-40f6-92a7-8d26147cbd0d:32c159b2-ac16-419b-9445-8ab275cabadc:222\" consumer=\"conversation\" leaseId=\"e4c372e5-cf98-4fff-8adf-50f892f03489\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "63484f7f-97ad-40f6-92a7-8d26147cbd0d:32c159b2-ac16-419b-9445-8ab275cabadc:222",
+   "consumer": "conversation",
+   "leaseId": "e4c372e5-cf98-4fff-8adf-50f892f03489",
+   "sandboxId": "itdgiafgc6qotxpeyzwo9",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:40.171Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: released leaseId=\"90815b60-bb0f-4e61-83e3-1c6c0d63017b\" prKey=\"fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3\" leaseCount=0",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "leaseId": "90815b60-bb0f-4e61-83e3-1c6c0d63017b",
+   "prKey": "fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3",
+   "leaseCount": 0,
+   "consumer": "conversation",
+   "heldMs": 5544,
+   "acquireToFirstUseMs": 1,
+   "lastUseToReleaseMs": 4710,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:40.176Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-27T21:57:40.171Z for sandboxId=\"iqjvd4wujsrbvflkctj6f\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "fc0715d2-368e-487c-be8a-e77f2edf342b:d7ecce61-5e9d-4e3d-b60a-67a295687125:3",
+   "sandboxId": "iqjvd4wujsrbvflkctj6f",
+   "idleTimeoutMs": 300000,
+   "killAt": "2026-11-27T21:57:40.171Z",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:41.526Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: released leaseId=\"e4c372e5-cf98-4fff-8adf-50f892f03489\" prKey=\"63484f7f-97ad-40f6-92a7-8d26147cbd0d:32c159b2-ac16-419b-9445-8ab275cabadc:222\" leaseCount=0",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "leaseId": "e4c372e5-cf98-4fff-8adf-50f892f03489",
+   "prKey": "63484f7f-97ad-40f6-92a7-8d26147cbd0d:32c159b2-ac16-419b-9445-8ab275cabadc:222",
+   "leaseCount": 0,
+   "consumer": "conversation",
+   "heldMs": 2781,
+   "acquireToFirstUseMs": 1,
+   "lastUseToReleaseMs": 2602,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:41.531Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-27T21:57:41.526Z for sandboxId=\"itdgiafgc6qotxpeyzwo9\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "63484f7f-97ad-40f6-92a7-8d26147cbd0d:32c159b2-ac16-419b-9445-8ab275cabadc:222",
+   "sandboxId": "itdgiafgc6qotxpeyzwo9",
+   "idleTimeoutMs": 300000,
+   "killAt": "2026-11-27T21:57:41.526Z",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:54.653Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: acquire prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:54.671Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: connecting to existing sandbox sandboxId=\"iys09hsxm1i2oppm6mxe4\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:56.505Z",
+  "level": "info",
+  "message": "[DEBUG] syncE2BSandboxRepo: synced reused sandbox to refspec=refs/pull/14/head",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "refspec": "refs/pull/14/head",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:56.509Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: connected to existing sandbox prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" consumer=\"conversation\" leaseId=\"d129b8b0-507c-4713-9824-1ee224b69db0\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "consumer": "conversation",
+   "leaseId": "d129b8b0-507c-4713-9824-1ee224b69db0",
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:52:56.772Z",
+  "level": "warn",
+  "message": "[CONVERSATION-TOOLS] exec output cut before the agent",
+  "component": "ConversationTools",
+  "metadata": {
+   "component": "ConversationTools",
+   "level": "warn",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "tool": "exec",
+   "field": "stdout",
+   "outputChars": 800,
+   "longestLine": 79,
+   "linesCut": 0,
+   "files": [],
+   "maxLine": 2000,
+   "component": "ConversationTools",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:53:12.365Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: released leaseId=\"d129b8b0-507c-4713-9824-1ee224b69db0\" prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14\" leaseCount=0",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "leaseId": "d129b8b0-507c-4713-9824-1ee224b69db0",
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "leaseCount": 0,
+   "consumer": "conversation",
+   "heldMs": 15850,
+   "acquireToFirstUseMs": 0,
+   "lastUseToReleaseMs": 7366,
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ },
+ {
+  "timestamp": "2026-11-27T21:53:12.369Z",
+  "level": "info",
+  "message": "SandboxLeaseManager: scheduled idle-kill at 2026-11-27T21:58:12.365Z for sandboxId=\"iys09hsxm1i2oppm6mxe4\"",
+  "component": "SandboxLeaseManager",
+  "metadata": {
+   "component": "SandboxLeaseManager",
+   "level": "info",
+   "organizationId": "unknown",
+   "teamId": "unknown",
+   "tenantId": "unknown"
+  },
+  "attributes": {
+   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:14",
+   "sandboxId": "iys09hsxm1i2oppm6mxe4",
+   "idleTimeoutMs": 300000,
+   "killAt": "2026-11-27T21:58:12.365Z",
+   "component": "SandboxLeaseManager",
+   "originalCorrelationId": null
+  }
+ }
+]
