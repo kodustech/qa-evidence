@@ -178,10 +178,10 @@
   "t": "2026-11-27T17:38:57.437Z",
   "level": "info",
   "component": "SandboxLeaseManager",
-  "message": "SandboxLeaseManager: acquire prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:13\" consumer=\"review\"",
+  "message": "SandboxLeaseManager: acquire prKey=\"<other-org>:1468015189:13\" consumer=\"review\"",
   "org": "unknown",
   "attributes": {
-   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:13",
+   "prKey": "<other-org>:1468015189:13",
    "consumer": "review",
    "component": "SandboxLeaseManager",
    "originalCorrelationId": null
@@ -191,10 +191,10 @@
   "t": "2026-11-27T17:38:57.449Z",
   "level": "info",
   "component": "SandboxLeaseManager",
-  "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:13\" consumer=\"review\"",
+  "message": "SandboxLeaseManager: creator path \u2014 creating sandbox prKey=\"<other-org>:1468015189:13\" consumer=\"review\"",
   "org": "unknown",
   "attributes": {
-   "prKey": "2a73f120-e3a5-4eea-9e44-3116fce23bfe:1468015189:13",
+   "prKey": "<other-org>:1468015189:13",
    "consumer": "review",
    "component": "SandboxLeaseManager",
    "originalCorrelationId": null
