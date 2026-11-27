@@ -1,0 +1,22 @@
+R12 code check at 144030af1
+--- FORGEJO mentions in libs/platform/application/use-cases/codeManagement/chatWithKodyFromGit.use-case.ts:
+320:                params.platformType === PlatformType.FORGEJO
+2930:        case PlatformType.FORGEJO:
+--- Unsupported platform lines:
+1767:                    message: `Unsupported platform type: ${params.platformType}`,
+1830:                    message: `Unsupported platform type: ${params.platformType} for head ref`,
+1857:                    message: `Unsupported platform type: ${params.platformType} for base ref`,
+1894:                    message: `Unsupported platform type: ${params.platformType} for default branch`,
+1961:                    message: `Unsupported platform type: ${params.platformType} for PR description`,
+2077:                    message: `Unsupported platform type: ${params.platformType}`,
+2443:                    message: `Unsupported platform type: ${platformType}`,
+--- commits touching file since 3e4c30393:
+2e48e741a perf(chat): open the PR sandbox on the first repository read (#2694)
+f27497b87 Merge remote-tracking branch 'origin/main' into fix/business-logic-gaps
+df1388d05 fix(business-validation): read Jira Server links, say whether a re-check changed anything
+7f25e73d2 Merge origin/main into feat/2583-ultra-review
+c9fe580a1 feat(review-commands): --heavy and --ultra need write access to the repository
+--- forgejo handler mention forwarding:
+24:import { ChatWithKodyFromGitUseCase } from '@libs/platform/application/use-cases/codeManagement/chatWithKodyFromGit.use-case';
+59:        private readonly chatWithKodyFromGitUseCase: ChatWithKodyFromGitUseCase,
+719:                this.chatWithKodyFromGitUseCase.execute(params);
