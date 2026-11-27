@@ -1,0 +1,10 @@
+S50 (GitHub claude-athena#33, default BYOK)
+Read-only queries on QA Mongo observability_logs_ts, 2026-11-27. org ids are the slot-a QA test orgs.
+
+## [structured-output] lines (expected 0)
+query: org=1376936a-961c-4267-862b-cbc19d309ce4 window 2026-11-27T20:28:00Z..2026-11-27T20:32:00Z message =~ /structured-output/
+result: {"total": 71, "hits": 0}
+
+## LLM-ERROR / failover lines (expected 0)
+query: org=1376936a-961c-4267-862b-cbc19d309ce4 window 2026-11-27T20:28:00Z..2026-11-27T20:32:00Z message =~ /LLM-ERROR|model-failover/
+result: {"total": 71, "hits": 0}
