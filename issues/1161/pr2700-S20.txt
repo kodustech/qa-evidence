@@ -1,0 +1,361 @@
+S20 — setup.sh non-interactive, fresh config. Sandbox: env -i HOME=harness/scratch/<case> PATH=/usr/bin:/bin:/usr/sbin:/sbin (no op, no direnv), bash GNU bash, version 3.2.57(1)-release (arm64-apple-darwin26)
+Prompt order merge: DO token, license, GH token, LLM provider, model, LLM key, [base URL only for openai/anthropic(+_compatible)], embeddings key, installer path
+Prompt order parent: DO token, license, GH token, OpenAI-compatible key, base URL, model, installer path
+
+################ CASE 1 (merge) answers:
+dop_fake$
+$
+$
+google_gemini$
+gemini-3.5-flash$
+fake-ai-studio$
+$
+/nonexistent$
+--- run (m) setup.sh 
+
+╭─ Kodus self-hosted dev setup ─╮
+
+  Saved to ~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/m-s20-1/.kodus-dev/config (chmod 600).
+  Re-running: press Enter to keep the current value; type to replace it.
+
+
+
+DigitalOcean API token
+  https://cloud.digitalocean.com/account/api — scopes: droplet:create/read/delete + ssh_key:create/read/delete
+  → 
+
+Self-hosted license key
+  Optional. Empty = stack boots in the installer's default mode (paid features locked).
+  → 
+
+GitHub dev token (PAT)
+  Optional. If set, provision.sh auto-configures the GitHub integration after signup.
+  → 
+
+LLM provider
+  One of: openai, openai_compatible, anthropic, anthropic_compatible, google_gemini, google_vertex, or auto (no env model, as before). Team default: openai_compatible (Kimi on Moonshot). Gemini: google_gemini with an AI Studio key, not openai_compatible.
+  [openai_compatible] → 
+LLM model
+  The model id the provider serves, e.g. kimi-k2.6 (Moonshot), gpt-5.4 (openai), gemini-3.5-flash (google_gemini).
+  → 
+LLM API key (google_gemini)
+  Required for Kodus to review PRs. AI Studio key from https://aistudio.google.com/apikey.
+  → 
+
+OpenAI API key for embeddings (optional)
+  Written to API_OPEN_AI_API_KEY. Empty = no embeddings (review dedup falls back to text matching).
+  → 
+
+Path to kodus-installer checkout
+  Where the local installer checkout lives (the script rsyncs it onto the droplet).
+  [~/.kodus-qa-runs/2026-11-27/pr-2700/m/../kodus-installer] → [warn]   Directory /nonexistent does not exist yet. That's fine — provision.sh will complain if you try to provision before cloning.
+[ok]     Saved to ~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/m-s20-1/.kodus-dev/config
+
+direnv not detected. Install with 'brew install direnv' for auto-load (optional).
+Without direnv: scripts/selfhosted/*.sh reads ~/.kodus-dev/config automatically.
+
+Done. Next step:
+
+  pnpm run selfhosted:provision
+
+--- exit=0
+--- config AFTER
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+API_LLM_PROVIDER=google_gemini
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+API_LLM_API_KEY=fake-ai-studio
+API_LLM_BASE_URL=
+API_LLM_REASONING_EFFORT=
+API_OPEN_AI_API_KEY=
+KODUS_INSTALLER_PATH=/nonexistent
+
+################ CASE 2 (merge) answers:
+dop_fake$
+$
+$
+openai_compatible$
+gemini-3.5-flash$
+fake-ai-studio$
+https://generativelanguage.googleapis.com/v1beta/openai/$
+$
+/nonexistent$
+--- run (m) setup.sh 
+
+╭─ Kodus self-hosted dev setup ─╮
+
+  Saved to ~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/m-s20-2/.kodus-dev/config (chmod 600).
+  Re-running: press Enter to keep the current value; type to replace it.
+
+
+
+DigitalOcean API token
+  https://cloud.digitalocean.com/account/api — scopes: droplet:create/read/delete + ssh_key:create/read/delete
+  → 
+
+Self-hosted license key
+  Optional. Empty = stack boots in the installer's default mode (paid features locked).
+  → 
+
+GitHub dev token (PAT)
+  Optional. If set, provision.sh auto-configures the GitHub integration after signup.
+  → 
+
+LLM provider
+  One of: openai, openai_compatible, anthropic, anthropic_compatible, google_gemini, google_vertex, or auto (no env model, as before). Team default: openai_compatible (Kimi on Moonshot). Gemini: google_gemini with an AI Studio key, not openai_compatible.
+  [openai_compatible] → 
+LLM model
+  The model id the provider serves, e.g. kimi-k2.6 (Moonshot), gpt-5.4 (openai), gemini-3.5-flash (google_gemini).
+  [kimi-k2.6] → 
+LLM API key (openai_compatible)
+  Required for Kodus to review PRs. Team default: Moonshot key from https://platform.moonshot.ai.
+  → 
+
+LLM base URL (openai_compatible)
+  Required: the provider's API root, e.g. https://api.moonshot.ai/v1.
+  [https://api.moonshot.ai/v1] → [warn]   Gemini's OpenAI endpoint drops the thought signatures Gemini 3 needs for tool calls. Use API_LLM_PROVIDER=google_gemini.
+
+OpenAI API key for embeddings (optional)
+  Written to API_OPEN_AI_API_KEY. Empty = no embeddings (review dedup falls back to text matching).
+  → 
+
+Path to kodus-installer checkout
+  Where the local installer checkout lives (the script rsyncs it onto the droplet).
+  [~/.kodus-qa-runs/2026-11-27/pr-2700/m/../kodus-installer] → [warn]   Directory /nonexistent does not exist yet. That's fine — provision.sh will complain if you try to provision before cloning.
+[ok]     Saved to ~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/m-s20-2/.kodus-dev/config
+
+direnv not detected. Install with 'brew install direnv' for auto-load (optional).
+Without direnv: scripts/selfhosted/*.sh reads ~/.kodus-dev/config automatically.
+
+Done. Next step:
+
+  pnpm run selfhosted:provision
+
+--- exit=0
+--- config AFTER
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+API_LLM_API_KEY=fake-ai-studio
+API_LLM_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+API_LLM_REASONING_EFFORT=
+API_OPEN_AI_API_KEY=
+KODUS_INSTALLER_PATH=/nonexistent
+
+################ CASE 3 (merge) answers:
+dop_fake$
+$
+$
+gemini$
+--- run (m) setup.sh 
+
+╭─ Kodus self-hosted dev setup ─╮
+
+  Saved to ~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/m-s20-3/.kodus-dev/config (chmod 600).
+  Re-running: press Enter to keep the current value; type to replace it.
+
+
+
+DigitalOcean API token
+  https://cloud.digitalocean.com/account/api — scopes: droplet:create/read/delete + ssh_key:create/read/delete
+  → 
+
+Self-hosted license key
+  Optional. Empty = stack boots in the installer's default mode (paid features locked).
+  → 
+
+GitHub dev token (PAT)
+  Optional. If set, provision.sh auto-configures the GitHub integration after signup.
+  → 
+
+LLM provider
+  One of: openai, openai_compatible, anthropic, anthropic_compatible, google_gemini, google_vertex, or auto (no env model, as before). Team default: openai_compatible (Kimi on Moonshot). Gemini: google_gemini with an AI Studio key, not openai_compatible.
+  [openai_compatible] → [warn]   API_LLM_PROVIDER must be one of: openai openai_compatible anthropic anthropic_compatible google_gemini google_vertex (got 'gemini'). Aborting.
+--- exit=1
+--- no config file
+
+################ CASE 4 (merge) answers:
+dop_fake$
+$
+$
+openai_compatible$
+kimi-k2.6$
+fake-moon$
+ $
+$
+/nonexistent$
+--- run (m) setup.sh 
+
+╭─ Kodus self-hosted dev setup ─╮
+
+  Saved to ~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/m-s20-4/.kodus-dev/config (chmod 600).
+  Re-running: press Enter to keep the current value; type to replace it.
+
+
+
+DigitalOcean API token
+  https://cloud.digitalocean.com/account/api — scopes: droplet:create/read/delete + ssh_key:create/read/delete
+  → 
+
+Self-hosted license key
+  Optional. Empty = stack boots in the installer's default mode (paid features locked).
+  → 
+
+GitHub dev token (PAT)
+  Optional. If set, provision.sh auto-configures the GitHub integration after signup.
+  → 
+
+LLM provider
+  One of: openai, openai_compatible, anthropic, anthropic_compatible, google_gemini, google_vertex, or auto (no env model, as before). Team default: openai_compatible (Kimi on Moonshot). Gemini: google_gemini with an AI Studio key, not openai_compatible.
+  [openai_compatible] → 
+LLM model
+  The model id the provider serves, e.g. kimi-k2.6 (Moonshot), gpt-5.4 (openai), gemini-3.5-flash (google_gemini).
+  [kimi-k2.6] → 
+LLM API key (openai_compatible)
+  Required for Kodus to review PRs. Team default: Moonshot key from https://platform.moonshot.ai.
+  → 
+
+LLM base URL (openai_compatible)
+  Required: the provider's API root, e.g. https://api.moonshot.ai/v1.
+  [https://api.moonshot.ai/v1] → 
+OpenAI API key for embeddings (optional)
+  Written to API_OPEN_AI_API_KEY. Empty = no embeddings (review dedup falls back to text matching).
+  → 
+
+Path to kodus-installer checkout
+  Where the local installer checkout lives (the script rsyncs it onto the droplet).
+  [~/.kodus-qa-runs/2026-11-27/pr-2700/m/../kodus-installer] → [warn]   Directory /nonexistent does not exist yet. That's fine — provision.sh will complain if you try to provision before cloning.
+[ok]     Saved to ~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/m-s20-4/.kodus-dev/config
+
+direnv not detected. Install with 'brew install direnv' for auto-load (optional).
+Without direnv: scripts/selfhosted/*.sh reads ~/.kodus-dev/config automatically.
+
+Done. Next step:
+
+  pnpm run selfhosted:provision
+
+--- exit=0
+--- config AFTER
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+API_LLM_PROVIDER=openai_compatible
+API_LLM_PROVIDER_MODEL=kimi-k2.6
+API_LLM_API_KEY=fake-moon
+API_LLM_BASE_URL=https://api.moonshot.ai/v1
+API_LLM_REASONING_EFFORT=
+API_OPEN_AI_API_KEY=
+KODUS_INSTALLER_PATH=/nonexistent
+
+################ CASE 4b (merge) answers:
+dop_fake$
+$
+$
+anthropic_compatible$
+claude-x$
+fake-k$
+$
+$
+/nonexistent$
+--- run (m) setup.sh 
+
+╭─ Kodus self-hosted dev setup ─╮
+
+  Saved to ~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/m-s20-4b/.kodus-dev/config (chmod 600).
+  Re-running: press Enter to keep the current value; type to replace it.
+
+
+
+DigitalOcean API token
+  https://cloud.digitalocean.com/account/api — scopes: droplet:create/read/delete + ssh_key:create/read/delete
+  → 
+
+Self-hosted license key
+  Optional. Empty = stack boots in the installer's default mode (paid features locked).
+  → 
+
+GitHub dev token (PAT)
+  Optional. If set, provision.sh auto-configures the GitHub integration after signup.
+  → 
+
+LLM provider
+  One of: openai, openai_compatible, anthropic, anthropic_compatible, google_gemini, google_vertex, or auto (no env model, as before). Team default: openai_compatible (Kimi on Moonshot). Gemini: google_gemini with an AI Studio key, not openai_compatible.
+  [openai_compatible] → 
+LLM model
+  The model id the provider serves, e.g. kimi-k2.6 (Moonshot), gpt-5.4 (openai), gemini-3.5-flash (google_gemini).
+  → 
+LLM API key (anthropic_compatible)
+  Required for Kodus to review PRs.
+  → 
+
+LLM base URL (anthropic_compatible)
+  Required: the provider's API root, e.g. https://api.moonshot.ai/v1.
+  → [warn]   API_LLM_PROVIDER=anthropic_compatible needs a base URL. Aborting.
+--- exit=1
+--- no config file
+
+NOTE case 4: openai_compatible always pre-fills base URL default (https://api.moonshot.ai/v1) when empty, and read -r strips whitespace, so Enter keeps the default: an empty base URL for openai_compatible is not reachable by input. Abort path exercised via anthropic_compatible (case 4b), which has no default.
+
+################ PARENT answers:
+dop_fake$
+$
+$
+fake-ai-studio$
+https://generativelanguage.googleapis.com/v1beta/openai/$
+gemini-3.5-flash$
+/nonexistent$
+--- run (p) setup.sh 
+
+╭─ Kodus self-hosted dev setup ─╮
+
+  Saved to ~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/p-s20-p/.kodus-dev/config (chmod 600).
+  Re-running: press Enter to keep the current value; type to replace it.
+
+
+
+DigitalOcean API token
+  https://cloud.digitalocean.com/account/api — scopes: droplet:create/read/delete + ssh_key:create/read/delete
+  → 
+
+Self-hosted license key
+  Optional. Empty = stack boots in the installer's default mode (paid features locked).
+  → 
+
+GitHub dev token (PAT)
+  Optional. If set, provision.sh auto-configures the GitHub integration after signup.
+  → 
+
+OpenAI-compatible API key
+  Required for Kodus to review PRs. Team default uses Kimi/Moonshot — get a key at https://platform.moonshot.ai. For native OpenAI, use https://platform.openai.com/api-keys.
+  → 
+
+OpenAI-compatible base URL
+  Team default: https://api.moonshot.ai/v1 (Moonshot for Kimi). For native OpenAI, set to https://api.openai.com/v1 (or leave empty — the app treats empty as OpenAI default).
+  [https://api.moonshot.ai/v1] → 
+LLM model
+  Team default: kimi-k2.6 (Moonshot Kimi K2.6). For OpenAI, use 'gpt-4o' or 'auto' to let Kodus router pick.
+  [kimi-k2.6] → 
+Path to kodus-installer checkout
+  Where the local installer checkout lives (the script rsyncs it onto the droplet).
+  [~/.kodus-qa-runs/2026-11-27/pr-2700/p/../kodus-installer] → [warn]   Directory /nonexistent does not exist yet. That's fine — provision.sh will complain if you try to provision before cloning.
+[ok]     Saved to ~/.kodus-qa-runs/2026-11-27/pr-2700/harness/scratch/p-s20-p/.kodus-dev/config
+
+direnv not detected. Install with 'brew install direnv' for auto-load (optional).
+Without direnv: scripts/selfhosted/*.sh reads ~/.kodus-dev/config automatically.
+
+Done. Next step:
+
+  pnpm run selfhosted:provision
+
+--- exit=0
+--- config AFTER
+DIGITALOCEAN_TOKEN=dop_fake
+SH_LICENSE_KEY=
+GH_DEV_TOKEN=
+API_OPEN_AI_API_KEY=fake-ai-studio
+API_OPENAI_FORCE_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+API_LLM_PROVIDER_MODEL=gemini-3.5-flash
+KODUS_INSTALLER_PATH=/nonexistent
