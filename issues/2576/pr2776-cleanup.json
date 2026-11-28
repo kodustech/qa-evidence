@@ -1,0 +1,25 @@
+[
+  {
+    "name": "team",
+    "at": "2026-11-28T00:39:33.825Z",
+    "status": 200,
+    "teamId": "bcb3ac33-2a42-40dd-9cac-d21848a42823"
+  },
+  {
+    "name": "cleanup.delete",
+    "at": "2026-11-28T00:39:34.373Z",
+    "status": 204,
+    "body": ""
+  },
+  {
+    "name": "cleanup.global default",
+    "at": "2026-11-28T00:39:35.213Z",
+    "status": 201,
+    "after": {
+      "global": {
+        "value": true,
+        "level": "default"
+      }
+    }
+  }
+]

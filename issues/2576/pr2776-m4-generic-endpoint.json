@@ -1,0 +1,150 @@
+[
+  {
+    "name": "team",
+    "at": "2026-11-28T00:37:20.084Z",
+    "status": 200,
+    "teamId": "bcb3ac33-2a42-40dd-9cac-d21848a42823"
+  },
+  {
+    "name": "m4.seed-false",
+    "at": "2026-11-28T00:37:20.508Z",
+    "status": 201,
+    "body": {
+      "data": true,
+      "statusCode": 201,
+      "type": "Boolean"
+    }
+  },
+  {
+    "name": "m4.before",
+    "at": "2026-11-28T00:37:20.943Z",
+    "global": {
+      "value": false,
+      "level": "global",
+      "overriddenValue": true,
+      "overriddenLevel": "default"
+    }
+  },
+  {
+    "name": "m4.generic string \"false\"",
+    "at": "2026-11-28T00:37:21.626Z",
+    "status": 400,
+    "message": "configValue.conversation.implicitReplies must be a boolean value",
+    "after": {
+      "global": {
+        "value": false,
+        "level": "global",
+        "overriddenValue": true,
+        "overriddenLevel": "default"
+      }
+    }
+  },
+  {
+    "name": "m4.generic string \"no\"",
+    "at": "2026-11-28T00:37:22.232Z",
+    "status": 400,
+    "message": "configValue.conversation.implicitReplies must be a boolean value",
+    "after": {
+      "global": {
+        "value": false,
+        "level": "global",
+        "overriddenValue": true,
+        "overriddenLevel": "default"
+      }
+    }
+  },
+  {
+    "name": "m4.generic string \"off\"",
+    "at": "2026-11-28T00:37:22.861Z",
+    "status": 400,
+    "message": "configValue.conversation.implicitReplies must be a boolean value",
+    "after": {
+      "global": {
+        "value": false,
+        "level": "global",
+        "overriddenValue": true,
+        "overriddenLevel": "default"
+      }
+    }
+  },
+  {
+    "name": "m4.generic [false]",
+    "at": "2026-11-28T00:37:23.537Z",
+    "status": 400,
+    "message": "configValue.conversation.implicitReplies must be a boolean value",
+    "after": {
+      "global": {
+        "value": false,
+        "level": "global",
+        "overriddenValue": true,
+        "overriddenLevel": "default"
+      }
+    }
+  },
+  {
+    "name": "m4.generic null",
+    "at": "2026-11-28T00:37:24.191Z",
+    "status": 400,
+    "message": "configValue.conversation.implicitReplies must be a boolean value",
+    "after": {
+      "global": {
+        "value": false,
+        "level": "global",
+        "overriddenValue": true,
+        "overriddenLevel": "default"
+      }
+    }
+  },
+  {
+    "name": "m4.generic conversation \"off\"",
+    "at": "2026-11-28T00:37:24.816Z",
+    "status": 400,
+    "message": "configValue.conversation must be an object, configValue.nested property conversation must be either object or array",
+    "after": {
+      "global": {
+        "value": false,
+        "level": "global",
+        "overriddenValue": true,
+        "overriddenLevel": "default"
+      }
+    }
+  },
+  {
+    "name": "m4.generic unknown key",
+    "at": "2026-11-28T00:37:25.484Z",
+    "status": 400,
+    "message": "configValue.property notASetting should not exist",
+    "after": {
+      "global": {
+        "value": false,
+        "level": "global",
+        "overriddenValue": true,
+        "overriddenLevel": "default"
+      }
+    }
+  },
+  {
+    "name": "m4.generic boolean true",
+    "at": "2026-11-28T00:37:26.113Z",
+    "status": 201,
+    "after": {
+      "global": {
+        "value": true,
+        "level": "default"
+      }
+    }
+  },
+  {
+    "name": "m4.generic boolean false",
+    "at": "2026-11-28T00:37:26.778Z",
+    "status": 201,
+    "after": {
+      "global": {
+        "value": false,
+        "level": "global",
+        "overriddenValue": true,
+        "overriddenLevel": "default"
+      }
+    }
+  }
+]

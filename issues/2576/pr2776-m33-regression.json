@@ -1,0 +1,71 @@
+[
+  {
+    "name": "team",
+    "at": "2026-11-28T00:39:11.980Z",
+    "status": 200,
+    "teamId": "bcb3ac33-2a42-40dd-9cac-d21848a42823"
+  },
+  {
+    "name": "extra.repo noop",
+    "at": "2026-11-28T00:39:12.248Z",
+    "status": 201
+  },
+  {
+    "name": "extra.global true",
+    "at": "2026-11-28T00:39:12.511Z",
+    "status": 201
+  },
+  {
+    "name": "extra.repo off",
+    "at": "2026-11-28T00:39:14.955Z",
+    "status": 201,
+    "after": {
+      "global": {
+        "value": true,
+        "level": "default"
+      },
+      "repo": {
+        "value": false,
+        "level": "repository",
+        "overriddenValue": true,
+        "overriddenLevel": "default"
+      }
+    }
+  },
+  {
+    "name": "extra.repo inherit",
+    "at": "2026-11-28T00:39:17.298Z",
+    "status": 201,
+    "after": {
+      "global": {
+        "value": true,
+        "level": "default"
+      },
+      "repo": {
+        "value": true,
+        "level": "default"
+      }
+    }
+  },
+  {
+    "name": "extra.logs",
+    "at": "2026-11-28T00:39:20.578Z",
+    "entries": [
+      [
+        "2026-11-28T00:39:12.432Z",
+        "global",
+        "User preview@kodus.io changed Implicit Replies from disabled to enabled"
+      ],
+      [
+        "2026-11-28T00:39:14.280Z",
+        "repository",
+        "User preview@kodus.io changed Implicit Replies from enabled to disabled"
+      ],
+      [
+        "2026-11-28T00:39:16.649Z",
+        "repository",
+        "User preview@kodus.io changed Implicit Replies from disabled to enabled"
+      ]
+    ]
+  }
+]

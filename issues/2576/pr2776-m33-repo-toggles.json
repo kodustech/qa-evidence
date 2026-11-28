@@ -1,0 +1,113 @@
+[
+  {
+    "name": "team",
+    "at": "2026-11-28T00:38:37.862Z",
+    "status": 200,
+    "teamId": "bcb3ac33-2a42-40dd-9cac-d21848a42823"
+  },
+  {
+    "name": "m33.global-false",
+    "at": "2026-11-28T00:38:38.114Z",
+    "status": 201,
+    "body": {
+      "data": true,
+      "statusCode": 201,
+      "type": "Boolean"
+    }
+  },
+  {
+    "name": "m33.repo on",
+    "at": "2026-11-28T00:38:39.295Z",
+    "status": 201,
+    "after": {
+      "global": {
+        "value": false,
+        "level": "global",
+        "overriddenValue": true,
+        "overriddenLevel": "default"
+      },
+      "repo": {
+        "value": true,
+        "level": "repository",
+        "overriddenValue": false,
+        "overriddenLevel": "global"
+      }
+    }
+  },
+  {
+    "name": "m33.repo back to inherited (false)",
+    "at": "2026-11-28T00:38:42.089Z",
+    "status": 201,
+    "after": {
+      "global": {
+        "value": false,
+        "level": "global",
+        "overriddenValue": true,
+        "overriddenLevel": "default"
+      },
+      "repo": {
+        "value": false,
+        "level": "global",
+        "overriddenValue": true,
+        "overriddenLevel": "default"
+      }
+    }
+  },
+  {
+    "name": "m33.repo on again",
+    "at": "2026-11-28T00:38:44.468Z",
+    "status": 201,
+    "after": {
+      "global": {
+        "value": false,
+        "level": "global",
+        "overriddenValue": true,
+        "overriddenLevel": "default"
+      },
+      "repo": {
+        "value": true,
+        "level": "repository",
+        "overriddenValue": false,
+        "overriddenLevel": "global"
+      }
+    }
+  },
+  {
+    "name": "m33.repo back to inherited again",
+    "at": "2026-11-28T00:38:46.804Z",
+    "status": 201,
+    "after": {
+      "global": {
+        "value": false,
+        "level": "global",
+        "overriddenValue": true,
+        "overriddenLevel": "default"
+      },
+      "repo": {
+        "value": false,
+        "level": "global",
+        "overriddenValue": true,
+        "overriddenLevel": "default"
+      }
+    }
+  },
+  {
+    "name": "m33.logs",
+    "at": "2026-11-28T00:38:51.884Z",
+    "status": 200,
+    "entries": [
+      {
+        "descriptions": []
+      },
+      {
+        "descriptions": []
+      },
+      {
+        "descriptions": []
+      },
+      {
+        "descriptions": []
+      }
+    ]
+  }
+]

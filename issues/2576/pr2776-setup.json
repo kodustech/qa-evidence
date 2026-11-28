@@ -1,0 +1,68 @@
+[
+  {
+    "name": "team",
+    "at": "2026-11-28T00:38:01.044Z",
+    "status": 200,
+    "teamId": "bcb3ac33-2a42-40dd-9cac-d21848a42823"
+  },
+  {
+    "name": "setup.auth",
+    "at": "2026-11-28T00:38:03.718Z",
+    "status": 201,
+    "body": {
+      "data": {
+        "success": true,
+        "status": "SUCCESS"
+      },
+      "statusCode": 201,
+      "type": "Object"
+    }
+  },
+  {
+    "name": "setup.list",
+    "at": "2026-11-28T00:38:05.659Z",
+    "status": 200,
+    "count": 31,
+    "target": {
+      "id": "80671692",
+      "name": "sartorijr/teste",
+      "full_name": "sartorijr/teste",
+      "http_url": "https://gitlab.com/sartorijr/teste.git",
+      "avatar_url": "https://secure.gravatar.com/avatar/b2630c05f6d490e3dd9f7bf214b20d29c96c172331619a9fe1d75dcf58829776?s=80&d=identicon",
+      "organizationName": "Junior Sartori",
+      "visibility": "private",
+      "default_branch": "main",
+      "lastActivityAt": "2026-03-27T20:56:24.064Z",
+      "archived": false,
+      "fork": false,
+      "mirror": false
+    }
+  },
+  {
+    "name": "setup.save",
+    "at": "2026-11-28T00:38:05.954Z",
+    "status": 201,
+    "body": {
+      "data": {
+        "status": true
+      },
+      "statusCode": 201,
+      "type": "Object"
+    }
+  },
+  {
+    "name": "setup.sync",
+    "at": "2026-11-28T00:38:06.180Z",
+    "status": 201
+  },
+  {
+    "name": "setup.repos",
+    "at": "2026-11-28T00:38:06.741Z",
+    "repos": [
+      {
+        "id": "80671692",
+        "name": "sartorijr/teste"
+      }
+    ]
+  }
+]

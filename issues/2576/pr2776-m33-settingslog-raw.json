@@ -1,0 +1,162 @@
+{
+  "data": {
+    "logs": [
+      {
+        "_uuid": "6b0a22963d1419ef0c29ccef",
+        "_organizationId": "5cb1b592-d143-40aa-b8f0-a916bb717646",
+        "_teamId": "bcb3ac33-2a42-40dd-9cac-d21848a42823",
+        "_action": "edit",
+        "_userInfo": {
+          "userId": "9853cdba-93d2-470f-b271-5e42d3d3700f",
+          "userEmail": "preview@kodus.io"
+        },
+        "_configLevel": "repository",
+        "_repository": {
+          "id": "80671692",
+          "name": "sartorijr/teste",
+          "configs": {
+            "conversation": {
+              "implicitReplies": true
+            }
+          },
+          "isSelected": true,
+          "directories": []
+        },
+        "_changedData": [
+          {
+            "actionDescription": "Configuration Updated",
+            "previousValue": {
+              "conversation": {
+                "implicitReplies": true
+              }
+            },
+            "currentValue": {
+              "conversation": {
+                "implicitReplies": false
+              }
+            },
+            "description": "User preview@kodus.io changed Implicit Replies from enabled to disabled"
+          }
+        ],
+        "_createdAt": "2026-11-28T00:38:46.183Z",
+        "_updatedAt": "2026-11-28T00:38:46.183Z"
+      },
+      {
+        "_uuid": "6b0a22933d1419ef0c29cce4",
+        "_organizationId": "5cb1b592-d143-40aa-b8f0-a916bb717646",
+        "_teamId": "bcb3ac33-2a42-40dd-9cac-d21848a42823",
+        "_action": "edit",
+        "_userInfo": {
+          "userId": "9853cdba-93d2-470f-b271-5e42d3d3700f",
+          "userEmail": "preview@kodus.io"
+        },
+        "_configLevel": "repository",
+        "_repository": {
+          "id": "80671692",
+          "name": "sartorijr/teste",
+          "isSelected": true,
+          "directories": []
+        },
+        "_changedData": [
+          {
+            "actionDescription": "Configuration Updated",
+            "previousValue": {
+              "conversation": {
+                "implicitReplies": false
+              }
+            },
+            "currentValue": {
+              "conversation": {
+                "implicitReplies": true
+              }
+            },
+            "description": "User preview@kodus.io changed Implicit Replies from disabled to enabled"
+          }
+        ],
+        "_createdAt": "2026-11-28T00:38:43.815Z",
+        "_updatedAt": "2026-11-28T00:38:43.815Z"
+      },
+      {
+        "_uuid": "6b0a22903d1419ef0c29ccdf",
+        "_organizationId": "5cb1b592-d143-40aa-b8f0-a916bb717646",
+        "_teamId": "bcb3ac33-2a42-40dd-9cac-d21848a42823",
+        "_action": "edit",
+        "_userInfo": {
+          "userId": "9853cdba-93d2-470f-b271-5e42d3d3700f",
+          "userEmail": "preview@kodus.io"
+        },
+        "_configLevel": "repository",
+        "_repository": {
+          "id": "80671692",
+          "name": "sartorijr/teste",
+          "configs": {
+            "conversation": {
+              "implicitReplies": true
+            }
+          },
+          "isSelected": true,
+          "directories": []
+        },
+        "_changedData": [
+          {
+            "actionDescription": "Configuration Updated",
+            "previousValue": {
+              "conversation": {
+                "implicitReplies": true
+              }
+            },
+            "currentValue": {
+              "conversation": {
+                "implicitReplies": false
+              }
+            },
+            "description": "User preview@kodus.io changed Implicit Replies from enabled to disabled"
+          }
+        ],
+        "_createdAt": "2026-11-28T00:38:40.985Z",
+        "_updatedAt": "2026-11-28T00:38:40.985Z"
+      },
+      {
+        "_uuid": "6b0a228e3d1419ef0c29ccd4",
+        "_organizationId": "5cb1b592-d143-40aa-b8f0-a916bb717646",
+        "_teamId": "bcb3ac33-2a42-40dd-9cac-d21848a42823",
+        "_action": "edit",
+        "_userInfo": {
+          "userId": "9853cdba-93d2-470f-b271-5e42d3d3700f",
+          "userEmail": "preview@kodus.io"
+        },
+        "_configLevel": "repository",
+        "_repository": {
+          "id": "80671692",
+          "name": "sartorijr/teste",
+          "isSelected": true,
+          "directories": []
+        },
+        "_changedData": [
+          {
+            "actionDescription": "Configuration Updated",
+            "previousValue": {
+              "conversation": {
+                "implicitReplies": false
+              }
+            },
+            "currentValue": {
+              "conversation": {
+                "implicitReplies": true
+              }
+            },
+            "description": "User preview@kodus.io changed Implicit Replies from disabled to enabled"
+          }
+        ],
+        "_createdAt": "2026-11-28T00:38:38.290Z",
+        "_updatedAt": "2026-11-28T00:38:38.290Z"
+      }
+    ],
+    "total": 4,
+    "page": 1,
+    "limit": 100,
+    "totalPages": 1
+  },
+  "statusCode": 200,
+  "type": "Object"
+}
