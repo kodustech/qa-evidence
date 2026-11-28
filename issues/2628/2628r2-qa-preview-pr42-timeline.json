@@ -1,0 +1,183 @@
+{
+ "pr": "https://github.com/kodus-olimpo/claude-athena/pull/42",
+ "executionId": "f69f5cb0-e723-42ab-bcd7-982f92efe715",
+ "reviewedCommitSha": "6812b6a43355993bd5ad8d5245c0d3ed4ad14824",
+ "timeline": [
+  {
+   "stageName": "Kody Review Started",
+   "status": "success",
+   "createdAt": "2026-11-28T00:41:51.247Z",
+   "finishedAt": null,
+   "message": ""
+  },
+  {
+   "stageName": "ValidatePrerequisitesStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:41:51.914Z",
+   "finishedAt": "2026-11-28T00:41:51.959Z",
+   "message": ""
+  },
+  {
+   "stageName": "ValidateNewCommitsStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:41:51.969Z",
+   "finishedAt": "2026-11-28T00:41:52.196Z",
+   "message": ""
+  },
+  {
+   "stageName": "ResolveConfigStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:41:52.205Z",
+   "finishedAt": "2026-11-28T00:41:52.834Z",
+   "message": ""
+  },
+  {
+   "stageName": "ValidateConfigStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:41:52.845Z",
+   "finishedAt": "2026-11-28T00:41:52.867Z",
+   "message": ""
+  },
+  {
+   "stageName": "AssessPrRiskStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:41:52.877Z",
+   "finishedAt": "2026-11-28T00:41:52.885Z",
+   "message": ""
+  },
+  {
+   "stageName": "FetchChangedFilesStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:41:52.899Z",
+   "finishedAt": "2026-11-28T00:41:53.186Z",
+   "message": ""
+  },
+  {
+   "stageName": "LoadExternalContextStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:41:53.198Z",
+   "finishedAt": "2026-11-28T00:41:53.230Z",
+   "message": ""
+  },
+  {
+   "stageName": "LoadCiEvidenceStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:41:53.240Z",
+   "finishedAt": "2026-11-28T00:41:53.247Z",
+   "message": ""
+  },
+  {
+   "stageName": "InitialCommentStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:41:53.260Z",
+   "finishedAt": "2026-11-28T00:41:54.478Z",
+   "message": ""
+  },
+  {
+   "stageName": "BusinessLogicValidationStage",
+   "status": "skipped",
+   "createdAt": "2026-11-28T00:41:54.490Z",
+   "finishedAt": "2026-11-28T00:41:54.563Z",
+   "message": "Skipped: no reference."
+  },
+  {
+   "stageName": "CreateSandboxStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:41:54.573Z",
+   "finishedAt": "2026-11-28T00:42:03.144Z",
+   "message": ""
+  },
+  {
+   "stageName": "RunAnalyzersStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:42:03.158Z",
+   "finishedAt": "2026-11-28T00:42:03.245Z",
+   "message": ""
+  },
+  {
+   "stageName": "AgentReviewStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:42:03.256Z",
+   "finishedAt": "2026-11-28T00:42:53.798Z",
+   "message": "",
+   "sandboxUsage": {
+    "stopAt": "2026-11-28T00:43:17.329Z",
+    "consumer": "review",
+    "acquiredAt": "2026-11-28T00:42:03.141Z",
+    "lastUsedAt": "2026-11-28T00:42:44.944Z",
+    "releasedAt": "2026-11-28T00:42:47.256Z",
+    "firstUsedAt": "2026-11-28T00:42:03.265Z"
+   }
+  },
+  {
+   "stageName": "AgentReview::generalist",
+   "status": "success",
+   "createdAt": "2026-11-28T00:42:09.974Z",
+   "finishedAt": "2026-11-28T00:42:47.331Z",
+   "message": "Generalist Agent \u2014 1 findings in 38s"
+  },
+  {
+   "stageName": "AgentReview::custom-agent-ast-logger-guard",
+   "status": "success",
+   "createdAt": "2026-11-28T00:42:09.978Z",
+   "finishedAt": "2026-11-28T00:42:23.455Z",
+   "message": "AST Logger Guard \u2014 2 findings in 14s"
+  },
+  {
+   "stageName": "CreatePrLevelCommentsStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:42:53.807Z",
+   "finishedAt": "2026-11-28T00:42:53.814Z",
+   "message": ""
+  },
+  {
+   "stageName": "ValidateSuggestionsStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:42:53.822Z",
+   "finishedAt": "2026-11-28T00:42:56.805Z",
+   "message": ""
+  },
+  {
+   "stageName": "CreateFileCommentsStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:42:56.814Z",
+   "finishedAt": "2026-11-28T00:43:01.272Z",
+   "message": ""
+  },
+  {
+   "stageName": "AggregateResultsStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:43:01.281Z",
+   "finishedAt": "2026-11-28T00:43:01.287Z",
+   "message": ""
+  },
+  {
+   "stageName": "UpdateCommentsAndGenerateSummaryStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:43:01.295Z",
+   "finishedAt": "2026-11-28T00:43:05.733Z",
+   "message": ""
+  },
+  {
+   "stageName": "DecidePrApprovalStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:43:05.748Z",
+   "finishedAt": "2026-11-28T00:43:05.754Z",
+   "message": ""
+  },
+  {
+   "stageName": "RequestChangesOrApproveStage",
+   "status": "success",
+   "createdAt": "2026-11-28T00:43:05.763Z",
+   "finishedAt": "2026-11-28T00:43:05.769Z",
+   "message": ""
+  },
+  {
+   "stageName": "Kody Review Finished",
+   "status": "success",
+   "createdAt": "2026-11-28T00:43:07.755Z",
+   "finishedAt": null,
+   "message": "Code review completed successfully"
+  }
+ ]
+}
